@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="author" content="KENTA SHINKAWA">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>読み書きの障害（重度）訓練教材</title>
+<link rel="stylesheet" href="common.css">
+<style>
+.guide{font-size:10.5pt;line-height:1.45}
+.guide h2{font-size:12.5pt;margin:3mm 0 1.2mm}
+.guide table{font-size:9.5pt}
+.guide th,.guide td{padding:.6mm 1.6mm}
+.guide .note{font-size:9pt;color:#555;margin:-2mm 0 2mm}
+.key table{border-collapse:collapse;width:100%;font-size:10.5pt;margin:0 0 2mm}
+.key th,.key td{border:1px solid #bbb;padding:.8mm 2mm;text-align:left;vertical-align:top}
+.key th{background:#f2f2f2}
+.key p{margin:0 0 1mm}
+.sq{display:inline-block;width:17mm;height:17mm;border:1.5px solid #333;margin:0 2mm 2mm 0;vertical-align:top;position:relative}
+.sq i{position:absolute;left:1mm;top:0;font-size:8pt;font-style:normal;color:#777;line-height:1.2}
+.trace{font-size:78pt;line-height:1.15;font-weight:700;color:#f4f4f4;-webkit-text-stroke:1.6px #555;letter-spacing:.12em;text-align:center;margin:0 0 2mm}
+.trace.w{font-size:60pt}
+.lv{font-size:11.5pt;color:#555;margin:2mm 0 1.5mm;border-bottom:1px solid #bbb}
+.ico{width:26mm;height:26mm}
+.mrow{display:flex;align-items:center;gap:7mm;border-bottom:1px solid #ccc;padding:1.5mm 0}
+.mrow .no{font-size:13pt;color:#555;width:8mm}
+.mrow .ch{font-size:50pt;font-weight:700;width:36mm;text-align:center;line-height:1.1}
+.mrow .pc{border:1.5px solid #333;border-radius:2mm;width:38mm;height:30mm;display:flex;align-items:center;justify-content:center}
+.two{display:flex;align-items:center;gap:8mm;margin:0 0 3.2mm}
+.two .no{font-size:13pt;color:#555;width:8mm}
+.two span.c{border:2px solid #333;border-radius:2mm;min-width:46mm;text-align:center;font-size:26pt;font-weight:700;padding:1mm 4mm}
+.namebox{display:flex;gap:6mm;margin:0 0 5mm}
+.namebox div{flex:1;height:24mm;border:2px dashed #555;border-radius:2mm}
+.sign{display:grid;grid-template-columns:8mm 1fr;gap:0 2mm;margin:0 0 4mm}
+.sign .qq{font-size:13.5pt;font-weight:700}
+.sign .cc{display:flex;gap:10mm;margin-top:1.5mm}
+.sign .cc span{border:2.5px solid #333;min-width:34mm;text-align:center;font-size:30pt;font-weight:700;padding:.5mm 4mm;letter-spacing:.1em}
+.cp{display:flex;align-items:center;gap:4mm;margin:0 0 3mm}
+.cp .m{border:2px solid #333;background:#f6f6f6;font-size:30pt;font-weight:700;text-align:center;height:22mm;line-height:22mm}
+.cp .b{border:1.5px solid #333;height:22mm}
+.cp .no{font-size:12pt;color:#555;width:7mm}
+table.fw{border-collapse:collapse;width:100%;margin:0 0 4mm}
+table.fw th{border:1px solid #333;background:#f2f2f2;font-size:11.5pt;padding:1mm 2mm;text-align:left;width:48mm;white-space:nowrap}
+table.fw td{border:1px solid #333;height:11.5mm}
+.wl{display:grid;grid-template-columns:1fr 1fr;gap:0 10mm;margin:0 0 3mm}
+.wl div{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #bbb;height:12.5mm;font-size:19pt;font-weight:700}
+.wl div i{font-style:normal;font-size:11pt;color:#555;font-weight:400;min-width:8mm}
+.wl div .bx{width:10mm;height:10mm;border:1.5px solid #333;border-radius:1.5mm;display:inline-block}
+.mc{margin:0 0 3.2mm}
+.mc .qq{font-size:14pt;font-weight:700}
+.mc .ops{display:flex;gap:5mm;flex-wrap:wrap;margin:1mm 0 0 8mm}
+.mc .ops span{border:1.5px solid #333;border-radius:2mm;padding:.5mm 4mm;font-size:15.5pt}
+.tf{display:flex;align-items:center;gap:4mm;border-bottom:1px solid #ccc;padding:1.6mm 0;font-size:17pt;font-weight:700}
+.tf i{font-style:normal;font-size:12pt;color:#555;font-weight:400;width:8mm}
+.tf .bx{width:12mm;height:12mm;border:1.5px solid #333;border-radius:1.5mm;margin-left:auto;flex:none}
+table.kw{border-collapse:collapse;width:100%;margin:0 0 4mm}
+table.kw td{border:1px solid #999;padding:.8mm 1.5mm;font-size:12.5pt;width:20%}
+table.kw td b{font-size:18pt;display:inline-block;min-width:9mm}
+.sqrow{display:grid;grid-template-columns:1fr 1fr;gap:1mm 8mm}
+.sqrow div{display:flex;align-items:center;gap:2mm}
+.sqrow div i{font-style:normal;font-size:11pt;color:#555;min-width:7mm}
+.sqrow .sq{margin:0 0 1mm 0;width:16mm;height:16mm}
+.flyer{border:2px solid #333;border-radius:3mm;padding:3mm 6mm;margin:0 0 4mm}
+.flyer h2{font-size:16pt;margin:0 0 1mm;text-align:center;letter-spacing:.2em}
+.flyer table{width:100%;border-collapse:collapse;font-size:14pt}
+.flyer td{padding:.6mm 2mm;border-bottom:1px dotted #999}
+.flyer td.p{text-align:right;font-weight:700}
+.memo2{border:1.5px solid #333;border-radius:2mm;padding:1mm 5mm;margin:0 0 4mm}
+.memo2 .l{height:10.5mm;border-bottom:1px solid #bbb;display:flex;align-items:flex-end;font-size:11pt;color:#555}
+.art{border:1.5px solid #333;padding:3mm 5mm;margin:0 0 4mm;font-size:12.5pt;line-height:1.75}
+.art h2{font-size:15.5pt;margin:0 0 1mm;border-bottom:2px solid #333;padding-bottom:1mm}
+.art .sub{font-size:12pt;font-weight:700;margin:0 0 1.5mm}
+.doc{border:1.5px solid #333;padding:3mm 5mm;margin:0 0 4mm;font-size:11.5pt;line-height:1.6}
+.doc h2{font-size:14.5pt;text-align:center;margin:0 0 2mm}
+.doc table{border-collapse:collapse;width:100%;margin:1mm 0}
+.doc th,.doc td{border:1px solid #666;padding:.6mm 2mm;text-align:left;vertical-align:top}
+.doc th{background:#f2f2f2;width:26mm;white-space:nowrap}
+.qa{margin:0 0 2.5mm;font-size:13pt}
+.qa b{display:inline-block;min-width:7mm}
+.qa .l{height:10mm;border-bottom:1px solid #999;margin-left:7mm}
+.rec{border-collapse:collapse;width:100%;margin:0 0 4mm;font-size:12pt}
+.rec th,.rec td{border:1px solid #333;padding:1mm 2mm;height:11mm;text-align:center}
+.rec th{background:#f2f2f2}
+.rec td.t{text-align:left}
+.pass{font-size:15pt;line-height:2;border:1.5px solid #333;border-radius:2mm;padding:3mm 6mm;margin:0 0 4mm}
+.form{border-collapse:collapse;width:100%;margin:0 0 3mm}
+.form th{border:1px solid #333;background:#f2f2f2;font-size:11.5pt;padding:1mm 2mm;text-align:left;width:36mm;font-weight:700}
+.form td{border:1px solid #333;height:12mm;font-size:12pt;padding:0 2mm;color:#444}
+.post{border:2px solid #333;border-radius:2mm;padding:2mm 6mm;margin:0 0 3mm}
+.post .l{height:12mm;border-bottom:1px dashed #999}
+.mouth{display:grid;grid-template-columns:repeat(3,1fr);gap:3mm 5mm;margin:0 0 4mm}
+.mouth div{border:1.5px solid #333;border-radius:2mm;text-align:center;padding:1.5mm 1mm}
+.mouth b{display:block;font-size:26pt;line-height:1.2}
+.mouth small{display:block;font-size:11pt;color:#444}
+.mouth svg{width:40mm;height:21mm}
+.chk{border-collapse:collapse;width:100%;font-size:13pt;margin:0 0 3mm}
+.chk th,.chk td{border:1px solid #333;padding:1mm 2mm;height:10.5mm}
+.chk th{background:#f2f2f2;font-size:11.5pt}
+.chk td.c{width:17mm}
+.vv{display:grid;grid-template-columns:repeat(4,1fr);gap:3mm;margin:0 0 4mm}
+.vv div{border:1.5px solid #333;border-radius:2mm;text-align:center;padding:1.5mm 0;font-size:26pt;font-weight:700;line-height:1.25}
+.vv div small{display:block;font-size:11.5pt;font-weight:400;color:#444}
+.comp{display:flex;align-items:center;gap:4mm;border-bottom:1px solid #ccc;padding:1mm 0}
+.comp i{font-style:normal;font-size:12pt;color:#555;width:7mm}
+.comp b{font-size:21pt;min-width:70mm}
+.comp span{font-size:14pt;color:#555}
+.yn{display:grid;grid-template-columns:1fr 1fr;gap:6mm;margin:0 0 4mm}
+.yn div{border:3px solid #333;border-radius:3mm;text-align:center;font-size:40pt;font-weight:700;padding:2mm 0}
+table.g50{border-collapse:collapse;width:100%;margin:0 0 3mm}
+table.g50 td{border:1px solid #555;text-align:center;font-size:22pt;font-weight:700;height:12.3mm;padding:0}
+table.g50 td.s{background:#f3f3f3;font-size:17pt}
+table.g50 td.e{background:#fafafa}
+.pcards{display:grid;grid-template-columns:repeat(4,1fr);gap:3mm;margin:0 0 4mm}
+.pcards div{border:2px solid #333;border-radius:2mm;text-align:center;padding:1.5mm 0}
+.pcards svg{width:22mm;height:22mm}
+.pcards b{display:block;font-size:14pt}
+.pain{display:flex;gap:8mm;align-items:flex-start}
+.scale{display:flex;gap:2mm;margin:2mm 0}
+.scale span{border:2px solid #333;border-radius:2mm;width:15mm;text-align:center;font-size:20pt;font-weight:700}
+.wc{display:grid;grid-template-columns:repeat(4,1fr);gap:2.5mm;margin:0 0 3mm}
+.wc div{border:1.5px solid #333;border-radius:2mm;text-align:center;padding:1mm 0;font-size:24pt;font-weight:700;line-height:1.25}
+.wc div small{display:block;font-size:11pt;font-weight:400;color:#444;letter-spacing:.1em}
+.wc div em{display:block;font-style:normal;font-size:9pt;color:#666;letter-spacing:.15em;line-height:1.1}
+.ser{display:flex;align-items:center;gap:4mm;margin:0 0 3.5mm}
+.ser b{font-size:24pt;width:15mm;height:15mm;border:2px solid #333;border-radius:50%;display:flex;align-items:center;justify-content:center;flex:none}
+.ser span{font-size:18pt;font-weight:700;border-bottom:1px solid #bbb;padding:0 1mm}
+.rh{display:grid;grid-template-columns:52mm 1fr 14mm;align-items:center;border-bottom:1px solid #bbb;padding:1.4mm 0}
+.rh .w{font-size:19pt;font-weight:700}
+.rh .m{font-size:13.5pt;letter-spacing:.06em;color:#333}
+.rh .m span{display:block;font-size:16pt;letter-spacing:.3em;line-height:1.2}
+.rh .bx{width:11mm;height:11mm;border:1.5px solid #333;border-radius:1.5mm}
+.sent{border-collapse:collapse;width:100%;margin:0 0 3mm}
+.sent th,.sent td{border:1px solid #333;padding:1mm 2mm}
+.sent th{background:#f2f2f2;font-size:11pt}
+.sent td{height:12.5mm;font-size:12pt}
+.sent td.s{font-size:16.5pt;font-weight:700}
+.sent td.c{width:15mm}
+.lw{font-size:16pt;font-weight:700;line-height:1.9;margin:0 0 3mm 2mm}
+.lw div{display:flex;justify-content:space-between;border-bottom:1px solid #ccc}
+.lw div span{font-size:11pt;font-weight:400;color:#555}
+.script{border:1.5px solid #333;border-radius:2mm;padding:2mm 5mm;margin:0 0 3.5mm;font-size:13.5pt;line-height:1.85}
+.script h3{font-size:13.5pt;margin:0 0 .5mm;border-bottom:1px solid #999}
+.script .me{font-weight:700}
+.script u{text-decoration:none;display:inline-block;min-width:30mm;border-bottom:1px solid #333}
+.topic{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin:0 0 3mm}
+.topic div{border:2px solid #333;border-radius:2mm;padding:2mm 4mm;font-size:14pt;font-weight:700}
+.topic div small{display:block;font-size:11pt;font-weight:400;color:#444}
+.sent.c10 td{height:9.5mm;line-height:1.3;padding:.5mm 2mm}</style>
+</head>
+<body>
+<div class="noprint">印刷するときは <b>Ctrl＋P</b> を押してください（用紙：A4縦）。最初の2ページは指導者用の説明、最後のページは指導者用の解答・評価のポイントです。患者さんには課題用紙のページだけをお渡しください。</div>
+<section class="sheet guide">
+<div class="head"><div><div class="tag">指導者用（患者さんには渡さない）</div><h1>読み書きの障害（重度）― 指導者用ガイド（1）</h1></div></div>
+<h2>1．この教材の対象</h2>
+<p>読み書きの障害が中心のタイプ（主に失読失書）のうち、<b>読む・書くの正答率がおおむね3割未満</b>の方です。一文字や自分の名前の読み書きから始める段階です。話す・聴くは比較的保たれていることが多く、話し言葉を手がかりに使えます。</p>
+<h2>2．この重症度のSLTAプロフィールの目安</h2>
+<table><tr><th style="width:11%">領域</th><th style="width:28%">正答率の目安</th><th>特徴的な下位検査</th></tr>
+<tr><td>聴く</td><td>80〜100％（「4 仮名の理解」は0〜30％）</td><td>4 仮名の理解：文字を見て選ぶため低い</td></tr>
+<tr><td>話す</td><td>呼称・復唱 80〜100％、音読 0〜20％</td><td>11〜14 音読：一文字から読めず、短文の音読は中止が多い</td></tr>
+<tr><td>読む</td><td>0〜30％</td><td>15 漢字・単語の理解がわずかに残る。17 短文の理解・18 書字命令は中止が多い</td></tr>
+<tr><td>書く</td><td>0〜10％</td><td>19〜25 ほとんど書けない。自分の名前だけは書ける例もある</td></tr>
+<tr><td>計算</td><td>20〜50％</td><td>数字の読み書きも低下しやすい</td></tr></table>
+<p style="margin:0"><b>失読失書（重度）の例</b>（例データ「08-1_読み書きの障害_重度.json」の評価1と同じ値）</p>
+<svg class="mini" style="width:66%;margin:0 auto 1mm" data-profile="100,90,80,10,80,100,100,60,80,60,20,10,0,0,20,10,0,0,0,0,0,10,0,0,0,30"></svg><p class="note">典型例のイメージです。個人差が大きいので、実際の検査結果と様子を合わせて判断してください。まんがの説明は (段階−1)÷5、語の列挙は15語で100%、計算は20問中の正答数で描いています。</p>
+<h2>3．同じタイプの他の重症度との違い</h2>
+<table><tr><th style="width:11%"></th><th style="width:29.6%">重度（この教材）</th><th style="width:29.6%">中等度</th><th style="width:29.6%">軽度</th></tr><tr><th>読む</th><td>一文字・自分の名前・ごく身近な語。絵や話し言葉を手がかりにした2択</td><td>単語〜短文の音読・読解。3〜4択、手がかりを減らす</td><td>新聞記事・書類。内容の要点、読む速さ</td></tr><tr><th>書く</th><td>なぞり書き・写字、自分の名前</td><td>仮名一文字（キーワード法）〜単語、買い物メモ</td><td>手紙・申込書・メール、短文の書取</td></tr><tr><th>課題の形</th><td>大きな文字、2択、手本あり</td><td>普通の大きさの文字、3〜4択、手本なしへ</td><td>文章・談話、時間を計る、実用の書式</td></tr></table>
+<p><b>中等度の教材へ進む目安：</b>①読字課題1・2の2択が8割以上（段階6・5）、②なぞり読みで一文字が安定して読める、③自分の名前と家族1人の名前を手本なしで書ける。これを2〜3回続けて満たしたら中等度の教材を試します。中等度で正答が3割に満たなければ、この教材に戻ります。</p>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet guide">
+<div class="head"><div><div class="tag">指導者用（患者さんには渡さない）</div><h1>読み書きの障害（重度）― 指導者用ガイド（2）</h1></div></div>
+<h2>4．訓練の目標と優先順位</h2>
+<ul><li><b>目標：</b>自分と家族の名前を読む・書く、男女・押す引く・入口出口・薬袋の「朝」「夕」など、身の回りの大事な文字が分かること。</li>
+<li><b>優先順位：</b>①話し言葉で伝われば十分なことは、読み書きを無理強いしない。②名前・住所など、意味のまとまりとして覚える語。③一文字の読み（なぞり読み）。④写字。</li></ul>
+<h2>5．タイプによる使い分け</h2>
+<ul><li><b>失読失書：</b>全ページを使います。写字と名前の書字（書字課題1・2）を毎回行い、読みは絵や話し言葉の手がかりと組み合わせます。なぞり読みの効果は限られることが多いので、効く文字だけ続けます。</li>
+<li><b>純粋失読の場合：</b>書字は保たれるので書字課題は確認程度にし、読字課題、特になぞり読み（読字課題3）を中心にします。自分で書いた字を後で読めないことがあるので、メモは家族に読み上げてもらう工夫も伝えます。</li>
+<li><b>純粋失書の場合：</b>読めるので読字課題は確認程度にし、写字→名前の書字を中心にします。手本と見比べて自分で誤りを確かめてもらいます。</li></ul>
+<h2>6．ヒントの出し方</h2>
+<p>①指導者が文字を読み上げる（音の手がかり）→②絵や実物を見せる→③指で書き順どおりになぞる→④最初の一画を書いて見せる、の順に一つずつ加えます。手がかりで正答したら、すぐに同じ問題を手がかりなしでもう一度行います。</p>
+<h2>7．家族への助言・訪問での工夫</h2>
+<ul><li><b>家族へ：</b>大事な連絡は口で伝え、文字だけに頼らない。カレンダーや薬は色・絵・置き場所で区別する。名前の手本を大きく書いて見える所に貼る。読めないことを責めない。</li>
+<li><b>訪問で：</b>表札、郵便物の宛名、薬袋、自宅の家電の表示を教材にします。1回10〜15分、課題は1〜2枚までにし、疲れたら休みます。</li></ul>
+<h2>8．課題ページの一覧と記録のしかた</h2>
+<table><tr><th style="width:24%">課題</th><th>使い方</th></tr>
+<tr><td>読字課題1 一文字と絵の照合</td><td>大きな文字を見て2つの絵から選ぶ。漢字1字の語</td></tr>
+<tr><td>読字課題2 名前と身近な単語</td><td>上段は指導者が名前を書き入れる。下段は指導者が語を言い、2つから選ぶ</td></tr>
+<tr><td>読字課題3 なぞり読み</td><td>なぞる前と後で読めたかを両方記録</td></tr>
+<tr><td>読字課題4 生活の中の表示</td><td>質問は指導者が読み上げる。答えの文字だけを見て選ぶ</td></tr>
+<tr><td>書字課題1・2 写字、名前と住所</td><td>手本を見て書く→手本を隠して書く。課題2の手本は指導者が記入</td></tr></table>
+<p style="margin:0">1問ごとに段階6〜1で記録し、<b>段階6・5を正答</b>として正答率を出します（段階の目安は最後のページ）。</p>
+<p style="margin-top:1.5mm">ここに書いた内容は一般的な目安です。<b>最終的な判断は担当の言語聴覚士が行ってください。</b></p>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet">
+<div class="head"><div><div class="tag">読字課題 1</div><h1>一文字の読み（文字と絵の照合・2択）</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div>
+<p class="ask">大きな文字を見て、その文字が表す物の絵を○で囲んでください。</p><p class="hint">分からないときは、指導者が文字を読み上げます。</p><div class="mrow"><span class="no">1.</span><span class="ch">魚</span><span class="pc"><svg class="ico" viewBox="0 0 100 100" fill="none" stroke="#222" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="線画"><path d="M12 50 Q40 24 70 50 Q40 76 12 50 Z M70 50 L90 34 V66 Z"/><circle cx="27" cy="46" r="3"/><path d="M44 40 Q50 50 44 60"/></svg></span><span class="pc"><svg class="ico" viewBox="0 0 100 100" fill="none" stroke="#222" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="線画"><path d="M20 44 H80 V72 Q80 82 70 82 H30 Q20 82 20 72 Z M10 50 H20 M80 50 H90 M22 44 Q50 28 78 44 M44 33 Q50 26 56 33"/></svg></span></div><div class="mrow"><span class="no">2.</span><span class="ch">車</span><span class="pc"><svg class="ico" viewBox="0 0 100 100" fill="none" stroke="#222" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="線画"><path d="M32 12 V88 M32 14 H44 V54 M32 54 H76 M76 54 V88 M44 54 V88 M32 54 V58"/></svg></span><span class="pc"><svg class="ico" viewBox="0 0 100 100" fill="none" stroke="#222" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="線画"><path d="M10 68 V54 L24 50 L34 34 H66 L78 50 L90 54 V68 Z M34 50 H78 M52 34 V50"/><circle cx="28" cy="70" r="8"/><circle cx="72" cy="70" r="8"/></svg></span></div><div class="mrow"><span class="no">3.</span><span class="ch">靴</span><span class="pc"><svg class="ico" viewBox="0 0 100 100" fill="none" stroke="#222" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="線画"><path d="M14 36 V72 H88 Q88 60 74 56 L54 50 L48 36 Z M14 64 H88 M30 46 H46"/></svg></span><span class="pc"><svg class="ico" viewBox="0 0 100 100" fill="none" stroke="#222" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="線画"><path d="M14 46 H86 Q84 80 50 82 Q16 80 14 46 Z M38 82 V88 H62 V82 M22 46 Q30 34 40 40 Q50 30 60 40 Q70 34 78 46"/></svg></span></div><div class="mrow"><span class="no">4.</span><span class="ch">本</span><span class="pc"><svg class="ico" viewBox="0 0 100 100" fill="none" stroke="#222" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="線画"><circle cx="50" cy="36" r="24"/><path d="M50 60 V88 M38 88 H62 M50 70 L40 62 M50 66 L60 58"/></svg></span><span class="pc"><svg class="ico" viewBox="0 0 100 100" fill="none" stroke="#222" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="線画"><path d="M50 26 Q34 18 14 22 V78 Q34 74 50 82 Q66 74 86 78 V22 Q66 18 50 26 Z M50 26 V82"/></svg></span></div><div class="mrow"><span class="no">5.</span><span class="ch">家</span><span class="pc"><svg class="ico" viewBox="0 0 100 100" fill="none" stroke="#222" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="線画"><path d="M24 26 H68 V74 Q68 84 58 84 H34 Q24 84 24 74 Z M68 38 Q86 38 86 52 Q86 66 68 66"/></svg></span><span class="pc"><svg class="ico" viewBox="0 0 100 100" fill="none" stroke="#222" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="線画"><path d="M12 48 L50 16 L88 48 M22 40 V86 H78 V40 M42 86 V62 H58 V86"/></svg></span></div><div class="mrow"><span class="no">6.</span><span class="ch">月</span><span class="pc"><svg class="ico" viewBox="0 0 100 100" fill="none" stroke="#222" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="線画"><path d="M62 14 A36 36 0 0 0 62 86 A44 44 0 0 1 62 14 Z"/></svg></span><span class="pc"><svg class="ico" viewBox="0 0 100 100" fill="none" stroke="#222" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="線画"><circle cx="50" cy="50" r="17"/><path d="M50 12 V24 M50 76 V88 M12 50 H24 M76 50 H88 M23 23 L31 31 M69 69 L77 77 M77 23 L69 31 M31 69 L23 77"/></svg></span></div>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet">
+<div class="head"><div><div class="tag">読字課題 2</div><h1>名前と身近な単語の読み（2択）</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div>
+<p class="ask">1．ご自分の名前を指さしてください。</p><p class="hint">枠の中には、指導者があらかじめ名前を書き入れます。</p><div class="namebox"><div></div><div></div><div></div></div><p class="ask">2．指導者が言う語を、2つのうちから選んで○で囲んでください。</p><div class="two"><span class="no">1.</span><span class="c">お茶</span><span class="c">お金</span></div><div class="two"><span class="no">2.</span><span class="c">新聞</span><span class="c">電話</span></div><div class="two"><span class="no">3.</span><span class="c">水</span><span class="c">薬</span></div><div class="two"><span class="no">4.</span><span class="c">ご飯</span><span class="c">お風呂</span></div><div class="two"><span class="no">5.</span><span class="c">銀行</span><span class="c">病院</span></div><div class="two"><span class="no">6.</span><span class="c">孫</span><span class="c">娘</span></div><div class="two"><span class="no">7.</span><span class="c">テレビ</span><span class="c">トイレ</span></div><div class="two"><span class="no">8.</span><span class="c">雨</span><span class="c">晴れ</span></div>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet">
+<div class="head"><div><div class="tag">読字課題 3</div><h1>なぞり読み（一文字・二文字の語）</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div>
+<p class="ask">人さし指で文字を書き順どおりになぞりながら、声に出して読んでください。</p><p class="hint">なぞる前に一度読んでみて、読めなかった文字だけをなぞってもかまいません。</p><div class="trace">火　木　土</div><div class="trace">人　米　肉</div><div class="trace">い　の　し</div><div class="trace w">お湯　夕方</div><div class="trace w">テレビ</div>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet">
+<div class="head"><div><div class="tag">読字課題 4</div><h1>生活の中の短い表示（2択）</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div>
+<p class="ask">指導者が読み上げる質問を聞いて、合う方の文字を○で囲んでください。</p><div class="sign"><span class="qq">1.</span><div><div class="qq">男性用のお手洗いはどちらですか。</div><div class="cc"><span>男</span><span>女</span></div></div></div><div class="sign"><span class="qq">2.</span><div><div class="qq">ドアを手前に引いて開けるときの表示はどちらですか。</div><div class="cc"><span>押</span><span>引</span></div></div></div><div class="sign"><span class="qq">3.</span><div><div class="qq">建物に入るときの表示はどちらですか。</div><div class="cc"><span>出口</span><span>入口</span></div></div></div><div class="sign"><span class="qq">4.</span><div><div class="qq">朝食の後に飲む薬の袋はどちらですか。</div><div class="cc"><span>朝</span><span>夕</span></div></div></div><div class="sign"><span class="qq">5.</span><div><div class="qq">お湯が出る蛇口の印はどちらですか。</div><div class="cc"><span>水</span><span>湯</span></div></div></div><div class="sign"><span class="qq">6.</span><div><div class="qq">店が開いているときの札はどちらですか。</div><div class="cc"><span>開店</span><span>閉店</span></div></div></div>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet">
+<div class="head"><div><div class="tag">書字課題 1</div><h1>写字（一文字・二文字の語）</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div>
+<p class="ask">左の手本をよく見て、右の枠に同じ字を書いてください。</p><p class="hint">慣れてきたら、手本を紙で隠してから書いてください。</p><div class="cp"><span class="no">1.</span><div class="m" style="width:22mm">人</div><div class="b" style="width:22mm"></div><div class="b" style="width:22mm"></div><div class="b" style="width:22mm"></div></div><div class="cp"><span class="no">2.</span><div class="m" style="width:22mm">米</div><div class="b" style="width:22mm"></div><div class="b" style="width:22mm"></div><div class="b" style="width:22mm"></div></div><div class="cp"><span class="no">3.</span><div class="m" style="width:22mm">日</div><div class="b" style="width:22mm"></div><div class="b" style="width:22mm"></div><div class="b" style="width:22mm"></div></div><div class="cp"><span class="no">4.</span><div class="m" style="width:22mm">は</div><div class="b" style="width:22mm"></div><div class="b" style="width:22mm"></div><div class="b" style="width:22mm"></div></div><div class="cp"><span class="no">5.</span><div class="m" style="width:22mm">る</div><div class="b" style="width:22mm"></div><div class="b" style="width:22mm"></div><div class="b" style="width:22mm"></div></div><div class="cp"><span class="no">6.</span><div class="m" style="width:40mm">お茶</div><div class="b" style="width:40mm"></div><div class="b" style="width:40mm"></div></div><div class="cp"><span class="no">7.</span><div class="m" style="width:40mm">みそ</div><div class="b" style="width:40mm"></div><div class="b" style="width:40mm"></div></div>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet">
+<div class="head"><div><div class="tag">書字課題 2</div><h1>名前・住所の書字（手本あり）</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div>
+<p class="ask">手本を見て、同じように書いてください。最後は手本を隠して書いてください。</p><p class="ask" style="margin:2mm 0 1.5mm">1．ご自分の名前</p><table class="fw"><tr><th>手本（指導者が記入）</th><td></td></tr><tr><th>見て書く（1回目）</th><td></td></tr><tr><th>見て書く（2回目）</th><td></td></tr><tr><th>手本を隠して書く</th><td></td></tr></table><p class="ask" style="margin:2mm 0 1.5mm">2．ご家族の名前（1人）</p><table class="fw"><tr><th>手本（指導者が記入）</th><td></td></tr><tr><th>見て書く（1回目）</th><td></td></tr><tr><th>見て書く（2回目）</th><td></td></tr><tr><th>手本を隠して書く</th><td></td></tr></table><p class="ask" style="margin:2mm 0 1.5mm">3．住所（市町村名まで）</p><table class="fw"><tr><th>手本（指導者が記入）</th><td></td></tr><tr><th>見て書く（1回目）</th><td></td></tr><tr><th>見て書く（2回目）</th><td></td></tr><tr><th>手本を隠して書く</th><td></td></tr></table>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet key" style="page-break-after:auto;break-after:auto">
+<div class="head"><div><div class="tag">指導者用（患者さんには渡さない）</div><h1>読み上げリスト・解答・評価のポイント</h1></div></div>
+<h2>読字課題1・2・4の正答</h2>
+<table><tr><th style="width:20%">課題</th><th>正答</th></tr>
+<tr><td>読字課題1</td><td>1 魚＝左、2 車＝右、3 靴＝左、4 本＝右（左は木）、5 家＝右、6 月＝左（右は日）</td></tr>
+<tr><td>読字課題2（指導者が言う語）</td><td>①お茶 ②電話 ③薬 ④お風呂 ⑤病院 ⑥孫 ⑦トイレ ⑧雨　（左右どちらにあるかを本人に悟られないよう、普通の速さで1回言う）</td></tr>
+<tr><td>読字課題4</td><td>1 男、2 引、3 入口、4 朝、5 湯、6 開店</td></tr></table>
+<h2>進め方のポイント</h2>
+<ul><li>読字課題1：文字を見ても選べないときは、指導者が読み上げてから選んでもらいます（段階3）。4「本」と「木」、6「月」と「日」は形の似た文字の見分けも確認できます。</li>
+<li>読字課題2の上段：本人の名前1つと、文字数が同じくらいの別の名前2つを書き入れます。家族の名前でも行えます。</li>
+<li>読字課題3：なぞる前に読めたか、なぞった後に読めたかを分けて記録します。なぞると読めるなら、日常でもなぞって読む方法を勧めます。</li>
+<li>書字課題：字の形が崩れていても、読める字であれば段階4以上とします。書き始めるまでの時間も記録します。</li></ul>
+<h2>記録の段階（読み書きの課題での目安）</h2>
+<table><tr><th style="width:9%">段階</th><th style="width:22%">内容</th><th>この教材での目安</th></tr><tr><td>6</td><td>完全正答</td><td>すぐに正しく読めた・書けた</td></tr><tr><td>5</td><td>遅延完全正答</td><td>正しいが時間がかかった（逐字読み、書き始めの遅れ、一画ずつの写字）</td></tr><tr><td>4</td><td>不完全正答</td><td>一部の誤り（字形の崩れ、1文字の誤り、送り仮名の誤り）</td></tr><tr><td>3</td><td>ヒント後正答</td><td>手がかり（読み上げ・なぞり・最初の一画・キーワード）の後で正答</td></tr><tr><td>2</td><td>関連反応</td><td>意味や形の似た語（例：「本」を「木」）</td></tr><tr><td>1</td><td>誤答</td><td>誤り、または反応なし</td></tr></table>
+<p>段階6・5の数÷問題数を正答率とします。1枚にかかった時間と、使った手がかり（読み上げ・なぞり・最初の一画）を余白に書いておくと、変化が分かりやすくなります。</p>
+<p>最終的な判断は担当の言語聴覚士が行ってください。</p>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<script src="mini-profile.js"></script>
+</body>
+</html>

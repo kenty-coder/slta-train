@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="author" content="KENTA SHINKAWA">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>伝導失語（重度）追加課題集</title>
+<link rel="stylesheet" href="common.css">
+<style>
+.guide{font-size:9.6pt;line-height:1.4}
+.guide .head{margin-bottom:3mm}
+.guide h2{font-size:11pt;margin:1.8mm 0 .8mm;padding-bottom:.5mm}
+.guide p{margin:0 0 1mm}
+.guide ul{margin:0 0 1mm}
+.guide li{margin:0}
+.guide table{font-size:9pt;margin:0 0 1.2mm;line-height:1.35}
+.guide th,.guide td{padding:.4mm 1.5mm}
+.famtxt{border:1.5px solid #333;border-radius:2mm;padding:1.5mm 3.5mm;margin:0 0 1mm;font-size:10pt;line-height:1.5}
+.key{font-size:9.8pt;line-height:1.42}
+.key h2{font-size:11pt;margin:2mm 0 .8mm}
+.key p{margin:0 0 .9mm}
+.key ul{margin:0 0 1mm;padding-left:5mm}
+.key table{border-collapse:collapse;width:100%;font-size:9.4pt;margin:0 0 1.3mm}
+.key th,.key td{border:1px solid #bbb;padding:.4mm 1.5mm;text-align:left;vertical-align:top}
+.key th{background:#f2f2f2}
+.art{fill:none;stroke:#000;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+svg.p{width:30mm;height:30mm;flex:none;border:1px solid #bbb;border-radius:2mm;display:block}
+.boxes{display:inline-flex;gap:2mm;vertical-align:middle}
+.boxes i{display:inline-block;width:13mm;height:13mm;border:1.5px solid #333}
+.opt{display:inline-flex;gap:4mm;flex-wrap:wrap}
+.opt span{display:inline-block;border:1.5px solid #333;border-radius:2mm;padding:.5mm 4mm;font-size:16pt;line-height:1.5}
+.n{font-weight:700}
+ruby rt{font-size:9pt}
+table.rec{border-collapse:collapse;width:100%;font-size:11.5pt}
+table.rec th,table.rec td{border:1px solid #555;padding:1mm 2mm;text-align:left;vertical-align:middle}
+table.rec th{background:#f2f2f2}
+.chk{display:inline-block;width:7mm;height:7mm;border:1.4px solid #333;vertical-align:-1mm;margin:0 1mm 0 3mm}
+.hn{font-size:10pt;color:#555;white-space:nowrap}
+.ladder{font-size:10pt;color:#333;border:1px solid #bbb;border-radius:2mm;padding:1.2mm 3mm;margin:0 0 4mm;line-height:1.45}
+.wrap{display:grid;grid-template-columns:1fr 46mm;gap:5mm;align-items:start}
+.fam{border:2px dashed #333;border-radius:2mm;padding:2mm 3mm;font-size:10pt;line-height:1.45}
+.fam h3{font-size:10.5pt;margin:0 0 2mm;line-height:1.35}
+.fam .it{margin:0 0 2.6mm}
+.fam .it b{display:block;font-size:10.5pt}
+.fam .ln{height:8mm;border-bottom:1px solid #9a9a9a}
+.lines .l{height:12mm}
+
+.pair{display:flex;align-items:center;gap:6mm;margin:0 0 5mm}
+.pair .n{font-size:15pt;min-width:10mm}
+.pair .opt span{font-size:26pt;padding:0 7mm;line-height:1.45}
+.pair .hn{margin-left:auto}
+.nr{display:flex;align-items:center;gap:4mm;border:1px solid #bbb;border-radius:2mm;padding:2mm 3mm;margin:0 0 3mm}
+.nr .n{font-size:14pt;align-self:flex-start;min-width:8mm}
+.nr .a{flex:1}
+.nr .a .l{height:12mm;border-bottom:1px solid #9a9a9a;margin-bottom:2mm}
+.kw{display:grid;grid-template-columns:repeat(3,1fr);gap:4mm 5mm;margin:0 0 5mm}
+.kw div{border:1.5px solid #333;border-radius:2mm;text-align:center;padding:2mm 0}
+.kw .k{font-size:42pt;font-weight:700;line-height:1.25;display:block}
+.kw .w{font-size:20pt;font-weight:700;display:block;line-height:1.6}
+.kw .w rt{font-size:10.5pt}
+.kw small{font-size:10.5pt;color:#555}
+.seq{display:flex;gap:5mm;justify-content:center;margin:0 0 3mm}
+.seq span{border:1.5px solid #333;border-radius:2mm;font-size:30pt;font-weight:700;width:20mm;text-align:center;line-height:1.5}
+.rp{display:flex;align-items:center;gap:5mm;border-bottom:1px solid #bbb;padding:2.5mm 0}
+.rp .n{font-size:15pt;min-width:10mm}
+.rp .w{font-size:24pt;font-weight:700;min-width:50mm}
+.rp .w rt{font-size:11pt}
+.rp .dots{font-size:22pt;letter-spacing:4mm;min-width:36mm}
+.rp small{font-size:10.5pt;color:#555}
+.dc{display:flex;align-items:center;gap:4mm;margin:0 0 5mm}
+.dc .n{font-size:15pt;min-width:9mm}
+.dc .bx{width:70mm;height:24mm;border:1.5px solid #333;border-radius:2mm}
+.yn{display:flex;align-items:center;gap:4mm;border-bottom:1px solid #bbb;padding:3mm 0}
+.yn .n{font-size:15pt;min-width:10mm}
+.yn .t{font-size:20pt;font-weight:700;flex:1}
+.yn .opt span{font-size:17pt;padding:0 4mm}
+.sr{display:flex;align-items:center;gap:4mm;border:1px solid #bbb;border-radius:2mm;padding:2.5mm 3mm;margin:0 0 3.5mm}
+.sr .n{font-size:14pt;min-width:8mm}
+.sr .t{font-size:19pt;font-weight:700;flex:1;line-height:1.4}
+table.goj{border-collapse:collapse;margin:0 auto 4mm}
+table.goj td{border:1.2px solid #333;width:13.5mm;height:12mm;text-align:center;font-size:19pt;font-weight:700;padding:0}
+table.goj td.e{border-color:#ccc}
+</style>
+</head>
+<body>
+<div class="noprint">印刷するときは <b>Ctrl＋P</b> を押してください（用紙：A4縦）。「指導者用」と書かれたページ（最初と最後のページ）は患者さんには渡さないでください。課題用紙の点線の「ヒント欄」はご家族用です。最初は折って隠してから渡してください。</div>
+<section class="sheet guide">
+<div class="head"><div><div class="tag">指導者用（患者さんには渡さない）</div><h1>伝導失語（重度）追加課題集について</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div><h2>1．この追加課題集のねらい</h2><p>基本教材「伝導失語（重度）」の次に、または並行して使う課題集です。基本教材と同じ難しさ（2〜3拍の語、選択肢は2択、文字は大きく）で、<b>別の語・別の形の課題</b>を用意しました。音の聞き分け、仮名1文字と音の結び付け、手がかりを使った呼称、拍の点を見ながらの復唱を中心に、聴く・話す・読む・書くをまんべんなく練習します。呼称・書字の頁には、ご家族が隣でヒントを出せる「ヒント欄」があります。</p><h2>2．課題ページの一覧と難しさ</h2><table><tr><th style="width:7%">頁</th><th style="width:33%">課題</th><th style="width:16%">主な領域</th><th>難しさ・使い方</th></tr><tr><td>2</td><td>音韻課題　似た音の語を聞き分ける</td><td>聴く</td><td>★　2択。6問</td></tr><tr><td>3</td><td>呼称課題　絵の名前を言う</td><td>話す</td><td>★★　ヒント欄つき。5問</td></tr><tr><td>4</td><td>音読課題　仮名と手がかりの語</td><td>読む・話す</td><td>★　仮名1文字を手がかりの語で読む。6問＋確認</td></tr><tr><td>5</td><td>復唱課題　点を見ながら言う</td><td>話す</td><td>★〜★★　2拍→3拍。6問</td></tr><tr><td>6</td><td>書字課題　聞いた語を仮名で書く</td><td>書く</td><td>★★　ヒント欄つき。5問</td></tr><tr><td>7</td><td>読解課題　文を読んで はい・いいえ</td><td>読む</td><td>★　短い文。6問</td></tr><tr><td>8</td><td>発話課題　決まった言葉を言う</td><td>話す</td><td>★　数・曜日・あいさつ。ヒント欄つき。6問</td></tr><tr><td>9</td><td>伝達課題　50音表を指さして伝える</td><td>代償・話す</td><td>★　最初の音を指さしてから言う。4問</td></tr><tr><td>10</td><td>指導者用</td><td>―</td><td>読み上げリスト・解答・評価のポイント</td></tr></table><h2>3．ヒントの順番</h2><table><tr><th style="width:15%">課題の種類</th><th>ヒントの順番（弱い→強い）</th></tr>
+<tr><td>呼称・喚語</td><td>①意味・仲間（「果物の一つです」）→②使い道・場面（「皮をむいて食べます」）→③最初の音（「み…」）→④文字を見せる（「みかん」）→⑤一緒に言う（復唱）</td></tr>
+<tr><td>理解</td><td>①もう一度ゆっくり言う→②区切って言う→③指さし・身ぶりを添える→④文字を添える→⑤選択肢を減らす</td></tr>
+<tr><td>書字</td><td>①仮名で書いてもよい→②最初の1文字を見せる→③文字数の枠を示す→④見本を見て写す</td></tr></table><h2>4．記録のしかた</h2><p>各問の横に段階（<b>6 完全正答／5 遅延完全正答／4 不完全正答／3 ヒント後正答／2 関連反応／1 誤答</b>）を書き込みます。<b>6・5を正答</b>として正答率を出します。ヒントを使って正答した場合は<b>段階4以下</b>を目安とし、「ヒント（　）番目で正答」の欄に何番目のヒントで言えた・できたかを書きます。次回は、その一つ手前のヒントから始めます。</p><h2>5．ご家族向けの説明（このまま読み上げてください）</h2><div class="famtxt">「この用紙は、言葉の音を正しく並べて言う練習です。言い間違えても、さえぎらずに数秒待ってください。言い直しながら正しい音に近づくことがよくあります。言えないときは、右側のヒント欄を上から順に一つずつ読んでください。一度に全部のヒントを出さないでください。何番目のヒントで言えたかを、欄に数字で書いてください。疲れた様子があれば、その日はそこで終わりにしてください。」</div><h2>6．どの課題から始めるか</h2><ul><li>まず<b>4頁（仮名と手がかりの語）と7頁（はい・いいえ）</b>から始めます。成功しやすく、自信につながります。</li><li>次に2頁・5頁で音の聞き分けと復唱、慣れたら3頁・6頁の呼称と書字へ進みます。8頁・9頁は毎回の始めに短く行い、ご家族とも練習できるようにします。</li><li>1回15〜20分、2〜3頁を目安にします。</li></ul><p style="font-size:9pt;color:#555;margin-top:1mm">内容は一般的な目安です。最終的な判断は担当の言語聴覚士が行ってください。</p>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet">
+<div class="head"><div><div class="tag">音韻課題</div><h1>似た音の語を聞き分ける</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div><p class="ask">指導者が言う語を聞いて、その語に○を付けてください。</p><p class="hint">二つの語は、音が一つだけ違います。○を付けたら、その語を声に出して言ってください。</p><div class="ladder">ヒントの順番（指導者・ご家族用）：①もう一度ゆっくり言う　②区切って言う　③指さし・身ぶりを添える　④文字を添える　⑤選択肢を減らす</div><div class="pair"><span class="n">1.</span><span class="opt"><span>いか</span><span>いた</span></span><span class="hn">段階（　）　ヒント（　）番目で正答</span></div><div class="pair"><span class="n">2.</span><span class="opt"><span>くし</span><span>くつ</span></span><span class="hn">段階（　）　ヒント（　）番目で正答</span></div><div class="pair"><span class="n">3.</span><span class="opt"><span>さけ</span><span>さめ</span></span><span class="hn">段階（　）　ヒント（　）番目で正答</span></div><div class="pair"><span class="n">4.</span><span class="opt"><span>はち</span><span>はと</span></span><span class="hn">段階（　）　ヒント（　）番目で正答</span></div><div class="pair"><span class="n">5.</span><span class="opt"><span>みず</span><span>みせ</span></span><span class="hn">段階（　）　ヒント（　）番目で正答</span></div><div class="pair"><span class="n">6.</span><span class="opt"><span>いえ</span><span>いけ</span></span><span class="hn">段階（　）　ヒント（　）番目で正答</span></div>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet">
+<div class="head"><div><div class="tag">呼称課題</div><h1>絵の名前を言う</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div><p class="ask">絵の物の名前を声に出して言ってください。言えたら、線の上に仮名で書いてください。</p><div class="wrap"><div><div class="nr"><span class="n">1.</span><svg class="p" style="width:30mm;height:30mm" viewBox="0 0 100 100" role="img" aria-label="鍵"><g class="art"><circle cx="28" cy="50" r="16"/><circle cx="28" cy="50" r="6"/><path d="M44 50 H90 M80 50 V62 M88 50 V60 M70 50 V58"/></g></svg><div class="a"><div class="l"></div><span class="hn">段階（　）　ヒント（　）番目で正答</span></div></div><div class="nr"><span class="n">2.</span><svg class="p" style="width:30mm;height:30mm" viewBox="0 0 100 100" role="img" aria-label="傘"><g class="art"><path d="M10 48 Q50 4 90 48 Q80 40 70 48 Q60 40 50 48 Q40 40 30 48 Q20 40 10 48 Z"/><path d="M50 48 V84 Q50 92 42 92 Q36 92 36 86"/><path d="M50 14 V8"/></g></svg><div class="a"><div class="l"></div><span class="hn">段階（　）　ヒント（　）番目で正答</span></div></div><div class="nr"><span class="n">3.</span><svg class="p" style="width:30mm;height:30mm" viewBox="0 0 100 100" role="img" aria-label="椅子"><g class="art"><rect x="30" y="10" width="40" height="36" rx="3"/><path d="M24 58 L30 46 H70 L76 58 Z"/><path d="M26 58 V90 M74 58 V90 M36 58 V82 M64 58 V82"/></g></svg><div class="a"><div class="l"></div><span class="hn">段階（　）　ヒント（　）番目で正答</span></div></div><div class="nr"><span class="n">4.</span><svg class="p" style="width:30mm;height:30mm" viewBox="0 0 100 100" role="img" aria-label="魚"><g class="art"><path d="M10 50 Q38 20 68 50 Q38 80 10 50 Z"/><path d="M68 50 L90 32 V68 Z"/><circle cx="24" cy="46" r="2.5"/><path d="M38 38 Q44 50 38 62"/></g></svg><div class="a"><div class="l"></div><span class="hn">段階（　）　ヒント（　）番目で正答</span></div></div><div class="nr"><span class="n">5.</span><svg class="p" style="width:30mm;height:30mm" viewBox="0 0 100 100" role="img" aria-label="眼鏡"><g class="art"><circle cx="30" cy="54" r="15"/><circle cx="70" cy="54" r="15"/><path d="M45 52 Q50 46 55 52"/><path d="M15 50 L6 38 M85 50 L94 38"/></g></svg><div class="a"><div class="l"></div><span class="hn">段階（　）　ヒント（　）番目で正答</span></div></div></div><div class="fam"><h3>ヒント欄（ご家族用。最初は折って隠してください）</h3><div class="it"><b>1.</b>①金属でできた小さな物です<br>②玄関の戸を開けるときに使います<br>③「か…」</div><div class="it"><b>2.</b>①雨の日の持ち物です<br>②雨が降ったら開いて差します<br>③「か…」</div><div class="it"><b>3.</b>①家具の一つです<br>②腰を掛けて座ります<br>③「い…」</div><div class="it"><b>4.</b>①水の中にすむ生き物です<br>②焼いたり煮たりして食べます<br>③「さ…」</div><div class="it"><b>5.</b>①目に掛ける物です<br>②新聞の小さな字を読むときに掛けます<br>③「め…」</div></div></div><p class="hint" style="margin-top:2mm">ヒント④は文字を見せる、⑤は一緒に言う、です（ご家族用）。</p>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet">
+<div class="head"><div><div class="tag">音読課題</div><h1>仮名1文字を手がかりの語で読む</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div><p class="ask">大きな仮名を声に出して読んでください。読みにくいときは、下の語を先に言ってから、その最初の音だけを言ってください。</p><p class="hint">例：「さ」が読みにくいときは「猿（さる）」と言い、「さ」だけを取り出します。□は指導者が記入します。</p><div class="kw"><div><span class="k">さ</span><span class="w"><ruby>猿<rt>さる</rt></ruby></span><small>仮名<i class="chk"></i>語<i class="chk"></i></small></div><div><span class="k">ふ</span><span class="w"><ruby>船<rt>ふね</rt></ruby></span><small>仮名<i class="chk"></i>語<i class="chk"></i></small></div><div><span class="k">ゆ</span><span class="w"><ruby>雪<rt>ゆき</rt></ruby></span><small>仮名<i class="chk"></i>語<i class="chk"></i></small></div><div><span class="k">も</span><span class="w"><ruby>餅<rt>もち</rt></ruby></span><small>仮名<i class="chk"></i>語<i class="chk"></i></small></div><div><span class="k">く</span><span class="w"><ruby>口<rt>くち</rt></ruby></span><small>仮名<i class="chk"></i>語<i class="chk"></i></small></div><div><span class="k">ひ</span><span class="w"><ruby>人<rt>ひと</rt></ruby></span><small>仮名<i class="chk"></i>語<i class="chk"></i></small></div></div><p class="ask">確認：手がかりの語を見ないで、次の仮名を左から順に読んでください。</p><div class="seq"><span>ゆ</span><span>く</span><span>さ</span><span>ひ</span><span>も</span><span>ふ</span></div><p class="hint" style="text-align:center">読めた仮名の下に、指導者が✓を付けます。</p>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet">
+<div class="head"><div><div class="tag">復唱課題</div><h1>点を見ながら後について言う</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div><p class="ask">指導者の後について、同じように言ってください。点が音の数です。点を一つずつ指で押さえながら言ってください。</p><p class="hint">言い誤ったときは、いったん止まり、最初の点から言い直してください。□は指導者が記入します。</p><div class="rp"><span class="n">1.</span><span class="w"><ruby>肉<rt>にく</rt></ruby></span><span class="dots">●●</span><small>一度で<i class="chk"></i>言い直して<i class="chk"></i><br>文字を隠して<i class="chk"></i></small></div><div class="rp"><span class="n">2.</span><span class="w"><ruby>足<rt>あし</rt></ruby></span><span class="dots">●●</span><small>一度で<i class="chk"></i>言い直して<i class="chk"></i><br>文字を隠して<i class="chk"></i></small></div><div class="rp"><span class="n">3.</span><span class="w"><ruby>夜<rt>よる</rt></ruby></span><span class="dots">●●</span><small>一度で<i class="chk"></i>言い直して<i class="chk"></i><br>文字を隠して<i class="chk"></i></small></div><div class="rp"><span class="n">4.</span><span class="w"><ruby>葡萄<rt>ぶどう</rt></ruby></span><span class="dots">●●●</span><small>一度で<i class="chk"></i>言い直して<i class="chk"></i><br>文字を隠して<i class="chk"></i></small></div><div class="rp"><span class="n">5.</span><span class="w"><ruby>桜<rt>さくら</rt></ruby></span><span class="dots">●●●</span><small>一度で<i class="chk"></i>言い直して<i class="chk"></i><br>文字を隠して<i class="chk"></i></small></div><div class="rp"><span class="n">6.</span><span class="w"><ruby>着替え<rt>きがえ</rt></ruby></span><span class="dots">●●●</span><small>一度で<i class="chk"></i>言い直して<i class="chk"></i><br>文字を隠して<i class="chk"></i></small></div><p class="ask" style="margin-top:6mm">慣れたら、文字を手で隠して、点だけを見ながら言ってください。</p>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet">
+<div class="head"><div><div class="tag">書字課題</div><h1>聞いた語を仮名で書く</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div><p class="ask">ご家族（指導者）が言う語を聞いて、枠の中に仮名で書いてください。</p><p class="hint">書けたら、書いた字を指でたどりながら読んでください。</p><div class="wrap"><div><div class="dc"><span class="n">1.</span><div class="bx"></div></div><div style="margin:-3mm 0 4mm 13mm"><span class="hn">段階（　）　ヒント（　）番目で正答</span></div><div class="dc"><span class="n">2.</span><div class="bx"></div></div><div style="margin:-3mm 0 4mm 13mm"><span class="hn">段階（　）　ヒント（　）番目で正答</span></div><div class="dc"><span class="n">3.</span><div class="bx"></div></div><div style="margin:-3mm 0 4mm 13mm"><span class="hn">段階（　）　ヒント（　）番目で正答</span></div><div class="dc"><span class="n">4.</span><div class="bx"></div></div><div style="margin:-3mm 0 4mm 13mm"><span class="hn">段階（　）　ヒント（　）番目で正答</span></div><div class="dc"><span class="n">5.</span><div class="bx"></div></div><div style="margin:-3mm 0 4mm 13mm"><span class="hn">段階（　）　ヒント（　）番目で正答</span></div></div><div class="fam"><h3>ヒント欄（ご家族用。最初は折って隠してください）<br>①は「仮名でよい」と伝える</h3><div class="it"><b>1. 読み上げる語：糸（いと）</b>②「い」から始まります<br>③□□（2文字）<br>④見本「いと」を見て写す</div><div class="it"><b>2. 読み上げる語：星（ほし）</b>②「ほ」から始まります<br>③□□（2文字）<br>④見本「ほし」を見て写す</div><div class="it"><b>3. 読み上げる語：鳥（とり）</b>②「と」から始まります<br>③□□（2文字）<br>④見本「とり」を見て写す</div><div class="it"><b>4. 読み上げる語：汗（あせ）</b>②「あ」から始まります<br>③□□（2文字）<br>④見本「あせ」を見て写す</div><div class="it"><b>5. 読み上げる語：庭（にわ）</b>②「に」から始まります<br>③□□（2文字）<br>④見本「にわ」を見て写す</div></div></div>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet">
+<div class="head"><div><div class="tag">読解課題</div><h1>文を読んで「はい」か「いいえ」を選ぶ</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div><p class="ask">文を読んで、正しければ「はい」、正しくなければ「いいえ」に○を付けてください。</p><p class="hint">黙って読んでから○を付け、そのあと文を声に出して読んでください。</p><div class="ladder">ヒントの順番（指導者・ご家族用）：①もう一度ゆっくり読む　②区切って読む　③指さし・身ぶりを添える　④文字を添える　⑤選択肢を減らす</div><div class="yn"><span class="n">1.</span><span class="t">氷は冷たい。</span><span class="opt"><span>はい</span><span>いいえ</span></span></div><div style="text-align:right;margin:1mm 0 0"><span class="hn">段階（　）　ヒント（　）番目で正答</span>　声に出して読めた<i class="chk"></i></div><div class="yn"><span class="n">2.</span><span class="t">魚は木に登る。</span><span class="opt"><span>はい</span><span>いいえ</span></span></div><div style="text-align:right;margin:1mm 0 0"><span class="hn">段階（　）　ヒント（　）番目で正答</span>　声に出して読めた<i class="chk"></i></div><div class="yn"><span class="n">3.</span><span class="t">夜は暗い。</span><span class="opt"><span>はい</span><span>いいえ</span></span></div><div style="text-align:right;margin:1mm 0 0"><span class="hn">段階（　）　ヒント（　）番目で正答</span>　声に出して読めた<i class="chk"></i></div><div class="yn"><span class="n">4.</span><span class="t">靴は足に履く。</span><span class="opt"><span>はい</span><span>いいえ</span></span></div><div style="text-align:right;margin:1mm 0 0"><span class="hn">段階（　）　ヒント（　）番目で正答</span>　声に出して読めた<i class="chk"></i></div><div class="yn"><span class="n">5.</span><span class="t">時計で字を書く。</span><span class="opt"><span>はい</span><span>いいえ</span></span></div><div style="text-align:right;margin:1mm 0 0"><span class="hn">段階（　）　ヒント（　）番目で正答</span>　声に出して読めた<i class="chk"></i></div><div class="yn"><span class="n">6.</span><span class="t">冬は暑い。</span><span class="opt"><span>はい</span><span>いいえ</span></span></div><div style="text-align:right;margin:1mm 0 0"><span class="hn">段階（　）　ヒント（　）番目で正答</span>　声に出して読めた<i class="chk"></i></div>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet">
+<div class="head"><div><div class="tag">発話課題</div><h1>決まった言葉を続けて言う</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div><p class="ask">次の言葉を声に出して言ってください。止まってしまったら、初めから言い直して構いません。</p><div class="wrap"><div><div class="sr"><span class="n">1.</span><span class="t">一から十まで数える</span></div><div style="text-align:right;margin:-2mm 0 3mm"><span class="hn">段階（　）　ヒント（　）番目で正答</span></div><div class="sr"><span class="n">2.</span><span class="t">月曜日から日曜日まで言う</span></div><div style="text-align:right;margin:-2mm 0 3mm"><span class="hn">段階（　）　ヒント（　）番目で正答</span></div><div class="sr"><span class="n">3.</span><span class="t">朝のあいさつ</span></div><div style="text-align:right;margin:-2mm 0 3mm"><span class="hn">段階（　）　ヒント（　）番目で正答</span></div><div class="sr"><span class="n">4.</span><span class="t">お礼を言う</span></div><div style="text-align:right;margin:-2mm 0 3mm"><span class="hn">段階（　）　ヒント（　）番目で正答</span></div><div class="sr"><span class="n">5.</span><span class="t">食事の前のあいさつ</span></div><div style="text-align:right;margin:-2mm 0 3mm"><span class="hn">段階（　）　ヒント（　）番目で正答</span></div><div class="sr"><span class="n">6.</span><span class="t">自分の名前を言う</span></div><div style="text-align:right;margin:-2mm 0 3mm"><span class="hn">段階（　）　ヒント（　）番目で正答</span></div></div><div class="fam"><h3>ヒント欄（ご家族用。最初は折って隠してください）</h3><div class="it"><b>1.</b>「いち、に」と一緒に言い始め、途中から声を小さくする</div><div class="it"><b>2.</b>「げつ…」と最初の音を言う。カレンダーを指さす</div><div class="it"><b>3.</b>朝、起きたときに言う言葉です。「お…」</div><div class="it"><b>4.</b>物をもらったときの言葉です。「あ…」</div><div class="it"><b>5.</b>手を合わせる身ぶりをする。「い…」</div><div class="it"><b>6.</b>名字の最初の音を言う。保険証などの名前を見せる</div></div></div><p class="hint" style="margin-top:3mm">言えたら、もう一度、今度は少しゆっくり、一つ一つの音をはっきり言ってください。</p>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet">
+<div class="head"><div><div class="tag">伝達課題</div><h1>50音表を指さして伝える</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div><p class="ask">言葉が伝わりにくいときは、伝えたい語の最初の音を50音表で指さしてから、その語を言ってください。</p><table class="goj"><tr><td>ん</td><td>わ</td><td>ら</td><td>や</td><td>ま</td><td>は</td><td>な</td><td>た</td><td>さ</td><td>か</td><td>あ</td></tr><tr><td class="e"></td><td class="e"></td><td>り</td><td class="e"></td><td>み</td><td>ひ</td><td>に</td><td>ち</td><td>し</td><td>き</td><td>い</td></tr><tr><td class="e"></td><td class="e"></td><td>る</td><td>ゆ</td><td>む</td><td>ふ</td><td>ぬ</td><td>つ</td><td>す</td><td>く</td><td>う</td></tr><tr><td class="e"></td><td class="e"></td><td>れ</td><td class="e"></td><td>め</td><td>へ</td><td>ね</td><td>て</td><td>せ</td><td>け</td><td>え</td></tr><tr><td class="e"></td><td>を</td><td>ろ</td><td>よ</td><td>も</td><td>ほ</td><td>の</td><td>と</td><td>そ</td><td>こ</td><td>お</td></tr></table><p class="ask">練習：次の語の最初の音を指さしてから、声に出して言ってください。</p><div class="rp" style="padding:2mm 0"><span class="n">1.</span><span class="w" style="font-size:22pt"><ruby>お茶<rt>おちゃ</rt></ruby></span><small>指さし<i class="chk"></i>言えた<i class="chk"></i></small><span class="hn" style="margin-left:auto">段階（　）</span></div><div class="rp" style="padding:2mm 0"><span class="n">2.</span><span class="w" style="font-size:22pt"><ruby>新聞<rt>しんぶん</rt></ruby></span><small>指さし<i class="chk"></i>言えた<i class="chk"></i></small><span class="hn" style="margin-left:auto">段階（　）</span></div><div class="rp" style="padding:2mm 0"><span class="n">3.</span><span class="w" style="font-size:22pt"><ruby>病院<rt>びょういん</rt></ruby></span><small>指さし<i class="chk"></i>言えた<i class="chk"></i></small><span class="hn" style="margin-left:auto">段階（　）</span></div><div class="rp" style="padding:2mm 0"><span class="n">4.</span><span class="w" style="font-size:22pt"><ruby>娘<rt>むすめ</rt></ruby></span><small>指さし<i class="chk"></i>言えた<i class="chk"></i></small><span class="hn" style="margin-left:auto">段階（　）</span></div><p class="hint" style="margin-top:3mm">この表は切り取って、電話の横や食卓など、いつも使う場所に置いてください。</p>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet key" style="page-break-after:auto;break-after:auto">
+<div class="head"><div><div class="tag">指導者用（患者さんには渡さない）</div><h1>読み上げリスト・解答・評価のポイント</h1></div></div><h2>音韻課題（2頁）で読み上げる語（普通の速さで1回）</h2><p>1 いか　2 くつ　3 さけ　4 はと　5 みせ　6 いけ　（分からなければ理解のヒント①→⑤の順。③は口の形を見せる、⑤は一方を指で隠して「これですか」と1択で確かめる）</p><h2>解答</h2><table><tr><th style="width:22%">呼称課題（3頁）</th><td>1 鍵（かぎ）　2 傘（かさ）　3 椅子（いす）　4 魚（さかな）　5 眼鏡（めがね）　※④文字を見せる　⑤一緒に言う</td></tr><tr><th>音読課題（4頁）</th><td>さ（猿）　ふ（船）　ゆ（雪）　も（餅）　く（口）　ひ（人）／確認：ゆ・く・さ・ひ・も・ふ</td></tr><tr><th>書字課題（6頁）</th><td>1 いと　2 ほし　3 とり　4 あせ　5 にわ（語はヒント欄に記載。家族が読み上げる）</td></tr><tr><th>読解課題（7頁）</th><td>1 はい　2 いいえ　3 はい　4 はい　5 いいえ　6 いいえ</td></tr><tr><th>伝達課題（9頁）</th><td>1 お　2 し　3 び（「ひ」を指さして濁点を書き足してもよい）　4 む</td></tr></table><h2>各頁の進め方</h2><ul><li><b>音読課題（4頁）</b>：仮名1文字を、よく知っている語の最初の音として取り出す方法（手がかり語）です。手がかりの語は本人に合わせて変えて構いません（家族の名前・好物など）。</li><li><b>復唱課題（5頁）</b>：①文字を見ながら→②点だけを見ながら→③何も見ずに、の順に手がかりを減らします。言い直しの回数をメモします。</li><li><b>発話課題（8頁）</b>：数・曜日・あいさつは比較的言いやすい言葉です。言いやすい言葉から始めて、声を出す準備にします。</li></ul><h2>評価のポイント</h2><ul><li>音の誤りの種類（置き換え・入れ替わり・抜け）と、語の始め・終わりのどちらで起こりやすいかを記録します。</li><li>2頁で聞き分けが正確なのに、言うと誤る場合は、聞く力より「音を並べて言う力」の問題が大きいと考えられます。5頁の点を使う練習を増やします。</li><li>3頁・6頁で何番目のヒントで正答したかを比べ、本人に効くヒント（意味・最初の音・文字）をご家族に伝えます。</li><li>言い直しが3回続いたら止め、文字を見ながら一緒に言って成功で終えます。</li><li>9頁の50音表は、実際の生活で使えたかどうか（使った場面・回数）をご家族に記録してもらいます。</li><li>正答（6・5）が8割を超えた頁は、ヒントを一つ減らすか、語を長くします。同時に二つは変えません。</li></ul><p style="font-size:9pt;color:#555">一般的な目安です。最終的な判断は担当の言語聴覚士が行ってください。</p>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+</body>
+</html>

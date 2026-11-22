@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="author" content="KENTA SHINKAWA">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ウェルニッケ失語（軽度）追加課題集</title>
+<link rel="stylesheet" href="common.css">
+<style>
+.ill{width:30mm;height:30mm;fill:none;stroke:#000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;display:block}
+.ill.m{width:25mm;height:25mm}
+.ill.s{width:20mm;height:20mm}
+.ill.xs{width:16mm;height:16mm}
+.it{display:flex;align-items:center;gap:3mm;margin:0 0 4mm}
+.it>.n{font-weight:700;font-size:15pt;min-width:9mm;align-self:flex-start}
+.ops{display:flex;gap:4mm;align-items:center}
+.op{border:1px solid #bbb;border-radius:2mm;padding:1.5mm}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:0 6mm}
+.wds{display:flex;flex-direction:column;gap:2.5mm}
+.wds span{border:1.5px solid #333;border-radius:2mm;padding:.5mm 4mm;font-size:20pt;font-weight:700;text-align:center;min-width:28mm}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:3mm;margin:0 0 3mm}
+.cards div{border:2px solid #333;border-radius:3mm;text-align:center;font-size:18pt;font-weight:700;padding:2.5mm 1mm}
+.okng{display:flex;gap:4mm;font-size:16pt;font-weight:700}
+.okng span{border:1.5px solid #333;border-radius:2mm;padding:1mm 4mm}
+table.rec{border-collapse:collapse;width:100%;font-size:12.5pt}
+table.rec th,table.rec td{border:1px solid #555;padding:1.5mm 2mm;vertical-align:middle;text-align:left}
+table.rec th{background:#f2f2f2;font-weight:700}
+.row{display:flex;align-items:center;gap:4mm;margin:0 0 3.5mm}
+.row .n{font-weight:700;font-size:15pt;min-width:9mm}
+.row .choices{margin:0}
+.note{font-size:10.5pt;color:#555;margin:0 0 2mm}
+.sec{font-size:13pt;font-weight:700;margin:2mm 0 2.5mm;border-left:2.5mm solid #333;padding-left:2.5mm}
+.sec span{font-size:11pt;font-weight:400;color:#555;margin-left:3mm}
+.compact{font-size:9.6pt;line-height:1.45}
+.compact h2{font-size:11.5pt;margin:2.2mm 0 1mm}
+.compact table{font-size:9pt;margin-bottom:1.5mm}
+.compact th,.compact td{padding:.6mm 1.5mm}
+.compact ul,.compact ol{margin-bottom:1mm}
+.compact p{margin:0 0 1.2mm}
+.dense{font-size:9pt;line-height:1.4}
+.dense h2{font-size:10.8pt;margin:1.8mm 0 .6mm}
+.dense table{font-size:8.6pt;margin-bottom:1.2mm}
+.dense p{margin:0 0 1mm}
+.fam{border:1.5px solid #555;border-radius:2mm;padding:2mm 3mm;background:#fafafa;font-size:9.8pt}
+/* ヒント欄つきの表 */
+table.ht{border-collapse:collapse;width:100%}
+table.ht td,table.ht th{border-top:1px solid #bbb;border-bottom:1px solid #bbb;padding:1.2mm 2mm;vertical-align:middle;text-align:left}
+table.ht th{font-size:10pt;font-weight:700;background:#f2f2f2}
+table.ht td.hc,table.ht th.hc{border-left:2px dashed #333;font-size:9.6pt;line-height:1.45;width:58mm;color:#333}
+table.ht th.hc{background:#eee}
+table.ht td.rc{font-size:9.5pt;color:#555;white-space:nowrap;width:24mm}
+table.ht.sm td{padding:.7mm 2mm}
+table.ht.sm td.hc{font-size:8.9pt;line-height:1.32}
+.xdense{font-size:8.4pt;line-height:1.33}
+.xdense h2{font-size:10pt;margin:1.4mm 0 .4mm}
+.xdense table{font-size:8.1pt}
+.xdense th,.xdense td{padding:.3mm 1.2mm}
+.wline{display:inline-block;border-bottom:1px solid #9a9a9a;min-width:40mm;height:9mm;vertical-align:bottom}
+.ln{border-bottom:1px solid #9a9a9a;height:11mm}
+.step{display:flex;align-items:flex-end;height:11mm;border-bottom:1px solid #9a9a9a;margin-top:3mm}
+.step b{font-size:11pt;min-width:14mm;color:#555}
+.step span{font-size:10.5pt;color:#555}
+.kbox{display:inline-block;width:13mm;height:13mm;border:1.5px solid #333;margin-right:1mm;vertical-align:middle}
+</style>
+</head>
+<body>
+
+<div class="noprint">印刷するときは <b>Ctrl＋P</b> を押してください（用紙：A4縦）。1頁目と最後の頁は指導者用です。患者さんには2〜9頁の課題用紙を渡してください。</div>
+<section class="sheet guide compact">
+<div class="head"><div><div class="tag">指導者用</div><h1>ウェルニッケ失語（軽度）追加課題集の使い方</h1></div></div>
+<h2>1．この追加課題集のねらい</h2>
+<p>基本教材「03-3 ウェルニッケ失語（軽度）」の次に、または並行して使います。難しさは基本教材と同じ（文・談話レベル、複数の指示、あまり使わない語、長文、生活や仕事への復帰に向けた実用課題）です。予定表への書き込み、天気予報や講座案内の聞き取り、言い換え、話の並べ替え、受診や買い物で物の名前が出ないときの説明など、<b>新しい場面</b>で正確さと自己修正を練習します。基本教材と同じ語・同じ問題は使っていません。</p>
+<h2>2．課題ページの一覧と難しさ</h2>
+<table>
+<tr><th style="width:6%">頁</th><th style="width:22%">課題</th><th>内容</th><th style="width:15%">難しさ</th></tr>
+<tr><td>2</td><td>聴理解課題1</td><td>指示を聞いて、予定表に印や予定を書き込む（10問）</td><td>普通〜難しい</td></tr>
+<tr><td>3</td><td>聴理解課題2</td><td>天気予報と講座の案内を聞き、文が正しいか判断する（10問）</td><td>普通</td></tr>
+<tr><td>4</td><td>喚語課題</td><td>説明を聞いて（読んで）語を言う（10問・ご家族用ヒント欄つき）</td><td>普通〜難しい</td></tr>
+<tr><td>5</td><td>言い換え課題</td><td>下線の言い回しを、同じ意味の別の言葉で書く（10問）</td><td>難しい</td></tr>
+<tr><td>6</td><td>読解課題</td><td>健康診断の案内を読んで、質問に書いて答える（8問）</td><td>普通〜難しい</td></tr>
+<tr><td>7</td><td>書字課題</td><td>読み上げた文を聞いて書く（8問）</td><td>難しい</td></tr>
+<tr><td>8</td><td>談話課題</td><td>話の順番を並べ替えて、まとめて話す（2話）</td><td>普通</td></tr>
+<tr><td>9</td><td>実用課題</td><td>受診で伝えることをまとめる。名前が出ない物を説明する（9問）</td><td>普通〜難しい</td></tr>
+<tr><td>10</td><td>指導者用</td><td>読み上げリスト・解答・ヒント・評価のポイント</td><td>—</td></tr>
+</table>
+<p><b>どの課題から始めるか：</b>生活で困っている場面から選びます。聞き間違いが多い方は2・3頁、言葉が出にくい方は4・9頁、読み書きを仕事で使う方は6・7頁から。1回30分程度、2〜3頁。正確にできてから、時間を計って速さも見ます。</p>
+<h2>3．ヒントの出し方（上から順に強くする）</h2>
+<table>
+<tr><th style="width:17%">課題の種類</th><th>ヒントの順番（①から順に強くする）</th></tr>
+<tr><td>呼称・喚語</td><td>①意味・仲間（「果物の一つです」）→②使い道・場面（「皮をむいて食べます」）→③最初の音（「み…」）→④文字を見せる→⑤一緒に言う（復唱）</td></tr>
+<tr><td>理解</td><td>①もう一度ゆっくり言う→②区切って言う→③指さし・身ぶりを添える→④文字を添える→⑤選択肢を減らす</td></tr>
+<tr><td>書字</td><td>①仮名で書いてもよい→②最初の1文字を見せる→③文字数の枠を示す→④見本を見て写す</td></tr>
+</table>
+<h2>4．記録のしかた</h2>
+<p>1問ごとに段階6〜1で記録します（6 すぐに完全正答、5 時間はかかったが完全正答、4 不完全な正答、3 ヒントの後に正答、2 関連した反応、1 誤り・無反応）。<b>6・5を正答</b>として数えます。ヒントを出して正答できた場合は<b>段階4以下</b>（目安は段階3）とし、課題用紙の「ヒント（　）番目で正答」の欄に、何番目のヒントで正答できたかを書きます。番号が小さくなっていくことも進歩の印です。</p>
+<h2>5．ご家族向けの説明（このまま読み上げてください）</h2>
+<div class="fam">「日常の会話はかなりできるようになっていますが、長い話や予定・数字の聞き取り、物の名前の言い違いがまだ起こりやすい段階です。この用紙では、そうした場面を練習します。言葉が出てこないときは、右側の『ヒント欄』を①から順に一つずつ読みます（最初は折って隠しておきます）。何番目で言えたかを書いてください。普段の会話では、言い違いをその場で直すより、『〇〇のことね』と自然に言い返していただくのがよい方法です。」</div>
+<p><b>ここに示したのは一般的な目安です。最終的な判断は担当の言語聴覚士が行います。</b></p>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet">
+<div class="head"><div><div class="tag">聴理解課題 1</div><h1>指示を聞いて予定表に書き込む</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div>
+<p class="ask">来月の予定表です。指導者が言う指示のとおりに、丸や三角などの印を付けたり、予定を書き込んだりしてください。</p>
+<p class="hint">指示は1回だけ言います。分からないときは「もう一度お願いします」と伝えてください。指示は全部で10あります。</p>
+<table style="border-collapse:collapse;width:100%;table-layout:fixed;margin-top:2mm"><tr><th style="border:1.5px solid #333;background:#f2f2f2;font-size:12.5pt;padding:1mm">日</th><th style="border:1.5px solid #333;background:#f2f2f2;font-size:12.5pt;padding:1mm">月</th><th style="border:1.5px solid #333;background:#f2f2f2;font-size:12.5pt;padding:1mm">火</th><th style="border:1.5px solid #333;background:#f2f2f2;font-size:12.5pt;padding:1mm">水</th><th style="border:1.5px solid #333;background:#f2f2f2;font-size:12.5pt;padding:1mm">木</th><th style="border:1.5px solid #333;background:#f2f2f2;font-size:12.5pt;padding:1mm">金</th><th style="border:1.5px solid #333;background:#f2f2f2;font-size:12.5pt;padding:1mm">土</th></tr><tr><td style="border:1.5px solid #333;height:31mm;background:#f7f7f7"></td><td style="border:1.5px solid #333;height:31mm;background:#f7f7f7"></td><td style="border:1.5px solid #333;height:31mm;background:#f7f7f7"></td><td style="border:1.5px solid #333;height:31mm;vertical-align:top;padding:1mm 1.5mm;font-size:12pt;font-weight:700">1</td><td style="border:1.5px solid #333;height:31mm;vertical-align:top;padding:1mm 1.5mm;font-size:12pt;font-weight:700">2</td><td style="border:1.5px solid #333;height:31mm;vertical-align:top;padding:1mm 1.5mm;font-size:12pt;font-weight:700">3</td><td style="border:1.5px solid #333;height:31mm;vertical-align:top;padding:1mm 1.5mm;font-size:12pt;font-weight:700">4</td></tr><tr><td style="border:1.5px solid #333;height:31mm;vertical-align:top;padding:1mm 1.5mm;font-size:12pt;font-weight:700">5</td><td style="border:1.5px solid #333;height:31mm;vertical-align:top;padding:1mm 1.5mm;font-size:12pt;font-weight:700">6</td><td style="border:1.5px solid #333;height:31mm;vertical-align:top;padding:1mm 1.5mm;font-size:12pt;font-weight:700">7</td><td style="border:1.5px solid #333;height:31mm;vertical-align:top;padding:1mm 1.5mm;font-size:12pt;font-weight:700">8</td><td style="border:1.5px solid #333;height:31mm;vertical-align:top;padding:1mm 1.5mm;font-size:12pt;font-weight:700">9</td><td style="border:1.5px solid #333;height:31mm;vertical-align:top;padding:1mm 1.5mm;font-size:12pt;font-weight:700">10</td><td style="border:1.5px solid #333;height:31mm;vertical-align:top;padding:1mm 1.5mm;font-size:12pt;font-weight:700">11</td></tr><tr><td style="border:1.5px solid #333;height:31mm;vertical-align:top;padding:1mm 1.5mm;font-size:12pt;font-weight:700">12</td><td style="border:1.5px solid #333;height:31mm;vertical-align:top;padding:1mm 1.5mm;font-size:12pt;font-weight:700">13</td><td style="border:1.5px solid #333;height:31mm;vertical-align:top;padding:1mm 1.5mm;font-size:12pt;font-weight:700">14</td><td style="border:1.5px solid #333;height:31mm;vertical-align:top;padding:1mm 1.5mm;font-size:12pt;font-weight:700">15</td><td style="border:1.5px solid #333;height:31mm;vertical-align:top;padding:1mm 1.5mm;font-size:12pt;font-weight:700">16</td><td style="border:1.5px solid #333;height:31mm;vertical-align:top;padding:1mm 1.5mm;font-size:12pt;font-weight:700">17</td><td style="border:1.5px solid #333;height:31mm;vertical-align:top;padding:1mm 1.5mm;font-size:12pt;font-weight:700">18</td></tr><tr><td style="border:1.5px solid #333;height:31mm;vertical-align:top;padding:1mm 1.5mm;font-size:12pt;font-weight:700">19</td><td style="border:1.5px solid #333;height:31mm;vertical-align:top;padding:1mm 1.5mm;font-size:12pt;font-weight:700">20</td><td style="border:1.5px solid #333;height:31mm;vertical-align:top;padding:1mm 1.5mm;font-size:12pt;font-weight:700">21</td><td style="border:1.5px solid #333;height:31mm;vertical-align:top;padding:1mm 1.5mm;font-size:12pt;font-weight:700">22</td><td style="border:1.5px solid #333;height:31mm;vertical-align:top;padding:1mm 1.5mm;font-size:12pt;font-weight:700">23</td><td style="border:1.5px solid #333;height:31mm;vertical-align:top;padding:1mm 1.5mm;font-size:12pt;font-weight:700">24</td><td style="border:1.5px solid #333;height:31mm;vertical-align:top;padding:1mm 1.5mm;font-size:12pt;font-weight:700">25</td></tr><tr><td style="border:1.5px solid #333;height:31mm;vertical-align:top;padding:1mm 1.5mm;font-size:12pt;font-weight:700">26</td><td style="border:1.5px solid #333;height:31mm;vertical-align:top;padding:1mm 1.5mm;font-size:12pt;font-weight:700">27</td><td style="border:1.5px solid #333;height:31mm;vertical-align:top;padding:1mm 1.5mm;font-size:12pt;font-weight:700">28</td><td style="border:1.5px solid #333;height:31mm;vertical-align:top;padding:1mm 1.5mm;font-size:12pt;font-weight:700">29</td><td style="border:1.5px solid #333;height:31mm;vertical-align:top;padding:1mm 1.5mm;font-size:12pt;font-weight:700">30</td><td style="border:1.5px solid #333;height:31mm;background:#f7f7f7"></td><td style="border:1.5px solid #333;height:31mm;background:#f7f7f7"></td></tr></table>
+<div class="step"><b>記録</b><span>（指導者記入）正答（段階6・5）　　　／10問　　聞き返した回数：　　回　　ヒント（　）番目で正答した問題：</span></div>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet">
+<div class="head"><div><div class="tag">聴理解課題 2</div><h1>話を聞いて正しいか判断する</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div>
+<p class="ask">指導者が読む話を聞いてください。下の文が話の内容と合っていれば「正しい」、合っていなければ「違う」に○を付けてください。</p>
+<p class="hint">話を聞く前に、下の文を読んでおいて構いません。話は1回だけ読みます。</p>
+<div class="sec">話1　明日の天気予報</div>
+<div class="row" style="margin-bottom:3mm;border-bottom:1px solid #ddd;padding-bottom:2mm"><span class="n">1.</span><span style="flex:1;font-size:14pt">明日の午前中は晴れる。</span><div class="choices" style="gap:3mm"><span style="font-size:13pt;padding:.5mm 3mm">正しい</span><span style="font-size:13pt;padding:.5mm 3mm">違う</span></div></div><div class="row" style="margin-bottom:3mm;border-bottom:1px solid #ddd;padding-bottom:2mm"><span class="n">2.</span><span style="flex:1;font-size:14pt">雨は朝から降り出す。</span><div class="choices" style="gap:3mm"><span style="font-size:13pt;padding:.5mm 3mm">正しい</span><span style="font-size:13pt;padding:.5mm 3mm">違う</span></div></div><div class="row" style="margin-bottom:3mm;border-bottom:1px solid #ddd;padding-bottom:2mm"><span class="n">3.</span><span style="flex:1;font-size:14pt">明日は今日より暖かくなる。</span><div class="choices" style="gap:3mm"><span style="font-size:13pt;padding:.5mm 3mm">正しい</span><span style="font-size:13pt;padding:.5mm 3mm">違う</span></div></div><div class="row" style="margin-bottom:3mm;border-bottom:1px solid #ddd;padding-bottom:2mm"><span class="n">4.</span><span style="flex:1;font-size:14pt">明日の最高気温は十四度の予想である。</span><div class="choices" style="gap:3mm"><span style="font-size:13pt;padding:.5mm 3mm">正しい</span><span style="font-size:13pt;padding:.5mm 3mm">違う</span></div></div><div class="row" style="margin-bottom:3mm;border-bottom:1px solid #ddd;padding-bottom:2mm"><span class="n">5.</span><span style="flex:1;font-size:14pt">洗濯物は夕方まで干しておくとよい。</span><div class="choices" style="gap:3mm"><span style="font-size:13pt;padding:.5mm 3mm">正しい</span><span style="font-size:13pt;padding:.5mm 3mm">違う</span></div></div>
+<div class="sec" style="margin-top:4mm">話2　公民館の講座の案内</div>
+<div class="row" style="margin-bottom:3mm;border-bottom:1px solid #ddd;padding-bottom:2mm"><span class="n">6.</span><span style="flex:1;font-size:14pt">書道教室は日曜日に開かれる。</span><div class="choices" style="gap:3mm"><span style="font-size:13pt;padding:.5mm 3mm">正しい</span><span style="font-size:13pt;padding:.5mm 3mm">違う</span></div></div><div class="row" style="margin-bottom:3mm;border-bottom:1px solid #ddd;padding-bottom:2mm"><span class="n">7.</span><span style="flex:1;font-size:14pt">参加費は一回五百円である。</span><div class="choices" style="gap:3mm"><span style="font-size:13pt;padding:.5mm 3mm">正しい</span><span style="font-size:13pt;padding:.5mm 3mm">違う</span></div></div><div class="row" style="margin-bottom:3mm;border-bottom:1px solid #ddd;padding-bottom:2mm"><span class="n">8.</span><span style="flex:1;font-size:14pt">筆は自分で持って行く。</span><div class="choices" style="gap:3mm"><span style="font-size:13pt;padding:.5mm 3mm">正しい</span><span style="font-size:13pt;padding:.5mm 3mm">違う</span></div></div><div class="row" style="margin-bottom:3mm;border-bottom:1px solid #ddd;padding-bottom:2mm"><span class="n">9.</span><span style="flex:1;font-size:14pt">半紙は各自で用意する。</span><div class="choices" style="gap:3mm"><span style="font-size:13pt;padding:.5mm 3mm">正しい</span><span style="font-size:13pt;padding:.5mm 3mm">違う</span></div></div><div class="row" style="margin-bottom:3mm;border-bottom:1px solid #ddd;padding-bottom:2mm"><span class="n">10.</span><span style="flex:1;font-size:14pt">申し込みは窓口でも電話でもできる。</span><div class="choices" style="gap:3mm"><span style="font-size:13pt;padding:.5mm 3mm">正しい</span><span style="font-size:13pt;padding:.5mm 3mm">違う</span></div></div>
+<p class="hint" style="margin-top:3mm">「違う」に○を付けた文は、どこが違うかを指導者に話してください。</p>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet">
+<div class="head"><div><div class="tag">喚語課題</div><h1>説明を聞いて語を言う</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div>
+<p class="ask">指導者が読む説明を聞いて、当てはまる言葉を言ってください。説明は自分で読んでも構いません。</p>
+<p class="hint">右端のヒント欄は、ご家族が使います。最初は点線で折って隠してください。</p>
+<table class="ht sm"><tr><th>説明</th><th>記録</th><th class="hc">ヒント欄（ご家族用。最初は折って隠してください）</th></tr><tr><td><span style="font-size:12.5pt"><b>1.</b> 電車やバスが何時に出るかを、駅ごとにまとめた表</span></td><td class="rc">ヒント（　　）<br>番目で正答</td><td class="hc">① 表・案内の一つです<br>② 駅の掲示板や時刻を調べるときに見ます<br>③ 「じ…」</td></tr><tr><td><span style="font-size:12.5pt"><b>2.</b> 遠くの物を大きく見るための、両手で持つ道具</span></td><td class="rc">ヒント（　　）<br>番目で正答</td><td class="hc">① 見るための道具です<br>② 野鳥を見たり、競技場で選手を見たりします<br>③ 「そう…」</td></tr><tr><td><span style="font-size:12.5pt"><b>3.</b> 体の重さを量る道具</span></td><td class="rc">ヒント（　　）<br>番目で正答</td><td class="hc">① 量る道具です<br>② お風呂場の近くに置いて、毎朝乗ります<br>③ 「たい…」</td></tr><tr><td><span style="font-size:12.5pt"><b>4.</b> 書類に押す、名前を彫った印</span></td><td class="rc">ヒント（　　）<br>番目で正答</td><td class="hc">① 事務で使う物です<br>② 役所や銀行の書類で、名前の横に押します<br>③ 「は…」（「いん…」）</td></tr><tr><td><span style="font-size:12.5pt"><b>5.</b> 火事のときに、火を消すために使う赤い道具</span></td><td class="rc">ヒント（　　）<br>番目で正答</td><td class="hc">① いざというときの道具です<br>② ピンを抜いてレバーを握ります<br>③ 「しょう…」</td></tr><tr><td><span style="font-size:12.5pt"><b>6.</b> 新年に、神社やお寺へお参りに行くこと</span></td><td class="rc">ヒント（　　）<br>番目で正答</td><td class="hc">① お正月の行事です<br>② 一月の初めに、家族でお参りします<br>③ 「はつ…」</td></tr><tr><td><span style="font-size:12.5pt"><b>7.</b> 男性がよく行く、髪を切って整える店</span></td><td class="rc">ヒント（　　）<br>番目で正答</td><td class="hc">① 店の名前です<br>② ひげそりもしてくれます<br>③ 「と…」（「り…」）</td></tr><tr><td><span style="font-size:12.5pt"><b>8.</b> お湯を沸かして、温かいまま保っておく電気の道具</span></td><td class="rc">ヒント（　　）<br>番目で正答</td><td class="hc">① 台所の電気製品です<br>② ボタンを押すと、お茶用のお湯が出ます<br>③ 「でんき…」</td></tr><tr><td><span style="font-size:12.5pt"><b>9.</b> 夏に、亡くなった家族の霊を迎えて供養する行事</span></td><td class="rc">ヒント（　　）<br>番目で正答</td><td class="hc">① 夏の行事です<br>② 八月に、迎え火やお墓参りをします<br>③ 「お…」</td></tr><tr><td><span style="font-size:12.5pt"><b>10.</b> 心臓が血液を送り出す力を測った値。上と下がある</span></td><td class="rc">ヒント（　　）<br>番目で正答</td><td class="hc">① 健康診断で測る値です<br>② 腕に布を巻いて測ります<br>③ 「けつ…」</td></tr></table>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet">
+<div class="head"><div><div class="tag">言い換え課題</div><h1>同じ意味の別の言葉で言う</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div>
+<p class="ask">下線の部分を、同じ意味の別の言葉に言い換えて、線の上に書いてください。書いた後、文全体を声に出して読んでください。</p>
+<p class="hint">例：「母は<u>腰を下ろした</u>。」→「座った」</p>
+<div style="margin-bottom:2mm"><div style="font-size:14pt"><b style="display:inline-block;min-width:9mm">1.</b>父は毎朝、届いた手紙に<u>目を通す</u>。</div><div style="display:flex;align-items:flex-end;gap:3mm;margin-left:9mm"><span style="font-size:11pt;color:#555">→</span><div class="ln" style="flex:1;height:9mm"></div></div></div><div style="margin-bottom:2mm"><div style="font-size:14pt"><b style="display:inline-block;min-width:9mm">2.</b>会議の時間を一時間<u>繰り上げる</u>。</div><div style="display:flex;align-items:flex-end;gap:3mm;margin-left:9mm"><span style="font-size:11pt;color:#555">→</span><div class="ln" style="flex:1;height:9mm"></div></div></div><div style="margin-bottom:2mm"><div style="font-size:14pt"><b style="display:inline-block;min-width:9mm">3.</b>店の前に、長い<u>行列ができている</u>。</div><div style="display:flex;align-items:flex-end;gap:3mm;margin-left:9mm"><span style="font-size:11pt;color:#555">→</span><div class="ln" style="flex:1;height:9mm"></div></div></div><div style="margin-bottom:2mm"><div style="font-size:14pt"><b style="display:inline-block;min-width:9mm">4.</b>姉はこの一年で、料理の<u>腕を上げた</u>。</div><div style="display:flex;align-items:flex-end;gap:3mm;margin-left:9mm"><span style="font-size:11pt;color:#555">→</span><div class="ln" style="flex:1;height:9mm"></div></div></div><div style="margin-bottom:2mm"><div style="font-size:14pt"><b style="display:inline-block;min-width:9mm">5.</b>息子は朝から晩まで<u>働きづめだ</u>。</div><div style="display:flex;align-items:flex-end;gap:3mm;margin-left:9mm"><span style="font-size:11pt;color:#555">→</span><div class="ln" style="flex:1;height:9mm"></div></div></div><div style="margin-bottom:2mm"><div style="font-size:14pt"><b style="display:inline-block;min-width:9mm">6.</b>その仕事は、私が<u>引き受けます</u>。</div><div style="display:flex;align-items:flex-end;gap:3mm;margin-left:9mm"><span style="font-size:11pt;color:#555">→</span><div class="ln" style="flex:1;height:9mm"></div></div></div><div style="margin-bottom:2mm"><div style="font-size:14pt"><b style="display:inline-block;min-width:9mm">7.</b>友人の話に、じっと<u>耳を傾けた</u>。</div><div style="display:flex;align-items:flex-end;gap:3mm;margin-left:9mm"><span style="font-size:11pt;color:#555">→</span><div class="ln" style="flex:1;height:9mm"></div></div></div><div style="margin-bottom:2mm"><div style="font-size:14pt"><b style="display:inline-block;min-width:9mm">8.</b>この上着は、なかなか<u>値が張る</u>。</div><div style="display:flex;align-items:flex-end;gap:3mm;margin-left:9mm"><span style="font-size:11pt;color:#555">→</span><div class="ln" style="flex:1;height:9mm"></div></div></div><div style="margin-bottom:2mm"><div style="font-size:14pt"><b style="display:inline-block;min-width:9mm">9.</b>雨のため、今日の試合は<u>流れた</u>。</div><div style="display:flex;align-items:flex-end;gap:3mm;margin-left:9mm"><span style="font-size:11pt;color:#555">→</span><div class="ln" style="flex:1;height:9mm"></div></div></div><div style="margin-bottom:2mm"><div style="font-size:14pt"><b style="display:inline-block;min-width:9mm">10.</b>来客があるので、部屋を<u>片付けておく</u>。</div><div style="display:flex;align-items:flex-end;gap:3mm;margin-left:9mm"><span style="font-size:11pt;color:#555">→</span><div class="ln" style="flex:1;height:9mm"></div></div></div>
+<div class="step"><b>記録</b><span>（指導者記入）正答（段階6・5）　　　／10問　　ヒント（　）番目で正答した問題：</span></div>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet">
+<div class="head"><div><div class="tag">読解課題</div><h1>案内を読んで質問に答える</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div>
+<p class="ask">次の案内を読んで、下の質問の答えを線の上に書いてください。</p>
+<div class="read" style="font-size:12.5pt;line-height:1.75;margin-bottom:3mm;padding:3mm 6mm"><b>市の健康診断のご案内</b><br>対象は、四十歳から七十四歳で、市の国民健康保険に加入している方です。期間は六月一日から十月三十一日までで、市内の指定医療機関で受けられます。受けるときは、同封の受診券と本人確認書類を持って行ってください。自己負担額は五百円ですが、七十歳以上の方は無料です。前の日の夜九時以降は、食事をとらないでください。水やお茶は飲んで構いません。結果は約三週間後に、受けた医療機関で説明があります。予約が必要な医療機関もありますので、事前に電話で確かめてください。<br>問い合わせ：市役所　健康推進課（平日　午前八時半〜午後五時十五分）</div>
+<div style="margin-bottom:1mm"><div style="font-size:13pt"><b style="display:inline-block;min-width:8mm">1.</b>健康診断を受けられる期間は、いつからいつまでですか。</div><div class="ln" style="height:8.5mm;margin-left:8mm"></div></div><div style="margin-bottom:1mm"><div style="font-size:13pt"><b style="display:inline-block;min-width:8mm">2.</b>受けに行くときに持って行く物は何ですか。（二つ）</div><div class="ln" style="height:8.5mm;margin-left:8mm"></div></div><div style="margin-bottom:1mm"><div style="font-size:13pt"><b style="display:inline-block;min-width:8mm">3.</b>七十二歳の人の自己負担はいくらですか。</div><div class="ln" style="height:8.5mm;margin-left:8mm"></div></div><div style="margin-bottom:1mm"><div style="font-size:13pt"><b style="display:inline-block;min-width:8mm">4.</b>六十五歳の人の自己負担はいくらですか。</div><div class="ln" style="height:8.5mm;margin-left:8mm"></div></div><div style="margin-bottom:1mm"><div style="font-size:13pt"><b style="display:inline-block;min-width:8mm">5.</b>受ける前の日の食事で、気を付けることは何ですか。</div><div class="ln" style="height:8.5mm;margin-left:8mm"></div></div><div style="margin-bottom:1mm"><div style="font-size:13pt"><b style="display:inline-block;min-width:8mm">6.</b>当日の朝、水を飲んでもよいですか。</div><div class="ln" style="height:8.5mm;margin-left:8mm"></div></div><div style="margin-bottom:1mm"><div style="font-size:13pt"><b style="display:inline-block;min-width:8mm">7.</b>結果は、いつ、どこで聞けますか。</div><div class="ln" style="height:8.5mm;margin-left:8mm"></div></div><div style="margin-bottom:1mm"><div style="font-size:13pt"><b style="display:inline-block;min-width:8mm">8.</b>土曜日に、問い合わせの電話をかけられますか。</div><div class="ln" style="height:8.5mm;margin-left:8mm"></div></div>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet">
+<div class="head"><div><div class="tag">書字課題</div><h1>聞いた文を書く</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div>
+<p class="ask">指導者が読み上げる文を聞いて、線の上に書いてください。漢字が分からないところは、仮名で構いません。</p>
+<p class="hint">文は2回まで読み上げます。書いた後、助詞（は・を・へ）と、小さい「っ・ゃ・ゅ・ょ」、のばす音を確かめてください。</p>
+<div style="display:flex;align-items:flex-end;gap:3mm"><span style="font-size:14pt;font-weight:700;min-width:9mm">1.</span><div class="ln" style="flex:1;height:14mm"></div><span style="font-size:9pt;color:#555;white-space:nowrap">ヒント（　）番目</span></div><div style="display:flex;align-items:flex-end;gap:3mm"><span style="font-size:14pt;font-weight:700;min-width:9mm">2.</span><div class="ln" style="flex:1;height:14mm"></div><span style="font-size:9pt;color:#555;white-space:nowrap">ヒント（　）番目</span></div><div style="display:flex;align-items:flex-end;gap:3mm"><span style="font-size:14pt;font-weight:700;min-width:9mm">3.</span><div class="ln" style="flex:1;height:14mm"></div><span style="font-size:9pt;color:#555;white-space:nowrap">ヒント（　）番目</span></div><div style="display:flex;align-items:flex-end;gap:3mm"><span style="font-size:14pt;font-weight:700;min-width:9mm">4.</span><div class="ln" style="flex:1;height:14mm"></div><span style="font-size:9pt;color:#555;white-space:nowrap">ヒント（　）番目</span></div><div style="display:flex;align-items:flex-end;gap:3mm"><span style="font-size:14pt;font-weight:700;min-width:9mm">5.</span><div class="ln" style="flex:1;height:14mm"></div><span style="font-size:9pt;color:#555;white-space:nowrap">ヒント（　）番目</span></div><div style="display:flex;align-items:flex-end;gap:3mm"><span style="font-size:14pt;font-weight:700;min-width:9mm">6.</span><div class="ln" style="flex:1;height:14mm"></div><span style="font-size:9pt;color:#555;white-space:nowrap">ヒント（　）番目</span></div><div style="display:flex;align-items:flex-end;gap:3mm"><span style="font-size:14pt;font-weight:700;min-width:9mm">7.</span><div class="ln" style="flex:1;height:14mm"></div><span style="font-size:9pt;color:#555;white-space:nowrap">ヒント（　）番目</span></div><div style="display:flex;align-items:flex-end;gap:3mm"><span style="font-size:14pt;font-weight:700;min-width:9mm">8.</span><div class="ln" style="flex:1;height:14mm"></div><span style="font-size:9pt;color:#555;white-space:nowrap">ヒント（　）番目</span></div>
+<div class="card" style="margin-top:5mm;padding:3mm 6mm"><h2 style="font-size:13pt">書けないときのヒント（指導者・ご家族用）</h2><p style="margin:0;font-size:12pt">① 仮名で書いてよいと伝える　② 最初の1文字を見せる　③ 文字数の枠を書いて示す　④ 見本を見て写す</p></div>
+<div class="step"><b>記録</b><span>（指導者記入）正答（段階6・5）　　　／8問　　誤りの種類（助詞・小さい字・漢字・語の抜け）：</span></div>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet">
+<div class="head"><div><div class="tag">談話課題</div><h1>話の順番を並べ替えて話す</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div>
+<p class="ask">文の順番がばらばらになっています。話の流れに合うように、左の枠に1、2、3…と番号を書いてください。並べ終えたら、話全体を自分の言葉で指導者に話してください。</p>
+<div class="sec">話A　届いた荷物</div>
+<div style="display:flex;align-items:center;gap:3mm;margin-bottom:1.5mm"><span class="kbox" style="width:10mm;height:10mm"></span><span style="font-size:13pt"><b>A1</b>　夕方の六時から八時の間を指定した。</span></div><div style="display:flex;align-items:center;gap:3mm;margin-bottom:1.5mm"><span class="kbox" style="width:10mm;height:10mm"></span><span style="font-size:13pt"><b>A2</b>　昼過ぎに買い物から帰ると、郵便受けに不在連絡票が入っていた。</span></div><div style="display:flex;align-items:center;gap:3mm;margin-bottom:1.5mm"><span class="kbox" style="width:10mm;height:10mm"></span><span style="font-size:13pt"><b>A3</b>　箱を開けると、地元のみかんがたくさん入っていた。</span></div><div style="display:flex;align-items:center;gap:3mm;margin-bottom:1.5mm"><span class="kbox" style="width:10mm;height:10mm"></span><span style="font-size:13pt"><b>A4</b>　票に書かれた番号に電話をかけ、再配達を頼んだ。</span></div><div style="display:flex;align-items:center;gap:3mm;margin-bottom:1.5mm"><span class="kbox" style="width:10mm;height:10mm"></span><span style="font-size:13pt"><b>A5</b>　七時ごろ、配達の人が荷物を届けてくれた。</span></div><div style="display:flex;align-items:center;gap:3mm;margin-bottom:1.5mm"><span class="kbox" style="width:10mm;height:10mm"></span><span style="font-size:13pt"><b>A6</b>　息子が送ってくれた荷物が届いていたらしい。</span></div>
+<div class="sec" style="margin-top:4mm">話B　庭の朝顔</div>
+<div style="display:flex;align-items:center;gap:3mm;margin-bottom:1.5mm"><span class="kbox" style="width:10mm;height:10mm"></span><span style="font-size:13pt"><b>B1</b>　七月のある朝、初めて青い花が一つ咲いた。</span></div><div style="display:flex;align-items:center;gap:3mm;margin-bottom:1.5mm"><span class="kbox" style="width:10mm;height:10mm"></span><span style="font-size:13pt"><b>B2</b>　五月の初めに、庭のプランターに朝顔の種をまいた。</span></div><div style="display:flex;align-items:center;gap:3mm;margin-bottom:1.5mm"><span class="kbox" style="width:10mm;height:10mm"></span><span style="font-size:13pt"><b>B3</b>　写真を撮って、遠くに住む娘に送った。</span></div><div style="display:flex;align-items:center;gap:3mm;margin-bottom:1.5mm"><span class="kbox" style="width:10mm;height:10mm"></span><span style="font-size:13pt"><b>B4</b>　毎朝、じょうろで水をやった。</span></div><div style="display:flex;align-items:center;gap:3mm;margin-bottom:1.5mm"><span class="kbox" style="width:10mm;height:10mm"></span><span style="font-size:13pt"><b>B5</b>　六月になると、つるが支柱に巻き付き始めた。</span></div>
+<p class="ask" style="margin:4mm 0 1mm">話Aか話Bのどちらかを、二つの文にまとめて書いてください。</p>
+<div class="ln" style="height:10mm"></div><div class="ln" style="height:10mm"></div>
+<div class="step"><b>記録</b><span>（指導者記入）順番 A：正・誤　B：正・誤　　話の要点の数：　　　話した時間：　　秒</span></div>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet">
+<div class="head"><div><div class="tag">実用課題</div><h1>伝えることをまとめる・物を説明する</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div>
+<p class="ask">1．次の場面を思い浮かべて、医師に伝えることを表にまとめてください。まとめたら、指導者を医師役にして話してください。</p>
+<div class="memo" style="font-size:13pt;line-height:1.7"><b>場面</b>：一週間ほど前から、朝起きると右の肩が重く、腕を上げると痛みます。湿布を貼っていますが、あまり変わりません。夜、右を下にして寝ると目が覚めます。</div>
+<table class="rec" style="margin-bottom:4mm"><tr><th style="width:34%">いつから</th><td style="height:9.5mm"></td></tr><tr><th>どこが</th><td style="height:9.5mm"></td></tr><tr><th>どんなときに、どのように</th><td style="height:9.5mm"></td></tr><tr><th>自分でしたこと</th><td style="height:9.5mm"></td></tr><tr><th>困っていること</th><td style="height:9.5mm"></td></tr><tr><th>医師に聞きたいこと</th><td style="height:9.5mm"></td></tr></table>
+<p class="ask" style="margin-bottom:2mm">2．店で、物の名前が出てこなかったとします。名前を使わずに、店員に分かるように説明してください。</p>
+<p class="hint" style="margin-bottom:2mm">「何の仲間か」「何に使うか」「形や大きさ」「どこに置いてあるか」の順に言うと伝わりやすくなります。</p>
+<div style="font-size:13.5pt"><b>①</b> 延長コード　<span style="font-size:11pt;color:#555">（コンセントが遠いときに使う物）</span></div><div class="ln" style="height:9.5mm"></div>
+<div style="font-size:13.5pt;margin-top:1.5mm"><b>②</b> 鍋つかみ</div><div class="ln" style="height:9.5mm"></div>
+<div style="font-size:13.5pt;margin-top:1.5mm"><b>③</b> 虫よけスプレー</div><div class="ln" style="height:9.5mm"></div>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet guide compact dense xdense" style="page-break-after:auto;break-after:auto">
+<div class="head"><div><div class="tag">指導者用（患者さんには渡さない）</div><h1>読み上げリスト・解答・ヒント・評価のポイント</h1></div></div>
+<p>普通の速さで1回だけ読みます。本人が聞き返したら同じ速さで繰り返し（段階5）、それでも難しければ1頁の順にヒントを出し、何番目で正答したかを記録します（段階4以下）。</p>
+<h2>聴理解課題1（2頁）指示（正答）　※予定表は1日が水曜日、30日まで</h2>
+<table><tr><th style="width:3%">No</th><th>読む指示</th><th style="width:30%">正答</th></tr>
+<tr><td>1</td><td>最初の月曜日に丸を付けてください。</td><td>6日に丸</td></tr>
+<tr><td>2</td><td>10日の欄に「歯医者」と書いてください。</td><td>10日に「歯医者」</td></tr>
+<tr><td>3</td><td>三回目の水曜日に三角を付けてください。</td><td>15日に三角</td></tr>
+<tr><td>4</td><td>22日の前の日に×を付けてください。</td><td>21日に×</td></tr>
+<tr><td>5</td><td>日曜日のうち、二回目と四回目に丸を付けてください。</td><td>12日・26日に丸</td></tr>
+<tr><td>6</td><td>月の最後の日に「孫の誕生日」と書いてください。</td><td>30日に「孫の誕生日」</td></tr>
+<tr><td>7</td><td>17日に丸を付ける前に、その週の月曜日に線を引いてください。</td><td>先に13日に線、次に17日に丸（順序も確認）</td></tr>
+<tr><td>8</td><td>3日と4日を線で結び、その下に「旅行」と書いてください。</td><td>3日・4日を結び「旅行」</td></tr>
+<tr><td>9</td><td>「歯医者」と書いた日の一週間後にも、「歯医者」と書いてください。</td><td>17日に「歯医者」</td></tr>
+<tr><td>10</td><td>24日の欄に「美容院　午後二時」と書いてください。</td><td>24日に「美容院 14時（午後2時）」</td></tr></table>
+<h2>聴理解課題2（3頁）読む話（正答）</h2>
+<p><b>話1：</b>「明日の天気です。午前中は晴れますが、午後からは北の風が強まり、夕方には雨が降り出す見込みです。最高気温は十四度で、今日より五度ほど低くなります。洗濯物は午前中に取り込むのがよさそうです。」（1 正しい　2 違う　3 違う　4 正しい　5 違う）<br>
+<b>話2：</b>「みなみ公民館では、来月から『はじめての書道教室』を開きます。毎月第一と第三土曜日の午後一時半から三時までです。参加費は一回五百円で、筆と墨は貸し出します。半紙は各自で用意してください。申し込みは今月二十五日までに、公民館の窓口か電話でお願いします。定員は十五名です。」（6 違う　7 正しい　8 違う　9 正しい　10 正しい）</p>
+<h2>喚語課題（4頁）解答</h2>
+<p>1 時刻表　2 双眼鏡　3 体重計（ヘルスメーター）　4 はんこ（印鑑）　5 消火器　6 初詣　7 床屋（理髪店）　8 電気ポット　9 お盆　10 血圧。③でも出なければ④文字を見せる、⑤一緒に言う。言い違い（双眼鏡→望遠鏡など）は書き取り、本人が気付いて直せたかを記録。</p>
+<h2>言い換え課題（5頁）解答例</h2>
+<p>1 ざっと読む　2 早める　3 人が並んでいる　4 上手になった　5 休まずに働いている　6 担当します（やります）　7 よく聞いた　8 値段が高い　9 中止になった　10 整理しておく（きれいにしておく）。意味が合えば正答。</p>
+<h2>読解課題（6頁）解答</h2>
+<p>1 六月一日〜十月三十一日　2 受診券・本人確認書類　3 無料　4 五百円　5 夜九時以降は食べない　6 よい（水やお茶は可）　7 約三週間後、受けた医療機関で　8 かけられない（平日のみ）</p>
+<h2>書字課題（7頁）読み上げ文</h2>
+<p>1 来週の火曜日に、駅前の歯医者へ行きます。　2 冷たい麦茶を水筒に入れて持っていきました。　3 弟から旅行のお土産にお菓子をもらった。　4 ちょっと待ってください、今メモを取ります。　5 公民館で書道の教室が始まるそうです。　6 夕方から雨になるので、早めに帰ることにした。　7 先月、孫が一歳の誕生日を迎えました。　8 しょうゆと砂糖を同じ量ずつ入れます。</p>
+<h2>談話課題（8頁）・実用課題（9頁）</h2>
+<p>正しい順番　A：A2→A6→A4→A1→A5→A3　／　B：B2→B4→B5→B1→B3。<br>実用課題1の要点：一週間前から／右の肩／朝と腕を上げたとき、右を下にして寝たとき痛む／湿布／眠れない／聞きたいこと（本人の考えで可）。2は「仲間・使い道・形・置き場所」のうち三つ以上入れば正答（例：電気の物で、コンセントが遠いときにつなぐ長いコード。差し込み口がいくつか付いている）。</p>
+<h2>評価のポイント</h2>
+<ul><li>2頁は、指示の種類（一つ・順序あり・条件あり・前の指示を使う）ごとに誤りを見ます。7・9の誤りは、聞いた内容を覚えておく力の目安になります。</li>
+<li>4頁・9頁では、遠回しな言い方で伝えられたか、言い違いに自分で気付いたかを記録します。</li></ul>
+<p class="note">一般的な目安です。最終的な判断は担当の言語聴覚士が行います。</p>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+</body>
+</html>

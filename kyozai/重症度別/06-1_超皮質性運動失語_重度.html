@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="author" content="KENTA SHINKAWA">
+<title>訓練教材 超皮質性運動失語（重度）</title>
+<link rel="stylesheet" href="common.css">
+<style>
+  .guide{font-size:10.5pt;line-height:1.5}
+  .guide .head{margin-bottom:3mm}
+  .guide h2{font-size:12.5pt;margin:3mm 0 1mm}
+  .guide p{margin:0 0 1.5mm}
+  .guide ul,.guide ol{margin:0 0 1.5mm}
+  .guide table{font-size:9.8pt;margin:0 0 1.5mm}
+  .guide th,.guide td{padding:.7mm 1.5mm}
+  .guide .mini{width:78%;margin:0 auto}
+  .guide .note{font-size:9.5pt;color:#555;text-align:center;margin:0 0 1mm}
+  .key{font-size:10.5pt}
+  .key h2{margin:2.5mm 0 .5mm}
+  .key p{margin:0}
+  .art{fill:none;stroke:#000;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+  .rep{border-collapse:collapse;width:100%;margin:0 0 3mm}
+  .rep th{border:1px solid #888;background:#f4f4f4;font-size:12pt;height:9mm}
+  .rep td{border:1px solid #888;font-size:17pt;font-weight:700;height:21mm;padding:0 3mm}
+  .rep td.n{width:11mm;font-size:13pt;text-align:center}
+  .seq{border:1.5px solid #333;border-radius:3mm;padding:2.5mm 5mm;margin:0 0 3.5mm}
+  .seq .s{font-size:19pt;font-weight:700;letter-spacing:.04em}
+  .seq .h{font-size:12pt;color:#555}
+  .pair{display:grid;grid-template-columns:1fr 1fr;gap:3mm 8mm;margin:0 0 2mm}
+  .pair div{font-size:16pt;font-weight:700;border-bottom:1px solid var(--rule);padding:1mm 0 2mm}
+  .pair div small{font-size:12pt;font-weight:400;color:#555}
+  .cz{margin:0 0 3mm}
+  .cz .t{font-size:16pt;font-weight:700}
+  .cz .choices{margin:1.5mm 0 0 10mm}
+  .cz .choices span{font-size:17pt;padding:1mm 7mm}
+  .pg{display:grid;grid-template-columns:1fr 1fr;gap:6mm 8mm}
+  .pg>div{border:1.5px solid #333;border-radius:3mm;padding:3mm 4mm}
+  .pg svg{width:30mm;height:30mm;display:block;margin:0 auto 1mm}
+  .pg .t{font-size:15pt;font-weight:700;line-height:1.5}
+  .pg .l{height:10mm;border-bottom:1px solid var(--rule)}
+  .scene{display:flex;gap:4mm;align-items:baseline;border-bottom:1px solid var(--rule);padding:1.5mm 0 2mm;font-size:13pt}
+  .scene b{font-size:18pt}
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:4mm;margin-top:3mm}
+  .cards div{border:2px solid #222;border-radius:3mm;height:25mm;display:flex;align-items:center;justify-content:center;font-size:20pt;font-weight:700;text-align:center;line-height:1.25}
+</style>
+</head>
+<body>
+
+<div class="noprint">印刷するときは <b>Ctrl＋P</b> を押してください（用紙：A4縦）。1・2ページ目と最後のページは指導者用です。患者さんには3〜7ページ目を渡してください。</div>
+
+<!-- ========== 指導者用ガイド 1 ========== -->
+<section class="sheet guide">
+  <div class="head"><div><div class="tag">指導者用（患者さんには渡さない）</div><h1>超皮質性運動失語（重度）の訓練教材</h1></div></div>
+  <h2>1. この段階の目安となるSLTAプロフィール</h2>
+  <p><b>自分から話すことがほとんどなく、質問にも返事が出にくい段階</b>です。一方で、<b>聞いた言葉をまねして言う力（復唱）は比較的保たれ</b>、数字や曜日のような決まった並びの言葉（系列語）も、言い始めを手伝うと続けて言えることが多いのが特徴です。理解は単語なら比較的保たれますが、長い指示では低下します。</p>
+  <table>
+    <tr><th style="width:11%">領域</th><th style="width:43%">正答率の目安</th><th>特徴的な下位検査</th></tr>
+    <tr><td>聴く</td><td>単語の理解 7〜8割、短文の理解 5〜6割、口頭命令に従う 2〜3割</td><td>複数の動作を含む命令で崩れやすい。</td></tr>
+    <tr><td>話す</td><td><b>単語の復唱 9割前後、文の復唱 5〜6割</b>／呼称 2割前後、動作説明 1割前後、まんがの説明 段階1〜2、語の列挙 0〜2語</td><td><b>復唱と自発話の差が大きい</b>のがこの型の目印。音読は単語なら6〜8割。</td></tr>
+    <tr><td>読む</td><td>漢字・仮名単語の理解 6〜7割、短文の理解 5割前後、書字命令に従う 2割前後</td><td>単語の読解は比較的残る。</td></tr>
+    <tr><td>書く</td><td>漢字・仮名単語の書字 0〜2割、まんがの説明（書字）段階1、仮名1文字の書取 5割前後</td><td>自分で考えて書く課題がほぼできない。</td></tr>
+    <tr><td>計算</td><td>3〜5割</td><td>個人差が大きい。</td></tr>
+  </table>
+  <svg class="mini" data-profile="80,60,30,60,20,90,10,0,60,6.7,60,80,60,40,70,60,50,20,0,20,0,50,20,20,0,40"></svg>
+  <p class="note">典型例のイメージ。個人差が大きい（例データ「例：超皮質性運動失語（重度）」と同じ値）。</p>
+  <h2>2. 同じタイプの他の重症度との違い</h2>
+  <table>
+    <tr><th style="width:17%">重症度</th><th style="width:42%">話す力の目安</th><th>教材の中心</th></tr>
+    <tr><td><b>重度（この教材）</b></td><td>自発話はほとんどない。復唱・系列語・あいさつの続きは言える。</td><td>復唱、系列語、文の完成（1語を補う）、指さしカード</td></tr>
+    <tr><td>中等度</td><td>質問に1〜3語で答えられる。語の列挙 3〜6語。</td><td>質問に短文で答える、選択肢から文を作る、手順を話す</td></tr>
+    <tr><td>軽度</td><td>日常会話は短文で可能。自分から話題を出す、話を組み立てるのが苦手。</td><td>話題の開始、話の組み立て、予定・出来事の報告、会話の主導</td></tr>
+  </table>
+  <p><b>中等度の教材へ進む目安</b>：①文の完成（課題3・4）で、選択肢や絵を隠しても段階6・5が8割以上。②「今朝は何を食べましたか」などの簡単な質問に、1〜2語で答え始めることが2回の訪問で続けて見られる。③語の列挙（動物など1分間）で3語以上。</p>
+  <div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+
+<!-- ========== 指導者用ガイド 2 ========== -->
+<section class="sheet guide">
+  <div class="head"><div><div class="tag">指導者用（患者さんには渡さない）</div><h1>訓練の進め方と記録のしかた</h1></div></div>
+  <h2>3. 訓練の目標と優先順位</h2>
+  <ul>
+    <li><b>目標</b>：保たれている復唱を足場にして、「声を出し始める」経験を増やすこと。生活に必要な一言（要求・あいさつ・体調）を、手がかりがあれば言えるようにすること。</li>
+    <li><b>優先順位</b>：①復唱（単語→2語→短い文）で声を出す準備 → ②系列語・あいさつの続きで「自動的に出る言葉」を使う → ③文の完成（1語を補う、選択肢あり→絵あり→手がかりなし） → ④場面の一言と指さしカードで、実際に伝える。</li>
+    <li>重度の段階では、<b>正しく言えることより「言い始められること」</b>を優先します。うまくいかない日は①②だけで終えて構いません。</li>
+  </ul>
+  <h2>4. ヒントの出し方（多い順に。成功したら一つずつ減らす）</h2>
+  <ol>
+    <li>指導者と一緒に声を合わせて言う</li>
+    <li>指導者のあとについて言う（復唱）</li>
+    <li>文の始まり＋答えの最初の音を言う（「雨が降ったので、か…」）</li>
+    <li>文の始まりだけを言う</li>
+    <li>選択肢や絵を見せる</li>
+    <li>手がかりなしで待つ（5〜10秒）</li>
+  </ol>
+  <p>反応が出るまで<b>5〜10秒は待ちます</b>。待っても出ないときは、一つ多いヒントに戻ります。話し始めるまでの秒数と、どのヒントで言えたかを毎回記録します。</p>
+  <h2>5. 家族への助言</h2>
+  <ul>
+    <li>「何が食べたい？」より「ご飯とパン、どちらにしますか」のように、<b>答えの言葉が含まれる質問</b>にすると答えやすくなります。</li>
+    <li>言葉が出るまで先回りせずに待ち、出なければ言い始めの一言（「お茶を…」）を添えます。</li>
+    <li>復唱ができても、自分から言えるとは限りません。「まねはできるのに」と責めないよう伝えます。</li>
+    <li>指さしカード（課題5）を食卓やベッドのそばに置き、言葉が出ないときに使ってもらいます。</li>
+  </ul>
+  <h2>6. 訪問での工夫</h2>
+  <ul>
+    <li>毎回のあいさつ（「こんにちは」→「こんにちは」）や体調の確認を、最初の復唱練習として使います。</li>
+    <li>カレンダーの曜日、薬の袋、家族の写真など、家の中の物を系列語や文の完成の題材にします。</li>
+    <li>疲れやすいので、1回の課題は10〜15分を目安にし、できた課題で終わるようにします。</li>
+  </ul>
+  <h2>7. 課題ページの一覧と記録のしかた</h2>
+  <p>3：復唱課題（単語から短い文へ）／4：系列語課題（数・曜日・月・あいさつの続き）／5：文の完成課題 1（選択肢を見て1語を補う）／6：文の完成課題 2（絵を見て1語を補う）／7：伝達課題（場面の一言と指さしカード）／8：読み上げリスト・解答・評価のポイント。</p>
+  <p>各問の番号の左に<b>段階（6 完全正答、5 遅延完全正答、4 不完全正答、3 ヒント後正答、2 関連反応、1 誤答）</b>を記入し、6・5を正答とします。使ったヒントの番号（上の1〜6）も書き添えます。</p>
+  <p style="font-size:9.5pt;color:#555;margin-top:3mm">内容は一般的な目安です。最終的な判断は担当の言語聴覚士が行ってください。</p>
+  <div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+
+<!-- ========== 復唱 ========== -->
+<section class="sheet" data-head="復唱課題|単語から短い文へ">
+  <p class="ask">指導者が言う言葉を、あとについて言ってください。左から右へ、少しずつ長くなります。</p>
+  <p class="hint">言えたら、文字を見ながらもう一度、ご自分で言ってください。</p>
+  <table class="rep">
+    <tr><th></th><th style="width:22%">単語</th><th style="width:28%">2語</th><th>短い文</th></tr>
+    <tr><td class="n">1</td><td>お茶</td><td>お茶をください</td><td>温かいお茶をください</td></tr>
+    <tr><td class="n">2</td><td>トイレ</td><td>トイレに行く</td><td>トイレに行きたいです</td></tr>
+    <tr><td class="n">3</td><td>足</td><td>足が痛い</td><td>右の足が少し痛いです</td></tr>
+    <tr><td class="n">4</td><td>電話</td><td>娘に電話</td><td>娘に電話をかけます</td></tr>
+    <tr><td class="n">5</td><td>天気</td><td>よい天気</td><td>今日はよい天気です</td></tr>
+    <tr><td class="n">6</td><td>散歩</td><td>散歩に行く</td><td>午後に散歩に行きます</td></tr>
+    <tr><td class="n">7</td><td>ありがとう</td><td>どうもありがとう</td><td>どうもありがとうございます</td></tr>
+    <tr><td class="n">8</td><td>薬</td><td>薬を飲む</td><td>食後に薬を飲みます</td></tr>
+  </table>
+</section>
+
+<!-- ========== 系列語 ========== -->
+<section class="sheet" data-head="系列語課題|数・曜日・月・あいさつの続き">
+  <p class="ask">指導者が言い始めたら、続けて最後まで言ってください。</p>
+  <div class="seq"><span class="h">A．数</span><div class="s">1、2、3、……（10まで）</div></div>
+  <div class="seq"><span class="h">B．曜日</span><div class="s">月曜日、火曜日、……（日曜日まで）</div></div>
+  <div class="seq"><span class="h">C．月</span><div class="s">1月、2月、3月、……（12月まで）</div></div>
+  <div class="seq"><span class="h">D．季節</span><div class="s">春、夏、……（冬まで）</div></div>
+  <p class="ask" style="margin:4mm 0 2mm">E．あいさつの前半を聞いて、続きを言ってください。</p>
+  <div class="pair">
+    <div><small>1.</small> いただきます →</div><div><small>2.</small> 行ってきます →</div>
+    <div><small>3.</small> おはよう →</div><div><small>4.</small> よろしく →</div>
+    <div><small>5.</small> あけまして →</div><div><small>6.</small> お疲れ →</div>
+    <div><small>7.</small> お先に →</div><div><small>8.</small> いつもお世話に →</div>
+  </div>
+</section>
+
+<!-- ========== 文の完成 1 ========== -->
+<section class="sheet" data-head="文の完成課題 1|選択肢を見て1語を補う">
+  <p class="ask">文を指導者と一緒に読み、（　　）に入る言葉を下の二つから選んで、声に出して言ってください。</p>
+  <div id="cz"></div>
+</section>
+
+<!-- ========== 文の完成 2 ========== -->
+<section class="sheet" data-head="文の完成課題 2|絵を見て1語を補う">
+  <p class="ask">絵を見ながら文を読み、（　　）に入る言葉を言ってください。言えたら、線の上に書いても構いません。</p>
+  <div class="pg" id="pg"></div>
+</section>
+
+<!-- ========== 伝達 ========== -->
+<section class="sheet" data-head="伝達課題|場面に合う一言と指さしカード">
+  <p class="ask" style="margin-bottom:2mm">A．場面を聞いて、右の一言を声に出して言ってください。</p>
+  <div class="scene"><span style="min-width:62mm">のどが渇いたとき</span><b>水をください。</b></div>
+  <div class="scene"><span style="min-width:62mm">トイレに行きたいとき</span><b>トイレに行きます。</b></div>
+  <div class="scene"><span style="min-width:62mm">部屋が寒いとき</span><b>寒いです。</b></div>
+  <div class="scene"><span style="min-width:62mm">体のどこかが痛いとき</span><b>ここが痛いです。</b></div>
+  <div class="scene" style="margin-bottom:4mm"><span style="min-width:62mm">手伝ってもらったとき</span><b>ありがとう。</b></div>
+  <p class="ask" style="margin-bottom:1mm">B．言葉が出ないときは、カードを指でさして伝えてください。</p>
+  <p class="hint" style="margin:0">切り取って、食卓やベッドのそばに置いて使えます。</p>
+  <div class="cards">
+    <div>はい</div><div>いいえ</div><div>分かりません</div>
+    <div>トイレ</div><div>水・お茶</div><div>痛い</div>
+    <div>寒い</div><div>暑い</div><div>家族を<br>呼んでください</div>
+  </div>
+</section>
+
+<!-- ========== 指導者用 解答 ========== -->
+<section class="sheet key" style="page-break-after:auto;break-after:auto">
+  <div class="head"><div><div class="tag">指導者用（患者さんには渡さない）</div><h1>読み上げリスト・解答・評価のポイント</h1></div></div>
+  <h2>復唱課題</h2>
+  <p>各行を「単語→2語→短い文」の順に、普通の速さで1回言います。言えなければもう一度ゆっくり言い、段階3とします。短い文まで言えた行は、指導者が「何がほしいですか」などと尋ね、文字を見ながら答えてもらいます（自発話への橋渡し）。</p>
+  <h2>系列語課題</h2>
+  <p>A〜Dは、指導者が最初の二つ（「1、2」）を言い、続きを待ちます。止まったら次の一つを言って再開し、言えたところまでを記録します。慣れたら、指導者は最初の一つだけにします。E の解答：1. ごちそうさまでした　2. 行ってらっしゃい　3. ございます　4. お願いします　5. おめでとうございます　6. さまでした　7. 失礼します　8. なっております（地域や家庭の言い方でも正答）。</p>
+  <h2>文の完成課題 1（選択肢）</h2>
+  <p id="czkey"></p>
+  <p>選択肢を読み上げるだけで終わったら、段階4とします。8割以上正答できたら、選択肢を紙で隠して同じ文で行います。</p>
+  <h2>文の完成課題 2（絵）</h2>
+  <p>1. 箸　2. 歯ブラシ　3. 帽子　4. 電話　5. 靴　6. 魚（「さんま」「鮭」なども正答）。出ないときは最初の音（「は…」）を与えて段階3とします。</p>
+  <h2>伝達課題</h2>
+  <p>A は、最初は指導者が一言を先に言って復唱から始め、慣れたら場面だけを伝えて言えるかを見ます。B のカードは、家族にも使い方を説明します。実際の生活で使えたかどうか（家族から聞き取り）も記録します。</p>
+  <h2>評価のポイント</h2>
+  <p>①話し始めるまでの秒数　②使ったヒントの番号　③段階6・5の数、の三つを毎回書き、前回と比べます。復唱は良好なのに課題3〜5で手がかりが減らせない場合は、文の完成の段階に時間をかけます。選択肢を隠しても8割以上正答できる状態が続いたら、中等度の教材へ進みます。</p>
+  <div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+
+<script>
+// 見出し（氏名・日付欄つき）・フッター・課題を入れる（作成：KENTA SHINKAWA）
+const HEAD=(tag,title)=>`<div class="head"><div><div class="tag">${tag}</div><h1>${title}</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div>`;
+const FOOT='<div class="foot">作成：KENTA SHINKAWA</div>';
+// 線画（黒線・塗りなし）
+const P={
+  hashi:'<path d="M28 10 L46 92"/><path d="M42 8 L54 92"/>',
+  haburashi:'<path d="M6 60 H94 V68 H6 Z"/><path d="M62 60 V44 M68 60 V44 M74 60 V44 M80 60 V44 M86 60 V44"/>',
+  boushi:'<path d="M24 62 Q24 28 50 28 Q76 28 76 62 Z"/><path d="M25 54 H75"/><path d="M6 62 Q50 80 94 62"/>',
+  denwa:'<path d="M18 56 H82 L78 86 H22 Z"/><path d="M10 46 Q10 30 26 30 H74 Q90 30 90 46 L78 50 L74 41 H26 L22 50 Z"/><circle cx="50" cy="71" r="8"/>',
+  kutsu:'<path d="M8 76 V40 Q8 34 14 34 H34 Q38 54 60 57 L84 61 Q93 63 93 72 V78 H8 Z"/><path d="M8 70 H93"/>',
+  sakana:'<path d="M10 50 Q38 22 68 50 Q38 78 10 50 Z"/><path d="M68 50 L92 32 V68 Z"/><circle cx="24" cy="46" r="3"/>'
+};
+const pic=k=>`<svg viewBox="0 0 100 100"><g class="art">${P[k]}</g></svg>`;
+
+const CZ=[["雨が降ってきたので、（　　）をさします。",["傘","皿"],0],
+  ["毎朝、新聞を（　　）。",["泳ぎます","読みます"],1],
+  ["食事の前に、手を（　　）。",["洗います","走ります"],0],
+  ["熱が出たので、（　　）へ行きます。",["海","病院"],1],
+  ["夜は、お（　　）に入って温まります。",["風呂","店"],0],
+  ["今日は暑いので、（　　）お茶を飲みます。",["赤い","冷たい"],1],
+  ["お正月には、お（　　）を食べます。",["もち","すいか"],0],
+  ["春になると、（　　）の花が咲きます。",["雪","桜"],1]];
+document.getElementById("cz").innerHTML=CZ.map(([t,c],i)=>`<div class="cz"><div class="t"><span class="n">${i+1}.</span>${t}</div><div class="choices">${c.map(x=>`<span>${x}</span>`).join("")}</div></div>`).join("");
+document.getElementById("czkey").textContent=CZ.map(([t,c,a],i)=>`${i+1}. ${c[a]}`).join("　");
+
+const PG=[["hashi","（　　）でご飯を食べます。"],["haburashi","（　　）で歯をみがきます。"],["boushi","日差しが強いので、（　　）をかぶります。"],
+  ["denwa","娘に（　　）をかけます。"],["kutsu","玄関で（　　）を履きます。"],["sakana","夕食に（　　）を焼きます。"]];
+document.getElementById("pg").innerHTML=PG.map(([k,t],i)=>`<div>${pic(k)}<div class="t"><span class="n">${i+1}.</span>${t}</div><div class="l"></div></div>`).join("");
+
+document.querySelectorAll("section.sheet[data-head]").forEach(s=>{
+  const [tag,title]=s.dataset.head.split("|");
+  s.insertAdjacentHTML("afterbegin",HEAD(tag,title));
+  s.insertAdjacentHTML("beforeend",FOOT);
+});
+</script>
+<script src="mini-profile.js"></script>
+</body>
+</html>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="author" content="KENTA SHINKAWA">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>発語失行（純粋語唖） 訓練教材</title>
+<link rel="stylesheet" href="common.css">
+<style>
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:3mm;margin:0 0 5mm}
+.cards div{border:1.5px solid #333;border-radius:2mm;text-align:center;padding:2mm 1mm;font-size:22pt;font-weight:700;line-height:1.3}
+.cards div rt{font-size:9pt;font-weight:400;color:#555}
+.cards.v div{font-size:36pt;padding:3mm 0}
+.cards.v div small{display:block;font-size:10pt;font-weight:400;color:#555}
+.cards.s{grid-template-columns:repeat(5,1fr)}
+.cards.s div{font-size:24pt;padding:1.5mm 0}
+.lv{font-size:12pt;color:#555;margin:1mm 0 1.5mm;border-bottom:1px solid #bbb}
+.ser{display:flex;align-items:center;gap:4mm;margin:0 0 3.2mm}
+.ser b{font-size:24pt;width:15mm;height:15mm;border:2px solid #333;border-radius:50%;display:flex;align-items:center;justify-content:center;flex:none}
+.ser span{font-size:18pt;font-weight:700;border-bottom:1px solid #bbb;padding:0 1mm}
+.rh{display:grid;grid-template-columns:44mm 1fr;align-items:center;border-bottom:1px solid #bbb;padding:1.5mm 0}
+.rh .w{font-size:20pt;font-weight:700}
+.rh .m{font-size:15pt;letter-spacing:.06em}
+.rh .d{font-size:17pt;letter-spacing:.35em;color:#222;display:block;line-height:1.2}
+.seq{font-size:19pt;font-weight:700;line-height:1.7;margin:0 0 4mm 2mm}
+.ph{display:grid;grid-template-columns:1fr 1fr;gap:2.5mm 5mm;margin:0 0 4mm}
+.ph div{border:1.5px solid #333;border-radius:2mm;padding:1.5mm 4mm;font-size:17pt;font-weight:700}
+.pace{font-size:19pt;font-weight:700;line-height:1.5;margin:0 0 4.2mm 2mm}
+.pace i{font-style:normal;color:#666;font-weight:400;margin:0 1.5mm}
+.pace .n{display:inline-block;min-width:9mm;font-size:13pt;color:#555;font-weight:400}
+.pt{display:grid;grid-template-columns:repeat(3,1fr);gap:3mm;margin:0 0 4mm}
+.pt div{border:2px solid #333;border-radius:2mm;text-align:center;padding:3mm 1mm;font-size:18pt;font-weight:700}
+table.gojuon{border-collapse:collapse;width:100%;margin:0 0 3mm}
+table.gojuon td{border:1px solid #666;text-align:center;font-size:21pt;font-weight:700;height:13.2mm;width:10%;padding:0}
+table.gojuon td.e{background:#f3f3f3}
+table.gojuon.sm td{font-size:16pt;height:11mm}
+.guide{font-size:10.5pt;line-height:1.5}
+.guide h2{font-size:12.5pt;margin:3mm 0 1.2mm}
+.guide table{font-size:9.5pt}
+.guide th,.guide td{padding:.6mm 1.6mm}
+.guide .note{font-size:9pt;color:#555;margin:-2mm 0 2mm}
+.key table{border-collapse:collapse;width:100%;font-size:10.5pt;margin:0 0 2mm}
+.key th,.key td{border:1px solid #bbb;padding:.8mm 2mm;text-align:left;vertical-align:top}
+.key th{background:#f2f2f2}
+</style>
+</head>
+<body>
+<div class="noprint">印刷するときは <b>Ctrl＋P</b> を押してください（用紙：A4縦）。最初のページは指導者用の説明、最後のページは指導者用の解答・評価のポイントです。患者さんには課題用紙のページだけをお渡しください。</div>
+<section class="sheet guide">
+<div class="head"><div><div class="tag">指導者用（患者さんには渡さない）</div><h1>発語失行（純粋語唖）― 説明（1）</h1></div></div>
+<h2>1．このタイプの特徴</h2>
+<p>言葉の理解や読み書きは比較的保たれているのに、話すときの口の動き（構音）を順序よく組み立てることが難しくなる状態です。構音の障害がほぼ単独で目立つものを「純粋語唖」とよびます。主な特徴は次のとおりです。</p>
+<ul>
+<li>音の誤り（歪み・置き換え）が一定せず、同じ語でも言うたびに誤り方が変わる。</li>
+<li>口の形を探るような動き（探索）、話し始めの困難、音の引き伸ばしや途切れがある。</li>
+<li>話す速さが遅く、抑揚やリズムが不自然になる（プロソディの障害）。</li>
+<li>短い語より長い語、単純な音より複雑な音（拗音、子音が続く語）で誤りが増える。</li>
+<li>挨拶や数を数えるなど、自動的に出る言葉は比較的言いやすい。</li>
+<li>本人は誤りに気づいており、言い直そうとする。</li>
+</ul>
+<table>
+<tr><th style="width:19%">確認すること</th><th style="width:28%">発語失行</th><th style="width:27%">運動障害性構音障害</th><th>伝導失語</th></tr>
+<tr><td>誤りの一貫性</td><td>一定しない</td><td>一定（いつも同じように不明瞭）</td><td>一定しない</td></tr>
+<tr><td>誤りの種類</td><td>音の歪み・置き換え、探索、引き伸ばし</td><td>発音全体が不明瞭、鼻声、声の大きさ・質の変化</td><td>音の入れ替え（音韻性錯語）が中心で、歪みは少ない。言い直しを繰り返す</td></tr>
+<tr><td>自動的な発話</td><td>比較的言いやすい</td><td>同じように不明瞭</td><td>比較的言いやすい</td></tr>
+<tr><td>理解・読み書き</td><td>比較的保たれる（純粋語唖）</td><td>保たれる</td><td>理解は良好。復唱が特に低下</td></tr>
+<tr><td>伴いやすい症状</td><td>口や舌を指示どおり動かせない（口部顔面失行）、右手の麻痺</td><td>舌・唇・のどの麻痺、飲み込みの障害</td><td>軽い喚語困難</td></tr>
+<tr><td>病巣の目安</td><td>左中心前回の下部、島など</td><td>脳幹・小脳・両側の病変など</td><td>左縁上回・弓状束付近</td></tr>
+</table>
+<p class="note">実際には軽いブローカ失語や構音障害を伴うことも多く、はっきり分けられないこともあります。</p>
+<h2>2．典型的なSLTAプロフィールの特徴</h2>
+<table>
+<tr><th style="width:12%">領域</th><th style="width:44%">典型的な結果</th><th>見るポイント</th></tr>
+<tr><td>聴く</td><td>良好</td><td>理解が保たれているかの確認</td></tr>
+<tr><td>話す</td><td>低下。呼称・復唱・音読・まんがの説明で、段階5（遅れ・よどみ）と段階4（音の誤りを含む不完全正答）が多い。語の列挙も少ない傾向</td><td>段階5・4の割合。短い語と長い語の差（「12 仮名1文字の音読」と「14 短文の音読」、「6 単語の復唱」と「9 文の復唱」）</td></tr>
+<tr><td>読む</td><td>良好</td><td>黙読での理解が保たれていれば、文字を手がかりにできる</td></tr>
+<tr><td>書く</td><td>比較的良好（純粋語唖）。ブローカ失語を伴うと低下</td><td>書けるなら筆談を早めに準備する</td></tr>
+<tr><td>計算</td><td>おおむね良好</td><td>―</td></tr>
+</table>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet guide">
+<div class="head"><div><div class="tag">指導者用（患者さんには渡さない）</div><h1>発語失行（純粋語唖）― 説明（2）</h1></div></div>
+<h2>3．プロフィールのイメージ</h2>
+<p style="margin:0"><b>発語失行（純粋語唖）の例</b>（例データ「09_発語失行.json」と同じ値）</p>
+<svg class="mini" data-profile="100,100,100,100,60,70,60,40,40,40,80,70,40,20,100,100,100,90,100,100,80,100,100,100,80,90"></svg>
+<p class="note">典型例のイメージです。個人差が大きいので、実際の検査結果と様子を合わせて判断してください。まんがの説明は (段階−1)÷5、語の列挙は15語で100%として描いています。</p>
+<h2>4．訓練の方針</h2>
+<ul>
+<li><b>目標：</b>生活でよく使う言葉（挨拶、返事、家族の名前、体調を伝える言葉）を確実に言えるようにすることと、言えないときに筆談や指さしで伝えられるようにすることです。</li>
+<li><b>優先順位：</b>①理解と書字が保たれているうちに、代償手段（筆談カード・五十音表）を早めに準備する。②言いやすい音・短い語から、確実に言える語を増やす。③話す速さを落とし、リズムに合わせて言う方法を身につける。</li>
+<li><b>段階の上げ方：</b>母音→単音節→2モーラ語→3〜4モーラ語→短文。各段階で「指導者と一緒に言う（斉唱）→まねて言う（復唱）→少し間をおいて言う→文字を見て言う→自分で言う」と手がかりを減らします。口の形を見せる、鏡を使う、手拍子や指折りで拍を区切る、などの手がかりを組み合わせます。8割程度言えたら次の段階へ進みます。</li>
+<li><b>家族への助言：</b>急かさず、言い終わるまで待つ。先回りして言葉を言わない（本人が望むときは別）。「はい・いいえ」で答えられる聞き方をする。筆談カードと鉛筆をいつも手元に置く。言えたときは自然に会話を続ける。</li>
+<li><b>訪問での工夫：</b>家族の名前、ペット、近所の地名など、本人にとって大切な語を練習の語に加えます。電話での名乗りなど、実際の場面で練習します。1日に数回、5〜10分の短い練習を勧めます。疲れると誤りが増えるため、長時間の練習は避けます。</li>
+</ul>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet guide">
+<div class="head"><div><div class="tag">指導者用（患者さんには渡さない）</div><h1>発語失行（純粋語唖）― 説明（3）</h1></div></div>
+<h2>5．課題用紙の一覧と使い方</h2>
+<table>
+<tr><th style="width:8%">番号</th><th style="width:34%">課題</th><th>使い方</th></tr>
+<tr><td>1</td><td>構音課題1　母音・単音節</td><td>口の形を見せて一緒に言う→一人で言う。言いやすい音から</td></tr>
+<tr><td>2</td><td>構音課題2　単語カード（2〜4モーラ）</td><td>短い語から。切り離してカードとして使ってもよい</td></tr>
+<tr><td>3</td><td>構音課題3　同じ音で始まる語</td><td>最初の音を固定し、続く音だけを変えて練習</td></tr>
+<tr><td>4</td><td>構音課題4　拍に合わせた発話</td><td>●1つに手拍子1回。慣れたら手拍子を小さく、指で机をたたく程度に</td></tr>
+<tr><td>5</td><td>構音課題5　自動的に言える言葉の系列</td><td>一緒に言い始め、途中から一人で続ける</td></tr>
+<tr><td>6</td><td>構音課題6　挨拶・決まり文句</td><td>生活で使う場面を想定して練習。本人に必要な文句を書き足す</td></tr>
+<tr><td>7</td><td>構音課題7　区切って話す練習</td><td>「／」で区切り、1区切りずつゆっくり言う</td></tr>
+<tr><td>8</td><td>代償手段1　筆談カード</td><td>外出時や来客時に持ち歩く。上の説明文を相手に見せる</td></tr>
+<tr><td>9</td><td>代償手段2　五十音表</td><td>書くのが難しいときに、1文字ずつ指さして伝える</td></tr>
+</table>
+<p>最後の2ページは指導者用です（段階練習の刺激リスト、評価のポイントと記録表）。</p>
+<h2>6．記録のしかた</h2>
+<p>1語ごとに、SLTAと同じ考え方の段階で記録します。話す課題では段階5と4の区別が特に大切です。</p>
+<table>
+<tr><th style="width:10%">段階</th><th style="width:28%">内容</th><th>構音の課題での目安</th></tr>
+<tr><td>6</td><td>完全正答</td><td>すぐに、正確に言えた</td></tr>
+<tr><td>5</td><td>遅延完全正答</td><td>正確だが、話し始めの遅れ・探索・引き伸ばし・言い直しがあった</td></tr>
+<tr><td>4</td><td>不完全正答</td><td>語は分かるが、一部の音に歪み・置き換えが残った</td></tr>
+<tr><td>3</td><td>ヒント後正答</td><td>口の形の提示、一緒に言う、最初の音を示すなどの手がかりで言えた</td></tr>
+<tr><td>2</td><td>関連反応</td><td>音の誤りが多く、語の一部だけが言えた</td></tr>
+<tr><td>1</td><td>誤答</td><td>言えなかった、または別の語になった</td></tr>
+</table>
+<p>使った手がかり（一緒に言う・口の形・手拍子・文字）を余白に書き、同じ語を何回か言ってもらって誤りが毎回同じかどうかも記録します。</p>
+<p style="margin-top:3mm">ここに書いた内容は一般的な目安です。<b>最終的な判断は担当の言語聴覚士が行ってください。</b></p>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet">
+<div class="head"><div><div class="tag">構音課題 1</div><h1>母音・単音節</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div>
+<p class="ask">指導者の口の形をよく見て、一緒に言ってください。次に、一人で言ってください。</p><div class="lv">母音</div><div class="cards v s"><div>あ<small>口を大きく開く</small></div><div>い<small>口を横に引く</small></div><div>う<small>唇をすぼめる</small></div><div>え<small>やや横に開く</small></div><div>お<small>唇を丸める</small></div></div><div class="lv">唇を閉じる音</div><div class="cards s" style="margin-bottom:2mm"><div>ま</div><div>み</div><div>む</div><div>め</div><div>も</div></div><div class="cards s" style="margin-bottom:2mm"><div>ぱ</div><div>ぴ</div><div>ぷ</div><div>ぺ</div><div>ぽ</div></div><div class="cards s" style="margin-bottom:2mm"><div>ば</div><div>び</div><div>ぶ</div><div>べ</div><div>ぼ</div></div><div class="lv">舌先を上の歯の裏に付ける音</div><div class="cards s" style="margin-bottom:2mm"><div>な</div><div>に</div><div>ぬ</div><div>ね</div><div>の</div></div><div class="cards s" style="margin-bottom:2mm"><div>た</div><div>ち</div><div>つ</div><div>て</div><div>と</div></div><div class="lv">舌の奥を上げる音</div><div class="cards s" style="margin-bottom:2mm"><div>か</div><div>き</div><div>く</div><div>け</div><div>こ</div></div><p class="hint" style="margin-top:3mm">言いにくい音は、鏡で口の形を確かめながら練習してください。</p>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet">
+<div class="head"><div><div class="tag">構音課題 2</div><h1>単語カード（2拍・3拍・4拍の語）</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div>
+<p class="ask">語を見て、声に出して言ってください。短い語から順に進めてください。</p><div class="lv">2拍の語</div><div class="cards"><div><ruby>傘<rt>かさ</rt></ruby></div><div><ruby>箸<rt>はし</rt></ruby></div><div><ruby>窓<rt>まど</rt></ruby></div><div><ruby>水<rt>みず</rt></ruby></div><div><ruby>海<rt>うみ</rt></ruby></div><div><ruby>豆<rt>まめ</rt></ruby></div><div><ruby>肉<rt>にく</rt></ruby></div><div><ruby>靴<rt>くつ</rt></ruby></div></div><div class="lv">3拍の語</div><div class="cards"><div><ruby>卵<rt>たまご</rt></ruby></div><div><ruby>眼鏡<rt>めがね</rt></ruby></div><div><ruby>時計<rt>とけい</rt></ruby></div><div><ruby>薬<rt>くすり</rt></ruby></div><div><ruby>野菜<rt>やさい</rt></ruby></div><div><ruby>電話<rt>でんわ</rt></ruby></div><div><ruby>布団<rt>ふとん</rt></ruby></div><div><ruby>枕<rt>まくら</rt></ruby></div></div><div class="lv">4拍の語</div><div class="cards"><div><ruby>新聞<rt>しんぶん</rt></ruby></div><div><ruby>病院<rt>びょういん</rt></ruby></div><div><ruby>自転車<rt>じてんしゃ</rt></ruby></div><div><ruby>図書館<rt>としょかん</rt></ruby></div><div><ruby>歯ブラシ<rt>はぶらし</rt></ruby></div><div><ruby>掃除機<rt>そうじき</rt></ruby></div><div><ruby>味噌汁<rt>みそしる</rt></ruby></div><div><ruby>天ぷら<rt>てんぷら</rt></ruby></div></div><p class="hint">点線などで切り離し、カードとして使うこともできます。</p>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet">
+<div class="head"><div><div class="tag">構音課題 3</div><h1>同じ音で始まる語の系列</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div>
+<p class="ask">同じ音で始まる語を、左から順に言ってください。最初の音をはっきり言い、続く音はゆっくり言ってください。</p><div class="ser"><b>ま</b><span>窓</span><span>豆</span><span>孫</span><span>枕</span><span>まな板</span></div><div class="ser"><b>ぱ</b><span>パン</span><span>パス</span><span>パジャマ</span><span>パセリ</span></div><div class="ser"><b>ば</b><span>バス</span><span>バケツ</span><span>バナナ</span><span>場所</span></div><div class="ser"><b>た</b><span>卵</span><span>畳</span><span>竹</span><span>たんす</span></div><div class="ser"><b>な</b><span>鍋</span><span>梨</span><span>夏</span><span>名前</span></div><div class="ser"><b>か</b><span>傘</span><span>肩</span><span>鞄</span><span>カレー</span></div><div class="ser"><b>さ</b><span>皿</span><span>魚</span><span>砂糖</span><span>財布</span></div><div class="ser"><b>は</b><span>箸</span><span>花</span><span>歯医者</span><span>はがき</span></div><p class="hint" style="margin-top:3mm">言いやすい行から始めてかまいません。言えた語には、指導者が印を付けます。</p>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet">
+<div class="head"><div><div class="tag">構音課題 4</div><h1>拍に合わせた発話（手拍子の印つき）</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div>
+<p class="ask">●1つにつき1回手を打ちながら、1拍ずつ言ってください。</p><p class="hint">慣れてきたら、手拍子を小さくし、指で机を軽くたたく程度にしてください。</p><div class="rh"><div class="w">卵</div><div><span class="m">た・ま・ご</span><span class="d">●●●</span></div></div><div class="rh"><div class="w">眼鏡</div><div><span class="m">め・が・ね</span><span class="d">●●●</span></div></div><div class="rh"><div class="w">新聞</div><div><span class="m">し・ん・ぶ・ん</span><span class="d">●●●●</span></div></div><div class="rh"><div class="w">病院</div><div><span class="m">びょ・う・い・ん</span><span class="d">●●●●</span></div></div><div class="rh"><div class="w">ありがとう</div><div><span class="m">あ・り・が・と・う</span><span class="d">●●●●●</span></div></div><div class="rh"><div class="w">いただきます</div><div><span class="m">い・た・だ・き・ま・す</span><span class="d">●●●●●●</span></div></div><div class="rh"><div class="w">お願いします</div><div><span class="m">お・ね・が・い・し・ま・す</span><span class="d">●●●●●●●</span></div></div><div class="rh"><div class="w">おはようございます</div><div><span class="m">お・は・よ・う・ご・ざ・い・ま・す</span><span class="d">●●●●●●●●●</span></div></div>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet">
+<div class="head"><div><div class="tag">構音課題 5</div><h1>自動的に言える言葉の系列（数・曜日・月）</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div>
+<p class="ask">指導者と一緒に言い始め、途中から一人で続けてください。</p><div class="lv">数</div><div class="seq">1　2　3　4　5　6　7　8　9　10</div><div class="lv">曜日</div><div class="seq">月曜日　火曜日　水曜日　木曜日<br>金曜日　土曜日　日曜日</div><div class="lv">月</div><div class="seq">1月　2月　3月　4月　5月　6月<br>7月　8月　9月　10月　11月　12月</div><div class="lv">九九（二の段）</div><div class="seq" style="font-size:17pt">2×1＝2　2×2＝4　2×3＝6　2×4＝8　2×5＝10<br>2×6＝12　2×7＝14　2×8＝16　2×9＝18</div><p class="ask" style="margin-top:3mm">慣れたら、途中から始めてください。</p><p class="hint">例：「4、5、…」「水曜日、…」と指導者が言ったところから続けて言う。</p>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet">
+<div class="head"><div><div class="tag">構音課題 6</div><h1>挨拶・日常の決まり文句</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div>
+<p class="ask">生活の場面を思い浮かべながら、声に出して言ってください。</p><div class="lv">挨拶</div><div class="ph"><div>おはようございます</div><div>こんにちは</div><div>お休みなさい</div><div>ありがとうございます</div><div>お願いします</div><div>すみません</div></div><div class="lv">返事・頼みごと</div><div class="ph"><div>はい、分かりました</div> <div>いいえ、違います</div> <div>大丈夫です</div> <div>少し待ってください</div> <div>もう一度お願いします</div> <div>ゆっくり話してください</div> </div><div class="lv">体調を伝える</div><div class="ph"><div>痛いです</div><div>寒いです</div><div>トイレに行きたいです</div><div>少し休みたいです</div></div><div class="lv">電話に出るとき</div><div class="ph" style="grid-template-columns:1fr"><div>はい、（　　　　　　　）です。</div></div><p class="hint">かっこには、ご自分の名字を入れてください。よく使う言葉があれば、余白に書き足してください。</p>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet">
+<div class="head"><div><div class="tag">構音課題 7</div><h1>区切って話す練習（話す速さを落とす）</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div>
+<p class="ask">「／」の所で一度区切り、ゆっくり言ってください。</p><p class="hint">1区切りごとに指で机を軽くたたくと、速さを保ちやすくなります。急がず、一つ一つの音を確かめながら言ってください。</p><div class="lv">2〜3区切りの文</div><div class="pace"><span class="n">1.</span>お茶を<i>／</i>ください。</div><div class="pace"><span class="n">2.</span>少し<i>／</i>休みます。</div><div class="pace"><span class="n">3.</span>薬を<i>／</i>飲みました。</div><div class="pace"><span class="n">4.</span>明日は<i>／</i>病院に<i>／</i>行きます。</div><div class="pace"><span class="n">5.</span>娘が<i>／</i>午後に<i>／</i>来ます。</div><div class="lv">3〜5区切りの文</div><div class="pace"><span class="n">6.</span>テレビの<i>／</i>音を<i>／</i>小さくしてください。</div><div class="pace"><span class="n">7.</span>昨日は<i>／</i>よく<i>／</i>眠れました。</div><div class="pace"><span class="n">8.</span>駅まで<i>／</i>タクシーで<i>／</i>行きたいです。</div><div class="pace"><span class="n">9.</span>来週の<i>／</i>火曜日に<i>／</i>友人と<i>／</i>会います。</div><div class="pace"><span class="n">10.</span>散歩の<i>／</i>途中で<i>／</i>公園の<i>／</i>花を<i>／</i>見ました。</div>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet">
+<div class="head"><div><div class="tag">代償手段 1</div><h1>筆談カード（指さし・書いて伝える）</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div>
+<div class="read" style="font-size:15pt;line-height:1.75;margin-bottom:4mm"><b>相手の方へ</b><br>私は病気のため、言葉を話すことが難しくなっています。話の内容は分かります。ゆっくり待っていただくか、書いたり指さしたりしてお伝えしますので、少しお待ちください。</div><p class="ask" style="margin-bottom:3mm">伝えたいことを指さしてください。</p><div class="pt"><div>はい</div><div>いいえ</div><div>分かりません</div><div>痛い</div><div>トイレ</div><div>水・お茶</div><div>寒い・暑い</div><div>薬</div><div>書いて伝えます</div><div>家族に連絡してください</div><div>もう一度言ってください</div><div>少し待ってください</div></div><p class="ask" style="margin:2mm 0 0">書いて伝える欄</p><div class="lines"><div class="l"></div><div class="l"></div><div class="l"></div><div class="l"></div></div>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet">
+<div class="head"><div><div class="tag">代償手段 2</div><h1>指さしの五十音表</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div>
+<p class="ask">伝えたい言葉を、1文字ずつ指さしてください。</p><p class="hint">表は左の列から「あいうえお」「かきくけこ」…と縦に並んでいます。濁る音（が・ば など）は、仮名を指したあとに「゛」を指してください。</p><table class="gojuon"><tr><td>あ</td><td>か</td><td>さ</td><td>た</td><td>な</td><td>は</td><td>ま</td><td>や</td><td>ら</td><td>わ</td></tr><tr><td>い</td><td>き</td><td>し</td><td>ち</td><td>に</td><td>ひ</td><td>み</td><td class="e"></td><td>り</td><td class="e"></td></tr><tr><td>う</td><td>く</td><td>す</td><td>つ</td><td>ぬ</td><td>ふ</td><td>む</td><td>ゆ</td><td>る</td><td>を</td></tr><tr><td>え</td><td>け</td><td>せ</td><td>て</td><td>ね</td><td>へ</td><td>め</td><td class="e"></td><td>れ</td><td class="e"></td></tr><tr><td>お</td><td>こ</td><td>そ</td><td>と</td><td>の</td><td>ほ</td><td>も</td><td>よ</td><td>ろ</td><td>ん</td></tr></table><table class="gojuon sm"><tr><td>゛</td><td>゜</td><td>っ</td><td>ゃ</td><td>ゅ</td><td>ょ</td><td>ー</td><td>、</td><td>。</td><td>？</td></tr><tr><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>0</td></tr></table><div class="pt" style="margin-top:3mm"><div>はい</div><div>いいえ</div><div>言い直します</div><div>終わり</div><div>分かりません</div><div>もう一度</div></div>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet key">
+<div class="head"><div><div class="tag">指導者用（患者さんには渡さない）</div><h1>段階練習の刺激リスト</h1></div></div>
+<p style="margin:0 0 1mm">各段階で「一緒に言う（斉唱）→まねて言う（復唱）→間をおいて言う→文字を見て言う→自分で言う（質問に答える・絵や物の名前を言う）」の順に手がかりを減らします。言いやすい音（唇を閉じる音・母音）から始め、難しい音（さ行・ら行・拗音、子音が続く語）は後にします。</p>
+<table>
+<tr><th style="width:17%">段階</th><th>刺激の例（指導者が提示する）</th></tr>
+<tr><td>1　母音</td><td>あ・い・う・え・お／母音の組み合わせ：あい（愛）、あお（青）、いえ（家）、うえ（上）、おい（甥）</td></tr>
+<tr><td>2　単音節</td><td>唇の音：ま・ぱ・ば・わ → 舌先の音：な・た・だ → 舌の奥の音：か・が → 息の音：は・さ → ら行 → 拗音：きゃ・しゃ・ちゃ<br>同じ音の繰り返し：ま・ま・ま（3回）→ 2音の交互：ま・た・ま・た → 3音の連続：ぱ・た・か</td></tr>
+<tr><td>3　2拍の語</td><td>まめ（豆）、まど（窓）、はし（箸）、なべ（鍋）、かた（肩）、あし（足）、みみ（耳）、くち（口）、いす（椅子）、ちず（地図）</td></tr>
+<tr><td>4　3〜4拍の語</td><td>3拍：たまご（卵）、めがね（眼鏡）、さかな（魚）、くすり（薬）、まくら（枕）、なまえ（名前）<br>4拍：しんぶん（新聞）、てんぷら（天ぷら）、みそしる（味噌汁）、としょかん（図書館）、そうじき（掃除機）<br>本人の語：家族の名前、住んでいる町の名前、好きな食べ物など</td></tr>
+<tr><td>5　短文</td><td>2文節：お茶をください。／水を飲みます。／窓を開けてください。<br>3文節：朝ご飯を食べました。／明日は雨が降ります。／娘に電話をかけます。<br>質問への答え：「朝ご飯は何でしたか」「今日は何曜日ですか」など、答えが短くなる質問から</td></tr>
+</table>
+<h2>進め方の目安</h2>
+<ul><li>1回の練習で同じ語を3〜5回繰り返します。言えた語は次の回にも短く確認します。</li>
+<li>誤りが続くときは無理に繰り返さず、1つ前の段階や、手がかりの多い方法に戻ります。</li>
+<li>リズム（手拍子・指折り）や区切り（「／」）は、言えるようになったら少しずつ外していきます。</li>
+<li>疲労で誤りが増えやすいため、1回の練習は短めにし、休憩を入れてください。</li></ul>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet key">
+<div class="head"><div><div class="tag">指導者用（患者さんには渡さない）</div><h1>評価のポイントと記録表</h1></div></div>
+<h2>評価のポイント</h2>
+<ul><li>話し始めまでの時間、探索的な口の動き、音の引き伸ばし・途切れ、言い直しの回数。</li>
+<li>誤りの種類（歪み・置き換え・省略・付け加え）と、同じ語を繰り返したときの誤りの変わり方（一貫性）。</li>
+<li>語の長さ（拍数）による違い、音の種類（唇・舌先・舌の奥・さ行・ら行・拗音）による違い。</li>
+<li>どの手がかり（一緒に言う・口の形・手拍子・文字）で言えるようになるか。</li>
+<li>自動的な言葉（構音課題5・6）と、自分で考えて言う言葉との差。</li>
+<li>代償手段：筆談・指さしを実際の場面で使えているか。家族が使い方を理解しているか。</li></ul>
+<h2>記録表（1語ごとに段階6〜1を記入）</h2>
+<table>
+<tr><th style="width:15%">月日</th><th style="width:22%">課題</th><th style="width:7%">6</th><th style="width:7%">5</th><th style="width:7%">4</th><th style="width:7%">3</th><th style="width:7%">2</th><th style="width:7%">1</th><th>使った手がかり・メモ</th></tr>
+<tr><td style="height:9.5mm"></td><td style="height:9.5mm"></td><td style="height:9.5mm"></td><td style="height:9.5mm"></td><td style="height:9.5mm"></td><td style="height:9.5mm"></td><td style="height:9.5mm"></td><td style="height:9.5mm"></td><td style="height:9.5mm"></td></tr><tr><td style="height:9.5mm"></td><td style="height:9.5mm"></td><td style="height:9.5mm"></td><td style="height:9.5mm"></td><td style="height:9.5mm"></td><td style="height:9.5mm"></td><td style="height:9.5mm"></td><td style="height:9.5mm"></td><td style="height:9.5mm"></td></tr><tr><td style="height:9.5mm"></td><td style="height:9.5mm"></td><td style="height:9.5mm"></td><td style="height:9.5mm"></td><td style="height:9.5mm"></td><td style="height:9.5mm"></td><td style="height:9.5mm"></td><td style="height:9.5mm"></td><td style="height:9.5mm"></td></tr><tr><td style="height:9.5mm"></td><td style="height:9.5mm"></td><td style="height:9.5mm"></td><td style="height:9.5mm"></td><td style="height:9.5mm"></td><td style="height:9.5mm"></td><td style="height:9.5mm"></td><td style="height:9.5mm"></td><td style="height:9.5mm"></td></tr><tr><td style="height:9.5mm"></td><td style="height:9.5mm"></td><td style="height:9.5mm"></td><td style="height:9.5mm"></td><td style="height:9.5mm"></td><td style="height:9.5mm"></td><td style="height:9.5mm"></td><td style="height:9.5mm"></td><td style="height:9.5mm"></td></tr><tr><td style="height:9.5mm"></td><td style="height:9.5mm"></td><td style="height:9.5mm"></td><td style="height:9.5mm"></td><td style="height:9.5mm"></td><td style="height:9.5mm"></td><td style="height:9.5mm"></td><td style="height:9.5mm"></td><td style="height:9.5mm"></td></tr><tr><td style="height:9.5mm"></td><td style="height:9.5mm"></td><td style="height:9.5mm"></td><td style="height:9.5mm"></td><td style="height:9.5mm"></td><td style="height:9.5mm"></td><td style="height:9.5mm"></td><td style="height:9.5mm"></td><td style="height:9.5mm"></td></tr><tr><td style="height:9.5mm"></td><td style="height:9.5mm"></td><td style="height:9.5mm"></td><td style="height:9.5mm"></td><td style="height:9.5mm"></td><td style="height:9.5mm"></td><td style="height:9.5mm"></td><td style="height:9.5mm"></td><td style="height:9.5mm"></td></tr><tr><td style="height:9.5mm"></td><td style="height:9.5mm"></td><td style="height:9.5mm"></td><td style="height:9.5mm"></td><td style="height:9.5mm"></td><td style="height:9.5mm"></td><td style="height:9.5mm"></td><td style="height:9.5mm"></td><td style="height:9.5mm"></td></tr><tr><td style="height:9.5mm"></td><td style="height:9.5mm"></td><td style="height:9.5mm"></td><td style="height:9.5mm"></td><td style="height:9.5mm"></td><td style="height:9.5mm"></td><td style="height:9.5mm"></td><td style="height:9.5mm"></td><td style="height:9.5mm"></td></tr><tr><td style="height:9.5mm"></td><td style="height:9.5mm"></td><td style="height:9.5mm"></td><td style="height:9.5mm"></td><td style="height:9.5mm"></td><td style="height:9.5mm"></td><td style="height:9.5mm"></td><td style="height:9.5mm"></td><td style="height:9.5mm"></td></tr><tr><td style="height:9.5mm"></td><td style="height:9.5mm"></td><td style="height:9.5mm"></td><td style="height:9.5mm"></td><td style="height:9.5mm"></td><td style="height:9.5mm"></td><td style="height:9.5mm"></td><td style="height:9.5mm"></td><td style="height:9.5mm"></td></tr>
+</table>
+<p style="margin:1mm 0 0;font-size:10pt">段階6・5の数を合計し、語の数で割ると、SLTAと同じ考え方の正答率になります。段階5が減って段階6が増えることも、大切な改善の目安です。</p>
+<p style="margin-top:2mm">最終的な判断は担当の言語聴覚士が行ってください。</p>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+
+<script src="mini-profile.js"></script>
+</body>
+</html>

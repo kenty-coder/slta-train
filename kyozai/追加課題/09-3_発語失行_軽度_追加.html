@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="author" content="KENTA SHINKAWA">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>発語失行（軽度）追加課題集</title>
+<link rel="stylesheet" href="common.css">
+<style>
+.guide{font-size:10pt;line-height:1.45}
+.guide h2{font-size:12pt;margin:2mm 0 .8mm}
+.guide table{font-size:9.3pt;margin:0 0 1.5mm}
+.guide th,.guide td{padding:.4mm 1.5mm}
+.guide p{margin:0 0 1.2mm}
+.say{border:1.5px solid #333;border-radius:2mm;padding:1.5mm 4mm;background:#fafafa;margin:0 0 1.5mm}
+.key{font-size:9.8pt;line-height:1.42}
+.key h2{font-size:11.5pt;margin:2mm 0 1mm}
+.key table{border-collapse:collapse;width:100%;font-size:9.3pt;margin:0 0 1.5mm}
+.key th,.key td{border:1px solid #bbb;padding:.4mm 1.5mm;text-align:left;vertical-align:top}
+.key th{background:#f2f2f2}
+.key p{margin:0 0 1mm}
+.key ul{margin:0 0 1mm;padding-left:5mm}
+table.wt{border-collapse:collapse;width:100%;margin:0 0 3mm}
+table.wt th{border:1px solid #333;background:#f2f2f2;font-size:10.5pt;padding:.8mm 1.5mm}
+table.wt td{border:1px solid #333;padding:.8mm 2mm;font-size:12pt;vertical-align:middle}
+table.wt td.n{width:9mm;text-align:center;color:#555}
+table.wt td.w{font-size:28pt;font-weight:700;line-height:1.2}
+table.wt td.w small{display:block;font-size:12pt;font-weight:400;color:#444;letter-spacing:.15em}
+table.wt td.d{font-size:15pt;letter-spacing:.25em;text-align:center}
+table.wt td.sc{font-size:11.5pt;color:#333}
+table.wt td.c{width:17mm}
+table.wt td.h{width:27mm;font-size:10.5pt;text-align:center;white-space:nowrap}
+.fam{border:2px dashed #555;border-radius:2mm;padding:1.2mm 4mm 1.5mm;margin:auto 0 0;font-size:10.5pt;line-height:1.45}
+.fam .ft{font-size:9.6pt;font-weight:700;border-bottom:1px solid #999;margin-bottom:.8mm}
+.fam table{border-collapse:collapse;width:100%;font-size:10.3pt}
+.fam td{border-bottom:1px dotted #aaa;padding:.2mm 1.5mm;vertical-align:top}
+.fam td:first-child{width:27mm;white-space:nowrap;font-weight:700}
+.pair{display:flex;align-items:center;gap:6mm;border-bottom:1px solid #ccc;padding:2.2mm 0}
+.pair .no{font-size:13pt;color:#555;width:8mm}
+.pair .cd{border:2px solid #333;border-radius:2mm;min-width:44mm;text-align:center;font-size:30pt;font-weight:700;line-height:1.2;padding:1mm 3mm}
+.pair .cd small{display:block;font-size:12pt;font-weight:400;color:#444;letter-spacing:.15em}
+.pair .rc{margin-left:auto;font-size:10.5pt;text-align:center;line-height:1.3}
+.bx{display:inline-block;width:11mm;height:11mm;border:1.5px solid #333;border-radius:1.5mm;vertical-align:middle;margin:0 1mm}
+.k1{display:grid;grid-template-columns:repeat(3,1fr);gap:4mm;margin:0 0 4mm}
+.k1 div{border:2px solid #333;border-radius:2mm;text-align:center;padding:1mm 0 2mm;font-size:62pt;font-weight:700;line-height:1.15}
+.k1 div small{display:block;font-size:16pt;font-weight:400;color:#444}
+.k1 div i{display:block;font-style:normal;font-size:10pt;color:#666;text-align:left;padding-left:2mm;line-height:1.2}
+.cp{display:flex;align-items:center;gap:4mm;margin:0 0 3mm}
+.cp .no{font-size:12pt;color:#555;width:7mm}
+.cp .m{border:2px solid #333;background:#f6f6f6;font-size:30pt;font-weight:700;text-align:center;width:44mm;height:22mm;line-height:22mm}
+.cp .sq{width:22mm;height:22mm;border:1.5px solid #333}
+.cp .rc{margin-left:auto;font-size:10.5pt;text-align:center;line-height:1.3}
+.lv{font-size:12.5pt;font-weight:700;margin:2mm 0 2mm;border-bottom:1px solid #bbb}
+.ar{font-size:34pt;font-weight:700;text-align:center;width:16mm}
+.pq{border-bottom:1px solid #ccc;padding:1.5mm 0}
+.pq .qq{font-size:15pt;font-weight:700;margin:0 0 1mm}
+.pq .ps{display:flex;gap:6mm;align-items:center;margin-left:8mm}
+.pq .pc{border:1.5px solid #333;border-radius:2mm;text-align:center;padding:.5mm 2mm;width:34mm}
+.pq .pc svg{width:24mm;height:24mm;display:block;margin:0 auto}
+.pq .pc b{display:block;font-size:13pt}
+.pq .rc{margin-left:auto;font-size:10.5pt;text-align:center;line-height:1.3}
+.mc4{display:flex;align-items:center;gap:3mm;border-bottom:1px solid #ccc;padding:2.2mm 0}
+.mc4 .qq{font-size:14pt;color:#555;width:8mm}
+.mc4 .ops{display:flex;gap:3mm;flex:1}
+.mc4 .ops span{border:2px solid #333;border-radius:2mm;flex:1;text-align:center;font-size:20pt;font-weight:700;padding:1mm 0;letter-spacing:.08em}
+.mc4 .rc{font-size:10.5pt;text-align:center;line-height:1.3}
+.wl2{display:grid;grid-template-columns:1fr 1fr;gap:0 10mm;margin:0 0 2mm}
+.wl2 div{display:flex;align-items:center;gap:3mm;border-bottom:1px solid #bbb;height:15mm;font-size:21pt;font-weight:700}
+.wl2 div i{font-style:normal;font-size:11pt;color:#555;font-weight:400;min-width:7mm}
+.wl2 div .bx{margin-left:auto}
+.fam table.f2 td:first-child,.fam table.f2 td:nth-child(3){width:30mm;font-weight:700;white-space:nowrap}
+.wq{margin:0 0 3mm}
+.wq .qq{font-size:14.5pt;font-weight:700}
+.wq .ln{display:flex;align-items:flex-end;gap:5mm;margin-left:8mm}
+.wq .ln .l{flex:1;height:13mm;border-bottom:1.5px solid #555}
+.wq .rc{font-size:10.5pt;text-align:center;line-height:1.3}
+table.sent3{border-collapse:collapse;width:100%;margin:0 0 3mm}
+table.sent3 th{border:1px solid #333;background:#f2f2f2;font-size:10.5pt;padding:.8mm 1.5mm}
+table.sent3 td{border:1px solid #333;padding:.8mm 2mm;height:12mm;font-size:12pt;text-align:center}
+table.sent3 td.s{font-size:17pt;font-weight:700;text-align:left}
+table.sent3 td.h{font-size:10.5pt;white-space:nowrap}
+table.sent3 tr.top td{border-top:2.5px solid #333}
+.mc{margin:0 0 2.5mm;border-bottom:1px solid #ccc;padding-bottom:1.5mm}
+.mc .qq{font-size:14pt;font-weight:700}
+.mc .ops{display:flex;gap:3mm;flex-wrap:wrap;margin:1mm 0 0 7mm}
+.mc .ops span{border:1.5px solid #333;border-radius:2mm;padding:.5mm 3mm;font-size:14pt}
+.mc .ops em.said{font-style:normal;margin-left:auto;font-size:11pt;border:none;padding:0}
+.mc .said .bx{width:9mm;height:9mm}
+.guide h2{margin:2mm 0 .8mm}
+.art{border:1.5px solid #333;padding:3mm 5mm;margin:0 0 3mm;font-size:13pt;line-height:1.8}
+.art h2{font-size:15pt;margin:0 0 1.5mm;border-bottom:2px solid #333;padding-bottom:1mm;text-align:center}
+.qa{margin:0 0 2mm;font-size:13pt}
+.qa b{display:inline-block;min-width:7mm}
+.qa .l{height:10mm;border-bottom:1px solid #999;margin-left:7mm}
+.memo2{border:1.5px solid #333;border-radius:2mm;padding:1mm 5mm;margin:0 0 3mm}
+.memo2 .l{height:10.5mm;border-bottom:1px solid #bbb;display:flex;align-items:flex-end;font-size:11pt;color:#555}
+.memo4{display:grid;grid-template-columns:1fr 1fr;gap:4mm}
+.memo4>div{border:1.5px solid #333;border-radius:2mm;padding:2mm 4mm}
+.memo4 h3{font-size:14pt;margin:0;border-bottom:1px solid #999}
+.memo4 p{font-size:11.5pt;margin:1mm 0;line-height:1.45;min-height:16mm}
+.memo4 .l{height:11mm;border-bottom:1px solid #bbb}
+.memo4 .r{text-align:right;font-size:11pt;margin-top:2mm}
+.memo4 .r .bx{width:9mm;height:9mm}
+.amb{border-bottom:1px solid #ccc;padding:1.6mm 0}
+.amb .s{font-size:16.5pt;font-weight:700}
+.amb .m{font-size:11.5pt;color:#333;margin-left:7mm;display:flex;align-items:center;gap:2mm}
+.amb .m .bx{width:8mm;height:8mm;margin-right:6mm}
+table.qt td{height:11.5mm}
+table.qt td.q{text-align:left;font-size:13pt}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:3mm;margin:0 0 3mm}
+.steps div{border:1.5px solid #333;border-radius:2mm;position:relative;padding:1mm}
+.steps div i{position:absolute;left:2mm;top:.5mm;font-style:normal;font-size:12pt;font-weight:700}
+.steps svg{width:100%;height:auto;display:block}
+.guide{font-size:9.7pt;line-height:1.4}
+.guide table{font-size:9pt}
+</style>
+
+</head>
+<body>
+<div class="noprint">印刷するときは <b>Ctrl＋P</b> を押してください（用紙：A4縦）。最初のページは指導者用の説明、最後のページは指導者用の読み上げリスト・解答・評価のポイントです。患者さんには課題用紙のページだけをお渡しください。</div>
+
+<section class="sheet guide">
+<div class="head"><div><div class="tag">指導者用（患者さんには渡さない）</div><h1>発語失行（軽度）追加課題集 ― 指導者用ガイド</h1></div></div>
+<h2>1．この追加課題集のねらい</h2>
+<p>基本教材「09-3_発語失行_軽度」の次に、または並行して使います。基本教材に続けて、<b>言いにくい語、長い文の復唱、お知らせ文の音読、数字・日時の伝達、要点を書いてから伝える練習、区切りによる読み分け、即答、手順の説明</b>を練習し、生活や仕事の場面で正確に、聞き取りやすく話すことをめざします。</p>
+<h2>2．課題ページの一覧と難しさ</h2>
+<table><tr><th style="width:6%">頁</th><th style="width:21%">課題</th><th>内容</th><th style="width:9%">問題数</th><th style="width:9%">難しさ</th></tr>
+<tr><td>1</td><td>構音課題1</td><td>病院・手続きで使う言いにくい語</td><td>10</td><td>★★</td></tr>
+<tr><td>2</td><td>復唱課題</td><td>指導者の言う長い文を聞いて、そのまま言う</td><td>8</td><td>★★★</td></tr>
+<tr><td>3</td><td>音読課題</td><td>お知らせ文の音読と、内容についての質問</td><td>長文1＋3</td><td>★★</td></tr>
+<tr><td>4</td><td>構音課題2</td><td>数字・日時・住所を正確に読み上げる</td><td>10</td><td>★★</td></tr>
+<tr><td>5</td><td>書字・発話課題</td><td>要点をメモに書き、メモを見ながら伝える</td><td>4場面</td><td>★★★</td></tr>
+<tr><td>6</td><td>抑揚課題</td><td>区切る位置で意味が変わる文を読み分ける</td><td>8</td><td>★★★</td></tr>
+<tr><td>7</td><td>会話課題</td><td>質問を聞いて、1〜2文ですぐに答える</td><td>10</td><td>★★</td></tr>
+<tr><td>8</td><td>談話課題</td><td>絵を見て手順を説明する・道順を説明する</td><td>2</td><td>★★★</td></tr></table>
+<h2>3．ヒントの順番（できるだけ控え、必要なときだけ①から足す）</h2>
+<table><tr><th style="width:15%">課題の種類</th><th>ヒントの順番</th></tr>
+<tr><td>話す課題</td><td>①「今のところをもう一度」とだけ伝える → ②区切りの位置を示す → ③指で机をたたいて速さを示す → ④口の形を見せる → ⑤一緒に言う</td></tr>
+<tr><td>聞く課題</td><td>①もう一度同じ速さで言う → ②ゆっくり言う → ③文節ごとに区切って言う → ④要点の語を書いて示す</td></tr>
+<tr><td>書く課題</td><td>①短い語句で書いてよい → ②書く項目（いつ・どこで・何を）を示す → ③最初の語を示す → ④例文を見て書く</td></tr></table>
+<p>何番目のヒントで正答できたかを「ヒント（　）番目」の欄に書きます。録音を一緒に聞き返し、自分で気づいて直す力を育てます。</p>
+<h2>4．記録のしかた</h2>
+<p>1語・1文ごとに段階6〜1で記録し、<b>段階6・5を正答</b>とします（6＝すぐ正確、5＝遅れ・よどみはあるが正確、4＝一部の音に歪み、3＝ヒント後正答、2＝一部だけ、1＝言えない）。<b>ヒントを使って正答したときは段階4以下（多くは段階3）</b>を目安にします。軽度では段階5を減らし、段階6を増やすことを目標にします。</p>
+<h2>5．どの課題から始めるか</h2>
+<p>1（言いにくい語）と4（数字・日時）から始め、次に3・7、慣れたら2・6、最後に5・8へ進みます。1回20〜30分、3〜4ページまでにします。</p>
+<h2>6．ご家族向けの説明（このまま読み上げてください）</h2>
+<div class="say">「この用紙は、長い言葉や文を、正確に聞き取りやすく話す練習のためのものです。言い誤りがあっても細かく指摘せず、まずは最後まで聞いてください。言いにくそうなときは、ヒント欄を①から順に使い、『もう一度』と声をかける、区切る所を示す、ゆっくり机をたたいて速さを示す、の順に手伝ってください。話す役割を少しずつお任せいただくことも練習になります。」</div>
+<p style="font-size:9.3pt">ここに書いた内容は一般的な目安です。<b>最終的な判断は担当の言語聴覚士が行ってください。</b></p>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+
+<section class="sheet">
+<div class="head"><div><div class="tag">構音課題 1</div><h1>病院・手続きで使う言いにくい語</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div>
+<p class="ask">語を「区切って」言い、次に「ふつうの速さ」で言ってください。言えたら、その語を使った文を自分で作って言ってください。</p>
+<table class="wt"><tr><th>番号</th><th>語</th><th>読み方</th><th>区切って</th><th>ふつう</th><th>文で</th><th>ヒント</th></tr>
+<tr><td class="n">1</td><td class="w" style="font-size:15.5pt;white-space:nowrap">手術室</td><td class="sc" style="font-size:10pt">しゅじゅつしつ</td><td class="c"></td><td class="c"></td><td class="c"></td><td class="h">（　）番目</td></tr>
+<tr><td class="n">2</td><td class="w" style="font-size:15.5pt;white-space:nowrap">骨粗しょう症</td><td class="sc" style="font-size:10pt">こつそしょうしょう</td><td class="c"></td><td class="c"></td><td class="c"></td><td class="h">（　）番目</td></tr>
+<tr><td class="n">3</td><td class="w" style="font-size:15.5pt;white-space:nowrap">入出金</td><td class="sc" style="font-size:10pt">にゅうしゅっきん</td><td class="c"></td><td class="c"></td><td class="c"></td><td class="h">（　）番目</td></tr>
+<tr><td class="n">4</td><td class="w" style="font-size:15.5pt;white-space:nowrap">循環器科</td><td class="sc" style="font-size:10pt">じゅんかんきか</td><td class="c"></td><td class="c"></td><td class="c"></td><td class="h">（　）番目</td></tr>
+<tr><td class="n">5</td><td class="w" style="font-size:15.5pt;white-space:nowrap">消化器内科</td><td class="sc" style="font-size:10pt">しょうかきないか</td><td class="c"></td><td class="c"></td><td class="c"></td><td class="h">（　）番目</td></tr>
+<tr><td class="n">6</td><td class="w" style="font-size:15.5pt;white-space:nowrap">社会福祉協議会</td><td class="sc" style="font-size:10pt">しゃかいふくしきょうぎかい</td><td class="c"></td><td class="c"></td><td class="c"></td><td class="h">（　）番目</td></tr>
+<tr><td class="n">7</td><td class="w" style="font-size:15.5pt;white-space:nowrap">特別養護老人ホーム</td><td class="sc" style="font-size:10pt">とくべつようごろうじんホーム</td><td class="c"></td><td class="c"></td><td class="c"></td><td class="h">（　）番目</td></tr>
+<tr><td class="n">8</td><td class="w" style="font-size:15.5pt;white-space:nowrap">選挙管理委員会</td><td class="sc" style="font-size:10pt">せんきょかんりいいんかい</td><td class="c"></td><td class="c"></td><td class="c"></td><td class="h">（　）番目</td></tr>
+<tr><td class="n">9</td><td class="w" style="font-size:15.5pt;white-space:nowrap">確定申告</td><td class="sc" style="font-size:10pt">かくていしんこく</td><td class="c"></td><td class="c"></td><td class="c"></td><td class="h">（　）番目</td></tr>
+<tr><td class="n">10</td><td class="w" style="font-size:15.5pt;white-space:nowrap">住民票</td><td class="sc" style="font-size:10pt">じゅうみんひょう</td><td class="c"></td><td class="c"></td><td class="c"></td><td class="h">（　）番目</td></tr></table>
+<div class="fam"><div class="ft">ヒント欄（ご家族用。最初は折って隠してください）　①「もう一度」→ ②区切りの位置を示す → ③机をたたいて速さを示す</div>
+<table class="f2"><tr><td>1 手術室</td><td>しゅ・じゅつ・しつ</td><td>6 社会福祉協議会</td><td>しゃかい／ふくし／きょうぎかい</td></tr>
+<tr><td>2 骨粗しょう症</td><td>こつ・そしょう・しょう</td><td>7 特別養護老人ホーム</td><td>とくべつ／ようご／ろうじん／ホーム</td></tr>
+<tr><td>3 入出金</td><td>にゅう・しゅっ・きん</td><td>8 選挙管理委員会</td><td>せんきょ／かんり／いいんかい</td></tr>
+<tr><td>4 循環器科</td><td>じゅん・かん・き・か</td><td>9 確定申告</td><td>かくてい／しんこく</td></tr>
+<tr><td>5 消化器内科</td><td>しょうかき・ないか</td><td>10 住民票</td><td>じゅう・みん・ひょう</td></tr></table></div>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+
+<section class="sheet">
+<div class="head"><div><div class="tag">復唱課題</div><h1>長い文を聞いてそのまま言う</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div>
+<p class="ask">指導者が文を1つずつ読みます。最後までよく聞いてから、同じ文を声に出して言ってください。</p>
+<p class="hint">文は指導者が読みます（この用紙には書いてありません）。抜けた語や言い誤った語は、指導者が右の欄に書きます。</p>
+<table class="sent3"><tr><th style="width:9mm">番号</th><th style="width:28mm">話題</th><th style="width:16mm">1回目</th><th style="width:16mm">2回目</th><th style="width:22mm">ヒント</th><th>抜けた語・言い誤った語</th></tr>
+<tr><td>1</td><td>宅配便</td><td></td><td></td><td class="h">（　）番目</td><td></td></tr>
+<tr><td>2</td><td>薬の飲み方</td><td></td><td></td><td class="h">（　）番目</td><td></td></tr>
+<tr><td>3</td><td>役所の手続き</td><td></td><td></td><td class="h">（　）番目</td><td></td></tr>
+<tr><td>4</td><td>町内会</td><td></td><td></td><td class="h">（　）番目</td><td></td></tr>
+<tr><td>5</td><td>道案内</td><td></td><td></td><td class="h">（　）番目</td><td></td></tr>
+<tr><td>6</td><td>季節の支度</td><td></td><td></td><td class="h">（　）番目</td><td></td></tr>
+<tr><td>7</td><td>家族の行事</td><td></td><td></td><td class="h">（　）番目</td><td></td></tr>
+<tr><td>8</td><td>健康診断</td><td></td><td></td><td class="h">（　）番目</td><td></td></tr></table>
+<div class="card" style="padding:3mm 6mm"><h2 style="font-size:13.5pt">言いにくいときのヒント（指導者・ご家族用）</h2><p style="margin:0;font-size:12pt">聞く：①同じ速さでもう一度 → ②ゆっくり → ③文節ごとに区切って → ④要点の語を書いて示す<br>話す：①「今のところをもう一度」→ ②区切りの位置を示す → ③机をたたいて速さを示す → ④口の形 → ⑤一緒に</p></div>
+<p style="font-size:12pt;margin:0">1回目で言えた文：（　　）／8　　2回目までに言えた文：（　　）／8<br>録音して聞き返したときの感想：</p>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+
+<section class="sheet">
+<div class="head"><div><div class="tag">音読課題</div><h1>お知らせ文の音読</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div>
+<p class="ask">次のお知らせを、声に出して読んでください。読み終わったら、下の質問に声で答えてください。</p>
+<div class="art"><h2>秋の防災訓練のお知らせ</h2>
+<p style="margin:0">本年度の防災訓練を、十一月十六日（日）午前九時から、第一小学校の校庭で行います。当日は、大きな地震が起きたという想定で、各家庭から避難場所まで歩いて移動していただきます。到着後は、消防署の方による消火器の使い方の説明と、煙の中を歩く体験があります。また、非常食の試食や、飲料水の配布も予定しています。</p>
+<p style="margin:1mm 0 0">体の不自由な方や、歩いての移動が難しい方は、前日までに自治会の役員にお知らせください。車での送迎を手配いたします。雨天の場合は体育館で行いますが、内容を一部変更することがあります。動きやすい服装でお越しください。</p>
+<p style="margin:1mm 0 0;text-align:right">東町自治会　防災担当</p></div>
+<table class="sent3"><tr><th></th><th>かかった時間</th><th>読み誤り・言い直しの数</th><th>聞き取りやすさ（自己評価）</th></tr>
+<tr><td>1回目</td><td>　　　秒</td><td>　　　か所</td><td style="white-space:nowrap">1・2・3・4・5</td></tr>
+<tr><td>2回目</td><td>　　　秒</td><td>　　　か所</td><td>1・2・3・4・5</td></tr></table>
+<p class="ask" style="margin:1mm 0 1.5mm">質問（文を見ないで、1〜2文で答えてください）</p>
+<div class="qa"><b>1.</b>訓練は、いつ、どこで行われますか。<div class="l"></div></div>
+<div class="qa"><b>2.</b>避難場所に着いたあと、どんな説明や体験がありますか。<div class="l"></div></div>
+<div class="qa"><b>3.</b>歩いて行くのが難しい人は、どうすればよいですか。<div class="l"></div></div>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+
+<section class="sheet">
+<div class="head"><div><div class="tag">構音課題 2</div><h1>数字・日時・住所を正確に伝える</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div>
+<p class="ask">相手に伝えるつもりで、声に出して読んでください。最初は区切りごとに少し間をあけて、次にふつうの速さで読んでください。</p>
+<p class="hint">番号や住所はすべて架空のものです。</p>
+<table class="sent3"><tr><th style="width:9mm">番号</th><th>読む内容</th><th style="width:17mm">区切って</th><th style="width:17mm">ふつう</th><th style="width:22mm">ヒント</th></tr>
+<tr><td>1</td><td class="s">12月24日（火）午後3時15分</td><td></td><td></td><td class="h">（　）番目</td></tr>
+<tr><td>2</td><td class="s">電話番号は 042-558-3179 です</td><td></td><td></td><td class="h">（　）番目</td></tr>
+<tr><td>3</td><td class="s">お会計は 4,280円 です</td><td></td><td></td><td class="h">（　）番目</td></tr>
+<tr><td>4</td><td class="s">郵便番号は 183-0022 です</td><td></td><td></td><td class="h">（　）番目</td></tr>
+<tr><td>5</td><td class="s">今朝の熱は 37.2度 でした</td><td></td><td></td><td class="h">（　）番目</td></tr>
+<tr><td>6</td><td class="s">血圧は上が 138、下が 84 でした</td><td></td><td></td><td class="h">（　）番目</td></tr>
+<tr><td>7</td><td class="s">住所は 東町3丁目14番地の8 です</td><td></td><td></td><td class="h">（　）番目</td></tr>
+<tr><td>8</td><td class="s">2027年4月1日から料金が変わります</td><td></td><td></td><td class="h">（　）番目</td></tr>
+<tr><td>9</td><td class="s">7時45分発の快速電車に乗ります</td><td></td><td></td><td class="h">（　）番目</td></tr>
+<tr><td>10</td><td class="s">第3会議室で 13時半 から始めます</td><td></td><td></td><td class="h">（　）番目</td></tr></table>
+<div class="fam"><div class="ft">ヒント欄（ご家族用。最初は折って隠してください）　①「もう一度」→ ②区切りの位置を示す → ③机をたたいて速さを示す</div>
+<p style="margin:0">区切りの例：①じゅうにがつ／にじゅうよっか／かようび／ごご／さんじ／じゅうごふん　②ぜろよんに／ごごはち／さんいちななきゅう　③よんせん／にひゃく／はちじゅうえん　⑤さんじゅうななど／にぶ　⑥うえが／ひゃくさんじゅうはち／したが／はちじゅうよん　⑦ひがしまち／さんちょうめ／じゅうよんばんちの／はち</p></div>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+
+<section class="sheet">
+<div class="head"><div><div class="tag">書字・発話課題</div><h1>要点を書いてから伝える</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div>
+<p class="ask">それぞれの場面で伝えることを、短い言葉でメモに書いてください。次に、メモを見ながら、相手に伝えるつもりで話してください（指導者が相手の役をします）。</p>
+<div class="memo4">
+<div><h3>1．かかりつけ医に</h3><p>いつもの薬が残り少ないこと、最近、夜中に目が覚めやすいことを伝える。</p><div class="l"></div><div class="l"></div><div class="l"></div><div class="r">話した <span class="bx"></span>　伝わった <span class="bx"></span></div></div>
+<div><h3>2．家族に</h3><p>明日の通院の時間、持って行く物、帰りが何時ごろになるかを伝える。</p><div class="l"></div><div class="l"></div><div class="l"></div><div class="r">話した <span class="bx"></span>　伝わった <span class="bx"></span></div></div>
+<div><h3>3．美容院・理容店で</h3><p>髪をどのくらい切りたいか、気になっている所、仕上がりの希望を伝える。</p><div class="l"></div><div class="l"></div><div class="l"></div><div class="r">話した <span class="bx"></span>　伝わった <span class="bx"></span></div></div>
+<div><h3>4．近所の人に</h3><p>旅行で3日間留守にすること、その間の回覧板の扱いをお願いする。</p><div class="l"></div><div class="l"></div><div class="l"></div><div class="r">話した <span class="bx"></span>　伝わった <span class="bx"></span></div></div>
+</div>
+<p class="hint" style="margin-top:2mm">メモは「いつ・何を・どうしてほしいか」の順に書くと、話しやすくなります。</p>
+<p style="font-size:12pt;margin:0">書くときのヒント：①短い語句でよい　②書く項目を示す　③最初の語を示す　④例文を見て書く　（　）番目</p>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+
+<section class="sheet">
+<div class="head"><div><div class="tag">抑揚課題</div><h1>区切る位置で意味を変える</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div>
+<p class="ask">同じ文でも、区切る位置で意味が変わります。（Ａ）と（Ｂ）の意味になるように、間のあけ方を変えて読み分けてください。</p>
+<p class="hint">指導者は、どちらの意味に聞こえたかを当てます。当たったら□に印を付けます。</p>
+<div class="amb"><div class="s">1．母と姉の友人に会いました。</div><div class="m">（Ａ）会ったのは母と、姉の友人<span class="bx"></span>（Ｂ）会ったのは、母と姉に共通の友人<span class="bx"></span></div></div>
+<div class="amb"><div class="s">2．大きな庭の木を切りました。</div><div class="m">（Ａ）庭が大きい<span class="bx"></span>（Ｂ）木が大きい<span class="bx"></span></div></div>
+<div class="amb"><div class="s">3．きれいな花の絵をもらいました。</div><div class="m">（Ａ）花がきれい<span class="bx"></span>（Ｂ）絵がきれい<span class="bx"></span></div></div>
+<div class="amb"><div class="s">4．急いで駅を出た友人を追いかけました。</div><div class="m">（Ａ）急いだのは自分<span class="bx"></span>（Ｂ）急いだのは友人<span class="bx"></span></div></div>
+<div class="amb"><div class="s">5．黒い犬の首輪を見つけました。</div><div class="m">（Ａ）犬が黒い<span class="bx"></span>（Ｂ）首輪が黒い<span class="bx"></span></div></div>
+<div class="amb"><div class="s">6．父は笑いながら走る弟を見ていました。</div><div class="m">（Ａ）笑っていたのは父<span class="bx"></span>（Ｂ）笑っていたのは弟<span class="bx"></span></div></div>
+<div class="amb"><div class="s">7．新しい学校の先生が来ました。</div><div class="m">（Ａ）学校が新しい<span class="bx"></span>（Ｂ）先生が新しく来た<span class="bx"></span></div></div>
+<div class="amb"><div class="s">8．先週入院した伯父を見舞いました。</div><div class="m">（Ａ）入院したのが先週<span class="bx"></span>（Ｂ）見舞ったのが先週<span class="bx"></span></div></div>
+<p style="font-size:12pt;margin:2mm 0 0">聞き手に伝わった数：（　　）／16　　ヒント（　）番目で正答した問題：（　　　）</p>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+
+<section class="sheet">
+<div class="head"><div><div class="tag">会話課題</div><h1>質問にすぐ答える</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div>
+<p class="ask">指導者が質問を読みます。1〜2文で、できるだけすぐに答えてください。</p>
+<p class="hint">「〇〇です。〇〇だからです。」のように、文の形で答えてください。</p>
+<table class="sent3 qt"><tr><th style="width:8mm">番号</th><th>質問</th><th style="width:20mm">話し始め<br>まで</th><th style="width:15mm">文で</th><th style="width:33mm">聞き取りやすさ</th></tr>
+<tr><td>1</td><td class="q">今朝は、何を食べましたか。</td><td>　　秒</td><td></td><td style="white-space:nowrap">1・2・3・4・5</td></tr>
+<tr><td>2</td><td class="q">最近、気になったニュースは何ですか。</td><td>　　秒</td><td></td><td style="white-space:nowrap">1・2・3・4・5</td></tr>
+<tr><td>3</td><td class="q">雨の日は、家で何をして過ごしますか。</td><td>　　秒</td><td></td><td style="white-space:nowrap">1・2・3・4・5</td></tr>
+<tr><td>4</td><td class="q">子どものころ、好きだった遊びは何ですか。</td><td>　　秒</td><td></td><td style="white-space:nowrap">1・2・3・4・5</td></tr>
+<tr><td>5</td><td class="q">今の時期に、おいしい食べ物は何ですか。</td><td>　　秒</td><td></td><td style="white-space:nowrap">1・2・3・4・5</td></tr>
+<tr><td>6</td><td class="q">よく行くお店と、そこで買う物を教えてください。</td><td>　　秒</td><td></td><td style="white-space:nowrap">1・2・3・4・5</td></tr>
+<tr><td>7</td><td class="q">体の調子で、気をつけていることは何ですか。</td><td>　　秒</td><td></td><td style="white-space:nowrap">1・2・3・4・5</td></tr>
+<tr><td>8</td><td class="q">行ってみたい場所と、その理由を教えてください。</td><td>　　秒</td><td></td><td style="white-space:nowrap">1・2・3・4・5</td></tr>
+<tr><td>9</td><td class="q">最近、新しく覚えたことは何ですか。</td><td>　　秒</td><td></td><td style="white-space:nowrap">1・2・3・4・5</td></tr>
+<tr><td>10</td><td class="q">ご家族に「ありがとう」と伝えたいことは何ですか。</td><td>　　秒</td><td></td><td>1・2・3・4・5</td></tr></table>
+<p style="font-size:12pt;margin:0">文で答えられた数：（　　）／10　　話し始めが遅れた質問：（　　　　　）<br>ヒント（　）番目で答えられた質問：（　　　　　）</p>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+
+<section class="sheet">
+<div class="head"><div><div class="tag">談話課題</div><h1>手順と道順の説明</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div>
+<p class="ask">1．絵を見て、お茶のいれ方を順に説明してください。「まず」「次に」「それから」「最後に」を使ってください。</p>
+<div class="steps">
+<div><i>1</i><svg viewBox="0 0 120 90" fill="none" stroke="#222" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="こんろでやかんの湯を沸かす線画"><path d="M38 62 Q33 40 60 38 Q87 40 82 62 Z"/><ellipse cx="60" cy="39" rx="11" ry="2.5"/><path d="M57 36 Q60 32 63 36"/><path d="M42 44 Q60 14 78 44"/><path d="M81 56 L97 40 L99 43 L82 50"/><path d="M99 34 Q95 28 99 22 Q103 16 99 10 M107 36 Q103 30 107 24 Q111 18 107 12"/><path d="M44 66 Q46 62 48 66 M52 66 Q54 61 56 66 M60 66 Q62 61 64 66 M68 66 Q70 61 72 66 M76 66 Q78 62 80 66"/><path d="M34 66 H86"/><rect x="14" y="68" width="92" height="16" rx="2"/><circle cx="26" cy="76" r="3.5"/><circle cx="94" cy="76" r="3.5"/></svg></div>
+<div><i>2</i><svg viewBox="0 0 120 90" fill="none" stroke="#222" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="茶筒から茶さじで急須に茶葉を入れる線画"><ellipse cx="42" cy="52" rx="12" ry="3"/><path d="M30 52 Q21 54 23 66 Q27 80 42 80 Q57 80 61 66 Q63 54 54 52"/><path d="M24 63 L11 52 L14 49 L26 57"/><path d="M60 58 Q73 61 58 73"/><path d="M4 86 H116"/><path d="M90 22 L60 38"/><ellipse cx="55" cy="40" rx="7" ry="3.5" transform="rotate(-28 55 40)"/><path d="M46 44 L47 46 M41 46 L42 48 M50 47 L50 49"/><rect x="86" y="50" width="24" height="36" rx="2"/><ellipse cx="98" cy="50" rx="12" ry="3"/><path d="M86 58 H110"/></svg></div>
+<div><i>3</i><svg viewBox="0 0 120 90" fill="none" stroke="#222" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="やかんを傾けて急須にお湯を注ぐ線画"><ellipse cx="38" cy="58" rx="12" ry="3"/><path d="M26 58 Q17 60 19 72 Q23 86 38 86 Q53 86 57 72 Q59 60 50 58"/><path d="M20 69 L7 58 L10 55 L22 63"/><path d="M56 64 Q69 67 54 79"/><path d="M4 87 H116"/><path d="M76 86 Q86 74 96 86 Z"/><path d="M83 78 Q86 74 89 78"/><g transform="rotate(-25 88 34)"><path d="M66 46 Q62 22 88 20 Q114 22 110 46 Z"/><ellipse cx="88" cy="21" rx="10" ry="2.5"/><path d="M85 18 Q88 14 91 18"/><path d="M72 26 Q88 -8 104 26"/><path d="M68 40 L52 26 L55 23 L70 32"/></g><path d="M52 41 Q46 46 41 57 M55 42 Q49 48 45 57"/></svg></div>
+<div><i>4</i><svg viewBox="0 0 120 90" fill="none" stroke="#222" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="急須から二つの湯のみにお茶をつぐ線画"><g transform="rotate(-30 70 38)"><path d="M58 24 Q48 26 50 40 Q54 54 70 54 Q86 54 90 40 Q92 26 82 24"/><ellipse cx="70" cy="24" rx="12" ry="3"/><path d="M66 22 Q70 16 74 22"/><path d="M51 36 L38 26 L41 23 L53 30"/><path d="M89 31 Q102 33 90 46"/></g><path d="M37 44 Q32 52 31 68"/><path d="M18 68 H44 L41 86 H21 Z"/><path d="M20 76 H42"/><path d="M66 68 H92 L89 86 H69 Z"/><path d="M68 72 H90"/><path d="M4 87 H116"/></svg></div>
+</div>
+<table class="sent3"><tr><th>話した時間</th><th>順序が正しい</th><th>「まず・次に」を使えた</th><th>聞き取りやすさ</th></tr><tr><td>　　秒</td><td></td><td></td><td>1・2・3・4・5</td></tr></table>
+<p class="ask" style="margin-top:2mm">2．ご自宅から、いちばん近い駅（またはバス停・お店）までの道順を、初めて行く人に説明してください。先に要点をメモしてから話してください。</p>
+<div class="memo2"><div class="l">出発：</div><div class="l">曲がる所・目印：</div><div class="l">着いた所の様子：</div></div>
+<table class="sent3"><tr><th>話した時間</th><th>目印を2つ以上言えた</th><th>速さ</th><th>聞き取りやすさ</th></tr><tr><td>　　秒</td><td></td><td>速い・ちょうどよい・遅い</td><td>1・2・3・4・5</td></tr></table>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+
+<section class="sheet key" style="page-break-after:auto;break-after:auto">
+<div class="head"><div><div class="tag">指導者用（患者さんには渡さない）</div><h1>読み上げリスト・解答・ヒント・評価のポイント</h1></div></div>
+<h2>復唱課題（2ページ目）で指導者が読む文</h2>
+<table><tr><td style="width:4%">1</td><td>明日の午前中に、宅配便で米が二袋届く予定です。</td></tr>
+<tr><td>2</td><td>薬は毎食後に一錠ずつ、水かぬるま湯で飲んでください。</td></tr>
+<tr><td>3</td><td>市役所の二番窓口で、住所変更の手続きを済ませてきました。</td></tr>
+<tr><td>4</td><td>来月の第二日曜日に、町内会の清掃活動があります。</td></tr>
+<tr><td>5</td><td>駅の南口を出て、信号を二つ過ぎた角に郵便局があります。</td></tr>
+<tr><td>6</td><td>冷えてきたので、押し入れから冬用の掛け布団を出しました。</td></tr>
+<tr><td>7</td><td>孫の運動会は、雨のため来週の土曜日に延期になりました。</td></tr>
+<tr><td>8</td><td>健康診断の結果、血糖値に少し注意が必要だと言われました。</td></tr></table>
+<p>普通の速さで1回読みます。1回目で言えなければ、文節ごとに少し間をあけて読みます（2回目）。</p>
+<h2>音読課題（3ページ目）の解答</h2>
+<p>①十一月十六日（日）午前九時から、第一小学校の校庭（雨天は体育館）。②消火器の使い方の説明、煙の中を歩く体験（非常食の試食、飲料水の配布も可）。③前日までに自治会の役員に知らせる（車で送迎してもらえる）。区切りの例「本年度の防災訓練を／十一月十六日（日）午前九時から／第一小学校の校庭で／行います。」</p>
+<h2>抑揚課題（6ページ目）の読み分けの例（／は間をあける所）</h2>
+<p>①Ａ 母と／姉の友人に　Ｂ 母と姉の／友人に　②Ａ 大きな庭の／木を　Ｂ 大きな／庭の木を　③Ａ きれいな花の／絵を　Ｂ きれいな／花の絵を　④Ａ 急いで／駅を出た友人を　Ｂ 急いで駅を出た／友人を　⑤Ａ 黒い犬の／首輪を　Ｂ 黒い／犬の首輪を　⑥Ａ 父は笑いながら／走る弟を　Ｂ 父は／笑いながら走る弟を　⑦Ａ 新しい学校の／先生が　Ｂ 新しい／学校の先生が　⑧Ａ 先週入院した／伯父を　Ｂ 先週／入院した伯父を。</p>
+<h2>談話課題（8ページ目）の説明の例</h2>
+<p>「まず、やかんでお湯を沸かします。次に、急須に茶葉を入れます。それから、急須にお湯を注ぎます。最後に、湯のみにお茶をつぎます。」4つの手順が順に言えれば正答です。</p>
+<h2>評価のポイント</h2>
+<ul><li><b>長さと複雑さ：</b>拗音・促音が続く語（1ページ目）、数字の続く情報（4ページ目）で誤りやよどみが増えるか。</li>
+<li><b>聞いて言う・読んで言う・自分で話すの差：</b>2・3ページ目と7・8ページ目で、正確さと速さがどう違うか。</li>
+<li><b>抑揚：</b>間のあけ方で意味の違いが聞き手に伝わるか（6ページ目）。</li>
+<li><b>実用性：</b>要点を書いてから話すと伝わりやすくなるか（5ページ目）。話し始めまでの時間（7ページ目）も記録します。</li>
+<li><b>自己修正：</b>誤りに自分で気づいて直せるか。録音を聞き返したときの本人の気づきを書き留めます。</li></ul>
+<h2>仕上げ・戻る目安</h2>
+<p>2・6・8ページ目で段階6が多くなり、実際の電話や窓口で困らなくなってきたら、生活の場での練習を中心にします。3拍の語でも誤りが目立つ日は、中等度の教材（基本・追加）に戻してかまいません。最終的な判断は担当の言語聴覚士が行ってください。</p>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+
+</body>
+</html>

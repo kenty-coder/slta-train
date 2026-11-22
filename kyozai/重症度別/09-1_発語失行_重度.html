@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="author" content="KENTA SHINKAWA">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>発語失行（重度）訓練教材</title>
+<link rel="stylesheet" href="common.css">
+<style>
+.guide{font-size:10.5pt;line-height:1.45}
+.guide h2{font-size:12.5pt;margin:3mm 0 1.2mm}
+.guide table{font-size:9.5pt}
+.guide th,.guide td{padding:.6mm 1.6mm}
+.guide .note{font-size:9pt;color:#555;margin:-2mm 0 2mm}
+.key table{border-collapse:collapse;width:100%;font-size:10.5pt;margin:0 0 2mm}
+.key th,.key td{border:1px solid #bbb;padding:.8mm 2mm;text-align:left;vertical-align:top}
+.key th{background:#f2f2f2}
+.key p{margin:0 0 1mm}
+.sq{display:inline-block;width:17mm;height:17mm;border:1.5px solid #333;margin:0 2mm 2mm 0;vertical-align:top;position:relative}
+.sq i{position:absolute;left:1mm;top:0;font-size:8pt;font-style:normal;color:#777;line-height:1.2}
+.trace{font-size:78pt;line-height:1.15;font-weight:700;color:#f4f4f4;-webkit-text-stroke:1.6px #555;letter-spacing:.12em;text-align:center;margin:0 0 2mm}
+.trace.w{font-size:60pt}
+.lv{font-size:11.5pt;color:#555;margin:2mm 0 1.5mm;border-bottom:1px solid #bbb}
+.ico{width:26mm;height:26mm}
+.mrow{display:flex;align-items:center;gap:7mm;border-bottom:1px solid #ccc;padding:1.5mm 0}
+.mrow .no{font-size:13pt;color:#555;width:8mm}
+.mrow .ch{font-size:50pt;font-weight:700;width:36mm;text-align:center;line-height:1.1}
+.mrow .pc{border:1.5px solid #333;border-radius:2mm;width:38mm;height:30mm;display:flex;align-items:center;justify-content:center}
+.two{display:flex;align-items:center;gap:8mm;margin:0 0 3.2mm}
+.two .no{font-size:13pt;color:#555;width:8mm}
+.two span.c{border:2px solid #333;border-radius:2mm;min-width:46mm;text-align:center;font-size:26pt;font-weight:700;padding:1mm 4mm}
+.namebox{display:flex;gap:6mm;margin:0 0 5mm}
+.namebox div{flex:1;height:24mm;border:2px dashed #555;border-radius:2mm}
+.sign{display:grid;grid-template-columns:8mm 1fr;gap:0 2mm;margin:0 0 4mm}
+.sign .qq{font-size:13.5pt;font-weight:700}
+.sign .cc{display:flex;gap:10mm;margin-top:1.5mm}
+.sign .cc span{border:2.5px solid #333;min-width:34mm;text-align:center;font-size:30pt;font-weight:700;padding:.5mm 4mm;letter-spacing:.1em}
+.cp{display:flex;align-items:center;gap:4mm;margin:0 0 3mm}
+.cp .m{border:2px solid #333;background:#f6f6f6;font-size:30pt;font-weight:700;text-align:center;height:22mm;line-height:22mm}
+.cp .b{border:1.5px solid #333;height:22mm}
+.cp .no{font-size:12pt;color:#555;width:7mm}
+table.fw{border-collapse:collapse;width:100%;margin:0 0 4mm}
+table.fw th{border:1px solid #333;background:#f2f2f2;font-size:11.5pt;padding:1mm 2mm;text-align:left;width:48mm;white-space:nowrap}
+table.fw td{border:1px solid #333;height:11.5mm}
+.wl{display:grid;grid-template-columns:1fr 1fr;gap:0 10mm;margin:0 0 3mm}
+.wl div{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #bbb;height:12.5mm;font-size:19pt;font-weight:700}
+.wl div i{font-style:normal;font-size:11pt;color:#555;font-weight:400;min-width:8mm}
+.wl div .bx{width:10mm;height:10mm;border:1.5px solid #333;border-radius:1.5mm;display:inline-block}
+.mc{margin:0 0 3.2mm}
+.mc .qq{font-size:14pt;font-weight:700}
+.mc .ops{display:flex;gap:5mm;flex-wrap:wrap;margin:1mm 0 0 8mm}
+.mc .ops span{border:1.5px solid #333;border-radius:2mm;padding:.5mm 4mm;font-size:15.5pt}
+.tf{display:flex;align-items:center;gap:4mm;border-bottom:1px solid #ccc;padding:1.6mm 0;font-size:17pt;font-weight:700}
+.tf i{font-style:normal;font-size:12pt;color:#555;font-weight:400;width:8mm}
+.tf .bx{width:12mm;height:12mm;border:1.5px solid #333;border-radius:1.5mm;margin-left:auto;flex:none}
+table.kw{border-collapse:collapse;width:100%;margin:0 0 4mm}
+table.kw td{border:1px solid #999;padding:.8mm 1.5mm;font-size:12.5pt;width:20%}
+table.kw td b{font-size:18pt;display:inline-block;min-width:9mm}
+.sqrow{display:grid;grid-template-columns:1fr 1fr;gap:1mm 8mm}
+.sqrow div{display:flex;align-items:center;gap:2mm}
+.sqrow div i{font-style:normal;font-size:11pt;color:#555;min-width:7mm}
+.sqrow .sq{margin:0 0 1mm 0;width:16mm;height:16mm}
+.flyer{border:2px solid #333;border-radius:3mm;padding:3mm 6mm;margin:0 0 4mm}
+.flyer h2{font-size:16pt;margin:0 0 1mm;text-align:center;letter-spacing:.2em}
+.flyer table{width:100%;border-collapse:collapse;font-size:14pt}
+.flyer td{padding:.6mm 2mm;border-bottom:1px dotted #999}
+.flyer td.p{text-align:right;font-weight:700}
+.memo2{border:1.5px solid #333;border-radius:2mm;padding:1mm 5mm;margin:0 0 4mm}
+.memo2 .l{height:10.5mm;border-bottom:1px solid #bbb;display:flex;align-items:flex-end;font-size:11pt;color:#555}
+.art{border:1.5px solid #333;padding:3mm 5mm;margin:0 0 4mm;font-size:12.5pt;line-height:1.75}
+.art h2{font-size:15.5pt;margin:0 0 1mm;border-bottom:2px solid #333;padding-bottom:1mm}
+.art .sub{font-size:12pt;font-weight:700;margin:0 0 1.5mm}
+.doc{border:1.5px solid #333;padding:3mm 5mm;margin:0 0 4mm;font-size:11.5pt;line-height:1.6}
+.doc h2{font-size:14.5pt;text-align:center;margin:0 0 2mm}
+.doc table{border-collapse:collapse;width:100%;margin:1mm 0}
+.doc th,.doc td{border:1px solid #666;padding:.6mm 2mm;text-align:left;vertical-align:top}
+.doc th{background:#f2f2f2;width:26mm;white-space:nowrap}
+.qa{margin:0 0 2.5mm;font-size:13pt}
+.qa b{display:inline-block;min-width:7mm}
+.qa .l{height:10mm;border-bottom:1px solid #999;margin-left:7mm}
+.rec{border-collapse:collapse;width:100%;margin:0 0 4mm;font-size:12pt}
+.rec th,.rec td{border:1px solid #333;padding:1mm 2mm;height:11mm;text-align:center}
+.rec th{background:#f2f2f2}
+.rec td.t{text-align:left}
+.pass{font-size:15pt;line-height:2;border:1.5px solid #333;border-radius:2mm;padding:3mm 6mm;margin:0 0 4mm}
+.form{border-collapse:collapse;width:100%;margin:0 0 3mm}
+.form th{border:1px solid #333;background:#f2f2f2;font-size:11.5pt;padding:1mm 2mm;text-align:left;width:36mm;font-weight:700}
+.form td{border:1px solid #333;height:12mm;font-size:12pt;padding:0 2mm;color:#444}
+.post{border:2px solid #333;border-radius:2mm;padding:2mm 6mm;margin:0 0 3mm}
+.post .l{height:12mm;border-bottom:1px dashed #999}
+.mouth{display:grid;grid-template-columns:repeat(3,1fr);gap:3mm 5mm;margin:0 0 4mm}
+.mouth div{border:1.5px solid #333;border-radius:2mm;text-align:center;padding:1.5mm 1mm}
+.mouth b{display:block;font-size:26pt;line-height:1.2}
+.mouth small{display:block;font-size:11pt;color:#444}
+.mouth svg{width:40mm;height:21mm}
+.chk{border-collapse:collapse;width:100%;font-size:13pt;margin:0 0 3mm}
+.chk th,.chk td{border:1px solid #333;padding:1mm 2mm;height:10.5mm}
+.chk th{background:#f2f2f2;font-size:11.5pt}
+.chk td.c{width:17mm}
+.vv{display:grid;grid-template-columns:repeat(4,1fr);gap:3mm;margin:0 0 4mm}
+.vv div{border:1.5px solid #333;border-radius:2mm;text-align:center;padding:1.5mm 0;font-size:26pt;font-weight:700;line-height:1.25}
+.vv div small{display:block;font-size:11.5pt;font-weight:400;color:#444}
+.comp{display:flex;align-items:center;gap:4mm;border-bottom:1px solid #ccc;padding:1mm 0}
+.comp i{font-style:normal;font-size:12pt;color:#555;width:7mm}
+.comp b{font-size:21pt;min-width:70mm}
+.comp span{font-size:14pt;color:#555}
+.yn{display:grid;grid-template-columns:1fr 1fr;gap:6mm;margin:0 0 4mm}
+.yn div{border:3px solid #333;border-radius:3mm;text-align:center;font-size:40pt;font-weight:700;padding:2mm 0}
+table.g50{border-collapse:collapse;width:100%;margin:0 0 3mm}
+table.g50 td{border:1px solid #555;text-align:center;font-size:22pt;font-weight:700;height:12.3mm;padding:0}
+table.g50 td.s{background:#f3f3f3;font-size:17pt}
+table.g50 td.e{background:#fafafa}
+.pcards{display:grid;grid-template-columns:repeat(4,1fr);gap:3mm;margin:0 0 4mm}
+.pcards div{border:2px solid #333;border-radius:2mm;text-align:center;padding:1.5mm 0}
+.pcards svg{width:22mm;height:22mm}
+.pcards b{display:block;font-size:14pt}
+.pain{display:flex;gap:8mm;align-items:flex-start}
+.scale{display:flex;gap:2mm;margin:2mm 0}
+.scale span{border:2px solid #333;border-radius:2mm;width:15mm;text-align:center;font-size:20pt;font-weight:700}
+.wc{display:grid;grid-template-columns:repeat(4,1fr);gap:2.5mm;margin:0 0 3mm}
+.wc div{border:1.5px solid #333;border-radius:2mm;text-align:center;padding:1mm 0;font-size:24pt;font-weight:700;line-height:1.25}
+.wc div small{display:block;font-size:11pt;font-weight:400;color:#444;letter-spacing:.1em}
+.wc div em{display:block;font-style:normal;font-size:9pt;color:#666;letter-spacing:.15em;line-height:1.1}
+.ser{display:flex;align-items:center;gap:4mm;margin:0 0 3.5mm}
+.ser b{font-size:24pt;width:15mm;height:15mm;border:2px solid #333;border-radius:50%;display:flex;align-items:center;justify-content:center;flex:none}
+.ser span{font-size:18pt;font-weight:700;border-bottom:1px solid #bbb;padding:0 1mm}
+.rh{display:grid;grid-template-columns:52mm 1fr 14mm;align-items:center;border-bottom:1px solid #bbb;padding:1.4mm 0}
+.rh .w{font-size:19pt;font-weight:700}
+.rh .m{font-size:13.5pt;letter-spacing:.06em;color:#333}
+.rh .m span{display:block;font-size:16pt;letter-spacing:.3em;line-height:1.2}
+.rh .bx{width:11mm;height:11mm;border:1.5px solid #333;border-radius:1.5mm}
+.sent{border-collapse:collapse;width:100%;margin:0 0 3mm}
+.sent th,.sent td{border:1px solid #333;padding:1mm 2mm}
+.sent th{background:#f2f2f2;font-size:11pt}
+.sent td{height:12.5mm;font-size:12pt}
+.sent td.s{font-size:16.5pt;font-weight:700}
+.sent td.c{width:15mm}
+.lw{font-size:16pt;font-weight:700;line-height:1.9;margin:0 0 3mm 2mm}
+.lw div{display:flex;justify-content:space-between;border-bottom:1px solid #ccc}
+.lw div span{font-size:11pt;font-weight:400;color:#555}
+.script{border:1.5px solid #333;border-radius:2mm;padding:2mm 5mm;margin:0 0 3.5mm;font-size:13.5pt;line-height:1.85}
+.script h3{font-size:13.5pt;margin:0 0 .5mm;border-bottom:1px solid #999}
+.script .me{font-weight:700}
+.script u{text-decoration:none;display:inline-block;min-width:30mm;border-bottom:1px solid #333}
+.topic{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin:0 0 3mm}
+.topic div{border:2px solid #333;border-radius:2mm;padding:2mm 4mm;font-size:14pt;font-weight:700}
+.topic div small{display:block;font-size:11pt;font-weight:400;color:#444}
+.sent.c10 td{height:9.5mm;line-height:1.3;padding:.5mm 2mm}</style>
+</head>
+<body>
+<div class="noprint">印刷するときは <b>Ctrl＋P</b> を押してください（用紙：A4縦）。最初の2ページは指導者用の説明、最後のページは指導者用の解答・評価のポイントです。患者さんには課題用紙のページだけをお渡しください。</div>
+<section class="sheet guide">
+<div class="head"><div><div class="tag">指導者用（患者さんには渡さない）</div><h1>発語失行（重度）― 指導者用ガイド（1）</h1></div></div>
+<h2>1．この教材の対象</h2>
+<p>発語失行（話すときの口の動きを組み立てることが難しい状態）のうち、<b>話す課題の正答率がおおむね3割未満</b>で、声を出すことや母音から難しい方です。言葉の理解や読み書きは比較的保たれていることが多く、その力を伝える手段（五十音表・筆談）に生かします。</p>
+<h2>2．この重症度のSLTAプロフィールの目安</h2>
+<table><tr><th style="width:11%">領域</th><th style="width:28%">正答率の目安</th><th>特徴的な下位検査</th></tr>
+<tr><td>聴く</td><td>90〜100％</td><td>理解は保たれる</td></tr>
+<tr><td>話す</td><td>0〜20％</td><td>5 呼称・6 単語の復唱・11〜14 音読がほとんど言えない。8 まんがの説明は段階1〜2、10 語の列挙は0〜2語。12 仮名1文字の音読がわずかに残る</td></tr>
+<tr><td>読む</td><td>80〜100％</td><td>黙読での理解は保たれる</td></tr>
+<tr><td>書く</td><td>60〜90％</td><td>純粋語唖では保たれる。ブローカ失語を伴うと低い</td></tr>
+<tr><td>計算</td><td>70〜90％</td><td>おおむね保たれる</td></tr></table>
+<p style="margin:0"><b>発語失行（重度）の例</b>（例データ「09-1_発語失行_重度.json」の評価1と同じ値）</p>
+<svg class="mini" style="width:66%;margin:0 auto 1mm" data-profile="100,90,100,90,10,10,0,0,0,6.7,20,10,0,0,100,90,90,80,80,80,60,90,80,80,60,85"></svg><p class="note">典型例のイメージです。個人差が大きいので、実際の検査結果と様子を合わせて判断してください。まんがの説明は (段階−1)÷5、語の列挙は15語で100%、計算は20問中の正答数で描いています。</p>
+<h2>3．同じタイプの他の重症度との違い</h2>
+<table><tr><th style="width:13%"></th><th style="width:29%">重度（この教材）</th><th style="width:29%">中等度</th><th style="width:29%">軽度</th></tr><tr><th>練習する単位</th><td>息・発声、母音、口の形、自動的に出る言葉</td><td>単音節〜3拍の語、同じ音の系列</td><td>長い語・文、短い文章</td></tr><tr><th>手がかり</th><td>口の形を見せる・一緒に言う・鏡</td><td>リズム（手拍子・指折り）、文字</td><td>話す速さの調整、抑揚の意識</td></tr><tr><th>伝える方法</th><td>五十音表・筆談・指さしカードが中心</td><td>話し言葉が中心。言えない語は書いて補う</td><td>電話・人前など、場面に合わせた話し方</td></tr></table>
+<p><b>中等度の教材へ進む目安：</b>①5つの母音を口の形の手本なしで言い分けられる、②挨拶などの決まった言葉を5つ以上一人で言える、③「はい」「いいえ」を声で確実に言える。2〜3回続けて満たしたら中等度の教材を試します。どの段階でも、代償手段（五十音表・筆談）は並行して使い続けます。</p>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet guide">
+<div class="head"><div><div class="tag">指導者用（患者さんには渡さない）</div><h1>発語失行（重度）― 指導者用ガイド（2）</h1></div></div>
+<h2>4．訓練の目標と優先順位</h2>
+<ul><li><b>目標：</b>①「はい」「いいえ」と、体調や用事を確実に伝えられること（声でなくてもよい）、②声を出し、母音と簡単な言葉が言えること。</li>
+<li><b>優先順位：</b>①うなずき・首振りによる「はい」「いいえ」の確認。②五十音表・筆談・指さしカード（代償手段1・2）を最初の訪問から準備する。③息と発声。④口の形のまね、母音。⑤自動的に出やすい言葉（挨拶・数・決まった言い回し）。</li></ul>
+<h2>5．ヒントの出し方</h2>
+<p>「見て・聞いて・一緒に」が基本です。①指導者の口元をよく見てもらい、一緒に言う（斉唱）→②指導者の後に続けて言う（復唱）→③少し間をおいてから言う→④文字を見て言う、と手がかりを一つずつ減らします。鏡で自分の口の形を確かめるのも有効です。言えないときは何度も繰り返させず、2〜3回で手がかりを増やすか、別の音に移ります。</p>
+<h2>6．家族への助言・訪問での工夫</h2>
+<ul><li><b>家族へ：</b>急かさず、言い終わるまで待つ。「はい」「いいえ」で答えられる聞き方をする（「お茶にしますか」）。五十音表と筆記用具をいつも手元に置く。言えないことを責めない。話の内容は分かっているので、子ども扱いしない。</li>
+<li><b>訪問で：</b>口や舌を思いどおりに動かせない症状（口部顔面失行）があるかを最初に確かめます。1回10分程度の練習を、1日に数回に分けるよう勧めます。疲れると誤りが増えるので、調子のよい時間帯に行います。食事の飲み込みに心配があるときは、医師・担当者と相談します。</li></ul>
+<h2>7．課題ページの一覧と記録のしかた</h2>
+<table><tr><th style="width:30%">課題</th><th>使い方</th></tr>
+<tr><td>構音課題1 発声と息</td><td>秒数・回数を記録する。無理に大きな声を出させない</td></tr>
+<tr><td>構音課題2 口の形・舌の動き</td><td>指導者がやって見せ、まねてもらう。○△×で記録</td></tr>
+<tr><td>構音課題3 母音の組み合わせ</td><td>母音2つ→母音だけでできた語へ</td></tr>
+<tr><td>構音課題4 自動的に出やすい言葉</td><td>指導者が前半を言い、本人が続きを言う</td></tr>
+<tr><td>代償手段1 五十音表</td><td>1文字ずつ指さして伝える。拡大コピーしてもよい</td></tr>
+<tr><td>代償手段2 伝えたいことカード</td><td>絵を指さす。痛い所と痛みの強さも伝えられる</td></tr></table>
+<p style="margin:0">1回ごとに段階6〜1で記録し、<b>段階6・5を正答</b>とします（段階の目安は最後のページ）。</p>
+<p style="margin-top:1.5mm">ここに書いた内容は一般的な目安です。<b>最終的な判断は担当の言語聴覚士が行ってください。</b></p>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet">
+<div class="head"><div><div class="tag">構音課題 1</div><h1>発声と息の練習</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div>
+<p class="ask">指導者の合図に合わせて、次の練習をしてください。</p><p class="hint">苦しくなったら、すぐにやめて休んでください。</p><table class="rec"><tr><th style="width:46%">練習</th><th>1回目</th><th>2回目</th><th>3回目</th></tr><tr><td class="t">1．鼻から息を吸い、口から「ふー」と長く吐く</td><td>　　秒</td><td>　　秒</td><td>　　秒</td></tr><tr><td class="t">2．「あー」と声を出し、できるだけ長く伸ばす</td><td>　　秒</td><td>　　秒</td><td>　　秒</td></tr><tr><td class="t">3．ため息のように「はぁ」と声を出す</td><td></td><td></td><td></td></tr><tr><td class="t">4．合図に合わせて「あっ」と短く声を出す（5回）</td><td>　　回</td><td>　　回</td><td>　　回</td></tr><tr><td class="t">5．「あー」を小さい声から大きい声へ</td><td></td><td></td><td></td></tr><tr><td class="t">6．「うー」と「あー」を交互に伸ばす</td><td></td><td></td><td></td></tr><tr><td class="t">7．「んー」と口を閉じたまま声を出す</td><td></td><td></td><td></td></tr></table><div class="card"><h2>練習のこつ</h2><ul><li>背筋を伸ばして座り、肩の力を抜いてください。</li><li>声が出にくいときは、咳払いや笑い声のあとに続けて「あー」と言ってみてください。</li><li>1回の練習は5分程度にし、1日に何回かに分けて行ってください。</li></ul></div><p style="font-size:12pt">今日の調子（よい・ふつう・疲れている）　　メモ：</p>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet">
+<div class="head"><div><div class="tag">構音課題 2</div><h1>口の形と舌の動きのまね</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div>
+<p class="ask">1．指導者の口の形をよく見て、同じ形を作ってください。次に、その形で声を出してください。</p><div class="mouth"><div><svg class="" viewBox="0 0 100 60" fill="none" stroke="#222" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="線画"><ellipse cx="50" cy="30" rx="24" ry="20"/><ellipse cx="50" cy="31" rx="17" ry="13"/></svg><b>あ</b><small>縦に大きく開ける</small></div><div><svg class="" viewBox="0 0 100 60" fill="none" stroke="#222" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="線画"><ellipse cx="50" cy="30" rx="36" ry="9"/><path d="M20 30 Q50 34 80 30"/><path d="M22 29 Q50 25 78 29"/></svg><b>い</b><small>口の端を横に引く</small></div><div><svg class="" viewBox="0 0 100 60" fill="none" stroke="#222" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="線画"><ellipse cx="50" cy="30" rx="13" ry="12"/><circle cx="50" cy="30" r="5"/></svg><b>う</b><small>唇を小さく前へ</small></div><div><svg class="" viewBox="0 0 100 60" fill="none" stroke="#222" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="線画"><ellipse cx="50" cy="30" rx="30" ry="14"/><ellipse cx="50" cy="31" rx="23" ry="8"/></svg><b>え</b><small>横に開き、あごを少し下げる</small></div><div><svg class="" viewBox="0 0 100 60" fill="none" stroke="#222" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="線画"><ellipse cx="50" cy="30" rx="19" ry="19"/><ellipse cx="50" cy="31" rx="12" ry="13"/></svg><b>お</b><small>唇を丸く開ける</small></div><div><svg class="" viewBox="0 0 100 60" fill="none" stroke="#222" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="線画"><ellipse cx="50" cy="30" rx="30" ry="11"/><path d="M20 30 Q50 33 80 30"/></svg><b>ま・ぱ・ば</b><small>上下の唇を閉じる</small></div></div><p class="ask">2．指導者のまねをして、口と舌を動かしてください。</p><table class="chk"><tr><th>動き</th><th style="width:30mm">まねてできた</th><th style="width:34mm">言われてできた</th></tr><tr><td>1．唇を前に突き出す</td><td class="c"></td><td class="c"></td></tr><tr><td>2．唇を横に引く</td><td class="c"></td><td class="c"></td></tr><tr><td>3．頬をふくらませる</td><td class="c"></td><td class="c"></td></tr><tr><td>4．舌を前に出す</td><td class="c"></td><td class="c"></td></tr><tr><td>5．舌の先で左右の口の端に触れる</td><td class="c"></td><td class="c"></td></tr><tr><td>6．唇を閉じて「ぱっ」とはじく</td><td class="c"></td><td class="c"></td></tr></table><p class="hint" style="margin-top:2mm">鏡を見ながら行うと、口の形を確かめやすくなります。</p>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet">
+<div class="head"><div><div class="tag">構音課題 3</div><h1>母音と母音の組み合わせ</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div>
+<p class="ask">1．指導者と一緒に、母音を2つ続けて言ってください。</p><div class="vv"><div>あ・い</div><div>お・う</div><div>え・い</div><div>あ・お</div><div>い・あ</div><div>う・え</div><div>お・あ</div><div>え・お</div></div><p class="ask">2．母音だけでできた言葉です。指導者と一緒に言い、次に一人で言ってください。</p><div class="vv"><div>いいえ<small>い・い・え</small></div><div>青い<small>あ・お・い</small></div><div>多い<small>お・お・い</small></div><div>会う<small>あ・う</small></div><div>言う<small>い・う</small></div><div>追う<small>お・う</small></div><div>絵<small>え</small></div><div>胃<small>い</small></div></div><table class="rec"><tr><th style="width:30%"></th><th>一緒に言えた</th><th>まねて言えた</th><th>一人で言えた</th></tr><tr><td>1（母音2つ）</td><td>　　／8</td><td>　　／8</td><td>　　／8</td></tr><tr><td>2（言葉）</td><td>　　／8</td><td>　　／8</td><td>　　／8</td></tr></table>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet">
+<div class="head"><div><div class="tag">構音課題 4</div><h1>自動的に出やすい言葉</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div>
+<p class="ask">1．指導者が言葉の前半を言います。続きを言ってください。</p><div class="comp"><i>1.</i><b>行って（　　　）</b><span>続き：きます</span></div><div class="comp"><i>2.</i><b>ただ（　　　）</b><span>続き：いま</span></div><div class="comp"><i>3.</i><b>ごちそう（　　　）</b><span>続き：さま</span></div><div class="comp"><i>4.</i><b>お疲れ（　　　）</b><span>続き：さま</span></div><div class="comp"><i>5.</i><b>お大事（　　　）</b><span>続き：に</span></div><div class="comp"><i>6.</i><b>おはよう（　　　）</b><span>続き：ございます</span></div><div class="comp"><i>7.</i><b>どうも（　　　）</b><span>続き：ありがとう</span></div><div class="comp"><i>8.</i><b>よろしく（　　　）</b><span>続き：お願いします</span></div><p class="ask" style="margin-top:4mm">2．指を1本ずつ折りながら、指導者と一緒に数を言ってください。</p><div class="vv" style="grid-template-columns:repeat(5,1fr)"><div>１</div><div>２</div><div>３</div><div>４</div><div>５</div></div><p class="ask">3．指導者の質問に、「はい」か「いいえ」で答えてください。</p><div class="yn"><div>はい</div><div>いいえ</div></div><p class="hint">声が出ないときは、上の文字を指さしてもかまいません。</p>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet">
+<div class="head"><div><div class="tag">代償手段 1</div><h1>指さしの五十音表</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div>
+<div class="yn"><div>はい</div><div>いいえ</div></div><p class="ask" style="margin-bottom:2mm">伝えたい言葉を、1文字ずつ指さしてください。</p><p class="hint">表は横に「あいうえお」と並んでいます。濁る音（が・ば など）は、仮名を指したあとに右の「゛」を指してください。</p><table class="g50"><tr><td class="">あ</td><td class="">い</td><td class="">う</td><td class="">え</td><td class="">お</td><td class="s">゛</td></tr><tr><td class="">か</td><td class="">き</td><td class="">く</td><td class="">け</td><td class="">こ</td><td class="s">゜</td></tr><tr><td class="">さ</td><td class="">し</td><td class="">す</td><td class="">せ</td><td class="">そ</td><td class="s">っ</td></tr><tr><td class="">た</td><td class="">ち</td><td class="">つ</td><td class="">て</td><td class="">と</td><td class="s">ゃ</td></tr><tr><td class="">な</td><td class="">に</td><td class="">ぬ</td><td class="">ね</td><td class="">の</td><td class="s">ゅ</td></tr><tr><td class="">は</td><td class="">ひ</td><td class="">ふ</td><td class="">へ</td><td class="">ほ</td><td class="s">ょ</td></tr><tr><td class="">ま</td><td class="">み</td><td class="">む</td><td class="">め</td><td class="">も</td><td class="s">ー</td></tr><tr><td class="">や</td><td class="e"></td><td class="">ゆ</td><td class="e"></td><td class="">よ</td><td class="s">、</td></tr><tr><td class="">ら</td><td class="">り</td><td class="">る</td><td class="">れ</td><td class="">ろ</td><td class="s">？</td></tr><tr><td class="">わ</td><td class="e"></td><td class="">を</td><td class="e"></td><td class="">ん</td><td class="s">消す</td></tr><tr><td class="s">1</td><td class="s">2</td><td class="s">3</td><td class="s">4</td><td class="s">5</td><td class="s">6</td></tr><tr><td class="s">7</td><td class="s">8</td><td class="s">9</td><td class="s">0</td><td class="s" colspan="2">言い直します</td></tr></table>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet">
+<div class="head"><div><div class="tag">代償手段 2</div><h1>伝えたいことカード（絵の指さし）</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div>
+<p class="ask">1．伝えたいことの絵を指さしてください。</p><div class="pcards"><div><svg class="" viewBox="0 0 100 100" fill="none" stroke="#222" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="線画"><path d="M24 26 H68 V74 Q68 84 58 84 H34 Q24 84 24 74 Z M68 38 Q86 38 86 52 Q86 66 68 66"/></svg><b>水・お茶</b></div><div><svg class="" viewBox="0 0 100 100" fill="none" stroke="#222" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="線画"><path d="M12 50 H66 Q64 80 39 82 Q14 80 12 50 Z M20 50 Q28 38 39 44 Q50 36 60 50 M74 18 L84 84 M86 18 L90 84"/></svg><b>食事</b></div><div><svg class="" viewBox="0 0 100 100" fill="none" stroke="#222" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="線画"><path d="M26 14 H54 V44 H26 Z M18 44 H82 Q82 66 60 70 L64 88 H36 L40 70 Q18 66 18 44 Z"/></svg><b>トイレ</b></div><div><svg class="" viewBox="0 0 100 100" fill="none" stroke="#222" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="線画"><rect x="12" y="30" width="48" height="22" rx="11" transform="rotate(-30 36 41)"/><path d="M30 52 L42 31"/><circle cx="70" cy="68" r="14"/><path d="M58 68 H82"/></svg><b>薬</b></div><div><svg class="" viewBox="0 0 100 100" fill="none" stroke="#222" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="線画"><path d="M10 84 V26 M10 60 H90 V84 M10 70 H90 M18 60 V50 Q18 44 24 44 H42 Q48 44 48 50 V60"/></svg><b>横になりたい</b></div><div><svg class="" viewBox="0 0 100 100" fill="none" stroke="#222" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="線画"><rect x="32" y="10" width="36" height="80" rx="6"/><path d="M44 18 H56 M46 82 H54 M38 26 H62 V72 H38 Z"/></svg><b>家族に連絡</b></div><div><svg class="" viewBox="0 0 100 100" fill="none" stroke="#222" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="線画"><path d="M44 16 Q44 10 50 10 Q56 10 56 16 V64 A13 13 0 1 1 44 64 Z M50 28 V70 M56 26 H62 M56 36 H62 M56 46 H62"/></svg><b>寒い・暑い</b></div><div><svg class="" viewBox="0 0 100 100" fill="none" stroke="#222" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="線画"><circle cx="50" cy="50" r="36"/><path d="M50 50 V28 M50 50 L64 58"/></svg><b>今、何時？</b></div></div><p class="ask">2．痛い所を体の絵で指さし、痛みの強さを数字で示してください。</p><div class="pain"><svg viewBox="0 0 100 200" style="width:38mm;height:76mm" fill="none" stroke="#222" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="体の線画"><circle cx="50" cy="20" r="13"/><path d="M44 33 V39 M56 33 V39 M30 42 Q50 36 70 42 L84 100 L78 102 L66 60 M30 42 L16 100 L22 102 L34 60 M34 60 V112 L38 192 H48 L50 124 L52 192 H62 L66 112 V60 M34 112 H66"/></svg><div><p style="margin:0;font-size:13pt;font-weight:700">痛みの強さ</p><div class="scale"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span></div><p style="margin:0 0 3mm;font-size:11.5pt">0＝痛くない　　5＝とても痛い</p><p style="margin:0;font-size:13pt;font-weight:700">いつから</p><div class="choices" style="margin-left:0"><span>今</span><span>今朝</span><span>昨日</span><span>もっと前</span></div><p style="margin:0 0 1mm;font-size:13pt;font-weight:700">書いて伝える欄</p><div style="border:1.5px solid #333;border-radius:2mm;height:26mm;width:110mm"></div></div></div>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet key" style="page-break-after:auto;break-after:auto">
+<div class="head"><div><div class="tag">指導者用（患者さんには渡さない）</div><h1>読み上げリスト・解答・評価のポイント</h1></div></div>
+<h2>構音課題4で指導者が言う言葉と質問</h2>
+<p><b>1．前半：</b>①行って（きます）②ただ（いま）③ごちそう（さま）④お疲れ（さま）⑤お大事（に）⑥おはよう（ございます）⑦どうも（ありがとう）⑧よろしく（お願いします）。前半を普通の調子で言い、すぐに続きを待ちます。続きが出なければ、続きの最初の口の形を見せます。</p>
+<p><b>3．「はい」「いいえ」の質問（答えが決まるもの）：</b>①今は夜ですか ②あなたの名前は（本人の名字）さんですか ③ここはお店ですか ④お茶は飲み物ですか ⑤外は雨ですか（その日の天気で）⑥雪は冷たいですか。うなずき・首振り・指さしでの答えも記録します。</p>
+<h2>練習の進め方</h2>
+<ul><li>構音課題1：秒数の目安は人によって違うため、本人の前回と比べます。息が続かないとき、声がかすれるときは無理をしません。</li>
+<li>構音課題2：「まねてできた」が増えてから「言われてできた」（口頭の指示だけ）に進みます。どちらもできないときは、口部顔面失行の可能性を記録します。</li>
+<li>構音課題3：言いやすい「あ」「お」から始め、「い」「う」「え」は後にします。誤りが毎回同じか、毎回違うかも記録します。</li>
+<li>代償手段：最初の訪問で使い方を練習し、家族にも使い方を伝えます。五十音表で単語を伝えるのが難しければ、まず代償手段2の絵の指さしと「はい」「いいえ」を確実にします。</li></ul>
+<h2>記録の段階（話す課題での目安）</h2>
+<table><tr><th style="width:9%">段階</th><th style="width:22%">内容</th><th>この教材での目安</th></tr><tr><td>6</td><td>完全正答</td><td>すぐに、正確に言えた</td></tr><tr><td>5</td><td>遅延完全正答</td><td>正確だが、話し始めの遅れ・口の形を探る動き・引き伸ばし・言い直しがあった</td></tr><tr><td>4</td><td>不完全正答</td><td>語は分かるが、一部の音に歪み・置き換えが残った</td></tr><tr><td>3</td><td>ヒント後正答</td><td>口の形を見せる・一緒に言う・最初の音を示すなどの手がかりで言えた</td></tr><tr><td>2</td><td>関連反応</td><td>音の誤りが多く、語の一部だけ言えた</td></tr><tr><td>1</td><td>誤答</td><td>言えなかった、または別の語になった</td></tr></table>
+<p>話す課題では段階5と4の区別が大切です。使った手がかり（一緒に言う・口の形・鏡・文字）を余白に書き、段階6・5の数÷問題数を正答率とします。</p>
+<p>最終的な判断は担当の言語聴覚士が行ってください。</p>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<script src="mini-profile.js"></script>
+</body>
+</html>

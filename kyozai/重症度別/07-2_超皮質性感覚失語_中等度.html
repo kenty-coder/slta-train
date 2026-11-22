@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="author" content="KENTA SHINKAWA">
+<title>訓練教材 超皮質性感覚失語（中等度）</title>
+<link rel="stylesheet" href="common.css">
+<style>
+  .guide{font-size:10.5pt;line-height:1.5}
+  .guide .head{margin-bottom:3mm}
+  .guide h2{font-size:12.5pt;margin:3mm 0 1mm}
+  .guide p{margin:0 0 1.5mm}
+  .guide ul,.guide ol{margin:0 0 1.5mm}
+  .guide table{font-size:9.8pt;margin:0 0 1.5mm}
+  .guide th,.guide td{padding:.7mm 1.5mm}
+  .guide .mini{width:78%;margin:0 auto}
+  .guide .note{font-size:9.5pt;color:#555;text-align:center;margin:0 0 1mm}
+  .key{font-size:10.5pt}
+  .key h2{margin:2.5mm 0 .5mm}
+  .key p{margin:0}
+  .ask{margin-bottom:3mm}
+  .bank{display:flex;flex-wrap:wrap;gap:2.5mm 3mm;border:1.5px dashed #333;border-radius:3mm;padding:3mm 4mm;margin:0 0 3mm}
+  .bank span{border:1.5px solid #333;border-radius:2mm;padding:.5mm 4mm;font-size:15pt}
+  .tbl{border-collapse:collapse;width:100%;font-size:13pt;margin:0 0 5mm}
+  .tbl th{border:1px solid #888;background:#f4f4f4;height:10mm;font-size:14pt}
+  .tbl td{border:1px solid #888;height:12mm}
+  .q4{margin:0 0 3.5mm}
+  .q4 .t{font-size:15pt;font-weight:700}
+  .q4 .choices{margin:1.5mm 0 0 9mm;gap:4mm}
+  .q4 .choices span{font-size:14.5pt;padding:.8mm 4mm}
+  .rel{display:flex;align-items:center;gap:4mm;margin:0 0 6mm}
+  .rel .w{font-size:19pt;font-weight:700;min-width:40mm}
+  .rel .choices{margin:0;gap:4mm}
+  .rel .choices span{font-size:15pt;padding:1mm 4mm}
+  .rd{border:1.5px solid #333;border-radius:3mm;padding:2mm 4mm;margin:0 0 3.5mm}
+  .rd .s{font-size:15pt;font-weight:700}
+  .rd .q{font-size:13.5pt;margin:.5mm 0 0}
+  .rd .choices{margin:1mm 0 0 0;gap:4mm}
+  .rd .choices span{font-size:13.5pt;padding:.5mm 4mm}
+  .oxl{display:flex;align-items:center;font-size:15pt;font-weight:700;padding:2mm 0;border-bottom:1px solid var(--rule)}
+  .oxl .ox{width:11mm;height:11mm}
+</style>
+</head>
+<body>
+
+<div class="noprint">印刷するときは <b>Ctrl＋P</b> を押してください（用紙：A4縦）。1・2ページ目と最後のページは指導者用です。患者さんには3〜7ページ目を渡してください。</div>
+
+<!-- ========== 指導者用ガイド 1 ========== -->
+<section class="sheet guide">
+  <div class="head"><div><div class="tag">指導者用（患者さんには渡さない）</div><h1>超皮質性感覚失語（中等度）の訓練教材</h1></div></div>
+  <h2>1. この段階の目安となるSLTAプロフィール</h2>
+  <p><b>身近な単語の意味はある程度分かるが、文になると理解が不確かになる段階</b>です。復唱と音読はよく保たれ、発話も流暢ですが、意味の近い語との取り違え（例：「みかん」を「りんご」と言う）や、話の内容のずれが見られます。反響言語は減ってきますが、疲れたときや長い質問で出やすくなります。</p>
+  <table>
+    <tr><th style="width:11%">領域</th><th style="width:45%">正答率の目安</th><th>特徴的な下位検査</th></tr>
+    <tr><td>聴く</td><td>単語の理解 5〜7割、短文の理解 4割前後、口頭命令に従う 3割前後</td><td>文になると理解が大きく下がる。</td></tr>
+    <tr><td>話す</td><td><b>単語の復唱 10割、文の復唱 8割前後</b>／呼称 3〜4割、動作説明 3割前後、まんがの説明 段階2、語の列挙 2〜4語</td><td>意味性錯語（意味の近い語への言い誤り）が目立つ。</td></tr>
+    <tr><td>読む</td><td><b>音読は単語で8〜10割、短文で8割</b>／単語の理解 4〜5割、短文の理解 3割、書字命令に従う 2割</td><td>音読と読解の差がはっきりしている。</td></tr>
+    <tr><td>書く</td><td>単語の書字 2〜4割、仮名1文字の書取 7割、短文の書取 2割</td><td>聞いて書く方が、自分で書くより良い。</td></tr>
+    <tr><td>計算</td><td>4〜5割</td><td>個人差が大きい。</td></tr>
+  </table>
+  <svg class="mini" data-profile="60,40,30,50,35,100,30,20,80,20,80,100,100,80,50,40,30,20,20,40,20,70,20,40,20,45"></svg>
+  <p class="note">典型例のイメージ。個人差が大きい（例データ「例：超皮質性感覚失語（中等度）」と同じ値）。</p>
+  <h2>2. 同じタイプの他の重症度との違い</h2>
+  <table>
+    <tr><th style="width:17%">重症度</th><th style="width:42%">理解の目安</th><th>教材の中心</th></tr>
+    <tr><td>重度</td><td>単語の理解も2〜3割。反響言語が多い。</td><td>具体物・線画との照合（2択）、はい／いいえの答え方の約束</td></tr>
+    <tr><td><b>中等度（この教材）</b></td><td>日常の単語は5〜7割理解。短文の理解は低い。</td><td>意味の分類、説明に合う語、関係のある語、音読後の意味確認</td></tr>
+    <tr><td>軽度</td><td>日常会話はおおむね理解。抽象的な語・長い文で崩れる。</td><td>抽象語・比喩・長文の理解、指示文書の読み取り</td></tr>
+  </table>
+  <p><b>軽度の教材へ進む目安</b>：①課題2・3（4択）で段階6・5が8割以上。②課題4（音読後の意味確認）を、文を見ずに聞くだけでも7割以上正答できる。③日常の短い指示（「新聞を取ってください」）に、聞き返しなしで従えることが多い。<br><b>重度の教材に戻る目安</b>：課題2・3で5割未満が続く、または反響言語が再び増えたとき。</p>
+  <div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+
+<!-- ========== 指導者用ガイド 2 ========== -->
+<section class="sheet guide">
+  <div class="head"><div><div class="tag">指導者用（患者さんには渡さない）</div><h1>訓練の進め方と記録のしかた</h1></div></div>
+  <h2>3. 訓練の目標と優先順位</h2>
+  <ul>
+    <li><b>目標</b>：語の意味のまとまり（仲間・使う場所・一緒に使う物）を手がかりに、単語の理解を確かにすること。<b>音読した文の意味を自分で確かめる習慣</b>をつけ、短い文の理解を広げること。</li>
+    <li><b>優先順位</b>：①意味の分類（仲間分け） → ②説明に合う語を選ぶ → ③関係のある語を選ぶ → ④音読した短文の意味を確かめる → ⑤意味が通る文かどうかを判断する。</li>
+    <li>この型は<b>音読がよくできるため、読めた＝分かったと本人も思いやすい</b>点に注意し、必ず意味の確認の質問をします。</li>
+  </ul>
+  <h2>4. ヒントの出し方</h2>
+  <ol>
+    <li>手がかりなしで答えを待つ</li>
+    <li>問題文をもう一度、ゆっくり区切って読む</li>
+    <li>選択肢を減らす（4択→2択）</li>
+    <li>実物・絵・身ぶりを添える</li>
+  </ol>
+  <p>2で正答なら段階5、3〜4で正答なら段階3とします。意味の近い選択肢を選んだ誤り（「床屋」の問題で「美容院」のような）は段階2（関連反応）として、どの意味の仲間で誤ったかを書き留めます。</p>
+  <h2>5. 家族への助言</h2>
+  <ul>
+    <li>話しかけは短い文で、一度に一つの内容にします。大事なことは紙に書いて渡し、<b>読んだあとに「何て書いてある？」と内容を確かめます</b>。</li>
+    <li>答えがずれていても否定せず、実物や指さしで正しい内容を示します。</li>
+    <li>買い物のメモや献立など、生活の中の文字を一緒に読み、意味を話し合う機会をつくります。</li>
+  </ul>
+  <h2>6. 訪問での工夫</h2>
+  <ul>
+    <li>課題1の仲間分けは、実際に冷蔵庫や台所にある物で行うと理解しやすくなります。</li>
+    <li>課題4の文は、本人の家族の名前、通院の予定、薬の飲み方など、実際の情報に置き換えて作り直します。</li>
+    <li>疲れると理解が下がるため、難しい課題は訪問の前半に行います。</li>
+  </ul>
+  <h2>7. 課題ページの一覧と記録のしかた</h2>
+  <p>3：理解課題 1（意味で仲間分けする）／4：理解課題 2（説明に合う語を選ぶ・4択）／5：理解課題 3（関係のある語を選ぶ・4択）／6：読解課題 1（音読して意味を確かめる）／7：読解課題 2（意味の通る文かどうかを判断する）／8：解答・評価のポイント。</p>
+  <p>各問の番号の左に<b>段階（6 完全正答、5 遅延完全正答、4 不完全正答、3 ヒント後正答、2 関連反応、1 誤答）</b>を記入し、6・5を正答とします。音読の正誤と意味の正誤は分けて記録します。反響言語が出た問題には「反」と書き添えます。</p>
+  <p style="font-size:9.5pt;color:#555;margin-top:3mm">内容は一般的な目安です。最終的な判断は担当の言語聴覚士が行ってください。</p>
+  <div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+
+<!-- ========== 課題1 ========== -->
+<section class="sheet" data-head="理解課題 1|意味で仲間分けする">
+  <p class="ask">A．枠の中の言葉を声に出して読み、仲間ごとに分けて、下の表に書いてください。</p>
+  <div class="bank"><span>大根</span><span>さば</span><span>牛乳</span><span>にんじん</span><span>あじ</span><span>ジュース</span><span>ほうれん草</span><span>いわし</span><span>紅茶</span><span>ごぼう</span><span>かつお</span><span>麦茶</span></div>
+  <table class="tbl"><tr><th>野菜</th><th>魚</th><th>飲み物</th></tr>
+    <tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr></table>
+  <p class="ask">B．それぞれの物を、家のどこで使うかで分けて、下の表に書いてください。</p>
+  <div class="bank"><span>フライパン</span><span>シャンプー</span><span>枕</span><span>おたま</span><span>石けん</span><span>毛布</span><span>炊飯器</span><span>湯おけ</span><span>目覚まし時計</span></div>
+  <table class="tbl" style="margin:0"><tr><th>台所</th><th>浴室</th><th>寝室</th></tr>
+    <tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr></table>
+</section>
+
+<!-- ========== 課題2 ========== -->
+<section class="sheet" data-head="理解課題 2|説明に合う語を選ぶ">
+  <p class="ask">説明を声に出して読み（または指導者の読み上げを聞いて）、説明に合う語に○を付けてください。</p>
+  <div id="desc"></div>
+</section>
+
+<!-- ========== 課題3 ========== -->
+<section class="sheet" data-head="理解課題 3|関係のある語を選ぶ">
+  <p class="ask">左の語と一緒に使う物、または関係の深い語を、右の四つから一つ選んで○を付けてください。</p>
+  <p class="hint">例：「鉛筆」→ 紙・靴・魚・山　の中では「紙」</p>
+  <div id="rel"></div>
+</section>
+
+<!-- ========== 課題4 ========== -->
+<section class="sheet" data-head="読解課題 1|音読して意味を確かめる">
+  <p class="ask">太字の文を声に出して読んでください。読み終えたら、質問の答えを三つの中から選んで○を付けてください。</p>
+  <div id="rd"></div>
+</section>
+
+<!-- ========== 課題5 ========== -->
+<section class="sheet" data-head="読解課題 2|意味の通る文かどうかを判断する">
+  <p class="ask">A．文を声に出して読み、意味が正しく通る文には○、おかしな文には×を、左の四角に書いてください。</p>
+  <div id="ox"></div>
+  <p class="ask" style="margin-top:4mm">B．×を付けた文を一つ選び、正しい文に直して言ってください。</p>
+  <div class="lines"><div class="l"></div><div class="l"></div></div>
+</section>
+
+<!-- ========== 指導者用 解答 ========== -->
+<section class="sheet key" style="page-break-after:auto;break-after:auto">
+  <div class="head"><div><div class="tag">指導者用（患者さんには渡さない）</div><h1>解答・評価のポイント</h1></div></div>
+  <h2>理解課題 1（仲間分け）</h2>
+  <p>A：野菜＝大根・にんじん・ほうれん草・ごぼう／魚＝さば・あじ・いわし・かつお／飲み物＝牛乳・ジュース・紅茶・麦茶。B：台所＝フライパン・おたま・炊飯器／浴室＝シャンプー・石けん・湯おけ／寝室＝枕・毛布・目覚まし時計。1語ずつ正誤を記録します（A 12語・B 9語）。難しい場合は、語を書いたカードを作り、表の上に置いて分けてもらいます。</p>
+  <h2>理解課題 2（説明に合う語）</h2>
+  <p id="kdesc"></p>
+  <h2>理解課題 3（関係のある語）</h2>
+  <p id="krel"></p>
+  <p>選んだあとに「なぜ一緒ですか」と尋ね、関係を説明できるかも見ます（説明は短い語でよい）。</p>
+  <h2>読解課題 1（音読後の意味確認）</h2>
+  <p id="krd"></p>
+  <p>音読の正確さと意味の選択を分けて記録します。慣れてきたら、指導者が文を読み上げ、本人は文を見ずに質問に答える形で行います（聞いて理解する練習）。</p>
+  <h2>読解課題 2（意味の判断）</h2>
+  <p id="kox"></p>
+  <p>B の直し方の例：「冷蔵庫で魚を冷やします」「魚焼きグリルで魚を焼きます」「帽子を頭にかぶります」「鍋に水を入れて、野菜を煮ます」「雨が降ったので、傘をさして歩きます」。</p>
+  <h2>評価のポイント</h2>
+  <p>①段階6・5の数　②関連反応（意味の近い語を選んだ誤り）の数と内容　③反響言語の回数、を毎回記録します。4択で8割を超えたら、文字を隠して聞くだけで行う、選択肢に意味の近い語を増やす、と一段ずつ難しくします。</p>
+  <div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+
+<script>
+// 見出し（氏名・日付欄つき）・フッター・課題を入れる（作成：KENTA SHINKAWA）
+const HEAD=(tag,title)=>`<div class="head"><div><div class="tag">${tag}</div><h1>${title}</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div>`;
+const FOOT='<div class="foot">作成：KENTA SHINKAWA</div>';
+const CH=c=>`<div class="choices">${c.map(x=>`<span>${x}</span>`).join("")}</div>`;
+// [説明, 選択肢, 正答の番号]
+const DESC=[["雨の日に着る、水を通さない服",["浴衣","レインコート","背広","エプロン"],1],
+  ["体の熱を測る道具",["定規","はかり","体温計","電卓"],2],
+  ["髪を切ってもらう店",["床屋","本屋","酒屋","魚屋"],0],
+  ["手紙や葉書に貼る物",["名刺","付箋","ばんそうこう","切手"],3],
+  ["病院で、診察の前に体の具合を書く紙",["履歴書","問診票","年賀状","献立表"],1],
+  ["電車に乗り降りする所",["港","空港","駅","交差点"],2],
+  ["洗った服を外に干すときに使う棒",["物干しざお","つえ","ほうき","はし"],0],
+  ["朝、決めた時間に鳴って目を覚まさせる物",["風鈴","体重計","電卓","目覚まし時計"],3]];
+document.getElementById("desc").innerHTML=DESC.map(([d,c],i)=>`<div class="q4"><div class="t"><span class="n">${i+1}.</span>${d}</div>${CH(c)}</div>`).join("");
+document.getElementById("kdesc").textContent=DESC.map(([d,c,a],i)=>`${i+1}. ${c[a]}`).join("　");
+const REL=[["鍵",["雲","卵","ドア","鉛筆"],2],["針",["糸","皿","靴","窓"],0],["切符",["布団","電車","鍋","花"],1],["枕",["自転車","包丁","切手","布団"],3],
+  ["診察券",["病院","公園","海","台所"],0],["急須",["新聞","お茶","帽子","石けん"],1],["しゃもじ",["はさみ","くし","ご飯","ほうき"],2],["郵便ポスト",["牛乳","時計","傘","手紙"],3]];
+document.getElementById("rel").innerHTML=REL.map(([w,c],i)=>`<div class="rel"><span class="t" style="font-size:15pt;font-weight:700;min-width:8mm">${i+1}.</span><span class="w">${w}</span>${CH(c)}</div>`).join("");
+document.getElementById("krel").textContent=REL.map(([w,c,a],i)=>`${i+1}. ${c[a]}`).join("　");
+const RD=[["妻は台所で野菜を切っています。","妻は何をしていますか。",["掃除","料理の準備","買い物"],1],
+  ["午後から雨が降るので、洗濯は明日にします。","今日、洗濯をしますか。",["する","しない","午後にする"],1],
+  ["孫は来週の土曜日に遊びに来ます。","孫が来るのはいつですか。",["今日","先週の土曜日","来週の土曜日"],2],
+  ["この薬は、食事のあとに飲んでください。","薬はいつ飲みますか。",["食事のあと","食事の前","寝る前"],0],
+  ["バスが遅れたので、病院に着いたのは予約の時間を過ぎていました。","病院に着いたのは、予約の時間と比べてどうでしたか。",["早かった","ちょうどだった","遅かった"],2],
+  ["牛乳がなくなったので、帰りに買ってきてください。","頼まれたことは何ですか。",["牛乳を捨てる","牛乳を買う","冷蔵庫を掃除する"],1]];
+document.getElementById("rd").innerHTML=RD.map(([s,q,c],i)=>`<div class="rd"><div class="s"><span class="n">${i+1}.</span>${s}</div><div class="q">問い：${q}</div>${CH(c)}</div>`).join("");
+document.getElementById("krd").textContent=RD.map(([s,q,c,a],i)=>`${i+1}. ${c[a]}`).join("　");
+const OX=[["冷蔵庫で魚を焼きます。","×"],["寒いので、コートを着て出かけます。","○"],["帽子を足に履きます。","×"],["眼鏡をかけて新聞を読みます。","○"],["切手を貼って手紙を出します。","○"],
+  ["鍋に水を入れて、テレビを煮ます。","×"],["のどが渇いたので、お茶を飲みます。","○"],["電話で、遠くに住む家族と話します。","○"],["雨が降ったので、傘を閉じて歩きます。","×"],["お風呂に入る前に、服を脱ぎます。","○"]];
+document.getElementById("ox").innerHTML=OX.map(([s],i)=>`<div class="oxl"><span class="ox"></span>${i+1}.　${s}</div>`).join("");
+document.getElementById("kox").textContent="A："+OX.map(([s,a],i)=>`${i+1}. ${a}`).join("　");
+document.querySelectorAll("section.sheet[data-head]").forEach(s=>{
+  const [tag,title]=s.dataset.head.split("|");
+  s.insertAdjacentHTML("afterbegin",HEAD(tag,title));
+  s.insertAdjacentHTML("beforeend",FOOT);
+});
+</script>
+<script src="mini-profile.js"></script>
+</body>
+</html>

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="author" content="KENTA SHINKAWA">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>伝導失語 訓練教材</title>
+<link rel="stylesheet" href="common.css">
+<style>
+.ill{width:30mm;height:30mm;fill:none;stroke:#000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;display:block}
+.pgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:6mm 4mm;margin:2mm 0 4mm}
+.pgrid .p{display:flex;flex-direction:column;align-items:center;border:1px solid #bbb;border-radius:2mm;padding:2mm 0 1mm}
+.pgrid .p b{font-size:12pt;color:#555;align-self:flex-start;margin-left:3mm}
+.pm{display:grid;grid-template-columns:1fr 1fr;gap:6mm 8mm;margin:2mm 0 4mm}
+.pm .c{display:flex;align-items:center;gap:5mm;border:1px solid #bbb;border-radius:2mm;padding:3mm}
+.pm .c .n{font-weight:700;font-size:14pt;align-self:flex-start}
+.pm .opts{display:flex;flex-direction:column;gap:2.5mm}
+.pm .opts span{border:1.5px solid #333;border-radius:2mm;padding:.5mm 4mm;font-size:16pt}
+.boxes{display:flex;gap:2mm}
+.boxes i{display:inline-block;width:14mm;height:14mm;border:1.5px solid #333}
+table.rec{border-collapse:collapse;width:100%;font-size:12pt}
+table.rec th,table.rec td{border:1px solid #555;padding:1.5mm 2mm;vertical-align:top;text-align:left}
+table.rec th{background:#f2f2f2;font-weight:700}
+.row{display:flex;align-items:center;gap:4mm;margin:0 0 3.5mm}
+.row .n{font-weight:700;font-size:15pt;min-width:9mm}
+.row .choices{margin:0}
+.kana{display:flex;gap:2.5mm}
+.kana span{display:inline-block;width:12mm;height:12mm;line-height:11mm;text-align:center;border:1.5px solid #333;border-radius:1.5mm;font-size:17pt;font-weight:700}
+.note{font-size:10.5pt;color:#555;margin:-2mm 0 3mm}
+.guide .mini{margin-bottom:0}
+.lv{font-weight:700;margin:2.5mm 0 1mm;font-size:11.5pt}
+ruby rt{font-size:9pt}
+.compact{font-size:9.5pt;line-height:1.42}
+.compact h2{font-size:12pt;margin:2.5mm 0 1mm}
+.compact table{font-size:9pt;margin-bottom:2mm}
+.compact th,.compact td{padding:.6mm 1.5mm}
+.compact ul{margin-bottom:1mm}
+.compact .mini{width:115mm;margin:0 auto}
+.compact .note{margin:0 0 1mm;font-size:9.5pt}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="ic-cup" viewBox="0 0 100 100"><path d="M28 26 L72 26 L66 80 Q50 87 34 80 Z"/><ellipse cx="50" cy="26" rx="22" ry="5"/><path d="M38 84 L38 89 L62 89 L62 84"/></symbol><symbol id="ic-clock" viewBox="0 0 100 100"><circle cx="50" cy="50" r="38"/><path d="M50 50 L50 24 M50 50 L68 58"/><path d="M50 14 L50 19 M86 50 L81 50 M50 86 L50 81 M14 50 L19 50"/><circle cx="50" cy="50" r="2"/></symbol><symbol id="ic-key" viewBox="0 0 100 100"><circle cx="28" cy="50" r="15"/><circle cx="28" cy="50" r="5"/><path d="M43 50 L90 50 M74 50 L74 62 M84 50 L84 60"/></symbol><symbol id="ic-umbrella" viewBox="0 0 100 100"><path d="M10 46 Q50 -2 90 46 Q80 38 70 46 Q60 38 50 46 Q40 38 30 46 Q20 38 10 46 Z"/><path d="M50 12 L50 8 M50 46 L50 82 A6 6 0 0 1 38 82"/></symbol><symbol id="ic-phone" viewBox="0 0 100 100"><rect x="22" y="48" width="56" height="34" rx="5"/><path d="M14 42 Q14 28 30 30 L70 30 Q86 28 86 42 L76 46 L70 39 L30 39 L24 46 Z"/><circle cx="50" cy="65" r="10"/><circle cx="50" cy="65" r="3"/></symbol><symbol id="ic-glasses" viewBox="0 0 100 100"><circle cx="30" cy="56" r="15"/><circle cx="70" cy="56" r="15"/><path d="M45 53 Q50 47 55 53 M15 53 L6 42 M85 53 L94 42"/></symbol><symbol id="ic-shoe" viewBox="0 0 100 100"><path d="M14 76 L14 38 L34 38 Q38 52 54 55 L78 60 Q90 63 90 72 L90 76 Z"/><path d="M14 69 L90 69 M38 46 L44 44 M42 51 L48 49"/></symbol><symbol id="ic-book" viewBox="0 0 100 100"><path d="M50 30 Q32 21 12 25 L12 78 Q32 74 50 82 Q68 74 88 78 L88 25 Q68 21 50 30 Z"/><path d="M50 30 L50 82 M20 36 Q32 34 42 38 M20 46 Q32 44 42 48 M58 38 Q68 34 80 36 M58 48 Q68 44 80 46"/></symbol><symbol id="ic-scissors" viewBox="0 0 100 100"><circle cx="32" cy="77" r="11"/><circle cx="68" cy="77" r="11"/><path d="M38 67 L62 12 M62 67 L38 12"/><circle cx="50" cy="40" r="2"/></symbol><symbol id="ic-toothbrush" viewBox="0 0 100 100"><rect x="8" y="58" width="58" height="9" rx="4"/><rect x="66" y="56" width="26" height="12" rx="3"/><path d="M70 56 L70 42 M75 56 L75 42 M80 56 L80 42 M85 56 L85 42 M90 56 L90 42"/></symbol><symbol id="ic-kettle" viewBox="0 0 100 100"><path d="M24 82 Q20 48 50 46 Q80 48 76 82 Z"/><path d="M38 46 Q50 37 62 46"/><circle cx="50" cy="37" r="3"/><path d="M32 50 Q50 8 68 50"/><path d="M26 66 L9 50 L13 47 L28 58"/></symbol><symbol id="ic-wallet" viewBox="0 0 100 100"><rect x="12" y="32" width="76" height="46" rx="4"/><path d="M12 46 L88 46"/><rect x="68" y="42" width="20" height="12" rx="2"/><circle cx="76" cy="48" r="2"/></symbol></defs></svg>
+<div class="noprint">印刷するときは <b>Ctrl＋P</b> を押してください（用紙：A4縦）。1ページ目と「指導者用」と書かれたページは指導者用です。患者さんには課題用紙だけを渡してください。</div>
+<section class="sheet guide compact">
+<div class="head"><div><div class="tag">指導者用</div><h1>伝導失語の訓練教材について</h1></div></div>
+
+<h2>1．典型的なSLTAプロフィールの特徴</h2>
+<p>聴理解・読解は比較的保たれ、発話も流暢ですが、音の誤り（音韻性錯語）が目立つパターンです。誤りに気付いて何度も言い直すこと（接近行為）が多く、<b>復唱が特に低下</b>し、長い語や文ほど誤りが増えます。音読や仮名の書字・書取にも音の誤りが出やすくなります。</p>
+<table>
+<tr><th style="width:13%">領域</th><th style="width:27%">目安</th><th>特徴的な下位検査</th></tr>
+<tr><td>聴く</td><td>比較的保たれる</td><td>単語・短文の理解はおおむね良好。口頭命令は文が長いとやや低下することがある</td></tr>
+<tr><td>話す</td><td>流暢だが音の誤りが多い</td><td>単語の復唱が低下し、文の復唱は特に低い。呼称・音読にも音韻性錯語</td></tr>
+<tr><td>読む</td><td>比較的保たれる</td><td>単語の理解は良好。短文の理解・書字命令は軽度の低下にとどまることが多い</td></tr>
+<tr><td>書く</td><td>中等度の低下</td><td>漢字より仮名で誤りやすい（字の抜け・入れ替わり）。仮名の書取・短文の書取が低下しやすい</td></tr>
+<tr><td>計算</td><td>比較的保たれる</td><td>個人差が大きい</td></tr>
+</table>
+<svg class="mini" data-profile="100,90,80,90,60,50,60,60,0,60,60,80,40,20,100,90,80,70,60,40,40,60,60,20,20,70"></svg>
+<p class="note">典型例のイメージ。個人差が大きい（例データ「例：伝導失語」1回目の評価から作図）。</p>
+<h2>2．訓練の方針</h2>
+<ul>
+<li><b>目標：</b>語の音の並びを捉える力（音韻の操作）を高め、言い誤りに自分で気付いて直せるようにする。仮名の書字を伝達の補助にも使えるようにする。</li>
+<li><b>優先順位：</b>①音韻の操作 ②仮名書字 ③段階的な復唱と音読 ④自己修正の練習。保たれている理解を生かし、文字や意味の手がかりを使う。</li>
+<li><b>段階の上げ方：</b>語の長さ（2モーラ→3→4→5以上→短文）を主な軸にし、次に手がかり（文字あり→なし、ゆっくり→普通の速さ）を減らす。同時に二つ以上を変えない。</li>
+<li><b>家族への助言：</b>言い直しが続いても急がせずに待つ。言いたい語が分かったら、正しい形を一度だけ自然に言い返す。</li>
+<li><b>訪問での工夫：</b>買い物のメモ、家族の名前など日常で使う語を刺激に加える。焦りが出たら短い語に戻り、成功で終える。</li>
+</ul>
+<h2>3．教材ページの一覧と使い方・記録のしかた</h2>
+<table>
+<tr><th style="width:9%">頁</th><th style="width:30%">課題</th><th>使い方</th></tr>
+<tr><td>2〜5</td><td>音韻課題1〜3／書字課題</td><td>音の数、語頭・語尾の音、仮名の並べ替え、音から仮名を書く</td></tr>
+<tr><td>6・7</td><td>指導者用リスト／音読課題</td><td>段階的な復唱（2モーラ→短文）と書取の語、語から文への音読</td></tr>
+<tr><td>8〜10</td><td>語の正誤判断／自己修正記録／解答</td><td>正しい語と誤った語の区別、言い直しの記録、解答と評価のポイント</td></tr>
+</table>
+<p>1問ごとに段階6〜1で記録します（6 完全正答、5 遅延完全正答、4 不完全正答、3 ヒント後正答、2 関連反応、1 誤答）。言い直しの末に正しく言えた場合の段階は、施設内で基準をそろえておきます。6・5がおおむね8割以上の状態が2回続いたら次の長さへ進みます。<b>最終的な判断は担当の言語聴覚士が行います。</b></p>
+
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet">
+<div class="head"><div><div class="tag">音韻課題 1</div><h1>語の音（拍）の数を数える</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div>
+
+<p class="ask">語を声に出して言いながら、一つの音ごとに机を軽くたたいて数を数え、その数を枠に書いてください。</p>
+<p class="hint">例：「<ruby>机<rt>つくえ</rt></ruby>」は「つ・く・え」で3。小さい「っ」と「ん」は1つと数え、「しゃ」「びょ」などは2文字で1つと数えます。</p>
+<div class="grid" style="gap:0 10mm"><div class="row" style="margin-bottom:5mm"><span class="n">1.</span><span class="ox"></span><span class="q" style="margin:0"><span class="t"><ruby>傘<rt>かさ</rt></ruby></span></span></div><div class="row" style="margin-bottom:5mm"><span class="n">2.</span><span class="ox"></span><span class="q" style="margin:0"><span class="t"><ruby>時計<rt>とけい</rt></ruby></span></span></div><div class="row" style="margin-bottom:5mm"><span class="n">3.</span><span class="ox"></span><span class="q" style="margin:0"><span class="t"><ruby>眼鏡<rt>めがね</rt></ruby></span></span></div><div class="row" style="margin-bottom:5mm"><span class="n">4.</span><span class="ox"></span><span class="q" style="margin:0"><span class="t"><ruby>新聞<rt>しんぶん</rt></ruby></span></span></div><div class="row" style="margin-bottom:5mm"><span class="n">5.</span><span class="ox"></span><span class="q" style="margin:0"><span class="t"><ruby>切手<rt>きって</rt></ruby></span></span></div><div class="row" style="margin-bottom:5mm"><span class="n">6.</span><span class="ox"></span><span class="q" style="margin:0"><span class="t"><ruby>病院<rt>びょういん</rt></ruby></span></span></div><div class="row" style="margin-bottom:5mm"><span class="n">7.</span><span class="ox"></span><span class="q" style="margin:0"><span class="t"><ruby>自転車<rt>じてんしゃ</rt></ruby></span></span></div><div class="row" style="margin-bottom:5mm"><span class="n">8.</span><span class="ox"></span><span class="q" style="margin:0"><span class="t"><ruby>冷蔵庫<rt>れいぞうこ</rt></ruby></span></span></div><div class="row" style="margin-bottom:5mm"><span class="n">9.</span><span class="ox"></span><span class="q" style="margin:0"><span class="t"><ruby>掃除機<rt>そうじき</rt></ruby></span></span></div><div class="row" style="margin-bottom:5mm"><span class="n">10.</span><span class="ox"></span><span class="q" style="margin:0"><span class="t"><ruby>誕生日<rt>たんじょうび</rt></ruby></span></span></div><div class="row" style="margin-bottom:5mm"><span class="n">11.</span><span class="ox"></span><span class="q" style="margin:0"><span class="t"><ruby>郵便局<rt>ゆうびんきょく</rt></ruby></span></span></div><div class="row" style="margin-bottom:5mm"><span class="n">12.</span><span class="ox"></span><span class="q" style="margin:0"><span class="t"><ruby>天気予報<rt>てんきよほう</rt></ruby></span></span></div></div>
+
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet">
+<div class="head"><div><div class="tag">音韻課題 2</div><h1>語頭の音・語尾の音を聞き分ける</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div>
+
+<p class="ask">語を声に出して言い、条件に合う語をすべて選んで○を付けてください。</p>
+<div class="theme">A　始まりの音</div><div class="q" style="margin:0 0 1mm"><div class="t" style="font-size:14pt">1.　「か」で始まる語</div></div><div class="choices" style="margin-bottom:3.5mm"><span><ruby>鞄<rt>かばん</rt></ruby></span><span><ruby>時計<rt>とけい</rt></ruby></span><span><ruby>鍵<rt>かぎ</rt></ruby></span><span><ruby>眼鏡<rt>めがね</rt></ruby></span></div><div class="q" style="margin:0 0 1mm"><div class="t" style="font-size:14pt">2.　「さ」で始まる語</div></div><div class="choices" style="margin-bottom:3.5mm"><span><ruby>魚<rt>さかな</rt></ruby></span><span>すいか</span><span><ruby>砂糖<rt>さとう</rt></ruby></span><span><ruby>椅子<rt>いす</rt></ruby></span></div><div class="q" style="margin:0 0 1mm"><div class="t" style="font-size:14pt">3.　「は」で始まる語</div></div><div class="choices" style="margin-bottom:3.5mm"><span>はさみ</span><span>ほうき</span><span><ruby>葉書<rt>はがき</rt></ruby></span><span><ruby>靴<rt>くつ</rt></ruby></span></div>
+<div class="theme">B　最後の音</div><div class="q" style="margin:0 0 1mm"><div class="t" style="font-size:14pt">1.　最後の音が「ん」の語</div></div><div class="choices" style="margin-bottom:3.5mm"><span><ruby>電話<rt>でんわ</rt></ruby></span><span>やかん</span><span>みかん</span><span><ruby>卵<rt>たまご</rt></ruby></span></div><div class="q" style="margin:0 0 1mm"><div class="t" style="font-size:14pt">2.　最後の音が「い」の語</div></div><div class="choices" style="margin-bottom:3.5mm"><span><ruby>時計<rt>とけい</rt></ruby></span><span><ruby>眼鏡<rt>めがね</rt></ruby></span><span><ruby>財布<rt>さいふ</rt></ruby></span><span><ruby>鯛<rt>たい</rt></ruby></span></div>
+<div class="theme">C　しりとりでつながる語（一つ選ぶ）</div><div class="q" style="margin:0 0 1mm"><div class="t" style="font-size:14pt">1.　「時計（とけい）」の最後の音で始まる語</div></div><div class="choices" style="margin-bottom:3.5mm"><span><ruby>椅子<rt>いす</rt></ruby></span><span><ruby>傘<rt>かさ</rt></ruby></span><span><ruby>靴<rt>くつ</rt></ruby></span></div><div class="q" style="margin:0 0 1mm"><div class="t" style="font-size:14pt">2.　「卵（たまご）」の最後の音で始まる語</div></div><div class="choices" style="margin-bottom:3.5mm"><span><ruby>胡麻<rt>ごま</rt></ruby></span><span><ruby>鍋<rt>なべ</rt></ruby></span><span><ruby>机<rt>つくえ</rt></ruby></span></div>
+
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet">
+<div class="head"><div><div class="tag">音韻課題 3</div><h1>仮名を並べ替えて語を作る</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div>
+
+<p class="ask">枠の中の仮名を並べ替えて、ヒントに合う語にし、線の上に書いてください。</p>
+<p class="hint">声に出して並べ方を試しながら考えてください。</p>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:4mm 6mm"><div style="border:1px solid #bbb;border-radius:2mm;padding:2.5mm 3mm 1mm"><div class="row" style="margin:0 0 1mm"><span class="n">1.</span><span class="kana"><span>い</span><span>け</span><span>と</span></span></div><div style="font-size:12pt;color:#555">ヒント：時刻を知る道具</div><div class="ans" style="margin:0"><div class="l" style="height:10mm"></div></div></div><div style="border:1px solid #bbb;border-radius:2mm;padding:2.5mm 3mm 1mm"><div class="row" style="margin:0 0 1mm"><span class="n">2.</span><span class="kana"><span>ね</span><span>め</span><span>が</span></span></div><div style="font-size:12pt;color:#555">ヒント：目に掛けて物をよく見る道具</div><div class="ans" style="margin:0"><div class="l" style="height:10mm"></div></div></div><div style="border:1px solid #bbb;border-radius:2mm;padding:2.5mm 3mm 1mm"><div class="row" style="margin:0 0 1mm"><span class="n">3.</span><span class="kana"><span>み</span><span>は</span><span>さ</span></span></div><div style="font-size:12pt;color:#555">ヒント：紙や布を切る道具</div><div class="ans" style="margin:0"><div class="l" style="height:10mm"></div></div></div><div style="border:1px solid #bbb;border-radius:2mm;padding:2.5mm 3mm 1mm"><div class="row" style="margin:0 0 1mm"><span class="n">4.</span><span class="kana"><span>わ</span><span>ん</span><span>で</span></span></div><div style="font-size:12pt;color:#555">ヒント：離れた人と話す機械</div><div class="ans" style="margin:0"><div class="l" style="height:10mm"></div></div></div><div style="border:1px solid #bbb;border-radius:2mm;padding:2.5mm 3mm 1mm"><div class="row" style="margin:0 0 1mm"><span class="n">5.</span><span class="kana"><span>ん</span><span>か</span><span>や</span></span></div><div style="font-size:12pt;color:#555">ヒント：湯を沸かす道具</div><div class="ans" style="margin:0"><div class="l" style="height:10mm"></div></div></div><div style="border:1px solid #bbb;border-radius:2mm;padding:2.5mm 3mm 1mm"><div class="row" style="margin:0 0 1mm"><span class="n">6.</span><span class="kana"><span>ら</span><span>く</span><span>さ</span></span></div><div style="font-size:12pt;color:#555">ヒント：春に咲く花</div><div class="ans" style="margin:0"><div class="l" style="height:10mm"></div></div></div><div style="border:1px solid #bbb;border-radius:2mm;padding:2.5mm 3mm 1mm"><div class="row" style="margin:0 0 1mm"><span class="n">7.</span><span class="kana"><span>ぶ</span><span>ん</span><span>し</span><span>ん</span></span></div><div style="font-size:12pt;color:#555">ヒント：毎朝届く読み物</div><div class="ans" style="margin:0"><div class="l" style="height:10mm"></div></div></div><div style="border:1px solid #bbb;border-radius:2mm;padding:2.5mm 3mm 1mm"><div class="row" style="margin:0 0 1mm"><span class="n">8.</span><span class="kana"><span>し</span><span>ぶ</span><span>ら</span><span>は</span></span></div><div style="font-size:12pt;color:#555">ヒント：歯をみがく道具</div><div class="ans" style="margin:0"><div class="l" style="height:10mm"></div></div></div><div style="border:1px solid #bbb;border-radius:2mm;padding:2.5mm 3mm 1mm"><div class="row" style="margin:0 0 1mm"><span class="n">9.</span><span class="kana"><span>の</span><span>か</span><span>も</span><span>い</span></span></div><div style="font-size:12pt;color:#555">ヒント：店で品物を買うこと</div><div class="ans" style="margin:0"><div class="l" style="height:10mm"></div></div></div><div style="border:1px solid #bbb;border-radius:2mm;padding:2.5mm 3mm 1mm"><div class="row" style="margin:0 0 1mm"><span class="n">10.</span><span class="kana"><span>う</span><span>こ</span><span>れ</span><span>ぞ</span><span>い</span></span></div><div style="font-size:12pt;color:#555">ヒント：食べ物を冷やして保存する</div><div class="ans" style="margin:0"><div class="l" style="height:10mm"></div></div></div></div>
+
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet">
+<div class="head"><div><div class="tag">書字課題</div><h1>音を仮名で書く</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div>
+
+<p class="ask">A　絵の物の名前を声に出して言い、仮名で枠に書いてください（一つの枠に一つの音）。</p>
+<div class="pm" style="gap:4mm 8mm"><div class="c"><span class="n">1.</span><svg class="ill" viewBox="0 0 100 100" role="img" aria-label="傘"><use href="#ic-umbrella"/></svg><span class="boxes"><i></i><i></i></span></div><div class="c"><span class="n">2.</span><svg class="ill" viewBox="0 0 100 100" role="img" aria-label="時計"><use href="#ic-clock"/></svg><span class="boxes"><i></i><i></i><i></i></span></div><div class="c"><span class="n">3.</span><svg class="ill" viewBox="0 0 100 100" role="img" aria-label="鍵"><use href="#ic-key"/></svg><span class="boxes"><i></i><i></i></span></div><div class="c"><span class="n">4.</span><svg class="ill" viewBox="0 0 100 100" role="img" aria-label="眼鏡"><use href="#ic-glasses"/></svg><span class="boxes"><i></i><i></i><i></i></span></div><div class="c"><span class="n">5.</span><svg class="ill" viewBox="0 0 100 100" role="img" aria-label="電話"><use href="#ic-phone"/></svg><span class="boxes"><i></i><i></i><i></i></span></div><div class="c"><span class="n">6.</span><svg class="ill" viewBox="0 0 100 100" role="img" aria-label="はさみ"><use href="#ic-scissors"/></svg><span class="boxes"><i></i><i></i><i></i></span></div></div>
+<p class="ask" style="margin-top:2mm">B　指導者が言う語を聞いて、仮名で書いてください。</p>
+<div class="grid"><div class="c">1.</div><div class="c">2.</div><div class="c">3.</div><div class="c">4.</div><div class="c">5.</div><div class="c">6.</div></div>
+
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet guide compact">
+<div class="head"><div><div class="tag">指導者用（患者さんには渡さない）</div><h1>段階的な復唱リストと書取の語</h1></div></div>
+
+<p>普通の速さで1回言い、すぐに復唱してもらいます。語の右の欄に段階（6〜1）を記入します。言い直しの末に正しく言えた場合は、言い直した回数もメモします。各段階で6・5がおおむね8割以上になったら次の段階へ進みます。</p>
+<div class="lv">段階1　2モーラ</div><table><tr><td>いす</td><td style='width:7%'></td><td>かさ</td><td style='width:7%'></td><td>くつ</td><td style='width:7%'></td><td>はし</td><td style='width:7%'></td><td>さら</td><td style='width:7%'></td></tr><tr><td>なべ</td><td style='width:7%'></td><td>かぎ</td><td style='width:7%'></td><td>ゆき</td><td style='width:7%'></td><td>ちず</td><td style='width:7%'></td><td>てら</td><td style='width:7%'></td></tr></table>
+<div class="lv">段階2　3モーラ</div><table><tr><td>とけい</td><td style='width:7%'></td><td>めがね</td><td style='width:7%'></td><td>はさみ</td><td style='width:7%'></td><td>やかん</td><td style='width:7%'></td><td>でんわ</td><td style='width:7%'></td></tr><tr><td>たまご</td><td style='width:7%'></td><td>さかな</td><td style='width:7%'></td><td>くすり</td><td style='width:7%'></td><td>てがみ</td><td style='width:7%'></td><td>きっぷ</td><td style='width:7%'></td></tr></table>
+<div class="lv">段階3　4モーラ</div><table><tr><td>しんぶん</td><td style='width:7%'></td><td>せんたく</td><td style='width:7%'></td><td>はぶらし</td><td style='width:7%'></td><td>かいもの</td><td style='width:7%'></td><td>びょういん</td><td style='width:7%'></td></tr><tr><td>じてんしゃ</td><td style='width:7%'></td><td>ゆうびん</td><td style='width:7%'></td><td>おにぎり</td><td style='width:7%'></td><td>おみやげ</td><td style='width:7%'></td><td>てぶくろ</td><td style='width:7%'></td></tr></table>
+<div class="lv">段階4　5モーラ以上</div><table><tr><td>れいぞうこ</td><td style='width:7%'></td><td>たんじょうび</td><td style='width:7%'></td><td>せんぷうき</td><td style='width:7%'></td></tr><tr><td>ほうれんそう</td><td style='width:7%'></td><td>ゆうびんきょく</td><td style='width:7%'></td><td>しょうがっこう</td><td style='width:7%'></td></tr></table>
+<div class="lv">段階5　短文（2文節→4文節）</div>
+<table><tr><th>No</th><th>文</th><th>復唱</th><th>音読</th></tr><tr><td style='width:6%'>1</td><td>お茶を飲みます。</td><td style='width:11%'></td><td style='width:11%'></td></tr><tr><td style='width:6%'>2</td><td>傘を忘れました。</td><td style='width:11%'></td><td style='width:11%'></td></tr><tr><td style='width:6%'>3</td><td>明日は病院に行きます。</td><td style='width:11%'></td><td style='width:11%'></td></tr><tr><td style='width:6%'>4</td><td>孫から電話がありました。</td><td style='width:11%'></td><td style='width:11%'></td></tr><tr><td style='width:6%'>5</td><td>駅の前で友人に会いました。</td><td style='width:11%'></td><td style='width:11%'></td></tr><tr><td style='width:6%'>6</td><td>スーパーで卵と牛乳を買いました。</td><td style='width:11%'></td><td style='width:11%'></td></tr></table>
+<p class="note" style="margin-top:0">短文の「音読」欄は、7頁の音読課題を行ったときの比較に使います。</p>
+<h2>書字課題B（5頁）で読み上げる語</h2>
+<p>1 くつ　2 たまご　3 てがみ　4 くすり　5 しんぶん　6 かいもの</p>
+<p class="note">難しい場合は、語を言ったあとに音の数だけ点を書いて見せます（手がかり＝段階3）。</p>
+
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet">
+<div class="head"><div><div class="tag">音読課題</div><h1>語と文を声に出して読む</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div>
+
+<p class="ask">一つずつ、声に出して読んでください。言い誤ったと気付いたら、いったん止まり、ゆっくり言い直してください。</p>
+<div class="theme">1　短い語</div>
+<div class="read" style="line-height:2.1">傘　　鍵　　靴　　皿　　机　　時計　　眼鏡　　手紙　　切符<br>やかん　　はさみ　　新聞　　病院　　自転車　　冷蔵庫</div>
+<div class="theme">2　二つの語</div>
+<div class="read" style="line-height:2.1">温かいお茶　　新しい靴　　赤い傘　　朝の散歩<br>冷たい牛乳　　駅の改札　　週末の買い物　　病院の受付</div>
+<div class="theme">3　文</div>
+<div class="read" style="line-height:2.1">1．朝ご飯にパンを食べました。<br>2．午後から雨が降るそうです。<br>3．娘が孫を連れて遊びに来ました。<br>4．来週の火曜日に、病院で血液検査を受けます。<br>5．郵便局で切手を買ってから、手紙を出しました。</div>
+
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet">
+<div class="head"><div><div class="tag">語の正誤判断課題</div><h1>正しい語を選ぶ</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div>
+
+<p class="ask">説明に合う語のうち、音が正しいものを一つ選んで○を付けてください。</p>
+<p class="hint">一つずつ小さな声で読み比べてください。</p>
+<div class="grid" style="gap:0 8mm"><div><div class="q" style="margin:0 0 1mm"><div class="t" style="font-size:13.5pt">1.　目に掛けて物をよく見る道具</div></div><div class="choices" style="margin-bottom:3mm;gap:3mm"><span style='font-size:14pt;padding:1mm 3mm'>めがね</span><span style='font-size:14pt;padding:1mm 3mm'>めなが</span><span style='font-size:14pt;padding:1mm 3mm'>めかね</span></div></div><div><div class="q" style="margin:0 0 1mm"><div class="t" style="font-size:13.5pt">2.　時刻を知る道具</div></div><div class="choices" style="margin-bottom:3mm;gap:3mm"><span style='font-size:14pt;padding:1mm 3mm'>とてい</span><span style='font-size:14pt;padding:1mm 3mm'>とけい</span><span style='font-size:14pt;padding:1mm 3mm'>ときい</span></div></div><div><div class="q" style="margin:0 0 1mm"><div class="t" style="font-size:13.5pt">3.　紙や布を切る道具</div></div><div class="choices" style="margin-bottom:3mm;gap:3mm"><span style='font-size:14pt;padding:1mm 3mm'>はしみ</span><span style='font-size:14pt;padding:1mm 3mm'>さはみ</span><span style='font-size:14pt;padding:1mm 3mm'>はさみ</span></div></div><div><div class="q" style="margin:0 0 1mm"><div class="t" style="font-size:13.5pt">4.　湯を沸かす道具</div></div><div class="choices" style="margin-bottom:3mm;gap:3mm"><span style='font-size:14pt;padding:1mm 3mm'>やかん</span><span style='font-size:14pt;padding:1mm 3mm'>かやん</span><span style='font-size:14pt;padding:1mm 3mm'>やなん</span></div></div><div><div class="q" style="margin:0 0 1mm"><div class="t" style="font-size:13.5pt">5.　毎朝届く読み物</div></div><div class="choices" style="margin-bottom:3mm;gap:3mm"><span style='font-size:14pt;padding:1mm 3mm'>ぶんしん</span><span style='font-size:14pt;padding:1mm 3mm'>しんぶん</span><span style='font-size:14pt;padding:1mm 3mm'>しんぷん</span></div></div><div><div class="q" style="margin:0 0 1mm"><div class="t" style="font-size:13.5pt">6.　歯をみがく道具</div></div><div class="choices" style="margin-bottom:3mm;gap:3mm"><span style='font-size:14pt;padding:1mm 3mm'>はぶしら</span><span style='font-size:14pt;padding:1mm 3mm'>はぐらし</span><span style='font-size:14pt;padding:1mm 3mm'>はぶらし</span></div></div><div><div class="q" style="margin:0 0 1mm"><div class="t" style="font-size:13.5pt">7.　食べ物を冷やす電気製品</div></div><div class="choices" style="margin-bottom:3mm;gap:3mm"><span style='font-size:14pt;padding:1mm 3mm'>れいぞうこ</span><span style='font-size:14pt;padding:1mm 3mm'>れいどうこ</span><span style='font-size:14pt;padding:1mm 3mm'>れぞういこ</span></div></div><div><div class="q" style="margin:0 0 1mm"><div class="t" style="font-size:13.5pt">8.　診察を受ける所</div></div><div class="choices" style="margin-bottom:3mm;gap:3mm"><span style='font-size:14pt;padding:1mm 3mm'>ぴょういん</span><span style='font-size:14pt;padding:1mm 3mm'>びょういん</span><span style='font-size:14pt;padding:1mm 3mm'>びょうりん</span></div></div><div><div class="q" style="margin:0 0 1mm"><div class="t" style="font-size:13.5pt">9.　雨の日に差す物</div></div><div class="choices" style="margin-bottom:3mm;gap:3mm"><span style='font-size:14pt;padding:1mm 3mm'>かた</span><span style='font-size:14pt;padding:1mm 3mm'>さか</span><span style='font-size:14pt;padding:1mm 3mm'>かさ</span></div></div><div><div class="q" style="margin:0 0 1mm"><div class="t" style="font-size:13.5pt">10.　春に咲く花</div></div><div class="choices" style="margin-bottom:3mm;gap:3mm"><span style='font-size:14pt;padding:1mm 3mm'>さくら</span><span style='font-size:14pt;padding:1mm 3mm'>さくな</span><span style='font-size:14pt;padding:1mm 3mm'>さらく</span></div></div><div><div class="q" style="margin:0 0 1mm"><div class="t" style="font-size:13.5pt">11.　戸を開けるときに使う物</div></div><div class="choices" style="margin-bottom:3mm;gap:3mm"><span style='font-size:14pt;padding:1mm 3mm'>たぎ</span><span style='font-size:14pt;padding:1mm 3mm'>かぎ</span><span style='font-size:14pt;padding:1mm 3mm'>かが</span></div></div><div><div class="q" style="margin:0 0 1mm"><div class="t" style="font-size:13.5pt">12.　手紙を出す所</div></div><div class="choices" style="margin-bottom:3mm;gap:3mm"><span style='font-size:14pt;padding:1mm 3mm'>ゆうびんきょく</span><span style='font-size:14pt;padding:1mm 3mm'>ゆうみんきょく</span><span style='font-size:14pt;padding:1mm 3mm'>ゆうびんきょう</span></div></div></div>
+
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet">
+<div class="head"><div><div class="tag">自己修正の練習記録</div><h1>言い誤りに気付いて直す</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div>
+
+<p class="ask">言い誤ったときは、一度止まり、文字を見てから一音ずつ言い直してください。うまくいったときの方法を記録しておきます。</p>
+<table class="rec" style="font-size:11.5pt"><tr><th style="width:18%">目標の語・文</th><th style="width:20%">最初の言い方</th><th style="width:10%">自分で気付いた（○×）</th><th style="width:20%">直した言い方</th><th style="width:10%">何回目に言えた</th><th>役立った方法</th></tr><tr style="height:15mm"><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr style="height:15mm"><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr style="height:15mm"><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr style="height:15mm"><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr style="height:15mm"><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr style="height:15mm"><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr style="height:15mm"><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr style="height:15mm"><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr style="height:15mm"><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr style="height:15mm"><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr style="height:15mm"><td></td><td></td><td></td><td></td><td></td><td></td></tr></table>
+<p class="hint" style="margin-top:3mm">役立った方法の例：文字を見る、ゆっくり言う、音の数を指で数える、最初の音を聞く</p>
+
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet guide compact">
+<div class="head"><div><div class="tag">指導者用（患者さんには渡さない）</div><h1>解答と評価のポイント</h1></div></div>
+
+<h2>音韻課題1（音の数）</h2>
+<p style="margin:0">1 傘 2　2 時計 3　3 眼鏡 3　4 新聞 4　5 切手 3　6 病院 4　7 自転車 4　8 冷蔵庫 5　9 掃除機 4　10 誕生日 5　11 郵便局 6　12 天気予報 6</p>
+<h2>音韻課題2（語頭・語尾）</h2>
+<p style="margin:0">A1 鞄・鍵　A2 魚・砂糖　A3 はさみ・葉書　B1 やかん・みかん　B2 時計・鯛　C1 椅子　C2 胡麻</p>
+<h2>音韻課題3（並べ替え）</h2>
+<p style="margin:0">1 とけい　2 めがね　3 はさみ　4 でんわ　5 やかん　6 さくら　7 しんぶん　8 はぶらし　9 かいもの　10 れいぞうこ</p>
+<h2>書字課題</h2>
+<p style="margin:0">A：1 かさ　2 とけい　3 かぎ　4 めがね　5 でんわ　6 はさみ　／　B：6頁の語</p>
+<h2>語の正誤判断課題</h2>
+<p style="margin:0">1 めがね　2 とけい　3 はさみ　4 やかん　5 しんぶん　6 はぶらし　7 れいぞうこ　8 びょういん　9 かさ　10 さくら　11 かぎ　12 ゆうびんきょく</p>
+<h2>評価のポイント</h2>
+<ul>
+<li>誤りの種類（音の置き換え・入れ替わり・抜け・付け加え）と、語のどの位置（始め・中・終わり）で起こりやすいかを記録します。</li>
+<li>復唱・音読・呼称で、同じ語の成績を比べます。長さの影響が大きいか、文字の手がかりで改善するかを確認します。</li>
+<li>言い直しが目標に近づいていくか（接近行為）、離れていくかも記録します。近づいていく場合は、待つことで自己修正につながりやすくなります。</li>
+<li>音韻課題1・2は声に出しても出さなくてもできるかを比べると、頭の中で音を保つ力の目安になります。</li>
+<li>理解は保たれていても、長い指示や早口では聞き落としが出ることがあります。説明は短く区切って行います。</li>
+</ul>
+<p class="note" style="margin-top:3mm">課題の難易度や進め方は一般的な目安です。最終的な判断は担当の言語聴覚士が行います。</p>
+
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+
+<script src="mini-profile.js"></script>
+</body>
+</html>

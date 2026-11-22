@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="author" content="KENTA SHINKAWA">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ウェルニッケ失語（重度）訓練教材</title>
+<link rel="stylesheet" href="common.css">
+<style>
+.ill{width:30mm;height:30mm;fill:none;stroke:#000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;display:block}
+.ill.m{width:25mm;height:25mm}
+.ill.s{width:20mm;height:20mm}
+.it{display:flex;align-items:center;gap:3mm;margin:0 0 4mm}
+.it>.n{font-weight:700;font-size:15pt;min-width:9mm;align-self:flex-start}
+.ops{display:flex;gap:4mm;align-items:center}
+.op{border:1px solid #bbb;border-radius:2mm;padding:1.5mm}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:0 6mm}
+.arrow{font-size:20pt;color:#555;padding:0 2mm}
+.wd{display:inline-block;border:1.5px solid #333;border-radius:2mm;padding:1mm 4mm;font-size:16pt;margin:0 2mm 2mm 0}
+.wds{display:flex;flex-direction:column;gap:2.5mm}
+.wds span{border:1.5px solid #333;border-radius:2mm;padding:.5mm 4mm;font-size:20pt;font-weight:700;text-align:center;min-width:28mm}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:4mm;margin:0 0 4mm}
+.cards div{border:2px solid #333;border-radius:3mm;text-align:center;font-size:20pt;font-weight:700;padding:3.5mm 1mm}
+.pg4{display:grid;grid-template-columns:repeat(4,1fr);gap:4mm 4mm;margin:2mm 0 4mm}
+.pg4 .p{display:flex;flex-direction:column;align-items:center;border:1px solid #bbb;border-radius:2mm;padding:2mm 0 2mm}
+.pg4 .p b{font-size:12pt;color:#555;align-self:flex-start;margin-left:3mm}
+.okng{display:flex;gap:4mm;margin-top:1.5mm;font-size:16pt;font-weight:700}
+.okng span{border:1.5px solid #333;border-radius:50%;width:11mm;height:11mm;line-height:10mm;text-align:center}
+table.rec{border-collapse:collapse;width:100%;font-size:12.5pt}
+table.rec th,table.rec td{border:1px solid #555;padding:1.5mm 2mm;vertical-align:top;text-align:left}
+table.rec th{background:#f2f2f2;font-weight:700}
+.row{display:flex;align-items:center;gap:4mm;margin:0 0 3.5mm}
+.row .n{font-weight:700;font-size:15pt;min-width:9mm}
+.row .choices{margin:0}
+.note{font-size:10.5pt;color:#555;margin:-2mm 0 3mm}
+.compact{font-size:9.5pt;line-height:1.45}
+.compact h2{font-size:12pt;margin:2.5mm 0 1mm}
+.compact table{font-size:9pt;margin-bottom:2mm}
+.compact th,.compact td{padding:.6mm 1.5mm}
+.compact ul{margin-bottom:1mm}
+.compact .mini{width:118mm;margin:0 auto}
+.compact .note{margin:0 0 1mm;font-size:9.5pt}
+.dense{font-size:8.9pt;line-height:1.38}
+.dense h2{font-size:10.8pt;margin:1.8mm 0 .6mm}
+.dense table{font-size:8.5pt;margin-bottom:1.2mm}
+.dense p{margin:0 0 1mm}
+.sec{font-size:13pt;font-weight:700;margin:2mm 0 3mm;border-left:2.5mm solid #333;padding-left:2.5mm}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="w2-bowl" viewBox="0 0 100 100"><path d="M16 44 Q18 82 50 84 Q82 82 84 44 Z"/><path d="M22 44 Q50 20 78 44"/><path d="M40 84 L40 90 L60 90 L60 84"/></symbol><symbol id="w2-chop" viewBox="0 0 100 100"><path d="M18 88 L76 12 M30 90 L86 18"/></symbol><symbol id="w2-spoon" viewBox="0 0 100 100"><ellipse cx="50" cy="27" rx="14" ry="18"/><path d="M47 45 L47 88 Q50 92 53 88 L53 45"/></symbol><symbol id="w2-glass" viewBox="0 0 100 100"><path d="M28 16 L72 16 L65 86 L35 86 Z"/><path d="M31 38 L69 38"/></symbol><symbol id="w2-pill" viewBox="0 0 100 100"><rect x="18" y="24" width="64" height="52" rx="5"/><circle cx="34" cy="40" r="7"/><circle cx="50" cy="40" r="7"/><circle cx="66" cy="40" r="7"/><circle cx="34" cy="60" r="7"/><circle cx="50" cy="60" r="7"/><circle cx="66" cy="60" r="7"/></symbol><symbol id="w2-thermo" viewBox="0 0 100 100"><rect x="8" y="42" width="72" height="16" rx="8"/><rect x="28" y="46" width="24" height="8" rx="1"/><path d="M80 50 L93 50"/></symbol><symbol id="w2-towel" viewBox="0 0 100 100"><path d="M12 20 L88 20"/><rect x="24" y="20" width="52" height="66" rx="2"/><path d="M24 70 L76 70 M24 77 L76 77"/></symbol><symbol id="w2-shirt" viewBox="0 0 100 100"><path d="M36 16 L20 22 L8 40 L20 48 L26 41 L26 88 L74 88 L74 41 L80 48 L92 40 L80 22 L64 16 Q50 30 36 16 Z"/><path d="M50 28 L50 88"/><circle cx="55" cy="44" r="1.5"/><circle cx="55" cy="60" r="1.5"/><circle cx="55" cy="76" r="1.5"/></symbol><symbol id="w2-hat" viewBox="0 0 100 100"><ellipse cx="50" cy="70" rx="40" ry="10"/><path d="M28 67 Q28 30 50 30 Q72 30 72 67"/><path d="M29 58 Q50 64 71 58"/></symbol><symbol id="w2-chair" viewBox="0 0 100 100"><path d="M30 12 L30 90 M30 54 L74 54 L74 90 M30 12 L36 12 L36 54 M30 54 L30 60 L74 60"/></symbol><symbol id="w2-bed" viewBox="0 0 100 100"><path d="M10 34 L10 84 M90 50 L90 84 M10 72 L90 72"/><rect x="10" y="56" width="80" height="16"/><rect x="15" y="46" width="22" height="10" rx="4"/></symbol><symbol id="w2-tv" viewBox="0 0 100 100"><rect x="12" y="18" width="76" height="54" rx="4"/><rect x="19" y="25" width="62" height="40"/><path d="M42 72 L38 84 L62 84 L58 72"/></symbol><symbol id="w2-news" viewBox="0 0 100 100"><rect x="16" y="16" width="68" height="70"/><rect x="22" y="22" width="56" height="12"/><path d="M22 44 L46 44 M22 52 L46 52 M22 60 L46 60 M22 68 L78 68 M22 76 L78 76"/><rect x="54" y="42" width="24" height="20"/></symbol><symbol id="w2-pencil" viewBox="0 0 100 100"><path d="M24 82 L76 30 L86 40 L34 92 Z"/><path d="M24 82 L16 96 L34 92"/><path d="M70 36 L80 46"/></symbol><symbol id="w2-env" viewBox="0 0 100 100"><rect x="12" y="28" width="76" height="48" rx="2"/><path d="M12 28 L50 56 L88 28"/></symbol><symbol id="w2-bulb" viewBox="0 0 100 100"><path d="M38 66 Q38 56 30 48 Q22 38 26 28 Q32 12 50 12 Q68 12 74 28 Q78 38 70 48 Q62 56 62 66 Z"/><rect x="38" y="66" width="24" height="14" rx="2"/><path d="M38 73 L62 73 M44 80 L44 86 L56 86 L56 80"/></symbol><symbol id="w2-apple" viewBox="0 0 100 100"><path d="M50 32 Q30 18 21 38 Q15 62 33 80 Q42 89 50 83 Q58 89 67 80 Q85 62 79 38 Q70 18 50 32 Z"/><path d="M50 32 L52 16"/><path d="M53 22 Q63 12 71 18 Q63 27 53 22"/></symbol><symbol id="w2-banana" viewBox="0 0 100 100"><path d="M20 30 Q24 80 86 70 Q91 68 88 62 Q46 62 32 28 Z"/><path d="M26 40 Q38 64 80 66"/><path d="M20 30 L16 20 L24 18 L32 28"/></symbol><symbol id="w2-fish" viewBox="0 0 100 100"><path d="M12 50 Q40 22 72 50 Q40 78 12 50 Z"/><path d="M72 50 L90 34 L90 66 Z"/><circle cx="26" cy="46" r="3"/><path d="M40 38 Q46 50 40 62"/></symbol><symbol id="w2-bread" viewBox="0 0 100 100"><path d="M20 86 L20 40 Q11 36 13 26 Q19 13 50 13 Q81 13 87 26 Q89 36 80 40 L80 86 Z"/><path d="M28 80 L28 44 Q20 40 22 30 Q28 21 50 21 Q72 21 78 30 Q80 40 72 44 L72 80 Z"/></symbol><symbol id="w2-milk" viewBox="0 0 100 100"><path d="M30 30 L30 90 L70 90 L70 30 L60 14 L40 14 Z"/><path d="M30 30 L70 30 M40 14 L40 7 L60 7 L60 14"/><rect x="38" y="46" width="24" height="26"/></symbol><symbol id="w2-comb" viewBox="0 0 100 100"><rect x="12" y="34" width="76" height="14" rx="3"/><path d="M18 48 L18 70 M25 48 L25 70 M32 48 L32 70 M39 48 L39 70 M46 48 L46 70 M53 48 L53 70 M60 48 L60 70 M67 48 L67 70 M74 48 L74 70 M81 48 L81 70"/></symbol><symbol id="w2-cane" viewBox="0 0 100 100"><path d="M58 92 L58 30 Q58 12 42 12 Q28 12 28 26"/><path d="M54 92 L62 92"/></symbol><symbol id="w2-bottle" viewBox="0 0 100 100"><path d="M42 8 L58 8 L58 18 Q70 26 70 40 L70 86 Q70 92 64 92 L36 92 Q30 92 30 86 L30 40 Q30 26 42 18 Z"/><path d="M30 48 L70 48 M30 66 L70 66 M42 14 L58 14"/></symbol></defs></svg>
+<div class="noprint">印刷するときは <b>Ctrl＋P</b> を押してください（用紙：A4縦）。「指導者用」と書かれたページは指導者用です。患者さんには課題用紙だけを渡してください。</div>
+<section class="sheet guide compact">
+<div class="head"><div><div class="tag">指導者用</div><h1>ウェルニッケ失語（重度）の訓練教材について</h1></div></div>
+<h2>1．この段階の目安となるSLTAプロフィール</h2>
+<p>よく話しますが、意味の分からない語（新造語）や語の取り違えが続き、話の内容がほとんど伝わらない状態（ジャルゴン）です。聴理解は単語でも不安定で、口頭命令に従うは途中で中止になることが多くなります。漢字の単語を見せると分かることがあり、文字が理解の手がかりになる場合があります。本人は自分の誤りにほとんど気付かず、伝わらないことへのいら立ちが出やすい時期です。</p>
+<table>
+<tr><th style="width:11%">領域</th><th style="width:19%">正答率の目安</th><th>特徴的な下位検査</th></tr>
+<tr><td>聴く</td><td>0〜30％</td><td>単語の理解は3割前後。短文の理解は1割程度、口頭命令に従うはほぼ中止。仮名の理解も低い</td></tr>
+<tr><td>話す</td><td>0〜10％</td><td>呼称・動作説明はジャルゴンや新造語で誤答・中止が多い。単語の復唱も1割程度。まんがの説明は段階1、語の列挙はほぼ0語</td></tr>
+<tr><td>読む</td><td>0〜40％</td><td>漢字・単語の理解が4割前後と、ほかより保たれやすい。仮名・単語の理解は2割、短文の理解・書字命令は低い</td></tr>
+<tr><td>書く</td><td>0〜10％</td><td>ほぼ困難。仮名1文字の書取がわずかに可能な程度。錯書が多い</td></tr>
+<tr><td>計算</td><td>20％前後</td><td>個人差が大きい</td></tr>
+</table>
+<svg class="mini" data-profile="30,10,0,10,5,10,0,0,0,0,20,20,0,0,40,20,10,0,0,0,0,10,0,0,0,20"></svg>
+<p class="note">典型例のイメージ。個人差が大きい（例データ「例：ウェルニッケ失語（重度）」1回目の評価から作図）。</p>
+<h2>2．同じタイプの他の重症度との違い</h2>
+<table>
+<tr><th style="width:15%">段階</th><th style="width:43%">理解の状態</th><th>話す・気付きの状態</th></tr>
+<tr><td><b>重度（この教材）</b></td><td>単語でも不安定。はい／いいえ質問や2〜3択の指さしが中心。漢字や実物、身ぶりがあると分かりやすい</td><td>ジャルゴンが多く、誤りに気付かない。合図で話を止めることも難しい</td></tr>
+<tr><td>中等度（03-2）</td><td>身近な単語は分かることが多い。短い文は半分程度</td><td>錯語は多いが内容の一部は伝わる。指摘されると誤りに気付くことがある</td></tr>
+<tr><td>軽度（03-3）</td><td>日常会話はおおむね分かる。長い文や複数の指示で崩れる</td><td>語の選び違いが時々ある。自分で言い直せることが増える</td></tr>
+</table>
+<h2>3．中等度の教材（03-2）へ進む目安</h2>
+<ul>
+<li>はい／いいえの質問（聴理解課題1）で、6・5が8割以上の日が2回続く。</li>
+<li>語を聞いて2〜3枚の絵から選ぶ課題（聴理解課題2）で、6・5が8割以上。文字を見せなくても選べる場面が増える。</li>
+<li>指導者の合図で話をいったん止め、指さしやはい／いいえで確かめ合える場面が出てくる。</li>
+</ul>
+<p>反対に、はい／いいえでも5割に届かない場合は、絵の代わりに実物を使う、選択肢を一つにして「これは○○ですか」と確かめる形から始めます。</p>
+
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet guide compact">
+<div class="head"><div><div class="tag">指導者用</div><h1>訓練の進め方・記録のしかた</h1></div></div>
+<h2>4．訓練の目標と優先順位</h2>
+<ul>
+<li><b>目標：</b>はい／いいえと指さしで、体調や希望を確実に伝え合えるようにする。文字・実物・身ぶりを手がかりに、話し言葉の理解を少しずつ広げる。</li>
+<li><b>優先順位：</b>①はい／いいえの理解と表出（伝える手段の確保）②具体物の照合（物と絵、絵と絵）③文字を手がかりにした単語の理解 ④身ぶりの理解と表出 ⑤自己モニタリングの土台（聞いた語と絵が合っているかの判断、話を区切る合図）。</li>
+<li>呼称や復唱を無理に求めない。話し続けてしまうときは、内容を否定せず、合図で区切って指さしに切り替えます。</li>
+</ul>
+<h2>5．ヒントの出し方（上から順に強くする）</h2>
+<ol>
+<li>同じ言い方で、ゆっくりもう一度言う（反応できたら段階5）。</li>
+<li>指導者が対象を指さす・視線で示す。実物があれば見せる。</li>
+<li>語を漢字で大きく書いて見せる（ウェルニッケ失語では漢字が手がかりになりやすい）。</li>
+<li>使い方の身ぶりを添える（飲むまね、書くまね など）。</li>
+<li>選択肢を一つ減らす。ヒントの後で正答できたら段階3と記録します。</li>
+</ol>
+<h2>6．家族への助言</h2>
+<ul>
+<li>話しかけるときは、相手の正面で、短く、一つの話題だけにする。「お茶？」と実物を見せながら聞く。</li>
+<li>大事なことは紙に大きく書いて見せる。はい／いいえで答えられる聞き方にする。</li>
+<li>分からない話に分かったふりをしない。「ごめんなさい、もう一度指でさしてください」と、カード（課題用紙の1枚目下段）を使う。</li>
+<li>話が止まらないときは、責めずに手のひらを軽く上げる合図で区切る（指導者と同じ合図を使う）。</li>
+</ul>
+<h2>7．訪問での工夫</h2>
+<ul>
+<li>自宅の実物（茶碗、薬の袋、タオル、帽子など）を机に置き、課題の絵と照らし合わせる。</li>
+<li>テレビやラジオを消し、1回の課題は10〜15分程度に区切る。疲れると理解が大きく落ちます。</li>
+<li>はい／いいえの答えは、表情や首振りと食い違うことがあります。重要な確認は実物や文字で二重に確かめます。</li>
+</ul>
+<h2>8．課題ページの一覧と記録のしかた</h2>
+<table>
+<tr><th style="width:8%">頁</th><th style="width:32%">課題</th><th>内容</th></tr>
+<tr><td>3</td><td>聴理解課題1</td><td>質問を聞いて、はい／いいえを指さす。下段は伝えるためのカード</td></tr>
+<tr><td>4</td><td>聴理解課題2</td><td>語を聞いて、2〜3枚の絵から選ぶ</td></tr>
+<tr><td>5</td><td>読解課題</td><td>絵に合う語を2つから選ぶ。文字を見ながら聞いて指さす</td></tr>
+<tr><td>6</td><td>照合課題</td><td>仲間の物・一緒に使う物の絵を選ぶ（実物でも行う）</td></tr>
+<tr><td>7</td><td>身ぶり課題</td><td>身ぶりを見て絵を選ぶ。絵を見て使うまねをする</td></tr>
+<tr><td>8</td><td>判断課題</td><td>聞いた名前が絵と合っているか○×で判断する（自己モニタリングの土台）</td></tr>
+<tr><td>9</td><td>指導者用</td><td>読み上げリスト・解答・評価のポイント</td></tr>
+</table>
+<p>1問ごとに段階6〜1で記録します（6 完全正答、5 遅延完全正答、4 不完全正答、3 ヒント後正答、2 関連反応、1 誤答）。6・5を正答として数え、正答の割合を課題ごとに出します。6・5がおおむね8割以上の状態が2回続いたら一段階難しくし、5割未満なら選択肢を減らすなど易しくする、を目安にします。</p><p><b>ここに示したのは一般的な目安です。最終的な判断は担当の言語聴覚士が行います。</b></p>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet">
+<div class="head"><div><div class="tag">聴理解課題 1</div><h1>質問を聞いて「はい」「いいえ」で答える</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div>
+<p class="ask">指導者の質問を聞いて、「はい」か「いいえ」を指さしてください。○を付けても構いません。</p>
+<div class="two"><div class="row"><span class="n">1.</span><div class="choices"><span>はい</span><span>いいえ</span></div></div><div class="row"><span class="n">2.</span><div class="choices"><span>はい</span><span>いいえ</span></div></div><div class="row"><span class="n">3.</span><div class="choices"><span>はい</span><span>いいえ</span></div></div><div class="row"><span class="n">4.</span><div class="choices"><span>はい</span><span>いいえ</span></div></div><div class="row"><span class="n">5.</span><div class="choices"><span>はい</span><span>いいえ</span></div></div><div class="row"><span class="n">6.</span><div class="choices"><span>はい</span><span>いいえ</span></div></div><div class="row"><span class="n">7.</span><div class="choices"><span>はい</span><span>いいえ</span></div></div><div class="row"><span class="n">8.</span><div class="choices"><span>はい</span><span>いいえ</span></div></div><div class="row"><span class="n">9.</span><div class="choices"><span>はい</span><span>いいえ</span></div></div><div class="row"><span class="n">10.</span><div class="choices"><span>はい</span><span>いいえ</span></div></div></div>
+<div class="card" style="margin:2mm 0 5mm;text-align:center;padding:4mm"><span class="big" style="font-size:40pt;margin-right:30mm">はい</span><span class="big" style="font-size:40pt">いいえ</span></div>
+<p class="ask" style="margin-bottom:3mm">伝えたいことがあるときは、下のカードを指さしてください。</p>
+<div class="cards"><div>痛い</div><div>トイレ</div><div>水・お茶</div><div>寒い・暑い</div><div>休みたい</div><div>家族に連絡</div><div style="grid-column:span 3;font-size:17pt">もう一度、ゆっくり言ってください</div></div>
+
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet">
+<div class="head"><div><div class="tag">聴理解課題 2</div><h1>語を聞いて絵を選ぶ</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div>
+<p class="ask">指導者が言う物の名前を聞いて、その絵を指さしてください。</p>
+<p class="hint">1〜4は二つの絵から、5・6は三つの絵から選びます。</p>
+<div class="two"><div class="it"><span class="n">1.</span><div class="ops"><div class="op"><svg class="ill " viewBox="0 0 100 100" role="img" aria-label="テレビ"><use href="#w2-tv"/></svg></div><div class="op"><svg class="ill " viewBox="0 0 100 100" role="img" aria-label="茶碗"><use href="#w2-bowl"/></svg></div></div></div><div class="it"><span class="n">2.</span><div class="ops"><div class="op"><svg class="ill " viewBox="0 0 100 100" role="img" aria-label="帽子"><use href="#w2-hat"/></svg></div><div class="op"><svg class="ill " viewBox="0 0 100 100" role="img" aria-label="りんご"><use href="#w2-apple"/></svg></div></div></div><div class="it"><span class="n">3.</span><div class="ops"><div class="op"><svg class="ill " viewBox="0 0 100 100" role="img" aria-label="魚"><use href="#w2-fish"/></svg></div><div class="op"><svg class="ill " viewBox="0 0 100 100" role="img" aria-label="新聞"><use href="#w2-news"/></svg></div></div></div><div class="it"><span class="n">4.</span><div class="ops"><div class="op"><svg class="ill " viewBox="0 0 100 100" role="img" aria-label="ベッド"><use href="#w2-bed"/></svg></div><div class="op"><svg class="ill " viewBox="0 0 100 100" role="img" aria-label="コップ"><use href="#w2-glass"/></svg></div></div></div></div>
+<div style="margin-top:3mm"><div class="it"><span class="n">5.</span><div class="ops"><div class="op"><svg class="ill " viewBox="0 0 100 100" role="img" aria-label="椅子"><use href="#w2-chair"/></svg></div><div class="op"><svg class="ill " viewBox="0 0 100 100" role="img" aria-label="薬"><use href="#w2-pill"/></svg></div><div class="op"><svg class="ill " viewBox="0 0 100 100" role="img" aria-label="バナナ"><use href="#w2-banana"/></svg></div></div></div><div class="it"><span class="n">6.</span><div class="ops"><div class="op"><svg class="ill " viewBox="0 0 100 100" role="img" aria-label="封筒"><use href="#w2-env"/></svg></div><div class="op"><svg class="ill " viewBox="0 0 100 100" role="img" aria-label="パン"><use href="#w2-bread"/></svg></div><div class="op"><svg class="ill " viewBox="0 0 100 100" role="img" aria-label="タオル"><use href="#w2-towel"/></svg></div></div></div></div>
+<p class="hint" style="margin-top:2mm">分からないときは、前の頁の「もう一度、ゆっくり言ってください」を指さしてください。</p>
+
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet">
+<div class="head"><div><div class="tag">読解課題</div><h1>絵と文字の照合</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div>
+<p class="ask">絵に合う語を二つの中から選び、○を付けてください。</p>
+<div class="two"><div class="it"><span class="n">1.</span><div class="op"><svg class="ill m" viewBox="0 0 100 100" role="img" aria-label="椅子"><use href="#w2-chair"/></svg></div><div class="wds"><span>椅子</span><span>牛乳</span></div></div><div class="it"><span class="n">2.</span><div class="op"><svg class="ill m" viewBox="0 0 100 100" role="img" aria-label="パン"><use href="#w2-bread"/></svg></div><div class="wds"><span>封筒</span><span>パン</span></div></div><div class="it"><span class="n">3.</span><div class="op"><svg class="ill m" viewBox="0 0 100 100" role="img" aria-label="電球"><use href="#w2-bulb"/></svg></div><div class="wds"><span>電球</span><span>魚</span></div></div><div class="it"><span class="n">4.</span><div class="op"><svg class="ill m" viewBox="0 0 100 100" role="img" aria-label="箸"><use href="#w2-chop"/></svg></div><div class="wds"><span>帽子</span><span>箸</span></div></div><div class="it"><span class="n">5.</span><div class="op"><svg class="ill m" viewBox="0 0 100 100" role="img" aria-label="テレビ"><use href="#w2-tv"/></svg></div><div class="wds"><span>テレビ</span><span>薬</span></div></div><div class="it"><span class="n">6.</span><div class="op"><svg class="ill m" viewBox="0 0 100 100" role="img" aria-label="封筒"><use href="#w2-env"/></svg></div><div class="wds"><span>りんご</span><span>封筒</span></div></div></div>
+<p class="ask" style="margin-top:3mm">指導者が言う語を、文字を見ながら聞いてください。言われた語を指さしてください。</p>
+<div class="row" style="justify-content:center;gap:14mm;margin-bottom:4mm"><span class="n" style="min-width:0">①</span><span class="big" style="border:2px solid #333;border-radius:3mm;padding:1mm 8mm;font-size:26pt">お茶</span><span class="big" style="border:2px solid #333;border-radius:3mm;padding:1mm 8mm;font-size:26pt">新聞</span></div><div class="row" style="justify-content:center;gap:14mm;margin-bottom:4mm"><span class="n" style="min-width:0">②</span><span class="big" style="border:2px solid #333;border-radius:3mm;padding:1mm 8mm;font-size:26pt">薬</span><span class="big" style="border:2px solid #333;border-radius:3mm;padding:1mm 8mm;font-size:26pt">テレビ</span></div><div class="row" style="justify-content:center;gap:14mm;margin-bottom:4mm"><span class="n" style="min-width:0">③</span><span class="big" style="border:2px solid #333;border-radius:3mm;padding:1mm 8mm;font-size:26pt">散歩</span><span class="big" style="border:2px solid #333;border-radius:3mm;padding:1mm 8mm;font-size:26pt">トイレ</span></div>
+
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet">
+<div class="head"><div><div class="tag">照合課題</div><h1>仲間の物・一緒に使う物を選ぶ</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div>
+<p class="ask">左の太い枠の絵と仲間の物、または一緒に使う物を、右の二つから選んで指さしてください。</p>
+<p class="hint">例：靴には「靴下」が仲間です。ご飯の茶碗には「しゃもじ」を一緒に使います。</p>
+<div class="it" style="margin-bottom:3.5mm"><span class="n">1.</span><div class="op" style="border:2px solid #333"><svg class="ill m" viewBox="0 0 100 100" role="img" aria-label="りんご"><use href="#w2-apple"/></svg></div><span class="arrow">→</span><div class="ops"><div class="op"><svg class="ill m" viewBox="0 0 100 100" role="img" aria-label="鉛筆"><use href="#w2-pencil"/></svg></div><div class="op"><svg class="ill m" viewBox="0 0 100 100" role="img" aria-label="バナナ"><use href="#w2-banana"/></svg></div></div></div><div class="it" style="margin-bottom:3.5mm"><span class="n">2.</span><div class="op" style="border:2px solid #333"><svg class="ill m" viewBox="0 0 100 100" role="img" aria-label="シャツ"><use href="#w2-shirt"/></svg></div><span class="arrow">→</span><div class="ops"><div class="op"><svg class="ill m" viewBox="0 0 100 100" role="img" aria-label="帽子"><use href="#w2-hat"/></svg></div><div class="op"><svg class="ill m" viewBox="0 0 100 100" role="img" aria-label="魚"><use href="#w2-fish"/></svg></div></div></div><div class="it" style="margin-bottom:3.5mm"><span class="n">3.</span><div class="op" style="border:2px solid #333"><svg class="ill m" viewBox="0 0 100 100" role="img" aria-label="茶碗"><use href="#w2-bowl"/></svg></div><span class="arrow">→</span><div class="ops"><div class="op"><svg class="ill m" viewBox="0 0 100 100" role="img" aria-label="テレビ"><use href="#w2-tv"/></svg></div><div class="op"><svg class="ill m" viewBox="0 0 100 100" role="img" aria-label="箸"><use href="#w2-chop"/></svg></div></div></div><div class="it" style="margin-bottom:3.5mm"><span class="n">4.</span><div class="op" style="border:2px solid #333"><svg class="ill m" viewBox="0 0 100 100" role="img" aria-label="コップ"><use href="#w2-glass"/></svg></div><span class="arrow">→</span><div class="ops"><div class="op"><svg class="ill m" viewBox="0 0 100 100" role="img" aria-label="ペットボトル"><use href="#w2-bottle"/></svg></div><div class="op"><svg class="ill m" viewBox="0 0 100 100" role="img" aria-label="椅子"><use href="#w2-chair"/></svg></div></div></div><div class="it" style="margin-bottom:3.5mm"><span class="n">5.</span><div class="op" style="border:2px solid #333"><svg class="ill m" viewBox="0 0 100 100" role="img" aria-label="パン"><use href="#w2-bread"/></svg></div><span class="arrow">→</span><div class="ops"><div class="op"><svg class="ill m" viewBox="0 0 100 100" role="img" aria-label="牛乳"><use href="#w2-milk"/></svg></div><div class="op"><svg class="ill m" viewBox="0 0 100 100" role="img" aria-label="杖"><use href="#w2-cane"/></svg></div></div></div>
+<p class="hint" style="margin-top:1mm">実物がある場合は、机に並べた実物の中から、絵と同じ物を手に取ってください。</p>
+
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet">
+<div class="head"><div><div class="tag">身ぶり課題</div><h1>身ぶりを見て選ぶ・使うまねをする</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div>
+<p class="ask">1．指導者が物を使うまねをします。何を使うまねか、二つの絵から選んで指さしてください。</p>
+<div class="two"><div class="it"><span class="n">1.</span><div class="ops"><div class="op"><svg class="ill " viewBox="0 0 100 100" role="img" aria-label="コップ"><use href="#w2-glass"/></svg></div><div class="op"><svg class="ill " viewBox="0 0 100 100" role="img" aria-label="鉛筆"><use href="#w2-pencil"/></svg></div></div></div><div class="it"><span class="n">2.</span><div class="ops"><div class="op"><svg class="ill " viewBox="0 0 100 100" role="img" aria-label="パン"><use href="#w2-bread"/></svg></div><div class="op"><svg class="ill " viewBox="0 0 100 100" role="img" aria-label="くし"><use href="#w2-comb"/></svg></div></div></div><div class="it"><span class="n">3.</span><div class="ops"><div class="op"><svg class="ill " viewBox="0 0 100 100" role="img" aria-label="タオル"><use href="#w2-towel"/></svg></div><div class="op"><svg class="ill " viewBox="0 0 100 100" role="img" aria-label="椅子"><use href="#w2-chair"/></svg></div></div></div><div class="it"><span class="n">4.</span><div class="ops"><div class="op"><svg class="ill " viewBox="0 0 100 100" role="img" aria-label="魚"><use href="#w2-fish"/></svg></div><div class="op"><svg class="ill " viewBox="0 0 100 100" role="img" aria-label="鉛筆"><use href="#w2-pencil"/></svg></div></div></div></div>
+<p class="ask" style="margin-top:4mm">2．絵の物を使うまねをしてください。</p>
+<div class="pg4"><div class="p"><b>A</b><svg class="ill m" viewBox="0 0 100 100" role="img" aria-label="箸"><use href="#w2-chop"/></svg><div class="okng" style="font-size:11pt;font-weight:400">できた <span style="width:8mm;height:8mm;border-radius:1.5mm"></span></div></div><div class="p"><b>B</b><svg class="ill m" viewBox="0 0 100 100" role="img" aria-label="帽子"><use href="#w2-hat"/></svg><div class="okng" style="font-size:11pt;font-weight:400">できた <span style="width:8mm;height:8mm;border-radius:1.5mm"></span></div></div><div class="p"><b>C</b><svg class="ill m" viewBox="0 0 100 100" role="img" aria-label="体温計"><use href="#w2-thermo"/></svg><div class="okng" style="font-size:11pt;font-weight:400">できた <span style="width:8mm;height:8mm;border-radius:1.5mm"></span></div></div><div class="p"><b>D</b><svg class="ill m" viewBox="0 0 100 100" role="img" aria-label="スプーン"><use href="#w2-spoon"/></svg><div class="okng" style="font-size:11pt;font-weight:400">できた <span style="width:8mm;height:8mm;border-radius:1.5mm"></span></div></div></div>
+<p class="ask" style="margin-top:3mm">3．次のことを、身ぶりで伝えてください。</p>
+<div class="cards" style="grid-template-columns:repeat(4,1fr)"><div style="font-size:17pt">水が飲みたい</div><div style="font-size:17pt">寒い</div><div style="font-size:17pt">頭が痛い</div><div style="font-size:17pt">眠い</div></div>
+
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet">
+<div class="head"><div><div class="tag">判断課題</div><h1>聞いた名前が絵と合っているか判断する</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div>
+<p class="ask">指導者が絵の名前を言います。絵と合っていれば○、違っていれば×を指さしてください。</p>
+<p class="hint">名前は、正しいときと違うときがあります。</p>
+<div class="pg4"><div class="p"><b>1</b><svg class="ill m" viewBox="0 0 100 100" role="img" aria-label="茶碗"><use href="#w2-bowl"/></svg><div class="okng"><span>○</span><span>×</span></div></div><div class="p"><b>2</b><svg class="ill m" viewBox="0 0 100 100" role="img" aria-label="椅子"><use href="#w2-chair"/></svg><div class="okng"><span>○</span><span>×</span></div></div><div class="p"><b>3</b><svg class="ill m" viewBox="0 0 100 100" role="img" aria-label="バナナ"><use href="#w2-banana"/></svg><div class="okng"><span>○</span><span>×</span></div></div><div class="p"><b>4</b><svg class="ill m" viewBox="0 0 100 100" role="img" aria-label="薬"><use href="#w2-pill"/></svg><div class="okng"><span>○</span><span>×</span></div></div><div class="p"><b>5</b><svg class="ill m" viewBox="0 0 100 100" role="img" aria-label="帽子"><use href="#w2-hat"/></svg><div class="okng"><span>○</span><span>×</span></div></div><div class="p"><b>6</b><svg class="ill m" viewBox="0 0 100 100" role="img" aria-label="魚"><use href="#w2-fish"/></svg><div class="okng"><span>○</span><span>×</span></div></div><div class="p"><b>7</b><svg class="ill m" viewBox="0 0 100 100" role="img" aria-label="電球"><use href="#w2-bulb"/></svg><div class="okng"><span>○</span><span>×</span></div></div><div class="p"><b>8</b><svg class="ill m" viewBox="0 0 100 100" role="img" aria-label="牛乳"><use href="#w2-milk"/></svg><div class="okng"><span>○</span><span>×</span></div></div></div>
+<div class="card" style="margin-top:3mm">
+<h2>話すときの合図</h2>
+<ul style="font-size:15pt"><li>指導者が手のひらを上げたら、話をいったん止めてください。</li>
+<li>相手の顔を見て、伝わったかどうか確かめてください。</li>
+<li>伝わらないときは、絵や文字を指さしてください。</li></ul>
+</div>
+
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet guide compact" style="page-break-after:auto;break-after:auto">
+<div class="head"><div><div class="tag">指導者用（患者さんには渡さない）</div><h1>読み上げリスト・解答・評価のポイント</h1></div></div>
+<p>ゆっくり、はっきり、一つずつ読みます。反応がなければ同じ言い方でもう一度（段階5）、それでも難しければ2頁「5．ヒントの出し方」の順でヒントを出します（段階3）。2回目以降は読む順番を変えます。</p>
+<h2>聴理解課題1（3頁）はい／いいえの質問（正答）</h2>
+<table><tr><th style="width:4%">No</th><th>質問（正答）</th><th style="width:9%">段階</th><th style="width:4%">No</th><th>質問（正答）</th><th style="width:9%">段階</th></tr><tr><td>1</td><td>ご飯は茶碗に入れますか。（はい）</td><td></td><td>6</td><td>ベッドで料理をしますか。（いいえ）</td><td></td></tr><tr><td>2</td><td>帽子は足に履く物ですか。（いいえ）</td><td></td><td>7</td><td>今、家にいますか。（訪問時）（はい）</td><td></td></tr><tr><td>3</td><td>冬は寒いですか。（はい）</td><td></td><td>8</td><td>りんごは果物ですか。（はい）</td><td></td></tr><tr><td>4</td><td>新聞は食べる物ですか。（いいえ）</td><td></td><td>9</td><td>テレビで電話をかけますか。（いいえ）</td><td></td></tr><tr><td>5</td><td>薬は水で飲みますか。（はい）</td><td></td><td>10</td><td>夏祭りは冬にありますか。（いいえ）</td><td></td></tr></table>
+<h2>聴理解課題2（4頁）読む語（正答の位置）</h2>
+<p>1 茶碗（右）　2 帽子（左）　3 新聞（右）　4 ベッド（左）　5 薬（中）　6 タオル（右）</p>
+<h2>読解課題（5頁）</h2>
+<p>前半の解答：1 椅子　2 パン　3 電球　4 箸　5 テレビ　6 封筒<br>後半で読む語：① お茶　② 薬　③ トイレ（2回目は ① 新聞　② テレビ　③ 散歩）</p>
+<h2>照合課題（6頁）解答</h2>
+<p>1 バナナ（果物）　2 帽子（身に着ける物）　3 箸（食事の道具）　4 ペットボトル（飲み物を注ぐ）　5 牛乳（朝食）</p>
+<h2>身ぶり課題（7頁）</h2>
+<p>1で見せる身ぶり：1 コップで飲む　2 くしで髪をとかす　3 タオルで顔をふく　4 鉛筆で字を書く（正答：1 左　2 右　3 左　4 右）<br>
+2の目安：A 箸で食べる　B 帽子をかぶる　C 体温計をわきに挟む　D スプーンですくって口へ運ぶ。物の形に合った手の形があれば段階4以上。<br>
+3は本人なりの身ぶりで伝わればよい。伝わりにくいときは指導者がまねを見せ、まねできたら段階3。</p>
+<h2>判断課題（8頁）指導者が言う名前（正答）</h2>
+<p>1「茶碗」○　2「テレビ」×　3「バナナ」○　4「くちゅり」×　5「帽子」○　6「りんご」×　7「電球」○　8「ぎゅうばい」×<br>
+×の後は、正しい名前を指導者が言い、絵を一緒に指さします。言い直しは求めません。</p>
+<h2>評価のポイント</h2>
+<ul>
+<li>はい／いいえは「はい」ばかりに偏ることがあります。正答が半々になるように出題し、偏りの有無を記録します。</li>
+<li>文字を見せる前と後で正答が変わるかを記録すると、文字が手がかりとして役立つかが分かります。</li>
+<li>判断課題で×を選べるようになることは、自分の誤りに気付く力の土台になります。指摘に対する本人の表情や反応も書き留めます。</li>
+<li>疲労・時間帯・周りの音で成績が大きく変わります。実施した時間と環境も記録します。</li>
+</ul>
+<p class="note">一般的な目安です。最終的な判断は担当の言語聴覚士が行います。</p>
+
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+
+<script src="mini-profile.js"></script>
+</body>
+</html>

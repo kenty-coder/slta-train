@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="author" content="KENTA SHINKAWA">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>言語性短期記憶の障害（中等度） 訓練教材</title>
+<link rel="stylesheet" href="common.css">
+<style>
+.guide{font-size:10pt;line-height:1.45}
+.guide h2{font-size:12pt;margin:2.4mm 0 1mm}
+.guide p{margin:0 0 1.3mm}
+.guide ul{margin:0 0 1.3mm}
+.guide li{margin:0 0 .3mm}
+.guide table{font-size:9.4pt;margin:0 0 1.6mm}
+.guide th,.guide td{padding:.5mm 1.5mm}
+.guide .mini{width:62%;margin:0 auto}
+.g2p{font-size:9.6pt;line-height:1.42}
+.g2p h2{margin:1.8mm 0 .8mm}
+.g2p table{font-size:9.1pt}
+.note{font-size:9.2pt;color:#555;text-align:center;margin:0 0 1mm}
+.say{border:1.5px solid #555;border-radius:2mm;background:#fafafa;padding:1.2mm 3mm;font-size:9.8pt;line-height:1.5;margin:0 0 1.5mm}
+.key{font-size:9.4pt;line-height:1.4}
+.key h2{font-size:10.6pt;margin:1.6mm 0 .6mm}
+.key p{margin:0 0 .7mm}
+.key ul{margin:0 0 .6mm;padding-left:5mm}
+.key table{border-collapse:collapse;width:100%;font-size:9.2pt;margin:0 0 1mm}
+.key th,.key td{border:1px solid #bbb;padding:.35mm 1.3mm;text-align:left;vertical-align:top}
+.key th{background:#f2f2f2;white-space:nowrap}
+.art{fill:none;stroke:#000;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+table.rec{border-collapse:collapse;width:100%;font-size:11pt;margin:0 0 2mm}
+table.rec th,table.rec td{border:1px solid #555;padding:.6mm 2mm;text-align:center;vertical-align:middle}
+table.rec th{background:#f2f2f2;font-size:10pt;line-height:1.3}
+table.rec td.h{font-size:10pt;color:#333;white-space:nowrap}
+.nb{display:grid;grid-template-columns:repeat(3,34mm);gap:4mm 6mm;justify-content:center;margin:0 0 5mm}
+.nb div{height:25mm;border:2px solid #333;border-radius:3mm;font-size:46pt;font-weight:700;display:flex;align-items:center;justify-content:center}
+.pb{display:grid;gap:3mm 4mm;margin:0 0 4mm}
+.pb div{border:1.5px solid #333;border-radius:2mm;text-align:center;padding:1.5mm 1mm 1mm}
+.pb svg{display:block;margin:0 auto}
+.pb b{font-size:15pt;display:block;line-height:1.3}
+.pb i{display:block;width:12mm;height:12mm;border:1.5px solid #333;margin:1mm auto 0}
+.wb{display:grid;grid-template-columns:repeat(3,1fr);gap:3.5mm 5mm;margin:0 0 5mm}
+.wb div{border:2px solid #333;border-radius:2.5mm;text-align:center;font-size:24pt;font-weight:700;line-height:1.7}
+.cq{display:flex;align-items:flex-start;gap:3mm;margin:0 0 3.2mm}
+.cq .n{font-size:14pt;font-weight:700;min-width:9mm;padding-top:1mm}
+.cards{display:flex;gap:3mm;flex-wrap:wrap;flex:1}
+.cards.sm div{font-size:12.5pt;padding:.6mm 2mm 1mm;min-width:20mm}
+.cards div{border:1.5px solid #333;border-radius:2mm;padding:1mm 2.5mm 1.2mm;text-align:center;font-size:15pt;line-height:1.4;min-width:24mm}
+.cards i{display:block;width:10mm;height:10mm;border:1.5px solid #333;margin:1mm auto 0}
+.cq .r{font-size:9.5pt;color:#333;white-space:nowrap;padding-top:1mm;line-height:1.7}
+.fam{border:1.5px dashed #333;border-radius:2mm;padding:1.3mm 3mm;font-size:10.3pt;line-height:1.45;margin-top:2mm}
+.opt2{display:inline-flex;gap:5mm}
+.opt2 span{display:inline-block;border:1.5px solid #333;border-radius:2mm;padding:.3mm 6mm;font-size:17pt;line-height:1.5}
+.mq{display:flex;align-items:center;gap:4mm;margin:0 0 2.5mm 6mm;font-size:14pt}
+.mq b{min-width:44mm}
+.memo2{border:1.5px solid #333;border-radius:2mm;padding:1.5mm 4mm 2mm;margin:0 0 3.5mm}
+.memo2 .tt{font-size:13pt;font-weight:700}
+.memo2 .f{display:flex;align-items:flex-end;height:10.5mm;border-bottom:1px solid #9a9a9a;font-size:12pt}
+.memo2 .f b{min-width:30mm;color:#333}
+.shop{display:grid;grid-template-columns:repeat(4,1fr);gap:2mm 3mm;margin:0 0 3mm}
+.shop span{border:1px solid #555;border-radius:1.5mm;text-align:center;font-size:13.5pt;line-height:1.6}
+.al{display:flex;align-items:flex-end;gap:3mm;margin:0 0 2mm}
+.al .n{font-size:13pt;font-weight:700;min-width:16mm}
+.al .l{flex:1;height:10.5mm;border-bottom:1px solid #9a9a9a}
+.al .r{font-size:9.5pt;white-space:nowrap}
+.bx{display:inline-flex;gap:1.5mm;vertical-align:middle}
+.bx i{display:inline-block;width:10.5mm;height:10.5mm;border:1.5px solid #333}
+.dq{display:flex;align-items:center;gap:3mm;margin:0 0 2.6mm}
+.dq .n{font-size:13pt;font-weight:700;min-width:9mm}
+.dq .r{font-size:9.5pt;white-space:nowrap;margin-left:auto}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:0 8mm}
+table.cal{border-collapse:collapse;width:100%;margin:0 0 3mm}
+table.cal th,table.cal td{border:1.5px solid #333;text-align:left;vertical-align:top;width:14.28%}
+table.cal th{font-size:12pt;text-align:center;background:#f2f2f2;padding:.5mm}
+table.cal td{height:15mm;font-size:14pt;font-weight:700;padding:.5mm 1.5mm}
+.sq{margin:0 0 2mm}
+.sq .t{font-size:13.5pt;font-weight:700}
+.sq .l{height:10.5mm;border-bottom:1px solid #9a9a9a;margin-left:9mm}
+</style>
+</head>
+<body>
+<div class="noprint">印刷するときは <b>Ctrl＋P</b> を押してください（用紙：A4縦）。「指導者用」と書かれたページ（最初の2ページと最後のページ）は患者さんには渡さないでください。</div>
+<section class="sheet guide">
+<div class="head"><div><div class="tag">指導者用（患者さんには渡さない）</div><h1>言語性短期記憶の障害（中等度）の訓練教材について</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div>
+<h2>1．言語性短期記憶とは</h2>
+<p>聞いた言葉（数字・単語・文）を、<b>数秒から十数秒のあいだ頭の中に保っておく力</b>です。電話番号を聞いてダイヤルする、頼まれた用事を順番どおりに済ませる、長い文を最後まで聞いて意味をつかむ、といった場面で使われます。この力が弱いと、単語一つなら理解も復唱もできるのに、<b>数が増える・文が長くなると後半が抜けたり順番が入れ替わったりします</b>。</p>
+<h2>2．SLTAで出やすい特徴（中等度の目安）</h2>
+<table><tr><th style="width:24%">下位検査</th><th style="width:24%">正答率の目安</th><th>見られやすいこと</th></tr>
+<tr><td>単語の理解・単語の復唱</td><td>9〜10割</td><td>保たれる</td></tr>
+<tr><td>口頭命令に従う</td><td>3〜5割</td><td>3つ目の物や動作が抜ける、順番が入れ替わる</td></tr>
+<tr><td>短文の理解（聴く）</td><td>6〜7割</td><td>長い文・文の後半で誤る。読む短文の理解（9割前後）は保たれやすい</td></tr>
+<tr><td>文の復唱</td><td>2〜4割</td><td>3〜4文節までは言える。長い文で語が抜ける・言い換える</td></tr>
+<tr><td>短文の書取</td><td>3〜5割</td><td>途中から抜ける。単語の書取は8割前後</td></tr>
+<tr><td>呼称・音読</td><td>8〜10割</td><td>保たれる。語の列挙は1分8〜10語</td></tr></table>
+<svg class="mini" data-profile="100,70,40,90,85,90,90,60,20,60,100,100,100,80,100,90,90,60,80,80,40,90,80,80,40,75"></svg>
+<p class="note">典型例のイメージ。個人差が大きい（例データ「例：言語性短期記憶の障害（中等度）」の1回目の評価から作図）。</p>
+<h2>3．伝導失語との関係</h2>
+<p>伝導失語では、言葉の中の音の誤り（音韻性錯語）と復唱の苦手さが目立ち、言語性短期記憶の低下を伴うことが多くあります。一方、<b>音の誤りがほとんどなく、単語の復唱は正確なのに、語の数や文節が増えると崩れる</b>場合は、短期記憶の低下が中心と考えられます。音の誤りが目立つときは、伝導失語の教材（重症度別 04）も併せて使ってください。</p>
+<h2>4．ほかに確かめたい点</h2>
+<ul><li><b>数唱（順唱・逆唱）</b>：聞いた数字を同じ順・逆の順に言う。健常の成人では順唱でおよそ6〜7桁、逆唱で4〜5桁が一つの目安（年齢により差がある）。</li>
+<li><b>単語の系列の復唱</b>：2語、3語…と数を増やし、何語まで順番どおりに言えるか。</li>
+<li><b>ポインティングスパン</b>：聞いた順に絵や語を指さす。話すことを使わずに保てる数を測れるので、発話の障害が重なる方にも使える。</li>
+<li><b>遅延再生</b>：数分後に思い出せるか（短期記憶だけでなく、覚え込む力も見る）。</li>
+<li><b>聞こえ・注意・疲れ</b>：難聴（補聴器の有無）、周りの音、集中の続く時間を確かめてから評価する。</li></ul>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet guide g2p">
+<div class="head"><div><div class="tag">指導者用（患者さんには渡さない）</div><h1>訓練の進め方・記録のしかた・ヒントの順番</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div>
+<h2>5．重症度ごとの違いと、次の段階へ進む目安（本教材は中等度用）</h2>
+<table><tr><th style="width:10%">重症度</th><th style="width:13%">保てる数</th><th style="width:33%">この教材の課題の形</th><th>次の段階へ進む目安</th></tr>
+<tr><td>重度</td><td>2〜3個</td><td>選んで指さす、1〜2段階の指示、2語の買い物</td><td>3個の系列の指さし・復唱が8割以上、2段階の指示が7割以上を2回続けたら中等度へ</td></tr>
+<tr><td>中等度</td><td>3〜5個</td><td>系列の指さし・復唱、2〜3段階の指示、伝言メモ</td><td>5個の系列が6割以上、3段階の指示が7割以上、伝言の要点4項目中3項目以上で軽度へ</td></tr>
+<tr><td>軽度</td><td>5〜7個</td><td>数唱・逆唱、長い文、伝言、話の記憶、遅延再生</td><td>7文節の文の復唱と電話の伝言メモが実用上ほぼ正確、遅延再生5語以上なら維持へ</td></tr></table>
+<h2>6．訓練の考え方</h2>
+<ul><li><b>保てる数を少しずつ伸ばす</b>：確実にできる数（8割以上）から始め、1個ずつ増やす。数と速さを同時に変えない。</li>
+<li><b>代償手段を身につける</b>：①意味のまとまりで覚える（仲間に分ける、話の筋で覚える）②メモを取る（電話の横にメモ用紙）③声に出して繰り返す ④相手に区切って言ってもらう・聞き返す。</li>
+<li><b>生活の場面につなげる</b>：買い物、通院の予定、電話の伝言など、本人の生活に合った内容で練習する。</li></ul>
+<h2>7．課題ページの一覧</h2>
+<p style="font-size:9.4pt;line-height:1.4"><b>3頁</b> 聴理解課題1　数字を順に指さす（3〜5個の数字を聞き、数字板を順に指さす（8問））　<b>4頁</b> 聴理解課題2　語を順に指さす（3〜5個の場所の名前を聞き、札を順に指さす（6問））　<b>5頁</b> 復唱課題　語と数字の系列（3〜5語・3〜5桁を聞いて、同じ順に言う（9問））　<b>6頁</b> 並べ替え課題　聞いた順に番号（3〜5枚の札に、聞いた順に番号を書く（4問））　<b>7頁</b> 文の復唱課題　長くなる文（2→3→4→5文節と長くなる文を復唱（8問））　<b>8頁</b> 口頭指示課題　順番に行う（2〜3段階の指示を聞いて行う（8問））　<b>9頁</b> 生活課題　買い物リストと電話の伝言（3〜5品を覚えて書く／伝言をメモに書く）　<b>10頁</b> 指導者用（読み上げリスト・解答・評価のポイント）</p>
+<h2>8．記録のしかた</h2>
+<p>読み上げる刺激は最後のページ（指導者用）にあり、課題用紙には答えの欄だけを載せています。各問に<b>段階（6 完全正答／5 遅延完全正答／4 不完全正答／3 ヒント後正答／2 関連反応／1 誤答）</b>を書き、6と5を正答とします。ヒントで正答したら段階4以下とし、下の表の何番目のヒントかを「ヒント（　）番目」欄に書きます。<b>スパン</b>（同じ長さの問題を2問とも正答できた最大の個数）も記録日ごとに比べます。</p>
+<table><tr><th style="width:8%">順番</th><th style="width:44%">ヒントの内容（記憶の課題）</th><th>ねらい・注意</th></tr>
+<tr><td>①</td><td>もう一度、同じ速さで言う</td><td>聞き落としか、覚えきれないのかを見分ける</td></tr>
+<tr><td>②</td><td>ゆっくり、一つずつ間を空けて言う</td><td>1語（1数字）あたり約1秒を目安に</td></tr>
+<tr><td>③</td><td>前半と後半に分けて言う（数を減らす）</td><td>半分ずつ答えてから全体を続けて答える</td></tr>
+<tr><td>④</td><td>文字や絵を見せながら言う</td><td>メモの代わり。見ながら答えられたら次は隠す</td></tr>
+<tr><td>⑤</td><td>一緒に声に出して言いながら行う</td><td>声に出して繰り返す方法（復唱）の練習につなげる</td></tr></table>
+<h2>9．ご家族への説明（このまま読み上げられます）と、始める課題</h2>
+<div class="say">「聞いた言葉を少しの間覚えておく力が弱くなっています。一つ一つの言葉の意味は分かっていますが、続けて言われた数字や用事、長い話は、途中が抜けたり順番が入れ替わったりします。話すときは、一度に伝えることを少なくし、ゆっくり区切って話してください。大事な用件は紙に書いて渡すと確実です。」</div>
+<p style="font-size:9.6pt">始める課題の目安：3頁・4頁の3個の問題で8割以上なら4個へ。6頁・9頁は、生活の予定や買い物の話題に置き換えて繰り返してもかまいません。　内容は一般的な目安です。最終的な判断は担当の言語聴覚士が行ってください。</p>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet">
+<div class="head"><div><div class="tag">聴理解課題 1</div><h1>聞いた数字を順番に指さす</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div>
+<p class="ask">指導者が言う数字をよく聞いて、言い終わってから、同じ順番で数字を指さしてください。</p><p class="hint">指さしたあと、同じ数字を声に出して言えるか試してください。</p><div class="nb"><div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div><div>7</div><div>8</div><div>9</div></div><table class="rec"><tr><th>No</th><th>個数</th><th>指さした順（指導者が記入）</th><th>段階</th><th>ヒント</th></tr><tr style="height:8.3mm"><td style="width:9%">1</td><td></td><td></td><td></td><td class="h">（　）番目</td></tr><tr style="height:8.3mm"><td style="width:9%">2</td><td></td><td></td><td></td><td class="h">（　）番目</td></tr><tr style="height:8.3mm"><td style="width:9%">3</td><td></td><td></td><td></td><td class="h">（　）番目</td></tr><tr style="height:8.3mm"><td style="width:9%">4</td><td></td><td></td><td></td><td class="h">（　）番目</td></tr><tr style="height:8.3mm"><td style="width:9%">5</td><td></td><td></td><td></td><td class="h">（　）番目</td></tr><tr style="height:8.3mm"><td style="width:9%">6</td><td></td><td></td><td></td><td class="h">（　）番目</td></tr><tr style="height:8.3mm"><td style="width:9%">7</td><td></td><td></td><td></td><td class="h">（　）番目</td></tr><tr style="height:8.3mm"><td style="width:9%">8</td><td></td><td></td><td></td><td class="h">（　）番目</td></tr></table><div class="fam"><b>ご家族用ヒント</b>（最初は折って隠してください）　①もう一度同じように言う　②一つずつ間を空けて言う　③前半と後半に分けて言う</div>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet">
+<div class="head"><div><div class="tag">聴理解課題 2</div><h1>聞いた場所の名前を順番に指さす</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div>
+<p class="ask">指導者が言う場所の名前をよく聞いて、言い終わってから、同じ順番で札を指さしてください。</p><p class="hint">聞いている間に、小さな声で繰り返してもかまいません。</p><div class="wb"><div>銀行</div><div>郵便局</div><div>薬局</div><div>公園</div><div>病院</div><div>駅</div><div>図書館</div><div>交番</div><div>市役所</div></div><table class="rec"><tr><th>No</th><th>個数</th><th>指さした順（指導者が記入）</th><th>段階</th><th>ヒント</th></tr><tr style="height:8.6mm"><td style="width:9%">1</td><td></td><td></td><td></td><td class="h">（　）番目</td></tr><tr style="height:8.6mm"><td style="width:9%">2</td><td></td><td></td><td></td><td class="h">（　）番目</td></tr><tr style="height:8.6mm"><td style="width:9%">3</td><td></td><td></td><td></td><td class="h">（　）番目</td></tr><tr style="height:8.6mm"><td style="width:9%">4</td><td></td><td></td><td></td><td class="h">（　）番目</td></tr><tr style="height:8.6mm"><td style="width:9%">5</td><td></td><td></td><td></td><td class="h">（　）番目</td></tr><tr style="height:8.6mm"><td style="width:9%">6</td><td></td><td></td><td></td><td class="h">（　）番目</td></tr></table><div class="fam"><b>ご家族用ヒント</b>（最初は折って隠してください）　①もう一度言う　②一つずつ区切って言う　③半分ずつ言って、指さしてもらってから続きを言う</div>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet">
+<div class="head"><div><div class="tag">復唱課題</div><h1>聞いた言葉・数字を順番どおりに言う</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div>
+<p class="ask">指導者が言う言葉や数字をよく聞いて、同じ順番で声に出して言ってください。</p><p class="hint">表は指導者が記入します。</p><div class="theme">A　言葉の系列<span>1〜6（3語・4語・5語）</span></div><table class="rec"><tr><th>No</th><th>語の数</th><th>言えた数</th><th>順番どおり</th><th>段階</th><th>ヒント</th></tr><tr style="height:8.6mm"><td style="width:9%">1</td><td></td><td></td><td></td><td></td><td class="h">（　）番目</td></tr><tr style="height:8.6mm"><td style="width:9%">2</td><td></td><td></td><td></td><td></td><td class="h">（　）番目</td></tr><tr style="height:8.6mm"><td style="width:9%">3</td><td></td><td></td><td></td><td></td><td class="h">（　）番目</td></tr><tr style="height:8.6mm"><td style="width:9%">4</td><td></td><td></td><td></td><td></td><td class="h">（　）番目</td></tr><tr style="height:8.6mm"><td style="width:9%">5</td><td></td><td></td><td></td><td></td><td class="h">（　）番目</td></tr><tr style="height:8.6mm"><td style="width:9%">6</td><td></td><td></td><td></td><td></td><td class="h">（　）番目</td></tr></table><div class="theme">B　数字の系列<span>7〜9（3桁・4桁・5桁）</span></div><table class="rec"><tr><th>No</th><th>桁の数</th><th>言えた数</th><th>順番どおり</th><th>段階</th><th>ヒント</th></tr><tr style="height:8.6mm"><td style="width:9%">7</td><td></td><td></td><td></td><td></td><td class="h">（　）番目</td></tr><tr style="height:8.6mm"><td style="width:9%">8</td><td></td><td></td><td></td><td></td><td class="h">（　）番目</td></tr><tr style="height:8.6mm"><td style="width:9%">9</td><td></td><td></td><td></td><td></td><td class="h">（　）番目</td></tr></table><p style="font-size:12pt;margin:2mm 0 0">今日、正しく言えた最大の数（スパン）：言葉 <span class="bx"><i></i></span> 個　　数字 <span class="bx"><i></i></span> 桁</p><div class="fam"><b>ご家族用ヒント</b>（最初は折って隠してください）　①もう一度言う　②ゆっくり区切って言う　③二つと三つに分けて言い、それぞれ繰り返してもらう</div>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet">
+<div class="head"><div><div class="tag">並べ替え課題</div><h1>聞いた順番に番号を書く</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div>
+<p class="ask">指導者が札の内容を順番に言います。言い終わってから、聞いた順番に、札の下の枠へ 1、2、3…と番号を書いてください。</p><p class="hint">札は聞く順番とは関係なく並んでいます。</p><div class="theme" style="font-size:13pt">午前の用事（三つ）</div><div class="cq"><span class="n">1.</span><div class="cards "><div>洗濯物を干す<i></i></div><div>新聞を読む<i></i></div><div>植木に水をやる<i></i></div></div><span class="r">段階［　］<br>ヒント（　）番目</span></div><div class="theme" style="font-size:13pt">買い物で回る店（四つ）</div><div class="cq"><span class="n">2.</span><div class="cards "><div>肉屋<i></i></div><div>八百屋<i></i></div><div>魚屋<i></i></div><div>パン屋<i></i></div></div><span class="r">段階［　］<br>ヒント（　）番目</span></div><div class="theme" style="font-size:13pt">来週の予定（四つ）</div><div class="cq"><span class="n">3.</span><div class="cards "><div>歯医者<i></i></div><div>美容院<i></i></div><div>銀行<i></i></div><div>友人と昼食<i></i></div></div><span class="r">段階［　］<br>ヒント（　）番目</span></div><div class="theme" style="font-size:13pt">棚に並べる物（五つ）</div><div class="cq"><span class="n">4.</span><div class="cards "><div>写真立て<i></i></div><div>花瓶<i></i></div><div>カレンダー<i></i></div><div>時計<i></i></div><div>ラジオ<i></i></div></div><span class="r">段階［　］<br>ヒント（　）番目</span></div><div class="fam"><b>ご家族用ヒント</b>（最初は折って隠してください）　①もう一度言う　②一つ言うごとに間を空ける　③「まず」「次に」「最後に」を付けて言う</div>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet">
+<div class="head"><div><div class="tag">文の復唱課題</div><h1>少しずつ長くなる文を言う</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div>
+<p class="ask">指導者が言う文を聞いて、同じように言ってください。文は少しずつ長くなります。</p><p class="hint">表は指導者が記入します。「言えた文節」は言えた区切りの数です。</p><div class="theme">A　手紙の文<span>1〜4</span></div><table class="rec"><tr><th>No</th><th>文節の数</th><th>言えた文節</th><th>抜けた・変わった言葉</th><th>段階</th><th>ヒント</th></tr><tr style="height:9mm"><td style="width:9%">1</td><td></td><td></td><td></td><td></td><td class="h">（　）番目</td></tr><tr style="height:9mm"><td style="width:9%">2</td><td></td><td></td><td></td><td></td><td class="h">（　）番目</td></tr><tr style="height:9mm"><td style="width:9%">3</td><td></td><td></td><td></td><td></td><td class="h">（　）番目</td></tr><tr style="height:9mm"><td style="width:9%">4</td><td></td><td></td><td></td><td></td><td class="h">（　）番目</td></tr></table><div class="theme">B　バスの文<span>5〜8</span></div><table class="rec"><tr><th>No</th><th>文節の数</th><th>言えた文節</th><th>抜けた・変わった言葉</th><th>段階</th><th>ヒント</th></tr><tr style="height:9mm"><td style="width:9%">5</td><td></td><td></td><td></td><td></td><td class="h">（　）番目</td></tr><tr style="height:9mm"><td style="width:9%">6</td><td></td><td></td><td></td><td></td><td class="h">（　）番目</td></tr><tr style="height:9mm"><td style="width:9%">7</td><td></td><td></td><td></td><td></td><td class="h">（　）番目</td></tr><tr style="height:9mm"><td style="width:9%">8</td><td></td><td></td><td></td><td></td><td class="h">（　）番目</td></tr></table><div class="fam"><b>ご家族用ヒント</b>（最初は折って隠してください）　①もう一度ゆっくり言う　②区切りごとに間を空けて言う　③前半を言ってもらってから後半を続ける</div>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet">
+<div class="head"><div><div class="tag">口頭指示課題</div><h1>指示を聞いて順番に行う</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div>
+<p class="ask">指導者の指示を最後まで聞いてから、言われた順番どおりに行ってください。印は絵の下の枠に書いてください。</p><p class="hint">1〜4は上の段、5〜8は下の段を使います。</p><div class="theme" style="font-size:13pt">上の段（1〜4）</div><div class="pb" style="grid-template-columns:repeat(6,1fr)"><div><svg viewBox="0 0 100 100" style="width:19mm;height:19mm" role="img" aria-label="時計"><g class="art"><circle cx="50" cy="50" r="36"/><path d="M50 50 V28 M50 50 L66 58"/><path d="M50 16 V22 M84 50 H78 M50 84 V78 M16 50 H22"/></g></svg><b>時計</b><i></i></div><div><svg viewBox="0 0 100 100" style="width:19mm;height:19mm" role="img" aria-label="鍵"><g class="art"><circle cx="28" cy="50" r="16"/><circle cx="28" cy="50" r="5"/><path d="M44 50 H90 M78 50 V63 M88 50 V60"/></g></svg><b>鍵</b><i></i></div><div><svg viewBox="0 0 100 100" style="width:19mm;height:19mm" role="img" aria-label="本"><g class="art"><path d="M50 26 Q30 17 8 23 V78 Q30 72 50 80 Q70 72 92 78 V23 Q70 17 50 26 Z"/><path d="M50 26 V80"/><path d="M18 36 Q30 33 42 37 M18 48 Q30 45 42 49 M58 37 Q70 33 82 36 M58 49 Q70 45 82 48"/></g></svg><b>本</b><i></i></div><div><svg viewBox="0 0 100 100" style="width:19mm;height:19mm" role="img" aria-label="コップ"><g class="art"><path d="M26 18 H74 L67 86 H33 Z"/><path d="M29 40 H71"/></g></svg><b>コップ</b><i></i></div><div><svg viewBox="0 0 100 100" style="width:19mm;height:19mm" role="img" aria-label="電話"><g class="art"><path d="M14 86 L22 50 H78 L86 86 Z"/><path d="M10 40 Q10 28 22 28 H78 Q90 28 90 40 L84 46 Q80 49 76 46 L72 40 H28 L24 46 Q20 49 16 46 Z"/><path d="M30 50 V44 M70 50 V44"/><g stroke-width="2"><rect x="34" y="56" width="8" height="5" rx="1"/><rect x="46" y="56" width="8" height="5" rx="1"/><rect x="58" y="56" width="8" height="5" rx="1"/><rect x="33" y="65" width="9" height="5" rx="1"/><rect x="46" y="65" width="8" height="5" rx="1"/><rect x="58" y="65" width="9" height="5" rx="1"/><rect x="32" y="74" width="10" height="5" rx="1"/><rect x="46" y="74" width="8" height="5" rx="1"/><rect x="58" y="74" width="10" height="5" rx="1"/></g><path d="M12 46 Q6 52 12 56 Q6 60 12 64 Q6 68 12 72 Q8 76 16 78"/></g></svg><b>電話</b><i></i></div><div><svg viewBox="0 0 100 100" style="width:19mm;height:19mm" role="img" aria-label="財布"><g class="art"><rect x="12" y="28" width="76" height="48" rx="6"/><path d="M12 42 H88"/><rect x="64" y="48" width="24" height="14" rx="3"/><circle cx="72" cy="55" r="2.5"/></g></svg><b>財布</b><i></i></div></div><div class="theme" style="font-size:13pt">下の段（5〜8）</div><div class="pb" style="grid-template-columns:repeat(6,1fr)"><div><svg viewBox="0 0 100 100" style="width:19mm;height:19mm" role="img" aria-label="時計"><g class="art"><circle cx="50" cy="50" r="36"/><path d="M50 50 V28 M50 50 L66 58"/><path d="M50 16 V22 M84 50 H78 M50 84 V78 M16 50 H22"/></g></svg><b>時計</b><i></i></div><div><svg viewBox="0 0 100 100" style="width:19mm;height:19mm" role="img" aria-label="鍵"><g class="art"><circle cx="28" cy="50" r="16"/><circle cx="28" cy="50" r="5"/><path d="M44 50 H90 M78 50 V63 M88 50 V60"/></g></svg><b>鍵</b><i></i></div><div><svg viewBox="0 0 100 100" style="width:19mm;height:19mm" role="img" aria-label="本"><g class="art"><path d="M50 26 Q30 17 8 23 V78 Q30 72 50 80 Q70 72 92 78 V23 Q70 17 50 26 Z"/><path d="M50 26 V80"/><path d="M18 36 Q30 33 42 37 M18 48 Q30 45 42 49 M58 37 Q70 33 82 36 M58 49 Q70 45 82 48"/></g></svg><b>本</b><i></i></div><div><svg viewBox="0 0 100 100" style="width:19mm;height:19mm" role="img" aria-label="コップ"><g class="art"><path d="M26 18 H74 L67 86 H33 Z"/><path d="M29 40 H71"/></g></svg><b>コップ</b><i></i></div><div><svg viewBox="0 0 100 100" style="width:19mm;height:19mm" role="img" aria-label="電話"><g class="art"><path d="M14 86 L22 50 H78 L86 86 Z"/><path d="M10 40 Q10 28 22 28 H78 Q90 28 90 40 L84 46 Q80 49 76 46 L72 40 H28 L24 46 Q20 49 16 46 Z"/><path d="M30 50 V44 M70 50 V44"/><g stroke-width="2"><rect x="34" y="56" width="8" height="5" rx="1"/><rect x="46" y="56" width="8" height="5" rx="1"/><rect x="58" y="56" width="8" height="5" rx="1"/><rect x="33" y="65" width="9" height="5" rx="1"/><rect x="46" y="65" width="8" height="5" rx="1"/><rect x="58" y="65" width="9" height="5" rx="1"/><rect x="32" y="74" width="10" height="5" rx="1"/><rect x="46" y="74" width="8" height="5" rx="1"/><rect x="58" y="74" width="10" height="5" rx="1"/></g><path d="M12 46 Q6 52 12 56 Q6 60 12 64 Q6 68 12 72 Q8 76 16 78"/></g></svg><b>電話</b><i></i></div><div><svg viewBox="0 0 100 100" style="width:19mm;height:19mm" role="img" aria-label="財布"><g class="art"><rect x="12" y="28" width="76" height="48" rx="6"/><path d="M12 42 H88"/><rect x="64" y="48" width="24" height="14" rx="3"/><circle cx="72" cy="55" r="2.5"/></g></svg><b>財布</b><i></i></div></div><table class="rec"><tr><th>No</th><th>指示の数</th><th>できたこと（指導者が記入）</th><th>段階</th><th>ヒント</th></tr><tr style="height:7.6mm"><td style="width:9%">1</td><td></td><td></td><td></td><td class="h">（　）番目</td></tr><tr style="height:7.6mm"><td style="width:9%">2</td><td></td><td></td><td></td><td class="h">（　）番目</td></tr><tr style="height:7.6mm"><td style="width:9%">3</td><td></td><td></td><td></td><td class="h">（　）番目</td></tr><tr style="height:7.6mm"><td style="width:9%">4</td><td></td><td></td><td></td><td class="h">（　）番目</td></tr><tr style="height:7.6mm"><td style="width:9%">5</td><td></td><td></td><td></td><td class="h">（　）番目</td></tr><tr style="height:7.6mm"><td style="width:9%">6</td><td></td><td></td><td></td><td class="h">（　）番目</td></tr><tr style="height:7.6mm"><td style="width:9%">7</td><td></td><td></td><td></td><td class="h">（　）番目</td></tr><tr style="height:7.6mm"><td style="width:9%">8</td><td></td><td></td><td></td><td class="h">（　）番目</td></tr></table><div class="fam"><b>ご家族用ヒント</b>（最初は折って隠してください）　①もう一度言う　②指示を一つずつに分けて言う　③指示を紙に書いて見せる</div>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet">
+<div class="head"><div><div class="tag">生活課題</div><h1>買い物リストと電話の伝言</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div>
+<p class="ask">A　指導者が言う買い物リストを覚えて、言い終わってから、線の上に品物を書いてください。</p><p class="hint">書くのが難しいときは、下の一覧から指さしてください。</p><div class="shop"><span>しょうゆ</span><span>みそ</span><span>ねぎ</span><span>トマト</span><span>納豆</span><span>牛乳</span><span>食パン</span><span>砂糖</span><span>バナナ</span><span>ヨーグルト</span><span>米</span><span>石けん</span><span>卵</span><span>キャベツ</span><span>ティッシュ</span><span>電池</span></div><div class="al"><span class="n">1.（3品）</span><span class="l"></span><span class="r">段階［　］ ヒント（　）番目</span></div><div class="al"><span class="n">2.（4品）</span><span class="l"></span><span class="r">段階［　］ ヒント（　）番目</span></div><div class="al"><span class="n">3.（5品）</span><span class="l"></span><span class="r">段階［　］ ヒント（　）番目</span></div><p class="ask" style="margin:3mm 0 2mm">B　電話の伝言を聞いて、聞き終わってからメモに書いてください。</p><div class="memo2"><div class="tt">伝言メモ</div><div class="f"><b>だれから</b></div><div class="f"><b>いつ</b></div><div class="f"><b>どこで</b></div><div class="f"><b>持ち物</b></div></div><div class="fam"><b>ご家族用ヒント</b>（最初は折って隠してください）　①もう一度言う　②品物を一つずつ指で数えながら言う　③伝言は「だれから・いつ・どこで・持ち物」の順に区切って言う</div>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet key" style="page-break-after:auto;break-after:auto">
+<div class="head"><div><div class="tag">指導者用（患者さんには渡さない）</div><h1>読み上げリスト・解答・評価のポイント</h1></div></div>
+<h2>読み上げのしかた</h2><p>1語（1数字）約1秒の速さで、抑揚をつけずに読みます。言い終わってから2秒待って答えてもらいます。1回目はヒントなしで行い、できなければ2頁のヒントの順番で手伝います。</p>
+<h2>3頁　数字（言う順＝正答の順）</h2><p>1　4・1・7　2　9・3・6　3　2・8・5・1　4　6・4・9・3　5　7・1・3・8　6　3・9・1・6・4　7　8・5・2・7・1　8　5・7・4・2・9</p>
+<h2>4頁　場所の名前</h2><p>1　駅・銀行・公園　2　薬局・交番・図書館　3　病院・市役所・郵便局・駅　4　公園・薬局・銀行・交番　5　図書館・駅・病院・薬局・市役所　6　郵便局・公園・交番・銀行・病院</p>
+<h2>5頁　語と数字の系列の復唱</h2><p>A：1　箸・雲・切手　2　靴・海・時計　3　机・星・はがき・米　4　皿・山・鈴・扇子　5　窓・犬・鍋・池・紙　6　橋・鳥・桶・豆・糸<br>B：7　6・2・9　8　4・8・1・5　9　7・3・9・2・6</p>
+<h2>6頁　並べ替え（言う順＝番号1・2・3…の順）</h2><p>1　新聞を読む・植木に水をやる・洗濯物を干す　2　八百屋・パン屋・魚屋・肉屋　3　銀行・友人と昼食・歯医者・美容院　4　ラジオ・花瓶・時計・写真立て・カレンダー</p>
+<h2>7頁　長くなる文（／は文節の区切り）</h2><p>A：1　手紙を／書く。　2　娘に／手紙を／書く。　3　遠くの／娘に／手紙を／書く。　4　今夜、／遠くの／娘に／手紙を／書く。<br>B：5　バスが／来た。　6　駅前に／バスが／来た。　7　駅前に／青い／バスが／来た。　8　時間どおりに／駅前に／青い／バスが／来た。</p>
+<h2>8頁　口頭指示（1〜3・7は2段階、4〜6・8は3段階）</h2><p>上の段：1　鍵の下の枠に丸を書いてから、本を指さしてください。　2　コップを指さしてから、時計の下の枠にばつを書いてください。　3　財布と電話を、この順に指さしてください。　4　本の下の枠に三角を書いてから、手をたたき、最後に鍵を指さしてください。<br>下の段：5　時計を指さし、次に鍵、最後にコップを指さしてください。　6　電話の下の枠に丸を書き、財布を指さしてから、鉛筆を置いてください。　7　本を指さす前に、コップの下の枠に線を一本引いてください（正答：線を引く→本を指さす）。　8　鍵と財布を指さしてから、時計の下の枠に丸を書いてください。</p>
+<h2>9頁　生活課題</h2><p>A：1　しょうゆ・ねぎ・納豆　2　牛乳・食パン・バナナ・ヨーグルト　3　米・卵・キャベツ・ティッシュ・電池<br>B：「もしもし、山田です。来週の水曜日、午後二時に、公民館で町内会の集まりがあります。印鑑を持ってきてください。」→ だれから：山田さん　いつ：来週の水曜日 午後二時　どこで：公民館　持ち物：印鑑（4項目で採点）</p>
+<h2>評価のポイント</h2><ul>
+<li>同じ長さの問題を2問とも正答できた最大の個数をスパンとします。指さし（3・4頁）と復唱（5頁）のスパンを比べます。</li>
+<li>誤りの形（後半が抜ける／順番の入れ替わり／似た語への言い換え）を記録します。言い換えが多いときは、意味は保てているので「意味でまとめて覚える」方法が使えます。</li>
+<li>伝言メモは、1回目は聞き終わってから、2回目は聞きながら書いてもらい、要点の数を比べます。聞きながら書く方が良ければ、生活ではメモを使う習慣を勧めます。</li></ul>
+<p style="font-size:9pt;color:#555">一般的な目安です。最終的な判断は担当の言語聴覚士が行ってください。</p>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<script src="mini-profile.js"></script>
+</body>
+</html>

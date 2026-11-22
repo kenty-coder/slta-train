@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="author" content="KENTA SHINKAWA">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>読み書きの障害（重度）追加課題集</title>
+<link rel="stylesheet" href="common.css">
+<style>
+.guide{font-size:10pt;line-height:1.45}
+.guide h2{font-size:12pt;margin:2.4mm 0 1mm}
+.guide table{font-size:9.3pt;margin:0 0 1.8mm}
+.guide th,.guide td{padding:.5mm 1.6mm}
+.guide p{margin:0 0 1.4mm}
+.fbox{border:1.5px solid #333;border-radius:2mm;padding:1.5mm 4mm;margin:1mm 0 1.5mm;font-size:10.5pt;line-height:1.6}
+.small{font-size:9pt;color:#555}
+.key{font-size:10pt;line-height:1.45}
+.key table{border-collapse:collapse;width:100%;font-size:9.6pt;margin:0 0 1.8mm}
+.key th,.key td{border:1px solid #bbb;padding:.5mm 1.6mm;text-align:left;vertical-align:top}
+.key th{background:#f2f2f2}
+.key p{margin:0 0 1mm}
+.key ul{margin:0 0 1mm;padding-left:5mm}
+.key h2{margin:2mm 0 1mm}
+table.tk{border-collapse:collapse;width:100%;margin:0 0 3mm}
+table.tk th,table.tk td{border:1px solid #888;padding:1mm 2mm;vertical-align:middle}
+table.tk th{background:#f2f2f2;font-size:10.5pt;font-weight:700;text-align:center;line-height:1.3}
+table.tk td.no{width:9mm;text-align:center;font-size:12pt;color:#555}
+table.tk td.rec,table.tk th.rec{width:21mm;font-size:9pt;color:#555;line-height:1.35;text-align:center}
+table.tk th.fam,table.tk td.fam{width:46mm;border-left:2.5px dashed #333;font-size:9.6pt;line-height:1.4;color:#333;text-align:left}
+table.tk th.fam{font-size:8.6pt;text-align:center}
+.ico{width:24mm;height:24mm;display:block;margin:auto}
+.icol{width:30mm;height:30mm;display:block;margin:auto}
+.pc{border:1.5px solid #333;border-radius:2mm;width:40mm;height:33mm;display:flex;align-items:center;justify-content:center;margin:auto}
+.bigch{font-size:52pt;font-weight:700;text-align:center;line-height:1.1}
+.cards span{display:inline-block;border:2px solid #333;border-radius:2mm;padding:.3mm 4mm;font-size:21pt;font-weight:700;margin:1mm 4mm 1mm 0}
+.cards.m span{font-size:15pt;border-width:1.5px;padding:.2mm 3mm;margin:.6mm 2.5mm .6mm 0}
+.tb{width:30mm;height:30mm;border:1.5px solid #333;display:inline-flex;align-items:center;justify-content:center;margin-right:4mm;vertical-align:middle}
+.tb.tr{font-size:72pt;font-weight:700;color:#ececec;-webkit-text-stroke:1.4px #666;line-height:1}
+.box{display:inline-block;width:13mm;height:13mm;border:1.5px solid #333;vertical-align:middle;margin-right:1mm}
+.box.s{width:11mm;height:11mm}
+.wbig{font-size:30pt;font-weight:700;letter-spacing:.06em}
+.wl{display:block;border-bottom:1px solid #999;height:10mm}
+.sentence{font-size:14pt;line-height:1.6}
+.opt{display:inline-block;border:1.5px solid #333;border-radius:2mm;padding:0 3mm;margin:0 1.5mm;font-size:13.5pt}
+.notice{border:2px solid #333;border-radius:2mm;padding:2.5mm 5mm;margin:0 0 3mm;font-size:12.5pt;line-height:1.7}
+.notice h2{font-size:15pt;text-align:center;margin:0 0 1.5mm;border-bottom:1.5px solid #333;padding-bottom:1mm}
+.mc{margin:0 0 2.2mm;font-size:13pt}
+.mc .q{font-weight:700}
+.mc .o{margin:.5mm 0 0 7mm}
+.mc .o span{display:inline-block;margin-right:7mm}
+.qa{margin:0 0 2mm;font-size:12.5pt}
+.qa b{display:inline-block;min-width:7mm}
+.qa .l{height:9mm;border-bottom:1px solid #999;margin-left:7mm}
+.lines .l{height:11mm;border-bottom:1px solid #9a9a9a}
+.scr span{display:inline-block;width:11mm;height:11mm;border:1.5px dashed #555;border-radius:50%;text-align:center;line-height:11mm;font-size:16pt;font-weight:700;margin-right:1.2mm}
+.doc{border:1.5px solid #333;padding:2.5mm 5mm;margin:0 0 3mm;font-size:11pt;line-height:1.55}
+.doc h2{font-size:14pt;text-align:center;margin:0 0 1.5mm}
+.doc table{border-collapse:collapse;width:100%;margin:1mm 0}
+.doc th,.doc td{border:1px solid #666;padding:.5mm 2mm;text-align:left;vertical-align:top}
+.doc th{background:#f2f2f2;white-space:nowrap}
+.read2{font-size:13pt;line-height:1.85;border:1.5px solid #333;border-radius:2mm;padding:3mm 6mm;margin:0 0 3mm}
+.chk{border-collapse:collapse;width:100%;font-size:11pt;margin:0 0 2mm}
+.chk th,.chk td{border:1px solid #333;padding:.8mm 2mm;height:9mm}
+.chk th{background:#f2f2f2}
+</style>
+</head>
+<body>
+<div class="noprint">印刷するときは <b>Ctrl＋P</b> を押してください（用紙：A4縦）。最初のページは指導者用ガイド、最後のページは指導者用の解答・評価のポイントです。患者さんには課題用紙のページだけをお渡しください。</div>
+<section class="sheet guide">
+<div class="head"><div><div class="tag">指導者用（患者さんには渡さない）</div><h1>読み書きの障害（重度） 追加課題集 ― 指導者用ガイド</h1></div></div>
+<h2>1．この追加課題集のねらい</h2>
+<p>基本教材「08-1 読み書きの障害（重度）」の次に、または並行して使う追加の課題です。基本教材とは別の語・別の課題の形で、<b>一文字・身近な語の読み、なぞり書き・写字</b>を中心に練習の量を増やします。話す・聴くの課題も少し入れ、話し言葉を読み書きの手がかりに使います。</p>
+<h2>2．課題ページの一覧と難しさ</h2>
+<table><tr><th style="width:23%">課題</th><th>内容</th><th style="width:9%">問題数</th><th style="width:11%">難しさ</th></tr>
+<tr><td>読字課題1</td><td>漢字一文字を見て、2つの絵から選ぶ</td><td>5</td><td>★</td></tr>
+<tr><td>呼称課題1</td><td>絵の名前を言い、その名前の文字を2つから選ぶ</td><td>5</td><td>★★</td></tr>
+<tr><td>書字課題1</td><td>薄い字をなぞってから、同じ字を写す</td><td>5</td><td>★</td></tr>
+<tr><td>読字課題2</td><td>語を読んで「食べ物」「着る物」に分ける</td><td>6</td><td>★★</td></tr>
+<tr><td>聴理解課題1</td><td>聞いた値段の札を3つから選ぶ</td><td>5</td><td>★★</td></tr>
+<tr><td>書字課題2</td><td>絵の名前の最初の文字を2つから選んで書く</td><td>5</td><td>★★</td></tr>
+<tr><td>音読課題1</td><td>身近な語を声に出して読む</td><td>6</td><td>★★</td></tr>
+<tr><td>書字課題3</td><td>予定の語をカレンダーに写す</td><td>4</td><td>★★★</td></tr></table>
+<p><b>どの課題から始めるか：</b>まず★の読字課題1と書字課題1から始めます。正答（段階6・5）が5問中4問以上になったら★★の課題へ進みます。1回に1〜2枚、10〜15分までにし、疲れが見えたら途中でやめます。</p>
+<h2>3．ヒントの順番</h2>
+<table><tr><th style="width:17%">課題の種類</th><th>ヒントの順番（一つずつ加える）</th></tr><tr><td>呼称・音読</td><td>①意味・仲間（「台所の道具です」）→②使い道・場面（「お湯を沸かします」）→③最初の音（「や…」）→④文字を見せる・指でなぞる→⑤一緒に言う（復唱）</td></tr><tr><td>理解（聴く・読む）</td><td>①もう一度ゆっくり言う（読む）→②区切って言う→③指さし・身ぶりを添える→④文字を添える（読み上げる）→⑤選択肢を減らす</td></tr><tr><td>書字</td><td>①仮名で書いてもよい→②最初の1文字を見せる→③文字数の枠を示す→④見本を見て写す</td></tr></table>
+<p>呼称課題・音読課題の右端には「ヒント欄（ご家族用）」があります。ヒントで正答したら、すぐに同じ問題をヒントなしでもう一度行います。</p>
+<h2>4．記録のしかた</h2>
+<p>1問ごとに段階6〜1で記録し、<b>段階6・5を正答</b>とします。ヒントを使って正答したときは段階4以下が目安で、各問題の「ヒント（　）番目で正答」の欄に、何番目のヒントで正答できたかを書きます（段階の目安は最後のページ）。</p>
+<h2>5．ご家族向けの説明（このまま読み上げてください）</h2>
+<div class="fbox">「この用紙は、文字を読む・書く力を取り戻すための練習です。右端のヒント欄は、最初は折って隠しておいてください。答えに詰まったら、10秒ほど待ってから、①、②、③の順に一つずつ読んであげてください。できなかった問題を責めたり、急がせたりせず、できたところを一緒に喜んでください。疲れた様子のときは、その日はやめてかまいません。」</div>
+<p class="small">ここに書いた内容は一般的な目安です。最終的な判断は担当の言語聴覚士が行ってください。</p>
+
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet">
+<div class="head"><div><div class="tag">追加 読字課題 1</div><h1>読字課題　漢字一文字と絵の照合（2択）</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div>
+<p class="ask">大きな文字を見て、その文字が表す物の絵を○で囲んでください。</p>
+<p class="hint">分からないときは、指導者が文字を読み上げます。</p>
+<table class="tk"><tr><th>番号</th><th>文字</th><th colspan="2">絵（どちらか一つに○）</th><th class="rec">記録</th></tr><tr><td class="no">1.</td><td><div class="bigch">傘</div></td><td><div class="pc"><svg class="icol" viewBox="0 0 100 100" fill="none" stroke="#222" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="線画"><path d="M10 50 Q50 2 90 50 Q80 42 70 50 Q60 42 50 50 Q40 42 30 50 Q20 42 10 50 Z M50 14 V7 M50 50 V82 Q50 90 43 90 Q37 90 37 84"/></svg></div></td><td><div class="pc"><svg class="icol" viewBox="0 0 100 100" fill="none" stroke="#222" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="線画"><circle cx="50" cy="50" r="38"/><path d="M50 50 V26 M50 50 L66 58 M50 14 V19 M50 81 V86 M14 50 H19 M81 50 H86"/></svg></div></td><td class="rec">ヒント<br>（　　）番目<br>で正答</td></tr><tr><td class="no">2.</td><td><div class="bigch">鍵</div></td><td><div class="pc"><svg class="icol" viewBox="0 0 100 100" fill="none" stroke="#222" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="線画"><circle cx="30" cy="52" r="14"/><circle cx="70" cy="52" r="14"/><path d="M44 50 Q50 44 56 50 M16 48 L6 40 M84 48 L94 40"/></svg></div></td><td><div class="pc"><svg class="icol" viewBox="0 0 100 100" fill="none" stroke="#222" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="線画"><circle cx="28" cy="50" r="15"/><circle cx="28" cy="50" r="5"/><path d="M43 50 H90 M80 50 V62 M70 50 V60"/></svg></div></td><td class="rec">ヒント<br>（　　）番目<br>で正答</td></tr><tr><td class="no">3.</td><td><div class="bigch">箸</div></td><td><div class="pc"><svg class="icol" viewBox="0 0 100 100" fill="none" stroke="#222" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="線画"><path d="M30 10 L36 10 L47 90 L44 90 Z M50 10 L56 10 L58 90 L55 90 Z"/></svg></div></td><td><div class="pc"><svg class="icol" viewBox="0 0 100 100" fill="none" stroke="#222" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="線画"><path d="M32 10 V88 M32 54 H74 V88 M32 10 H42 V54 M32 22 H42 M32 34 H42"/></svg></div></td><td class="rec">ヒント<br>（　　）番目<br>で正答</td></tr><tr><td class="no">4.</td><td><div class="bigch">花</div></td><td><div class="pc"><svg class="icol" viewBox="0 0 100 100" fill="none" stroke="#222" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="線画"><path d="M12 28 H88 V76 H12 Z M12 28 L50 56 L88 28"/></svg></div></td><td><div class="pc"><svg class="icol" viewBox="0 0 100 100" fill="none" stroke="#222" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="線画"><circle cx="50" cy="32" r="7"/><circle cx="50" cy="16" r="9"/><circle cx="65" cy="27" r="9"/><circle cx="60" cy="44" r="9"/><circle cx="40" cy="44" r="9"/><circle cx="35" cy="27" r="9"/><path d="M50 53 V92 M50 76 Q64 62 74 68 Q64 80 50 78"/></svg></div></td><td class="rec">ヒント<br>（　　）番目<br>で正答</td></tr><tr><td class="no">5.</td><td><div class="bigch">卵</div></td><td><div class="pc"><svg class="icol" viewBox="0 0 100 100" fill="none" stroke="#222" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="線画"><path d="M50 12 C30 12 20 46 22 62 C24 82 38 90 50 90 C62 90 76 82 78 62 C80 46 70 12 50 12 Z"/></svg></div></td><td><div class="pc"><svg class="icol" viewBox="0 0 100 100" fill="none" stroke="#222" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="線画"><path d="M50 10 C38 10 34 24 34 32 C34 42 42 48 50 48 C58 48 66 42 66 32 C66 24 62 10 50 10 Z M47 48 L46 88 Q50 92 54 88 L53 48"/></svg></div></td><td class="rec">ヒント<br>（　　）番目<br>で正答</td></tr></table>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet">
+<div class="head"><div><div class="tag">追加 呼称課題 1</div><h1>呼称課題　物の名前を言い、文字を選ぶ</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div>
+<p class="ask">1．絵を見て、物の名前を声に出して言ってください。<br>2．その名前の文字を、2つのうちから選んで○で囲んでください。</p>
+<p class="hint">名前が出ないときは、ご家族がヒント欄の①から順に読み上げます。</p>
+<table class="tk"><tr><th>番号</th><th>絵</th><th>文字（どちらか一つに○）</th><th class="rec">記録</th><th class="fam">ヒント欄（ご家族用。<br>最初は折って隠してください）</th></tr><tr><td class="no">1.</td><td style="width:30mm"><svg class="ico" viewBox="0 0 100 100" fill="none" stroke="#222" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="線画"><circle cx="33" cy="76" r="11"/><circle cx="67" cy="76" r="11"/><path d="M39 66 L72 12 M61 66 L28 12"/><circle cx="50" cy="45" r="2"/></svg></td><td><div class="cards"><span>はさみ</span><span>はがき</span></div></td><td class="rec">ヒント<br>（　　）番目<br>で正答</td><td class="fam">①紙や布を切る道具です<br>②ちょきちょきと切ります<br>③「は…」</td></tr><tr><td class="no">2.</td><td style="width:30mm"><svg class="ico" viewBox="0 0 100 100" fill="none" stroke="#222" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="線画"><path d="M28 46 Q22 82 50 84 Q78 82 72 46 Z M30 46 Q50 34 70 46 M45 37 Q50 30 55 37 M72 58 L92 46 L90 41 L74 50 M29 60 L8 66 L9 72 L28 68"/></svg></td><td><div class="cards"><span>花瓶</span><span>急須</span></div></td><td class="rec">ヒント<br>（　　）番目<br>で正答</td><td class="fam">①お茶をいれる道具です<br>②茶葉を入れてお湯を注ぎます<br>③「きゅ…」</td></tr><tr><td class="no">3.</td><td style="width:30mm"><svg class="ico" viewBox="0 0 100 100" fill="none" stroke="#222" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="線画"><path d="M12 40 Q14 30 26 32 H74 Q86 30 88 40 V62 Q86 72 74 70 H26 Q14 72 12 62 Z M22 51 Q50 45 78 51"/></svg></td><td><div class="cards"><span>枕</span><span>机</span></div></td><td class="rec">ヒント<br>（　　）番目<br>で正答</td><td class="fam">①寝るときに使う物です<br>②布団の上で頭をのせます<br>③「ま…」</td></tr><tr><td class="no">4.</td><td style="width:30mm"><svg class="ico" viewBox="0 0 100 100" fill="none" stroke="#222" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="線画"><path d="M18 82 Q14 52 36 44 H64 Q86 52 82 82 Z M30 44 Q50 8 70 44 M44 44 Q50 36 56 44 M80 64 L95 48"/></svg></td><td><div class="cards"><span>みかん</span><span>やかん</span></div></td><td class="rec">ヒント<br>（　　）番目<br>で正答</td><td class="fam">①台所の道具です<br>②火にかけてお湯を沸かします<br>③「や…」</td></tr><tr><td class="no">5.</td><td style="width:30mm"><svg class="ico" viewBox="0 0 100 100" fill="none" stroke="#222" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="線画"><path d="M6 62 H70 V70 H6 Z M70 60 H94 V68 H70 Z M73 60 V46 M78 60 V46 M83 60 V46 M88 60 V46 M93 60 V46 M73 46 H93"/></svg></td><td><div class="cards"><span>歯ブラシ</span><span>靴べら</span></div></td><td class="rec">ヒント<br>（　　）番目<br>で正答</td><td class="fam">①洗面所にある物です<br>②朝と夜に歯をみがきます<br>③「は…」</td></tr></table>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet">
+<div class="head"><div><div class="tag">追加 書字課題 1</div><h1>書字課題　なぞり書きと写字（漢字一文字）</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div>
+<p class="ask">左の薄い字を鉛筆でなぞってから、右の枠に同じ字を書いてください。</p>
+<p class="hint">最後の枠は、左の字を紙で隠して書いてください。書き順が分からないときは、指導者が書いて見せます。</p>
+<table class="tk"><tr><th>番号</th><th>なぞる → 見て書く → 見て書く → 隠して書く</th><th class="rec">記録</th></tr><tr><td class="no">1.</td><td><span class="tb tr">山</span><span class="tb"></span><span class="tb"></span><span class="tb"></span></td><td class="rec">ヒント<br>（　　）番目<br>で正答</td></tr><tr><td class="no">2.</td><td><span class="tb tr">川</span><span class="tb"></span><span class="tb"></span><span class="tb"></span></td><td class="rec">ヒント<br>（　　）番目<br>で正答</td></tr><tr><td class="no">3.</td><td><span class="tb tr">手</span><span class="tb"></span><span class="tb"></span><span class="tb"></span></td><td class="rec">ヒント<br>（　　）番目<br>で正答</td></tr><tr><td class="no">4.</td><td><span class="tb tr">目</span><span class="tb"></span><span class="tb"></span><span class="tb"></span></td><td class="rec">ヒント<br>（　　）番目<br>で正答</td></tr><tr><td class="no">5.</td><td><span class="tb tr">口</span><span class="tb"></span><span class="tb"></span><span class="tb"></span></td><td class="rec">ヒント<br>（　　）番目<br>で正答</td></tr></table>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet">
+<div class="head"><div><div class="tag">追加 読字課題 2</div><h1>読字課題　語の仲間分け（食べ物・着る物）</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div>
+<p class="ask">語を読んで、食べ物なら「食べ物」に、着る物なら「着る物」に○を付けてください。</p>
+<p class="hint">分からないときは、指導者が語を読み上げます。声に出して読めたら、記録欄に印を付けます。</p>
+<table class="tk"><tr><th>番号</th><th>語</th><th>どちらか一つに○</th><th class="rec">記録</th></tr><tr><td class="no">1.</td><td style="height:27mm"><span class="wbig">パン</span></td><td style="width:78mm"><div class="cards" style="text-align:center"><span>食べ物</span><span>着る物</span></div></td><td class="rec">ヒント<br>（　　）番目<br>で正答</td></tr><tr><td class="no">2.</td><td style="height:27mm"><span class="wbig">上着</span></td><td style="width:78mm"><div class="cards" style="text-align:center"><span>食べ物</span><span>着る物</span></div></td><td class="rec">ヒント<br>（　　）番目<br>で正答</td></tr><tr><td class="no">3.</td><td style="height:27mm"><span class="wbig">柿</span></td><td style="width:78mm"><div class="cards" style="text-align:center"><span>食べ物</span><span>着る物</span></div></td><td class="rec">ヒント<br>（　　）番目<br>で正答</td></tr><tr><td class="no">4.</td><td style="height:27mm"><span class="wbig">浴衣</span></td><td style="width:78mm"><div class="cards" style="text-align:center"><span>食べ物</span><span>着る物</span></div></td><td class="rec">ヒント<br>（　　）番目<br>で正答</td></tr><tr><td class="no">5.</td><td style="height:27mm"><span class="wbig">大根</span></td><td style="width:78mm"><div class="cards" style="text-align:center"><span>食べ物</span><span>着る物</span></div></td><td class="rec">ヒント<br>（　　）番目<br>で正答</td></tr><tr><td class="no">6.</td><td style="height:27mm"><span class="wbig">セーター</span></td><td style="width:78mm"><div class="cards" style="text-align:center"><span>食べ物</span><span>着る物</span></div></td><td class="rec">ヒント<br>（　　）番目<br>で正答</td></tr></table>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet">
+<div class="head"><div><div class="tag">追加 聴理解課題 1</div><h1>聴理解課題　値段を聞いて札を選ぶ（3択）</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div>
+<p class="ask">買い物の場面です。指導者が言う値段を聞いて、その値段の札を○で囲んでください。</p>
+<p class="hint">聞き取れないときは、指導者がもう一度ゆっくり言います。</p>
+<table class="tk"><tr><th>番号</th><th>値段の札（一つに○）</th><th class="rec">記録</th></tr><tr><td class="no">1.</td><td style="height:29mm"><div class="cards"><span style="min-width:38mm;text-align:center">100円</span><span style="min-width:38mm;text-align:center">300円</span><span style="min-width:38mm;text-align:center">1000円</span></div></td><td class="rec">ヒント<br>（　　）番目<br>で正答</td></tr><tr><td class="no">2.</td><td style="height:29mm"><div class="cards"><span style="min-width:38mm;text-align:center">50円</span><span style="min-width:38mm;text-align:center">5000円</span><span style="min-width:38mm;text-align:center">500円</span></div></td><td class="rec">ヒント<br>（　　）番目<br>で正答</td></tr><tr><td class="no">3.</td><td style="height:29mm"><div class="cards"><span style="min-width:38mm;text-align:center">250円</span><span style="min-width:38mm;text-align:center">120円</span><span style="min-width:38mm;text-align:center">210円</span></div></td><td class="rec">ヒント<br>（　　）番目<br>で正答</td></tr><tr><td class="no">4.</td><td style="height:29mm"><div class="cards"><span style="min-width:38mm;text-align:center">1000円</span><span style="min-width:38mm;text-align:center">10000円</span><span style="min-width:38mm;text-align:center">100円</span></div></td><td class="rec">ヒント<br>（　　）番目<br>で正答</td></tr><tr><td class="no">5.</td><td style="height:29mm"><div class="cards"><span style="min-width:38mm;text-align:center">890円</span><span style="min-width:38mm;text-align:center">98円</span><span style="min-width:38mm;text-align:center">980円</span></div></td><td class="rec">ヒント<br>（　　）番目<br>で正答</td></tr></table>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet">
+<div class="head"><div><div class="tag">追加 書字課題 2</div><h1>書字課題　絵の名前の最初の文字</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div>
+<p class="ask">絵の名前の最初の文字はどちらですか。○で囲み、その文字を右の枠に書いてください。</p>
+<p class="hint">分からないときは、指導者が絵の名前をゆっくり言います。</p>
+<table class="tk"><tr><th>番号</th><th>絵</th><th>最初の文字に○</th><th>枠に書く</th><th class="rec">記録</th></tr><tr><td class="no" style="height:32mm">1.</td><td style="width:30mm"><svg class="ico" viewBox="0 0 100 100" fill="none" stroke="#222" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="線画"><circle cx="50" cy="58" r="32"/><path d="M50 26 V19 M50 21 Q62 8 74 14 Q66 27 50 21"/><path d="M36 50 h.1 M58 44 h.1 M64 66 h.1 M42 72 h.1"/></svg></td><td><div class="cards" style="text-align:center"><span>め</span><span>み</span></div></td><td style="white-space:nowrap"><span class="box" style="width:17mm;height:17mm"></span><span class="wbig" style="font-size:26pt">かん</span></td><td class="rec">ヒント<br>（　　）番目<br>で正答</td></tr><tr><td class="no" style="height:32mm">2.</td><td style="width:30mm"><svg class="ico" viewBox="0 0 100 100" fill="none" stroke="#222" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="線画"><path d="M12 32 H88 V48 H12 Z M18 48 V78 M25 48 V78 M32 48 V78 M39 48 V78 M46 48 V78 M53 48 V78 M60 48 V78 M67 48 V78 M74 48 V78 M81 48 V78"/></svg></td><td><div class="cards" style="text-align:center"><span>く</span><span>へ</span></div></td><td style="white-space:nowrap"><span class="box" style="width:17mm;height:17mm"></span><span class="wbig" style="font-size:26pt">し</span></td><td class="rec">ヒント<br>（　　）番目<br>で正答</td></tr><tr><td class="no" style="height:32mm">3.</td><td style="width:30mm"><svg class="ico" viewBox="0 0 100 100" fill="none" stroke="#222" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="線画"><path d="M22 44 L24 14 L42 30 Q50 28 58 30 L76 14 L78 44 Q86 76 50 82 Q14 76 22 44 Z"/><circle cx="38" cy="50" r="3"/><circle cx="62" cy="50" r="3"/><path d="M47 60 L50 63 L53 60 M50 63 V67 M36 62 L14 58 M36 66 L14 68 M64 62 L86 58 M64 66 L86 68"/></svg></td><td><div class="cards" style="text-align:center"><span>れ</span><span>ね</span></div></td><td style="white-space:nowrap"><span class="box" style="width:17mm;height:17mm"></span><span class="wbig" style="font-size:26pt">こ</span></td><td class="rec">ヒント<br>（　　）番目<br>で正答</td></tr><tr><td class="no" style="height:32mm">4.</td><td style="width:30mm"><svg class="ico" viewBox="0 0 100 100" fill="none" stroke="#222" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="線画"><circle cx="50" cy="38" r="28"/><path d="M50 66 V94 M50 66 L30 18 M50 66 L40 12 M50 66 V10 M50 66 L60 12 M50 66 L70 18"/></svg></td><td><div class="cards" style="text-align:center"><span>う</span><span>ら</span></div></td><td style="white-space:nowrap"><span class="box" style="width:17mm;height:17mm"></span><span class="wbig" style="font-size:26pt">ちわ</span></td><td class="rec">ヒント<br>（　　）番目<br>で正答</td></tr><tr><td class="no" style="height:32mm">5.</td><td style="width:30mm"><svg class="ico" viewBox="0 0 100 100" fill="none" stroke="#222" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="線画"><path d="M50 90 C30 72 16 52 22 38 C28 28 72 28 78 38 C84 52 70 72 50 90 Z M30 32 L38 18 L50 28 L62 18 L70 32 M50 28 V14"/><path d="M38 48 h.1 M50 46 h.1 M62 48 h.1 M44 60 h.1 M56 60 h.1 M50 72 h.1"/></svg></td><td><div class="cards" style="text-align:center"><span>り</span><span>い</span></div></td><td style="white-space:nowrap"><span class="box" style="width:17mm;height:17mm"></span><span class="wbig" style="font-size:26pt">ちご</span></td><td class="rec">ヒント<br>（　　）番目<br>で正答</td></tr></table>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet">
+<div class="head"><div><div class="tag">追加 音読課題 1</div><h1>音読課題　身近な語を声に出して読む</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div>
+<p class="ask">文字を見て、声に出して読んでください。</p>
+<p class="hint">読めないときは、ご家族がヒント欄の①から順に読み上げます。それでも読めないときは、指で字をなぞる（④）、一緒に読む（⑤）の順に進めます。</p>
+<table class="tk"><tr><th>番号</th><th>語</th><th class="rec">記録</th><th class="fam">ヒント欄（ご家族用。<br>最初は折って隠してください）</th></tr><tr><td class="no">1.</td><td style="height:30mm;text-align:center"><span class="wbig" style="font-size:40pt">電気</span></td><td class="rec">ヒント<br>（　　）番目<br>で正答</td><td class="fam">①部屋を明るくする物です<br>②スイッチで付けたり消したりします<br>③「で…」</td></tr><tr><td class="no">2.</td><td style="height:30mm;text-align:center"><span class="wbig" style="font-size:40pt">昼</span></td><td class="rec">ヒント<br>（　　）番目<br>で正答</td><td class="fam">①一日の時間を表す語です<br>②朝と夜の間です<br>③「ひ…」</td></tr><tr><td class="no">3.</td><td style="height:30mm;text-align:center"><span class="wbig" style="font-size:40pt">夜</span></td><td class="rec">ヒント<br>（　　）番目<br>で正答</td><td class="fam">①暗くなってからの時間です<br>②星や月が見えます<br>③「よ…」</td></tr><tr><td class="no">4.</td><td style="height:30mm;text-align:center"><span class="wbig" style="font-size:40pt">空</span></td><td class="rec">ヒント<br>（　　）番目<br>で正答</td><td class="fam">①見上げると広がっています<br>②青く、雲が浮かんでいます<br>③「そ…」</td></tr><tr><td class="no">5.</td><td style="height:30mm;text-align:center"><span class="wbig" style="font-size:40pt">家族</span></td><td class="rec">ヒント<br>（　　）番目<br>で正答</td><td class="fam">①一緒に暮らす人たちです<br>②夫や妻、子どもなどです<br>③「か…」</td></tr><tr><td class="no">6.</td><td style="height:30mm;text-align:center"><span class="wbig" style="font-size:40pt">野菜</span></td><td class="rec">ヒント<br>（　　）番目<br>で正答</td><td class="fam">①畑で取れる食べ物です<br>②八百屋で売っています<br>③「や…」</td></tr></table>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet">
+<div class="head"><div><div class="tag">追加 書字課題 3</div><h1>書字課題　予定をカレンダーに写す</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div>
+<p class="ask">今月の予定です。手本を見て、「見て書く」の欄に同じように書いてください。<br>次に、手本を紙で隠して、右の欄に書いてください。</p>
+<p class="hint">書きにくいときは、指導者が手本の字を一画ずつ書いて見せます。</p>
+<table class="tk"><tr><th>番号</th><th>日付</th><th>予定（手本）</th><th>見て書く</th><th>手本を隠して書く</th><th class="rec">記録</th></tr><tr><td class="no">1.</td><td style="text-align:center;font-size:15pt;font-weight:700;width:20mm">4日</td><td style="text-align:center;width:44mm;height:38mm;background:#f6f6f6"><span class="wbig" style="font-size:28pt">歯医者</span></td><td></td><td></td><td class="rec">ヒント<br>（　　）番目<br>で正答</td></tr><tr><td class="no">2.</td><td style="text-align:center;font-size:15pt;font-weight:700;width:20mm">10日</td><td style="text-align:center;width:44mm;height:38mm;background:#f6f6f6"><span class="wbig" style="font-size:28pt">床屋</span></td><td></td><td></td><td class="rec">ヒント<br>（　　）番目<br>で正答</td></tr><tr><td class="no">3.</td><td style="text-align:center;font-size:15pt;font-weight:700;width:20mm">15日</td><td style="text-align:center;width:44mm;height:38mm;background:#f6f6f6"><span class="wbig" style="font-size:28pt">花見</span></td><td></td><td></td><td class="rec">ヒント<br>（　　）番目<br>で正答</td></tr><tr><td class="no">4.</td><td style="text-align:center;font-size:15pt;font-weight:700;width:20mm">23日</td><td style="text-align:center;width:44mm;height:38mm;background:#f6f6f6"><span class="wbig" style="font-size:28pt">法事</span></td><td></td><td></td><td class="rec">ヒント<br>（　　）番目<br>で正答</td></tr></table>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet key" style="page-break-after:auto;break-after:auto">
+<div class="head"><div><div class="tag">指導者用（患者さんには渡さない）</div><h1>読み上げリスト・解答・ヒント・評価のポイント</h1></div></div>
+<h2>解答と読み上げリスト</h2>
+<table><tr><th style="width:19%">課題</th><th>正答・読み上げる内容</th></tr>
+<tr><td>読字課題1</td><td>1 傘＝左（右は時計）　2 鍵＝右（左は眼鏡）　3 箸＝左（右は椅子）　4 花＝右（左は封筒）　5 卵＝左（右はスプーン）</td></tr>
+<tr><td>呼称課題1</td><td>1 はさみ　2 急須（左は花瓶）　3 枕　4 やかん（左はみかん。音の似た語）　5 歯ブラシ。名前が言えなくても文字を選べたら、文字の欄は正答として別に記録します。</td></tr>
+<tr><td>読字課題2</td><td>食べ物：パン・柿・大根　　着る物：上着・浴衣・セーター</td></tr>
+<tr><td>聴理解課題1<br>（読み上げ）</td><td>①「三百円」②「五百円」③「二百五十円」④「一万円」⑤「九百八十円」　普通の速さで1回言う。聞き返されたらもう1回。</td></tr>
+<tr><td>書字課題2</td><td>1 み（みかん）　2 く（くし）　3 ね（ねこ）　4 う（うちわ）　5 い（いちご）　選べても書けないときは、○を付けた字を見て写してもらいます（段階3）。</td></tr>
+<tr><td>音読課題1</td><td>でんき・ひる・よる・そら・かぞく・やさい</td></tr>
+<tr><td>書字課題3</td><td>予定の語は、本人の実際の予定に書き換えて使ってもかまいません（例：通院先、デイサービス）。</td></tr></table>
+<h2>ヒントの使い方と評価のポイント</h2>
+<ul>
+<li>読字課題1・2：絵や語を選べないときは、理解のヒント（①もう一度見る→②指導者が読み上げる→③選択肢を一つ隠す）の順に進めます。</li>
+<li>呼称課題1・音読課題1：ヒント欄の①〜③の後、④文字を指でなぞる、⑤一緒に言う、と進めます。何番目で正答したかを記録欄に書きます。</li>
+<li>書字課題：①最初の一画を書いて見せる→②手本を見て写す、の順にします。字形が崩れても読める字なら段階4以上とします。</li>
+<li>聴理解課題1：話し言葉の理解はよいのに数字の札を選べないときは、数字の読みの低下を考えます。</li>
+</ul>
+<h2>記録の段階（目安）</h2>
+<table><tr><th style="width:9%">段階</th><th style="width:22%">内容</th><th>目安</th></tr><tr><td>6</td><td>完全正答</td><td>すぐに正しく読めた・書けた・答えられた</td></tr><tr><td>5</td><td>遅延完全正答</td><td>正しいが時間がかかった（逐字読み、書き始めの遅れ）</td></tr><tr><td>4</td><td>不完全正答</td><td>一部の誤り（1文字の誤り、送り仮名・助詞の誤り、字形の崩れ）</td></tr><tr><td>3</td><td>ヒント後正答</td><td>ヒントの後で正答（ヒント欄の番号を記録）</td></tr><tr><td>2</td><td>関連反応</td><td>意味や形の似た語</td></tr><tr><td>1</td><td>誤答</td><td>誤り、または反応なし</td></tr></table>
+<p>段階6・5の数÷問題数を正答率とします。最終的な判断は担当の言語聴覚士が行ってください。</p>
+
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+</body>
+</html>

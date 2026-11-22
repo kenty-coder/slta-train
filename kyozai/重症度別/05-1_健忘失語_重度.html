@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="author" content="KENTA SHINKAWA">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>健忘失語（重度） 訓練教材</title>
+<link rel="stylesheet" href="common.css">
+<style>
+.guide{font-size:10.5pt;line-height:1.5}
+.guide h2{font-size:12.5pt;margin:3mm 0 1.2mm}
+.guide p{margin:0 0 1.6mm}
+.guide ul{margin:0 0 1.6mm}
+.guide table{font-size:9.8pt;margin:0 0 2mm}
+.guide th,.guide td{padding:.7mm 1.6mm}
+.guide .mini{width:80%;margin:0 auto}
+.note{font-size:9.5pt;color:#555;text-align:center;margin:0 0 1mm}
+.key{font-size:10.3pt;line-height:1.45}
+.key h2{font-size:11.5pt;margin:2.2mm 0 .8mm}
+.key p{margin:0 0 1mm}
+.key table{border-collapse:collapse;width:100%;font-size:9.8pt;margin:0 0 1.5mm}
+.key th,.key td{border:1px solid #bbb;padding:.5mm 1.5mm;text-align:left;vertical-align:top}
+.key th{background:#f2f2f2}
+.art{fill:none;stroke:#000;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+svg.p{width:30mm;height:30mm;flex:none;border:1px solid #bbb;border-radius:2mm;display:block}
+.boxes{display:inline-flex;gap:2mm;vertical-align:middle}
+.boxes i{display:inline-block;width:13mm;height:13mm;border:1.5px solid #333}
+.opt{display:inline-flex;gap:4mm;flex-wrap:wrap}
+.opt span{display:inline-block;border:1.5px solid #333;border-radius:2mm;padding:.5mm 4mm;font-size:16pt;line-height:1.5}
+.n{font-weight:700}
+ruby rt{font-size:9pt}
+table.rec{border-collapse:collapse;width:100%;font-size:11.5pt}
+table.rec th,table.rec td{border:1px solid #555;padding:1mm 2mm;text-align:left;vertical-align:middle}
+table.rec th{background:#f2f2f2}
+
+.pgrid{display:grid;grid-template-columns:1fr 1fr;gap:4mm 6mm}
+.pcell{display:flex;align-items:center;gap:4mm;border:1px solid #bbb;border-radius:2mm;padding:2.5mm 3mm}
+.pcell .n{align-self:flex-start;font-size:14pt}
+.vopt{display:flex;flex-direction:column;gap:2.5mm}
+.vopt span{border:1.5px solid #333;border-radius:2mm;font-size:16pt;padding:.5mm 3mm;text-align:center;white-space:nowrap}
+.hrow{display:flex;gap:5mm;align-items:center;border:1px solid #bbb;border-radius:2mm;padding:2.5mm 3mm;margin:0 0 3.5mm}
+.hrow ol{margin:0;padding-left:6mm;font-size:13pt;line-height:1.55}
+.hrow .opt span{font-size:16pt}
+.hrow .n{align-self:flex-start;font-size:14pt}
+.fc{display:flex;flex-direction:column;align-items:center;gap:2mm;border:1px solid #bbb;border-radius:2mm;padding:2.5mm 3mm}
+.fc .top{display:flex;align-items:center;gap:5mm;width:100%}
+.fc .ini{font-size:12pt;color:#555;display:flex;flex-direction:column;line-height:1.3;white-space:nowrap}
+.fc .ini b{font-size:28pt;color:#1a1a1a}
+.fc .l{width:100%;height:11mm;border-bottom:1px solid #9a9a9a}
+.cz{margin:0 0 2mm}
+.cz .t{font-size:15pt;font-weight:700}
+.cz .opt{margin:1mm 0 0 9mm}
+.cz .opt span{font-size:15.5pt;padding:0 5mm}
+.board{display:grid;grid-template-columns:repeat(4,1fr);gap:2.5mm;margin:0 0 3mm}
+.board div{border:1.5px solid #333;border-radius:2mm;height:15.5mm;display:flex;align-items:center;justify-content:center;font-size:17pt;font-weight:700;text-align:center;line-height:1.2}
+.board div.e{border-style:dashed;color:#999;font-size:11pt;font-weight:400}
+.bt{font-size:13pt;font-weight:700;margin:0 0 1mm}
+.grid4{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:0 5mm}
+.grid4 .c,.grid3 .c,.grid .c{display:flex;align-items:flex-end;height:10mm;border-bottom:1px solid #9a9a9a;font-size:10.5pt;color:#555}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0 6mm}
+.qa{margin:0 0 1.5mm}
+.qa .t{font-size:14pt;font-weight:700}
+.qa .l{height:10mm;border-bottom:1px solid #9a9a9a;margin-left:9mm}
+.n{display:inline-block;min-width:9mm}
+.wide .qa{margin:0 0 4mm}
+.qi{display:flex;align-items:flex-end;gap:3mm;margin:0 0 1.5mm;height:11mm}
+.qi .t{font-size:14pt;font-weight:700;white-space:nowrap}
+.qi .l{flex:1;border-bottom:1px solid #9a9a9a;height:9mm}
+.sm .qa .t{font-size:13.5pt}
+.sm .qa{margin:0 0 1mm}
+.read{font-size:14pt;line-height:1.85;padding:3mm 6mm;margin-bottom:4mm}
+.lines .l{height:11.5mm}
+</style>
+</head>
+<body>
+<div class="noprint">印刷するときは <b>Ctrl＋P</b> を押してください（用紙：A4縦）。「指導者用」と書かれたページ（最初の2ページと最後のページ）は患者さんには渡さないでください。</div>
+<section class="sheet guide">
+<div class="head"><div><div class="tag">指導者用（患者さんには渡さない）</div><h1>健忘失語（重度）の訓練教材について</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div>
+<h2>1．この重症度の目安となるSLTAプロフィール</h2>
+<p>単語の理解・復唱・音読は比較的保たれますが、<b>身近な高頻度語（食べ物・日用品）の呼称も2〜3割</b>にとどまり、「あれ」「ほら、あの」や用途の説明（迂言）で話が進みにくい状態です。重度の健忘失語は、他の失語型からの回復の途中に見られることも多く、文の理解や書字の低下を伴いやすくなります。</p>
+<table><tr><th style="width:11%">領域</th><th style="width:31%">正答率の目安</th><th>特徴的な下位検査</th></tr><tr><td>聴く</td><td>単語 9割／短文 8割／口頭命令 6割前後</td><td>単語の理解は良好。長い命令で軽い低下</td></tr><tr><td>話す</td><td>呼称 2割前後／動作説明 2割／単語の復唱 9割</td><td><b>呼称・動作説明・語の列挙（1分2〜3語）が大きく低下</b>。復唱・音読は比較的保たれる</td></tr><tr><td>読む</td><td>漢字単語 9割／仮名単語 8割／短文 7割</td><td>読解はおおむね保たれる</td></tr><tr><td>書く</td><td>漢字・仮名単語の書字 1〜2割／書取 4〜6割</td><td>絵を見て書く課題（書字）が書取より低い</td></tr><tr><td>計算</td><td>5〜7割</td><td>個人差が大きい</td></tr></table>
+<svg class="mini" data-profile="90,80,60,80,20,90,20,20,80,13.3,80,90,80,60,90,80,70,50,20,20,0,80,40,60,20,60"></svg>
+<p class="note">典型例のイメージ。個人差が大きい（例データ「例：健忘失語（重度）」の1回目の評価から作図）。</p>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet guide">
+<div class="head"><div><div class="tag">指導者用（患者さんには渡さない）</div><h1>訓練の進め方と記録のしかた</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div>
+<h2>2．同じタイプの他の重症度との違いと、次の段階へ進む目安</h2>
+<table><tr><th style="width:11%">重症度</th><th style="width:44%">主な状態</th><th>次の段階の教材へ進む目安</th></tr><tr><td>重度</td><td>高頻度語の呼称も2〜3割。「あれ」「ほら」や用途の説明が多い。選択肢があれば選べることが多い</td><td>（本教材）2択の選択＋呼称が8割以上、意味の手がかりのあとの呼称が6割以上を2回続けたら中等度の教材へ</td></tr><tr><td>中等度</td><td>高頻度語はおおむね言えるが時間がかかる。カテゴリーの語想起は1分5〜8語程度。迂言が多い</td><td>迂言から目標語・文脈補充が8割以上、カテゴリーの書き出しが1分10語前後で軽度の教材へ</td></tr><tr><td>軽度</td><td>日常会話はほぼ支障がない。低頻度語・固有名詞・抽象語で詰まり、言いよどみや言い換えが出る</td><td>会話中の言いよどみが目立たず、説明・要約が実用上できれば維持へ</td></tr></table>
+<h2>3．訓練の進め方</h2>
+<ul><li><b>目標</b>：毎日の生活で必要な語（食べ物・日用品・体調・家族）を、手がかりを使って言えるようにする。言えないときに指さし・書字で伝える方法を身に付ける。</li><li><b>優先順位</b>：①選択肢から選んでから言う ②意味の手がかり（用途・場所・仲間）③語頭音の手がかり ④文の中での補充 ⑤伝達用カード（代償）。</li><li><b>ヒントの出し方</b>：<b>意味の手がかり→語頭音→選択肢（2択）→復唱</b>の順に強くします。どのヒントで出たかを記録し、次回はその一つ手前のヒントから始めます。</li><li><b>家族への助言</b>：すぐに答えを言わず5秒ほど待つ。出ないときは「何に使う物？」と用途を聞き、それでも出なければ最初の音を言う。言えたら一緒にもう一度言う。</li><li><b>訪問での工夫</b>：自宅にある実物（茶碗、薬の袋、テレビのリモコン）を使って呼称する。伝達用カード（7頁）は本人の生活に合わせて空欄を埋め、冷蔵庫や枕元に貼る。</li></ul>
+<h2>4．課題ページの一覧と記録のしかた</h2>
+<table><tr><th style="width:9%">頁</th><th style="width:32%">課題</th><th>ねらい・使い方</th></tr><tr><td>3</td><td>呼称課題1　2択</td><td>絵の名前を2択から選び、声に出して言う</td></tr><tr><td>4</td><td>呼称課題2　意味の手がかり</td><td>用途・場所などの説明を読んでから3択で選び、名前を言う</td></tr><tr><td>5</td><td>呼称課題3　最初の音</td><td>最初の音の手がかりを見て名前を言い、書く</td></tr><tr><td>6</td><td>文の完成課題</td><td>文の（　）に入る語を3択から選び、文を読む</td></tr><tr><td>7</td><td>伝達用カード</td><td>言葉が出ないときに指さしで伝える（代償手段）</td></tr><tr><td>8</td><td>指導者用</td><td>解答・ヒントの順序・評価のポイント</td></tr></table>
+<p>各問の番号の横に、指導者が<b>段階（6 完全正答／5 遅延完全正答／4 不完全正答／3 ヒント後正答／2 関連反応／1 誤答）</b>を書き込みます。<b>6と5を正答</b>として正答率を出し、段階3ではどのヒントで正答したかもメモします。呼称は「選択肢なしで言えた」か「選んでから言えた」かも区別して記録します。</p>
+<p style="font-size:9.5pt;color:#555">内容は一般的な目安です。最終的な判断は担当の言語聴覚士が行ってください。</p>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet">
+<div class="head"><div><div class="tag">呼称課題 1</div><h1>絵の名前を選んで言う</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div>
+<p class="ask">絵の物の名前を二つの中から選んで○を付けてください。そのあと、名前を声に出して言ってください。</p><p class="hint">選ぶ前に、まず名前を言ってみてください。出てこないときに選んで構いません。</p><div class="pgrid"><div class="pcell"><span class="n">1.</span><svg class="p" viewBox="0 0 100 100" role="img" aria-label="スプーン"><g class="art"><ellipse cx="50" cy="28" rx="13" ry="18"/><path d="M50 46 V92"/></g></svg><div class="vopt"><span>フォーク</span><span>スプーン</span></div></div><div class="pcell"><span class="n">2.</span><svg class="p" viewBox="0 0 100 100" role="img" aria-label="バナナ"><g class="art"><path d="M16 40 Q48 84 86 34 Q88 28 83 30 Q50 64 22 34 Q16 34 16 40 Z"/><path d="M84 31 L90 22"/></g></svg><div class="vopt"><span>バナナ</span><span>りんご</span></div></div><div class="pcell"><span class="n">3.</span><svg class="p" viewBox="0 0 100 100" role="img" aria-label="テレビ"><g class="art"><rect x="10" y="16" width="80" height="54" rx="4"/><rect x="17" y="23" width="66" height="40" rx="2"/><path d="M40 70 L35 84 H65 L60 70"/></g></svg><div class="vopt"><span>ラジオ</span><span>テレビ</span></div></div><div class="pcell"><span class="n">4.</span><svg class="p" viewBox="0 0 100 100" role="img" aria-label="茶碗"><g class="art"><path d="M14 40 H86 Q84 74 50 76 Q16 74 14 40 Z"/><path d="M38 76 L40 84 H60 L62 76"/><path d="M22 40 Q50 22 78 40"/></g></svg><div class="vopt"><span>茶碗</span><span>コップ</span></div></div><div class="pcell"><span class="n">5.</span><svg class="p" viewBox="0 0 100 100" role="img" aria-label="車"><g class="art"><path d="M8 64 V50 L22 46 L34 30 H66 L78 46 L92 50 V64 H82 M62 64 H38 M18 64 H8"/><path d="M38 34 H48 V46 H28 Z M54 34 H64 L72 46 H54 Z"/><circle cx="28" cy="66" r="9"/><circle cx="72" cy="66" r="9"/></g></svg><div class="vopt"><span>電車</span><span>車</span></div></div><div class="pcell"><span class="n">6.</span><svg class="p" viewBox="0 0 100 100" role="img" aria-label="シャツ"><g class="art"><path d="M36 14 L14 28 L22 44 L32 38 V88 H68 V38 L78 44 L86 28 L64 14 Q50 26 36 14 Z"/><path d="M50 24 V88"/><circle cx="54" cy="40" r="1.5"/><circle cx="54" cy="56" r="1.5"/><circle cx="54" cy="72" r="1.5"/></g></svg><div class="vopt"><span>シャツ</span><span>ズボン</span></div></div><div class="pcell"><span class="n">7.</span><svg class="p" viewBox="0 0 100 100" role="img" aria-label="包丁"><g class="art"><path d="M8 56 H62 V40 Q30 38 8 56 Z"/><rect x="62" y="44" width="30" height="10" rx="3"/></g></svg><div class="vopt"><span>フライパン</span><span>包丁</span></div></div><div class="pcell"><span class="n">8.</span><svg class="p" viewBox="0 0 100 100" role="img" aria-label="大根"><g class="art"><path d="M40 32 H60 Q64 70 50 96 Q36 70 40 32 Z"/><path d="M46 32 Q34 14 26 8 M50 32 V4 M54 32 Q66 14 74 8"/><path d="M44 52 H48 M52 66 H56"/></g></svg><div class="vopt"><span>大根</span><span>ねぎ</span></div></div></div>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet">
+<div class="head"><div><div class="tag">呼称課題 2</div><h1>説明を手がかりに名前を言う</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div>
+<p class="ask">説明を一つずつ声に出して読み、絵の物の名前を考えてください。名前を下の三つから選んで○を付け、声に出して言ってください。</p><div class="hrow"><span class="n">1.</span><svg class="p" viewBox="0 0 100 100" role="img" aria-label="ベッド"><g class="art"><path d="M10 34 V82 M90 52 V82"/><path d="M10 64 H90 M10 54 H90"/><path d="M16 54 Q16 44 26 44 H40 Q46 44 46 54"/></g></svg><div style="flex:1"><ol><li>寝るときに体を横にする家具</li><li>寝室に置いてある</li><li>上に布団や毛布を掛ける</li></ol><div class="opt" style="margin-top:2mm"><span>たんす</span><span>ベッド</span><span>机</span></div></div></div><div class="hrow"><span class="n">2.</span><svg class="p" viewBox="0 0 100 100" role="img" aria-label="電球"><g class="art"><circle cx="50" cy="38" r="24"/><path d="M36 56 Q40 62 40 70 H60 Q60 62 64 56"/><path d="M40 76 H60 M42 82 H58 M46 88 H54"/></g></svg><div style="flex:1"><ol><li>付けると部屋が明るくなる</li><li>天井や電気スタンドに取り付ける</li><li>古くなると切れて交換する</li></ol><div class="opt" style="margin-top:2mm"><span>電球</span><span>電池</span><span>花瓶</span></div></div></div><div class="hrow"><span class="n">3.</span><svg class="p" viewBox="0 0 100 100" role="img" aria-label="ネクタイ"><g class="art"><path d="M42 10 H58 L54 22 H46 Z"/><path d="M46 22 L36 76 L50 92 L64 76 L54 22"/></g></svg><div style="flex:1"><ol><li>背広を着るときに首に締める</li><li>細長い布でできている</li><li>仕事や式のときに使う</li></ol><div class="opt" style="margin-top:2mm"><span>ハンカチ</span><span>手袋</span><span>ネクタイ</span></div></div></div><div class="hrow"><span class="n">4.</span><svg class="p" viewBox="0 0 100 100" role="img" aria-label="ハンガー"><g class="art"><path d="M50 34 V24 Q50 12 59 12 Q67 12 66 22"/><path d="M50 34 L10 66 H90 Z"/></g></svg><div style="flex:1"><ol><li>服を掛けておく道具</li><li>洋服だんすの中に掛ける</li><li>針金やプラスチックでできている</li></ol><div class="opt" style="margin-top:2mm"><span>ハンガー</span><span>物差し</span><span>うちわ</span></div></div></div>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet">
+<div class="head"><div><div class="tag">呼称課題 3</div><h1>最初の音を手がかりに名前を言う</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div>
+<p class="ask">最初の音を声に出してから、続けて絵の物の名前を言ってください。言えたら、線の上に名前を書いてください。</p><p class="hint">書くのは仮名でも漢字でも構いません。</p><div class="pgrid"><div class="fc"><div class="top"><span class="n">1.</span><svg class="p" viewBox="0 0 100 100" role="img" aria-label="トマト"><g class="art"><circle cx="50" cy="56" r="32"/><path d="M36 28 L50 34 L64 28 M50 34 L42 24 M50 34 L58 24 M50 30 V18"/></g></svg><span class="ini">最初の音<b>ト</b></span></div><div class="l"></div></div><div class="fc"><div class="top"><span class="n">2.</span><svg class="p" viewBox="0 0 100 100" role="img" aria-label="にんじん"><g class="art"><path d="M34 28 H66 L52 92 Q50 96 48 92 Z"/><path d="M44 28 L36 8 M50 28 V6 M56 28 L64 8"/><path d="M40 44 H47 M53 58 H60 M44 72 H50"/></g></svg><span class="ini">最初の音<b>に</b></span></div><div class="l"></div></div><div class="fc"><div class="top"><span class="n">3.</span><svg class="p" viewBox="0 0 100 100" role="img" aria-label="牛乳"><g class="art"><path d="M30 34 V90 H70 V34 L62 18 H38 Z"/><path d="M30 34 H70 M38 18 L46 34 M62 18 L54 34"/><path d="M38 8 H62 V18"/></g></svg><span class="ini">最初の音<b>ぎゅ</b></span></div><div class="l"></div></div><div class="fc"><div class="top"><span class="n">4.</span><svg class="p" viewBox="0 0 100 100" role="img" aria-label="おにぎり"><g class="art"><path d="M50 14 Q57 14 84 70 Q90 84 76 84 H24 Q10 84 16 70 Q43 14 50 14 Z"/><rect x="38" y="58" width="24" height="26"/></g></svg><span class="ini">最初の音<b>お</b></span></div><div class="l"></div></div><div class="fc"><div class="top"><span class="n">5.</span><svg class="p" viewBox="0 0 100 100" role="img" aria-label="パン"><g class="art"><path d="M12 50 Q12 26 34 28 Q50 16 66 28 Q88 26 88 50 V80 H12 Z"/><path d="M12 50 H88"/></g></svg><span class="ini">最初の音<b>パ</b></span></div><div class="l"></div></div><div class="fc"><div class="top"><span class="n">6.</span><svg class="p" viewBox="0 0 100 100" role="img" aria-label="湯のみ"><g class="art"><path d="M28 26 H72 L67 86 H33 Z"/><path d="M30 40 H70"/><path d="M44 20 Q49 13 44 6 M56 20 Q61 13 56 6"/></g></svg><span class="ini">最初の音<b>ゆ</b></span></div><div class="l"></div></div></div>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet">
+<div class="head"><div><div class="tag">文の完成課題</div><h1>文に合う語を選ぶ</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div>
+<p class="ask">文を声に出して読み、（　）に入る語を一つ選んで○を付けてください。最後に、語を入れて文全体をもう一度読んでください。</p><div class="cz"><div class="t"><span class="n">1.</span>喉が渇いたので、（　　　　　　）を飲みました。</div><div class="opt"><span>水</span><span>靴</span><span>本</span></div></div><div class="cz"><div class="t"><span class="n">2.</span>ご飯を食べるときは、（　　　　　　）を使います。</div><div class="opt"><span>鍵</span><span>箸</span><span>鉛筆</span></div></div><div class="cz"><div class="t"><span class="n">3.</span>夜、暗くなったら（　　　　　　）を閉めます。</div><div class="opt"><span>財布</span><span>時計</span><span>カーテン</span></div></div><div class="cz"><div class="t"><span class="n">4.</span>体の具合が悪いので、病院で（　　　　　　）に診てもらいました。</div><div class="opt"><span>医者</span><span>魚</span><span>ポスト</span></div></div><div class="cz"><div class="t"><span class="n">5.</span>朝起きたら、まず（　　　　　　）を洗います。</div><div class="opt"><span>屋根</span><span>顔</span><span>車</span></div></div><div class="cz"><div class="t"><span class="n">6.</span>熱が出たので、（　　　　　　）を飲んで寝ました。</div><div class="opt"><span>薬</span><span>砂</span><span>紙</span></div></div><div class="cz"><div class="t"><span class="n">7.</span>野菜を買いに、（　　　　　　）へ行きました。</div><div class="opt"><span>銀行</span><span>歯医者</span><span>スーパー</span></div></div><div class="cz"><div class="t"><span class="n">8.</span>正月には、家族で（　　　　　　）を食べます。</div><div class="opt"><span>おせち料理</span><span>洗剤</span><span>切手</span></div></div><div class="cz"><div class="t"><span class="n">9.</span>夜は（　　　　　　）に入って体を温めます。</div><div class="opt"><span>お風呂</span><span>冷蔵庫</span><span>郵便受け</span></div></div><div class="cz"><div class="t"><span class="n">10.</span>テレビで明日の（　　　　　　）を確かめました。</div><div class="opt"><span>茶碗</span><span>天気</span><span>針</span></div></div>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet">
+<div class="head"><div><div class="tag">伝達用カード</div><h1>言葉が出ないときの指さしカード</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div>
+<p class="ask">言葉が出ないときは、伝えたい語を指でさしてください。空いている枠には、ご家族の名前やよく使う語を書き加えてください。</p><div class="bt">体調</div><div class="board"><div>痛い</div><div>寒い</div><div>暑い</div><div>眠い</div><div>気分が悪い</div><div>トイレ</div><div>疲れた</div><div class='e'>（書き加える）</div></div><div class="bt">食事・生活</div><div class="board"><div>水・お茶</div><div>ご飯</div><div>薬</div><div>お風呂</div><div>着替え</div><div>眼鏡</div><div>テレビ</div><div>電話</div></div><div class="bt">人</div><div class="board"><div>妻・夫</div><div>息子</div><div>娘</div><div>孫</div><div>医者</div><div>看護師</div><div class='e'>（書き加える）</div><div class='e'>（書き加える）</div></div><div class="bt">予定</div><div class="board"><div>今日</div><div>明日</div><div>病院</div><div>買い物</div><div>デイサービス</div><div>散歩</div><div class='e'>（書き加える）</div><div class='e'>（書き加える）</div></div><p class="hint" style="margin:1mm 0 0">指さしたあと、その語を一緒に声に出して言ってみてください。</p>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet key" style="page-break-after:auto;break-after:auto">
+<div class="head"><div><div class="tag">指導者用（患者さんには渡さない）</div><h1>解答・ヒントの出し方・評価のポイント</h1></div></div>
+<h2>解答</h2>
+<table><tr><th style="width:24%">呼称課題1（3頁）</th><td>1 スプーン　2 バナナ　3 テレビ　4 茶碗　5 車（自動車）　6 シャツ　7 包丁　8 大根</td></tr>
+<tr><th>呼称課題2（4頁）</th><td>1 ベッド　2 電球　3 ネクタイ　4 ハンガー</td></tr>
+<tr><th>呼称課題3（5頁）</th><td>1 トマト　2 にんじん　3 牛乳　4 おにぎり　5 パン　6 湯のみ</td></tr>
+<tr><th>文の完成課題（6頁）</th><td>1 水　2 箸　3 カーテン　4 医者　5 顔　6 薬　7 スーパー　8 おせち料理　9 お風呂　10 天気</td></tr></table>
+<h2>ヒントの順序と記録</h2>
+<table><tr><th style="width:24%">段階</th><th>指導者の言い方の例（「茶碗」の場合）</th></tr>
+<tr><td>①自発</td><td>「これは何ですか」と聞いて5秒ほど待つ（言えたら6、時間がかかったら5）</td></tr>
+<tr><td>②意味の手がかり</td><td>「ご飯をよそって食べる器です」</td></tr>
+<tr><td>③語頭音</td><td>「ちゃ…」と最初の音だけを言う</td></tr>
+<tr><td>④選択肢（2択）</td><td>「茶碗ですか、コップですか」</td></tr>
+<tr><td>⑤復唱</td><td>「ちゃわん、と言ってください」</td></tr></table>
+<p>②〜④で正答したら段階3とし、<b>どのヒントで出たか</b>を記録します。⑤でも出ない場合は無理に続けず、指さし（7頁）で伝える練習に切り替えます。</p>
+<h2>評価のポイント</h2>
+<ul>
+<li>誤りの種類を記録します：意味の近い語（茶碗→コップ）、迂言（「ご飯の、あれ」）、無反応。健忘失語では音の誤りは少ないのが特徴です。</li>
+<li>2択で選べるのに言えない場合は、理解は保たれ喚語が難しい状態です。選んだあとに続けて言う練習を繰り返します。</li>
+<li>意味の手がかりと語頭音のどちらが効くかを確認し、家族に効くヒントを伝えます。</li>
+<li>文の完成課題で選べても単語の呼称が難しい場合は、文の中で言う練習（「ご飯を食べるのは…茶碗」）を増やします。</li>
+<li>伝達用カードは使った回数と場面を家族に記録してもらい、よく使う語を次の呼称の題材にします。</li>
+</ul>
+<p style="font-size:9.5pt;color:#555">一般的な目安です。最終的な判断は担当の言語聴覚士が行ってください。</p>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<script src="mini-profile.js"></script>
+</body>
+</html>

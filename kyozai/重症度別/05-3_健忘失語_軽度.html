@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="author" content="KENTA SHINKAWA">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>健忘失語（軽度） 訓練教材</title>
+<link rel="stylesheet" href="common.css">
+<style>
+.guide{font-size:10.5pt;line-height:1.5}
+.guide h2{font-size:12.5pt;margin:3mm 0 1.2mm}
+.guide p{margin:0 0 1.6mm}
+.guide ul{margin:0 0 1.6mm}
+.guide table{font-size:9.8pt;margin:0 0 2mm}
+.guide th,.guide td{padding:.7mm 1.6mm}
+.guide .mini{width:80%;margin:0 auto}
+.note{font-size:9.5pt;color:#555;text-align:center;margin:0 0 1mm}
+.key{font-size:10.3pt;line-height:1.45}
+.key h2{font-size:11.5pt;margin:2.2mm 0 .8mm}
+.key p{margin:0 0 1mm}
+.key table{border-collapse:collapse;width:100%;font-size:9.8pt;margin:0 0 1.5mm}
+.key th,.key td{border:1px solid #bbb;padding:.5mm 1.5mm;text-align:left;vertical-align:top}
+.key th{background:#f2f2f2}
+.art{fill:none;stroke:#000;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+svg.p{width:30mm;height:30mm;flex:none;border:1px solid #bbb;border-radius:2mm;display:block}
+.boxes{display:inline-flex;gap:2mm;vertical-align:middle}
+.boxes i{display:inline-block;width:13mm;height:13mm;border:1.5px solid #333}
+.opt{display:inline-flex;gap:4mm;flex-wrap:wrap}
+.opt span{display:inline-block;border:1.5px solid #333;border-radius:2mm;padding:.5mm 4mm;font-size:16pt;line-height:1.5}
+.n{font-weight:700}
+ruby rt{font-size:9pt}
+table.rec{border-collapse:collapse;width:100%;font-size:11.5pt}
+table.rec th,table.rec td{border:1px solid #555;padding:1mm 2mm;text-align:left;vertical-align:middle}
+table.rec th{background:#f2f2f2}
+
+.pgrid{display:grid;grid-template-columns:1fr 1fr;gap:4mm 6mm}
+.pcell{display:flex;align-items:center;gap:4mm;border:1px solid #bbb;border-radius:2mm;padding:2.5mm 3mm}
+.pcell .n{align-self:flex-start;font-size:14pt}
+.vopt{display:flex;flex-direction:column;gap:2.5mm}
+.vopt span{border:1.5px solid #333;border-radius:2mm;font-size:16pt;padding:.5mm 3mm;text-align:center;white-space:nowrap}
+.hrow{display:flex;gap:5mm;align-items:center;border:1px solid #bbb;border-radius:2mm;padding:2.5mm 3mm;margin:0 0 3.5mm}
+.hrow ol{margin:0;padding-left:6mm;font-size:13pt;line-height:1.55}
+.hrow .opt span{font-size:16pt}
+.hrow .n{align-self:flex-start;font-size:14pt}
+.fc{display:flex;flex-direction:column;align-items:center;gap:2mm;border:1px solid #bbb;border-radius:2mm;padding:2.5mm 3mm}
+.fc .top{display:flex;align-items:center;gap:5mm;width:100%}
+.fc .ini{font-size:12pt;color:#555;display:flex;flex-direction:column;line-height:1.3;white-space:nowrap}
+.fc .ini b{font-size:28pt;color:#1a1a1a}
+.fc .l{width:100%;height:11mm;border-bottom:1px solid #9a9a9a}
+.cz{margin:0 0 2mm}
+.cz .t{font-size:15pt;font-weight:700}
+.cz .opt{margin:1mm 0 0 9mm}
+.cz .opt span{font-size:15.5pt;padding:0 5mm}
+.board{display:grid;grid-template-columns:repeat(4,1fr);gap:2.5mm;margin:0 0 3mm}
+.board div{border:1.5px solid #333;border-radius:2mm;height:15.5mm;display:flex;align-items:center;justify-content:center;font-size:17pt;font-weight:700;text-align:center;line-height:1.2}
+.board div.e{border-style:dashed;color:#999;font-size:11pt;font-weight:400}
+.bt{font-size:13pt;font-weight:700;margin:0 0 1mm}
+.grid4{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:0 5mm}
+.grid4 .c,.grid3 .c,.grid .c{display:flex;align-items:flex-end;height:10mm;border-bottom:1px solid #9a9a9a;font-size:10.5pt;color:#555}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0 6mm}
+.qa{margin:0 0 1.5mm}
+.qa .t{font-size:14pt;font-weight:700}
+.qa .l{height:10mm;border-bottom:1px solid #9a9a9a;margin-left:9mm}
+.n{display:inline-block;min-width:9mm}
+.wide .qa{margin:0 0 4mm}
+.qi{display:flex;align-items:flex-end;gap:3mm;margin:0 0 1.5mm;height:11mm}
+.qi .t{font-size:14pt;font-weight:700;white-space:nowrap}
+.qi .l{flex:1;border-bottom:1px solid #9a9a9a;height:9mm}
+.sm .qa .t{font-size:13.5pt}
+.sm .qa{margin:0 0 1mm}
+.read{font-size:14pt;line-height:1.85;padding:3mm 6mm;margin-bottom:4mm}
+.lines .l{height:11.5mm}
+</style>
+</head>
+<body>
+<div class="noprint">印刷するときは <b>Ctrl＋P</b> を押してください（用紙：A4縦）。「指導者用」と書かれたページ（最初の2ページと最後のページ）は患者さんには渡さないでください。</div>
+<section class="sheet guide">
+<div class="head"><div><div class="tag">指導者用（患者さんには渡さない）</div><h1>健忘失語（軽度）の訓練教材について</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div>
+<h2>1．この重症度の目安となるSLTAプロフィール</h2>
+<p>日常会話はほぼ支障なく、理解・復唱・音読も良好です。身近な語の呼称はおおむね可能ですが、<b>使う機会の少ない語（低頻度語）・固有名詞（人名・地名）・抽象的な語</b>で詰まり、言いよどみや言い換え、「何て言ったかな」が目立ちます。会話の速さについていけない、説明が長く要点がぼやける、といった困りごとが残ります。</p>
+<table><tr><th style="width:11%">領域</th><th style="width:31%">正答率の目安</th><th>特徴的な下位検査</th></tr><tr><td>聴く</td><td>9〜10割</td><td>ほぼ問題なし</td></tr><tr><td>話す</td><td>呼称 8〜9割／語の列挙 1分10語前後／動作説明 9割</td><td>低頻度語の呼称で時間がかかる。まんがの説明は要点を伝えられるが、語の言い換えが出る</td></tr><tr><td>読む</td><td>10割近く</td><td>ほぼ問題なし</td></tr><tr><td>書く</td><td>漢字単語の書字 8割／まんがの説明（書字）段階4前後</td><td>漢字の想起でつまずくことがある</td></tr><tr><td>計算</td><td>9割前後</td><td>個人差が大きい</td></tr></table>
+<svg class="mini" data-profile="100,100,90,100,85,100,90,80,100,66.7,100,100,100,100,100,100,100,90,80,100,60,100,80,100,80,90"></svg>
+<p class="note">典型例のイメージ。個人差が大きい（例データ「例：健忘失語（軽度）」の1回目の評価から作図）。</p>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet guide">
+<div class="head"><div><div class="tag">指導者用（患者さんには渡さない）</div><h1>訓練の進め方と記録のしかた</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div>
+<h2>2．同じタイプの他の重症度との違いと、次の段階へ進む目安</h2>
+<table><tr><th style="width:11%">重症度</th><th style="width:44%">主な状態</th><th>次の段階の教材へ進む目安</th></tr><tr><td>重度</td><td>高頻度語の呼称も2〜3割。「あれ」「ほら」や用途の説明が多い。選択肢があれば選べることが多い</td><td>2択の選択＋呼称が8割以上で中等度へ</td></tr><tr><td>中等度</td><td>高頻度語はおおむね言えるが時間がかかる。カテゴリーの語想起は1分5〜8語程度。迂言が多い</td><td>迂言から目標語・文脈補充が8割以上、カテゴリーの書き出し1分10語前後で軽度へ</td></tr><tr><td>軽度</td><td>日常会話はほぼ支障がない。低頻度語・固有名詞・抽象語で詰まり、言いよどみや言い換えが出る</td><td>（本教材）低頻度語・固有名詞が8割、1分の語想起が前回より安定して多く、説明・要約が実用上できる（本人・家族が会話の困りごとをほぼ感じない）なら、維持（自主練習・生活場面での確認）へ</td></tr></table>
+<h2>3．訓練の進め方</h2>
+<ul><li><b>目標</b>：低頻度語・固有名詞・抽象語の想起を速く正確にし、会話・説明・要約を実用的に行えるようにする。仕事や地域活動への参加を視野に入れる。</li><li><b>優先順位</b>：①低頻度語（説明→語）②固有名詞（一般・身近）③抽象語（説明→語、語→説明）④時間制限のある語想起 ⑤説明・要約（談話）。</li><li><b>ヒントの出し方</b>：まず本人の自己手がかり（場面を思い浮かべる、関連語から辿る）を促し、出なければ語頭音を与えます。会話では言い換えで伝わればよしとし、後で目標語を確認します。</li><li><b>家族への助言</b>：人名・地名が出なくても会話を止めず、話の流れを大切にする。思い出せた語は手帳に書き留め、後で一緒に見直す。</li><li><b>訪問での工夫</b>：新聞・テレビの話題、地域の行事、昔の仕事の話を題材に、説明や要約の練習をする。時間を測り、前回と比べて変化を本人と確認する。</li></ul>
+<h2>4．課題ページの一覧と記録のしかた</h2>
+<table><tr><th style="width:9%">頁</th><th style="width:32%">課題</th><th>ねらい・使い方</th></tr><tr><td>3</td><td>語想起課題1　低頻度語</td><td>説明を読み、使う機会の少ない物の名前を書く</td></tr><tr><td>4</td><td>語想起課題2　固有名詞</td><td>一般の固有名詞と、身近な人・場所の名前を書く</td></tr><tr><td>5</td><td>語想起課題3　抽象語</td><td>説明に合う語を書く／語の意味を自分の言葉で説明する</td></tr><tr><td>6</td><td>語想起課題4　速さ</td><td>語頭音・テーマで1分間の書き出し（30秒ごとに記録）</td></tr><tr><td>7</td><td>談話課題　説明と要約</td><td>文章を読んで要約し、手順を順序立てて説明する</td></tr><tr><td>8</td><td>指導者用</td><td>解答・評価のポイント</td></tr></table>
+<p>各問の番号の横に、指導者が<b>段階（6 完全正答／5 遅延完全正答／4 不完全正答／3 ヒント後正答／2 関連反応／1 誤答）</b>を書き込みます。<b>6と5を正答</b>として正答率を出し、段階3ではどのヒントで正答したかもメモします。語想起（1分）は30秒ごとの語数を、談話課題は要点の数と話した時間を記録します。</p>
+<p style="font-size:9.5pt;color:#555">内容は一般的な目安です。最終的な判断は担当の言語聴覚士が行ってください。</p>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet">
+<div class="head"><div><div class="tag">語想起課題 1</div><h1>使う機会の少ない物の名前</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div>
+<p class="ask">説明に当てはまる物の名前を書いてください。分かったら、声に出しても言ってください。</p><div class="sm"><div class="qa"><div class="t"><span class="n">1.</span>屋根の雨水を集めて、地面へ流す管</div><div class="l" style="height:7.5mm"></div></div><div class="qa"><div class="t"><span class="n">2.</span>扉を開け閉めできるように、扉と柱をつなぐ金具</div><div class="l" style="height:7.5mm"></div></div><div class="qa"><div class="t"><span class="n">3.</span>ごまをすりつぶす、内側に細かい溝のある鉢</div><div class="l" style="height:7.5mm"></div></div><div class="qa"><div class="t"><span class="n">4.</span>店の入り口に掛ける、店の名前が入った布</div><div class="l" style="height:7.5mm"></div></div><div class="qa"><div class="t"><span class="n">5.</span>和室で、掛け軸や花を飾る一段高い所</div><div class="l" style="height:7.5mm"></div></div><div class="qa"><div class="t"><span class="n">6.</span>寒い時期に、窓ガラスの内側に付く水滴</div><div class="l" style="height:7.5mm"></div></div><div class="qa"><div class="t"><span class="n">7.</span>大根や生姜を細かくおろす道具</div><div class="l" style="height:7.5mm"></div></div><div class="qa"><div class="t"><span class="n">8.</span>着物の上から腰に締める、幅の広い布</div><div class="l" style="height:7.5mm"></div></div><div class="qa"><div class="t"><span class="n">9.</span>耳や鼻、喉の病気を診る診療科</div><div class="l" style="height:7.5mm"></div></div><div class="qa"><div class="t"><span class="n">10.</span>交差点で、歩行者が渡るための白い縞模様の部分</div><div class="l" style="height:7.5mm"></div></div><div class="qa"><div class="t"><span class="n">11.</span>煮物のとき、鍋の中の材料に直接のせる小さめのふた</div><div class="l" style="height:7.5mm"></div></div><div class="qa"><div class="t"><span class="n">12.</span>鏡餅の上に飾る、だいだい色の果物</div><div class="l" style="height:7.5mm"></div></div></div>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet">
+<div class="head"><div><div class="tag">語想起課題 2</div><h1>固有名詞（人・場所・作品の名前）</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div>
+<p class="ask">A　次の質問に当てはまる名前を書いてください。</p><div class="qi"><div class="t"><span class="n">1.</span>日本でいちばん長い川</div><div class="l"></div></div><div class="qi"><div class="t"><span class="n">2.</span>金閣寺がある市</div><div class="l"></div></div><div class="qi"><div class="t"><span class="n">3.</span>『走れメロス』を書いた作家</div><div class="l"></div></div><div class="qi"><div class="t"><span class="n">4.</span>讃岐うどんで知られる県</div><div class="l"></div></div><div class="qi"><div class="t"><span class="n">5.</span>海の中に鳥居が立つ、広島県の神社</div><div class="l"></div></div><div class="qi"><div class="t"><span class="n">6.</span>沖縄県の県庁所在地</div><div class="l"></div></div><p class="ask" style="margin-top:3mm">B　あなた自身のことについて、名前を書いてください。</p><div class="sm"><div class="qa"><div class="t"><span class="n">1.</span>よく行くスーパーや商店の名前</div><div class="l" style="height:8.5mm"></div></div><div class="qa"><div class="t"><span class="n">2.</span>いちばん近いバス停（または駅）の名前</div><div class="l" style="height:8.5mm"></div></div><div class="qa"><div class="t"><span class="n">3.</span>担当のケアマネジャーや訪問の職員の名前</div><div class="l" style="height:8.5mm"></div></div><div class="qa"><div class="t"><span class="n">4.</span>好きな歌手・俳優・スポーツ選手の名前</div><div class="l" style="height:8.5mm"></div></div><div class="qa"><div class="t"><span class="n">5.</span>以前に勤めていた会社や職場の名前</div><div class="l" style="height:8.5mm"></div></div><div class="qa"><div class="t"><span class="n">6.</span>子どもの頃に住んでいた町の名前</div><div class="l" style="height:8.5mm"></div></div></div>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet">
+<div class="head"><div><div class="tag">語想起課題 3</div><h1>抽象的な語</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div>
+<p class="ask">A　説明に当てはまる語を書いてください（例：「体が丈夫で、病気がないこと」→健康）。</p><div style="font-size:13.5pt"><div class="qi"><div class="t"><span class="n">1.</span>お金や物を、無駄に使わないようにすること</div><div class="l"></div></div><div class="qi"><div class="t"><span class="n">2.</span>相手を信じて、安心して任せること</div><div class="l"></div></div><div class="qi"><div class="t"><span class="n">3.</span>これから先のことが心配で、落ち着かない気持ち</div><div class="l"></div></div><div class="qi"><div class="t"><span class="n">4.</span>長い間受け継がれてきた、行事やしきたり</div><div class="l"></div></div><div class="qi"><div class="t"><span class="n">5.</span>相手の気持ちを考えて、行動すること</div><div class="l"></div></div><div class="qi"><div class="t"><span class="n">6.</span>決められた規則や約束を破ること</div><div class="l"></div></div></div><p class="ask" style="margin-top:3mm">B　次の語の意味を、自分の言葉で説明してください。</p><div class="qa"><div class="t"><span class="n">1.</span>経験</div><div class="l"></div><div class="l"></div></div><div class="qa"><div class="t"><span class="n">2.</span>習慣</div><div class="l"></div><div class="l"></div></div><div class="qa"><div class="t"><span class="n">3.</span>感謝</div><div class="l"></div><div class="l"></div></div>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet">
+<div class="head"><div><div class="tag">語想起課題 4</div><h1>1分間の語の書き出し（速さ）</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div>
+<p class="ask">各テーマに当てはまる語を、1分間でできるだけ多く書いてください。指導者が30秒で合図をしたら、そこに線を引いてください。</p><p class="hint">人の名前・地名・同じ語の繰り返しは数えません。</p><div style="margin:0 0 2.5mm"><div class="theme">「か」で始まる語<span>前半30秒（　　）語　後半30秒（　　）語</span></div><div class="grid4"><div class='c'>1</div><div class='c'>2</div><div class='c'>3</div><div class='c'>4</div><div class='c'>5</div><div class='c'>6</div><div class='c'>7</div><div class='c'>8</div><div class='c'>9</div><div class='c'>10</div><div class='c'>11</div><div class='c'>12</div></div></div><div style="margin:0 0 2.5mm"><div class="theme">「た」で始まる語<span>前半30秒（　　）語　後半30秒（　　）語</span></div><div class="grid4"><div class='c'>1</div><div class='c'>2</div><div class='c'>3</div><div class='c'>4</div><div class='c'>5</div><div class='c'>6</div><div class='c'>7</div><div class='c'>8</div><div class='c'>9</div><div class='c'>10</div><div class='c'>11</div><div class='c'>12</div></div></div><div style="margin:0 0 2.5mm"><div class="theme">家電製品<span>前半30秒（　　）語　後半30秒（　　）語</span></div><div class="grid4"><div class='c'>1</div><div class='c'>2</div><div class='c'>3</div><div class='c'>4</div><div class='c'>5</div><div class='c'>6</div><div class='c'>7</div><div class='c'>8</div><div class='c'>9</div><div class='c'>10</div><div class='c'>11</div><div class='c'>12</div></div></div><div style="margin:0 0 2.5mm"><div class="theme">仕事や職場で使う物<span>前半30秒（　　）語　後半30秒（　　）語</span></div><div class="grid4"><div class='c'>1</div><div class='c'>2</div><div class='c'>3</div><div class='c'>4</div><div class='c'>5</div><div class='c'>6</div><div class='c'>7</div><div class='c'>8</div><div class='c'>9</div><div class='c'>10</div><div class='c'>11</div><div class='c'>12</div></div></div>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet">
+<div class="head"><div><div class="tag">談話課題</div><h1>説明と要約</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div>
+<p class="ask">A　文章を読み、大事な点を二〜三つの文にまとめて書いてください。</p><div class="read">市民文化祭のお知らせ。十一月三日と四日の二日間、市民会館で市民文化祭が開かれます。一日目は、地域のコーラスや踊りのグループによる発表会、二日目は、書道や写真、手芸などの作品展示が中心です。会場では、地元の農家による野菜の販売や、豚汁の無料配布もあります。入場は無料ですが、駐車場が少ないため、できるだけバスなどの公共交通機関をご利用ください。</div><div class="lines"><div class="l"></div><div class="l"></div><div class="l"></div></div><p class="ask" style="margin-top:4mm">B　カレーライスを作る手順を、順番に書いてください。書けたら、見ないで声に出して説明してください。</p><div class="step"><b>1.</b></div><div class="step"><b>2.</b></div><div class="step"><b>3.</b></div><div class="step"><b>4.</b></div><div class="step"><b>5.</b></div>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet key" style="page-break-after:auto;break-after:auto">
+<div class="head"><div><div class="tag">指導者用（患者さんには渡さない）</div><h1>解答と評価のポイント</h1></div></div>
+<h2>解答</h2>
+<table><tr><th style="width:22%">語想起課題1（3頁）</th><td>1 雨どい（とい）　2 蝶番　3 すり鉢　4 のれん　5 床の間　6 結露　7 おろし金　8 帯　9 耳鼻科（耳鼻咽喉科）　10 横断歩道　11 落とし蓋　12 橙（だいだい）</td></tr>
+<tr><th>語想起課題2（4頁）</th><td>A：1 信濃川　2 京都市　3 太宰治　4 香川県　5 厳島神社　6 那覇市　B：本人・家族に確認します</td></tr>
+<tr><th>語想起課題3（5頁）</th><td>A：1 節約（倹約）　2 信頼（信用）　3 不安　4 伝統（風習・慣習）　5 思いやり（気配り）　6 違反（ルール違反）　B：要点が伝われば正答（例：経験＝実際にやってみて身に付いたこと）</td></tr>
+<tr><th>語想起課題4（6頁）</th><td>テーマごとに前半・後半30秒の語数を記録。軽度では1分10語以上が目安。後半に大きく減る場合は、場面を思い浮かべる方法を練習します。</td></tr></table>
+<p>意味が合う別の語も正答とします。出ない場合はまず「どこで見ますか」など本人の手がかりを促し、次に語頭音を与えます（段階3）。</p>
+<h2>談話課題（7頁）の評価</h2>
+<p>A の要点（6つ）：①11月3・4日の2日間 ②市民会館 ③1日目は発表会 ④2日目は作品展示 ⑤野菜の販売・豚汁の無料配布 ⑥入場無料、公共交通機関で。いくつ含まれているかと、まとめの長さ（だらだら長くないか）を見ます。</p>
+<p>B の手順の例：材料を切る→肉と野菜を炒める→水を入れて煮る→ルーを入れて溶かし、とろみが付くまで煮る→ご飯に盛る。順序の正しさ、「あれ」「それ」の多さ、言いよどみの回数、話した時間を記録します。</p>
+<h2>評価のポイント</h2>
+<ul>
+<li>正答までの時間（すぐ・5秒以内・それ以上）と、言い換え・迂言の回数を記録し、前回と比べます。</li>
+<li>固有名詞は特に出にくい語です。身近な固有名詞（B）は手帳に一覧を作り、繰り返し見て言う練習をします。</li>
+<li>会話の中での語想起は、指導者との5分程度の自由会話で「言いよどみ」「あれ・それ」の回数を数えると変化が分かりやすくなります。</li>
+<li>仕事への復帰を目指す場合は、職場の専門用語・取引先や同僚の名前を題材に加えます。</li>
+</ul>
+<p style="font-size:9.5pt;color:#555">一般的な目安です。最終的な判断は担当の言語聴覚士が行ってください。</p>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<script src="mini-profile.js"></script>
+</body>
+</html>

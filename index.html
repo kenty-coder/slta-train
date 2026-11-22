@@ -141,6 +141,86 @@ th{font-size:.8em;color:var(--sub);font-weight:normal}
 .bstart .big{font-size:1.5em;font-weight:bold}
 /* グラフ */
 .chart svg{width:100%;height:auto;background:#fff;border:1px solid var(--line);border-radius:10px}
+/* 印刷用の教材・プリント  作成：KENTA SHINKAWA */
+a.btn{display:inline-flex;align-items:center;justify-content:center;min-height:64px;padding:0 20px;border:2px solid var(--main);border-radius:12px;background:var(--main);color:#fff;text-decoration:none}
+.kz{border:2px solid var(--line);border-radius:12px;padding:10px 12px;margin:10px 0;background:#fff}
+.kz.used{background:#f1f0ea}
+.kz .kz-t{margin-bottom:6px}
+.tag.u{background:#ecebe6;border-color:#b5b2a8;color:#444}
+.note{background:var(--warn);border:2px solid #e2cf95;border-radius:10px;padding:8px 14px;font-size:.85em}
+.h3{font-size:.95em;margin:16px 0 4px}
+details.kzg{border-top:1px solid var(--line)}
+details.kzg>summary{min-height:60px;display:flex;align-items:center;font-weight:bold;cursor:pointer;padding:0 6px}
+.pp-wrap{overflow-x:auto;padding:2px 0;background:#e9e9e9;border-radius:10px}
+.pp-sheet{width:210mm;height:296mm;padding:12mm;margin:8mm auto;background:#fff;box-shadow:0 1px 5px rgba(0,0,0,.25);display:flex;flex-direction:column;overflow:hidden;font-family:"BIZ UDPGothic","BIZ UDゴシック","Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic","Meiryo",sans-serif;color:#1a1a1a;font-size:13pt;line-height:1.45;text-align:left}
+.pp-head{flex:0 0 auto;display:flex;justify-content:space-between;align-items:flex-end;gap:5mm;border-bottom:2px solid #333;padding-bottom:2mm;margin-bottom:3mm}
+.pp-head h1{font-size:17pt;margin:0;line-height:1.25}
+.pp-tag{font-size:10pt;color:#555}
+.pp-who{font-size:11pt;white-space:nowrap;line-height:2}
+.pp-who span{display:inline-block;border-bottom:1px solid #333;min-width:36mm;margin:0 1mm}
+.pp-who span.d{min-width:9mm}
+.pp-ask{flex:0 0 auto;font-size:14pt;font-weight:700;margin:0 0 2mm;line-height:1.5}
+.pp-body{flex:1 1 auto;min-height:0;display:flex;flex-direction:column;justify-content:flex-start;overflow:hidden;position:relative}
+.pp-body.spread{justify-content:space-evenly}
+.pp-body.c2{display:grid;grid-template-columns:1fr 1fr;column-gap:6mm;align-content:start}
+.pp-body.c2.spread{align-content:space-evenly}
+.pp-body.hint::after{content:"";position:absolute;top:0;bottom:0;right:44mm;border-left:2px dashed #555}
+.pp-hh{display:flex;justify-content:flex-end;flex:0 0 auto}
+.pp-hh span{width:44mm;font-size:9.5pt;font-weight:700;line-height:1.35;border-left:2px dashed #555;padding:0 0 1mm 2mm}
+.pp-body.hint .pp-c{padding-right:3mm}
+.pp-q{display:flex;gap:2mm;align-items:flex-start;padding:1.5mm 0;border-bottom:1px solid #ddd;flex:0 0 auto}
+.pp-q:last-child{border-bottom:0}
+.pp-n{flex:0 0 9mm;font-size:15pt;font-weight:700;line-height:1.3}
+.pp-c{flex:1 1 auto;min-width:0}
+.pp-qa{font-size:12.5pt;font-weight:700;margin-bottom:1mm}
+.pp-hc{flex:0 0 42mm;font-size:9.5pt;line-height:1.35;color:#222;padding-left:1mm}
+.pp-hc div{margin-bottom:1mm}
+.pp-row{display:flex;gap:4mm;align-items:center}
+.pp-col{flex:1 1 auto;min-width:0}
+.pp-pic{display:inline-block;flex:0 0 auto;border:1px solid #bbb;border-radius:2mm;background:#fff;overflow:hidden}
+.pp-pic svg{width:100%;height:100%;display:block}
+.pp-opts{display:flex;flex-wrap:wrap;gap:2mm 4mm;align-items:flex-end}
+.pp-o{display:flex;flex-direction:column;align-items:center;gap:.5mm}
+.pp-k{font-size:12.5pt;font-weight:700;line-height:1.2}
+.pp-t{border:1.5px solid #333;border-radius:2mm;padding:.5mm 3mm;line-height:1.35}
+.pp-cap{font-size:10.5pt}
+.pp-blank{font-size:13pt;letter-spacing:.1em}
+.pp-st{line-height:1.35;margin:0 0 1.5mm;font-weight:700}
+.pp-st.long{font-size:13pt;font-weight:400;white-space:pre-line;border:1.5px solid #333;border-radius:2mm;padding:2mm 4mm}
+.pp-spk{font-size:11pt;color:#555;margin:0 0 1mm}
+.pp-rec{font-size:11pt;margin-top:1.5mm;white-space:nowrap}
+.pp-bxs{display:flex;gap:1.5mm}
+.pp-bx{display:inline-block;border:1.5px solid #333;background:#fff}
+.pp-fr{flex:1 1 auto;border:1.5px solid #333;border-radius:2mm;min-width:40mm}
+.pp-yn{display:flex;gap:8mm}
+.pp-yn span{border:1.5px solid #333;border-radius:3mm;padding:1mm 6mm;font-size:16pt}
+.pp-ab{flex:0 0 auto;display:inline-block;border:1.5px solid #333;border-radius:2mm;width:36mm}
+.pp-foot{flex:0 0 auto;display:flex;justify-content:space-between;font-size:8.5pt;color:#777;padding-top:2mm}
+.pp-g{font-size:10.5pt;line-height:1.5}
+.pp-g h2{font-size:12.5pt;margin:3mm 0 1mm;border-bottom:1px solid #999;padding-bottom:.5mm}
+.pp-g p{margin:0 0 1.5mm}
+.pp-sheet table{border-collapse:collapse;width:100%;margin:0 0 2mm}
+.pp-sheet th,.pp-sheet td{border:1px solid #bbb;padding:.8mm 2mm;text-align:left;vertical-align:top;color:#1a1a1a;font-size:10pt;line-height:1.4}
+.pp-sheet th{background:#f2f2f2;font-weight:700}
+.pp-body.pa{display:block}
+.pa-h{font-size:11.5pt;font-weight:700;border-bottom:1.5px solid #333;margin:2.5mm 0 1mm;padding-bottom:.5mm}
+.pa-r{display:flex;gap:2mm;font-size:10.5pt;line-height:1.4;padding:.6mm 0;border-bottom:1px dotted #bbb}
+.pa-n{flex:0 0 7mm;font-weight:700}
+.pa-read{font-weight:700}
+.pa-note{color:#555;font-size:9.5pt}
+body.pp-only .top,body.pp-only .noprint,body.pp-only .foot{display:none}
+body.pp-only .wrap{padding:0;max-width:none}
+body.pp-only .pp-wrap{padding:0;background:#fff;border-radius:0}
+body.pp-only .pp-sheet{margin:0;box-shadow:none}
+@media print{
+  @page{size:A4 portrait;margin:12mm}
+  html,body{background:#fff!important}
+  .top,.noprint,.foot,#toast,#errbar{display:none!important}
+  .wrap{max-width:none;padding:0;margin:0}
+  .pp-wrap{overflow:visible;padding:0;background:#fff;border-radius:0}
+  .pp-sheet{width:186mm;height:272mm;padding:0;margin:0;box-shadow:none;page-break-after:always;break-after:page}
+  .pp-sheet:last-child{page-break-after:auto;break-after:auto}
+}
 @media (max-width:700px){ .slta-grid{grid-template-columns:1fr} }
 </style>
 </head>
@@ -158,7 +238,7 @@ th{font-size:.8em;color:var(--sub);font-weight:normal}
    ============================================================ */
 var ERRS=[];
 window.onerror=function(msg,src,line,col){ ERRS.push(msg+" ("+(src||"").split("/").pop()+":"+line+")"); var b=document.getElementById("errbar"); if(b){ b.style.display="block"; b.textContent="エラー："+ERRS.join("\n"); } };
-const DATA_FILES=["data/pics_food.js","data/pics_daily.js","data/pics_house.js","data/pics_nature.js","data/pics_tools.js","data/pics_action.js","data/pics_numbers.js","data/words.js","data/bank_words.js","data/bank_sentences.js","data/bank_numbers_memory.js"];
+const DATA_FILES=["data/pics_food.js","data/pics_daily.js","data/pics_house.js","data/pics_nature.js","data/pics_tools.js","data/pics_action.js","data/pics_numbers.js","data/words.js","data/bank_words.js","data/bank_sentences.js","data/bank_numbers_memory.js","data/kyozai.js"];
 const LOADED=[], MISSING=[];
 function loadData(i){
   if(i>=DATA_FILES.length){ boot(); return; }
@@ -244,7 +324,7 @@ function genPatientId(){
     for(let i=0;i<3;i++) s+=C[r[i]%C.length]; const id=head+s; if(!DB.patients[id]) return id; }
   return head+Date.now().toString(36).toUpperCase();
 }
-function newPatient(id,nick){ return {id:String(id),nick:nick||"",created:today(),evals:[],lv:{},sessions:[],usedQ:{},usedW:{}}; }
+function newPatient(id,nick){ return {id:String(id),nick:nick||"",created:today(),evals:[],lv:{},sessions:[],usedQ:{},usedW:{},kyozai:{},prints:[]}; }
 function fixDB(o){
   const b=blankDB(); if(!o||typeof o!=="object") return b;
   Object.assign(b.settings,o.settings||{});
@@ -256,6 +336,7 @@ function fixDB(o){
     q.lv=(p.lv&&typeof p.lv==="object")?p.lv:{};
     q.sessions=Array.isArray(p.sessions)?p.sessions:[];
     q.usedQ=p.usedQ||{}; q.usedW=p.usedW||{};
+    q.kyozai=(p.kyozai&&typeof p.kyozai==="object"&&!Array.isArray(p.kyozai))?p.kyozai:{}; q.prints=Array.isArray(p.prints)?p.prints:[];
     b.patients[q.id]=q;
   }
   if(!b.patients[b.current]) b.current=Object.keys(b.patients)[0]||"";
@@ -515,10 +596,12 @@ function makeItems(p,block,sessUsed){
   // 1回目：この訓練ですでに出した語は飛ばす。2回目：足りなければ使う
   for(const pass of [0,1]) for(const c of order){ if(out.length>=n) break; if(c.used) continue;
     if(pass===0&&keyW(c).some(w=>ctx.sess.has(w))) continue;
+    if(block.paper&&c.kind==="b"&&!paperOK(c.it)) continue; // 印刷用：紙で使えない形は除く
     if(block.solo&&c.kind==="b"&&(!AUTO.has(c.it.type)||(c.it.type==="order"&&(c.it.pieces||[]).length>=4))) continue; // ひとりで：自動で正誤が分かるものだけ（4枚以上の並べかえは別解があり得るので除く）
     c.used=true;
     let it=null; try{ it=c.kind==="b"?bankItem(c.it):GEN[sk.gen].make(ctx,c.q,L); }catch(e){ console.error(e); it=null; }
     if(!it||ids.has(it.id)) continue;
+    if(block.paper&&!paperOK(it)) continue;
     if(it.type==="choice"&&(!it.options||it.options.length<2||it.answer<0)) continue;
     ids.add(it.id); out.push(it); (it.words||[]).forEach(w=>{ if(w&&!isAct(w)||w) ctx.sess.add(w); });
     if(it.stim&&it.stim.pic) ctx.sess.add(it.stim.pic);
@@ -540,7 +623,7 @@ function render(){
   stopSpeak();
   const app=$("#app"); window.scrollTo(0,0);
   if(SCREEN!=="practice"){ PR&&PR.done&&(PR=null); }
-  const f={home:vHome,slta:vSlta,rec:vRec,menu:vMenu,practice:vPractice,result:vResult,records:vRecords,check:vCheck,settings:vSettings,transfer:vTransfer}[SCREEN]||vHome;
+  const f={home:vHome,slta:vSlta,rec:vRec,menu:vMenu,practice:vPractice,result:vResult,records:vRecords,check:vCheck,kyozai:vKyozai,print:vPrint,settings:vSettings,transfer:vTransfer}[SCREEN]||vHome;
   app.innerHTML=f(); bindCommon(); if(f.after) f.after();
 }
 function bindCommon(){ $$("[data-go]").forEach(b=>b.onclick=()=>go(b.dataset.go)); }
@@ -562,7 +645,8 @@ function vHome(){
     <button class="p" id="goMenu">今日の訓練メニュー<small>自動で組んで、指導者と練習する</small></button>
     <button id="goSolo">ひとりで練習<small>自動で正誤が分かる課題だけ</small></button>
     <button data-go="records">記録と推移<small>正答率の一覧・グラフ・level の提案</small></button>
-   </div></div>`:""}
+    <button data-go="kyozai">印刷用の教材<small>以前の教材のおすすめ・新しいプリントを作る</small></button>
+   </div></div>`:`<div class="card"><div class="grid-btn"><button data-go="kyozai">印刷用の教材<small>以前に作った教材の一覧</small></button></div></div>`}
   <div class="card"><h2>そのほか</h2><div class="grid-btn">
     <button data-go="settings">設定<small>文字の大きさ・書体・読み上げの速さ</small></button>
     <button data-go="transfer">データの移し替え<small>コピーと貼り付けで別の端末へ</small></button>
@@ -655,7 +739,7 @@ function vRec(){
   const p=P(); if(!p) return topBar("おすすめ")+`<div class="wrap"><p>先にホームで対象者を選んでください。</p></div>`;
   const rec=recommend(p); const ev=latestEval(p);
   if(!rec) return topBar("おすすめの課題")+`<div class="wrap"><div class="card"><p>SLTAの成績がまだありません。</p><button class="p" data-go="slta">成績を入れる</button></div></div>`+foot();
-  let h=topBar("おすすめの課題")+`<div class="wrap"><div class="card"><h2>${fmtD(ev.date)} の成績から</h2>
+  let h=topBar("おすすめの課題")+`<div class="wrap">${kzRecHTML(p,"rec")}<div class="card"><h2>${fmtD(ev.date)} の成績から（アプリの課題）</h2>
   <p class="muted small">決まり：0〜20%→level1、20〜40%→2、40〜60%→3、60〜80%→4、80〜95%→5、95%以上→「維持」（少なめ）。指導者が level を変えた課題は（変更）と出ます。</p>
   <table><tr><th>No</th><th>下位検査</th><th>正答率</th><th>おすすめ</th></tr>`;
   for(const r of rec){ h+=`<tr><td>${r.no}</td><td>${esc(r.dom)}・${esc(r.name)}</td><td>${pctTxt(r.pct)}</td><td>`;
@@ -664,14 +748,14 @@ function vRec(){
     else { const s0=r.skills[0]; h+=`<div>${esc(r.name)} ${pctTxt(r.pct)} → <b>${esc(s0.skill)}・level${s0.level}</b>${r.maint?"（維持）":""}${s0.over?"（変更）":""}</div>`;
       if(r.skills.length>1) h+=`<div class="small">ほかに：${r.skills.slice(1).map(s=>`<span class="tag">${esc(s.skill)}・${TYPE_JP[s.type]||s.type}・level${s.level}${s.over?"（変更）":""}</span>`).join("")}</div>`; }
     h+=`</td></tr>`; }
-  h+=`</table><div class="row" style="margin-top:12px"><button class="p" id="goMenu2">今日の訓練メニューを組む</button></div></div>
+  h+=`</table><div class="row" style="margin-top:12px"><button class="p" id="goMenu2">今日の訓練メニューを組む</button><button data-go="print">この課題で印刷用プリントを作る</button></div></div>
   ${levelEditor(p)}</div>`+foot();
   return h;
 }
 function levelEditor(p){ const ks=Object.keys(p.lv||{}); if(!ks.length) return "";
   return `<div class="card"><h2>指導者が変えた level</h2>${ks.map(k=>`<div class="row"><span>${esc(k)}：level${p.lv[k]}</span><button class="s" data-lvclr="${esc(k)}">成績どおりに戻す</button></div>`).join("")}</div>`; }
 vRec.after=()=>{ const b=$("#goMenu2"); if(b) b.onclick=()=>{ MENU=null; MENU_SOLO=false; go("menu"); };
-  $$("[data-lvclr]").forEach(b=>b.onclick=()=>{ delete P().lv[b.dataset.lvclr]; save(); render(); }); };
+  $$("[data-lvclr]").forEach(b=>b.onclick=()=>{ delete P().lv[b.dataset.lvclr]; save(); render(); }); bindKz(); };
 
 /* ---------- 今日の訓練メニュー ---------- */
 function vMenu(){
@@ -941,7 +1025,7 @@ function vRecords(){
   const p=P(); if(!p) return topBar("記録")+`<div class="wrap"><p>先にホームで対象者を選んでください。</p></div>`;
   const rows=[]; p.sessions.forEach(s=>(s.blocks||[]).forEach(b=>rows.push({s,b,st:blockStats(b)})));
   const skills=Array.from(new Set(rows.map(r=>r.b.skill))); if(!skills.includes(REC_SKILL)) REC_SKILL=skills[0]||"";
-  let h=topBar("記録と推移")+`<div class="wrap">${suggestHTML(p)}<div class="card"><h2>課題ごとの正答率の推移</h2>`;
+  let h=topBar("記録と推移")+`<div class="wrap">${suggestHTML(p)}${(p.prints||[]).length?`<div class="card"><h2>印刷した記録</h2>${printHistory(p)}</div>`:""}<div class="card"><h2>課題ごとの正答率の推移</h2>`;
   if(!skills.length) h+=`<p class="muted">まだ記録がありません。</p>`;
   else { h+=`<div class="row"><select id="rsk">${skills.map(k=>`<option ${k===REC_SKILL?"selected":""}>${esc(k)}</option>`).join("")}</select></div><div class="chart">${chartSVG(rows.filter(r=>r.b.skill===REC_SKILL&&r.st.rate!=null))}</div>`; }
   h+=`</div><div class="card"><h2>記録の一覧</h2><table><tr><th>日付</th><th>課題</th><th>level</th><th>正答率</th><th>ヒント</th><th>練習の形</th></tr>${rows.slice().reverse().map(r=>`<tr><td>${fmtD(r.s.date)}</td><td>${esc(r.b.skill)}</td><td>${r.b.level}</td><td>${r.st.rate==null?"未判定":r.st.rate+"%"}（${r.st.ok}／${r.st.graded}）</td><td>${r.st.hints}回</td><td class="small">${r.s.mode==="solo"?"ひとりで":"指導者と"}</td></tr>`).join("")||`<tr><td colspan="6" class="muted">まだありません</td></tr>`}</table></div></div>`+foot();
@@ -1021,6 +1105,284 @@ vTransfer.after=()=>{
 };
 
 /* ============================================================
+   印刷用の教材
+   ① 以前に作った教材（data/kyozai.js の一覧）を、成績の形が近い順におすすめする
+   ② おすすめの課題から、A4の印刷用プリントをその場で作る
+   作成：KENTA SHINKAWA
+   ============================================================ */
+var KYOZAI=[];
+const KZ_GROUPS=["重症度別","パターン別","症状別","追加課題集","軽度向け"];
+const KZ_OPEN={};
+/* 近さ：入力してある項目ごとの差を2乗して平均し、平方根をとった値（ずれ）。大きくずれた項目ほど重く数える */
+function kzDist(pct,prof){ if(!Array.isArray(prof)||!Array.isArray(pct)) return null; let s=0,n=0;
+  for(let i=0;i<SLTA.length;i++){ const a=pct[i], b=prof[i]; if(a==null||b==null) continue; s+=(a-b)*(a-b); n++; }
+  return n>=5?Math.sqrt(s/n):null; }
+const kzNear=d=>d==null?"":d<10?"成績の形がとても近い":d<17?"成績の形が近い":d<25?"成績の形がやや近い":"成績の形は離れている";
+function kzUsed(p,id){ return p&&p.kyozai&&Array.isArray(p.kyozai[id])?p.kyozai[id]:[]; }
+function kzRecommend(p){
+  const ev=latestEval(p); if(!ev||!KYOZAI.length) return null;
+  const all=KYOZAI.filter(k=>k&&k.file&&["重症度別","パターン別","症状別"].includes(k.group)).map(k=>({k,d:kzDist(ev.pct,k.profile)})).filter(x=>x.d!=null);
+  const cands=all.filter(x=>x.k.group!=="症状別"||x.d<17).sort((a,b)=>a.d-b.d); // 症状別は形が近いときだけ
+  const order=cands.filter(x=>!kzUsed(p,x.k.id).length).concat(cands.filter(x=>kzUsed(p,x.k.id).length)); // 使用済みは後ろへ
+  const top=[]; for(const x of order){ if(top.length>=5) break; if(top.length>=3&&x.d>=25) continue; top.push(x); }
+  const next=[]; top.forEach(x=>{ if(x.k.group==="重症度別"&&x.k.extra){ const e=KYOZAI.find(y=>y.id===x.k.extra); if(e) next.push({k:e,d:kzDist(ev.pct,e.profile),for:x.k}); } });
+  const filled=ev.pct.filter(v=>v!=null); const avg=filled.length?filled.reduce((a,b)=>a+b,0)/filled.length:0;
+  return {ev,top,next,mild:avg>=75?KYOZAI.filter(k=>k.group==="軽度向け"&&k.file):[],avg,n:filled.length};
+}
+const kzHref=k=>encodeURI(String(k.file||""));
+function kzItemHTML(p,x,note){ const k=x.k, used=kzUsed(p,k.id);
+  return `<div class="kz ${used.length?"used":""}"><div class="kz-t"><b>${esc(k.title)}</b><br><span class="tag">${esc(k.group)}</span><span class="tag">${k.pages||"－"}ページ</span>${x.d!=null?`<span class="tag m">${kzNear(x.d)}（ずれ ${Math.round(x.d)}）</span>`:""}${used.length?`<span class="tag u">使用済み：${used.slice(-3).map(fmtD).join("、")}${used.length>3?` ほか${used.length-3}回`:""}</span>`:""}${note?`<div class="muted small">${esc(note)}</div>`:""}</div>
+   <div class="row"><a class="btn" href="${kzHref(k)}" target="_blank" rel="noopener">開く・印刷する</a>${p?`<button class="s" data-kzmark="${esc(k.id)}">印刷した・使った</button>${used.length?`<button class="s" data-kzun="${esc(k.id)}">印を1つ消す</button>`:""}`:""}</div></div>`; }
+function kzRecHTML(p,where){
+  if(!KYOZAI.length) return where==="rec"?"":`<div class="card"><p class="err">教材の一覧（data/kyozai.js）が読み込めませんでした。</p></div>`;
+  const R=p?kzRecommend(p):null;
+  let h=`<div class="card"><h2>おすすめの教材（以前に作った印刷用の教材）</h2>`;
+  if(!R) return h+`<p class="muted">SLTAの成績が入ると、成績の形が近い教材をおすすめします。</p></div>`;
+  h+=`<p class="note">失語のタイプを決めるのは担当の言語聴覚士です。成績の形が近い教材を候補として出しています。</p>
+   <p class="small">${fmtD(R.ev.date)} の成績（${R.n}項目）と、各教材が想定している成績の形を比べた結果です。</p>`;
+  h+=R.top.map(x=>kzItemHTML(p,x)).join("")||`<p class="muted">近い教材が見つかりませんでした。下の一覧から選んでください。</p>`;
+  if(R.next.length) h+=`<h3 class="h3">次に使う（対になる追加課題集）</h3>`+R.next.map(x=>kzItemHTML(p,x,`「${x.for.title}」を使い終えたら`)).join("");
+  if(R.mild.length) h+=`<h3 class="h3">軽度の方向け</h3>`+R.mild.map(k=>kzItemHTML(p,{k,d:null})).join("");
+  h+=`<p class="muted small">「開く・印刷する」を押すと、新しいタブに教材が出ます。iPad の Safari では、共有ボタン→「プリント」で印刷できます。印刷したら「印刷した・使った」を押すと日付が残り、次からは後ろに回ります。</p>
+   <p class="muted small">近さの計算：入力してある項目ごとに正答率の差を2乗して平均し、その平方根をとった値（ずれ）です。大きくずれた項目ほど重く数えます。ずれ10未満「とても近い」、17未満「近い」、25未満「やや近い」。症状別の教材は「近い」以上のときだけ出します。</p>`;
+  if(where==="rec") h+=`<div class="row"><button class="s" data-go="kyozai">全${KYOZAI.length}冊の一覧</button><button class="s" data-go="print">新しい印刷用プリントを作る</button></div>`;
+  return h+`</div>`;
+}
+function vKyozai(){
+  const p=P(); const ev=p?latestEval(p):null;
+  let h=topBar("印刷用の教材")+`<div class="wrap">
+   <div class="card"><h2>新しく作る印刷用プリント</h2><p class="small">おすすめの課題と level から、A4の課題用紙をその場で作ります。最近使った問題は避けるので、毎回違う内容になります。</p>
+   <button class="p" data-go="print" ${p?"":"disabled"}>印刷用プリントを作る</button>${p?"":`<span class="muted small">先にホームで対象者を選んでください。</span>`}</div>`+kzRecHTML(p,"kyozai");
+  if(KYOZAI.length){ h+=`<div class="card"><h2>全${KYOZAI.length}冊の一覧</h2><p class="muted small">グループ名を押すと開きます（もう一度押すとたたみます）。</p>`;
+    const gs=KZ_GROUPS.concat(Array.from(new Set(KYOZAI.map(k=>k.group))).filter(g=>!KZ_GROUPS.includes(g)));
+    for(const g of gs){ const ks=KYOZAI.filter(k=>k.group===g&&k.file); if(!ks.length) continue;
+      h+=`<details class="kzg" data-kzg="${esc(g)}" ${KZ_OPEN[g]?"open":""}><summary>${esc(g)}（${ks.length}冊）</summary>${ks.map(k=>kzItemHTML(p,{k,d:ev?kzDist(ev.pct,k.profile):null})).join("")}</details>`; }
+    h+=`</div>`; }
+  return h+`</div>`+foot();
+}
+function rerenderKeep(){ const y=window.scrollY||0; render(); window.scrollTo(0,y); }
+function bindKz(){
+  $$("[data-kzmark]").forEach(b=>b.onclick=()=>{ const p=P(); if(!p) return; p.kyozai=p.kyozai||{}; const id=b.dataset.kzmark; (p.kyozai[id]=p.kyozai[id]||[]).push(today()); save(); rerenderKeep(); toast("印を付けました（"+fmtD(today())+"）"); });
+  $$("[data-kzun]").forEach(b=>b.onclick=()=>{ const p=P(); if(!p||!p.kyozai) return; const id=b.dataset.kzun; const a=p.kyozai[id]||[]; a.pop(); if(!a.length) delete p.kyozai[id]; save(); rerenderKeep(); toast("印を1つ消しました"); });
+  $$("details[data-kzg]").forEach(d=>d.ontoggle=()=>{ KZ_OPEN[d.dataset.kzg]=d.open; });
+}
+vKyozai.after=bindKz;
+
+/* ---------- 印刷用プリント ---------- */
+let PRINT={n:5,nick:false,set:null,pid:""};
+const KANA_L=["ア","イ","ウ","エ","オ","カ","キ","ク","ケ","コ"];
+const PAPER=new Set(["choice","yesno","say","write","tapseq","order","input","span"]);
+/* 紙で使える問題か（見せて隠す系列の記憶などは紙では使えない） */
+function paperOK(it){ if(!it||!PAPER.has(it.type)) return false;
+  if(it.type==="span") return it.show!=="look"&&Array.isArray(it.seq)&&Array.isArray(it.options)&&it.options.length>0&&it.options.length<=KANA_L.length;
+  if(it.type==="choice") return Array.isArray(it.options)&&it.options.length>=2&&it.options.length<=KANA_L.length&&it.answer>=0&&it.answer<it.options.length;
+  if(it.type==="tapseq") return Array.isArray(it.options)&&it.options.length<=KANA_L.length&&Array.isArray(it.answer);
+  if(it.type==="order") return Array.isArray(it.pieces)&&it.pieces.length>=2;
+  return true; }
+function paperSkill(name){ const sk=SKILLS[name]; if(!sk) return false; if(sk.gen) return PAPER.has(sk.type); return sk.bank.some(paperOK); }
+const HINT_SKILLS=new Set(["呼称","動作説明","語の列挙","指の呼称"]);
+const isHintSheet=sk=>sk.type==="say"&&(HINT_SKILLS.has(sk.name)||sk.slta.some(n=>n===5||n===7));
+/* 課題の見た目（絵・文字・長い文・読み上げだけ） */
+function skShape(sk,L){
+  if(sk.gen){ const k=sk.gen; if(["kanaread","kanjiread","kana1read","near","calc"].includes(k)) return "text"; if(["repeat","kana1dict","kanjidict","kanadict"].includes(k)) return "speak"; return "pic"; }
+  const ex=sk.bank.filter(paperOK); const e=ex.find(it=>it.level===L)||ex[0]; if(!e) return "pic"; const st=e.stim||{};
+  if(Array.isArray(st.pics)&&st.pics.length>1) return "pics"; const t=String(st.text||""); if(t.length>24||t.indexOf("\n")>=0) return "long";
+  if(st.pic) return "pic"; if(t) return "text"; return String(e.prompt||"").length>30?"long":"speak"; }
+/* 1枚の問題数：重度（level が低い）ほど少なく大きく */
+function perSheet(sk,L){ const i=clamp(L||3,1,5)-1, t=sk.type, sh=skShape(sk,L);
+  if(sk.name==="語の列挙") return [1,2,2,3,3][i];
+  if(t==="choice") return sh==="long"?[1,2,2,2,3][i]:[2,3,3,4,4][i];
+  if(t==="yesno") return sh==="long"?[2,2,3,3,4][i]:[3,4,5,6,6][i];
+  if(t==="say") return sh==="pics"?[1,1,1,2,2][i]:sh==="long"?[2,2,3,3,4][i]:sh==="text"?[4,5,6,8,8][i]:sh==="pic"?[3,4,5,6,6][i]:[5,6,8,10,10][i];
+  if(t==="write") return [2,3,4,4,5][i];
+  if(t==="order") return [2,3,3,4,4][i];
+  if(t==="input") return sh==="pic"||sh==="pics"?[1,2,2,3,3][i]:sh==="long"?[2,3,3,4,4][i]:[4,6,8,10,10][i];
+  return [1,2,2,3,3][i]; // tapseq・span
+}
+function orderPerm(n){ let idx=Array.from({length:n},(_,i)=>i); for(let k=0;k<20;k++){ idx=shuffle(idx); if(idx.some((v,i)=>v!==i)) break; } return idx; }
+function buildPrint(p,n){
+  const rec=recommend(p); if(!rec) return null;
+  const best={}; for(const r of rec){ if(r.none) continue; for(const s of r.skills){ if(!paperSkill(s.skill)) continue;
+    const c={skill:s.skill,type:s.type,level:s.level,pct:r.pct,no:r.no,dom:r.dom,name:r.name,maint:r.maint,over:s.over}; if(!best[c.skill]||c.pct<best[c.skill].pct) best[c.skill]=c; } }
+  const pool=Object.values(best); const lastP=(p.prints||[]).slice(-1)[0]; const lastSk=new Set(lastP?(lastP.sheets||[]).map(s=>s.skill):[]);
+  const k=Math.min(pool.length,n<=5?n:n<=10?6:8); const chosen=[];
+  const score=c=>c.pct+Math.random()*15+(c.maint?60:0)+(lastSk.has(c.skill)?15:0)+(chosen.some(x=>x.no===c.no)?25:0)+(chosen.some(x=>x.type===c.type)?12:0)+(chosen.some(x=>x.dom===c.dom)?8:0);
+  while(chosen.length<k){ const left=pool.filter(c=>!chosen.includes(c)); if(!left.length) break; left.sort((a,b)=>score(a)-score(b)); chosen.push(left[0]); }
+  const spare=pool.filter(c=>!chosen.includes(c));
+  const sh={usedQ:Object.assign({},p.usedQ),usedW:Object.assign({},p.usedW)}; const sess=new Set(); const sheets=[]; const seen=new Set();
+  const look=it=>JSON.stringify([it.prompt,it.stim,it.speak,(it.options||[]).map(o=>o.pic||o.text).sort(),it.pieces,it.target]); // 見た目が同じ問題は1回だけ
+  let i=0, guard=0;
+  while(sheets.length<n&&chosen.length&&guard++<n*6){ const ci=i%chosen.length; const c=chosen[ci]; const sk=SKILLS[c.skill];
+    const want=perSheet(sk,c.level); let items=[]; try{ items=makeItems(sh,{skill:c.skill,level:c.level,n:want+4,paper:true},sess).filter(paperOK); }catch(e){ console.error(e); }
+    items=items.filter(it=>{ const k=look(it); if(seen.has(k)) return false; seen.add(k); return true; }).slice(0,want);
+    if(!items.length){ chosen.splice(ci,1); if(spare.length) chosen.push(spare.shift()); continue; }
+    items.forEach(it=>{ markUsed(sh,it); if(it.type==="order") it._perm=orderPerm(it.pieces.length); });
+    sheets.push({skill:c.skill,type:sk.type,level:c.level,pct:c.pct,no:c.no,name:c.name,over:c.over,items,hint:isHintSheet(sk)}); i++; }
+  return {date:today(),ev:latestEval(p).date,sheets,n,fitted:false,recorded:false};
+}
+/* 紙に合わせた指示（「触る」「入れる」を「丸を付ける」「書く」に） */
+function paperPrompt(it){
+  const T=it.type; let s=String(it.prompt||"").trim().replace(/[。．]$/,"");
+  if(isWrittenCmd(it)) return "上の文を読んで、そのとおりの順に、絵の下の（　）に1から番号を書いてください。";
+  const lead=(it.speak||T==="span")&&!/読み上げ|聞こえ|聞いて/.test(s)?"指導者が読み上げます。":"";
+  if(T==="choice"){ s=/選んでください$/.test(s)?s.replace(/選んでください$/,"選んで、記号に丸を付けてください"):s+"。記号に丸を付けてください"; }
+  else if(T==="yesno"){ s=/で答えてください/.test(s)?s.replace(/で答えてください/,"に丸を付けてください"):s+"。「はい」か「いいえ」に丸を付けてください"; }
+  else if(T==="tapseq"||T==="span"){ s=(T==="span"?"聞こえた順に":"言われた順に")+"、絵の下の（　）に1から番号を書いてください"; return "指導者が読み上げます。"+s+"。"; }
+  else if(T==="order"){ return it.gen?"この絵の名前になるように、文字の下の（　）に、正しい順の番号を書いてください。":"正しい順になるように、下の（　）に1から番号を書いてください。"; }
+  else if(T==="input"){ s=s.replace(/入れてください$/,"書いてください"); if(!/書いてください/.test(s)) s+="。答えを枠に書いてください"; }
+  return lead+s+"。";
+}
+const optName=o=>o?(o.text||(W(o.pic)?W(o.pic).hyoki:"")||o.pic||""):"";
+function paperRead(it){ if(it.speak) return String(it.speak); if(it.type==="span") return (it.seq||[]).map(i=>optName(it.options[i])).join("、"); return ""; }
+function paperAnswer(it){ const T=it.type;
+  if(T==="choice") return `（${KANA_L[it.answer]}）${answerText(it)}`;
+  if(T==="yesno") return it.answer?"はい":"いいえ";
+  if(T==="tapseq"||T==="span"){ const sq=T==="span"?it.seq:it.answer; return sq.map((i,k)=>`${k+1}（${KANA_L[i]}）${optName(it.options[i])}`).join("　"); }
+  if(T==="order") return `${answerText(it)}　（左から ${(it._perm||[]).map(k=>k+1).join("・")}）`;
+  if(T==="input") return String(it.answer);
+  const tg=String(it.target||""); const ac=(it.accept||[]).filter(a=>a&&!tg.includes(a)); return tg+(ac.length?`（別解：${ac.join("・")}）`:""); }
+const ppPic=(id,s)=>`<span class="pp-pic" style="width:${s.toFixed(1)}mm;height:${s.toFixed(1)}mm">${picHTML(id)}</span>`;
+function ppHead(title,tag,noWho){ return `<div class="pp-head"><div><h1>${esc(title)}</h1><div class="pp-tag">${esc(tag)}</div></div>${noWho?"":`<div class="pp-who">氏名<span></span>　<span class="d"></span>月<span class="d"></span>日</div>`}</div>`; }
+const ppFoot=()=>`<div class="pp-foot"><span class="pp-pg"></span><span>作成：KENTA SHINKAWA</span></div>`;
+/* 1問の中身（mm で大きさを決める。h：1問に使える高さ、cw：使える幅） */
+function ppContent(it,s,h,cw){
+  const L=clamp(s.level||3,1,5), st=it.stim||{}, T=it.type;
+  let txt=st.text!=null&&st.text!==""?String(st.text):""; if(isWrittenCmd(it)) txt=String(it.prompt||"");
+  const longT=txt.length>14||txt.indexOf("\n")>=0; const fz=[26,24,21,19,18][L-1];
+  const tH=!txt?0:longT?(Math.ceil(txt.length/32)+(txt.match(/\n/g)||[]).length)*6.5+5:fz*0.5+3;
+  const txtHTML=txt?`<div class="pp-st ${longT?"long":""}" ${longT?"":`style="font-size:${fz}pt"`}>${esc(txt)}</div>`:"";
+  const spk=(it.speak||T==="span")&&T!=="say"||(T==="say"&&it.speak)?`<div class="pp-spk">（指導者が読み上げます）</div>`:"";
+  const spkH=spk?6:0;
+  const pics=Array.isArray(st.pics)&&st.pics.length>1?st.pics:null;
+  const ofz=[22,20,18,16,15][L-1];
+  const optsHTML=(opts,avH,avW,blank,order)=>{ const n=opts.length; const anyPic=opts.some(o=>o&&o.pic);
+    let bs=0, bc=n; if(anyPic){ let best=0; for(let r=1;r<=2;r++){ const c=Math.ceil(n/r); const sz=Math.min((avH-(r-1)*2)/r-(blank?13:7),(avW-c*4)/c); if(sz>best){ best=sz; bc=c; } } bs=clamp(best,14,62); }
+    const lt=opts.some(o=>o&&o.text&&String(o.text).length>8); const tz=order&&opts.every(o=>typeof o==="string"&&o.length<=2)?[32,28,24,20,18][L-1]:lt?13:ofz;
+    return `<div class="pp-opts" ${anyPic?`style="max-width:${(bc*(Math.max(bs,18)+4)+2).toFixed(1)}mm"`:""}>${opts.map((o,j)=>{ const lab=order?"":`<span class="pp-k">（${KANA_L[j]}）</span>`;
+      const body=typeof o==="string"?`<span class="pp-t" style="font-size:${tz}pt">${esc(o)}</span>`:(o.pic?ppPic(o.pic,bs):"")+(o.text?`<span class="${o.pic?"pp-cap":"pp-t"}" style="${o.pic?"":`font-size:${tz}pt`}">${esc(o.text)}</span>`:"");
+      return `<div class="pp-o">${lab}${body}${blank?`<span class="pp-blank">（　　）</span>`:""}</div>`; }).join("")}</div>`; };
+  if(T==="choice"||T==="tapseq"||T==="span"){
+    const sp=st.pic?clamp(Math.min(h-tH-spkH-2,cw*0.24,44),16,44):0;
+    const avH=h-tH-spkH-2, avW=cw-(sp?sp+4:0);
+    return `${txtHTML}${spk}<div class="pp-row">${st.pic?ppPic(st.pic,sp):""}${optsHTML(it.options,avH,avW,T!=="choice",false)}</div>`; }
+  if(T==="yesno"){ const sp=st.pic?clamp(Math.min(h-tH-spkH-2,55),16,55):0;
+    return `${txtHTML}${spk}<div class="pp-row">${st.pic?ppPic(st.pic,sp):""}<div class="pp-yn"><span>はい</span><span>いいえ</span></div></div>`; }
+  if(T==="order"){ const pieces=(it._perm||it.pieces.map((_,i)=>i)).map(k=>it.pieces[k]); const sp=st.pic?clamp(Math.min(h-4,cw*0.3,50),16,50):0;
+    return `${txtHTML}<div class="pp-row">${st.pic?ppPic(st.pic,sp):""}${optsHTML(pieces,h-tH-2,cw-(sp?sp+4:0),true,true)}</div>`; }
+  const recH=7;
+  if(T==="say"){
+    const rec=`<div class="pp-rec">記録欄：段階（　　）　ヒント（　　）番目${s.skill==="語の列挙"?"　言えた数（　　）":""}</div>`;
+    if(pics){ const k=pics.length; const ps=clamp(Math.min(h-tH-recH-4,(cw-(k-1)*3)/k),16,60); return `${txtHTML}<div class="pp-row">${pics.map(x=>ppPic(x,ps)).join("")}</div>${rec}`; }
+    const sp=st.pic?clamp(Math.min(h-3,62),16,62):0;
+    return `<div class="pp-row">${st.pic?ppPic(st.pic,sp):""}<div class="pp-col">${txtHTML}${spk}${rec}</div></div>`; }
+  if(T==="write"){
+    const sp=st.pic?clamp(Math.min(h-3,55),16,55):0; const tgt=Array.from(String(it.target||""));
+    const nb=typeof it.boxes==="number"&&it.boxes>0?it.boxes:(it.boxes||L<=2)?tgt.length:0;
+    let area; if(nb&&nb<=10){ const bs=clamp(Math.min(h-tH-spkH-4,28,(cw-(sp?sp+4:0)-(nb-1)*1.5)/nb),10,28); area=`<div class="pp-bxs">${`<span class="pp-bx" style="width:${bs.toFixed(1)}mm;height:${bs.toFixed(1)}mm"></span>`.repeat(nb)}</div>`; }
+    else area=`<div class="pp-fr" style="height:${clamp(Math.min(h-tH-spkH-4,34),14,34).toFixed(1)}mm"></div>`;
+    return `${txtHTML}<div class="pp-row">${st.pic?ppPic(st.pic,sp):""}<div class="pp-col">${spk}${area}</div></div>`; }
+  if(T==="input"){
+    const sp=st.pic?clamp(Math.min(h-4,cw*0.45,60),16,60):0; const ah=clamp(Math.min(h-4,16),10,16);
+    return `<div class="pp-row">${st.pic?ppPic(st.pic,sp):""}${pics?pics.map(x=>ppPic(x,clamp(h-4,16,40))).join(""):""}<div class="pp-col">${txtHTML}</div><span class="pp-ab" style="height:${ah}mm"></span></div>`; }
+  return txtHTML;
+}
+const SH_H=226; // 課題用紙の本文に使える高さ（mm）のめやす
+function ppSheet(s,idx,total){
+  const items=s.items, q=items.length; const asks=items.map(paperPrompt); const nk=a=>a.replace(/、/g,""); const same=asks.every(a=>nk(a)===nk(asks[0]));
+  const T=s.type; const short=it=>{ const t=String((it.stim||{}).text||""); return t.length<=14&&!(it.stim||{}).pic; };
+  const cols=!s.hint&&q>=6&&(T==="input"||T==="say"||T==="yesno")&&items.every(short)?2:1;
+  const rows=Math.ceil(q/cols); const cw=186-11-(s.hint?46:0); const h=(SH_H-(s.hint?9:0))/rows-(same?0:9)-4;
+  const ask=same?asks[0]:({choice:"それぞれの問題を読んで、答えの記号に丸を付けてください。",yesno:"それぞれの問題を読んで、「はい」か「いいえ」に丸を付けてください。",say:"それぞれの問題に、声に出して答えてください。",write:"それぞれの問題の答えを、枠の中に書いてください。",input:"それぞれの問題の答えを、枠の中に書いてください。"}[T]||"それぞれの問題の指示にしたがって答えてください。");
+  const hintCell=it=>{ const hs=(it.hints||[]).filter(x=>x&&x.t&&!x.teacher&&x.act!=="text"&&x.act!=="speak"&&x.act!=="model"&&x.act!=="boxes").slice(0,3);
+    return `<div class="pp-hc">${hs.map((x,k)=>`<div>${"①②③"[k]} ${esc(String(x.t).replace(/。$/,""))}</div>`).join("")}</div>`; };
+  return `<div class="pp-sheet pp-task" data-si="${idx}">${ppHead(s.skill,`課題用紙 ${idx+1}／${total}　level${s.level}　（${s.name}）`)}
+   <div class="pp-ask">${esc(ask)}</div>${s.hint?`<div class="pp-hh"><span>ご家族用ヒント欄（最初は折って隠してください）</span></div>`:""}
+   <div class="pp-body ${cols===2?"c2":""} ${s.hint?"hint":""}">
+   ${items.map((it,j)=>`<div class="pp-q"><div class="pp-n">${j+1}</div><div class="pp-c">${same?"":`<div class="pp-qa">${esc(asks[j])}</div>`}${ppContent(it,s,h,cw/cols-(cols===2?3:0))}</div>${s.hint?hintCell(it):""}</div>`).join("")}</div>${ppFoot()}</div>`;
+}
+function ppGuide(p,set){
+  const groups={}; set.sheets.forEach((s,i)=>{ const g=groups[s.skill]=groups[s.skill]||{s,no:[],q:0}; g.no.push(i+1); g.q+=s.items.length; });
+  const who=PRINT.nick&&p?(p.nick?`${p.nick}（${p.id}）`:p.id):"";
+  return `<div class="pp-sheet pp-guide">${ppHead("訓練プリント　指導者用ガイド",`作成日 ${fmtD(set.date)}　／　元にしたSLTA ${fmtD(set.ev)}　／　課題用紙 ${set.sheets.length}枚`,true)}
+  <div class="pp-body pp-g">
+   <p>対象者（呼び名）：${who?esc(who):"＿＿＿＿＿＿＿＿＿＿"}　　実施日：　　　年　　月　　日〜　　月　　日</p>
+   <h2>今回の課題</h2>
+   <table><tr><th>課題</th><th>元にした下位検査（正答率）</th><th>level</th><th>課題用紙の番号</th><th>問題数</th></tr>
+   ${Object.values(groups).map(g=>`<tr><td>${esc(g.s.skill)}</td><td>${g.s.no}. ${esc(g.s.name)}（${pctTxt(g.s.pct)}）</td><td>level${g.s.level}${g.s.over?"（指導者が変更）":""}</td><td>${g.no.join("・")}</td><td>${g.q}問</td></tr>`).join("")}</table>
+   <h2>ヒントの順番（答えが出ないときは、5秒ほど待ってから①から順に）</h2>
+   <table><tr><th style="width:30mm">課題</th><th>ヒントの順番</th></tr>
+    <tr><td>呼称（名前を言う）</td><td>①意味・仲間 → ②使い道・場面 → ③最初の音 → ④文字を見せる → ⑤一緒に言う</td></tr>
+    <tr><td>理解（聞く・読む）</td><td>①もう一度ゆっくり → ②区切って → ③身ぶり → ④文字を添える → ⑤選択肢を減らす</td></tr>
+    <tr><td>書字（書く）</td><td>①仮名でもよい → ②最初の1文字 → ③文字数の枠 → ④見本を写す</td></tr></table>
+   <h2>記録のしかた</h2>
+   <table><tr><th style="width:14mm">段階</th><th>反応</th><th style="width:14mm">段階</th><th>反応</th></tr>
+    <tr><td>6</td><td>完全正答（すぐに正しく答えた）</td><td>3</td><td>ヒント後正答（ヒントを出して答えた）</td></tr>
+    <tr><td>5</td><td>遅延完全正答（時間はかかったが正しい）</td><td>2</td><td>関連反応（意味の近い言葉など）</td></tr>
+    <tr><td>4</td><td>不完全正答（一部が違う・言い誤りがある）</td><td>1</td><td>誤答・反応なし</td></tr></table>
+   <p>段階6・5を正答として数えます。記録欄の「ヒント（　）番目」には、何番目のヒントで答えられたかを書きます（ヒントなしは0）。丸を付ける課題・番号を書く課題は、正答に〇、誤答に／を付けてください。結果はアプリの「記録と推移」に入れておくと、次の level の目安になります。</p>
+   <p>読み上げる文は、最後の「解答・読み上げリスト」にだけ載せています。課題用紙には載せていません。呼称の用紙の右端の「ご家族用ヒント欄」は、最初は点線で折って隠しておいてください。</p>
+   <h2>ご家族の方へ</h2>
+   <p>この用紙は、言語聴覚士が検査の成績に合わせて選んだ練習問題です。1日に1〜2枚を目安に、疲れない範囲で行ってください。答えがすぐに出なくても急かさず、少し待ってから、ヒントを①から順に伝えてください。間違えても指摘しすぎず、正しい答えを伝えて次に進んでかまいません。解答・読み上げリストは、ご本人に渡す前に外しておいてください。終わった用紙は、次の訓練のときにお持ちください。</p>
+  </div>${ppFoot()}</div>`;
+}
+function answerUnits(set){ const u=[];
+  set.sheets.forEach((s,i)=>{ u.push(`<div class="pa-h">課題用紙 ${i+1}　${esc(s.skill)}・level${s.level}（${s.items.length}問）</div>`);
+    s.items.forEach((it,j)=>{ const rd=paperRead(it); const nt=it.note?`<div class="pa-note">メモ：${esc(String(it.note).replace(/stim\.pics\s*の順/g,"絵の順"))}</div>`:"";
+      u.push(`<div class="pa-r"><span class="pa-n">${j+1}</span><div>${rd?`<div class="pa-read">読み上げ：「${esc(rd)}」</div>`:""}<div>正答：${esc(paperAnswer(it))}</div>${nt}</div></div>`); }); });
+  return u; }
+/* 本文の中身の高さ（はみ出しの判定に使う。scrollHeight は枠より小さくならないので使わない） */
+const contentH=b=>Array.from(b.children).reduce((m,c)=>Math.max(m,c.offsetTop+c.offsetHeight),0);
+const overBody=b=>contentH(b)>b.clientHeight+1;
+function fitSheets(){ const set=PRINT.set; if(!set) return; const SLACK=12; // 画面と印刷のわずかな差のためのゆとり（px）
+  $$("#ppw .pp-task").forEach(sh=>{ const i=+sh.dataset.si, s=set.sheets[i], b=sh.querySelector(".pp-body");
+    if(!set.fitted){ while(s.items.length>1&&contentH(b)>b.clientHeight-SLACK){ const qs=b.querySelectorAll(".pp-q"); qs[qs.length-1].remove(); s.items.pop(); } }
+    if(contentH(b)>b.clientHeight+1) console.warn("PRINT-OVERFLOW 課題用紙"+(i+1)); else b.classList.add("spread"); });
+  set.fitted=true;
+  const gd=$("#ppw .pp-guide"); if(gd) gd.outerHTML=ppGuide(P(),set); // 問題数を、はみ出しを直したあとの数にする
+  const g=$("#ppw .pp-guide .pp-body"); if(g&&overBody(g)) console.warn("PRINT-OVERFLOW ガイド"); }
+function buildAnswers(){ const box=$("#ppAns"); if(!box) return; box.innerHTML=""; let body=null;
+  const newPage=()=>{ const d=document.createElement("div"); d.className="pp-sheet pp-ansp";
+    d.innerHTML=ppHead("解答・読み上げリスト（指導者用）","この用紙はご本人に渡さないでください",true)+`<div class="pp-ask" style="font-size:11pt;font-weight:400">読み上げる文はここにだけ載せています。「読み上げ」の文を、ふつうの速さで1回読んでください。聞き返されたら、もう一度読んでかまいません。</div><div class="pp-body pa"></div>`+ppFoot();
+    box.appendChild(d); body=d.querySelector(".pp-body"); };
+  newPage();
+  for(const u of answerUnits(PRINT.set)){ const t=document.createElement("div"); t.innerHTML=u; const node=t.firstElementChild; body.appendChild(node);
+    if(overBody(body)&&body.children.length>1){ node.remove(); const last=body.lastElementChild; let carry=null; if(last&&last.classList.contains("pa-h")){ carry=last; last.remove(); } newPage(); if(carry) body.appendChild(carry); body.appendChild(node); } }
+}
+function numberPages(){ const ps=$$("#ppw .pp-sheet"); ps.forEach((s,k)=>{ const e=s.querySelector(".pp-pg"); if(e) e.textContent=`${k+1}／${ps.length}ページ`; }); const c=$("#ppCount"); if(c) c.textContent=`全${ps.length}ページ（ガイド1＋課題用紙${PRINT.set.sheets.length}＋解答・読み上げリスト${$$("#ppw .pp-ansp").length}）`; }
+function recordPrint(){ const p=P(), set=PRINT.set; if(!p||!set||set.recorded) return false;
+  set.sheets.forEach(s=>s.items.forEach(it=>markUsed(p,it))); p.prints=Array.isArray(p.prints)?p.prints:[];
+  p.prints.push({date:today(),at:NOW(),ev:set.ev,pages:$$("#ppw .pp-sheet").length,sheets:set.sheets.map(s=>({skill:s.skill,level:s.level,n:s.items.length})),ids:[].concat(...set.sheets.map(s=>s.items.map(it=>it.id)))});
+  set.recorded=true; save(); return true; }
+function printHistory(p){ const a=(p.prints||[]).slice(-5).reverse(); if(!a.length) return `<p class="muted small">まだ印刷の記録はありません。</p>`;
+  return `<table><tr><th>日付</th><th>ページ</th><th>課題</th></tr>${a.map(r=>`<tr><td>${fmtD(r.date)}</td><td>${r.pages||"－"}</td><td class="small">${(r.sheets||[]).map(s=>`${esc(s.skill)}・level${s.level}`).filter((x,i,arr)=>arr.indexOf(x)===i).join("、")}</td></tr>`).join("")}</table>`; }
+function vPrint(){
+  const p=P(); if(!p) return topBar("印刷用プリント")+`<div class="wrap"><p>先にホームで対象者を選んでください。</p></div>`+foot();
+  if(!latestEval(p)) return topBar("印刷用プリント")+`<div class="wrap"><div class="card"><p>SLTAの成績がまだありません。成績を入れると、おすすめの課題からプリントを作れます。</p><button class="p" data-go="slta">成績を入れる</button></div></div>`+foot();
+  if(!PRINT.set||PRINT.pid!==p.id){ PRINT.set=buildPrint(p,PRINT.n); PRINT.pid=p.id; }
+  const set=PRINT.set;
+  if(!set||!set.sheets.length) return topBar("印刷用プリント")+`<div class="wrap"><div class="card"><p>紙で使える課題が作れませんでした。データを確かめてください。</p></div></div>`+foot();
+  return topBar("印刷用プリント")+`<div class="wrap"><div class="noprint"><div class="card"><h2>新しく作る印刷用プリント（A4縦）</h2>
+   <p class="small">おすすめの課題（${fmtD(set.ev)} の成績）から作りました。最近使った問題・語と、前に印刷した問題は避けています。</p>
+   <div class="row">課題用紙の枚数 ${[5,10,15].map(v=>`<button class="s ${PRINT.n===v?"on":""}" data-ppn="${v}">${v}枚</button>`).join("")}</div>
+   <div class="row" style="margin-top:8px">ガイドに呼び名を入れる <button class="s ${PRINT.nick?"on":""}" data-ppk="1">入れる</button><button class="s ${!PRINT.nick?"on":""}" data-ppk="0">入れない</button><span class="muted small">実名は入りません。氏名欄は空欄です。</span></div>
+   <div class="row" style="margin-top:12px"><button class="p" id="ppPrint">印刷する</button><button class="s" id="ppRec" ${set.recorded?"disabled":""}>印刷した記録を残す</button><button class="s" id="ppRe">別の問題で作り直す</button><button class="s" data-go="kyozai">以前の教材を見る</button></div>
+   <p class="small" id="ppState">${set.recorded?"この内容は印刷した記録が残っています。":"まだ印刷の記録はありません。"}　<span id="ppCount"></span></p>
+   <p class="muted small">「印刷する」を押すと記録が残り、次回はこの問題を避けます。iPad の Safari の共有→「プリント」で印刷したときは「印刷した記録を残す」を押してください。</p></div>
+   <div class="card"><h2>これまでの印刷</h2>${printHistory(p)}</div></div>
+   <div class="pp-wrap" id="ppw">${ppGuide(p,set)}${set.sheets.map((s,i)=>ppSheet(s,i,set.sheets.length)).join("")}<div id="ppAns"></div></div></div>`+foot();
+}
+vPrint.after=()=>{
+  if(!PRINT.set||!$("#ppw")) return;
+  fitSheets(); buildAnswers(); numberPages();
+  $$("[data-ppn]").forEach(b=>b.onclick=()=>{ PRINT.n=+b.dataset.ppn; PRINT.set=null; render(); });
+  $$("[data-ppk]").forEach(b=>b.onclick=()=>{ PRINT.nick=b.dataset.ppk==="1"; rerenderKeep(); });
+  $("#ppRe").onclick=()=>{ PRINT.set=null; render(); };
+  const mark=()=>{ if(recordPrint()){ toast("印刷した記録を残しました"); const s=$("#ppState"); if(s) s.firstChild.textContent="この内容は印刷した記録が残っています。　"; const r=$("#ppRec"); if(r) r.disabled=true; } };
+  $("#ppRec").onclick=mark;
+  $("#ppPrint").onclick=()=>{ mark(); setTimeout(()=>window.print(),50); };
+};
+
+/* ============================================================
    確認用の入り口（?demo=画面名 / ?selftest=1 / ?check=save|load）
    ============================================================ */
 const DEMO_PCT=[70,50,40,30,35,60,30,20,20,13,40,50,40,20,80,60,40,10,20,0,0,30,0,0,0,45];
@@ -1058,6 +1420,13 @@ function runDemo(name){
   if(name==="sltaedit"){ EDIT_EVAL=1; SCREEN="slta"; render(); return; }
   if(name==="menusolo"){ MENU_SOLO=true; SCREEN="menu"; render(); return; }
   if(name==="blockstart"){ startSession(p,buildMenu(p,false,4),"teacher"); return; }
+  if(name==="kyozai"||name==="print"){ // 例：?demo=print&pct=100,100,...（26個）&sheets=10&only=3
+    const pc=qs.get("pct"); if(pc){ const a=pc.split(",").map(numOrNull); if(a.length===SLTA.length) p.evals.push({date:today(),pct:a,src:"確認用"}); }
+    const sd=+qs.get("seed")||0; if(sd){ let a=sd>>>0; Math.random=()=>{ a=(a+0x6D2B79F5)>>>0; let t=a; t=Math.imul(t^t>>>15,t|1); t^=t+Math.imul(t^t>>>7,t|61); return ((t^t>>>14)>>>0)/4294967296; }; } // 確認用：同じ内容を何度でも作る
+    if(qs.get("sheets")) PRINT.n=[5,10,15].includes(+qs.get("sheets"))?+qs.get("sheets"):5; if(qs.get("nick")) PRINT.nick=true;
+    SCREEN=name; render();
+    const only=+qs.get("only")||0; if(name==="print"&&only){ document.body.classList.add("pp-only"); $$("#ppw .pp-sheet").forEach((e,i)=>{ if(i!==only-1) e.style.display="none"; }); }
+    return; }
   if(name==="bandclosed"){ runDemo("say"); DB.settings.band=false; render(); return; }
   SCREEN=name; if(name==="slta") EDIT_EVAL=-1; render();
 }
@@ -1117,6 +1486,17 @@ function selftest(){
   const pr2=parseProfile(JSON.stringify({version:2,patients:{a:{fmt:5,name:"数値",dates:["2026-01-01"],scores:[[35,null,80].concat(Array(23).fill(null))]}}}));
   ok("取り込み：正答率（数値）・未入力 null",pr2.items.length===1&&pr2.items[0].pct[0]===35&&pr2.items[0].pct[1]===null&&pr2.items[0].pct[2]===80);
   ok("SLTA入力：「6655432166」→60%、「#8」→80%、「35」→35%",Math.round(parseScore("6655432166",0).v)===60&&Math.round(parseScore("#8",0).v)===80&&parseScore("35",0).v===35);
+  // 6. 印刷用の教材（以前の教材のおすすめ）
+  if(KYOZAI.length){ const kp=newPatient("T-004"); kp.evals.push({date:"2026-11-01",pct:[100,100,100,100,100,100,100,100,100,93,100,100,100,100,100,100,100,90,100,100,80,100,100,100,100,100],src:"テスト"});
+    const R1=kzRecommend(kp); ok("おすすめの教材：軽度の健忘失語に近い成績 → 1位が健忘失語（軽度）、対の追加課題集も出る",R1&&R1.top[0].k.id==="05-3_健忘失語_軽度"&&R1.next.some(x=>x.k.id==="05-3_健忘失語_軽度_追加"),R1&&R1.top.map(x=>x.k.id+":"+x.d.toFixed(1)).join(" / "));
+    kp.kyozai["05-3_健忘失語_軽度"]=["2026-11-02"]; const R2=kzRecommend(kp); ok("使用済みの教材は後ろへ回る",R2&&R2.top[0].k.id!=="05-3_健忘失語_軽度",R2&&R2.top.map(x=>x.k.id).join(" / "));
+    const sp=newPatient("T-005"); sp.evals.push({date:"2026-11-01",pct:[20,10,10,10,10,20,10,0,0,7,20,10,10,0,30,10,10,0,10,0,0,10,0,0,0,20],src:"テスト"}); const R3=kzRecommend(sp);
+    ok("おすすめの教材：重度の成績 → 上位3冊が重度・最重度の教材",R3&&R3.top.slice(0,3).every(x=>/重度|最重度|全失語/.test(x.k.title)&&!/軽度|中等度/.test(x.k.title)),R3&&R3.top.map(x=>x.k.id+":"+x.d.toFixed(1)).join(" / ")); }
+  // 7. 印刷用プリント：枚数・紙で使える形・読み上げ文が課題用紙に出ない
+  { const set=buildPrint(p,5); const sheets=set?set.sheets:[];
+    const leak=[]; sheets.forEach((s,i)=>{ const html=ppSheet(s,i,sheets.length); const optT=new Set([].concat(...s.items.map(it=>(it.options||[]).map(o=>o&&o.text).filter(Boolean))));
+      s.items.forEach(it=>{ const rd=paperRead(it); if(rd&&rd.length>=3&&!optT.has(rd)&&html.includes(esc(rd))) leak.push(it.id); }); }); // 選択肢の文字そのものは除く
+    ok("印刷用プリント：課題用紙5枚、すべて紙で使える形、読み上げ文は課題用紙に出ない",sheets.length===5&&sheets.every(s=>s.items.length&&s.items.every(paperOK))&&!leak.length,sheets.map(s=>`${s.skill}L${s.level}×${s.items.length}`).join(" / ")+(leak.length?" 漏れ："+leak.join(","):"")); }
   ok("JavaScript のエラーがない",!ERRS.length,ERRS.join(" / "));
   NOW=()=>Date.now();
   const pass=R.every(r=>r.pass);
@@ -1135,6 +1515,7 @@ function checkPersist(mode){ // 2回に分けて開き、保存→再読み込�
 
 /* ---------- はじまり ---------- */
 function boot(){
+  KYOZAI=Array.isArray(window.KYOZAI)?window.KYOZAI.filter(k=>k&&typeof k==="object"&&k.id):[];
   PICS=window.PICS||{}; WORDS=window.WORDS||{}; BANK=Array.isArray(window.BANK)?window.BANK.filter(x=>x&&typeof x==="object"):[];
   for(const id of Object.keys(WORDS)) if(!WORDS[id]||typeof WORDS[id]!=="object") delete WORDS[id];
   buildSkills(); pickVoice(); try{ speechSynthesis.onvoiceschanged=pickVoice; }catch(e){}

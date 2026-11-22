@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="author" content="KENTA SHINKAWA">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ウェルニッケ失語（感覚性失語）訓練教材</title>
+<link rel="stylesheet" href="common.css">
+<style>
+.ill{width:30mm;height:30mm;fill:none;stroke:#000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;display:block}
+.pgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:6mm 4mm;margin:2mm 0 4mm}
+.pgrid .p{display:flex;flex-direction:column;align-items:center;border:1px solid #bbb;border-radius:2mm;padding:2mm 0 1mm}
+.pgrid .p b{font-size:12pt;color:#555;align-self:flex-start;margin-left:3mm}
+.pm{display:grid;grid-template-columns:1fr 1fr;gap:6mm 8mm;margin:2mm 0 4mm}
+.pm .c{display:flex;align-items:center;gap:5mm;border:1px solid #bbb;border-radius:2mm;padding:3mm}
+.pm .c .n{font-weight:700;font-size:14pt;align-self:flex-start}
+.pm .opts{display:flex;flex-direction:column;gap:2.5mm}
+.pm .opts span{border:1.5px solid #333;border-radius:2mm;padding:.5mm 4mm;font-size:16pt}
+.boxes{display:flex;gap:2mm}
+.boxes i{display:inline-block;width:14mm;height:14mm;border:1.5px solid #333}
+table.rec{border-collapse:collapse;width:100%;font-size:12pt}
+table.rec th,table.rec td{border:1px solid #555;padding:1.5mm 2mm;vertical-align:top;text-align:left}
+table.rec th{background:#f2f2f2;font-weight:700}
+.row{display:flex;align-items:center;gap:4mm;margin:0 0 3.5mm}
+.row .n{font-weight:700;font-size:15pt;min-width:9mm}
+.row .choices{margin:0}
+.kana{display:flex;gap:2.5mm}
+.kana span{display:inline-block;width:12mm;height:12mm;line-height:11mm;text-align:center;border:1.5px solid #333;border-radius:1.5mm;font-size:17pt;font-weight:700}
+.note{font-size:10.5pt;color:#555;margin:-2mm 0 3mm}
+.guide .mini{margin-bottom:0}
+.lv{font-weight:700;margin:2.5mm 0 1mm;font-size:11.5pt}
+ruby rt{font-size:9pt}
+.compact{font-size:9.5pt;line-height:1.42}
+.compact h2{font-size:12pt;margin:2.5mm 0 1mm}
+.compact table{font-size:9pt;margin-bottom:2mm}
+.compact th,.compact td{padding:.6mm 1.5mm}
+.compact ul{margin-bottom:1mm}
+.compact .mini{width:115mm;margin:0 auto}
+.compact .note{margin:0 0 1mm;font-size:9.5pt}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="ic-cup" viewBox="0 0 100 100"><path d="M28 26 L72 26 L66 80 Q50 87 34 80 Z"/><ellipse cx="50" cy="26" rx="22" ry="5"/><path d="M38 84 L38 89 L62 89 L62 84"/></symbol><symbol id="ic-clock" viewBox="0 0 100 100"><circle cx="50" cy="50" r="38"/><path d="M50 50 L50 24 M50 50 L68 58"/><path d="M50 14 L50 19 M86 50 L81 50 M50 86 L50 81 M14 50 L19 50"/><circle cx="50" cy="50" r="2"/></symbol><symbol id="ic-key" viewBox="0 0 100 100"><circle cx="28" cy="50" r="15"/><circle cx="28" cy="50" r="5"/><path d="M43 50 L90 50 M74 50 L74 62 M84 50 L84 60"/></symbol><symbol id="ic-umbrella" viewBox="0 0 100 100"><path d="M10 46 Q50 -2 90 46 Q80 38 70 46 Q60 38 50 46 Q40 38 30 46 Q20 38 10 46 Z"/><path d="M50 12 L50 8 M50 46 L50 82 A6 6 0 0 1 38 82"/></symbol><symbol id="ic-phone" viewBox="0 0 100 100"><rect x="22" y="48" width="56" height="34" rx="5"/><path d="M14 42 Q14 28 30 30 L70 30 Q86 28 86 42 L76 46 L70 39 L30 39 L24 46 Z"/><circle cx="50" cy="65" r="10"/><circle cx="50" cy="65" r="3"/></symbol><symbol id="ic-glasses" viewBox="0 0 100 100"><circle cx="30" cy="56" r="15"/><circle cx="70" cy="56" r="15"/><path d="M45 53 Q50 47 55 53 M15 53 L6 42 M85 53 L94 42"/></symbol><symbol id="ic-shoe" viewBox="0 0 100 100"><path d="M14 76 L14 38 L34 38 Q38 52 54 55 L78 60 Q90 63 90 72 L90 76 Z"/><path d="M14 69 L90 69 M38 46 L44 44 M42 51 L48 49"/></symbol><symbol id="ic-book" viewBox="0 0 100 100"><path d="M50 30 Q32 21 12 25 L12 78 Q32 74 50 82 Q68 74 88 78 L88 25 Q68 21 50 30 Z"/><path d="M50 30 L50 82 M20 36 Q32 34 42 38 M20 46 Q32 44 42 48 M58 38 Q68 34 80 36 M58 48 Q68 44 80 46"/></symbol><symbol id="ic-scissors" viewBox="0 0 100 100"><circle cx="32" cy="77" r="11"/><circle cx="68" cy="77" r="11"/><path d="M38 67 L62 12 M62 67 L38 12"/><circle cx="50" cy="40" r="2"/></symbol><symbol id="ic-toothbrush" viewBox="0 0 100 100"><rect x="8" y="58" width="58" height="9" rx="4"/><rect x="66" y="56" width="26" height="12" rx="3"/><path d="M70 56 L70 42 M75 56 L75 42 M80 56 L80 42 M85 56 L85 42 M90 56 L90 42"/></symbol><symbol id="ic-kettle" viewBox="0 0 100 100"><path d="M24 82 Q20 48 50 46 Q80 48 76 82 Z"/><path d="M38 46 Q50 37 62 46"/><circle cx="50" cy="37" r="3"/><path d="M32 50 Q50 8 68 50"/><path d="M26 66 L9 50 L13 47 L28 58"/></symbol><symbol id="ic-wallet" viewBox="0 0 100 100"><rect x="12" y="32" width="76" height="46" rx="4"/><path d="M12 46 L88 46"/><rect x="68" y="42" width="20" height="12" rx="2"/><circle cx="76" cy="48" r="2"/></symbol></defs></svg>
+<div class="noprint">印刷するときは <b>Ctrl＋P</b> を押してください（用紙：A4縦）。1ページ目と「指導者用」と書かれたページは指導者用です。患者さんには課題用紙だけを渡してください。</div>
+<section class="sheet guide compact">
+<div class="head"><div><div class="tag">指導者用</div><h1>ウェルニッケ失語（感覚性失語）の訓練教材について</h1></div></div>
+
+<h2>1．典型的なSLTAプロフィールの特徴</h2>
+<p>発話は流暢で量も保たれやすい一方、聴理解が大きく低下しやすいパターンです。意味性錯語や新造語が多く（重い場合はジャルゴン）、自分の誤りに気付きにくく、復唱も低下します。読解は聴理解よりやや保たれることがあり、特に漢字単語では文字が理解の手がかりになる場合があります。</p>
+<table>
+<tr><th style="width:13%">領域</th><th style="width:27%">目安</th><th>特徴的な下位検査</th></tr>
+<tr><td>聴く</td><td>大きく低下しやすい</td><td>単語の理解は中等度、短文の理解・口頭命令に従うは重度に低下しやすい。仮名の理解も低下</td></tr>
+<tr><td>話す</td><td>流暢だが内容が伴わない</td><td>呼称・動作説明・まんがの説明で錯語・新造語。単語の復唱・文の復唱も低下。語の列挙は少なめ</td></tr>
+<tr><td>読む</td><td>聴くよりやや保たれることがある</td><td>漢字・単語の理解が比較的良い。仮名・単語の理解、短文の理解、書字命令に従うは低下しやすい</td></tr>
+<tr><td>書く</td><td>低下</td><td>錯書が多い。書取（特に仮名・短文）は低下しやすい</td></tr>
+<tr><td>計算</td><td>軽度〜中等度の低下</td><td>個人差が大きい</td></tr>
+</table>
+<svg class="mini" data-profile="50,20,10,30,20,30,20,20,0,20,40,50,20,0,70,40,30,10,20,0,0,30,20,0,0,40"></svg>
+<p class="note">典型例のイメージ。個人差が大きい（例データ「例：ウェルニッケ失語」1回目の評価から作図）。</p>
+<h2>2．訓練の方針</h2>
+<ul>
+<li><b>目標：</b>簡単な話し言葉（はい／いいえの質問、身近な物の名前）が分かる場面を増やす。文字や身ぶりで意思を確かめ合えるようにする。話を区切って相手の反応を確かめる習慣を付ける。</li>
+<li><b>優先順位：</b>①聴理解（単語→はい／いいえ→短い指示）②文字を手がかりにした理解 ③意味の分類 ④自己モニタリングと発話の抑制。呼称・復唱は理解がある程度安定してから加えることが多い。</li>
+<li><b>段階の上げ方：</b>選択肢の数（2→4→6）、意味の近さ（遠い→近い）、刺激の長さ（単語→短文）を一つずつ難しくする。</li>
+<li><b>家族への助言：</b>短く・ゆっくり・一つの話題で話す。大事な語は紙に書いて見せる。はい／いいえで答えられる形で確かめる。言い誤りを何度も訂正しない。</li>
+<li><b>訪問での工夫：</b>自宅の実物（湯のみ、薬袋、カレンダーなど）を使う。テレビなどの雑音を減らす。疲れると理解が落ちやすいので課題は短めにする。</li>
+</ul>
+<h2>3．教材ページの一覧と使い方・記録のしかた</h2>
+<table>
+<tr><th style="width:9%">頁</th><th style="width:30%">課題</th><th>使い方</th></tr>
+<tr><td>2</td><td>指導者用リスト</td><td>3・4・8頁で読み上げる語と質問（段階の記録欄つき）</td></tr>
+<tr><td>3〜8</td><td>聴理解課題1・2／読解課題1・2／意味課題1・2</td><td>聞いて線画を指さす、はい・いいえ、文字と線画の照合、短文の正誤、仲間はずれ、分類</td></tr>
+<tr><td>9〜11</td><td>自己モニタリング記録／台本／解答</td><td>録音の聞き返し、短く区切って話す練習、解答と評価のポイント</td></tr>
+</table>
+<p>1問ごとに段階6〜1で記録します（6 完全正答、5 遅延完全正答、4 不完全正答、3 ヒント後正答、2 関連反応、1 誤答）。6・5がおおむね8割以上の状態が2回続いたら一段階難しくし、5割未満なら選択肢を減らすなど易しくする、を目安にします。<b>最終的な判断は担当の言語聴覚士が行います。</b></p>
+
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet guide compact">
+<div class="head"><div><div class="tag">指導者用（患者さんには渡さない）</div><h1>聴理解課題の読み上げリスト</h1></div></div>
+
+<p>普通の速さよりやや遅く、はっきり読みます。1回で反応がなければ同じ言い方でもう一度読み（段階5）、それでも難しければ口形を見せる・文字を見せるなどのヒントを出します（段階3）。</p>
+<h2>聴理解課題1（3頁）　語を聞いて線画を指さす</h2>
+<table><tr><th style="width:6%">No</th><th>読む語</th><th style="width:11%">段階</th><th style="width:6%">No</th><th>読む語</th><th style="width:11%">段階</th></tr><tr><td>1</td><td>鍵</td><td></td><td>7</td><td>時計</td><td></td></tr><tr><td>2</td><td>眼鏡</td><td></td><td>8</td><td>財布</td><td></td></tr><tr><td>3</td><td>電話</td><td></td><td>9</td><td>歯ブラシ</td><td></td></tr><tr><td>4</td><td>湯のみ</td><td></td><td>10</td><td>靴</td><td></td></tr><tr><td>5</td><td>はさみ</td><td></td><td>11</td><td>やかん</td><td></td></tr><tr><td>6</td><td>傘</td><td></td><td>12</td><td>本</td><td></td></tr></table>
+<p class="note" style="margin-top:0">2回目以降は読む順番を変えます。易しくするときは、紙を折って4枚だけ見せます。</p>
+<h2>聴理解課題2（4頁）　はい／いいえで答える質問</h2>
+<table><tr><th style="width:5%">No</th><th>質問（正答）</th><th style="width:8%">段階</th><th style="width:5%">No</th><th>質問（正答）</th><th style="width:8%">段階</th></tr><tr><td>1</td><td>傘は雨の日に使いますか。（はい）</td><td></td><td>7</td><td>はさみで紙を切りますか。（はい）</td><td></td></tr><tr><td>2</td><td>靴は頭にかぶる物ですか。（いいえ）</td><td></td><td>8</td><td>歯ブラシで顔を洗いますか。（いいえ）</td><td></td></tr><tr><td>3</td><td>時計を見ると時刻が分かりますか。（はい）</td><td></td><td>9</td><td>病院には医師がいますか。（はい）</td><td></td></tr><tr><td>4</td><td>魚は空を飛びますか。（いいえ）</td><td></td><td>10</td><td>お正月は夏にありますか。（いいえ）</td><td></td></tr><tr><td>5</td><td>お茶は湯のみで飲みますか。（はい）</td><td></td><td>11</td><td>あなたのお名前は（本人の氏名）ですか。（はい）</td><td></td></tr><tr><td>6</td><td>雪は温かいですか。（いいえ）</td><td></td><td>12</td><td>あなたのお名前は（別の氏名）ですか。（いいえ）</td><td></td></tr></table>
+<h2>意味課題2の後半（8頁）　聞いて仲間を指さす</h2>
+<table><tr><th style="width:6%">No</th><th>読む語</th><th style="width:11%">段階</th><th style="width:6%">No</th><th>読む語</th><th style="width:11%">段階</th></tr><tr><td>1</td><td>みかん</td><td></td><td>6</td><td>包丁</td><td></td></tr><tr><td>2</td><td>帽子</td><td></td><td>7</td><td>大根</td><td></td></tr><tr><td>3</td><td>鍋</td><td></td><td>8</td><td>靴下</td><td></td></tr><tr><td>4</td><td>豆腐</td><td></td><td>9</td><td>やかん</td><td></td></tr><tr><td>5</td><td>手袋</td><td></td><td>10</td><td>卵</td><td></td></tr></table>
+
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet">
+<div class="head"><div><div class="tag">聴理解課題 1</div><h1>語を聞いて絵を選ぶ</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div>
+
+<p class="ask">指導者が言う物の名前を聞いて、その絵を指さしてください。</p>
+<p class="hint">分からないときは「もう一度お願いします」と伝えてください。</p>
+<div class="pgrid"><div class="p"><b>1</b><svg class="ill" viewBox="0 0 100 100" role="img" aria-label="湯のみ"><use href="#ic-cup"/></svg></div><div class="p"><b>2</b><svg class="ill" viewBox="0 0 100 100" role="img" aria-label="時計"><use href="#ic-clock"/></svg></div><div class="p"><b>3</b><svg class="ill" viewBox="0 0 100 100" role="img" aria-label="鍵"><use href="#ic-key"/></svg></div><div class="p"><b>4</b><svg class="ill" viewBox="0 0 100 100" role="img" aria-label="傘"><use href="#ic-umbrella"/></svg></div><div class="p"><b>5</b><svg class="ill" viewBox="0 0 100 100" role="img" aria-label="電話"><use href="#ic-phone"/></svg></div><div class="p"><b>6</b><svg class="ill" viewBox="0 0 100 100" role="img" aria-label="眼鏡"><use href="#ic-glasses"/></svg></div><div class="p"><b>7</b><svg class="ill" viewBox="0 0 100 100" role="img" aria-label="靴"><use href="#ic-shoe"/></svg></div><div class="p"><b>8</b><svg class="ill" viewBox="0 0 100 100" role="img" aria-label="本"><use href="#ic-book"/></svg></div><div class="p"><b>9</b><svg class="ill" viewBox="0 0 100 100" role="img" aria-label="はさみ"><use href="#ic-scissors"/></svg></div><div class="p"><b>10</b><svg class="ill" viewBox="0 0 100 100" role="img" aria-label="歯ブラシ"><use href="#ic-toothbrush"/></svg></div><div class="p"><b>11</b><svg class="ill" viewBox="0 0 100 100" role="img" aria-label="やかん"><use href="#ic-kettle"/></svg></div><div class="p"><b>12</b><svg class="ill" viewBox="0 0 100 100" role="img" aria-label="財布"><use href="#ic-wallet"/></svg></div></div>
+<p class="hint" style="margin-top:2mm">慣れてきたら、指導者が言う物を二つ続けて聞き、言われた順に指さしてください。</p>
+
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet">
+<div class="head"><div><div class="tag">聴理解課題 2</div><h1>質問に「はい」「いいえ」で答える</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div>
+
+<p class="ask">指導者の質問を聞いて、「はい」か「いいえ」に○を付けてください。声に出して答えても構いません。</p>
+<div class="grid" style="gap:0 10mm"><div class="row"><span class="n">1.</span><div class="choices"><span>はい</span><span>いいえ</span></div></div><div class="row"><span class="n">2.</span><div class="choices"><span>はい</span><span>いいえ</span></div></div><div class="row"><span class="n">3.</span><div class="choices"><span>はい</span><span>いいえ</span></div></div><div class="row"><span class="n">4.</span><div class="choices"><span>はい</span><span>いいえ</span></div></div><div class="row"><span class="n">5.</span><div class="choices"><span>はい</span><span>いいえ</span></div></div><div class="row"><span class="n">6.</span><div class="choices"><span>はい</span><span>いいえ</span></div></div><div class="row"><span class="n">7.</span><div class="choices"><span>はい</span><span>いいえ</span></div></div><div class="row"><span class="n">8.</span><div class="choices"><span>はい</span><span>いいえ</span></div></div><div class="row"><span class="n">9.</span><div class="choices"><span>はい</span><span>いいえ</span></div></div><div class="row"><span class="n">10.</span><div class="choices"><span>はい</span><span>いいえ</span></div></div><div class="row"><span class="n">11.</span><div class="choices"><span>はい</span><span>いいえ</span></div></div><div class="row"><span class="n">12.</span><div class="choices"><span>はい</span><span>いいえ</span></div></div></div>
+<div class="card" style="margin-top:4mm;text-align:center"><span class="big" style="font-size:40pt;margin-right:30mm">はい</span><span class="big" style="font-size:40pt">いいえ</span></div>
+<p class="hint">言葉で答えにくいときは、上の大きな文字を指さして答えてください。</p>
+
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet">
+<div class="head"><div><div class="tag">読解課題 1</div><h1>絵と語の照合</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div>
+
+<p class="ask">絵に合う語を三つの中から選び、○を付けてください。</p>
+<p class="hint">語は声に出さずに読んで構いません。</p>
+<div class="pm"><div class="c"><span class="n">1.</span><svg class="ill" viewBox="0 0 100 100" role="img" aria-label="湯のみ"><use href="#ic-cup"/></svg><div class="opts"><span>湯のみ</span><span>やかん</span><span>歯ブラシ</span></div></div><div class="c"><span class="n">2.</span><svg class="ill" viewBox="0 0 100 100" role="img" aria-label="鍵"><use href="#ic-key"/></svg><div class="opts"><span>財布</span><span>鍵</span><span>時計</span></div></div><div class="c"><span class="n">3.</span><svg class="ill" viewBox="0 0 100 100" role="img" aria-label="眼鏡"><use href="#ic-glasses"/></svg><div class="opts"><span>帽子</span><span>本</span><span>眼鏡</span></div></div><div class="c"><span class="n">4.</span><svg class="ill" viewBox="0 0 100 100" role="img" aria-label="はさみ"><use href="#ic-scissors"/></svg><div class="opts"><span>包丁</span><span>はさみ</span><span>鉛筆</span></div></div><div class="c"><span class="n">5.</span><svg class="ill" viewBox="0 0 100 100" role="img" aria-label="電話"><use href="#ic-phone"/></svg><div class="opts"><span>電話</span><span>時計</span><span>手紙</span></div></div><div class="c"><span class="n">6.</span><svg class="ill" viewBox="0 0 100 100" role="img" aria-label="靴"><use href="#ic-shoe"/></svg><div class="opts"><span>靴下</span><span>傘</span><span>靴</span></div></div></div>
+<p class="ask" style="margin-top:3mm">○を付けた語を、下の線の上に書き写してください。</p>
+<div class="grid"><div class="c">1.</div><div class="c">2.</div><div class="c">3.</div><div class="c">4.</div><div class="c">5.</div><div class="c">6.</div></div>
+
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet">
+<div class="head"><div><div class="tag">読解課題 2</div><h1>短文の正誤判断</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div>
+
+<p class="ask">文を読んで、内容が正しければ○、誤っていれば×を左の枠に書いてください。</p>
+<p class="hint">一文ずつ、指で文字をたどりながら読んでください。</p>
+<div class="q" style="margin:0 0 5.5mm"><div class="t"><span class="ox"></span>1.　傘は雨の日に使う物です。</div></div><div class="q" style="margin:0 0 5.5mm"><div class="t"><span class="ox"></span>2.　眼鏡は耳に入れて音を聞く物です。</div></div><div class="q" style="margin:0 0 5.5mm"><div class="t"><span class="ox"></span>3.　冬は夏よりも寒い季節です。</div></div><div class="q" style="margin:0 0 5.5mm"><div class="t"><span class="ox"></span>4.　冷蔵庫は食べ物を温める物です。</div></div><div class="q" style="margin:0 0 5.5mm"><div class="t"><span class="ox"></span>5.　病院では医師が診察をします。</div></div><div class="q" style="margin:0 0 5.5mm"><div class="t"><span class="ox"></span>6.　歯ブラシで髪をとかします。</div></div><div class="q" style="margin:0 0 5.5mm"><div class="t"><span class="ox"></span>7.　正月には年賀状が届きます。</div></div><div class="q" style="margin:0 0 5.5mm"><div class="t"><span class="ox"></span>8.　鍵は戸を開けるときに使います。</div></div><div class="q" style="margin:0 0 5.5mm"><div class="t"><span class="ox"></span>9.　魚は木の上に住んでいます。</div></div><div class="q" style="margin:0 0 5.5mm"><div class="t"><span class="ox"></span>10.　雨が降ると洗濯物がよく乾きます。</div></div>
+
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet">
+<div class="head"><div><div class="tag">意味課題 1</div><h1>仲間はずれの語を選ぶ</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div>
+
+<p class="ask">四つの語のうち、一つだけ仲間ではない語があります。その語に○を付けてください。</p>
+<p class="hint">例：「茶わん・皿・湯のみ・靴」なら「靴」（ほかの三つは食器）。</p>
+<div class="row"><span class="n">1.</span><div class="choices"><span>りんご</span><span>みかん</span><span>ぶどう</span><span>はさみ</span></div></div><div class="row"><span class="n">2.</span><div class="choices"><span>靴</span><span>帽子</span><span>大根</span><span>手袋</span></div></div><div class="row"><span class="n">3.</span><div class="choices"><span>医師</span><span>看護師</span><span>大工</span><span>薬剤師</span></div></div><div class="row"><span class="n">4.</span><div class="choices"><span>包丁</span><span>鉛筆</span><span>まな板</span><span>鍋</span></div></div><div class="row"><span class="n">5.</span><div class="choices"><span>春</span><span>夏</span><span>朝</span><span>秋</span></div></div><div class="row"><span class="n">6.</span><div class="choices"><span>電車</span><span>冷蔵庫</span><span>バス</span><span>タクシー</span></div></div><div class="row"><span class="n">7.</span><div class="choices"><span>犬</span><span>猫</span><span>桜</span><span>馬</span></div></div><div class="row"><span class="n">8.</span><div class="choices"><span>しょうゆ</span><span>せっけん</span><span>みそ</span><span>砂糖</span></div></div><div class="row"><span class="n">9.</span><div class="choices"><span>父</span><span>母</span><span>店員</span><span>祖母</span></div></div><div class="row"><span class="n">10.</span><div class="choices"><span>正月</span><span>節分</span><span>お盆</span><span>月曜日</span></div></div>
+<p class="ask" style="margin-top:3mm">余裕があれば、ほかの三つが何の仲間か、指導者に話してください。</p>
+
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet">
+<div class="head"><div><div class="tag">意味課題 2</div><h1>語を仲間ごとに分ける</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div>
+
+<p class="ask">枠の中の語を読み、「食べ物」「身に着ける物」「台所の道具」に分けて書いてください。</p>
+<div class="read" style="text-align:center;letter-spacing:.05em">大根　セーター　包丁　豆腐　手袋　やかん　魚　帽子　まな板　卵　靴下　鍋</div>
+<table class="rec" style="font-size:14pt"><tr><td style="width:33%"><b>食べ物</b><div class="lines"><div class="l" style="height:11mm"></div><div class="l" style="height:11mm"></div><div class="l" style="height:11mm"></div><div class="l" style="height:11mm"></div></div></td><td style="width:33%"><b>身に着ける物</b><div class="lines"><div class="l" style="height:11mm"></div><div class="l" style="height:11mm"></div><div class="l" style="height:11mm"></div><div class="l" style="height:11mm"></div></div></td><td style="width:33%"><b>台所の道具</b><div class="lines"><div class="l" style="height:11mm"></div><div class="l" style="height:11mm"></div><div class="l" style="height:11mm"></div><div class="l" style="height:11mm"></div></div></td></tr></table>
+<p class="ask" style="margin-top:7mm">次に、指導者が言う語を聞いて、どの仲間に入るか下の枠を指さしてください。</p>
+<div class="choices" style="margin-left:0;justify-content:center;gap:10mm"><span style="font-size:20pt;padding:4mm 8mm">食べ物</span><span style="font-size:20pt;padding:4mm 8mm">身に着ける物</span><span style="font-size:20pt;padding:4mm 8mm">台所の道具</span></div>
+
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet">
+<div class="head"><div><div class="tag">自己モニタリング記録</div><h1>録音を聞き返して誤りに気付く</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div>
+
+<p class="ask">話した内容を録音し、指導者と一緒に聞き返してください。気付いたことに印を付け、下の表に記録してください。</p>
+<div class="memo" style="font-size:13pt">□ 話が長くなった　　□ 意味の分からない言葉があった<br>□ 言おうとした語と違う語になった　　□ 質問の答えになっていなかった</div>
+<table class="rec"><tr><th style="width:15%">日付</th><th style="width:25%">話題</th><th style="width:35%">聞き返して気付いたこと</th><th>言い直した言葉</th></tr><tr style="height:31mm"><td></td><td></td><td></td><td></td></tr><tr style="height:31mm"><td></td><td></td><td></td><td></td></tr><tr style="height:31mm"><td></td><td></td><td></td><td></td></tr><tr style="height:31mm"><td></td><td></td><td></td><td></td></tr><tr style="height:31mm"><td></td><td></td><td></td><td></td></tr></table>
+<p class="hint" style="margin-top:3mm">話題の例：今朝の食事、家族のこと、今日の天気、病院での出来事、季節の行事</p>
+
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet guide compact">
+<div class="head"><div><div class="tag">指導者用（患者さんには渡さない）</div><h1>台本：短く区切って話す練習（ジャルゴンの抑制）</h1></div></div>
+
+<p>発話が長く続き、新造語や錯語が増えてくる方に対して、「一度に一つ、短く言う」「相手の反応を確かめる」習慣を付けるための進め方です。叱る・遮るのではなく、合図で区切ることを繰り返します。</p>
+<h2>準備</h2>
+<ul><li>話題を一つに絞り、その話題を表す語や写真を紙に書いて机に置く（例：「昼ご飯」「孫」「天気」）。</li>
+<li>区切りの合図を決めて最初に見せる（手のひらを軽く上げる、机の上のカードを指さす、など）。</li>
+<li>本人の同意を得て、話し始めから録音する（9頁の記録に使う）。</li></ul>
+<h2>進め方</h2>
+<table>
+<tr><th style="width:24%">場面</th><th style="width:40%">指導者のことばと動作</th><th>ねらい・留意点</th></tr>
+<tr><td>1．話題を示す</td><td>紙の「昼ご飯」を指さし、「今日のお昼ご飯の話を聞かせてください」</td><td>話題を文字で固定し、話がそれたときに戻る目印にする</td></tr>
+<tr><td>2．一文で区切る</td><td>一文ほど話したところで合図を出し、「いったん止めます。今のは、ご飯の話ですね」</td><td>長く話し続ける前に区切る。内容が分からなくても、話題に合っていれば認める</td></tr>
+<tr><td>3．要点を確かめる</td><td>「食べたのは、魚ですか、肉ですか」と紙に書いて二択で示す</td><td>聞き手が内容を推測し、はい／いいえや指さしで確かめる</td></tr>
+<tr><td>4．短く言い直す</td><td>選んだ語を指さし、「『魚を食べた』と、短く言ってください」</td><td>復唱が難しい場合は無理に求めず、文字の指さしでよい</td></tr>
+<tr><td>5．うまくいった点を伝える</td><td>「短く区切ったので、よく分かりました」</td><td>何が良かったかを具体的に伝える</td></tr>
+<tr><td>6．録音を聞き返す</td><td>区切る前と後の録音を続けて聞かせる</td><td>違いに本人が気付けたかを9頁に記録する</td></tr>
+</table>
+<h2>反応がずれたとき</h2>
+<ul><li>合図に気付かず話し続ける：合図をはっきり見せたまま、相手の目を見て待つ。肩に軽く触れるなど、本人と決めた方法を使う。</li>
+<li>話題から離れる：机の上の文字を指さし、「この話に戻ります」と伝える。</li>
+<li>本人がいら立つ：課題を中断し、はい／いいえで答えられる会話や好きな話題に切り替える。</li></ul>
+<h2>避けたいこと</h2>
+<ul><li>誤った語を一つずつ指摘して言い直させること、「分からない」を繰り返すこと、理解していない内容に同意したふりをすること。</li></ul>
+<p class="note" style="margin-top:2mm">家族にも同じ合図を使ってもらうと、日常の会話で練習を続けやすくなります。</p>
+
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet guide compact">
+<div class="head"><div><div class="tag">指導者用（患者さんには渡さない）</div><h1>解答と評価のポイント</h1></div></div>
+
+<h2>読解課題1（絵と語の照合）</h2>
+<p style="margin:0">1 湯のみ　2 鍵　3 眼鏡　4 はさみ　5 電話　6 靴</p>
+<p style="margin:0">誤りが意味の近い語（湯のみ→やかん、靴→靴下）か、無関係な語かを記録します。意味の近い語への誤りが多い場合は、意味の分類課題を並行して行います。</p>
+<h2>読解課題2（短文の正誤）</h2>
+<p style="margin:0">1 ○　2 ×　3 ○　4 ×　5 ○　6 ×　7 ○　8 ○　9 ×　10 ×</p>
+<h2>意味課題1（仲間はずれ）</h2>
+<p style="margin:0">1 はさみ　2 大根　3 大工　4 鉛筆　5 朝　6 冷蔵庫　7 桜　8 せっけん　9 店員　10 月曜日</p>
+<h2>意味課題2（分類）</h2>
+<p style="margin:0">食べ物：大根・豆腐・魚・卵　／　身に着ける物：セーター・手袋・帽子・靴下　／　台所の道具：包丁・やかん・まな板・鍋<br>後半（聞いて指さす）：食べ物＝みかん・豆腐・大根・卵、身に着ける物＝帽子・手袋・靴下、台所の道具＝鍋・包丁・やかん</p>
+<h2>評価のポイント</h2>
+<ul>
+<li>聴理解は、同じ課題を文字あり・文字なしの両方で行い、文字が手がかりとして役立っているかを比べます。</li>
+<li>疲労や雑音で成績が大きく変わることがあります。実施した時間帯や環境も記録します。</li>
+<li>はい／いいえ質問は「はい」に偏ることがあります。はい・いいえの正答が半々になるよう出題し、偏りの有無を確認します。</li>
+<li>自己モニタリング記録では、本人が自分から誤りに気付いた回数と、指導者が促して気付いた回数を分けて記録します。</li>
+<li>錯語は種類（意味性錯語、新造語、音韻性錯語など）も記録しておくと、経過を追いやすくなります。</li>
+</ul>
+<p class="note" style="margin-top:3mm">課題の難易度や進め方は一般的な目安です。最終的な判断は担当の言語聴覚士が行います。</p>
+
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+
+<script src="mini-profile.js"></script>
+</body>
+</html>

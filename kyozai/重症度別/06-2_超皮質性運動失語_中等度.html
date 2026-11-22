@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="author" content="KENTA SHINKAWA">
+<title>訓練教材 超皮質性運動失語（中等度）</title>
+<link rel="stylesheet" href="common.css">
+<style>
+  .guide{font-size:10.5pt;line-height:1.5}
+  .guide .head{margin-bottom:3mm}
+  .guide h2{font-size:12.5pt;margin:3mm 0 1mm}
+  .guide p{margin:0 0 1.5mm}
+  .guide ul,.guide ol{margin:0 0 1.5mm}
+  .guide table{font-size:9.8pt;margin:0 0 1.5mm}
+  .guide th,.guide td{padding:.7mm 1.5mm}
+  .guide .mini{width:78%;margin:0 auto}
+  .guide .note{font-size:9.5pt;color:#555;text-align:center;margin:0 0 1mm}
+  .key{font-size:10.5pt}
+  .key h2{margin:2.5mm 0 .5mm}
+  .key p{margin:0}
+  .qa{margin:0 0 2mm}
+  .qa .t{font-size:14.5pt;font-weight:700}
+  .qa .s{display:flex;align-items:flex-end;margin:0 0 0 9mm;height:11mm;border-bottom:1px solid var(--rule);font-size:13.5pt;color:#444}
+  .tbl{border-collapse:collapse;width:100%;font-size:13pt;margin:0 0 3mm}
+  .tbl th{border:1px solid #888;background:#f4f4f4;padding:0 2mm;height:9mm;text-align:center}
+  .tbl td{border:1px solid #888;height:10.5mm;padding:0 2mm;text-align:center}
+  .tbl td.k{font-weight:700;white-space:nowrap;text-align:left}
+  .flow{border:1.5px solid #333;border-radius:3mm;padding:2mm 4mm;margin:0 0 3mm;font-size:13pt;line-height:1.7}
+  .flow b{font-size:14pt}
+  .flow .bl{display:inline-block;min-width:30mm;border-bottom:1px solid #333}
+  .scn{border:1.5px solid #333;border-radius:3mm;padding:2mm 4mm;margin:0 0 3mm}
+  .scn .t{font-size:14pt;font-weight:700}
+  .scn .k{font-size:12.5pt;color:#444;margin:.5mm 0 0}
+  .scn .l{height:10mm;border-bottom:1px solid var(--rule)}
+</style>
+</head>
+<body>
+
+<div class="noprint">印刷するときは <b>Ctrl＋P</b> を押してください（用紙：A4縦）。1・2ページ目と最後のページは指導者用です。患者さんには3〜7ページ目を渡してください。</div>
+
+<!-- ========== 指導者用ガイド 1 ========== -->
+<section class="sheet guide">
+  <div class="head"><div><div class="tag">指導者用（患者さんには渡さない）</div><h1>超皮質性運動失語（中等度）の訓練教材</h1></div></div>
+  <h2>1. この段階の目安となるSLTAプロフィール</h2>
+  <p><b>質問されれば1〜3語、ときに短い文で答えられるが、自分から話し出すことは少ない段階</b>です。復唱は単語・文ともよく保たれ、音読もほぼ可能です。答えが「はい」「そうです」だけで終わったり、話し始めるまでに時間がかかったりします。</p>
+  <table>
+    <tr><th style="width:11%">領域</th><th style="width:45%">正答率の目安</th><th>特徴的な下位検査</th></tr>
+    <tr><td>聴く</td><td>単語の理解 9割前後、短文の理解 8割前後、口頭命令に従う 5〜6割</td><td>理解はおおむね保たれる。</td></tr>
+    <tr><td>話す</td><td><b>単語の復唱 ほぼ10割、文の復唱 8割前後</b>／呼称 5〜6割、動作説明 4〜5割、まんがの説明 段階2〜3、語の列挙 3〜6語</td><td><b>語の列挙・まんがの説明の低さ</b>と復唱の良さの差が目印。</td></tr>
+    <tr><td>読む</td><td>単語の理解 9割前後、短文の理解 7割前後、書字命令に従う 5割前後</td><td>短文の音読は6割前後。</td></tr>
+    <tr><td>書く</td><td>漢字・仮名単語の書字 4割前後、まんがの説明（書字）段階2前後、書取は単語で4〜6割</td><td>自分で文を組み立てて書く課題が低い。</td></tr>
+    <tr><td>計算</td><td>5〜7割</td><td>個人差が大きい。</td></tr>
+  </table>
+  <svg class="mini" data-profile="90,80,60,80,55,100,40,20,80,26.7,80,100,100,60,90,90,70,50,40,40,20,80,40,60,20,60"></svg>
+  <p class="note">典型例のイメージ。個人差が大きい（例データ「例：超皮質性運動失語（中等度）」と同じ値）。</p>
+  <h2>2. 同じタイプの他の重症度との違い</h2>
+  <table>
+    <tr><th style="width:17%">重症度</th><th style="width:42%">話す力の目安</th><th>教材の中心</th></tr>
+    <tr><td>重度</td><td>自発話はほとんどない。復唱・系列語は言える。</td><td>復唱、系列語、文の完成（1語を補う）、指さしカード</td></tr>
+    <tr><td><b>中等度（この教材）</b></td><td>質問に1〜3語、ときに短文で答える。語の列挙 3〜6語。</td><td>質問に短文で答える、選択肢から文を作る、手順を話す、場面で話す</td></tr>
+    <tr><td>軽度</td><td>日常会話は短文で可能。話題を出す・話を組み立てるのが苦手。</td><td>話題の開始、話の組み立て、予定・出来事の報告、会話の主導</td></tr>
+  </table>
+  <p><b>軽度の教材へ進む目安</b>：①課題2（手がかりなしの質問）で、述語まで言えた文が8割以上。②課題4の手順を、キーワードを見ずに4文以上で話せる。③語の列挙で7語以上。<br><b>重度の教材に戻る目安</b>：課題1（言い始めつき）でも段階6・5が5割未満の日が続くとき。</p>
+  <div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+
+<!-- ========== 指導者用ガイド 2 ========== -->
+<section class="sheet guide">
+  <div class="head"><div><div class="tag">指導者用（患者さんには渡さない）</div><h1>訓練の進め方と記録のしかた</h1></div></div>
+  <h2>3. 訓練の目標と優先順位</h2>
+  <ul>
+    <li><b>目標</b>：質問に「はい・いいえ」や1語だけでなく、<b>主語と述語のそろった短い文</b>で答えられること。生活の場面で、必要なことを2〜3文で伝えられること。</li>
+    <li><b>優先順位</b>：①言い始めを与えて短文で答える → ②手がかりなしで短文で答える → ③語を選んで組み合わせ、文を作る → ④キーワードを見ながら手順を順に話す → ⑤実際の場面を想定して話す。</li>
+    <li>話し始めの遅さ（数秒〜十数秒）はこの型の特徴です。内容の正しさと、話し始めるまでの時間を分けて評価します。</li>
+  </ul>
+  <h2>4. ヒントの出し方（中等度では「少ないヒント」から始める）</h2>
+  <ol>
+    <li>手がかりなしで10秒待つ</li>
+    <li>答えの文の言い始めを示す（「今朝は…」）</li>
+    <li>選択肢を見せる（3〜4個）</li>
+    <li>答えの文を指導者が言い、復唱してもらってから、もう一度質問する</li>
+  </ol>
+  <p>1で言えたら段階6・5、2〜3で言えたら段階3として、使ったヒントの番号を書き添えます。「はい」だけの反応には、「何を？」「どこで？」と一つだけ続けて尋ねます。</p>
+  <h2>5. 家族への助言</h2>
+  <ul>
+    <li>「はい・いいえ」で終わる質問より、「何を」「どこで」「誰と」を尋ねる質問を使います。</li>
+    <li>答えを急かさず、10秒程度待ちます。待っても出ないときは、言い始めの一言（「今日は…」）を添えます。</li>
+    <li>話した内容を家族が言い直して確認すると（「お昼はうどんだったのね」）、次の一文が出やすくなります。</li>
+  </ul>
+  <h2>6. 訪問での工夫</h2>
+  <ul>
+    <li>訪問の最初に「今日の体調」「昨日あったこと」を短文で話してもらい、毎回の記録にします。</li>
+    <li>課題4・5は、本人が実際に行う家事・通院・電話の場面に合わせて書き換えます。</li>
+    <li>話せた文はノートに書き留め、次回の言い始めの手がかりとして使います。</li>
+  </ul>
+  <h2>7. 課題ページの一覧と記録のしかた</h2>
+  <p>3：発話課題 1（言い始めを見て質問に答える）／4：発話課題 2（手がかりなしで質問に答える）／5：発話課題 3（選択肢から語を選んで文を作る）／6：発話課題 4（キーワードを見て手順を話す）／7：発話課題 5（場面に合わせて話す）／8：解答例・評価のポイント。</p>
+  <p>各問の番号の左に<b>段階（6 完全正答、5 遅延完全正答、4 不完全正答、3 ヒント後正答、2 関連反応、1 誤答）</b>を記入し、6・5を正答とします。述語まで言えた文を「文として完結」として数え、話し始めるまでの秒数も書き添えます。</p>
+  <p style="font-size:9.5pt;color:#555;margin-top:3mm">内容は一般的な目安です。最終的な判断は担当の言語聴覚士が行ってください。</p>
+  <div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+
+<!-- ========== 課題1 ========== -->
+<section class="sheet" data-head="発話課題 1|言い始めを見て質問に答える">
+  <p class="ask">質問を読み、線の上の言い始めに続けて、文の終わりまで声に出して答えてください。</p>
+  <div id="q1"></div>
+</section>
+
+<!-- ========== 課題2 ========== -->
+<section class="sheet" data-head="発話課題 2|質問に短い文で答える">
+  <p class="ask">質問を読み、「はい」「いいえ」や一つの言葉だけでなく、文で答えてください。答えた文を線の上に書いても構いません。</p>
+  <div id="q2"></div>
+</section>
+
+<!-- ========== 課題3 ========== -->
+<section class="sheet" data-head="発話課題 3|選択肢から語を選んで文を作る">
+  <p class="ask">A．表の四つの列から語を一つずつ選び、文を作って言ってください。</p>
+  <p class="hint">例：「朝」「私が」「薬を」「飲みます」→「朝、私が薬を飲みます」</p>
+  <table class="tbl">
+    <tr><th>いつ</th><th>誰が</th><th>何を</th><th>どうする</th></tr>
+    <tr><td>朝</td><td>私が</td><td>薬を</td><td>飲みます</td></tr>
+    <tr><td>夕方</td><td>妻が</td><td>洗濯物を</td><td>干します</td></tr>
+    <tr><td>食後に</td><td>息子が</td><td>新聞を</td><td>読みます</td></tr>
+    <tr><td>毎日</td><td>看護師さんが</td><td>血圧を</td><td>測ります</td></tr>
+  </table>
+  <div id="q3a"></div>
+  <p class="ask" style="margin:3mm 0 2mm">B．二つの語を両方使って、文を一つ作って言ってください。</p>
+  <div id="q3b"></div>
+</section>
+
+<!-- ========== 課題4 ========== -->
+<section class="sheet" data-head="発話課題 4|キーワードを見て手順を話す">
+  <p class="ask">空いている（　　）に入る手順を考えて書いてから、「まず」「次に」「それから」「最後に」を付けて、手順を順に話してください。</p>
+  <div class="flow"><b>ご飯を炊く</b><br>①米を量る → ②<span class="bl"></span> → ③水を入れる → ④<span class="bl"></span> → ⑤炊けたら混ぜる</div>
+  <div class="flow"><b>洗濯をする</b><br>①洗濯物を入れる → ②洗剤を入れる → ③<span class="bl"></span> → ④干す → ⑤<span class="bl"></span></div>
+  <div class="flow"><b>病院で受付をする</b><br>①診察券を出す → ②<span class="bl"></span> → ③名前を呼ばれるまで待つ → ④診察を受ける → ⑤<span class="bl"></span></div>
+  <p class="ask" style="margin:3mm 0 2mm">朝起きてから朝食を食べ終わるまでの手順を、キーワードで書いてから話してください。</p>
+  <table class="tbl">
+    <tr><td class="k" style="width:22%">① まず</td><td></td></tr>
+    <tr><td class="k">② 次に</td><td></td></tr>
+    <tr><td class="k">③ それから</td><td></td></tr>
+    <tr><td class="k">④ そのあと</td><td></td></tr>
+    <tr><td class="k">⑤ 最後に</td><td></td></tr>
+  </table>
+</section>
+
+<!-- ========== 課題5 ========== -->
+<section class="sheet" data-head="発話課題 5|場面に合わせて話す">
+  <p class="ask">指導者が相手の役をします。場面とキーワードを見て、2〜3文で話してください。</p>
+  <div class="scn"><div class="t">1. 薬局で、処方箋を出して薬を受け取る</div><div class="k">キーワード：処方箋・お願いします・お薬手帳・いつもの薬</div><div class="l"></div><div class="l"></div></div>
+  <div class="scn"><div class="t">2. タクシーに乗って、行き先を伝える</div><div class="k">キーワード：○○病院・正面玄関・急いでいない・領収書</div><div class="l"></div><div class="l"></div></div>
+  <div class="scn"><div class="t">3. 家族に電話をして、迎えを頼む</div><div class="k">キーワード：診察が終わった・何時ごろ・どこで待つ</div><div class="l"></div><div class="l"></div></div>
+  <div class="scn"><div class="t">4. 訪問の看護師さんに、昨夜の体調を伝える</div><div class="k">キーワード：よく眠れた（眠れなかった）・夜中に起きた・今朝の気分</div><div class="l"></div><div class="l"></div></div>
+</section>
+
+<!-- ========== 指導者用 解答 ========== -->
+<section class="sheet key" style="page-break-after:auto;break-after:auto">
+  <div class="head"><div><div class="tag">指導者用（患者さんには渡さない）</div><h1>解答例・評価のポイント</h1></div></div>
+  <h2>発話課題 1（言い始めつき）</h2>
+  <p>答えの内容は本人の生活に合っていれば正答です。言い始めを読むだけで止まる場合は、答えの最初の一語（「今朝は、7時…」）を与えて段階3とします。述語まで言えたかを必ず確認します。</p>
+  <h2>発話課題 2（手がかりなし）</h2>
+  <p>「月曜日」のような1語の答えは段階4とし、「何曜日ですか」と同じ形で「今日は月曜日です」と言い直してもらいます。10秒待っても始まらないときは、課題1と同じように言い始めを示して段階3とします。</p>
+  <h2>発話課題 3（語を選んで文を作る）</h2>
+  <p>A：語の組み合わせが意味の通る文になっていれば正答（例：「夕方、妻が洗濯物を干します」「毎日、看護師さんが血圧を測ります」）。「新聞を飲みます」のように意味が合わない組み合わせは、本人に気づいてもらってから言い直します。<br>B の例：1.「病院へはバスで行きます」　2.「孫の誕生日にプレゼントを贈ります」　3.「天気がよいので洗濯をします」　4.「夕食に魚を焼きました」　5.「朝、薬を飲む前に血圧を測ります」　6.「明日、娘と買い物に行きます」</p>
+  <h2>発話課題 4（手順）</h2>
+  <p>空欄の例：ご飯 ②米をとぐ　④スイッチを入れる／洗濯 ③スイッチを押す（洗濯機を回す）　⑤たたんでしまう（取り込む）／受付 ②受付の人に名前を言う（保険証を出す）　⑤会計をする（薬をもらう）。順序とつなぎの言葉の使用を確認します。次の段階では、キーワードをすべて空欄にして行います。</p>
+  <h2>発話課題 5（場面）</h2>
+  <p>指導者は相手の役として短く返事をし、本人が次の文を言うのを待ちます。用件が伝わったか、文の数、話し始めまでの秒数を記録します。例（1）：「処方箋をお願いします。お薬手帳もあります。いつもの薬です」。</p>
+  <h2>評価のポイント</h2>
+  <p>①述語まで言えた文の割合　②ヒントの番号　③話し始めるまでの秒数、を毎回記録します。課題2で8割以上が文として完結し、課題4を手がかりなしで4文以上話せるようになったら、軽度の教材へ進みます。</p>
+  <div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+
+<script>
+// 見出し（氏名・日付欄つき）・フッター・課題を入れる（作成：KENTA SHINKAWA）
+const HEAD=(tag,title)=>`<div class="head"><div><div class="tag">${tag}</div><h1>${title}</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div>`;
+const FOOT='<div class="foot">作成：KENTA SHINKAWA</div>';
+const Q1=[["今朝は、何時ごろに起きましたか。","今朝は"],["昨日の夕食は、何でしたか。","昨日の夕食は"],["どなたと一緒に暮らしていますか。","私は"],
+  ["次の通院は、いつですか。","次の通院は"],["子どもの頃は、どこに住んでいましたか。","子どもの頃は"],["得意な料理は、何ですか。","得意な料理は"],
+  ["今日の体の調子は、どうですか。","今日は"],["寒くなったら、何を着て出かけますか。","寒くなったら"]];
+document.getElementById("q1").innerHTML=Q1.map(([q,s],i)=>`<div class="qa"><div class="t"><span class="n">${i+1}.</span>${q}</div><div class="s">${s}</div></div>`).join("");
+const Q2=["今日は、何曜日ですか。","今、外はどんな天気ですか。","病院では、どんな検査を受けましたか。","若い頃の趣味は、何でしたか。",
+  "近所で、よく行く場所はどこですか。","お祭りやお盆など、季節の行事で覚えていることは何ですか。","ご家族の誕生日は、いつですか。","買い物では、何をよく買いますか。"];
+document.getElementById("q2").innerHTML=Q2.map((q,i)=>`<div class="qa"><div class="t"><span class="n">${i+1}.</span>${q}</div><div class="s"></div></div>`).join("");
+document.getElementById("q3a").innerHTML=[1,2,3,4].map(i=>`<div class="qa"><div class="s" style="margin-left:0"><span class="n" style="color:#000;font-weight:700">${i}.</span></div></div>`).join("");
+const B=[["病院","バス"],["孫","誕生日"],["天気","洗濯"],["夕食","魚"],["薬","血圧"],["娘","買い物"]];
+document.getElementById("q3b").innerHTML=`<div class="grid" style="gap:0 8mm">`+B.map(([a,b],i)=>`<div class="qa"><div class="t"><span class="n">${i+1}.</span>「${a}」「${b}」</div><div class="s" style="margin-left:0"></div></div>`).join("")+`</div>`;
+document.querySelectorAll("section.sheet[data-head]").forEach(s=>{
+  const [tag,title]=s.dataset.head.split("|");
+  s.insertAdjacentHTML("afterbegin",HEAD(tag,title));
+  s.insertAdjacentHTML("beforeend",FOOT);
+});
+</script>
+<script src="mini-profile.js"></script>
+</body>
+</html>

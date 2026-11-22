@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="author" content="KENTA SHINKAWA">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>読み書きの障害が中心のタイプ 訓練教材</title>
+<link rel="stylesheet" href="common.css">
+<style>
+.sq{display:inline-block;width:17mm;height:17mm;border:1.5px solid #333;margin:0 2mm 2mm 0;vertical-align:top;position:relative}
+.sq i{position:absolute;left:1mm;top:0;font-size:8pt;font-style:normal;color:#777;line-height:1.2}
+.trace{font-size:80pt;line-height:1.15;font-weight:700;color:#f4f4f4;-webkit-text-stroke:1.6px #555;letter-spacing:.12em;text-align:center;margin:0 0 3mm}
+.trace.w{font-size:62pt}
+.size{display:flex;gap:9mm;flex-wrap:wrap;align-items:baseline;margin:0 0 2mm 2mm}
+.size span{font-weight:700}
+.lv{font-size:11pt;color:#555;margin:3mm 0 1mm;border-bottom:1px solid #bbb}
+.pics{display:grid;grid-template-columns:repeat(3,1fr);gap:3mm 6mm;margin:0 0 4mm}
+.pics div{border:1px solid #bbb;border-radius:2mm;text-align:center;padding:2mm 0 0}
+.pics b{display:block;font-size:14pt}
+.wl{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2mm 6mm;margin:0 0 4mm 4mm;font-size:17pt}
+.wl div{display:flex;align-items:center;gap:3mm}
+.bx{display:inline-block;width:11mm;height:11mm;border:1.5px solid #333;border-radius:1.5mm;flex:none}
+table.kw{border-collapse:collapse;width:100%;margin:0 0 4mm}
+table.kw td{border:1px solid #999;padding:.8mm 1.5mm;font-size:12.5pt;width:20%}
+table.kw td b{font-size:18pt;display:inline-block;min-width:9mm}
+table.kw td.e{background:#f3f3f3}
+.hl{font-size:16pt;font-weight:700;border-top:2px solid #333;border-bottom:1px solid #333;padding:1.5mm 2mm;margin:0 0 2mm;display:inline-block}
+.opt{margin:0 0 3mm 6mm;font-size:13pt;line-height:1.7}
+.model{font-size:20pt;font-weight:700;margin:0 0 1mm 4mm}
+.guide{font-size:10.5pt;line-height:1.5}
+.guide h2{font-size:12.5pt;margin:3mm 0 1.2mm}
+.guide table{font-size:9.5pt}
+.guide th,.guide td{padding:.6mm 1.6mm}
+.guide .note{font-size:9pt;color:#555;margin:-2mm 0 2mm}
+</style>
+</head>
+<body>
+<div class="noprint">印刷するときは <b>Ctrl＋P</b> を押してください（用紙：A4縦）。最初のページは指導者用の説明、最後のページは指導者用の解答・評価のポイントです。患者さんには課題用紙のページだけをお渡しください。</div>
+<section class="sheet guide">
+<div class="head"><div><div class="tag">指導者用（患者さんには渡さない）</div><h1>読み書きの障害が中心のタイプ ― 説明（1）</h1></div></div>
+<h2>1．3つのタイプの見分け方</h2>
+<p>「読む」「書く」の障害が中心で、話す・聴くは比較的保たれているタイプです。保たれている機能と低下している機能から、おおよそ次の3つに分けて考えます（中間の例や、軽い失語症を伴う例も多くあります）。</p>
+<table>
+<tr><th style="width:21%">確認すること</th><th style="width:27%">純粋失読</th><th style="width:27%">失読失書</th><th>純粋失書</th></tr>
+<tr><td>音読</td><td>低下。1文字ずつ拾って読む（逐字読み）ため時間がかかり、長い語ほど遅い</td><td>低下</td><td>保たれる</td></tr>
+<tr><td>読解（黙読して理解）</td><td>低下。短い語は時間をかければ分かることもある</td><td>低下</td><td>保たれる</td></tr>
+<tr><td>自発書字</td><td>保たれる</td><td>低下</td><td>低下</td></tr>
+<tr><td>書取</td><td>保たれる</td><td>低下</td><td>低下</td></tr>
+<tr><td>写字</td><td>できるが、一画ずつ図形のように写し、時間がかかる</td><td>比較的保たれるが、写した字を読めない</td><td>保たれることが多い</td></tr>
+<tr><td>自分が書いた字を後で読む</td><td>読めないことが多い（特徴的）</td><td>読めない</td><td>読める</td></tr>
+<tr><td>なぞり読み（指で字をなぞる）</td><td>読みやすくなることが多い（運動の感覚が手がかりになる）</td><td>効果は限られることが多い</td><td>―（読みは保たれる）</td></tr>
+<tr><td>伴いやすい症状</td><td>右側の視野の欠け（同名半盲）、色の名前が言えない</td><td>軽い喚語困難、計算障害、左右の混乱、手指の名前が分からない</td><td>病巣によりさまざま</td></tr>
+<tr><td>病巣の目安</td><td>左後頭葉の内側と脳梁膨大部</td><td>左角回（頭頂葉と側頭葉の境目）</td><td>左頭頂葉、左前頭葉の一部など</td></tr>
+</table>
+<p class="note">日本語では漢字と仮名で差が出ることがあります（左側頭葉後下部の病変では漢字の読み書きが特に低下する、など）。漢字と仮名を分けて評価してください。</p>
+<h2>2．典型的なSLTAプロフィールの特徴</h2>
+<table>
+<tr><th style="width:12%">領域</th><th style="width:30%">失読失書</th><th style="width:30%">純粋失読</th><th>純粋失書</th></tr>
+<tr><td>聴く</td><td>おおむね良好。ただし「4 仮名の理解」は文字を見て選ぶため低下しやすい</td><td>同左（「仮名の理解」がやや低下）</td><td>良好</td></tr>
+<tr><td>話す</td><td>呼称・復唱・まんがの説明は良好〜軽い低下。「11〜14 音読」が大きく低下</td><td>音読以外は良好。音読は逐字読みで遅れ（段階5）が多く、仮名の語・短文で低い</td><td>良好</td></tr>
+<tr><td>読む</td><td>漢字・仮名とも低下。「17 短文の理解」「18 書字命令に従う」で特に低い</td><td>低下（漢字より仮名が低い例、その逆の例とも見られる）</td><td>良好</td></tr>
+<tr><td>書く</td><td>自発書字・書取とも低下。仮名の書取が特に低い例が多い</td><td>良好（「書く」と「読む」の差が見分けの決め手）</td><td>低下</td></tr>
+<tr><td>計算</td><td>低下しやすい</td><td>比較的保たれる</td><td>さまざま</td></tr>
+</table>
+
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet guide">
+<div class="head"><div><div class="tag">指導者用（患者さんには渡さない）</div><h1>読み書きの障害が中心のタイプ ― 説明（2）</h1></div></div>
+<p style="margin-top:0"><b>特徴的な下位検査：</b>「11〜14 音読」と「15〜18 読解」がそろって低いか、「19〜25 書く」も低いかを見ます。書字が保たれていれば純粋失読を、書字だけが低ければ純粋失書を考えます。写字・なぞり読み・自分の書いた字を後で読めるかはSLTAにないため、別に確認してください。</p>
+<h2>3．プロフィールのイメージ</h2>
+<p style="margin:0"><b>失読失書の例</b>（例データ「08_失読失書.json」と同じ値）</p>
+<svg class="mini" style="width:80%;margin:0 auto 1mm" data-profile="100,90,90,40,90,100,100,80,80,73.3,20,20,20,0,50,30,10,10,20,0,20,10,20,0,0,45"></svg>
+<p style="margin:0"><b>純粋失読の例</b>（例データ「08b_純粋失読.json」と同じ値）</p>
+<svg class="mini" style="width:80%;margin:0 auto 1mm" data-profile="100,100,100,70,95,100,100,100,100,86.7,60,60,20,20,70,40,20,40,100,80,80,100,100,100,80,85"></svg>
+<p class="note">典型例のイメージです。個人差が大きいので、実際の検査結果と様子を合わせて判断してください。まんがの説明は (段階−1)÷5、語の列挙は15語で100%として描いています。</p>
+<h2>4．訓練の方針</h2>
+<ul>
+<li><b>目標：</b>生活で必要な読み書きを優先します（自分と家族の名前・住所、薬の名前、カレンダー、案内表示、買い物メモ、郵便物）。</li>
+<li><b>優先順位：</b>純粋失読では、なぞり読みと逐字読みを「時間はかかっても正確に」読む方法として練習し、文字の大きさ・行間を整えます。失読失書では、写字から始め、意味のある語のまとまり（家族の名前・住所など）を覚え、仮名はキーワード法で一文字ずつ取り戻します。純粋失書では、写字→書取→自発書字の順に進め、スマートフォンの音声入力や予測変換も選択肢にします。</li>
+<li><b>段階の上げ方：</b>大きい文字→小さい文字、単語→短文→見出し→短い文章、写字→手本を隠して書く→書取→自発書字。8割程度できたら次の段階へ進み、うまくいかないときは1段階戻します。</li>
+<li><b>家族への助言：</b>読めない・書けないことを責めず、時間をかけて待つようにお伝えください。大事な連絡は口頭でも伝える、薬やカレンダーは大きな字にする、色や置き場所で区別する、などの工夫が役立ちます。</li>
+<li><b>訪問での工夫：</b>実際の薬袋、郵便物、チラシ、家電の表示など、ご自宅にある物を教材にします。1回15〜20分程度、宿題は1〜2枚までにします。</li>
+</ul>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet guide">
+<div class="head"><div><div class="tag">指導者用（患者さんには渡さない）</div><h1>読み書きの障害が中心のタイプ ― 説明（3）</h1></div></div>
+<h2>5．課題用紙の一覧と使い方</h2>
+<table>
+<tr><th style="width:8%">番号</th><th style="width:30%">課題</th><th style="width:22%">主な対象</th><th>使い方</th></tr>
+<tr><td>1</td><td>読字課題1　文字の大きさを変えた音読</td><td>純粋失読・失読失書</td><td>大きい文字から順に音読。読める大きさと所要時間を記録</td></tr>
+<tr><td>2</td><td>読字課題2　なぞり読み</td><td>純粋失読</td><td>人さし指で書き順どおりになぞりながら読む。なぞる前・後の正否を比べる</td></tr>
+<tr><td>3</td><td>読字課題3　語と線画の照合</td><td>全タイプの読解</td><td>漢字を含む語と仮名の語を分けて採点</td></tr>
+<tr><td>4</td><td>読字課題4　仲間分け</td><td>読解（意味）</td><td>音読させずに黙読で行う</td></tr>
+<tr><td>5</td><td>読字課題5　見出しと案内表示</td><td>読解（実用）</td><td>選択肢も黙読。難しければ指導者が選択肢を読み上げてよい（その場合は記録に残す）</td></tr>
+<tr><td>6</td><td>書字課題1　写字</td><td>失読失書・純粋失書</td><td>手本を見て書く。慣れたら手本を隠して書く</td></tr>
+<tr><td>7</td><td>書字課題2　キーワード法</td><td>失読失書・純粋失書</td><td>「あ＝朝」のように、語を思い浮かべてから最初の仮名を書く</td></tr>
+<tr><td>8</td><td>書字課題3　書取</td><td>書字の評価</td><td>最後のページの刺激を読み上げて書いてもらう</td></tr>
+<tr><td>9</td><td>書字課題4　自発書字</td><td>書字（実用）</td><td>住所・家族の名前・買い物メモ・予定を書く</td></tr>
+</table>
+<h2>6．記録のしかた</h2>
+<p>1問ごとに、SLTAと同じ考え方の段階で記録すると、検査結果と比べやすくなります。</p>
+<table>
+<tr><th style="width:10%">段階</th><th style="width:30%">内容</th><th>読み書きの課題での目安</th></tr>
+<tr><td>6</td><td>完全正答</td><td>すぐに正しく読めた・書けた</td></tr>
+<tr><td>5</td><td>遅延完全正答</td><td>正しいが時間がかかった（逐字読み、書き始めまでの遅れ、一画ずつの写字）</td></tr>
+<tr><td>4</td><td>不完全正答</td><td>一部の誤り（字の形の崩れ、送り仮名の誤り、1文字の誤り）</td></tr>
+<tr><td>3</td><td>ヒント後正答</td><td>なぞり・最初の1文字・キーワードなどの手がかりで正答</td></tr>
+<tr><td>2</td><td>関連反応</td><td>意味や形の似た語（例：「時計」を「時間」と読む）</td></tr>
+<tr><td>1</td><td>誤答</td><td>誤り、または反応なし</td></tr>
+</table>
+<p>あわせて、1枚にかかった時間、使った手がかり（なぞり・キーワード・文字の大きさ）を余白に書いておくと、変化が分かりやすくなります。段階5・6が8割を超えたら、手がかりを減らすか、次の課題へ進みます。</p>
+<p style="margin-top:3mm">ここに書いた内容は一般的な目安です。<b>最終的な判断は担当の言語聴覚士が行ってください。</b></p>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet">
+<div class="head"><div><div class="tag">読字課題 1</div><h1>文字の大きさを変えた単語・短文の音読</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div>
+<p class="ask">大きい文字から順に、声に出して読んでください。</p>
+<p class="hint">読みにくいときは、1文字ずつ読んでもかまいません。</p><div class="lv">特大</div><div class="size" style="font-size:40pt"><span>薬</span><span>駅</span><span>銀行</span><span>郵便局</span></div><div class="lv">大</div><div class="size" style="font-size:28pt"><span>お茶</span><span>新聞</span><span>天気</span><span>病院</span><span>お釣り</span></div><div class="lv">中</div><div class="size" style="font-size:20pt"><span>たまご</span><span>みそ汁</span><span>テレビ</span><span>歯ブラシ</span><span>回覧板</span><span>ゴミ出し</span></div><div class="lv">小</div><div class="size" style="font-size:14.5pt"><span>冷蔵庫</span><span>保険証</span><span>市役所</span><span>月曜日</span><span>歯医者</span><span>宅配便</span><span>診察券</span></div><div class="lv">短文（大）</div><div style="font-size:22pt;font-weight:700;margin:0 0 2mm 2mm;line-height:1.7">今日は雨です。<br>薬を飲みました。</div><div class="lv">短文（中）</div><div style="font-size:16pt;font-weight:700;margin:0 0 2mm 2mm;line-height:1.8">午後から娘が来ます。<br>明日は病院の予約があります。<br>郵便受けに町内会のお知らせが入っていました。</div>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet">
+<div class="head"><div><div class="tag">読字課題 2</div><h1>なぞり読み（指でなぞって読む）</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div>
+<p class="ask">人さし指で文字をなぞりながら、声に出して読んでください。</p>
+<p class="hint">書き順どおりに、ゆっくりなぞってください。なぞったあと、もう一度文字全体を見て読んでください。</p>
+<div class="trace">山　川　水</div>
+<div class="trace">目　口　手</div>
+<div class="trace">あ　か　ね</div>
+<div class="trace w">お茶　電話</div>
+<div class="trace w">ごはん</div>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet">
+<div class="head"><div><div class="tag">読字課題 3</div><h1>語と線画の照合</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div>
+<p class="ask">次の語を読み、同じ物を表す絵の記号（A〜F）を□に書いてください。</p><div class="pics"><div><b>A</b><svg viewBox="0 0 100 100" style="width:29mm;height:29mm" fill="none" stroke="#222" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="線画"><circle cx="30" cy="56" r="15"/><circle cx="70" cy="56" r="15"/><path d="M45 53 Q50 47 55 53 M15 52 L6 40 M85 52 L94 40"/></svg></div><div><b>B</b><svg viewBox="0 0 100 100" style="width:29mm;height:29mm" fill="none" stroke="#222" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="線画"><path d="M10 50 Q50 6 90 50 Q80 42 70 50 Q60 42 50 50 Q40 42 30 50 Q20 42 10 50 Z M50 50 V84 Q50 92 43 92 Q37 92 37 86 M50 16 V9"/></svg></div><div><b>C</b><svg viewBox="0 0 100 100" style="width:29mm;height:29mm" fill="none" stroke="#222" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="線画"><circle cx="26" cy="50" r="14"/><circle cx="26" cy="50" r="5"/><path d="M40 50 H90 M80 50 V62 M70 50 V60"/></svg></div><div><b>D</b><svg viewBox="0 0 100 100" style="width:29mm;height:29mm" fill="none" stroke="#222" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="線画"><ellipse cx="50" cy="28" rx="25" ry="6"/><path d="M25 28 L31 80 Q50 88 69 80 L75 28"/></svg></div><div><b>E</b><svg viewBox="0 0 100 100" style="width:29mm;height:29mm" fill="none" stroke="#222" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="線画"><circle cx="28" cy="80" r="10"/><circle cx="72" cy="80" r="10"/><path d="M34 72 L78 12 M66 72 L22 12"/><circle cx="50" cy="50" r="2"/></svg></div><div><b>F</b><svg viewBox="0 0 100 100" style="width:29mm;height:29mm" fill="none" stroke="#222" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="線画"><circle cx="50" cy="50" r="38"/><path d="M50 50 V24 M50 50 L66 60 M50 15 V20 M85 50 H80 M50 85 V80 M15 50 H20"/></svg></div></div><p class="ask" style="margin:0 0 2mm">1．漢字を含む語</p><div class="wl"><div><span class="bx"></span>時計</div><div><span class="bx"></span>鍵</div><div><span class="bx"></span>眼鏡</div><div><span class="bx"></span>はさみ</div><div><span class="bx"></span>傘</div><div><span class="bx"></span>湯のみ</div></div><p class="ask" style="margin:0 0 2mm">2．仮名の語</p><div class="wl"><div><span class="bx"></span>かぎ</div><div><span class="bx"></span>とけい</div><div><span class="bx"></span>ゆのみ</div><div><span class="bx"></span>めがね</div><div><span class="bx"></span>かさ</div><div><span class="bx"></span>はさみ</div></div>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet">
+<div class="head"><div><div class="tag">読字課題 4</div><h1>仲間分け（語の意味の理解）</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div>
+<p class="ask">次の語を声に出さずに読み、「食べ物」「乗り物」「台所の道具」に分けて、番号を書いてください。</p><div class="wl" style="grid-template-columns:repeat(5,1fr);font-size:16pt;gap:1.5mm 4mm"><div><span style="font-size:11pt;color:#555;min-width:6mm">1</span>豆腐</div><div><span style="font-size:11pt;color:#555;min-width:6mm">2</span>電車</div><div><span style="font-size:11pt;color:#555;min-width:6mm">3</span>包丁</div><div><span style="font-size:11pt;color:#555;min-width:6mm">4</span>みかん</div><div><span style="font-size:11pt;color:#555;min-width:6mm">5</span>バス</div><div><span style="font-size:11pt;color:#555;min-width:6mm">6</span>鍋</div><div><span style="font-size:11pt;color:#555;min-width:6mm">7</span>大根</div><div><span style="font-size:11pt;color:#555;min-width:6mm">8</span>自転車</div><div><span style="font-size:11pt;color:#555;min-width:6mm">9</span>まな板</div><div><span style="font-size:11pt;color:#555;min-width:6mm">10</span>納豆</div><div><span style="font-size:11pt;color:#555;min-width:6mm">11</span>タクシー</div><div><span style="font-size:11pt;color:#555;min-width:6mm">12</span>やかん</div><div><span style="font-size:11pt;color:#555;min-width:6mm">13</span>焼き魚</div><div><span style="font-size:11pt;color:#555;min-width:6mm">14</span>飛行機</div><div><span style="font-size:11pt;color:#555;min-width:6mm">15</span>おたま</div></div><div class="step"><b>食べ物</b></div><div class="step"><b>乗り物</b></div><div class="step"><b style="min-width:30mm">台所の道具</b></div><p class="ask" style="margin-top:6mm">各行の中で、仲間ではない語を1つ選び、○で囲んでください。</p><div class="choices" style="margin:0 0 3.5mm 4mm"><span style="border:0;font-size:12pt;padding:1.5mm 0">1.</span><span>雨</span><span>雪</span><span>風</span><span>机</span></div><div class="choices" style="margin:0 0 3.5mm 4mm"><span style="border:0;font-size:12pt;padding:1.5mm 0">2.</span><span>医者</span><span>看護師</span><span>薬剤師</span><span>郵便局</span></div><div class="choices" style="margin:0 0 3.5mm 4mm"><span style="border:0;font-size:12pt;padding:1.5mm 0">3.</span><span>月曜日</span><span>火曜日</span><span>三月</span><span>金曜日</span></div><div class="choices" style="margin:0 0 3.5mm 4mm"><span style="border:0;font-size:12pt;padding:1.5mm 0">4.</span><span>牛乳</span><span>醤油</span><span>急須</span><span>味噌</span></div><div class="choices" style="margin:0 0 3.5mm 4mm"><span style="border:0;font-size:12pt;padding:1.5mm 0">5.</span><span>シャツ</span><span>靴下</span><span>セーター</span><span>ほうき</span></div><div class="choices" style="margin:0 0 3.5mm 4mm"><span style="border:0;font-size:12pt;padding:1.5mm 0">6.</span><span>新聞</span><span>雑誌</span><span>手紙</span><span>電球</span></div>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet">
+<div class="head"><div><div class="tag">読字課題 5</div><h1>新聞の見出し・案内表示の理解</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div>
+<p class="ask">新聞の見出しを読み、内容に合うものを1つ選んで○で囲んでください。</p><div style="margin-left:2mm"><span style="font-size:14pt;font-weight:700;display:inline-block;min-width:9mm">1.</span><span class="hl">市営バス　来月から運賃値上げ</span></div><div class="opt">ア．バスの料金が高くなる<br>イ．バスの本数が増える<br>ウ．バスの路線がなくなる</div><div style="margin-left:2mm"><span style="font-size:14pt;font-weight:700;display:inline-block;min-width:9mm">2.</span><span class="hl">週末は各地で大雪の恐れ</span></div><div class="opt">ア．週末は晴れて暖かくなる<br>イ．週末は雪がたくさん降るかもしれない<br>ウ．週末に雪祭りが開かれる</div><div style="margin-left:2mm"><span style="font-size:14pt;font-weight:700;display:inline-block;min-width:9mm">3.</span><span class="hl">特殊詐欺　高齢者の被害相次ぐ</span></div><div class="opt">ア．高齢者向けの旅行が人気になっている<br>イ．高齢者がだまされてお金を取られる事件が続いている<br>ウ．高齢者の運転免許の制度が変わる</div><p class="ask" style="margin-top:4mm">次のようなとき、どの表示を探しますか。1つ選んで○で囲んでください。</p><div class="q"><div class="t" style="font-size:14pt"><span class="n">4.</span>お手洗いに行きたいとき</div></div><div class="choices" style="margin-top:-2mm"><span>非常口</span><span>化粧室</span><span>受付</span></div><div class="q"><div class="t" style="font-size:14pt"><span class="n">5.</span>診察の手続きをしたいとき</div></div><div class="choices" style="margin-top:-2mm"><span>受付</span><span>立入禁止</span><span>出口</span></div><div class="q"><div class="t" style="font-size:14pt"><span class="n">6.</span>火事が起きたとき</div></div><div class="choices" style="margin-top:-2mm"><span>売店</span><span>非常口</span><span>待合室</span></div>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet">
+<div class="head"><div><div class="tag">書字課題 1</div><h1>写字（手本を見て書く）</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div>
+<p class="ask">手本をよく見て、下の線の上に同じように書いてください。</p>
+<p class="hint">慣れてきたら、手本を紙で隠してから書いてください。</p><div class="model">牛乳　食パン　卵</div><div class="lines"><div class="l"></div></div><div style="height:3mm"></div><div class="model">月曜日　燃えるごみ</div><div class="lines"><div class="l"></div></div><div style="height:3mm"></div><div class="model">明日の午前十時に病院へ行きます。</div><div class="lines"><div class="l"></div></div><div style="height:3mm"></div><p class="ask" style="margin:3mm 0 2mm">今日の献立（手本）</p><div class="read" style="font-size:16pt;line-height:1.8;padding:3mm 6mm;margin-bottom:2mm">ご飯　　豆腐とわかめの味噌汁<br>鮭の塩焼き　　ほうれん草のおひたし</div><div class="lines"><div class="l"></div><div class="l"></div></div>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet">
+<div class="head"><div><div class="tag">書字課題 2</div><h1>仮名一文字の書字（キーワード法の手がかり表）</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div>
+<p class="ask">手がかりの語を思い浮かべ、その最初の音を仮名で書きます。まず表の組み合わせ（例：「あ」は「朝」の「あ」）を声に出して確認してください。</p><table class="kw"><tr><td><b>あ</b>朝</td><td><b>い</b>家</td><td><b>う</b>海</td><td><b>え</b>駅</td><td><b>お</b>帯</td></tr><tr><td><b>か</b>傘</td><td><b>き</b>切手</td><td><b>く</b>薬</td><td><b>け</b>毛糸</td><td><b>こ</b>米</td></tr><tr><td><b>さ</b>魚</td><td><b>し</b>新聞</td><td><b>す</b>寿司</td><td><b>せ</b>先生</td><td><b>そ</b>空</td></tr><tr><td><b>た</b>卵</td><td><b>ち</b>地図</td><td><b>つ</b>机</td><td><b>て</b>手紙</td><td><b>と</b>時計</td></tr><tr><td><b>な</b>鍋</td><td><b>に</b>荷物</td><td><b>ぬ</b>布</td><td><b>ね</b>猫</td><td><b>の</b>海苔</td></tr><tr><td><b>は</b>箸</td><td><b>ひ</b>昼</td><td><b>ふ</b>風呂</td><td><b>へ</b>部屋</td><td><b>ほ</b>本</td></tr><tr><td><b>ま</b>窓</td><td><b>み</b>水</td><td><b>む</b>娘</td><td><b>め</b>眼鏡</td><td><b>も</b>桃</td></tr><tr><td><b>や</b>野菜</td><td class="e"></td><td><b>ゆ</b>雪</td><td class="e"></td><td><b>よ</b>夜</td></tr><tr><td><b>ら</b>ラジオ</td><td><b>り</b>料理</td><td><b>る</b>留守</td><td><b>れ</b>冷蔵庫</td><td><b>ろ</b>廊下</td></tr><tr><td><b>わ</b>和菓子</td><td class="e"></td><td><b>を</b>「〜を」</td><td class="e"></td><td><b>ん</b>みか「ん」</td></tr></table><p class="ask" style="margin:0 0 2mm">指導者が言う語（または仮名）の、最初の仮名を□に書いてください。</p><div><span class="sq"><i>1</i></span><span class="sq"><i>2</i></span><span class="sq"><i>3</i></span><span class="sq"><i>4</i></span><span class="sq"><i>5</i></span><span class="sq"><i>6</i></span><span class="sq"><i>7</i></span><span class="sq"><i>8</i></span><span class="sq"><i>9</i></span><span class="sq"><i>10</i></span></div><p class="hint" style="margin-top:1mm">思い出せないときは、表を見てもかまいません。</p>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet">
+<div class="head"><div><div class="tag">書字課題 3</div><h1>書取（聞いて書く）</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div>
+<p class="ask">指導者が読み上げる仮名・語・文を書いてください。</p><p class="ask" style="margin:0 0 2mm">1．仮名1文字</p><div><span class="sq"><i>1</i></span><span class="sq"><i>2</i></span><span class="sq"><i>3</i></span><span class="sq"><i>4</i></span><span class="sq"><i>5</i></span><span class="sq"><i>6</i></span><span class="sq"><i>7</i></span><span class="sq"><i>8</i></span><span class="sq"><i>9</i></span><span class="sq"><i>10</i></span></div><p class="ask" style="margin:3mm 0 0">2．漢字で書く語</p><div class="grid"><div class="c">1</div><div class="c">2</div><div class="c">3</div><div class="c">4</div><div class="c">5</div><div class="c">6</div></div><p class="ask" style="margin:4mm 0 0">3．仮名で書く語</p><div class="grid"><div class="c">1</div><div class="c">2</div><div class="c">3</div><div class="c">4</div><div class="c">5</div><div class="c">6</div></div><p class="ask" style="margin:4mm 0 0">4．短い文</p><div class="ans" style="margin-left:0"><span style="font-size:11pt;color:#555">1</span><div class="l"></div></div><div class="ans" style="margin-left:0"><span style="font-size:11pt;color:#555">2</span><div class="l"></div></div><div class="ans" style="margin-left:0"><span style="font-size:11pt;color:#555">3</span><div class="l"></div></div>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet">
+<div class="head"><div><div class="tag">書字課題 4</div><h1>自発書字（住所・家族・買い物メモ・予定）</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div>
+<p class="ask">ご自分のことを書いてください。</p><div class="step"><b>氏名</b></div><div class="step"><b>住所</b></div><div class="step"><b></b></div><div class="step"><b>電話番号</b></div><p class="ask" style="margin:5mm 0 0">ご家族の名前と続柄（例：妻、長男）を書いてください。</p><div class="step"><b style="min-width:34mm">続柄（　　　）</b></div><div class="step"><b style="min-width:34mm">続柄（　　　）</b></div><div class="step"><b style="min-width:34mm">続柄（　　　）</b></div><p class="ask" style="margin:5mm 0 0">今夜カレーを作ります。買い物メモを書いてください。</p><div class="grid"><div class="c">1</div><div class="c">2</div><div class="c">3</div><div class="c">4</div><div class="c">5</div><div class="c">6</div></div><p class="ask" style="margin:5mm 0 0">明日の予定を書いてください。</p><div class="lines"><div class="l"></div><div class="l"></div></div>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet key">
+<div class="head"><div><div class="tag">指導者用（患者さんには渡さない）</div><h1>解答と評価のポイント</h1></div></div>
+<h2>読字課題 3（語と線画の照合）</h2>
+<p style="margin:0">1．時計＝F、鍵＝C、眼鏡＝A、はさみ＝E、傘＝B、湯のみ＝D　　2．かぎ＝C、とけい＝F、ゆのみ＝D、めがね＝A、かさ＝B、はさみ＝E</p>
+<h2>読字課題 4（仲間分け）</h2>
+<p style="margin:0">食べ物：1 豆腐、4 みかん、7 大根、10 納豆、13 焼き魚／乗り物：2 電車、5 バス、8 自転車、11 タクシー、14 飛行機／台所の道具：3 包丁、6 鍋、9 まな板、12 やかん、15 おたま<br>仲間ではない語：1 机、2 郵便局、3 三月、4 急須、5 ほうき、6 電球</p>
+<h2>読字課題 5（見出し・案内表示）</h2>
+<p style="margin:0">1 ア、2 イ、3 イ、4 化粧室、5 受付、6 非常口</p>
+<h2>書字課題 3（書取）― 指導者が読み上げる刺激</h2>
+<p style="margin:0">1回読み、聞き返されたらもう1回まで読みます。<br>
+<b>1．仮名1文字：</b>①ね ②す ③ほ ④き ⑤る ⑥め ⑦た ⑧ゆ ⑨こ ⑩む<br>
+<b>2．漢字で書く語：</b>①花 ②電話 ③新聞 ④天気 ⑤病院 ⑥駅前<br>
+<b>3．仮名で書く語：</b>①りんご ②みかん ③ふとん ④はがき ⑤ごぼう ⑥ほうれんそう<br>
+<b>4．短い文：</b>①雨が降ってきました。 ②明日は買い物に行きます。 ③孫から手紙が届きました。</p>
+<h2>書字課題 2（キーワード法）の進め方</h2>
+<ol><li>表を見ながら「あ＝朝」と声に出して組み合わせを覚えます（1回に1〜2行ずつ）。</li>
+<li>指導者が「朝」と言い、本人が最初の仮名「あ」を書きます。次に「あ」と仮名だけを言い、手がかりの語を思い浮かべてから書きます。</li>
+<li>表を見ずに書けるようになったら、2〜3文字の語（例：「いえ」「さかな」）の書取へ進みます。手がかりの語は、本人になじみのある語に替えてかまいません。</li></ol>
+<h2>評価のポイント</h2>
+<ul><li>音読：読めた文字の大きさ、所要時間、逐字読みの有無、誤りの種類（形の似た字、意味の似た語）。</li>
+<li>なぞり読み：なぞる前と後で正否が変わるか。変わるなら、日常でもなぞって読む方法を勧めます。</li>
+<li>読解：漢字を含む語と仮名の語の差。見出しや表示など実用的な読みができるか。</li>
+<li>書字：写字・書取・自発書字の差、漢字と仮名の差、字の形の崩れ、書き始めるまでの時間。</li>
+<li>段階6〜1で記録し、段階5・6が8割を超えたら手がかりを減らすか次の課題へ進みます。</li></ul>
+<p style="margin-top:2mm">最終的な判断は担当の言語聴覚士が行ってください。</p>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+
+<script src="mini-profile.js"></script>
+</body>
+</html>

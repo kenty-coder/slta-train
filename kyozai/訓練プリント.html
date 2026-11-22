@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="author" content="KENTA SHINKAWA">
+<title>言語訓練 課題用紙</title>
+<style>
+  /* A4縦・読みやすい大きさの文字・書き込み用の線。印刷して患者さんに渡す用（成人向けの表記） */
+  :root{--ink:#1a1a1a;--sub:#555;--rule:#9a9a9a;--box:#333;}
+  @page{size:A4 portrait;margin:14mm 16mm 12mm}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:"BIZ UDPGothic","BIZ UDPゴシック","BIZ UDGothic","Meiryo",sans-serif;color:var(--ink);font-size:14pt;line-height:1.6;background:#fff}
+  .sheet{width:178mm;min-height:265mm;margin:0 auto;padding:0;position:relative;page-break-after:always;break-after:page;display:flex;flex-direction:column}
+  .sheet:last-child{page-break-after:auto;break-after:auto}
+  @media screen{body{background:#e9e9e9}.sheet{background:#fff;margin:10mm auto;padding:14mm 16mm 12mm;width:210mm;min-height:297mm;box-shadow:0 1px 4px rgba(0,0,0,.2)}}
+  .head{display:flex;justify-content:space-between;align-items:flex-end;border-bottom:2px solid var(--box);padding-bottom:3mm;margin-bottom:6mm;gap:6mm}
+  .head h1{font-size:18pt;margin:0;line-height:1.3}
+  .head .tag{font-size:10.5pt;color:var(--sub)}
+  .who{font-size:11.5pt;white-space:nowrap;line-height:2}
+  .who span{display:inline-block;border-bottom:1px solid var(--box);min-width:40mm;margin-left:2mm}
+  .who span.d{min-width:10mm}
+  .ask{font-size:14.5pt;font-weight:700;margin:0 0 5mm;line-height:1.6}
+  .hint{font-size:12pt;color:var(--sub);margin:-2mm 0 5mm}
+  .lines .l{height:13mm;border-bottom:1px solid var(--rule)}
+  .q{margin:0 0 4mm}
+  .q .t{font-size:15.5pt;font-weight:700}
+  .q .n{display:inline-block;min-width:9mm}
+  .memo{border:1.5px solid var(--box);border-radius:3mm;padding:3mm 5mm;margin:0 0 5mm;font-size:14pt}
+  .memo dt{font-weight:700;float:left;width:26mm;clear:left}
+  .memo dd{margin:0 0 1mm 26mm}
+  .read{font-size:15pt;line-height:1.9;border:1.5px solid var(--box);border-radius:3mm;padding:5mm 7mm;margin:0 0 6mm}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:0 10mm}
+  .grid .c{display:flex;align-items:flex-end;height:11mm;border-bottom:1px solid var(--rule);font-size:11pt;color:var(--sub)}
+  .ans{display:flex;align-items:flex-end;gap:3mm;margin:0 0 3mm 9mm}
+  .ans .l{flex:1;height:11mm;border-bottom:1px solid var(--rule)}
+  .ox{display:inline-block;width:13mm;height:13mm;border:1.5px solid var(--box);border-radius:2mm;vertical-align:middle;margin-right:4mm}
+  .card{border:2px dashed var(--box);border-radius:4mm;padding:5mm 7mm;margin:0 0 7mm}
+  .card h2{font-size:15.5pt;margin:0 0 2mm}
+  .card ul{margin:0;padding-left:7mm}
+  .step{display:flex;align-items:flex-end;height:13mm;border-bottom:1px solid var(--rule)}
+  .step b{font-size:12pt;min-width:22mm;color:var(--sub);font-weight:700}
+  .theme{font-size:15pt;font-weight:700;border-left:3mm solid #333;padding-left:3mm;margin-bottom:1mm}
+  .theme span{font-size:11.5pt;font-weight:400;color:var(--sub);margin-left:4mm}
+  .foot{margin-top:auto;padding-top:4mm;font-size:8.5pt;color:#888;text-align:right}
+  .key{font-size:11pt;line-height:1.5}
+  .key h2{font-size:12.5pt;margin:3mm 0 1mm;border-bottom:1px solid #999}
+  .key ol{margin:0;padding-left:7mm}
+  .noprint{font-family:"Meiryo",sans-serif;font-size:12pt;background:#fff8dc;border:1px solid #e0c060;padding:3mm 5mm;margin:6mm auto;width:210mm}
+  @media print{.noprint{display:none}}
+</style>
+</head>
+<body>
+
+<div class="noprint">印刷するときは <b>Ctrl＋P</b> を押してください（用紙：A4縦）。必要なページだけ印刷するときは、印刷画面の「ページ」で番号を指定してください。最後のページは指導者用の解答です。</div>
+
+<!-- ========== 書字① 語から文を作る ========== -->
+<section class="sheet" data-head="書字課題 1|指定された語を使った短文作成">
+  <p class="ask">次の3つの語をすべて使って、文を1つ書いてください。</p>
+  <div class="q"><div class="t"><span class="n">1.</span>傘／駅／忘れる</div><div class="lines" data-n="2"></div></div>
+  <div class="q"><div class="t"><span class="n">2.</span>孫／誕生日／ケーキ</div><div class="lines" data-n="2"></div></div>
+  <div class="q"><div class="t"><span class="n">3.</span>病院／予約／変更する</div><div class="lines" data-n="2"></div></div>
+  <div class="q"><div class="t"><span class="n">4.</span>天気予報／洗濯物／取り込む</div><div class="lines" data-n="2"></div></div>
+</section>
+
+<section class="sheet" data-head="書字課題 1（続き）|指定された語を使った短文作成">
+  <div class="q"><div class="t"><span class="n">5.</span>スーパー／特売／卵</div><div class="lines" data-n="2"></div></div>
+  <div class="q"><div class="t"><span class="n">6.</span>友人／手紙／返事を書く</div><div class="lines" data-n="2"></div></div>
+  <p class="ask" style="margin-top:4mm">ご自分で3つの語を決め、それを使って文を書いてください。</p>
+  <div class="q"><div class="t"><span class="n">7.</span>（　　　　）／（　　　　）／（　　　　）</div><div class="lines" data-n="2"></div></div>
+  <div class="q"><div class="t"><span class="n">8.</span>（　　　　）／（　　　　）／（　　　　）</div><div class="lines" data-n="2"></div></div>
+</section>
+
+<!-- ========== 書字② 手順 ========== -->
+<section class="sheet" data-howto="緑茶のいれ方"></section>
+<section class="sheet" data-howto="味噌汁の作り方"></section>
+<section class="sheet" data-howto="自宅から最寄り駅までの道順"></section>
+<section class="sheet" data-howto="洗濯から、たたんでしまうまで"></section>
+<section class="sheet" data-howto="封筒で手紙を出すまで"></section>
+
+<!-- ========== 書字③ 出来事の記述 ========== -->
+<section class="sheet" data-scene="1"></section>
+<section class="sheet" data-scene="2"></section>
+<section class="sheet" data-scene="3"></section>
+
+<!-- ========== 日記・手紙 ========== -->
+<section class="sheet" data-head="書字課題 4|日記">
+  <p class="ask">今日の出来事を3文程度で書き、そのときに感じたことを1文加えてください。</p>
+  <p class="hint">書き終えたら声に出して読み返し、直したところには赤で印を付けてください。</p>
+  <div class="lines" data-n="13"></div>
+</section>
+
+<section class="sheet" data-head="書字課題 5|手紙">
+  <p class="ask">しばらく会っていない方に宛てて、近況と「近いうちに会いたい」という気持ちを伝える手紙を書いてください。</p>
+  <div class="step"><b>宛先</b></div>
+  <div class="lines" data-n="12"></div>
+</section>
+
+<!-- ========== 発話 要約 ========== -->
+<section class="sheet" data-head="発話課題|文章を読んで要約する">
+  <p class="ask">文章を黙読してください。読み終えたら紙を伏せ、内容を2〜3文にまとめて話してください。</p>
+  <div class="read"><b>①</b>　市内の図書館が、来月から土曜日に限り夜8時まで開館することになった。これまでは午後5時に閉館していたため、働く世代から「仕事帰りに立ち寄れない」という声が多く寄せられていた。図書館はまず半年間試行し、利用者が増えれば平日への拡大も検討するとしている。</div>
+  <div class="read"><b>②</b>　ある小学校で、校庭の畑で育てたサツマイモを使い、児童が地域の高齢者と一緒に菓子作りを行った。児童は高齢者から昔のおやつの話を聞きながら、干し芋の作り方を教わった。完成した菓子は、近隣の保育園にも届けられた。</div>
+</section>
+
+<section class="sheet" data-head="発話課題（続き）|文章を読んで要約する／意見を述べる">
+  <div class="read"><b>③</b>　商店街の空き店舗を活用した交流スペース「みんなの居間」が開設された。誰でも無料で利用でき、お茶を飲んだり囲碁を打ったりできる。週に一度は保健師が訪れ、血圧測定や健康相談にも応じている。</div>
+  <p class="ask">要約を話したあと、この話題についてのご意見を、理由を添えて述べてください。</p>
+  <p class="hint">「なぜなら」「例えば」などを使うと、話がまとまりやすくなります。</p>
+  <div class="card"><h2>自由に話す（1〜2分）</h2>
+    <p style="margin:0 0 2mm;font-size:12.5pt">話し始める前に30秒ほど、話の順序（始め・中・終わり）を考えてください。</p>
+    <ul><li>これまでで最も印象に残っている旅行</li><li>よく作る料理と、おいしく作るコツ</li><li>子どもの頃の遊びと、今の子どもの遊びの違い</li><li>仕事や家事で工夫していること</li><li>病気の後で生活が変わったことと、今後やりたいこと</li></ul></div>
+</section>
+
+<!-- ========== 語想起 ========== -->
+<section class="sheet" data-fluency="1"></section>
+<section class="sheet" data-fluency="2"></section>
+<section class="sheet" data-fluency="3"></section>
+
+<section class="sheet" data-head="語想起課題 2|説明に当てはまる語">
+  <p class="ask">次の説明に当てはまる語を書いてください。</p>
+  <div id="riddles"></div>
+</section>
+
+<!-- ========== 読解 ========== -->
+<section class="sheet" data-head="読解課題 1|文を読んで指示どおりに動作する">
+  <p class="ask">机の上に、鉛筆・ペン・消しゴム・はさみ・硬貨・鍵を並べます。1文ずつ黙読し、書かれているとおりに動かしてください。</p>
+  <div class="read" style="line-height:2.3">
+    1.　ペンを取り、消しゴムの右に置いてください。<br>
+    2.　鍵を裏返してから、硬貨の上に重ねてください。<br>
+    3.　鉛筆ではさみに触れてから、鉛筆を元の位置に戻してください。<br>
+    4.　硬貨以外の物を、すべて手前に寄せてください。<br>
+    5.　はさみを取る前に、消しゴムをペンの左へ移してください。<br>
+    6.　鉛筆とペンのうち長いほうを、鍵の前に置いてください。
+  </div>
+</section>
+
+<section class="sheet" data-head="読解課題 2|案内文を読んで質問に答える">
+  <div class="read" style="font-size:14pt;line-height:1.75;padding:4mm 6mm;margin-bottom:4mm"><b>健康教室のご案内</b><br>
+  12月9日（水）と12月23日（水）の2回、公民館2階にて「冬の風邪予防教室」を開催します。時間はいずれも午前10時から11時30分までです。参加費は無料ですが、定員は各回20名です。お申し込みは電話にて、開催日の3日前までにお願いします。当日は飲み物と筆記用具をお持ちください。駐車場が狭いため、なるべく公共交通機関をご利用ください。</div>
+  <p class="ask" style="margin-bottom:2mm">上の案内を読んで、次の質問に答えてください。</p>
+  <div class="q"><div class="t" style="font-size:14pt"><span class="n">1.</span>教室は何回開催されますか。</div><div class="ans"><div class="l"></div></div></div>
+  <div class="q"><div class="t" style="font-size:14pt"><span class="n">2.</span>1回の時間は何分ですか。</div><div class="ans"><div class="l"></div></div></div>
+  <div class="q"><div class="t" style="font-size:14pt"><span class="n">3.</span>12月23日の教室に申し込む場合、いつまでに電話をすればよいですか。</div><div class="ans"><div class="l"></div></div></div>
+  <div class="q"><div class="t" style="font-size:14pt"><span class="n">4.</span>参加費はいくらですか。</div><div class="ans"><div class="l"></div></div></div>
+  <div class="q"><div class="t" style="font-size:14pt"><span class="n">5.</span>当日の持ち物をすべて書いてください。</div><div class="ans"><div class="l"></div></div></div>
+  <div class="q"><div class="t" style="font-size:14pt"><span class="n">6.</span>車で行く場合、注意することは何ですか。</div><div class="ans"><div class="l"></div></div></div>
+</section>
+
+<section class="sheet" data-head="読解課題 3|正誤判断">
+  <p class="ask">「健康教室のご案内」を見ずに答えてください。正しければ○、誤っていれば×を記入し、×の場合は正しい内容を下に書いてください。</p>
+  <div class="q"><div class="t"><span class="ox"></span>1.　教室は公民館の1階で開かれる。</div><div class="ans"><div class="l"></div></div></div>
+  <div class="q"><div class="t"><span class="ox"></span>2.　2回とも水曜日に開催される。</div><div class="ans"><div class="l"></div></div></div>
+  <div class="q"><div class="t"><span class="ox"></span>3.　申し込みは当日、会場で受け付ける。</div><div class="ans"><div class="l"></div></div></div>
+  <div class="q"><div class="t"><span class="ox"></span>4.　1回に参加できるのは20名までである。</div><div class="ans"><div class="l"></div></div></div>
+</section>
+
+<!-- ========== 生活場面 ========== -->
+<section class="sheet" data-head="実用会話課題|伝える内容のカード">
+  <p class="hint">点線で切り離して1枚ずつ使います。言い回しはご自分で考えてください。</p>
+  <div class="card"><h2>病院の予約を変更する電話</h2><ul><li>氏名</li><li>現在の予約日時</li><li>変更したい理由</li><li>都合のよい曜日</li></ul></div>
+  <div class="card"><h2>タクシーを呼ぶ電話</h2><ul><li>現在地</li><li>行き先</li><li>乗車人数</li><li>車いすの有無</li></ul></div>
+  <div class="card"><h2>薬局での相談</h2><ul><li>飲み忘れた薬があること</li><li>いつ飲めばよいかを確認する</li></ul></div>
+</section>
+
+<section class="sheet" data-head="実用会話課題（続き）|伝える内容のカード">
+  <div class="card"><h2>店で商品を探す</h2><ul><li>探している商品の名前</li><li>名前が出てこない場合は、用途を説明する</li></ul></div>
+  <div class="card"><h2>家族への伝言</h2><ul><li>誰から電話があったか</li><li>用件</li><li>折り返しの電話番号</li></ul></div>
+  <div class="card"><h2>会合での報告（1分）</h2><ul><li>先週行ったこと</li><li>次に行うこと</li></ul></div>
+  <div class="card"><h2>（ご自分の場面）</h2><div class="lines" data-n="3"></div></div>
+</section>
+
+<!-- ========== 指導者用 解答 ========== -->
+<section class="sheet key">
+  <div class="head"><div><div class="tag">指導者用（患者さんには渡さない）</div><h1>解答と評価のポイント</h1></div></div>
+  <h2>書字課題 2（手順）</h2>
+  <p style="margin:0">順序が正しいか、重要な手順の脱落がないか（例：緑茶なら「湯を少し冷ます」、味噌汁なら「火を止めてから味噌を溶く」）。「まず・次に・それから・最後に」を使えているか。</p>
+  <h2>書字課題 3（出来事の記述）</h2>
+  <p style="margin:0">メモの5項目（いつ・どこで・誰が・何が・どうなった）がすべて文に含まれているか。文と文のつながり、主語の脱落、誤字。</p>
+  <h2>語想起課題 2（説明に当てはまる語）</h2>
+  <ol><li>傘</li><li>切手</li><li>くし</li><li>体温計</li><li>まな板</li><li>ICカード・切符</li><li>消しゴム</li><li>しおり</li><li>夕焼け</li><li>処方箋</li></ol>
+  <h2>読解課題 2（案内文）</h2>
+  <ol><li>2回</li><li>90分</li><li>12月20日まで</li><li>無料</li><li>飲み物、筆記用具</li><li>駐車場が狭い（なるべく公共交通機関で）</li></ol>
+  <h2>読解課題 3（正誤）</h2>
+  <ol><li>×（2階）</li><li>○</li><li>×（電話で、開催日の3日前まで）</li><li>○</li></ol>
+  <h2>読解課題 1（動作）</h2>
+  <p style="margin:0">1文ずつ読ませ、動作を終えてから次の文へ進みます。誤りは「順序（〜してから・〜する前に）」「位置（右・左・上・前）」「条件（〜以外・長いほう）」のどれかを記録します。</p>
+  <div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+
+<script>
+// 見出し（氏名・日付欄つき）と書き込み用の線を入れる
+const HEAD=(tag,title)=>`<div class="head"><div><div class="tag">${tag}</div><h1>${title}</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div>`;
+const FOOT='<div class="foot">作成：KENTA SHINKAWA</div>';
+
+// 書字課題2 手順
+document.querySelectorAll("[data-howto]").forEach(s=>{
+  const steps=["まず","次に","それから","それから","それから","最後に"];
+  s.dataset.head="書字課題 2|手順の説明："+s.dataset.howto;
+  s.innerHTML=`<p class="ask">「${s.dataset.howto}」を、順序どおりに書いてください。</p>
+     <p class="hint">「まず」「次に」「それから」「最後に」を使い、5文以上で書いてください。</p>`+
+    steps.map(w=>`<div class="step"><b>${w}</b></div><div class="lines" data-n="1"></div>`).join("")+
+    `<p class="hint" style="margin-top:5mm">書き終えたら、声に出して読み返してください。</p>`;
+});
+
+// 書字課題3 メモから出来事を文章にする
+const SCENES={
+  1:[["いつ","日曜日の午後"],["どこで","公園"],["誰が","幼い男の子"],["何が","持っていた風船を手放してしまい、木の枝に引っかかった"],["どうなった","通りかかった背の高い女性が取ってくれた"]],
+  2:[["いつ","雨の日"],["どこで","駅"],["誰が","高齢の男性"],["何が","傘を持たずに外出し、帰りに雨が降り出して困っていた"],["どうなった","娘から「迎えに行く」と電話があった"]],
+  3:[["いつ","土曜日の夜"],["どこで","レストラン"],["誰が","4人家族"],["何が","注文と違う料理が運ばれてきた"],["どうなった","食べてみるとおいしかったので、そのまま食べることにした"]]
+};
+document.querySelectorAll("[data-scene]").forEach(s=>{
+  const m=SCENES[s.dataset.scene];
+  s.dataset.head="書字課題 3|出来事の記述（"+s.dataset.scene+"）";
+  s.innerHTML=`<p class="ask">下のメモをもとに、その場にいなかった人にも伝わるよう、出来事を文章で書いてください。</p>
+     <dl class="memo">${m.map(([k,v])=>`<dt>${k}</dt><dd>${v}</dd>`).join("")}</dl>
+     <p class="hint">6〜8文程度で書いてください。メモの言葉をそのまま写す必要はありません。</p>
+     <div class="lines" data-n="9"></div>`;
+});
+
+// 語想起課題1 1分間で書く
+const FLU={1:["動物","果物"],2:["「か」で始まる語","台所でする動作"],3:["台所にある物","「病院」から連想する語"]};
+document.querySelectorAll("[data-fluency]").forEach(s=>{
+  s.dataset.head="語想起課題 1|1分間の語の書き出し";
+  s.innerHTML=`<p class="ask">各テーマに当てはまる語を、1分間でできるだけ多く書いてください。</p>`+
+    FLU[s.dataset.fluency].map(t=>`<div style="margin:0 0 3mm"><div class="theme">${t}<span>（　　　）語</span></div>
+      <div class="grid">${Array.from({length:16},(_,i)=>`<div class="c">${i+1}</div>`).join("")}</div></div>`).join("");
+});
+
+// 語想起課題2 説明に当てはまる語
+const RIDDLES=["雨の日に差して、濡れないようにする物","手紙に貼って、郵便料金を支払う物","髪を整える物","体温を測る物","野菜や肉を切るときに下に敷く物","電車に乗る際、改札でかざす物","書いた文字を消す物","本の読みかけのページに挟む物","夕方、西の空が赤く染まること","薬を受け取るために、医師が発行する書類"];
+document.getElementById("riddles").innerHTML=RIDDLES.map((r,i)=>`<div class="q" style="margin:0 0 1mm"><div class="t" style="font-size:14pt"><span class="n">${i+1}.</span>${r}</div><div class="ans" style="margin-bottom:2mm"><div class="l" style="height:10mm"></div></div></div>`).join("");
+
+// data-head を持つページに見出しとフッターを付ける
+document.querySelectorAll("section.sheet[data-head]").forEach(s=>{
+  const [tag,title]=s.dataset.head.split("|");
+  s.insertAdjacentHTML("afterbegin",HEAD(tag,title));
+  s.insertAdjacentHTML("beforeend",FOOT);
+});
+document.querySelectorAll(".lines[data-n]").forEach(el=>{ el.innerHTML='<div class="l"></div>'.repeat(+el.dataset.n); });
+</script>
+</body>
+</html>

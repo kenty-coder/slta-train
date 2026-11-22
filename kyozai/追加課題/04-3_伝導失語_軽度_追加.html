@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="author" content="KENTA SHINKAWA">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>伝導失語（軽度）追加課題集</title>
+<link rel="stylesheet" href="common.css">
+<style>
+.guide{font-size:9.6pt;line-height:1.4}
+.guide .head{margin-bottom:3mm}
+.guide h2{font-size:11pt;margin:1.8mm 0 .8mm;padding-bottom:.5mm}
+.guide p{margin:0 0 1mm}
+.guide ul{margin:0 0 1mm}
+.guide li{margin:0}
+.guide table{font-size:9pt;margin:0 0 1.2mm;line-height:1.35}
+.guide th,.guide td{padding:.4mm 1.5mm}
+.famtxt{border:1.5px solid #333;border-radius:2mm;padding:1.5mm 3.5mm;margin:0 0 1mm;font-size:10pt;line-height:1.5}
+.key{font-size:9.8pt;line-height:1.42}
+.key h2{font-size:11pt;margin:2mm 0 .8mm}
+.key p{margin:0 0 .9mm}
+.key ul{margin:0 0 1mm;padding-left:5mm}
+.key table{border-collapse:collapse;width:100%;font-size:9.4pt;margin:0 0 1.3mm}
+.key th,.key td{border:1px solid #bbb;padding:.4mm 1.5mm;text-align:left;vertical-align:top}
+.key th{background:#f2f2f2}
+.art{fill:none;stroke:#000;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+svg.p{width:30mm;height:30mm;flex:none;border:1px solid #bbb;border-radius:2mm;display:block}
+.boxes{display:inline-flex;gap:2mm;vertical-align:middle}
+.boxes i{display:inline-block;width:13mm;height:13mm;border:1.5px solid #333}
+.opt{display:inline-flex;gap:4mm;flex-wrap:wrap}
+.opt span{display:inline-block;border:1.5px solid #333;border-radius:2mm;padding:.5mm 4mm;font-size:16pt;line-height:1.5}
+.n{font-weight:700}
+ruby rt{font-size:9pt}
+table.rec{border-collapse:collapse;width:100%;font-size:11.5pt}
+table.rec th,table.rec td{border:1px solid #555;padding:1mm 2mm;text-align:left;vertical-align:middle}
+table.rec th{background:#f2f2f2}
+.chk{display:inline-block;width:7mm;height:7mm;border:1.4px solid #333;vertical-align:-1mm;margin:0 1mm 0 3mm}
+.hn{font-size:10pt;color:#555;white-space:nowrap}
+.ladder{font-size:10pt;color:#333;border:1px solid #bbb;border-radius:2mm;padding:1.2mm 3mm;margin:0 0 4mm;line-height:1.45}
+.wrap{display:grid;grid-template-columns:1fr 46mm;gap:5mm;align-items:start}
+.fam{border:2px dashed #333;border-radius:2mm;padding:2mm 3mm;font-size:10pt;line-height:1.45}
+.fam h3{font-size:10.5pt;margin:0 0 2mm;line-height:1.35}
+.fam .it{margin:0 0 2.6mm}
+.fam .it b{display:block;font-size:10.5pt}
+.fam .ln{height:8mm;border-bottom:1px solid #9a9a9a}
+.lines .l{height:12mm}
+
+span.n{display:inline-block;min-width:8mm}
+.read2{font-size:13.5pt;line-height:1.9;border:1.5px solid #333;border-radius:3mm;padding:3mm 6mm;margin:0 0 4mm}
+.qa{margin:0 0 1.8mm}
+.qa .t{font-size:12.5pt;font-weight:700}
+.qa .l{height:9.5mm;border-bottom:1px solid #9a9a9a;margin-left:8mm}
+.dl{display:grid;grid-template-columns:1fr 1fr;gap:0 8mm}
+.dl .r{display:flex;align-items:flex-end;height:14mm;border-bottom:1px solid #9a9a9a;font-size:13pt}
+.tp{border:1px solid #bbb;border-radius:2mm;padding:2mm 3mm;margin:0 0 3mm}
+.tp .t{font-size:13.5pt;font-weight:700;margin-bottom:1mm}
+.tp .l{height:9.5mm;border-bottom:1px solid #9a9a9a;font-size:11pt;color:#555;display:flex;align-items:flex-end}
+.pr td.w{font-size:15pt;font-weight:700;letter-spacing:.02em}
+.form{border:1.5px solid #333;border-radius:2mm;padding:1.5mm 4mm;margin:0 0 3mm}
+.form .f{display:flex;align-items:flex-end;min-height:10mm;border-bottom:1px solid #9a9a9a;font-size:12pt}
+.form .f:last-child{border-bottom:none}
+.form .f b{min-width:40mm}
+.ck{font-size:12pt;line-height:1.9}
+</style>
+</head>
+<body>
+<div class="noprint">印刷するときは <b>Ctrl＋P</b> を押してください（用紙：A4縦）。「指導者用」と書かれたページ（最初と最後のページ）は患者さんには渡さないでください。課題用紙の点線の「ヒント欄」はご家族用です。最初は折って隠してから渡してください。</div>
+<section class="sheet guide">
+<div class="head"><div><div class="tag">指導者用（患者さんには渡さない）</div><h1>伝導失語（軽度）追加課題集について</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div><h2>1．この追加課題集のねらい</h2><p>基本教材「伝導失語（軽度）」の次に、または並行して使う課題集です。基本教材と同じ難しさ（長い語・5〜8文節の文・数字の連続・文章）で、<b>別の題材・別の形の課題</b>を用意しました。数字や日時を正確に聞き取って言う・書く力、少し時間をおいてから言う力、似た音の語の言い分け、手順の説明、電話で用件を伝える力など、生活や仕事への復帰に向けた実用的な練習を中心にしています。</p><h2>2．課題ページの一覧と難しさ</h2><table><tr><th style="width:7%">頁</th><th style="width:33%">課題</th><th style="width:16%">主な領域</th><th>難しさ・使い方</th></tr><tr><td>2</td><td>復唱・書取課題　数字を含む情報</td><td>聴く・話す・書く</td><td>★★★　日時・金額・番号。10問</td></tr><tr><td>3</td><td>音読課題　薬の説明文</td><td>読む・話す</td><td>★★★　長文1題。時間と誤りを記録</td></tr><tr><td>4</td><td>復唱課題　長い文（すぐ／5秒後）</td><td>話す</td><td>★★★　6〜8文節。10問</td></tr><tr><td>5</td><td>書取課題　長い語を書く</td><td>書く</td><td>★★★　複合語。10問＋短文</td></tr><tr><td>6</td><td>談話課題　手順を説明する</td><td>話す・書く</td><td>★★★　ヒント欄つき。3題</td></tr><tr><td>7</td><td>自己修正課題　似た音の語を言い分ける</td><td>話す</td><td>★★★　12組＋文作り</td></tr><tr><td>8</td><td>読解課題　お知らせを読んで答える</td><td>読む・書く</td><td>★★★　8問</td></tr><tr><td>9</td><td>電話課題　用件を電話で伝える</td><td>話す・書く</td><td>★★★　台本作り＋練習2場面</td></tr><tr><td>10</td><td>指導者用</td><td>―</td><td>読み上げリスト・解答・評価のポイント</td></tr></table><h2>3．ヒントの順番</h2><table><tr><th style="width:15%">課題の種類</th><th>ヒントの順番（弱い→強い）</th></tr>
+<tr><td>呼称・喚語</td><td>①意味・仲間（「果物の一つです」）→②使い道・場面（「皮をむいて食べます」）→③最初の音（「み…」）→④文字を見せる（「みかん」）→⑤一緒に言う（復唱）</td></tr>
+<tr><td>理解</td><td>①もう一度ゆっくり言う→②区切って言う→③指さし・身ぶりを添える→④文字を添える→⑤選択肢を減らす</td></tr>
+<tr><td>書字</td><td>①仮名で書いてもよい→②最初の1文字を見せる→③文字数の枠を示す→④見本を見て写す</td></tr></table><h2>4．記録のしかた</h2><p>各問の横に段階（<b>6 完全正答／5 遅延完全正答／4 不完全正答／3 ヒント後正答／2 関連反応／1 誤答</b>）を書き込みます。<b>6・5を正答</b>として正答率を出します。ヒントを使って正答した場合は<b>段階4以下</b>を目安とし、「ヒント（　）番目で正答」の欄に何番目のヒントで言えた・できたかを書きます。次回は、その一つ手前のヒントから始めます。</p><h2>5．ご家族向けの説明（このまま読み上げてください）</h2><div class="famtxt">「この用紙は、長い言葉や数字を正確に言う・書く練習です。間違えても、ご本人が気付いて直せることが多いので、すぐに正解を言わず『もう一度どうぞ』と促してください。直せないときに初めて、間違えた所を指で示してください。時間を測る課題では、前回より速く正確になったかを一緒に確かめてください。」</div><h2>6．どの課題から始めるか</h2><ul><li>まず<b>2頁（数字の情報）と3頁（音読）</b>から始め、今の正確さと速さを確かめます。</li><li>4頁・7頁は誤りが出やすい課題です。自分で直す練習として、間をあけて繰り返します。6頁・9頁は生活や仕事の場面に合わせて題材を変えて構いません。</li><li>1回30〜40分、3〜4頁を目安にします。</li></ul><p style="font-size:9pt;color:#555;margin-top:1mm">内容は一般的な目安です。最終的な判断は担当の言語聴覚士が行ってください。</p>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet">
+<div class="head"><div><div class="tag">復唱・書取課題</div><h1>数字を含む情報を聞いて言う・書く</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div><p class="ask">指導者が読む内容を聞いて、すぐに同じように声に出して言ってください。そのあと、右の欄に書いてください。</p><p class="hint">数字は、区切りごとに頭の中で繰り返すと覚えやすくなります。一度で言えなかったときは、番号に△を付けます。</p><table class="rec"><tr><th style="width:6%">No</th><th style="width:18%">種類</th><th>書く欄</th><th style="width:11%">言う</th><th style="width:11%">書く</th></tr><tr style="height:15mm"><td class="n">1</td><td>日付</td><td></td><td></td><td></td></tr><tr style="height:15mm"><td class="n">2</td><td>時刻</td><td></td><td></td><td></td></tr><tr style="height:15mm"><td class="n">3</td><td>金額</td><td></td><td></td><td></td></tr><tr style="height:15mm"><td class="n">4</td><td>金額</td><td></td><td></td><td></td></tr><tr style="height:15mm"><td class="n">5</td><td>部屋番号</td><td></td><td></td><td></td></tr><tr style="height:15mm"><td class="n">6</td><td>生年月日</td><td></td><td></td><td></td></tr><tr style="height:15mm"><td class="n">7</td><td>受付番号</td><td></td><td></td><td></td></tr><tr style="height:15mm"><td class="n">8</td><td>乗り場と時刻</td><td></td><td></td><td></td></tr><tr style="height:15mm"><td class="n">9</td><td>郵便番号</td><td></td><td></td><td></td></tr><tr style="height:15mm"><td class="n">10</td><td>薬の飲み方</td><td></td><td></td><td></td></tr></table><p class="hint" style="margin-top:2mm">「言う」「書く」の欄は指導者が記入します（段階6〜1）。</p>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet">
+<div class="head"><div><div class="tag">音読課題</div><h1>薬の説明文を声に出して読む</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div><p class="ask">次の説明文を声に出して読んでください。言い誤ったと気付いたら、その語だけ言い直して先へ進んでください。</p><div class="read2">血圧のお薬について。このお薬は、血圧を下げて、心臓や血管への負担を軽くするお薬です。一日一回、朝食後に一錠を、コップ一杯の水またはぬるま湯で飲んでください。飲み忘れに気付いたときは、その日のうちであれば、気付いた時点で飲んでください。ただし、次の日の分と一緒に、二回分をまとめて飲むことはしないでください。立ち上がったときにふらつきを感じたら、ゆっくりと動くようにし、続く場合は医師または薬剤師に相談してください。グレープフルーツのジュースは、お薬の効き目を強めることがあるため、控えてください。</div><table class="rec"><tr><th style="width:18%"></th><th>かかった時間</th><th>言い誤り</th><th>自分で直した</th><th>直すまでの速さ</th></tr><tr style="height:9.5mm"><td>1回目</td><td>　　秒</td><td>　　回</td><td>　　回</td><td style="font-size:10.5pt">すぐ・少し後・気付かず</td></tr><tr style="height:9.5mm"><td>2回目</td><td>　　秒</td><td>　　回</td><td>　　回</td><td style="font-size:10.5pt">すぐ・少し後・気付かず</td></tr><tr style="height:9.5mm"><td>3回目</td><td>　　秒</td><td>　　回</td><td>　　回</td><td style="font-size:10.5pt">すぐ・少し後・気付かず</td></tr></table><p class="ask" style="margin:3mm 0 1mm">読み終えたら、文を見ないで答えてください。</p><div class="qa"><div class="t"><span class="n">1.</span>このお薬は、一日に何回、いつ飲みますか。</div><div class="l"></div></div><div class="qa"><div class="t"><span class="n">2.</span>飲み忘れたときに、してはいけないことは何ですか。</div><div class="l"></div></div><div class="qa"><div class="t"><span class="n">3.</span>控えたほうがよい飲み物は何ですか。</div><div class="l"></div></div>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet">
+<div class="head"><div><div class="tag">復唱課題</div><h1>長い文を聞いて言う</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div><p class="ask">指導者が読む文を聞いて、同じように言ってください。Aは聞いてすぐに、Bは心の中で五つ数えてから言ってください。</p><p class="hint">文は一度だけ読みます。区切り（文節）ごとに思い浮かべながら聞くと、覚えやすくなります。表は指導者が記入します。</p><table class="rec"><tr><th style="width:6%">No</th><th style="width:13%">文節の数</th><th style="width:17%">A すぐに<br><small>正しく言えた文節</small></th><th style="width:17%">B 5秒後に<br><small>正しく言えた文節</small></th><th>誤りのメモ（抜け・入れ替わり・音の誤り）</th></tr><tr style="height:14.5mm"><td class="n">1</td><td>6</td><td>　　／6</td><td>　　／6</td><td></td></tr><tr style="height:14.5mm"><td class="n">2</td><td>6</td><td>　　／6</td><td>　　／6</td><td></td></tr><tr style="height:14.5mm"><td class="n">3</td><td>7</td><td>　　／7</td><td>　　／7</td><td></td></tr><tr style="height:14.5mm"><td class="n">4</td><td>7</td><td>　　／7</td><td>　　／7</td><td></td></tr><tr style="height:14.5mm"><td class="n">5</td><td>7</td><td>　　／7</td><td>　　／7</td><td></td></tr><tr style="height:14.5mm"><td class="n">6</td><td>6</td><td>　　／6</td><td>　　／6</td><td></td></tr><tr style="height:14.5mm"><td class="n">7</td><td>7</td><td>　　／7</td><td>　　／7</td><td></td></tr><tr style="height:14.5mm"><td class="n">8</td><td>6</td><td>　　／6</td><td>　　／6</td><td></td></tr><tr style="height:14.5mm"><td class="n">9</td><td>7</td><td>　　／7</td><td>　　／7</td><td></td></tr><tr style="height:14.5mm"><td class="n">10</td><td>8</td><td>　　／8</td><td>　　／8</td><td></td></tr></table>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet">
+<div class="head"><div><div class="tag">書取課題</div><h1>長い語を聞いて書く</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div><p class="ask">指導者が言う語を聞いて、線の上に書いてください。書けたら、声に出して読んでください。</p><p class="hint">漢字が思い出せないときは、仮名で書いて構いません。あとで漢字を確かめて書き直してください。</p><div class="dl"><div class="r"><span class="n">1.</span></div><div class="r"><span class="n">2.</span></div><div class="r"><span class="n">3.</span></div><div class="r"><span class="n">4.</span></div><div class="r"><span class="n">5.</span></div><div class="r"><span class="n">6.</span></div><div class="r"><span class="n">7.</span></div><div class="r"><span class="n">8.</span></div><div class="r"><span class="n">9.</span></div><div class="r"><span class="n">10.</span></div></div><p style="text-align:right;margin:1.5mm 0 4mm"><span class="hn">正しく書けた数（　　）／10　　仮名で書いた数（　　）</span></p><p class="ask">上の語から二つを選び、両方を使った文を一つ作って書いてください。書けたら声に出して読んでください。</p><div class="lines"><div class="l"></div><div class="l"></div><div class="l"></div></div>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet">
+<div class="head"><div><div class="tag">談話課題</div><h1>手順を順番どおりに説明する</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div><p class="ask">次のことの手順を、初めて聞く人に分かるように、順番どおりに声に出して説明してください。そのあと、要点を短く書いてください。</p><div class="wrap"><div><div class="tp"><div class="t">A　急須で緑茶をいれる手順</div><div class="l">1.</div><div class="l">2.</div><div class="l">3.</div><div class="l">4.</div></div><div class="tp"><div class="t">B　炊飯器でご飯を炊く手順</div><div class="l">1.</div><div class="l">2.</div><div class="l">3.</div><div class="l">4.</div></div><div class="tp"><div class="t">C　病院に着いてから会計までの流れ</div><div class="l">1.</div><div class="l">2.</div><div class="l">3.</div><div class="l">4.</div></div><p class="hint" style="margin:1mm 0 0">「最初に」「次に」「それから」「最後に」を使うと、伝わりやすくなります。説明にかかった時間と、言い直しの数を指導者が記録します。</p></div><div class="fam"><h3>ヒント欄（ご家族用。最初は折って隠してください）</h3><div class="it"><b>A　使ってほしい語</b>急須・茶葉・お湯を冷ます・湯のみ・注ぐ・最後の一滴</div><div class="it"><b>B　使ってほしい語</b>米を量る・研ぐ・内釜・水加減（目盛り）・ふたを閉める・スイッチ</div><div class="it"><b>C　使ってほしい語</b>受付・診察券・受付票・待合室・名前を呼ばれる・診察・会計・処方箋</div><div class="it"><b>ヒントの出し方</b>①「最初に何をしますか」②「次は？」と区切って聞く ③上の語を一つずつ読む</div></div></div>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet">
+<div class="head"><div><div class="tag">自己修正課題</div><h1>似た音の語を言い分ける</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div><p class="ask">二つの語を、続けて3回、声に出して言ってください（例：「病院、美容院、病院、美容院、病院、美容院」）。速さより正確さを大切にしてください。</p><table class="rec pr"><tr><th style="width:6%">No</th><th>語の組</th><th style="width:13%">言い誤り</th><th style="width:13%">自分で直した</th><th style="width:9%">秒</th></tr><tr style="height:12mm"><td class="n">1</td><td class="w">病院　・　美容院</td><td></td><td></td><td></td></tr><tr style="height:12mm"><td class="n">2</td><td class="w">改札　・　解散</td><td></td><td></td><td></td></tr><tr style="height:12mm"><td class="n">3</td><td class="w">消費税　・　消費期限</td><td></td><td></td><td></td></tr><tr style="height:12mm"><td class="n">4</td><td class="w">住所　・　住職</td><td></td><td></td><td></td></tr><tr style="height:12mm"><td class="n">5</td><td class="w">手術　・　主治医</td><td></td><td></td><td></td></tr><tr style="height:12mm"><td class="n">6</td><td class="w">退院　・　体温</td><td></td><td></td><td></td></tr><tr style="height:12mm"><td class="n">7</td><td class="w">冷蔵庫　・　冷凍庫</td><td></td><td></td><td></td></tr><tr style="height:12mm"><td class="n">8</td><td class="w">看護師　・　介護士</td><td></td><td></td><td></td></tr><tr style="height:12mm"><td class="n">9</td><td class="w">食事　・　障子</td><td></td><td></td><td></td></tr><tr style="height:12mm"><td class="n">10</td><td class="w">定年　・　定例</td><td></td><td></td><td></td></tr><tr style="height:12mm"><td class="n">11</td><td class="w">警察　・　計算</td><td></td><td></td><td></td></tr><tr style="height:12mm"><td class="n">12</td><td class="w">自転車　・　自動車</td><td></td><td></td><td></td></tr></table><p class="ask" style="margin:3mm 0 1mm">言い誤りやすかった組を一つ選び、二つの語を両方使った文を作って言ってください。</p><div class="lines"><div class="l"></div></div>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet">
+<div class="head"><div><div class="tag">読解課題</div><h1>お知らせを読んで答える</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div><p class="ask">お知らせを読んで、質問の答えを書いてください（何度見返しても構いません）。</p><div class="read2" style="font-size:12pt;line-height:1.65;padding:2.5mm 5mm"><b>みどり内科クリニック　年末年始の診療のお知らせ</b><br>・12月29日（火）から1月3日（日）まで休診いたします。<br>・12月26日（土）は午前のみの診療です（9時〜12時）。<br>・1月4日（月）から通常どおり診療いたします。<br>・お薬が年内に切れそうな方は、12月25日（金）までにご来院ください。<br>・休診中に具合が悪くなった場合は、市の休日急患診療所（電話 0466-55-2071）へご連絡ください（練習用の架空の番号）。<br>・予約の変更は、診療時間内にお電話でお受けします。</div><div class="qa"><div class="t"><span class="n">1.</span>休診はいつからいつまでですか。</div><div class="l" style="height:7.5mm"></div></div><div class="qa"><div class="t"><span class="n">2.</span>12月26日（土）の診療時間は何時から何時までですか。</div><div class="l" style="height:7.5mm"></div></div><div class="qa"><div class="t"><span class="n">3.</span>通常の診療が始まるのは、何月何日何曜日ですか。</div><div class="l" style="height:7.5mm"></div></div><div class="qa"><div class="t"><span class="n">4.</span>お薬が切れそうな人は、いつまでに行けばよいですか。</div><div class="l" style="height:7.5mm"></div></div><div class="qa"><div class="t"><span class="n">5.</span>休診中に具合が悪くなったら、どこへ連絡しますか。</div><div class="l" style="height:7.5mm"></div></div><div class="qa"><div class="t"><span class="n">6.</span>その連絡先の電話番号を書いてください。</div><div class="l" style="height:7.5mm"></div></div><div class="qa"><div class="t"><span class="n">7.</span>予約を変えたいときは、どうすればよいですか。</div><div class="l" style="height:7.5mm"></div></div><div class="qa"><div class="t"><span class="n">8.</span>あなたが1月2日に熱を出したら、どうしますか。文で書いてください。</div><div class="l" style="height:13mm"></div></div>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet">
+<div class="head"><div><div class="tag">電話課題</div><h1>用件を電話で伝える</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div><p class="ask">A　次の用件を電話で伝えます。話す内容を下の欄に書いてから、指導者を相手に電話をかける練習をしてください。</p><p class="hint">用件：来週火曜日の訪問リハビリの時間を、午前10時から午後2時に変えてもらいたい（理由：午前中に通院の予定が入ったため）。</p><div class="form"><div class="f"><b>① 名乗る</b></div><div class="f"><b>② 用件</b></div><div class="f"><b>③ 日にち（変更前）</b></div><div class="f"><b>④ 変更後の時間</b></div><div class="f"><b>⑤ 理由</b></div><div class="f"><b>⑥ 確認・お礼</b></div></div><p class="ask">B　タクシー会社に電話をかけて、車を呼ぶ練習をしてください。</p><p class="hint">伝えること：自分の名前・迎えに来てほしい場所（住所）・時刻・行き先・車いすを積むかどうか。</p><div class="form"><div class="f"><b>名前・場所</b></div><div class="f"><b>時刻・行き先</b></div><div class="f"><b>その他</b></div></div><div class="ck"><b>自分で確かめる</b><br><i class="chk"></i>最初に名前を言えた　<i class="chk"></i>日時・数字を正確に言えた<br><i class="chk"></i>相手が言った内容を繰り返して確かめた　<i class="chk"></i>最後にお礼を言えた</div>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet key" style="page-break-after:auto;break-after:auto">
+<div class="head"><div><div class="tag">指導者用（患者さんには渡さない）</div><h1>読み上げリスト・解答・評価のポイント</h1></div></div><h2>復唱・書取課題（2頁）で読む内容（普通の速さで1回）</h2><p>1 3月14日、金曜日　2 午後3時45分　3 2,780円　4 15,400円　5 4階の412号室　6 昭和28年5月9日生まれ　7 受付番号は3806番　8 7番乗り場、11時20分発　9 郵便番号245-0013（架空）　10 1日3回、毎食後に2錠</p><h2>復唱課題（4頁）で読む文（（　）は文節の数）</h2><ol style="margin:0 0 1mm;padding-left:6mm"><li>来週の月曜日は、朝八時半までに病院の受付を済ませてください。（6）</li><li>隣の田中さんが、旅行のお土産に温泉まんじゅうを持ってきてくれました。（6）</li><li>冷蔵庫の野菜室に、昨日買った大根と白菜が入っています。（7）</li><li>雨の日はバスが混むので、早めに家を出ます。（7）</li><li>市役所から届いた書類に、名前と生年月日を書いて返送しました。（7）</li><li>孫の誕生日に、図鑑と手紙を送ろうと思っています。（6）</li><li>今年の夏は暑かったので、エアコンの電気代が高くなりました。（7）</li><li>来月から、ごみの収集日が火曜日と金曜日に変わります。（6）</li><li>眼科の予約を、木曜日の午後から土曜日の午前に変更しました。（7）</li><li>駅の改札を出たところで、ひさしぶりに昔の同僚に会いました。（8）</li></ol><h2>書取課題（5頁）で言う語</h2><p>1 粗大ごみ　2 住民票　3 印鑑証明書　4 年賀状　5 特急券　6 処方箋　7 血圧計　8 洗濯物　9 郵便局　10 携帯電話</p><h2>解答</h2><table><tr><th style="width:18%">音読課題（3頁）</th><td>1 一日一回、朝食後　2 次の日の分と一緒に二回分をまとめて飲むこと　3 グレープフルーツのジュース</td></tr><tr><th>読解課題（8頁）</th><td>1 12月29日（火）〜1月3日（日）　2 9時〜12時　3 1月4日（月）　4 12月25日（金）まで　5 市の休日急患診療所　6 0466-55-2071　7 診療時間内に電話する　8 例：休日急患診療所に電話して受診する</td></tr></table><h2>評価のポイント</h2><ul><li>2頁は、桁の抜け・数字の入れ替わり・単位（円・時・号室）の抜けを分けて記録します。言うと書くのどちらで誤りが多いかを比べます。</li><li>4頁は、AとBの差を見ます。Bで大きく下がる場合は、聞いた内容を保つ力の練習（区切って心の中で繰り返す）を続けます。</li><li>3頁・7頁は時間・言い誤り・自分で直した数を前回と比べます。速くすると誤りが増えるなら、正確さを優先します。</li><li>6頁は、手順の抜け・順番の誤り・言い直しの数と、聞き手に伝わったかで評価します。9頁は、①〜⑥の要素がそろったかと、数字の正確さを確認します。</li><li>仕事への復帰を目指す場合は、職場の書類・電話応対・会議の連絡を題材に置きかえます。</li></ul><p style="font-size:9pt;color:#555">一般的な目安です。最終的な判断は担当の言語聴覚士が行ってください。</p>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+</body>
+</html>

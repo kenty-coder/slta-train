@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="author" content="KENTA SHINKAWA">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ウェルニッケ失語（軽度）訓練教材</title>
+<link rel="stylesheet" href="common.css">
+<style>
+.ill{width:30mm;height:30mm;fill:none;stroke:#000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;display:block}
+.ill.m{width:25mm;height:25mm}
+.ill.s{width:20mm;height:20mm}
+.it{display:flex;align-items:center;gap:3mm;margin:0 0 4mm}
+.it>.n{font-weight:700;font-size:15pt;min-width:9mm;align-self:flex-start}
+.ops{display:flex;gap:4mm;align-items:center}
+.op{border:1px solid #bbb;border-radius:2mm;padding:1.5mm}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:0 6mm}
+.arrow{font-size:20pt;color:#555;padding:0 2mm}
+.wd{display:inline-block;border:1.5px solid #333;border-radius:2mm;padding:1mm 4mm;font-size:16pt;margin:0 2mm 2mm 0}
+.wds{display:flex;flex-direction:column;gap:2.5mm}
+.wds span{border:1.5px solid #333;border-radius:2mm;padding:.5mm 4mm;font-size:20pt;font-weight:700;text-align:center;min-width:28mm}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:4mm;margin:0 0 4mm}
+.cards div{border:2px solid #333;border-radius:3mm;text-align:center;font-size:20pt;font-weight:700;padding:3.5mm 1mm}
+.pg4{display:grid;grid-template-columns:repeat(4,1fr);gap:4mm 4mm;margin:2mm 0 4mm}
+.pg4 .p{display:flex;flex-direction:column;align-items:center;border:1px solid #bbb;border-radius:2mm;padding:2mm 0 2mm}
+.pg4 .p b{font-size:12pt;color:#555;align-self:flex-start;margin-left:3mm}
+.okng{display:flex;gap:4mm;margin-top:1.5mm;font-size:16pt;font-weight:700}
+.okng span{border:1.5px solid #333;border-radius:50%;width:11mm;height:11mm;line-height:10mm;text-align:center}
+table.rec{border-collapse:collapse;width:100%;font-size:12.5pt}
+table.rec th,table.rec td{border:1px solid #555;padding:1.5mm 2mm;vertical-align:top;text-align:left}
+table.rec th{background:#f2f2f2;font-weight:700}
+.row{display:flex;align-items:center;gap:4mm;margin:0 0 3.5mm}
+.row .n{font-weight:700;font-size:15pt;min-width:9mm}
+.row .choices{margin:0}
+.note{font-size:10.5pt;color:#555;margin:-2mm 0 3mm}
+.compact{font-size:9.5pt;line-height:1.45}
+.compact h2{font-size:12pt;margin:2.5mm 0 1mm}
+.compact table{font-size:9pt;margin-bottom:2mm}
+.compact th,.compact td{padding:.6mm 1.5mm}
+.compact ul{margin-bottom:1mm}
+.compact .mini{width:118mm;margin:0 auto}
+.compact .note{margin:0 0 1mm;font-size:9.5pt}
+.dense{font-size:8.9pt;line-height:1.38}
+.dense h2{font-size:10.8pt;margin:1.8mm 0 .6mm}
+.dense table{font-size:8.5pt;margin-bottom:1.2mm}
+.dense p{margin:0 0 1mm}
+.sec{font-size:13pt;font-weight:700;margin:2mm 0 3mm;border-left:2.5mm solid #333;padding-left:2.5mm}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="w2-bowl" viewBox="0 0 100 100"><path d="M16 44 Q18 82 50 84 Q82 82 84 44 Z"/><path d="M22 44 Q50 20 78 44"/><path d="M40 84 L40 90 L60 90 L60 84"/></symbol><symbol id="w2-chop" viewBox="0 0 100 100"><path d="M18 88 L76 12 M30 90 L86 18"/></symbol><symbol id="w2-spoon" viewBox="0 0 100 100"><ellipse cx="50" cy="27" rx="14" ry="18"/><path d="M47 45 L47 88 Q50 92 53 88 L53 45"/></symbol><symbol id="w2-glass" viewBox="0 0 100 100"><path d="M28 16 L72 16 L65 86 L35 86 Z"/><path d="M31 38 L69 38"/></symbol><symbol id="w2-pill" viewBox="0 0 100 100"><rect x="18" y="24" width="64" height="52" rx="5"/><circle cx="34" cy="40" r="7"/><circle cx="50" cy="40" r="7"/><circle cx="66" cy="40" r="7"/><circle cx="34" cy="60" r="7"/><circle cx="50" cy="60" r="7"/><circle cx="66" cy="60" r="7"/></symbol><symbol id="w2-thermo" viewBox="0 0 100 100"><rect x="8" y="42" width="72" height="16" rx="8"/><rect x="28" y="46" width="24" height="8" rx="1"/><path d="M80 50 L93 50"/></symbol><symbol id="w2-towel" viewBox="0 0 100 100"><path d="M12 20 L88 20"/><rect x="24" y="20" width="52" height="66" rx="2"/><path d="M24 70 L76 70 M24 77 L76 77"/></symbol><symbol id="w2-shirt" viewBox="0 0 100 100"><path d="M36 16 L20 22 L8 40 L20 48 L26 41 L26 88 L74 88 L74 41 L80 48 L92 40 L80 22 L64 16 Q50 30 36 16 Z"/><path d="M50 28 L50 88"/><circle cx="55" cy="44" r="1.5"/><circle cx="55" cy="60" r="1.5"/><circle cx="55" cy="76" r="1.5"/></symbol><symbol id="w2-hat" viewBox="0 0 100 100"><ellipse cx="50" cy="70" rx="40" ry="10"/><path d="M28 67 Q28 30 50 30 Q72 30 72 67"/><path d="M29 58 Q50 64 71 58"/></symbol><symbol id="w2-chair" viewBox="0 0 100 100"><path d="M30 12 L30 90 M30 54 L74 54 L74 90 M30 12 L36 12 L36 54 M30 54 L30 60 L74 60"/></symbol><symbol id="w2-bed" viewBox="0 0 100 100"><path d="M10 34 L10 84 M90 50 L90 84 M10 72 L90 72"/><rect x="10" y="56" width="80" height="16"/><rect x="15" y="46" width="22" height="10" rx="4"/></symbol><symbol id="w2-tv" viewBox="0 0 100 100"><rect x="12" y="18" width="76" height="54" rx="4"/><rect x="19" y="25" width="62" height="40"/><path d="M42 72 L38 84 L62 84 L58 72"/></symbol><symbol id="w2-news" viewBox="0 0 100 100"><rect x="16" y="16" width="68" height="70"/><rect x="22" y="22" width="56" height="12"/><path d="M22 44 L46 44 M22 52 L46 52 M22 60 L46 60 M22 68 L78 68 M22 76 L78 76"/><rect x="54" y="42" width="24" height="20"/></symbol><symbol id="w2-pencil" viewBox="0 0 100 100"><path d="M24 82 L76 30 L86 40 L34 92 Z"/><path d="M24 82 L16 96 L34 92"/><path d="M70 36 L80 46"/></symbol><symbol id="w2-env" viewBox="0 0 100 100"><rect x="12" y="28" width="76" height="48" rx="2"/><path d="M12 28 L50 56 L88 28"/></symbol><symbol id="w2-bulb" viewBox="0 0 100 100"><path d="M38 66 Q38 56 30 48 Q22 38 26 28 Q32 12 50 12 Q68 12 74 28 Q78 38 70 48 Q62 56 62 66 Z"/><rect x="38" y="66" width="24" height="14" rx="2"/><path d="M38 73 L62 73 M44 80 L44 86 L56 86 L56 80"/></symbol><symbol id="w2-apple" viewBox="0 0 100 100"><path d="M50 32 Q30 18 21 38 Q15 62 33 80 Q42 89 50 83 Q58 89 67 80 Q85 62 79 38 Q70 18 50 32 Z"/><path d="M50 32 L52 16"/><path d="M53 22 Q63 12 71 18 Q63 27 53 22"/></symbol><symbol id="w2-banana" viewBox="0 0 100 100"><path d="M20 30 Q24 80 86 70 Q91 68 88 62 Q46 62 32 28 Z"/><path d="M26 40 Q38 64 80 66"/><path d="M20 30 L16 20 L24 18 L32 28"/></symbol><symbol id="w2-fish" viewBox="0 0 100 100"><path d="M12 50 Q40 22 72 50 Q40 78 12 50 Z"/><path d="M72 50 L90 34 L90 66 Z"/><circle cx="26" cy="46" r="3"/><path d="M40 38 Q46 50 40 62"/></symbol><symbol id="w2-bread" viewBox="0 0 100 100"><path d="M20 86 L20 40 Q11 36 13 26 Q19 13 50 13 Q81 13 87 26 Q89 36 80 40 L80 86 Z"/><path d="M28 80 L28 44 Q20 40 22 30 Q28 21 50 21 Q72 21 78 30 Q80 40 72 44 L72 80 Z"/></symbol><symbol id="w2-milk" viewBox="0 0 100 100"><path d="M30 30 L30 90 L70 90 L70 30 L60 14 L40 14 Z"/><path d="M30 30 L70 30 M40 14 L40 7 L60 7 L60 14"/><rect x="38" y="46" width="24" height="26"/></symbol><symbol id="w2-comb" viewBox="0 0 100 100"><rect x="12" y="34" width="76" height="14" rx="3"/><path d="M18 48 L18 70 M25 48 L25 70 M32 48 L32 70 M39 48 L39 70 M46 48 L46 70 M53 48 L53 70 M60 48 L60 70 M67 48 L67 70 M74 48 L74 70 M81 48 L81 70"/></symbol><symbol id="w2-cane" viewBox="0 0 100 100"><path d="M58 92 L58 30 Q58 12 42 12 Q28 12 28 26"/><path d="M54 92 L62 92"/></symbol><symbol id="w2-bottle" viewBox="0 0 100 100"><path d="M42 8 L58 8 L58 18 Q70 26 70 40 L70 86 Q70 92 64 92 L36 92 Q30 92 30 86 L30 40 Q30 26 42 18 Z"/><path d="M30 48 L70 48 M30 66 L70 66 M42 14 L58 14"/></symbol></defs></svg>
+<div class="noprint">印刷するときは <b>Ctrl＋P</b> を押してください（用紙：A4縦）。「指導者用」と書かれたページは指導者用です。患者さんには課題用紙だけを渡してください。</div>
+<section class="sheet guide compact">
+<div class="head"><div><div class="tag">指導者用</div><h1>ウェルニッケ失語（軽度）の訓練教材について</h1></div></div>
+<h2>1．この段階の目安となるSLTAプロフィール</h2>
+<p>日常会話はある程度成り立ち、身近な話題なら理解も表出もおおむね可能です。一方で、長い文、複数の指示、早口の説明、電話のように手がかりの少ない場面では理解が崩れます。話の中に語の選び違い（意味の近い別の語）や回りくどい言い方が時々混じり、要点をまとめて伝えるのが苦手になりやすい段階です。自分の誤りに気付いて言い直せることが増えてきます。</p>
+<table>
+<tr><th style="width:11%">領域</th><th style="width:19%">正答率の目安</th><th>特徴的な下位検査</th></tr>
+<tr><td>聴く</td><td>60〜100％</td><td>単語の理解はほぼ満点。短文の理解・仮名の理解は8割、口頭命令に従うは6割程度に残りやすい</td></tr>
+<tr><td>話す</td><td>60〜90％</td><td>呼称7〜8割（時々錯語）、動作説明7割。文の復唱6割、まんがの説明は段階5前後、語の列挙は9語程度</td></tr>
+<tr><td>読む</td><td>70〜100％</td><td>漢字・単語の理解は満点。仮名・単語9割、短文の理解8割、書字命令に従うは7割</td></tr>
+<tr><td>書く</td><td>40〜80％</td><td>漢字の書字・書取は8割。仮名の書取や短文の書取（4割）に誤りが残りやすい</td></tr>
+<tr><td>計算</td><td>80％以上</td><td>個人差が大きい</td></tr>
+</table>
+<svg class="mini" data-profile="100,80,60,80,75,80,70,80,60,60,100,90,80,80,100,90,80,70,80,60,60,80,80,60,40,85"></svg>
+<p class="note">典型例のイメージ。個人差が大きい（例データ「例：ウェルニッケ失語（軽度）」1回目の評価から作図）。</p>
+<h2>2．同じタイプの他の重症度との違い</h2>
+<table>
+<tr><th style="width:15%">段階</th><th style="width:43%">理解の状態</th><th>話す・気付きの状態</th></tr>
+<tr><td>重度（03-1）</td><td>単語でも不安定。はい／いいえと2〜3択の指さしが中心</td><td>ジャルゴンが多く、誤りに気付かない</td></tr>
+<tr><td>中等度（03-2）</td><td>身近な単語は分かる。短文は半分程度。文字があると安定</td><td>錯語が多い。指摘されると気付くことがある</td></tr>
+<tr><td><b>軽度（この教材）</b></td><td>日常会話はおおむね分かる。長い文・複数の指示・速い説明で崩れる</td><td>語の選び違いが時々ある。自分で気付いて言い直せることが増える</td></tr>
+</table>
+<h2>3．進む・戻る目安</h2>
+<ul>
+<li><b>この教材の次へ：</b>3段階の指示と話の聞き取り（聴理解課題1・2）で、6・5が8割以上の日が2回続き、会話の中で確認の言い方を自分から使えるようになったら、本人の生活に合わせた実用課題（電話の応対、地域の集まり、仕事の打ち合わせなど）へ移ります。</li>
+<li><b>中等度の教材（03-2）に戻る：</b>2段階の指示や短い文の理解でも誤りが目立つ日が続く場合。</li>
+</ul>
+
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet guide compact">
+<div class="head"><div><div class="tag">指導者用</div><h1>訓練の進め方・記録のしかた</h1></div></div>
+<h2>4．訓練の目標と優先順位</h2>
+<ul>
+<li><b>目標：</b>長い文や複数の指示、まとまった話を正確に聞き取る。場面に合った語を正しく選ぶ。分からないときに会話の中で確かめる方法を身に付け、要点をまとめて伝えられるようにする。</li>
+<li><b>優先順位：</b>①複数の指示・長い文の聴理解 ②まとまった話の聞き取り ③会話での確認の方法（聞き返す・言い換えて確かめる・書いてもらう）④語の選択の正確さ ⑤要約（読んだ話・自分の話）。</li>
+<li>速さよりも正確さを先に。正確にできるようになってから、読む速さや指示の長さを上げます。</li>
+</ul>
+<h2>5．ヒントの出し方（上から順に強くする）</h2>
+<ol>
+<li>本人に「もう一度お願いします」と言ってもらい、同じ速さで繰り返す（段階5）。</li>
+<li>ゆっくり、区切って言い直す。</li>
+<li>要点（日時・数・物の名前）だけを書いて見せる。</li>
+<li>指示を一つずつに分けて言う。ヒント後の正答は段階3と記録します。</li>
+</ol>
+<h2>6．家族への助言</h2>
+<ul>
+<li>普段の会話はほぼ通じても、予定・約束・お金・薬の話は誤解が起こりやすいので、メモに残すことを習慣にする。</li>
+<li>本人が「〜ということ？」と確かめてきたら、急がずに答える。確かめることは良いことだと伝える。</li>
+<li>言い誤りは、会話の流れを止めずに、正しい語でさりげなく返す。</li>
+</ul>
+<h2>7．訪問での工夫</h2>
+<ul>
+<li>実際に届いた通知、病院の説明書、町内会の回覧などを題材にする（個人情報は伏せる）。</li>
+<li>電話の練習は、隣の部屋から携帯電話をかけるなど、相手の顔が見えない条件でも行う。</li>
+<li>仕事への復帰を考えている場合は、職場で使う言葉や書類を題材に加える。</li>
+</ul>
+<h2>8．課題ページの一覧と記録のしかた</h2>
+<table>
+<tr><th style="width:8%">頁</th><th style="width:30%">課題</th><th>内容</th></tr>
+<tr><td>3</td><td>聴理解課題1</td><td>2〜3段階の指示を聞いて、用紙に印や文字を書く</td></tr>
+<tr><td>4</td><td>聴理解課題2</td><td>町内会の連絡と薬の説明を聞いて、質問に答える</td></tr>
+<tr><td>5</td><td>語の選択課題</td><td>文に最も合う語を選ぶ。文中の誤った語を見つけて直す</td></tr>
+<tr><td>6</td><td>会話の確認課題</td><td>確認の言い方を練習し、電話の内容をメモして確かめる</td></tr>
+<tr><td>7</td><td>要約課題</td><td>お知らせを読んで要点を書き出し、短くまとめる</td></tr>
+<tr><td>8</td><td>指導者用</td><td>読み上げリスト・解答・評価のポイント</td></tr>
+</table>
+<p>1問ごとに段階6〜1で記録します（6 完全正答、5 遅延完全正答、4 不完全正答、3 ヒント後正答、2 関連反応、1 誤答）。6・5を正答として数え、正答の割合を課題ごとに出します。6・5がおおむね8割以上の状態が2回続いたら一段階難しくし、5割未満なら選択肢を減らすなど易しくする、を目安にします。</p><p><b>ここに示したのは一般的な目安です。最終的な判断は担当の言語聴覚士が行います。</b></p>
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet">
+<div class="head"><div><div class="tag">聴理解課題 1</div><h1>複数の指示を聞いて書き込む</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div>
+<p class="ask">指導者が番号と指示を言います。その番号の欄で、指示のとおりに印を付けたり書いたりしてください。</p>
+<p class="hint">指示は1回だけ言います。分からないときは「もう一度お願いします」と伝えてください。</p>
+<div class="row" style="margin-bottom:5mm"><span class="n">1.</span><div style="display:flex;gap:3mm;flex-wrap:wrap"><span class="wd" style="margin:0">りんご</span><span class="wd" style="margin:0">鉛筆</span><span class="wd" style="margin:0">タオル</span><span class="wd" style="margin:0">新聞</span><span class="wd" style="margin:0">封筒</span></div></div>
+<div class="row" style="margin-bottom:5mm"><span class="n">2.</span><div style="display:flex;gap:3mm;flex-wrap:wrap"><span class="wd" style="margin:0">12</span><span class="wd" style="margin:0">5</span><span class="wd" style="margin:0">30</span><span class="wd" style="margin:0">18</span><span class="wd" style="margin:0">7</span><span class="wd" style="margin:0">24</span></div></div>
+<div class="row" style="margin-bottom:5mm"><span class="n">3.</span><div style="display:flex;gap:3mm;flex-wrap:wrap"><span class="wd" style="margin:0">郵便局</span><span class="wd" style="margin:0">銀行</span><span class="wd" style="margin:0">病院</span><span class="wd" style="margin:0">薬局</span><span class="wd" style="margin:0">図書館</span></div></div>
+<div class="row" style="margin-bottom:4mm"><span class="n">4.</span><svg viewBox="0 0 100 100" style="width:32mm;height:32mm;fill:none;stroke:#000;stroke-width:2"><circle cx="50" cy="50" r="44"/><text x="50.0" y="21.0" font-size="9" text-anchor="middle" fill="#000" stroke="none">12</text><text x="66.5" y="25.4" font-size="9" text-anchor="middle" fill="#000" stroke="none">1</text><text x="78.6" y="37.5" font-size="9" text-anchor="middle" fill="#000" stroke="none">2</text><text x="83.0" y="54.0" font-size="9" text-anchor="middle" fill="#000" stroke="none">3</text><text x="78.6" y="70.5" font-size="9" text-anchor="middle" fill="#000" stroke="none">4</text><text x="66.5" y="82.6" font-size="9" text-anchor="middle" fill="#000" stroke="none">5</text><text x="50.0" y="87.0" font-size="9" text-anchor="middle" fill="#000" stroke="none">6</text><text x="33.5" y="82.6" font-size="9" text-anchor="middle" fill="#000" stroke="none">7</text><text x="21.4" y="70.5" font-size="9" text-anchor="middle" fill="#000" stroke="none">8</text><text x="17.0" y="54.0" font-size="9" text-anchor="middle" fill="#000" stroke="none">9</text><text x="21.4" y="37.5" font-size="9" text-anchor="middle" fill="#000" stroke="none">10</text><text x="33.5" y="25.4" font-size="9" text-anchor="middle" fill="#000" stroke="none">11</text><circle cx="50" cy="50" r="1.5" fill="#000"/></svg><div style="flex:1;margin-left:6mm"><div class="ans" style="margin:0"><span class="l"></span></div></div></div>
+<div class="row" style="margin-bottom:5mm"><span class="n">5.</span><div style="display:flex;gap:3mm;flex-wrap:wrap"><span class="wd" style="margin:0">月</span><span class="wd" style="margin:0">火</span><span class="wd" style="margin:0">水</span><span class="wd" style="margin:0">木</span><span class="wd" style="margin:0">金</span><span class="wd" style="margin:0">土</span><span class="wd" style="margin:0">日</span></div></div>
+<div class="row" style="margin-bottom:5mm"><span class="n">6.</span><div style="display:flex;gap:3mm;flex-wrap:wrap"><span class="wd" style="margin:0">3</span><span class="wd" style="margin:0">9</span><span class="wd" style="margin:0">14</span><span class="wd" style="margin:0">20</span><span class="wd" style="margin:0">26</span><span class="wd" style="margin:0">31</span></div></div>
+<div class="row" style="margin-bottom:5mm"><span class="n">7.</span><div style="display:flex;gap:3mm;flex-wrap:wrap"><span class="wd" style="margin:0">傘</span><span class="wd" style="margin:0">手袋</span><span class="wd" style="margin:0">うちわ</span><span class="wd" style="margin:0">毛布</span><span class="wd" style="margin:0">扇風機</span><span class="wd" style="margin:0">こたつ</span></div></div>
+<div class="row"><span class="n">8.</span><div class="ans" style="margin:0;flex:1"><span class="l"></span></div></div>
+
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet">
+<div class="head"><div><div class="tag">聴理解課題 2</div><h1>話を聞いて質問に答える</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div>
+<p class="ask">指導者が読む話を聞いて、質問の答えに○を付けてください。話を聞く前に、質問を読んでおいて構いません。</p>
+<div class="sec">話1　町内会からの連絡</div>
+<div class="q" style="margin:0 0 3.5mm"><div class="t" style="font-size:14pt"><span class="n">1.</span>清掃はいつありますか。</div><div class="choices" style="margin:1mm 0 0 9mm;gap:4mm"><span style="font-size:13.5pt;padding:.5mm 3mm">日曜日の午前</span><span style="font-size:13.5pt;padding:.5mm 3mm">土曜日の午後</span><span style="font-size:13.5pt;padding:.5mm 3mm">月曜日の朝</span></div></div>
+<div class="q" style="margin:0 0 3.5mm"><div class="t" style="font-size:14pt"><span class="n">2.</span>町内会が用意する物は何ですか。</div><div class="choices" style="margin:1mm 0 0 9mm;gap:4mm"><span style="font-size:13.5pt;padding:.5mm 3mm">ほうきとちりとり</span><span style="font-size:13.5pt;padding:.5mm 3mm">軍手とごみ袋</span><span style="font-size:13.5pt;padding:.5mm 3mm">お茶と弁当</span></div></div>
+<div class="q" style="margin:0 0 3.5mm"><div class="t" style="font-size:14pt"><span class="n">3.</span>雨が降ったらどうなりますか。</div><div class="choices" style="margin:1mm 0 0 9mm;gap:4mm"><span style="font-size:13.5pt;padding:.5mm 3mm">中止になる</span><span style="font-size:13.5pt;padding:.5mm 3mm">翌週に延期</span><span style="font-size:13.5pt;padding:.5mm 3mm">午後に変更</span></div></div>
+<div class="q" style="margin:0 0 3.5mm"><div class="t" style="font-size:14pt"><span class="n">4.</span>参加できないときは、誰に連絡しますか。</div><div class="choices" style="margin:1mm 0 0 9mm;gap:4mm"><span style="font-size:13.5pt;padding:.5mm 3mm">市役所</span><span style="font-size:13.5pt;padding:.5mm 3mm">公民館の係</span><span style="font-size:13.5pt;padding:.5mm 3mm">班長の田中さん</span></div></div>
+<div class="sec" style="margin-top:4mm">話2　薬局での説明</div>
+<div class="q" style="margin:0 0 3.5mm"><div class="t" style="font-size:14pt"><span class="n">5.</span>薬は一日に何回飲みますか。</div><div class="choices" style="margin:1mm 0 0 9mm;gap:4mm"><span style="font-size:13.5pt;padding:.5mm 3mm">1回</span><span style="font-size:13.5pt;padding:.5mm 3mm">2回</span><span style="font-size:13.5pt;padding:.5mm 3mm">3回</span></div></div>
+<div class="q" style="margin:0 0 3.5mm"><div class="t" style="font-size:14pt"><span class="n">6.</span>飲み忘れたときは、どうしますか。</div><div class="choices" style="margin:1mm 0 0 9mm;gap:4mm"><span style="font-size:13.5pt;padding:.5mm 3mm">次に2錠飲む</span><span style="font-size:13.5pt;padding:.5mm 3mm">次の分を1錠だけ飲む</span><span style="font-size:13.5pt;padding:.5mm 3mm">すぐ病院へ行く</span></div></div>
+<div class="q" style="margin:0 0 3.5mm"><div class="t" style="font-size:14pt"><span class="n">7.</span>検査の日の朝は、どうしますか。</div><div class="choices" style="margin:1mm 0 0 9mm;gap:4mm"><span style="font-size:13.5pt;padding:.5mm 3mm">朝ご飯を食べない</span><span style="font-size:13.5pt;padding:.5mm 3mm">薬を2錠飲む</span><span style="font-size:13.5pt;padding:.5mm 3mm">水も飲まない</span></div></div>
+<div class="q" style="margin:0 0 3.5mm"><div class="t" style="font-size:14pt"><span class="n">8.</span>検査はいつですか。</div><div class="choices" style="margin:1mm 0 0 9mm;gap:4mm"><span style="font-size:13.5pt;padding:.5mm 3mm">1週間後</span><span style="font-size:13.5pt;padding:.5mm 3mm">2週間後</span><span style="font-size:13.5pt;padding:.5mm 3mm">1か月後</span></div></div>
+
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet">
+<div class="head"><div><div class="tag">語の選択課題</div><h1>場面に合う語を選ぶ・誤りを直す</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div>
+<p class="ask">1．文に最も合う語を一つ選び、○を付けてください。</p>
+<div class="row" style="margin-bottom:3.5mm"><span class="n">1.</span><span style="font-size:14.5pt">傷口に薬を</span><div class="choices" style="gap:3mm"><span style="font-size:14pt;padding:.5mm 3mm">塗る</span><span style="font-size:14pt;padding:.5mm 3mm">飲む</span><span style="font-size:14pt;padding:.5mm 3mm">かける</span></div></div><div class="row" style="margin-bottom:3.5mm"><span class="n">2.</span><span style="font-size:14.5pt">乾いた洗濯物を</span><div class="choices" style="gap:3mm"><span style="font-size:14pt;padding:.5mm 3mm">たたむ</span><span style="font-size:14pt;padding:.5mm 3mm">折る</span><span style="font-size:14pt;padding:.5mm 3mm">閉じる</span></div></div><div class="row" style="margin-bottom:3.5mm"><span class="n">3.</span><span style="font-size:14.5pt">お風呂のお湯を</span><div class="choices" style="gap:3mm"><span style="font-size:14pt;padding:.5mm 3mm">沸かす</span><span style="font-size:14pt;padding:.5mm 3mm">煮る</span><span style="font-size:14pt;padding:.5mm 3mm">焼く</span></div></div><div class="row" style="margin-bottom:3.5mm"><span class="n">4.</span><span style="font-size:14.5pt">予約の時間に</span><div class="choices" style="gap:3mm"><span style="font-size:14pt;padding:.5mm 3mm">間に合う</span><span style="font-size:14pt;padding:.5mm 3mm">追いつく</span><span style="font-size:14pt;padding:.5mm 3mm">届く</span></div></div><div class="row" style="margin-bottom:3.5mm"><span class="n">5.</span><span style="font-size:14.5pt">雨の日に傘を</span><div class="choices" style="gap:3mm"><span style="font-size:14pt;padding:.5mm 3mm">差す</span><span style="font-size:14pt;padding:.5mm 3mm">持ち上げる</span><span style="font-size:14pt;padding:.5mm 3mm">広める</span></div></div><div class="row" style="margin-bottom:3.5mm"><span class="n">6.</span><span style="font-size:14.5pt">新聞を読むときに眼鏡を</span><div class="choices" style="gap:3mm"><span style="font-size:14pt;padding:.5mm 3mm">かける</span><span style="font-size:14pt;padding:.5mm 3mm">着る</span><span style="font-size:14pt;padding:.5mm 3mm">はめる</span></div></div>
+<p class="ask" style="margin-top:5mm">2．次の文には、合わない語が一つずつあります。その語に線を引き、正しい語を右の線の上に書いてください。</p>
+<div class="row" style="margin-bottom:2mm;align-items:flex-end"><span class="n">1.</span><span style="font-size:14.5pt;white-space:nowrap">郵便局で切手を借りました。</span><span style="flex:1;height:10mm;border-bottom:1px solid #9a9a9a;margin-left:4mm"></span></div><div class="row" style="margin-bottom:2mm;align-items:flex-end"><span class="n">2.</span><span style="font-size:14.5pt;white-space:nowrap">朝ご飯の前に歯を洗いました。</span><span style="flex:1;height:10mm;border-bottom:1px solid #9a9a9a;margin-left:4mm"></span></div><div class="row" style="margin-bottom:2mm;align-items:flex-end"><span class="n">3.</span><span style="font-size:14.5pt;white-space:nowrap">冷蔵庫で野菜を温めておきました。</span><span style="flex:1;height:10mm;border-bottom:1px solid #9a9a9a;margin-left:4mm"></span></div><div class="row" style="margin-bottom:2mm;align-items:flex-end"><span class="n">4.</span><span style="font-size:14.5pt;white-space:nowrap">孫が遊びに来たので、お茶を焼きました。</span><span style="flex:1;height:10mm;border-bottom:1px solid #9a9a9a;margin-left:4mm"></span></div><div class="row" style="margin-bottom:2mm;align-items:flex-end"><span class="n">5.</span><span style="font-size:14.5pt;white-space:nowrap">雨がやんだので、傘を開きました。</span><span style="flex:1;height:10mm;border-bottom:1px solid #9a9a9a;margin-left:4mm"></span></div><div class="row" style="margin-bottom:2mm;align-items:flex-end"><span class="n">6.</span><span style="font-size:14.5pt;white-space:nowrap">暗くなってきたので、部屋の電気を消しました。</span><span style="flex:1;height:10mm;border-bottom:1px solid #9a9a9a;margin-left:4mm"></span></div>
+<p class="hint" style="margin-top:3mm">直した文を声に出して読み、意味が通るか確かめてください。</p>
+
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet">
+<div class="head"><div><div class="tag">会話の確認課題</div><h1>聞き返して確かめる</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div>
+<p class="ask">1．聞き取れないときや確かめたいときに使う言い方です。声に出して読んでください。</p>
+<div class="memo" style="font-size:13.5pt;line-height:1.75">・すみません、もう一度ゆっくりお願いします。<br>・〇〇ということですか。<br>・大事なところを、紙に書いていただけますか。<br>・確認します。〇日の〇時に、〇〇を持って行けばいいですね。</div>
+<p class="ask">2．指導者が電話の相手になって話します。聞きながら表に書き、最後に上の言い方を使って内容を確かめてください。確かめた言葉も表に書いてください。</p>
+<div class="sec">場面1　病院の受付からの電話</div><table class="rec" style="margin-bottom:2mm"><tr><th style="width:30%">用件</th><td style="height:9.5mm"></td></tr><tr><th style="width:30%">日時</th><td style="height:9.5mm"></td></tr><tr><th style="width:30%">場所・相手</th><td style="height:9.5mm"></td></tr><tr><th style="width:30%">持ち物・頼まれた物</th><td style="height:9.5mm"></td></tr><tr><th>確認の言葉</th><td style="height:13mm"></td></tr></table>
+<div class="sec">場面2　家族からの電話</div><table class="rec" style="margin-bottom:2mm"><tr><th style="width:30%">用件</th><td style="height:9.5mm"></td></tr><tr><th style="width:30%">日時</th><td style="height:9.5mm"></td></tr><tr><th style="width:30%">場所・相手</th><td style="height:9.5mm"></td></tr><tr><th style="width:30%">持ち物・頼まれた物</th><td style="height:9.5mm"></td></tr><tr><th>確認の言葉</th><td style="height:13mm"></td></tr></table>
+
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet">
+<div class="head"><div><div class="tag">要約課題</div><h1>お知らせを読んで短くまとめる</h1></div><div class="who">氏名<span></span><br>　　　　<span class="d"></span>月<span class="d"></span>日</div></div>
+<p class="ask">次のお知らせを読んで、下の問いに答えてください。</p>
+<div class="read" style="font-size:13.5pt;line-height:1.8;margin-bottom:4mm">市立図書館は、十二月一日から二十日まで、館内の照明工事のため休館します。この間、借りている本は、正面入口の横にある返却ポストに返すことができます。ただし、大型の本や紙芝居はポストに入らないため、工事が終わってから窓口に返してください。予約した本は、駅前の分館で受け取ることができます。分館は午前十時から午後六時まで開いています。工事の後は閲覧室の座席が増え、明るく読みやすい部屋になる予定です。</div>
+<p class="ask" style="margin-bottom:2mm">1．要点を書き出してください。</p>
+<table class="rec" style="margin-bottom:4mm">
+<tr><th style="width:32%">いつからいつまで</th><td style="height:10mm"></td></tr>
+<tr><th>なぜ休むのか</th><td style="height:10mm"></td></tr>
+<tr><th>本を返す方法</th><td style="height:10mm"></td></tr>
+<tr><th>予約した本の受け取り</th><td style="height:10mm"></td></tr></table>
+<p class="ask" style="margin-bottom:1mm">2．家族に伝えるつもりで、二つの文にまとめて書いてください。</p>
+<div class="lines"><div class="l" style="height:11mm"></div><div class="l" style="height:11mm"></div><div class="l" style="height:11mm"></div></div>
+<p class="ask" style="margin:4mm 0 1mm">3．昨日の出来事を指導者に話し、その話を三つの文にまとめて書いてください。</p>
+<div class="lines"><div class="l" style="height:11mm"></div><div class="l" style="height:11mm"></div><div class="l" style="height:11mm"></div></div>
+
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+<section class="sheet guide dense" style="page-break-after:auto;break-after:auto">
+<div class="head"><div><div class="tag">指導者用（患者さんには渡さない）</div><h1>読み上げリスト・解答・評価のポイント</h1></div></div>
+<p>普通の速さで1回だけ読みます。本人が聞き返したら同じ速さで繰り返し（段階5）、それでも難しければ2頁「5．ヒントの出し方」に沿って区切る・書いて見せる（段階3）。</p>
+<h2>聴理解課題1（3頁）指示（正答）</h2>
+<table><tr><th style="width:3%">No</th><th>読む指示</th><th style="width:27%">正答</th><th style="width:7%">段階</th></tr>
+<tr><td>1</td><td>鉛筆と新聞に丸を付けてから、残りの語のうち果物に線を引いてください。</td><td>丸：鉛筆・新聞、線：りんご</td><td></td></tr>
+<tr><td>2</td><td>いちばん大きい数に丸を付け、いちばん小さい数に×を付けてください。</td><td>丸：30、×：5</td><td></td></tr>
+<tr><td>3</td><td>病院と図書館の間にある語に三角を付けてください。</td><td>三角：薬局</td><td></td></tr>
+<tr><td>4</td><td>時計に4時15分の針を書き、その30分後の時刻を右の線に書いてください。</td><td>針：4時15分、線：4時45分</td><td></td></tr>
+<tr><td>5</td><td>水曜日に丸を付ける前に、その前の日に×を付けてください。</td><td>先に火に×、次に水に丸（順序も確認）</td><td></td></tr>
+<tr><td>6</td><td>10より大きく25より小さい数のうち、偶数だけに線を引いてください。</td><td>線：14・20</td><td></td></tr>
+<tr><td>7</td><td>夏に使う物に丸、冬に使う物に三角を付けてください。傘には何も付けないでください。</td><td>丸：うちわ・扇風機、三角：手袋・毛布・こたつ</td><td></td></tr>
+<tr><td>8</td><td>線の左の端に名字を書き、右の端に今日の日付を書いてください。</td><td>本人の名字と当日の日付</td><td></td></tr></table>
+<h2>聴理解課題2（4頁）読む話（正答）</h2>
+<p><b>話1：</b>「来週の日曜日、午前九時から公園の清掃を行います。軍手とごみ袋は町内会で用意します。雨の場合は、翌週の日曜日に延期します。参加できない方は、金曜日までに班長の田中さんに連絡してください。」（1 日曜日の午前　2 軍手とごみ袋　3 翌週に延期　4 班長の田中さん）<br>
+<b>話2：</b>「このお薬は一日二回、朝食後と夕食後に一錠ずつ飲んでください。飲み忘れたときに、次の分を二錠まとめて飲むことはしないでください。二週間後に血液検査をしますので、その日の朝ご飯は食べずに来てください。お水は飲んで構いません。」（5 2回　6 次の分を1錠だけ飲む　7 朝ご飯を食べない　8 2週間後）</p>
+<h2>語の選択課題（5頁）解答</h2>
+<p>1：1 塗る　2 たたむ　3 沸かす　4 間に合う　5 差す　6 かける<br>2：1 借り→買い　2 洗い→磨き　3 温め→冷やし　4 焼き→入れ（いれ）　5 開き→閉じ（たたみ）　6 消し→つけ</p>
+<h2>会話の確認課題（6頁）指導者が話す内容（電話の相手役として普通の速さで）</h2>
+<p><b>場面1：</b>「みどり台クリニックの受付です。来週火曜日の午前十時のご予約ですが、医師の都合で、木曜日の午後二時に変更をお願いできますか。保険証とお薬手帳をお持ちください。」（用件：予約の変更／日時：来週木曜日 午後2時／場所：みどり台クリニック／持ち物：保険証・お薬手帳）<br>
+<b>場面2：</b>「もしもし、私。今日の夕方五時ごろそっちに寄るね。帰りに牛乳と食パンを買っていくけど、ほかに要る物ある？あと、薬局でいつもの薬も受け取っておくね。」（用件：夕方寄る・買い物・薬の受け取り／時刻：今日の5時ごろ／頼まれた物：牛乳・食パン・薬）</p>
+<h2>要約課題（7頁）解答例</h2>
+<p>要点：12月1日〜20日／照明工事のため／入口横の返却ポスト（大型本・紙芝居は工事後に窓口）／駅前の分館で受け取り（10時〜18時）<br>
+まとめの例：「図書館は照明工事で十二月一日から二十日まで休みです。本は入口横のポストに返せて、予約した本は駅前の分館で受け取れます。」</p>
+<style>.dense{font-size:8.5pt;line-height:1.34}.dense table{font-size:8.2pt}.dense h2{margin:1.5mm 0 .5mm}</style><h2>評価のポイント</h2>
+<ul>
+<li>聴理解課題1は、指示の段階数（1つ・2つ・3つ）ごとに正答率を出します。順序の入れ替え（5）や条件付き（6・7）の誤りが多いかも記録します。</li>
+<li>会話の確認課題では、本人が自分から確認の言い方を使えたか、使った回数を記録します。メモの正確さと合わせて評価します。</li>
+<li>要約は、要点の数（4つ中いくつ）と、余計な情報が混じっていないかを見ます。3の自分の話では、語の選び違いに本人が気付けたかも書き留めます。</li>
+</ul>
+<p class="note">一般的な目安です。最終的な判断は担当の言語聴覚士が行います。</p>
+
+<div class="foot">作成：KENTA SHINKAWA</div>
+</section>
+
+<script src="mini-profile.js"></script>
+</body>
+</html>
