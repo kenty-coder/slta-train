@@ -162,6 +162,7 @@ details.kzg>summary{min-height:60px;display:flex;align-items:center;font-weight:
 .pp-ask{flex:0 0 auto;font-size:14pt;font-weight:700;margin:0 0 2mm;line-height:1.5}
 .pp-body{flex:1 1 auto;min-height:0;display:flex;flex-direction:column;justify-content:flex-start;overflow:hidden;position:relative}
 .pp-body.spread{justify-content:space-evenly}
+.pp-body.packed .pp-q{padding-top:4mm;padding-bottom:9mm}
 .pp-body.c2{display:grid;grid-template-columns:1fr 1fr;column-gap:6mm;align-content:start}
 .pp-body.c2.spread{align-content:space-evenly}
 .pp-body.hint::after{content:"";position:absolute;top:0;bottom:0;right:44mm;border-left:2px dashed #555}
@@ -533,9 +534,17 @@ function recommend(p){
   return SLTA.map((s,i)=>{ const pct=ev.pct[i]; const row={no:s[0],dom:s[1],name:s[2],pct};
     if(pct===null) return Object.assign(row,{none:true,skills:[]});
     row.level=pctLevel(pct); row.maint=pct>=95;
-    row.skills=skillsForNo(s[0]).map(sk=>({skill:sk.name,type:sk.type,base:row.level,level:effLevel(p,sk.name,row.level),over:p.lv[sk.name]!=null}));
+    let list=skillsForNo(s[0]).filter(sk=>row.level>=(MIN_LV[sk.name]||1)||p.lv[sk.name]!=null);
+    if(!list.length) list=skillsForNo(s[0]).slice(0,1);
+    row.skills=list.map((sk,k)=>({skill:sk.name,type:sk.type,base:row.level,level:effLevel(p,sk.name,row.level),over:p.lv[sk.name]!=null,rank:k}));
     return row; });
 }
+/* 応用的な課題は、その下位検査がこの level 以上のときだけおすすめに出す（重度の方に「お釣り」「実用文」などが入らないように） */
+const MIN_LV={"かけ算":2,"割り算":3,"お釣りの計算":3,"合計金額の計算":3,"時刻の計算":4,"かかった時間の計算":4,"割引の計算":4,
+  "実用文の読解":4,"実用文の要約":4,"意味の近い語の選択":3,"しりとり":3,"音の数（拍）の判断":2,"情景・手順の説明":2,"指示の保持（伝言）":3,"指示の保持（持ち物）":2};
+/* 選ぶときの重み：各下位検査の中心の課題を優先し、計算・数・記憶は言語の課題より少し後ろに */
+const SIDE_DOM=new Set(["計算","数と左右","記憶"]);
+const pickBias=c=>(c.rank||0)*6+(SIDE_DOM.has(c.dom)?6:0);
 function effLevel(p,skill,base){ const v=p&&p.lv?p.lv[skill]:null; return v!=null?v:base; }
 const pctTxt=v=>v==null?"－":(Math.round(v*10)/10)+"%";
 
@@ -546,12 +555,12 @@ function buildMenu(p,solo,nBlocks){
   nBlocks=clamp(nBlocks||DB.settings.blocks||4,3,5);
   const rec=recommend(p); const cands=[];
   if(rec){ for(const r of rec){ if(r.none) continue; for(const s of r.skills){ if(solo&&!AUTO.has(s.type)) continue;
-      cands.push({skill:s.skill,type:s.type,level:s.level,pct:r.pct,no:r.no,dom:r.dom,maint:r.maint,reason:`${r.name} ${pctTxt(r.pct)} → ${s.skill}・level${s.level}${s.over?"（指導者が変更）":""}`}); } } }
+      cands.push({skill:s.skill,type:s.type,level:s.level,pct:r.pct,no:r.no,dom:(SKILLS[s.skill]||{}).dom||r.dom,rank:s.rank,maint:r.maint,reason:`${r.name} ${pctTxt(r.pct)} → ${s.skill}・level${s.level}${s.over?"（指導者が変更）":""}`}); } } }
   const best={}; for(const c of cands){ if(!best[c.skill]||c.pct<best[c.skill].pct) best[c.skill]=c; }
   const pool=Object.values(best); if(!pool.length) return [];
   const ls=lastSession(p); const lastSk=new Set(ls?ls.blocks.map(b=>b.skill):[]);
   const chosen=[];
-  const score=c=>{ const prev=chosen[chosen.length-1]; let s=c.pct+Math.random()*18; if(c.maint) s+=70; if(lastSk.has(c.skill)) s+=25;
+  const score=c=>{ const prev=chosen[chosen.length-1]; let s=c.pct+pickBias(c)+Math.random()*18; if(c.maint) s+=70; if(lastSk.has(c.skill)) s+=25;
     if(prev&&prev.type===c.type) s+=45; if(chosen.some(x=>x.no===c.no)) s+=22; if(chosen.some(x=>x.type===c.type)) s+=10; if(chosen.some(x=>x.dom===c.dom)) s+=12; return s; };
   const weakN=Math.min(nBlocks-1,pool.length);
   for(let i=0;i<weakN;i++){ const left=pool.filter(c=>!chosen.includes(c)); if(!left.length) break; left.sort((a,b)=>score(a)-score(b)); chosen.push(left[0]); }
@@ -1190,23 +1199,24 @@ function skShape(sk,L){
   if(st.pic) return "pic"; if(t) return "text"; return String(e.prompt||"").length>30?"long":"speak"; }
 /* 1枚の問題数：重度（level が低い）ほど少なく大きく */
 function perSheet(sk,L){ const i=clamp(L||3,1,5)-1, t=sk.type, sh=skShape(sk,L);
-  if(sk.name==="語の列挙") return [1,2,2,3,3][i];
-  if(t==="choice") return sh==="long"?[1,2,2,2,3][i]:[2,3,3,4,4][i];
-  if(t==="yesno") return sh==="long"?[2,2,3,3,4][i]:[3,4,5,6,6][i];
-  if(t==="say") return sh==="pics"?[1,1,1,2,2][i]:sh==="long"?[2,2,3,3,4][i]:sh==="text"?[4,5,6,8,8][i]:sh==="pic"?[3,4,5,6,6][i]:[5,6,8,10,10][i];
-  if(t==="write") return [2,3,4,4,5][i];
-  if(t==="order") return [2,3,3,4,4][i];
-  if(t==="input") return sh==="pic"||sh==="pics"?[1,2,2,3,3][i]:sh==="long"?[2,3,3,4,4][i]:[4,6,8,10,10][i];
-  return [1,2,2,3,3][i]; // tapseq・span
+  // 軽度（level4・5）は1枚に多めに入れる。A4に収まらない分は印刷前に自動で減らす（fitPrint）
+  if(sk.name==="語の列挙") return [1,2,2,4,5][i];
+  if(t==="choice") return sh==="long"?[1,2,2,3,4][i]:[2,3,3,5,6][i];
+  if(t==="yesno") return sh==="long"?[2,2,3,5,6][i]:[3,4,5,8,10][i];
+  if(t==="say") return sh==="pics"?[1,1,1,3,3][i]:sh==="long"?[2,2,3,5,6][i]:sh==="text"?[4,5,6,10,12][i]:sh==="pic"?[3,4,5,6,8][i]:[5,6,8,12,14][i];
+  if(t==="write") return [2,3,4,6,8][i];
+  if(t==="order") return [2,3,3,5,6][i];
+  if(t==="input") return sh==="pic"||sh==="pics"?[1,2,2,4,4][i]:sh==="long"?[2,3,3,5,6][i]:[4,6,8,12,14][i];
+  return [1,2,2,4,5][i]; // tapseq・span
 }
 function orderPerm(n){ let idx=Array.from({length:n},(_,i)=>i); for(let k=0;k<20;k++){ idx=shuffle(idx); if(idx.some((v,i)=>v!==i)) break; } return idx; }
 function buildPrint(p,n){
   const rec=recommend(p); if(!rec) return null;
   const best={}; for(const r of rec){ if(r.none) continue; for(const s of r.skills){ if(!paperSkill(s.skill)) continue;
-    const c={skill:s.skill,type:s.type,level:s.level,pct:r.pct,no:r.no,dom:r.dom,name:r.name,maint:r.maint,over:s.over}; if(!best[c.skill]||c.pct<best[c.skill].pct) best[c.skill]=c; } }
+    const c={skill:s.skill,type:s.type,level:s.level,pct:r.pct,no:r.no,dom:(SKILLS[s.skill]||{}).dom||r.dom,rank:s.rank,name:r.name,maint:r.maint,over:s.over}; if(!best[c.skill]||c.pct<best[c.skill].pct) best[c.skill]=c; } }
   const pool=Object.values(best); const lastP=(p.prints||[]).slice(-1)[0]; const lastSk=new Set(lastP?(lastP.sheets||[]).map(s=>s.skill):[]);
   const k=Math.min(pool.length,n<=5?n:n<=10?6:8); const chosen=[];
-  const score=c=>c.pct+Math.random()*15+(c.maint?60:0)+(lastSk.has(c.skill)?15:0)+(chosen.some(x=>x.no===c.no)?25:0)+(chosen.some(x=>x.type===c.type)?12:0)+(chosen.some(x=>x.dom===c.dom)?8:0);
+  const score=c=>c.pct+pickBias(c)+Math.random()*15+(c.maint?60:0)+(lastSk.has(c.skill)?15:0)+(chosen.some(x=>x.no===c.no)?25:0)+(chosen.some(x=>x.type===c.type)?12:0)+(chosen.some(x=>x.dom===c.dom)?8:0);
   while(chosen.length<k){ const left=pool.filter(c=>!chosen.includes(c)); if(!left.length) break; left.sort((a,b)=>score(a)-score(b)); chosen.push(left[0]); }
   const spare=pool.filter(c=>!chosen.includes(c));
   const sh={usedQ:Object.assign({},p.usedQ),usedW:Object.assign({},p.usedW)}; const sess=new Set(); const sheets=[]; const seen=new Set();
@@ -1336,7 +1346,8 @@ const overBody=b=>contentH(b)>b.clientHeight+1;
 function fitSheets(){ const set=PRINT.set; if(!set) return; const SLACK=12; // 画面と印刷のわずかな差のためのゆとり（px）
   $$("#ppw .pp-task").forEach(sh=>{ const i=+sh.dataset.si, s=set.sheets[i], b=sh.querySelector(".pp-body");
     if(!set.fitted){ while(s.items.length>1&&contentH(b)>b.clientHeight-SLACK){ const qs=b.querySelectorAll(".pp-q"); qs[qs.length-1].remove(); s.items.pop(); } }
-    if(contentH(b)>b.clientHeight+1) console.warn("PRINT-OVERFLOW 課題用紙"+(i+1)); else b.classList.add("spread"); });
+    // 中身が少ない用紙（読み上げだけの課題など）は、間を広げすぎず上に寄せる
+    if(contentH(b)>b.clientHeight+1) console.warn("PRINT-OVERFLOW 課題用紙"+(i+1)); else if(contentH(b)>b.clientHeight*0.6) b.classList.add("spread"); else b.classList.add("packed"); });
   set.fitted=true;
   const gd=$("#ppw .pp-guide"); if(gd) gd.outerHTML=ppGuide(P(),set); // 問題数を、はみ出しを直したあとの数にする
   const g=$("#ppw .pp-guide .pp-body"); if(g&&overBody(g)) console.warn("PRINT-OVERFLOW ガイド"); }
