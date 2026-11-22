@@ -1,0 +1,1143 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="author" content="KENTA SHINKAWA">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="言語訓練">
+<meta name="application-name" content="言語訓練">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="robots" content="noindex">
+<title>言語訓練</title>
+<style>
+/* 言語訓練アプリ  作成：KENTA SHINKAWA */
+:root{
+  --fs:22px;
+  --font:"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic UI","Yu Gothic","Meiryo",sans-serif;
+  --bg:#f5f4ef; --card:#fff; --ink:#1d1d1d; --sub:#5b5b5b; --line:#c9c6bd;
+  --main:#1f4e79; --main2:#e7eef6; --ok:#1d5c3a; --ng:#8a2a1a; --warn:#fff4d6;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--font);font-size:var(--fs);line-height:1.6;-webkit-text-size-adjust:100%}
+body.mincho{--font:"Hiragino Mincho ProN","Yu Mincho","YuMincho","BIZ UDMincho","MS Mincho",serif}
+button,input,select,textarea{font:inherit;color:inherit}
+button{min-height:64px;min-width:64px;padding:0 20px;border:2px solid #8f8b80;border-radius:12px;background:#fff;cursor:pointer;touch-action:manipulation}
+button:active{transform:translateY(1px)}
+button.p{background:var(--main);border-color:var(--main);color:#fff}
+button.s{min-height:64px;font-size:.85em;padding:0 14px}
+button.on{background:var(--main2);border-color:var(--main);box-shadow:inset 0 0 0 2px var(--main)}
+button:disabled{opacity:.4;cursor:default}
+input[type=text],input[type=date],input[type=number],select,textarea{min-height:56px;border:2px solid #9d998e;border-radius:10px;padding:6px 12px;background:#fff}
+textarea{width:100%;min-height:140px;font-size:.75em;font-family:monospace}
+.wrap{max-width:1100px;margin:0 auto;padding:12px 18px 40px}
+.top{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:10px 18px;background:#fff;border-bottom:2px solid var(--line);position:sticky;top:0;z-index:5}
+.top h1{font-size:1.15em;margin:0 8px 0 0}
+.top .who{color:var(--sub);font-size:.85em;flex:1}
+.card{background:var(--card);border:2px solid var(--line);border-radius:14px;padding:16px 18px;margin:14px 0}
+.card h2{font-size:1.05em;margin:0 0 10px}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.grid-btn{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
+.grid-btn button{min-height:84px;text-align:left;font-size:1em}
+.grid-btn button small{display:block;color:var(--sub);font-size:.7em;line-height:1.4}
+.grid-btn button.p small{color:#dfe8f2}
+.muted{color:var(--sub);font-size:.85em}
+.small{font-size:.8em}
+table{border-collapse:collapse;width:100%}
+th,td{border-bottom:1px solid var(--line);padding:6px 8px;text-align:left;vertical-align:top}
+th{font-size:.8em;color:var(--sub);font-weight:normal}
+.foot{color:var(--sub);font-size:.75em;text-align:center;padding:20px}
+.err{color:var(--ng)}
+.tag{display:inline-block;border:1px solid var(--line);border-radius:8px;padding:0 8px;margin:2px 4px 2px 0;font-size:.8em;background:#faf9f5}
+.tag.m{background:var(--main2);border-color:#a9bfd6}
+#toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:#333;color:#fff;padding:12px 22px;border-radius:12px;display:none;z-index:50;font-size:.9em}
+#errbar{position:fixed;left:0;right:0;top:0;background:#8a2a1a;color:#fff;padding:8px 14px;z-index:60;font-size:.75em;display:none;white-space:pre-wrap}
+/* SLTA 入力 */
+.slta-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(440px,1fr));gap:6px 18px}
+.sl{display:flex;align-items:center;gap:8px;padding:4px 0;border-bottom:1px dashed #ddd}
+.sl .no{width:2em;color:var(--sub);font-size:.8em}
+.sl .nm{flex:1;font-size:.9em}
+.sl input{width:5.4em;text-align:right}
+.sl .pc{width:3.6em;font-size:.8em;color:var(--sub);text-align:right}
+.sl.bad input{border-color:var(--ng);background:#fff0ee}
+.dom{margin:12px 0 4px;font-weight:bold;font-size:.9em}
+/* メニュー */
+.blk{display:flex;gap:12px;align-items:center;flex-wrap:wrap;border:2px solid var(--line);border-radius:12px;padding:10px 12px;margin:10px 0;background:#fff}
+.blk .no{font-weight:bold;width:2.2em}
+.blk select{max-width:360px}
+.blk .cnt{min-width:3.5em;text-align:center}
+.blk .rs{flex-basis:100%;font-size:.8em;color:var(--sub)}
+/* 練習画面 */
+#pv{position:fixed;inset:0;display:flex;flex-direction:column;background:var(--bg);height:100vh;height:100dvh;z-index:10}
+.pvh{display:flex;align-items:center;gap:12px;padding:8px 14px;background:#fff;border-bottom:2px solid var(--line)}
+.pvh .t{flex:1;font-size:.85em;color:var(--sub)}
+.pvh .pg{font-size:.9em}
+.prompt{padding:10px 20px 4px;font-size:1.15em;font-weight:bold;text-align:center}
+.pvmain{flex:1;min-height:0;display:flex;gap:18px;padding:10px 18px}
+.pvmain.col{flex-direction:column}
+.stim{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;min-width:0;min-height:0}
+.stim.side{flex:0 0 38%}
+.pvmain.col .stim.side{flex:0 0 40%}
+.stim.full{flex:1}
+.stim.bar{flex:0 0 auto}
+.spic{background:#fff;border:2px solid var(--line);border-radius:16px;padding:8px}
+.spic svg,.pic svg{width:100%;height:100%;display:block}
+.prompt.wcmd{font-size:1.9em;font-weight:normal;background:#fff;border:2px solid var(--line);border-radius:14px;margin:8px 18px 0;padding:10px 20px}
+.spics{display:flex;gap:12px;justify-content:center;align-items:center;max-width:100%}
+.stim.side.big{flex-basis:58%}
+.pvmain[data-col] .stim.side{flex:1 1 55%;justify-content:flex-start}
+.stext{white-space:pre-line;font-size:2.1em;line-height:1.35;text-align:center;background:#fff;border:2px solid var(--line);border-radius:16px;padding:14px 26px;max-width:100%;word-break:break-all}
+.stext.long{font-size:1.3em;text-align:left;overflow:auto;max-height:100%}
+.hintbox{font-size:1.05em;background:var(--warn);border:2px solid #e2cf95;border-radius:12px;padding:6px 16px;text-align:center;max-width:100%}
+.ans{flex:1;min-width:0;min-height:0;display:flex;flex-direction:column;gap:10px}
+.fit{flex:1;min-height:0;display:grid;gap:14px;justify-content:center;align-content:center}
+.opt{padding:6px;border:3px solid #a7a296;border-radius:16px;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;min-height:64px;min-width:64px;position:relative;overflow:hidden}
+.opt .pic{flex:1;min-height:0;width:100%;display:flex;align-items:center;justify-content:center}
+.opt .pic svg{max-height:100%}
+.opt .ot{font-size:1.5em;line-height:1.3}
+.opt.ot2 .ot{font-size:1.8em}
+.opt.sel{border-color:var(--main);box-shadow:0 0 0 4px var(--main2)}
+.opt.right{border-color:var(--ok);box-shadow:0 0 0 5px #cfe3d6}
+.opt.wrong{border-color:var(--ng)}
+.opt.off{opacity:.15;pointer-events:none}
+.opt .num{position:absolute;left:8px;top:4px;font-size:1.1em;font-weight:bold;color:var(--main);background:var(--main2);border-radius:50%;width:1.6em;height:1.6em;line-height:1.6em;text-align:center}
+.nopic{display:flex;align-items:center;justify-content:center;width:100%;height:100%;color:#999;border:2px dashed #ccc;font-size:.7em}
+.yn{display:flex;gap:24px;justify-content:center;align-items:center;flex:1}
+.yn button{min-width:200px;min-height:120px;font-size:1.6em}
+.fb{min-height:1.8em;text-align:center;font-size:1.1em;padding:0 10px}
+.fb.ok{color:var(--ok)} .fb.ng{color:var(--ng)}
+.again{font-size:1.05em}
+.tray{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;align-items:center;min-height:110px;padding:10px;border:2px dashed #b9b4a6;border-radius:14px;background:#fff}
+.tray.pool{border-style:solid;background:transparent;border-color:transparent}
+.card2{min-height:88px;min-width:88px;padding:6px 20px;font-size:1.5em;border:3px solid #a7a296;border-radius:14px;background:#fff}
+.card2 .pic{width:110px;height:110px;display:block}
+.card2.used{visibility:hidden}
+.keys{display:grid;grid-template-columns:repeat(3,96px);gap:10px;justify-content:center}
+.keys button{min-height:76px;font-size:1.5em;padding:0}
+.inbox{font-size:2.2em;min-width:5em;text-align:center;border-bottom:4px solid #555;margin:6px auto;min-height:1.4em}
+.wbox{position:relative;flex:1;min-height:0;background:#fff;border:2px solid var(--line);border-radius:16px;overflow:hidden}
+.wbox canvas{position:absolute;inset:0;width:100%;height:100%;touch-action:none}
+.wguide{position:absolute;inset:0;display:flex;justify-content:center;align-items:center;gap:10px;pointer-events:none}
+.wguide span{border:3px dashed #c5c0b2;border-radius:6px}
+.model{position:absolute;right:12px;top:8px;font-size:2em;color:#777;background:#fffdf3;border:2px solid #e2cf95;border-radius:10px;padding:0 14px;pointer-events:none}
+.wtools{display:flex;gap:10px;justify-content:center}
+.band{background:#2b2f36;color:#f2f2f2;padding:8px 12px;border-top:3px solid #11151a}
+.band button{background:#3a404a;color:#fff;border-color:#59616e;min-height:64px}
+.band button.on{background:#e7eef6;color:#14324f}
+.band button.p{background:#4f86b8;border-color:#4f86b8}
+.band .r1{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.band .r2{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:6px;font-size:.8em}
+.rv{cursor:pointer}.rv .rvx{display:none}.rv.open .rvx{display:inline}.rv.open .rvb{display:none}
+.rv .rvb{border:1px dashed currentColor;border-radius:6px;padding:4px 10px;opacity:.85}
+.band input{background:#fff;color:#111;min-height:52px;flex:1;min-width:200px}
+.band .gl{font-size:.75em;color:#c6ccd6}
+.band .sp{flex:1}
+.band .hl{font-size:.85em;color:#ffe9a8}
+.band.closed .r2,.band.closed .hide-c{display:none}
+.solo-bar{display:flex;gap:12px;justify-content:flex-end;padding:8px 14px}
+.bstart{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;text-align:center}
+.bstart .big{font-size:1.5em;font-weight:bold}
+/* グラフ */
+.chart svg{width:100%;height:auto;background:#fff;border:1px solid var(--line);border-radius:10px}
+@media (max-width:700px){ .slta-grid{grid-template-columns:1fr} }
+</style>
+</head>
+<body>
+<div id="errbar"></div>
+<div id="app"><div class="wrap"><p>読み込み中です…</p></div></div>
+<div id="toast"></div>
+<script>
+"use strict";
+/* ============================================================
+   言語訓練アプリ（失語症の訓練・iPad向け）
+   作成：KENTA SHINKAWA
+   - 外部通信なし。記録はこの端末の中（localStorage）だけに保存。
+   - 絵・語・問題は data\*.js から読み込む（無いファイルは飛ばす）。
+   ============================================================ */
+var ERRS=[];
+window.onerror=function(msg,src,line,col){ ERRS.push(msg+" ("+(src||"").split("/").pop()+":"+line+")"); var b=document.getElementById("errbar"); if(b){ b.style.display="block"; b.textContent="エラー："+ERRS.join("\n"); } };
+const DATA_FILES=["data/pics_food.js","data/pics_daily.js","data/pics_house.js","data/pics_nature.js","data/pics_tools.js","data/pics_action.js","data/pics_numbers.js","data/words.js","data/bank_words.js","data/bank_sentences.js","data/bank_numbers_memory.js"];
+const LOADED=[], MISSING=[];
+function loadData(i){
+  if(i>=DATA_FILES.length){ boot(); return; }
+  const s=document.createElement("script"); s.src=DATA_FILES[i];
+  s.onload=()=>{ LOADED.push(DATA_FILES[i]); loadData(i+1); };
+  s.onerror=()=>{ MISSING.push(DATA_FILES[i]); s.remove(); loadData(i+1); };
+  document.head.appendChild(s);
+}
+
+/* ---------- SLTA の26項目（プロフィールツールと同じ） ---------- */
+const SLTA=[[1,"聴く","単語の理解",10,"items"],[2,"聴く","短文の理解",10,"items"],[3,"聴く","口頭命令に従う",10,"items"],[4,"聴く","仮名の理解",10,"items"],
+[5,"話す","呼称",20,"items"],[6,"話す","単語の復唱",10,"items"],[7,"話す","動作説明",10,"items"],[8,"話す","まんがの説明",6,"stage"],
+[9,"話す","文の復唱",5,"items"],[10,"話す","語の列挙",15,"count"],[11,"話す","漢字・単語の音読",5,"items"],[12,"話す","仮名1文字の音読",10,"items"],
+[13,"話す","仮名・単語の音読",5,"items"],[14,"話す","短文の音読",5,"items"],
+[15,"読む","漢字・単語の理解",10,"items"],[16,"読む","仮名・単語の理解",10,"items"],[17,"読む","短文の理解",10,"items"],[18,"読む","書字命令に従う",10,"items"],
+[19,"書く","漢字・単語の書字",5,"items"],[20,"書く","仮名・単語の書字",5,"items"],[21,"書く","まんがの説明",6,"stage"],[22,"書く","仮名1文字の書取",10,"items"],
+[23,"書く","漢字・単語の書取",5,"items"],[24,"書く","仮名・単語の書取",5,"items"],[25,"書く","短文の書取",5,"items"],[26,"計算","計算",20,"count"]];
+const DOMS=["聴く","話す","読む","書く","計算"];
+const TYPE_JP={choice:"選ぶ",yesno:"はい・いいえ",say:"口で答える",write:"書く",tapseq:"順に触る",order:"並べる",input:"数を入れる",span:"覚えて触る"};
+const AUTO=new Set(["choice","yesno","tapseq","order","input","span"]);
+const MIN_PER={choice:.5,yesno:.4,tapseq:.8,span:1,order:1,input:.6,say:.8,write:1.5};
+const RECENT_MS=28*24*3600*1000; // 直近4週間
+const STAGE_NAMES={6:"完全正答",5:"遅延完全正答",4:"不完全正答",3:"ヒント後正答",2:"関連反応",1:"誤答"};
+
+/* ---------- 小さな道具 ---------- */
+const $=s=>document.querySelector(s), $$=s=>Array.from(document.querySelectorAll(s));
+const esc=s=>String(s==null?"":s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const today=()=>{ const d=new Date(); return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0"); };
+const fmtD=d=>d?String(d).replace(/-/g,"/"):"日付なし";
+const rnd=n=>Math.floor(Math.random()*n);
+function shuffle(a){ a=a.slice(); for(let i=a.length-1;i>0;i--){ const j=rnd(i+1); [a[i],a[j]]=[a[j],a[i]]; } return a; }
+const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
+let NOW=()=>Date.now(); // テストで時刻を進めるために差し替えられる
+function toast(t){ const e=$("#toast"); e.textContent=t; e.style.display="block"; clearTimeout(toast.t); toast.t=setTimeout(()=>e.style.display="none",2200); }
+function z2h(s){ return String(s).replace(/[０-９]/g,c=>String.fromCharCode(c.charCodeAt(0)-0xFEE0)).replace(/．/g,"."); }
+
+/* ---------- 仮名の道具 ---------- */
+const SMALL="ゃゅょぁぃぅぇぉゎャュョァィゥェォヮ";
+const h2k=s=>String(s).replace(/[ぁ-ゖ]/g,c=>String.fromCharCode(c.charCodeAt(0)+0x60));
+const k2h=s=>String(s).replace(/[ァ-ヶ]/g,c=>String.fromCharCode(c.charCodeAt(0)-0x60));
+function moras(s){ const a=[]; for(const c of String(s)){ if(SMALL.includes(c)&&a.length) a[a.length-1]+=c; else a.push(c); } return a; }
+const KROWS=["あいうえお","かきくけこ","さしすせそ","たちつてと","なにぬねの","はひふへほ","まみむめも","やゆよ","らりるれろ","わ","がぎぐげご","ざじずぜぞ","だぢづでど","ばびぶべぼ","ぱぴぷぺぽ"];
+const KANA46="あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわ".split("");
+const VOW="あいうえお";
+function kanaRow(c){ return KROWS.find(r=>r.includes(c))||""; }
+function kanaVowelIdx(c){ for(const r of KROWS){ const i=r.indexOf(c); if(i>=0) return r.length===5?i:(r==="やゆよ"?[0,2,4][i]:0); } return -1; }
+
+/* ---------- データ ---------- */
+var PICS=window.PICS||{}, WORDS=window.WORDS||{}, BANK=window.BANK||[]; // var：data の PICS[...]= と同じ入れ物を使うため
+const W=id=>WORDS[id];
+const yomiOf=w=>String((w&&w.yomi)||"").replace(/[0-9０-９]/g,"");
+const isKata=w=>/^[゠-ヿー]+$/.test((w&&w.hyoki)||"");
+const kanaForm=w=>w&&w.kana?String(w.kana):isKata(w)?h2k(yomiOf(w)):yomiOf(w);
+/* 一緒に選択肢に出さない組（正解が2つになる・言い換え・絵が似ている）。単語課題の gen.py の CONFLICT と同じ表 */
+const CONFLICT_PAIRS=[["n01","n11"],["n01","n12"],["n01","n13"],["n01","n14"],
+ ["a03","a07"],["f22","a11"],["h12","h07"],["h13","h14"],["c05","c15"],["d01","f25"],
+ ["b05","b08"],["n02","n15"],["d04","d05"],["v02","v05"],["v02","v09"],["v02","v06"],["v02","v03"],
+ ["d17","d19"],["n09","n08"],["b04","b07"],["t10","t11"],["i16","i04"],["i16","i05"],
+ ["s07","s08"],["s09","s08"],["d02","d01"],["f26","d01"],["act23","h13"],["f21","a07"],
+ ["d18","a04"],["f24","f25"],["e10","f22"],["e10","a11"],["b09","b01"],["b09","b02"],["b09","b03"],["b09","b04"],
+ ["b07","n15"],["n01","b03"],["act10","act15"], // 同じ読み（歯と葉、花と鼻、切ると着る）
+ ["s06","h19"]]; // ホチキスと爪切りは絵が似ている
+const CONFLICT={}; CONFLICT_PAIRS.forEach(([a,b])=>{ (CONFLICT[a]=CONFLICT[a]||new Set()).add(b); (CONFLICT[b]=CONFLICT[b]||new Set()).add(a); });
+function conflict(a,b){ if(a===b) return true; if(CONFLICT[a]&&CONFLICT[a].has(b)) return true; const x=WORDS[a], y=WORDS[b]; if(!x||!y) return false;
+  return yomiOf(x)===yomiOf(y)||x.hyoki===y.hyoki; }
+const compat=(id,list)=>list.every(x=>!conflict(id,x));
+/* list から、chosen とも互いとも衝突しない語を k 個まで選ぶ */
+function pickCompat(chosen,list,k){ const out=[]; for(const id of list){ if(out.length>=k) break; if(compat(id,chosen)&&compat(id,out)) out.push(id); } return out; }
+const isAct=id=>/^act/.test(id)||(W(id)&&W(id).cat==="動作");
+const hasPic=id=>!!PICS[id];
+function picHTML(id){ return PICS[id]||`<div class="nopic">絵がありません（${esc(id)}）</div>`; }
+function speakName(o){ if(o.text) return o.text; const w=W(o.pic); return w?yomiOf(w):""; }
+
+/* ---------- 保存 ---------- */
+let KEY="slta-train-v1";
+let DB=null;
+function blankDB(){ return {ver:1,app:"言語訓練",author:"KENTA SHINKAWA",current:"",settings:{fs:22,font:"gothic",rate:0.9,auto:true,blocks:4,band:true},patients:{}}; }
+function newPatient(id,nick){ return {id:String(id),nick:nick||"",created:today(),evals:[],lv:{},sessions:[],usedQ:{},usedW:{}}; }
+function fixDB(o){
+  const b=blankDB(); if(!o||typeof o!=="object") return b;
+  Object.assign(b.settings,o.settings||{});
+  b.current=o.current||"";
+  for(const [k,p] of Object.entries(o.patients||{})){
+    if(!p||typeof p!=="object") continue;
+    const q=newPatient(p.id||k,p.nick); q.created=p.created||q.created;
+    q.evals=Array.isArray(p.evals)?p.evals.filter(e=>e&&Array.isArray(e.pct)).map(e=>({date:e.date||"",pct:SLTA.map((_,i)=>numOrNull(e.pct[i])),src:e.src||""})):[];
+    q.lv=(p.lv&&typeof p.lv==="object")?p.lv:{};
+    q.sessions=Array.isArray(p.sessions)?p.sessions:[];
+    q.usedQ=p.usedQ||{}; q.usedW=p.usedW||{};
+    b.patients[q.id]=q;
+  }
+  if(!b.patients[b.current]) b.current=Object.keys(b.patients)[0]||"";
+  return b;
+}
+function numOrNull(v){ if(v===null||v===undefined||v==="") return null; const n=Number(v); return isFinite(n)?n:null; }
+function load(){ try{ const s=localStorage.getItem(KEY); DB=s?fixDB(JSON.parse(s)):blankDB(); }catch(e){ DB=blankDB(); } }
+function save(){ try{ localStorage.setItem(KEY,JSON.stringify(DB)); return true; }catch(e){ toast("この端末に保存できませんでした"); return false; } }
+const P=()=>DB.patients[DB.current]||null;
+const pLabel=p=>p?(p.nick?`${p.id}（${p.nick}）`:p.id):"対象者が選ばれていません";
+function applySettings(){ const s=DB.settings; document.documentElement.style.setProperty("--fs",(s.fs||22)+"px"); document.body.classList.toggle("mincho",s.font==="mincho"); }
+
+/* ---------- 読み上げ ---------- */
+let jaVoice=null;
+function pickVoice(){ try{ const v=speechSynthesis.getVoices(); jaVoice=v.find(x=>/^ja/i.test(x.lang))||null; }catch(e){} }
+function speak(text,rateMul){
+  return new Promise(res=>{
+    text=String(text||""); if(!text){ res(); return; }
+    const rate=(DB.settings.rate||0.9)*(rateMul||1);
+    let fin=false; const done=()=>{ if(fin) return; fin=true; clearTimeout(t); res(); };
+    const t=setTimeout(done,900+text.length*260/rate);
+    if(!("speechSynthesis" in window)||typeof SpeechSynthesisUtterance==="undefined") return;
+    try{ speechSynthesis.cancel(); const u=new SpeechSynthesisUtterance(text); u.lang="ja-JP"; u.rate=rate; if(jaVoice) u.voice=jaVoice; u.onend=done; u.onerror=done; speechSynthesis.speak(u); }catch(e){}
+  });
+}
+async function speakSeq(arr,gap){ for(let i=0;i<arr.length;i++){ if(PR&&PR.cancelSpeak) return; await speak(arr[i]); await new Promise(r=>setTimeout(r,gap||700)); } }
+function stopSpeak(){ try{ speechSynthesis.cancel(); }catch(e){} }
+
+/* ============================================================
+   課題（skill）の一覧：アプリが語のデータから作る課題 ＋ 問題データの課題
+   ============================================================ */
+const GEN={}; // kind -> 定義
+function defGen(k,o){ o.k=k; GEN[k]=o; }
+const optN=L=>[2,3,4,6,6][L-1];
+const nounsPic=()=>Object.keys(WORDS).filter(id=>hasPic(id)&&!isAct(id));
+const actsPic=()=>Object.keys(WORDS).filter(id=>hasPic(id)&&isAct(id));
+const nounsAll=()=>Object.keys(WORDS).filter(id=>!isAct(id));
+const withKanji=list=>list.filter(id=>{ const w=W(id); return w.kanji&&w.kanji!==w.yomi&&!isKata(w); });
+function levelOK(id,L){ const w=W(id); const f=w.freq||1, m=w.mora||moras(yomiOf(w)).length; const fmax=[1,1,2,3,3][L-1], mmax=[3,4,5,99,99][L-1]; return f<=fmax&&m<=mmax; }
+function poolAt(list,L,min){ const a=list.filter(id=>levelOK(id,L)); return a.length>=(min||1)?a:list; }
+
+/* 最近出した語かどうか（新しいほど大きい値） */
+function wRec(ctx,id){ if(ctx.sess.has(id)) return NOW()+1; return (ctx.p.usedW[id]||0); }
+function qRec(ctx,qid){ return ctx.p.usedQ[qid]||0; }
+/* 古い順（4週間より前・未使用はばらばらに）に並べる */
+function byFresh(ctx,ids,recFn){
+  const now=NOW(); const a=[],b=[];
+  for(const id of ids){ const r=recFn(id); if(r<=now-RECENT_MS) a.push({id,r}); else b.push({id,r}); }
+  return shuffle(a).concat(b.sort((x,y)=>x.r-y.r)).map(x=>x.id);
+}
+/* 紛らわしい選択肢を level に合わせて選ぶ */
+function distract(ctx,t,L,pool,n){
+  n=Math.min(n||optN(L),pool.length);
+  const w=W(t); const ty=w.yomi, th=w.hyoki;
+  const others=pool.filter(id=>id!==t&&!conflict(id,t));
+  const near=new Set(w.near||[]), snd=new Set(w.sound||[]);
+  const tier=id=>{ const x=W(id); const sameC=x.cat===w.cat, sameS=sameC&&x.sub===w.sub;
+    if(L<=1) return sameC?3:0;
+    if(L===2) return sameC?1:0;
+    if(L===3) return sameS?0:sameC?0:1;
+    if(L===4) return near.has(id)||snd.has(id)?0:sameC?1:2;
+    return near.has(id)||snd.has(id)?0:sameS?1:sameC?2:3; };
+  const groups={}; for(const id of others){ const k=tier(id); (groups[k]=groups[k]||[]).push(id); }
+  let res=[]; Object.keys(groups).sort((a,b)=>a-b).forEach(k=>{ res=res.concat(byFresh(ctx,groups[k],id=>wRec(ctx,id))); });
+  if(L===2){ // 同じ仲間は1つまで
+    const sc=res.filter(id=>W(id).cat===w.cat), dc=res.filter(id=>W(id).cat!==w.cat);
+    res=dc.slice(0,n-2).concat(sc.slice(0,1)).concat(dc.slice(n-2)).concat(sc.slice(1));
+  }
+  return shuffle([t].concat(pickCompat([t],res,n-1)));
+}
+function compHints(id,speakText){ const w=W(id); return [
+  {t:"もう一度ゆっくり読み上げます",act:"slow"},{t:"区切って読み上げます",act:"split"},
+  {t:"身ぶりを添えてください",teacher:true},{t:"文字を添えます",act:"text",text:w?w.hyoki:speakText},{t:"選択肢を減らします",act:"reduce"}]; }
+function nameHints(id){ const w=W(id); const h=(w.hints||[]).slice(0,3).map(t=>({t}));
+  if(h.length<3) h.push({t:`最初の音は「${moras(yomiOf(w))[0]}」です`});
+  h.push({t:w.hyoki,act:"text",text:w.hyoki,label:"文字を見せます"}); h.push({t:"一緒に言ってください",act:"speak",say:yomiOf(w),teacher:true}); return h; }
+function writeHints(target,kana){ const h=[]; if(!kana) h.push({t:"仮名で書いてもかまいません"});
+  h.push({t:`最初の文字は「${Array.from(target)[0]}」です`}); h.push({t:"文字数の枠を出します",act:"boxes"}); h.push({t:"見本を見て写してください",act:"model"}); return h; }
+function mk(k,L,o){ const g=GEN[k]; return Object.assign({skill:g.name,domain:g.dom,slta:g.slta,level:L,type:g.type,gen:true,hints:[]},o); }
+
+defGen("listen",{name:"単語の聴理解",dom:"聴く",slta:[1],type:"choice",pool:()=>nounsPic(),
+  make(ctx,t,L){ const o=distract(ctx,t,L,nounsPic()); return mk(this.k,L,{id:`gen-listen-${t}`,prompt:"聞こえた言葉の絵を選んでください",speak:yomiOf(W(t)),options:o.map(p=>({pic:p})),answer:o.indexOf(t),target:W(t).hyoki,hints:compHints(t),words:o}); }});
+defGen("listenact",{name:"動作の聴理解",dom:"聴く",slta:[2,7],type:"choice",pool:()=>actsPic(),min:2,
+  make(ctx,t,L){ const o=distract(ctx,t,L,actsPic()); return mk(this.k,L,{id:`gen-listenact-${t}`,prompt:"聞こえた動作の絵を選んでください",speak:yomiOf(W(t)),options:o.map(p=>({pic:p})),answer:o.indexOf(t),target:W(t).hyoki,hints:compHints(t),words:o}); }});
+defGen("catyn",{name:"仲間の判断（はい・いいえ）",dom:"聴く",slta:[1,2],type:"yesno",pool:()=>nounsPic(),
+  make(ctx,t,L){ const w=W(t); const useSub=L>=3&&w.sub; const lab=useSub?w.sub:w.cat;
+    const yes=Math.random()<0.5; let ask=lab;
+    if(!yes){ const alt=Object.values(WORDS).filter(x=>x.cat!=="動作").map(x=>useSub?x.sub:x.cat).filter(x=>x&&x!==lab&&!(useSub&&x===w.cat)); if(!alt.length) ask=lab; else ask=alt[rnd(alt.length)]; }
+    const ans=ask===lab; return mk(this.k,L,{id:`gen-catyn-${t}`,prompt:"質問を聞いて、「はい」か「いいえ」で答えてください",speak:`これは${ask}ですか`,stim:{pic:t},answer:ans,target:ans?"はい":"いいえ",hints:[{t:"もう一度ゆっくり読み上げます",act:"slow"},{t:"文字を添えます",act:"text",text:`これは${ask}ですか`}],words:[t]}); }});
+defGen("command",{name:"口頭命令",dom:"聴く",slta:[3],type:"tapseq",pool:()=>nounsPic(),min:3,
+  make(ctx,t,L){ const n=[3,4,4,6,6][L-1], len=[1,1,2,2,3][L-1]; const o=distract(ctx,t,Math.max(L,3),nounsPic(),n); if(o.length<len+1) return null;
+    const seq=[t].concat(shuffle(o.filter(x=>x!==t)).slice(0,len-1)); const nm=seq.map(x=>W(x).hyoki);
+    const sp=len===1?`${nm[0]}を触ってください`:len===2?`${nm[0]}と${nm[1]}を順に触ってください`:`${nm.join("、")}の順に触ってください`;
+    return mk(this.k,L,{id:`gen-command-${seq.join("_")}`,prompt:"言われた順に絵を触ってください",speak:sp,options:o.map(p=>({pic:p})),answer:seq.map(x=>o.indexOf(x)),target:nm.join("→"),hints:compHints(null,sp).filter(h=>h.act!=="text"),words:o}); }});
+defGen("span",{name:"語の系列の記憶",dom:"記憶",slta:[3,9],type:"span",pool:()=>nounsPic(),min:3,
+  make(ctx,t,L){ const len=[2,2,3,4,5][L-1]; const o=distract(ctx,t,3,nounsPic(),Math.min(6,len+2)); if(o.length<len+1) return null;
+    const seqW=[t].concat(shuffle(o.filter(x=>x!==t)).slice(0,len-1));
+    return mk(this.k,L,{id:`gen-span-${seqW.join("_")}`,prompt:"聞こえた順に絵を触ってください",show:"speak",seq:seqW.map(x=>o.indexOf(x)),options:o.map(p=>({pic:p})),target:seqW.map(x=>W(x).hyoki).join("→"),hints:[{t:"もう一度読み上げます",act:"replay"}],words:o}); }});
+defGen("first",{name:"語頭音",dom:"読む",slta:[4,12],type:"choice",pool:()=>nounsPic(),
+  make(ctx,t,L){ const f=moras(yomiOf(W(t)))[0], c=f[0]; const n=optN(L);
+    let cand; if(L>=4) cand=kanaRow(c).split("").concat(KROWS.filter(r=>r.length===5&&r!==kanaRow(c)).map(r=>r[kanaVowelIdx(c)])); else if(L===3) cand=KROWS.filter(r=>r.length===5).map(r=>r[kanaVowelIdx(c)]).concat(shuffle(KANA46)); else cand=shuffle(KANA46.filter(k=>kanaRow(k)!==kanaRow(c)));
+    const ds=[]; for(const k of (L>=3?shuffle(cand.slice(0,8)).concat(cand.slice(8)):cand)){ if(k&&k!==c&&k!==f&&!ds.includes(k)) ds.push(k); if(ds.length>=n-1) break; }
+    const o=shuffle([f].concat(ds)); return mk(this.k,L,{id:`gen-first-${t}`,prompt:"この絵の名前の、最初の音の文字を選んでください",stim:{pic:t},options:o.map(x=>({text:x})),answer:o.indexOf(f),target:f,hints:[{t:(W(t).hints||[])[0]||"名前を思い出してください"},{t:`この絵は「${W(t).hyoki}」です`},{t:"名前を一緒に言います",act:"speak",say:yomiOf(W(t))},{t:"選択肢を減らします",act:"reduce"}],words:[t]}); }});
+defGen("mora",{name:"音の数（拍）の判断",dom:"読む",slta:[4,13],type:"choice",pool:()=>nounsPic(),
+  make(ctx,t,L){ const m=W(t).mora||moras(yomiOf(W(t))).length; const n=Math.min(optN(L),4);
+    let ns; if(L===1) ns=[m,m+2>7?m-2:m+2]; else { ns=[m]; for(let d=1;ns.length<n;d++){ if(m+d<=8) ns.push(m+d); if(ns.length<n&&m-d>=1) ns.push(m-d); } }
+    ns=ns.filter(x=>x>=1).sort((a,b)=>a-b); return mk(this.k,L,{id:`gen-mora-${t}`,prompt:"この絵の名前は、いくつの音でできていますか",stim:{pic:t},options:ns.map(x=>({text:x+"つ"})),answer:ns.indexOf(m),target:m+"つ（"+moras(yomiOf(W(t))).join("・")+"）",hints:[{t:`この絵は「${W(t).hyoki}」です`},{t:"手をたたきながら言ってください",teacher:true},{t:"区切って読み上げます",act:"split",say:yomiOf(W(t))}],words:[t]}); }});
+defGen("kanaread",{name:"仮名単語の音読",dom:"話す",slta:[13],type:"say",pool:()=>nounsAll(),
+  make(ctx,t,L){ const w=W(t); return mk(this.k,L,{id:`gen-kanaread-${t}`,prompt:"声に出して読んでください",stim:{text:kanaForm(w)},target:yomiOf(w),hints:[{t:(w.hints||[])[0]||""},{t:`最初の音は「${moras(yomiOf(w))[0]}」です`},{t:"一緒に読んでください",act:"speak",say:yomiOf(w),teacher:true}].filter(h=>h.t),words:[t]}); }});
+defGen("kanjiread",{name:"漢字単語の音読",dom:"話す",slta:[11],type:"say",pool:()=>withKanji(nounsAll()),
+  make(ctx,t,L){ const w=W(t); return mk(this.k,L,{id:`gen-kanjiread-${t}`,prompt:"声に出して読んでください",stim:{text:w.kanji},target:yomiOf(w),hints:[{t:(w.hints||[])[0]||""},{t:`最初の音は「${moras(yomiOf(w))[0]}」です`},{t:"読み仮名を見せます",act:"text",text:yomiOf(w)},{t:"一緒に読んでください",act:"speak",say:yomiOf(w),teacher:true}].filter(h=>h.t),words:[t]}); }});
+defGen("kana1read",{name:"仮名1文字の音読",dom:"話す",slta:[12],type:"say",kana:true,
+  make(ctx,k,L){ return mk(this.k,L,{id:`gen-kana1read-${k}`,prompt:"この文字を声に出して読んでください",stim:{text:L>=4&&Math.random()<.5?h2k(k):k},target:k,hints:[{t:"一緒に読んでください",act:"speak",say:k,teacher:true}],words:[]}); }});
+defGen("name",{name:"呼称",dom:"話す",slta:[5],type:"say",pool:()=>nounsPic(),
+  make(ctx,t,L){ const w=W(t); return mk(this.k,L,{id:`gen-name-${t}`,prompt:"この絵の名前を言ってください",stim:{pic:t},target:w.hyoki,accept:[yomiOf(w)],hints:nameHints(t),words:[t]}); }});
+defGen("actname",{name:"動作説明",dom:"話す",slta:[7],type:"say",pool:()=>actsPic(),
+  make(ctx,t,L){ const w=W(t); return mk(this.k,L,{id:`gen-actname-${t}`,prompt:"この人がしていることを言ってください",stim:{pic:t},target:w.hyoki,accept:[yomiOf(w)],hints:nameHints(t),words:[t]}); }});
+defGen("repeat",{name:"単語の復唱",dom:"話す",slta:[6],type:"say",pool:()=>nounsAll(),
+  make(ctx,t,L){ const w=W(t); let sp=yomiOf(w), tg=w.hyoki, ws=[t];
+    if(L>=4){ const o=byFresh(ctx,nounsAll().filter(x=>x!==t&&W(x).cat!==w.cat),x=>wRec(ctx,x))[0]; if(o){ sp=`${yomiOf(w)}と${yomiOf(W(o))}`; tg=`${w.hyoki}と${W(o).hyoki}`; ws=[t,o]; } }
+    return mk(this.k,L,{id:`gen-repeat-${ws.join("_")}`,prompt:"聞こえた言葉を、そのまま言ってください",speak:sp,target:tg,hints:[{t:"もう一度ゆっくり読み上げます",act:"slow"},{t:"区切って読み上げます",act:"split"},{t:"口の形を見せてください",teacher:true},{t:"文字を添えます",act:"text",text:tg},{t:"一緒に言ってください",act:"speak",say:sp,teacher:true}],words:ws}); }});
+defGen("odd",{name:"仲間はずれ",dom:"話す",slta:[10,15],type:"choice",pool:()=>nounsPic().filter(id=>nounsPic().filter(x=>W(x).cat===W(id).cat).length>=3),min:1,
+  make(ctx,t,L){ const w=W(t); const k=L<=2?2:3; const all=nounsPic();
+    const grp=byFresh(ctx,all.filter(x=>x!==t&&W(x).cat===w.cat&&(L<4||!w.sub||W(x).sub===w.sub)),x=>wRec(ctx,x)); let g2=grp;
+    g2=pickCompat([t],g2,k-1); if(g2.length<k-1) g2=pickCompat([t],byFresh(ctx,all.filter(x=>x!==t&&W(x).cat===w.cat),x=>wRec(ctx,x)),k-1); if(g2.length<k-1) return null;
+    const grpAll=[t].concat(g2); let odd=null; if(L>=4){ odd=pickCompat(grpAll,byFresh(ctx,all.filter(x=>W(x).cat===w.cat&&W(x).sub!==w.sub&&!grpAll.includes(x)),x=>wRec(ctx,x)),1)[0]; }
+    if(!odd) odd=pickCompat(grpAll,byFresh(ctx,all.filter(x=>W(x).cat!==w.cat),x=>wRec(ctx,x)),1)[0]; if(!odd) return null;
+    const o=shuffle(grpAll.concat([odd]));
+    return mk(this.k,L,{id:`gen-odd-${t}-${odd}`,prompt:"仲間ではないものを1つ選んでください",options:o.map(p=>({pic:p})),answer:o.indexOf(odd),target:W(odd).hyoki,hints:[{t:`ほかは「${L>=4&&w.sub?w.sub:w.cat}」の仲間です`},{t:"一つずつ名前を言ってみてください",teacher:true},{t:"選択肢を減らします",act:"reduce"}],words:o}); }});
+function lastMora(id){ const m=moras(k2h(yomiOf(W(id)))); return m[m.length-1]; }
+function firstMora(id){ return moras(k2h(yomiOf(W(id))))[0]; }
+defGen("shiritori",{name:"しりとり",dom:"話す",slta:[10],type:"choice",pool:()=>nounsPic().filter(id=>{ const l=lastMora(id); return l!=="ん"&&l!=="ー"&&nounsPic().some(x=>x!==id&&firstMora(x)===l); }),
+  make(ctx,t,L){ const l=lastMora(t); const nexts=byFresh(ctx,nounsPic().filter(x=>x!==t&&firstMora(x)===l),x=>wRec(ctx,x)); if(!nexts.length) return null; const c=nexts[0];
+    const pool=nounsPic().filter(x=>x!==t&&firstMora(x)!==l&&!conflict(x,t)); const o=distract(ctx,c,L,pool.concat([c]));
+    return mk(this.k,L,{id:`gen-shiritori-${t}-${c}`,prompt:"上の絵の名前の、最後の音で始まるものを選んでください",stim:{pic:t},options:o.map(p=>({pic:p})),answer:o.indexOf(c),target:`${W(t).hyoki}→${W(c).hyoki}`,hints:[{t:`上の絵は「${W(t).hyoki}」です`},{t:`最後の音は「${l}」です`},{t:"選択肢を減らします",act:"reduce"}],words:[t].concat(o)}); }});
+defGen("near",{name:"意味の近い語の選択",dom:"読む",slta:[15,16,17],type:"choice",pool:()=>nounsAll().filter(id=>(W(id).near||[]).some(x=>W(x))),
+  make(ctx,t,L){ const w=W(t); const ns=byFresh(ctx,(w.near||[]).filter(x=>W(x)),x=>wRec(ctx,x)); if(!ns.length) return null; const c=ns[0]; const near=new Set(w.near||[]);
+    const others=nounsAll().filter(x=>x!==t&&x!==c&&!near.has(x)&&!conflict(x,t)&&!conflict(x,c)); const n=Math.min(optN(Math.max(L,2)),others.length+1);
+    const tierF=x=>L>=4?(W(x).cat===w.cat?0:1):(W(x).cat===w.cat?1:0); const srt={}; others.forEach(x=>{ const k=tierF(x); (srt[k]=srt[k]||[]).push(x); });
+    let ds=[]; Object.keys(srt).sort().forEach(k=>ds=ds.concat(byFresh(ctx,srt[k],x=>wRec(ctx,x)))); const o=shuffle([c].concat(pickCompat([t,c],ds,n-1)));
+    return mk(this.k,L,{id:`gen-near-${t}-${c}`,prompt:"上の言葉と、意味が最も近いものを選んでください",stim:{text:w.hyoki},options:o.map(x=>({text:W(x).hyoki})),answer:o.indexOf(c),target:W(c).hyoki,hints:[{t:(w.hints||[])[0]||`「${w.cat}」の仲間です`},{t:"選択肢を減らします",act:"reduce"}],words:[t].concat(o)}); }});
+defGen("kanjimatch",{name:"漢字単語の理解",dom:"読む",slta:[15],type:"choice",pool:()=>withKanji(nounsPic()),
+  make(ctx,t,L){ const o=distract(ctx,t,L,nounsPic()); return mk(this.k,L,{id:`gen-kanjimatch-${t}`,prompt:"この言葉に合う絵を選んでください",stim:{text:W(t).kanji},options:o.map(p=>({pic:p})),answer:o.indexOf(t),target:W(t).hyoki,hints:[{t:"読み上げます",act:"speak",say:yomiOf(W(t))},{t:"選択肢を減らします",act:"reduce"}],words:o}); }});
+defGen("kanamatch",{name:"仮名単語の理解",dom:"読む",slta:[16,4],type:"choice",pool:()=>nounsPic(),
+  make(ctx,t,L){ const o=distract(ctx,t,L,nounsPic()); return mk(this.k,L,{id:`gen-kanamatch-${t}`,prompt:"この言葉に合う絵を選んでください",stim:{text:kanaForm(W(t))},options:o.map(p=>({pic:p})),answer:o.indexOf(t),target:W(t).hyoki,hints:[{t:"読み上げます",act:"speak",say:yomiOf(W(t))},{t:"選択肢を減らします",act:"reduce"}],words:o}); }});
+defGen("kanjiwrite",{name:"漢字単語の書字",dom:"書く",slta:[19],type:"write",pool:()=>withKanji(nounsPic()),
+  make(ctx,t,L){ const w=W(t); return mk(this.k,L,{id:`gen-kanjiwrite-${t}`,prompt:"この絵の名前を、漢字で書いてください",stim:{pic:t},target:w.kanji,accept:[yomiOf(w)],hints:writeHints(w.kanji,false),words:[t]}); }});
+defGen("kanawrite",{name:"仮名単語の書字",dom:"書く",slta:[20],type:"write",pool:()=>nounsPic(),
+  make(ctx,t,L){ const w=W(t); const k=kanaForm(w); return mk(this.k,L,{id:`gen-kanawrite-${t}`,prompt:"この絵の名前を、仮名で書いてください",stim:{pic:t},target:k,hints:writeHints(k,true),words:[t]}); }});
+defGen("kanaorder",{name:"仮名の並べ替え",dom:"書く",slta:[20,24,16],type:"order",pool:()=>nounsPic().filter(id=>moras(yomiOf(W(id))).length>=2),
+  make(ctx,t,L){ const w=W(t); const ps=moras(kanaForm(w)); return mk(this.k,L,{id:`gen-kanaorder-${t}`,prompt:"文字を正しい順に並べて、この絵の名前を作ってください",stim:{pic:t},pieces:ps,target:ps.join(""),hints:[{t:`最初の文字は「${ps[0]}」です`},{t:"名前を読み上げます",act:"speak",say:yomiOf(w)}],words:[t]}); }});
+defGen("kana1dict",{name:"仮名1文字の書取",dom:"書く",slta:[22],type:"write",kana:true,
+  make(ctx,k,L){ return mk(this.k,L,{id:`gen-kana1dict-${k}`,prompt:"聞こえた音の文字を、1つ書いてください",speak:k,target:k,boxes:1,hints:[{t:"もう一度ゆっくり読み上げます",act:"slow"},{t:"口の形を見せてください",teacher:true},{t:"見本を見て写してください",act:"model"}],words:[]}); }});
+defGen("kanjidict",{name:"漢字単語の書取",dom:"書く",slta:[23],type:"write",pool:()=>withKanji(nounsAll()),
+  make(ctx,t,L){ const w=W(t); return mk(this.k,L,{id:`gen-kanjidict-${t}`,prompt:"聞こえた言葉を、漢字で書いてください",speak:yomiOf(w),target:w.kanji,hints:[{t:"もう一度ゆっくり読み上げます",act:"slow"}].concat(writeHints(w.kanji,false)),words:[t]}); }});
+defGen("kanadict",{name:"仮名単語の書取",dom:"書く",slta:[24],type:"write",pool:()=>nounsAll(),
+  make(ctx,t,L){ const w=W(t); const k=kanaForm(w); return mk(this.k,L,{id:`gen-kanadict-${t}`,prompt:"聞こえた言葉を、仮名で書いてください",speak:yomiOf(w),target:k,hints:[{t:"もう一度ゆっくり読み上げます",act:"slow"},{t:"区切って読み上げます",act:"split"}].concat(writeHints(k,true)),words:[t]}); }});
+function calcProblem(L){
+  const r=(a,b)=>a+rnd(b-a+1); let a,b,op;
+  if(L===1){ a=r(1,5); b=r(1,4); op="+"; }
+  else if(L===2){ op=Math.random()<.5?"+":"-"; if(op==="+"){ a=r(3,12); b=r(2,8); } else { a=r(6,18); b=r(1,a-1); } }
+  else if(L===3){ op=Math.random()<.5?"+":"-"; a=r(12,68); b=r(11,39); if(op==="-"&&b>a){ const x=a; a=b; b=x; } if(a===b) a+=7; }
+  else if(L===4){ const k=rnd(3); if(k===0){ op="×"; a=r(2,9); b=r(2,9); } else if(k===1){ op="÷"; b=r(2,9); a=b*r(2,9); } else { op="+"; a=r(105,480); b=r(26,95); } }
+  else { const k=rnd(3); if(k===0){ op="×"; a=r(12,48); b=r(3,9); } else if(k===1){ op="-"; a=r(1000,1000); b=r(120,880); } else { op="÷"; b=r(3,9); a=b*r(12,40); } }
+  const ans=op==="+"?a+b:op==="-"?a-b:op==="×"?a*b:a/b; return {a,b,op,ans};
+}
+defGen("calc",{name:"計算",dom:"計算",slta:[26],type:"input",calc:true,
+  make(ctx,q,L){ const sym={"+":"＋","-":"－","×":"×","÷":"÷"}[q.op]; const hint=q.op==="+"||q.op==="-"?[{t:"一の位から計算してください"},{t:"指や紙を使ってもかまいません"}]:[{t:"九九を思い出してください"},{t:"紙に書いて計算してもかまいません"}];
+    return mk(this.k,L,{id:`gen-calc-${q.a}${q.op}${q.b}`,prompt:"計算して、答えを入れてください",stim:{text:`${q.a} ${sym} ${q.b} ＝`},answer:String(q.ans),target:String(q.ans),hints:hint,words:[]}); }});
+
+/* 課題の一覧を作る（アプリが作る課題＋問題データの課題） */
+let SKILLS={};
+function buildSkills(){
+  SKILLS={};
+  for(const g of Object.values(GEN)){
+    const pool=g.kana||g.calc?null:g.pool(); const ok=g.kana||g.calc||pool.length>=(g.min||2);
+    if(!ok) continue;
+    SKILLS[g.name]={name:g.name,dom:g.dom,slta:g.slta.slice(),type:g.type,gen:g.k,bank:[]};
+  }
+  for(const it of BANK){
+    if(!it||!it.skill||!it.type) continue;
+    let s=SKILLS[it.skill]; if(!s){ s=SKILLS[it.skill]={name:it.skill,dom:it.domain||"",slta:[],type:it.type,gen:null,bank:[],types:{}}; }
+    s.bank.push(it); (it.slta||[]).forEach(n=>{ if(!s.slta.includes(n)) s.slta.push(n); });
+    if(!s.gen){ s.types=s.types||{}; s.types[it.type]=(s.types[it.type]||0)+1; s.type=Object.entries(s.types).sort((a,b)=>b[1]-a[1])[0][0]; }
+  }
+}
+const skillsForNo=no=>Object.values(SKILLS).filter(s=>s.slta.includes(no)).sort((a,b)=>(a.slta.indexOf(no)-b.slta.indexOf(no))||((b.gen?1:0)-(a.gen?1:0)));
+
+/* ---------- 正答率と level ---------- */
+const pctLevel=p=>p<20?1:p<40?2:p<60?3:p<80?4:5;
+const latestEval=p=>p&&p.evals.length?p.evals.slice().sort((a,b)=>String(a.date).localeCompare(String(b.date))).pop():null;
+function recommend(p){
+  const ev=latestEval(p); if(!ev) return null;
+  return SLTA.map((s,i)=>{ const pct=ev.pct[i]; const row={no:s[0],dom:s[1],name:s[2],pct};
+    if(pct===null) return Object.assign(row,{none:true,skills:[]});
+    row.level=pctLevel(pct); row.maint=pct>=95;
+    row.skills=skillsForNo(s[0]).map(sk=>({skill:sk.name,type:sk.type,base:row.level,level:effLevel(p,sk.name,row.level),over:p.lv[sk.name]!=null}));
+    return row; });
+}
+function effLevel(p,skill,base){ const v=p&&p.lv?p.lv[skill]:null; return v!=null?v:base; }
+const pctTxt=v=>v==null?"－":(Math.round(v*10)/10)+"%";
+
+/* ---------- 今日の訓練メニュー ---------- */
+function blockSize(type){ return clamp(Math.round(6/(MIN_PER[type]||.8)),5,10); }
+function lastSession(p){ const s=p.sessions.filter(x=>x.blocks&&x.blocks.length); return s.length?s[s.length-1]:null; }
+function buildMenu(p,solo,nBlocks){
+  nBlocks=clamp(nBlocks||DB.settings.blocks||4,3,5);
+  const rec=recommend(p); const cands=[];
+  if(rec){ for(const r of rec){ if(r.none) continue; for(const s of r.skills){ if(solo&&!AUTO.has(s.type)) continue;
+      cands.push({skill:s.skill,type:s.type,level:s.level,pct:r.pct,no:r.no,dom:r.dom,maint:r.maint,reason:`${r.name} ${pctTxt(r.pct)} → ${s.skill}・level${s.level}${s.over?"（指導者が変更）":""}`}); } } }
+  const best={}; for(const c of cands){ if(!best[c.skill]||c.pct<best[c.skill].pct) best[c.skill]=c; }
+  const pool=Object.values(best); if(!pool.length) return [];
+  const ls=lastSession(p); const lastSk=new Set(ls?ls.blocks.map(b=>b.skill):[]);
+  const chosen=[];
+  const score=c=>{ const prev=chosen[chosen.length-1]; let s=c.pct+Math.random()*18; if(c.maint) s+=70; if(lastSk.has(c.skill)) s+=25;
+    if(prev&&prev.type===c.type) s+=45; if(chosen.some(x=>x.no===c.no)) s+=22; if(chosen.some(x=>x.type===c.type)) s+=10; if(chosen.some(x=>x.dom===c.dom)) s+=12; return s; };
+  const weakN=Math.min(nBlocks-1,pool.length);
+  for(let i=0;i<weakN;i++){ const left=pool.filter(c=>!chosen.includes(c)); if(!left.length) break; left.sort((a,b)=>score(a)-score(b)); chosen.push(left[0]); }
+  // 得意な課題を1つ（成功体験と代償の練習）
+  const left=pool.filter(c=>!chosen.includes(c));
+  if(left.length){ const strong=left.filter(c=>c.pct>=60); const prev=chosen[chosen.length-1];
+    let pick=null; if(strong.length){ const st=shuffle(strong).sort((a,b)=>(b.pct-a.pct)+((a.type===(prev&&prev.type))?30:0)-((b.type===(prev&&prev.type))?30:0)); pick=st.find(c=>!lastSk.has(c.skill))||st[0]; pick=Object.assign({},pick,{strong:true}); }
+    else { left.sort((a,b)=>score(a)-score(b)); pick=left[0]; }
+    chosen.push(pick); }
+  // 同じ形が続かないように並べ直す
+  for(let i=1;i<chosen.length;i++){ if(chosen[i].type===chosen[i-1].type){ const j=chosen.findIndex((c,k)=>k>i&&c.type!==chosen[i-1].type&&(!chosen[i+1]||true)); if(j>0){ const x=chosen[i]; chosen[i]=chosen[j]; chosen[j]=x; } } }
+  return chosen.map(c=>({skill:c.skill,level:c.level,n:blockSize(c.type),reason:(c.strong?"得意な課題（成功体験と代償の練習）："+"":"")+c.reason,strong:!!c.strong}));
+}
+function menuMinutes(menu){ return Math.round(menu.reduce((a,b)=>a+b.n*(MIN_PER[(SKILLS[b.skill]||{}).type]||.8),0)+menu.length*1); }
+
+/* ---------- 問題を選ぶ（最近出したものは後回し） ---------- */
+function itemWordsKey(it){ const a=[]; if(it.stim&&it.stim.pic) a.push(it.stim.pic);
+  if(it.type==="choice"&&it.options&&it.options[it.answer]&&it.options[it.answer].pic) a.push(it.options[it.answer].pic);
+  if((it.type==="tapseq")&&Array.isArray(it.answer)) it.answer.forEach(i=>{ const o=(it.options||[])[i]; if(o&&o.pic) a.push(o.pic); });
+  if(it.type==="span"&&Array.isArray(it.seq)) it.seq.forEach(i=>{ const o=(it.options||[])[i]; if(o&&o.pic) a.push(o.pic); });
+  (it.pieces||[]).forEach(x=>{ if(x&&x.pic) a.push(x.pic); }); return a; }
+function itemAllWords(it){ const a=new Set(it.words||[]); if(it.stim&&it.stim.pic) a.add(it.stim.pic); (it.options||[]).forEach(o=>{ if(o&&o.pic) a.add(o.pic); }); (it.pieces||[]).forEach(x=>{ if(x&&x.pic) a.add(x.pic); }); return Array.from(a); }
+function bankItem(it){ const o=JSON.parse(JSON.stringify(it)); o.hints=(it.hints||[]).map(h=>typeof h==="string"?{t:h}:h); o.words=itemAllWords(it); o.gen=false; return o; }
+function makeItems(p,block,sessUsed){
+  const sk=SKILLS[block.skill]; if(!sk) return [];
+  const L=block.level, n=block.n; const ctx={p,sess:sessUsed||new Set()};
+  const cands=[];
+  // 問題データ（level が同じもの、足りなければ前後の level）
+  const bk=sk.bank.filter(it=>it.level===L); const bk2=sk.bank.filter(it=>it.level!==L); // 足りないときは近い level から
+  const bRec=it=>{ let r=qRec(ctx,it.id); itemWordsKey(it).forEach(w=>r=Math.max(r,wRec(ctx,w))); return r; };
+  bk.forEach(it=>cands.push({kind:"b",it,r:bRec(it)}));
+  if(sk.gen){ const g=GEN[sk.gen];
+    if(g.calc){ for(let i=0;i<40;i++){ const q=calcProblem(L); const id=`gen-calc-${q.a}${q.op}${q.b}`; if(cands.some(c=>c.id===id)) continue; cands.push({kind:"g",q,id,r:qRec(ctx,id)}); } }
+    else if(g.kana){ KANA46.forEach(k=>cands.push({kind:"g",q:k,r:qRec(ctx,`gen-${g.k}-${k}`)})); }
+    else { poolAt(g.pool(),L,Math.min(n,4)).forEach(t=>cands.push({kind:"g",q:t,r:Math.max(qRec(ctx,`gen-${g.k}-${t}`),wRec(ctx,t))})); }
+  }
+  if(cands.length<n) bk2.forEach(it=>cands.push({kind:"b",it,r:bRec(it),d:Math.abs((it.level||3)-L)}));
+  const now=NOW(); const fresh=shuffle(cands.filter(c=>c.r<=now-RECENT_MS)).sort((a,b)=>(a.d||0)-(b.d||0)), old=cands.filter(c=>c.r>now-RECENT_MS).sort((a,b)=>(a.d||0)-(b.d||0)||a.r-b.r);
+  // 新しい問題と、作る問題を混ぜる（問題データを優先しすぎない）
+  const order=fresh.concat(old); const out=[]; const ids=new Set();
+  const keyW=c=>c.kind==="b"?itemWordsKey(c.it):(typeof c.q==="string"&&WORDS[c.q]?[c.q]:[]);
+  // 1回目：この訓練ですでに出した語は飛ばす。2回目：足りなければ使う
+  for(const pass of [0,1]) for(const c of order){ if(out.length>=n) break; if(c.used) continue;
+    if(pass===0&&keyW(c).some(w=>ctx.sess.has(w))) continue;
+    if(block.solo&&c.kind==="b"&&(!AUTO.has(c.it.type)||(c.it.type==="order"&&(c.it.pieces||[]).length>=4))) continue; // ひとりで：自動で正誤が分かるものだけ（4枚以上の並べかえは別解があり得るので除く）
+    c.used=true;
+    let it=null; try{ it=c.kind==="b"?bankItem(c.it):GEN[sk.gen].make(ctx,c.q,L); }catch(e){ console.error(e); it=null; }
+    if(!it||ids.has(it.id)) continue;
+    if(it.type==="choice"&&(!it.options||it.options.length<2||it.answer<0)) continue;
+    ids.add(it.id); out.push(it); (it.words||[]).forEach(w=>{ if(w&&!isAct(w)||w) ctx.sess.add(w); });
+    if(it.stim&&it.stim.pic) ctx.sess.add(it.stim.pic);
+  }
+  return out;
+}
+function markUsed(p,it){ const t=NOW(); p.usedQ[it.id]=t; (it.words||[]).forEach(w=>{ if(w) p.usedW[w]=t; }); }
+
+/* ============================================================
+   画面
+   ============================================================ */
+let SCREEN="home", PR=null, MENU=null, MENU_SOLO=false, IMPORT=null, EDIT_EVAL=-1, CONF={};
+function go(s){ SCREEN=s; if(location.hash!=="#"+s) history.pushState(null,"","#"+s); render(); }
+window.addEventListener("popstate",()=>{ const h=(location.hash||"#home").slice(1); if(h==="practice"&&!PR) SCREEN="home"; else SCREEN=h||"home"; if(SCREEN!=="practice"&&PR){ stopSpeak(); } render(); });
+function confirm2(key,msg){ if(CONF[key]&&Date.now()-CONF[key]<4000){ delete CONF[key]; return true; } CONF[key]=Date.now(); toast(msg||"もう一度押すと実行します"); return false; }
+function topBar(title){ const p=P(); return `<div class="top"><h1>言語訓練</h1><span class="who">${esc(title||"")}　対象者：${esc(pLabel(p))}</span>${SCREEN!=="home"?`<button class="s" data-go="home">ホームへ</button>`:""}</div>`; }
+const foot=()=>`<div class="foot">作成：KENTA SHINKAWA　｜　記録はこの端末の中だけに保存されます（外部には送りません）</div>`;
+function render(){
+  stopSpeak();
+  const app=$("#app"); window.scrollTo(0,0);
+  if(SCREEN!=="practice"){ PR&&PR.done&&(PR=null); }
+  const f={home:vHome,slta:vSlta,rec:vRec,menu:vMenu,practice:vPractice,result:vResult,records:vRecords,check:vCheck,settings:vSettings,transfer:vTransfer}[SCREEN]||vHome;
+  app.innerHTML=f(); bindCommon(); if(f.after) f.after();
+}
+function bindCommon(){ $$("[data-go]").forEach(b=>b.onclick=()=>go(b.dataset.go)); }
+
+/* ---------- ホーム ---------- */
+function vHome(){
+  const ps=Object.values(DB.patients); const p=P(); const ev=p?latestEval(p):null; const ls=p?lastSession(p):null;
+  return topBar("ホーム")+`<div class="wrap">
+  <div class="card"><h2>対象者</h2>
+   ${ps.length?`<div class="row"><select id="pSel">${ps.map(x=>`<option value="${esc(x.id)}" ${x.id===DB.current?"selected":""}>${esc(pLabel(x))}</option>`).join("")}</select>
+   <button class="s" id="pDel">この対象者を削除</button></div>`:`<p class="muted">まだ対象者がいません。下で追加してください。</p>`}
+   <div class="row" style="margin-top:10px"><input type="text" id="pId" placeholder="ID（例 A-001）" style="width:12em"><input type="text" id="pNick" placeholder="呼び名（任意）" style="width:12em"><button id="pAdd">追加</button></div>
+   <p class="muted small">実名を入れなくても使えます。IDだけで区別できます。</p></div>
+  ${p?`<div class="card"><h2>${esc(pLabel(p))}</h2>
+   <p class="small">SLTAの成績：${ev?`${fmtD(ev.date)}（${p.evals.length}回分）`:"まだ入っていません"}　／　前回の訓練：${ls?fmtD(ls.date):"まだありません"}</p>
+   <div class="grid-btn">
+    <button data-go="slta">SLTAの成績<small>正答率を入れる・プロフィールツールから取り込む</small></button>
+    <button data-go="rec">おすすめの課題<small>成績から課題と level を決める</small></button>
+    <button class="p" id="goMenu">今日の訓練メニュー<small>自動で組んで、指導者と練習する</small></button>
+    <button id="goSolo">ひとりで練習<small>自動で正誤が分かる課題だけ</small></button>
+    <button data-go="records">記録と推移<small>正答率の一覧・グラフ・level の提案</small></button>
+   </div></div>`:""}
+  <div class="card"><h2>そのほか</h2><div class="grid-btn">
+    <button data-go="settings">設定<small>文字の大きさ・書体・読み上げの速さ</small></button>
+    <button data-go="transfer">データの移し替え<small>コピーと貼り付けで別の端末へ</small></button>
+    <button data-go="check">データの点検（指導者用）<small>絵・語・問題の数と不備</small></button>
+  </div></div>
+  </div>`+foot();
+}
+vHome.after=()=>{
+  const s=$("#pSel"); if(s) s.onchange=()=>{ DB.current=s.value; save(); render(); };
+  $("#pAdd").onclick=()=>{ const id=$("#pId").value.trim(); if(!id){ toast("IDを入れてください"); return; } if(DB.patients[id]){ toast("同じIDがすでにあります"); return; } DB.patients[id]=newPatient(id,$("#pNick").value.trim()); DB.current=id; save(); render(); toast("追加しました"); };
+  const d=$("#pDel"); if(d) d.onclick=()=>{ if(!confirm2("pdel","もう一度押すと、この対象者の記録をすべて削除します")) return; delete DB.patients[DB.current]; DB.current=Object.keys(DB.patients)[0]||""; save(); render(); };
+  const m=$("#goMenu"); if(m) m.onclick=()=>{ MENU=null; MENU_SOLO=false; go("menu"); };
+  const so=$("#goSolo"); if(so) so.onclick=()=>{ MENU=null; MENU_SOLO=true; go("menu"); };
+};
+
+/* ---------- SLTA の成績 ---------- */
+function parseScore(raw,i){ // 正答率（%）。段階の列「6655432166」、「#8」（正答数）も可
+  const s=z2h(String(raw||"")).trim().replace(/[%％\s]/g,""); if(s==="") return {v:null};
+  const it=SLTA[i];
+  if(s[0]==="#"||s[0]==="＃"){ const c=Number(s.slice(1)); if(!isFinite(c)||c<0||c>it[3]&&it[4]!=="count") return {bad:true}; return {v:Math.min(100,c/it[3]*100)}; }
+  if(it[4]==="items"&&/^[1-6x\-]{4,}$/i.test(s)){ const ch=s.replace(/-/g,""); if(!ch.length) return {v:null}; const c=(ch.match(/[56]/g)||[]).length; return {v:c/it[3]*100}; }
+  const n=Number(s); if(!isFinite(n)||n<0||n>100) return {bad:true}; return {v:n};
+}
+function vSlta(){
+  const p=P(); if(!p) return topBar("SLTAの成績")+`<div class="wrap"><p>先にホームで対象者を選んでください。</p></div>`;
+  if(EDIT_EVAL>=p.evals.length) EDIT_EVAL=-1;
+  const ev=EDIT_EVAL>=0?p.evals[EDIT_EVAL]:null;
+  let h=topBar("SLTAの成績")+`<div class="wrap"><div class="card"><h2>評価回</h2><div class="row">
+   ${p.evals.map((e,i)=>`<button class="s ${i===EDIT_EVAL?"on":""}" data-ev="${i}">${fmtD(e.date)}</button>`).join("")}
+   <button class="s ${EDIT_EVAL<0?"on":""}" data-ev="-1">新しい評価回</button></div></div>
+  <div class="card"><h2>${ev?fmtD(ev.date)+" の成績":"新しい評価回の成績"}</h2>
+   <div class="row"><label>評価日 <input type="date" id="evDate" value="${esc(ev?ev.date:today())}"></label></div>
+   <p class="muted small">各項目の正答率（%）を入れてください。1問ごとの段階（例 6655432166、段階6と5を正答として数えます）や「#8」（正答数）でも入れられます。空欄は「未実施」です。</p>`;
+  for(const d of DOMS){ h+=`<div class="dom">${d}</div><div class="slta-grid">`;
+    SLTA.forEach((s,i)=>{ if(s[1]!==d) return; const v=ev&&ev.pct[i]!=null?Math.round(ev.pct[i]*10)/10:"";
+      h+=`<div class="sl" id="sl${i}"><span class="no">${s[0]}</span><span class="nm">${esc(s[2])}</span><input type="text" inputmode="decimal" data-i="${i}" value="${v}"><span class="pc"></span></div>`; });
+    h+=`</div>`; }
+  h+=`<div class="row" style="margin-top:14px"><button class="p" id="evSave">保存する</button>${ev?`<button class="s" id="evDel">この評価回を削除</button>`:""}<button class="s" data-go="rec">おすすめを見る</button></div></div>
+  <div class="card"><h2>プロフィールツールの保存データから取り込む</h2>
+   <p class="muted small">SLTAプロフィールツールの「データをコピー」で出た文字を、下に貼り付けて「読み込む」を押してください（この端末の中だけで処理します）。</p>
+   <textarea id="impTxt" placeholder='{"version":2,"patients":{...}}'>${esc(IMPORT&&IMPORT.text||"")}</textarea>
+   <div class="row"><button id="impRead">読み込む</button></div><div id="impList">${importList()}</div></div></div>`+foot();
+  return h;
+}
+vSlta.after=()=>{
+  $$("[data-ev]").forEach(b=>b.onclick=()=>{ EDIT_EVAL=+b.dataset.ev; render(); });
+  const upd=inp=>{ const i=+inp.dataset.i; const r=parseScore(inp.value,i); const row=$("#sl"+i); row.classList.toggle("bad",!!r.bad); row.querySelector(".pc").textContent=r.bad?"確認":r.v==null?"":Math.round(r.v)+"%"; };
+  $$(".sl input").forEach(inp=>{ upd(inp); inp.oninput=()=>upd(inp); inp.onkeydown=e=>{ if(e.key==="Enter"){ e.preventDefault(); const all=$$(".sl input"); const k=all.indexOf(inp); if(all[k+1]) all[k+1].focus(); } }; });
+  $("#evSave").onclick=()=>{ const p=P(); const pct=SLTA.map(()=>null); let bad=0;
+    $$(".sl input").forEach(inp=>{ const r=parseScore(inp.value,+inp.dataset.i); if(r.bad) bad++; else pct[+inp.dataset.i]=r.v==null?null:Math.round(r.v*10)/10; });
+    if(bad){ toast("赤い欄を直してください"); return; }
+    const e={date:$("#evDate").value||today(),pct,src:"手入力"};
+    if(EDIT_EVAL>=0) p.evals[EDIT_EVAL]=Object.assign(p.evals[EDIT_EVAL],e); else { p.evals.push(e); EDIT_EVAL=p.evals.length-1; }
+    save(); toast("保存しました"); render(); };
+  const d=$("#evDel"); if(d) d.onclick=()=>{ if(!confirm2("evdel","もう一度押すと、この評価回を削除します")) return; P().evals.splice(EDIT_EVAL,1); EDIT_EVAL=-1; save(); render(); };
+  $("#impRead").onclick=()=>{ const t=$("#impTxt").value; IMPORT={text:t,list:parseProfile(t)}; $("#impList").innerHTML=importList(); bindImport(); };
+  bindImport();
+};
+function bindImport(){ $$("[data-imp]").forEach(b=>b.onclick=()=>{ const x=IMPORT.list.items[+b.dataset.imp]; const p=P();
+  if(p.evals.some(e=>e.date===x.date&&JSON.stringify(e.pct)===JSON.stringify(x.pct))){ toast("同じ評価回がすでに入っています"); return; }
+  p.evals.push({date:x.date||today(),pct:x.pct,src:"プロフィールツール："+x.name}); EDIT_EVAL=p.evals.length-1; save(); toast("取り込みました"); IMPORT=null; render(); }); }
+function importList(){
+  if(!IMPORT) return ""; const L=IMPORT.list; if(L.error) return `<p class="err">${esc(L.error)}</p>`;
+  if(!L.items.length) return `<p class="err">成績の入った評価回が見つかりませんでした。</p>`;
+  return `<table><tr><th>対象者（ツール側）</th><th>評価回</th><th>評価日</th><th>入っている項目</th><th></th></tr>${L.items.map((x,k)=>`<tr><td>${esc(x.name)}</td><td>第${x.e+1}回</td><td>${fmtD(x.date)}</td><td>${x.filled}／26</td><td><button class="s" data-imp="${k}">この回を取り込む</button></td></tr>`).join("")}</table>`;
+}
+function profPct(o,e){ // プロフィールツール（fmt 3〜5）の1回分 → 26項目の正答率
+  const row=(o.scores||[])[e]||[]; const max=Array.isArray(o.max)?o.max:[];
+  return SLTA.map((s,i)=>{ let v=row[i]; const n=Number(max[i])>0?Number(max[i]):s[3];
+    if(i===25&&Array.isArray(o.calc)&&Array.isArray(o.calc[e])&&o.calc[e].some(x=>x!==""&&x!=null)){ const sum=o.calc[e].reduce((a,x)=>a+(Number(z2h(x))||0),0); return Math.round(Math.min(100,sum/20*100)*10)/10; }
+    if(v===null||v===undefined||v==="") return null;
+    if(typeof v==="number") return Math.round(clamp(v,0,100)*10)/10; // すでに正答率
+    v=z2h(String(v)).trim();
+    if(s[4]==="stage"){ if(/^x$/i.test(v)) return 0; const g=Number(v); return g>=1&&g<=6?Math.round((g-1)/5*1000)/10:null; }
+    if(s[4]==="count"){ const c=Number(v); if(!isFinite(c)) return null; const mx=i===9?15:n; return Math.round(Math.min(100,c/mx*100)*10)/10; }
+    if(v[0]==="#"){ const c=Number(v.slice(1)); return isFinite(c)?Math.round(Math.min(100,c/n*100)*10)/10:null; }
+    if(/^[1-6x\-]+$/i.test(v)){ const ch=v.replace(/-/g,""); if(!ch.length) return null; return Math.round((ch.match(/[56]/g)||[]).length/n*1000)/10; }
+    const c=Number(v); return isFinite(c)?Math.round(clamp(c,0,100)*10)/10:null; });
+}
+function parseProfile(text){
+  let o; try{ o=JSON.parse(text); }catch(e){ return {error:"読み込めませんでした。コピーした文字をそのまま貼り付けてください。",items:[]}; }
+  const pats=[]; if(o&&o.patients&&typeof o.patients==="object") for(const [k,v] of Object.entries(o.patients)) pats.push([v&&v.name||k,v]); else if(o&&o.scores) pats.push([o.name||"（名前なし）",o]);
+  else if(Array.isArray(o)) o.forEach((v,k)=>v&&v.scores&&pats.push([v.name||("データ"+(k+1)),v]));
+  const items=[]; for(const [name,v] of pats){ if(!v||!Array.isArray(v.scores)) continue; v.scores.forEach((row,e)=>{ const pct=profPct(v,e); const filled=pct.filter(x=>x!=null).length; if(filled) items.push({name:String(name),e,date:(v.dates||[])[e]||"",pct,filled}); }); }
+  return {items};
+}
+
+/* ---------- おすすめ ---------- */
+function vRec(){
+  const p=P(); if(!p) return topBar("おすすめ")+`<div class="wrap"><p>先にホームで対象者を選んでください。</p></div>`;
+  const rec=recommend(p); const ev=latestEval(p);
+  if(!rec) return topBar("おすすめの課題")+`<div class="wrap"><div class="card"><p>SLTAの成績がまだありません。</p><button class="p" data-go="slta">成績を入れる</button></div></div>`+foot();
+  let h=topBar("おすすめの課題")+`<div class="wrap"><div class="card"><h2>${fmtD(ev.date)} の成績から</h2>
+  <p class="muted small">決まり：0〜20%→level1、20〜40%→2、40〜60%→3、60〜80%→4、80〜95%→5、95%以上→「維持」（少なめ）。指導者が level を変えた課題は（変更）と出ます。</p>
+  <table><tr><th>No</th><th>下位検査</th><th>正答率</th><th>おすすめ</th></tr>`;
+  for(const r of rec){ h+=`<tr><td>${r.no}</td><td>${esc(r.dom)}・${esc(r.name)}</td><td>${pctTxt(r.pct)}</td><td>`;
+    if(r.none) h+=`<span class="muted small">未実施</span>`;
+    else if(!r.skills.length) h+=`<span class="muted small">${esc(r.name)} ${pctTxt(r.pct)} → level${r.level}${r.maint?"（維持）":""}。この検査に合う課題のデータがまだありません</span>`;
+    else { const s0=r.skills[0]; h+=`<div>${esc(r.name)} ${pctTxt(r.pct)} → <b>${esc(s0.skill)}・level${s0.level}</b>${r.maint?"（維持）":""}${s0.over?"（変更）":""}</div>`;
+      if(r.skills.length>1) h+=`<div class="small">ほかに：${r.skills.slice(1).map(s=>`<span class="tag">${esc(s.skill)}・${TYPE_JP[s.type]||s.type}・level${s.level}${s.over?"（変更）":""}</span>`).join("")}</div>`; }
+    h+=`</td></tr>`; }
+  h+=`</table><div class="row" style="margin-top:12px"><button class="p" id="goMenu2">今日の訓練メニューを組む</button></div></div>
+  ${levelEditor(p)}</div>`+foot();
+  return h;
+}
+function levelEditor(p){ const ks=Object.keys(p.lv||{}); if(!ks.length) return "";
+  return `<div class="card"><h2>指導者が変えた level</h2>${ks.map(k=>`<div class="row"><span>${esc(k)}：level${p.lv[k]}</span><button class="s" data-lvclr="${esc(k)}">成績どおりに戻す</button></div>`).join("")}</div>`; }
+vRec.after=()=>{ const b=$("#goMenu2"); if(b) b.onclick=()=>{ MENU=null; MENU_SOLO=false; go("menu"); };
+  $$("[data-lvclr]").forEach(b=>b.onclick=()=>{ delete P().lv[b.dataset.lvclr]; save(); render(); }); };
+
+/* ---------- 今日の訓練メニュー ---------- */
+function vMenu(){
+  const p=P(); if(!p) return topBar("今日の訓練メニュー")+`<div class="wrap"><p>先にホームで対象者を選んでください。</p></div>`;
+  if(!MENU) MENU=buildMenu(p,MENU_SOLO);
+  const all=Object.values(SKILLS).filter(s=>!MENU_SOLO||AUTO.has(s.type)).sort((a,b)=>DOMS.concat(["記憶"]).indexOf(a.dom)-DOMS.concat(["記憶"]).indexOf(b.dom));
+  let h=topBar("今日の訓練メニュー")+`<div class="wrap"><div class="card"><h2>今日の訓練メニュー（${MENU.length}ブロック・目安 約${menuMinutes(MENU)}分）</h2>
+   <div class="row"><button class="s ${!MENU_SOLO?"on":""}" id="mT">指導者と練習</button><button class="s ${MENU_SOLO?"on":""}" id="mS">ひとりで練習</button>
+   <span class="muted small">${MENU_SOLO?"自動で正誤が分かる課題だけにしています。":"苦手な課題を厚めに、得意な課題も1つ入れています。"}</span></div>`;
+  if(!latestEval(p)) h+=`<p class="err small">SLTAの成績がないため、自動では組めません。下の「ブロックを追加」で課題を選ぶか、先に成績を入れてください。</p>`;
+  MENU.forEach((b,i)=>{ const sk=SKILLS[b.skill];
+    h+=`<div class="blk"><span class="no">${i+1}</span>
+     <select data-bs="${i}">${all.map(s=>`<option value="${esc(s.name)}" ${s.name===b.skill?"selected":""}>${esc(s.dom)}：${esc(s.name)}（${TYPE_JP[s.type]||s.type}）</option>`).join("")}${sk?"":`<option selected>${esc(b.skill)}（データなし）</option>`}</select>
+     <select data-bl="${i}">${[1,2,3,4,5].map(l=>`<option value="${l}" ${l===b.level?"selected":""}>level${l}</option>`).join("")}</select>
+     <button class="s" data-bm="${i}">－</button><span class="cnt">${b.n}問</span><button class="s" data-bp="${i}">＋</button>
+     <button class="s" data-bu="${i}" ${i?"":"disabled"}>上へ</button><button class="s" data-bd="${i}">削除</button>
+     <span class="rs">${esc(b.reason||"指導者が選んだ課題")}</span></div>`; });
+  h+=`<div class="row"><button class="s" id="mAdd" ${MENU.length>=6?"disabled":""}>ブロックを追加</button><button class="s" id="mRe">組み直す</button></div>
+   <div class="row" style="margin-top:16px"><button class="p" id="mGo" ${MENU.length?"":"disabled"}>${MENU_SOLO?"ひとりで練習をはじめる":"はじめる"}</button></div></div></div>`+foot();
+  return h;
+}
+vMenu.after=()=>{
+  const p=P(); if(!p) return;
+  $("#mT").onclick=()=>{ MENU_SOLO=false; MENU=null; render(); }; $("#mS").onclick=()=>{ MENU_SOLO=true; MENU=null; render(); };
+  $$("[data-bs]").forEach(s=>s.onchange=()=>{ const b=MENU[+s.dataset.bs]; b.skill=s.value; b.n=blockSize(SKILLS[b.skill].type); const r=(recommend(p)||[]).find(r=>r.skills&&r.skills.some(x=>x.skill===b.skill)); if(r){ b.level=r.skills.find(x=>x.skill===b.skill).level; } b.reason="指導者が差し替えた課題"+(r?`（${r.name} ${pctTxt(r.pct)}）`:""); render(); });
+  $$("[data-bl]").forEach(s=>s.onchange=()=>{ MENU[+s.dataset.bl].level=+s.value; render(); });
+  $$("[data-bm]").forEach(b=>b.onclick=()=>{ const x=MENU[+b.dataset.bm]; x.n=Math.max(1,x.n-1); render(); });
+  $$("[data-bp]").forEach(b=>b.onclick=()=>{ const x=MENU[+b.dataset.bp]; x.n=Math.min(20,x.n+1); render(); });
+  $$("[data-bu]").forEach(b=>b.onclick=()=>{ const i=+b.dataset.bu; if(i>0){ [MENU[i-1],MENU[i]]=[MENU[i],MENU[i-1]]; render(); } });
+  $$("[data-bd]").forEach(b=>b.onclick=()=>{ MENU.splice(+b.dataset.bd,1); render(); });
+  $("#mAdd").onclick=()=>{ const used=new Set(MENU.map(b=>b.skill)); const extra=buildMenu(p,MENU_SOLO,5).find(b=>!used.has(b.skill));
+    if(extra) MENU.push(extra); else { const s=Object.values(SKILLS).find(s=>!used.has(s.name)&&(!MENU_SOLO||AUTO.has(s.type))); if(s) MENU.push({skill:s.name,level:3,n:blockSize(s.type),reason:"指導者が選んだ課題"}); }
+    render(); };
+  $("#mRe").onclick=()=>{ MENU=null; render(); };
+  $("#mGo").onclick=()=>startSession(p,MENU,MENU_SOLO?"solo":"teacher");
+};
+
+/* ---------- 練習 ---------- */
+function startSession(p,menu,mode){
+  const used=new Set(); const blocks=[];
+  for(const b of menu){ const items=makeItems(p,Object.assign({solo:mode==="solo"},b),used); if(!items.length){ toast(`「${b.skill}」は問題が作れないため飛ばします`); continue; }
+    blocks.push({skill:b.skill,level:b.level,type:(SKILLS[b.skill]||{}).type,reason:b.reason||"",items,res:[]}); }
+  if(!blocks.length){ toast("問題が作れませんでした。データを確かめてください"); return; }
+  const sess={id:"s"+NOW(),date:today(),start:new Date(NOW()).toISOString(),mode,blocks,done:false};
+  p.sessions.push(sess); save();
+  PR={p,sess,bi:0,ii:-1,solo:mode==="solo"};
+  go("practice");
+}
+function curBlock(){ return PR.sess.blocks[PR.bi]; }
+function curItem(){ const b=curBlock(); return b&&PR.ii>=0?b.items[PR.ii]:null; }
+function vPractice(){
+  if(!PR) return vHome();
+  const b=curBlock(); if(!b) return "";
+  const tot=PR.sess.blocks.length;
+  const head=`<div class="pvh"><span class="t">第${PR.bi+1}ブロック／全${tot}　${esc(b.skill)}・level${b.level}</span><span class="pg">${PR.ii>=0?`${PR.ii+1} ／ ${b.items.length}`:""}</span><button class="s" id="pvEnd">終了</button></div>`;
+  if(PR.ii<0){ // ブロックのはじめ
+    return `<div id="pv">${head}<div class="bstart"><div class="big">${esc(b.items[0].prompt||b.skill)}</div><div class="muted">${b.items.length}問あります</div><button class="p" id="bGo" style="min-width:260px">はじめる</button></div></div>`;
+  }
+  const it=curItem(); const S=PR.st;
+  const hintTxt=S.hintShown.filter(h=>!h.teacher&&h.t&&h.act!=="slow"&&h.act!=="split"&&h.act!=="reduce"&&h.act!=="boxes"&&h.act!=="model"&&h.act!=="replay"&&h.act!=="speak").map(h=>h.act==="text"?h.text:h.t);
+  const hasSpeak=!!(it.speak||(it.type==="span"&&it.show==="speak"));
+  const pics=it.stim&&Array.isArray(it.stim.pics)&&it.stim.pics.length>1?it.stim.pics:null;
+  const stimInner=(pics?`<div class="spics">${pics.map(x=>`<div class="spic">${picHTML(x)}</div>`).join("")}</div>`:it.stim&&it.stim.pic?`<div class="spic">${picHTML(it.stim.pic)}</div>`:"")+(it.stim&&it.stim.text?`<div class="stext ${String(it.stim.text).length>12||String(it.stim.text).indexOf(String.fromCharCode(10))>=0?"long":""}">${esc(it.stim.text)}</div>`:"")
+    +(hintTxt.length?`<div class="hintbox">${esc(hintTxt[hintTxt.length-1])}</div>`:"")+(hasSpeak&&!(it.type==="span"&&S.phase==="answer"&&!it.speak)?`<button class="again" id="again">もう一度聞く</button>`:"");
+  const hasStim=!!(it.stim&&(it.stim.pic||it.stim.text))||hasSpeak||hintTxt.length;
+  let ans="", side=true;
+  if(it.type==="choice"||it.type==="tapseq"||(it.type==="span"&&S.phase==="answer")){
+    const txt=(it.options||[]).every(o=>!o.pic);
+    ans=`<div class="ans"><div class="fit ${txt?"txt":""}" id="opts" ${oneRow(it)?'data-row="1"':""}>${(it.options||[]).map((o,i)=>`<button class="opt ${o.pic?"op":"ot2"} ${S.off.includes(i)?"off":""} ${S.sel.includes(i)?"sel":""} ${S.mark[i]||""}" data-o="${i}">${S.sel.includes(i)&&it.type!=="choice"?`<span class="num">${S.sel.indexOf(i)+1}</span>`:""}${o.pic?`<span class="pic">${picHTML(o.pic)}</span>`:""}${o.text?`<span class="ot">${esc(o.text)}</span>`:""}</button>`).join("")}</div>
+     ${it.type!=="choice"&&!S.answered?`<div class="row" style="justify-content:center"><button class="s" id="redo">やり直す</button></div>`:""}</div>`;
+    if(it.type!=="choice"&&!(it.stim&&(it.stim.pic||it.stim.text))) side=true;
+  } else if(it.type==="span"){ // 見せる・聞かせる段階
+    ans=`<div class="ans"><div class="fit" id="opts">${it.show==="look"?it.seq.map(i=>`<div class="opt op"><span class="pic">${picHTML(it.options[i].pic)}</span>${it.options[i].text?`<span class="ot">${esc(it.options[i].text)}</span>`:""}</div>`).join(""):""}</div>
+     <div class="fb">${it.show==="look"?"よく見て覚えてください":"よく聞いて覚えてください"}</div></div>`;
+  } else if(it.type==="yesno"){
+    ans=`<div class="ans"><div class="yn"><button data-yn="1" class="${S.ynSel===true?"sel on":""}">はい</button><button data-yn="0" class="${S.ynSel===false?"sel on":""}">いいえ</button></div></div>`;
+  } else if(it.type==="order"){
+    const pieces=S.pieces;
+    const card=(x,k,used)=>`<button class="card2 ${used?"used":""}" data-pc="${k}">${typeof x==="object"&&x.pic?`<span class="pic">${picHTML(x.pic)}</span>`:esc(x)}</button>`;
+    ans=`<div class="ans" style="justify-content:center"><div class="tray" id="tray">${S.sel.length?S.sel.map((k,j)=>`<button class="card2" data-tr="${j}">${typeof pieces[k]==="object"&&pieces[k].pic?`<span class="pic">${picHTML(pieces[k].pic)}</span>`:esc(pieces[k])}</button>`).join(""):`<span class="muted">下のカードを順に触ってください</span>`}</div>
+      <div class="tray pool">${pieces.map((x,k)=>card(x,k,S.sel.includes(k))).join("")}</div>${!S.answered?`<div class="row" style="justify-content:center"><button class="s" id="redo">やり直す</button></div>`:""}</div>`;
+  } else if(it.type==="input"){
+    ans=`<div class="ans" style="justify-content:center"><div class="inbox" id="inbox">${esc(S.input||"")}</div><div class="keys">${["7","8","9","4","5","6","1","2","3"].map(k=>`<button data-k="${k}">${k}</button>`).join("")}<button data-k="del" class="s">消す</button><button data-k="0">0</button><button data-k="ok" class="p s">決定</button></div></div>`;
+  } else if(it.type==="write"){
+    const nb=S.boxes?(it.boxes||Array.from(String(it.target||"")).length||1):(it.gen?0:(it.boxes||0));
+    ans=`<div class="ans"><div class="wbox" id="wbox">${nb?`<div class="wguide" id="wg">${"<span></span>".repeat(nb)}</div>`:""}${S.model?`<div class="model">${esc(it.target)}</div>`:""}<canvas id="cv"></canvas></div>
+      <div class="wtools"><button class="s" id="wClr">消す</button><button class="s ${S.model?"on":""}" id="wMod">${S.model?"見本を隠す":"見本を見せる"}</button></div></div>`;
+  } else if(it.type==="say"){ side=false; }
+  const visStim=!!(it.stim&&(it.stim.pic||it.stim.text))||hintTxt.length>0;
+  const textTop=!!(it.stim&&it.stim.text&&String(it.stim.text).indexOf(String.fromCharCode(10))>=0&&ans);
+  const main=`<div class="pvmain ${(!visStim||textTop)&&ans?"col":""}" ${textTop?'data-col="1"':""} id="pvmain">${hasStim?`<div class="stim ${!visStim&&ans?"bar":ans?"side":"full"} ${bigPic(it)?"big":""}" id="stim">${stimInner}</div>`:""}${ans}</div>`;
+  const fb=`<div class="fb ${S.fbc||""}" id="fb">${esc(S.fb||"")}</div>`;
+  return `<div id="pv">${head}<div class="prompt ${isWrittenCmd(it)?"wcmd":""}">${esc(it.prompt||"")}</div>${main}${fb}${PR.solo?soloBar():band(it)}</div>`;
+}
+function soloBar(){ const S=PR.st; return `<div class="solo-bar">${S.answered?`<button class="p" id="next" style="min-width:220px">次へ</button>`:`<button class="s" id="skip">わからないので次へ</button>`}</div>`; }
+function band(it){
+  const S=PR.st, open=DB.settings.band!==false; const nh=(it.hints||[]).length;
+  const lastH=S.hintShown.length?S.hintShown[S.hintShown.length-1]:null;
+  return `<div class="band ${open?"":"closed"}" id="band"><div class="r1">
+   <button class="s" id="bTog">${open?"たたむ":"指導者用"}</button>
+   <span class="hide-c"><button class="s" id="hint" ${S.hintShown.length>=nh?"disabled":""}>ヒント ${S.hintShown.length}／${nh}</button></span>
+   <span class="hide-c">${[6,5,4,3,2,1].map(g=>`<button class="s ${S.grade===g?"on":""}" data-g="${g}" title="${STAGE_NAMES[g]}">${g}</button>`).join("")}</span>
+   <span class="sp"></span><button class="s" id="skip">スキップ</button><button class="p s" id="next">次へ</button></div>
+   <div class="r2"><span class="rv ${S.answered||S.grade!=null?"open":""}" onclick="this.classList.toggle('open')"><span class="rvb">正答を見る（触る）</span><span class="rvx">正答：<b>${esc(it.target!=null?it.target:answerText(it))}</b>${it.accept&&it.accept.length?`（別解：${esc(it.accept.join("・"))}）`:""}</span></span>
+   <span>${S.auto?`自動判定：${S.firstOk?"正答":"誤答"}　${(S.rt/1000).toFixed(1)}秒`:AUTO.has(it.type)?"自動判定：まだ":"段階を押してください（6・5が正答）"}</span>
+   ${lastH?`<span class="hl">ヒント${S.hintShown.length}：${esc(lastH.label||lastH.t)}</span>`:""}
+   <span class="gl">段階 6完全正答 5遅延 4不完全 3ヒント後 2関連 1誤答</span>
+   <input type="text" id="memo" placeholder="メモ（反応・錯語など）" value="${esc(S.memo||"")}">${it.note?`<span class="gl rv ${S.answered||S.grade!=null?"open":""}" onclick="this.classList.toggle('open')"><span class="rvb">メモを見る</span><span class="rvx">${esc(it.note)}</span></span>`:""}</div></div>`;
+}
+const isWrittenCmd=it=>/^s-wc/.test(it.id||"")||it.skill==="書字命令";
+const oneRow=it=>/横一列/.test(it.note||"")||/^nm-pos/.test(it.id||"");
+function bigPic(it){ const ids=it.stim?[it.stim.pic].concat(it.stim.pics||[]).filter(Boolean):[]; return ids.some(id=>/^yen_c_/.test(id)&&id.split("_").length-2>=7); }
+function answerText(it){
+  if(it.type==="choice"){ const o=(it.options||[])[it.answer]; return o?(o.text||(W(o.pic)?W(o.pic).hyoki:o.pic)):""; }
+  if(it.type==="yesno") return it.answer?"はい":"いいえ";
+  if(it.type==="tapseq") return (it.answer||[]).map(i=>speakName(it.options[i])).join("→");
+  if(it.type==="span") return (it.seq||[]).map(i=>speakName(it.options[i])).join("→");
+  if(it.type==="order") return (it.pieces||[]).map(x=>typeof x==="object"?speakName(x):x).join(it.pieces.every(x=>typeof x==="string"&&x.length===1)?"":"／");
+  if(it.type==="input") return it.answer; return "";
+}
+function newItemState(it){
+  const S={hintShown:[],off:[],sel:[],mark:{},grade:null,auto:false,firstOk:null,tries:0,answered:false,memo:"",fb:"",fbc:"",t0:NOW(),rt:null,phase:"answer",boxes:!!(it.boxes&&!it.gen),model:false,input:""};
+  if(it.type==="order"){ let idx=it.pieces.map((_,i)=>i); if(idx.length>1){ for(let k=0;k<10;k++){ idx=shuffle(idx); if(idx.some((v,i)=>v!==i)) break; } } S.pieces=idx.map(i=>it.pieces[i]); S.perm=idx; }
+  if(it.type==="span") S.phase="present";
+  return S;
+}
+function showItem(){
+  const it=curItem(); PR.st=newItemState(it); markUsed(PR.p,it); save();
+  render();
+  if(it.type==="span") presentSpan(it); else if(it.speak&&DB.settings.auto!==false) setTimeout(()=>{ if(curItem()===it) speak(it.speak); },350);
+}
+function presentSpan(it){
+  const S=PR.st; const fin=()=>{ if(curItem()!==it||PR.st!==S) return; S.phase="answer"; S.t0=NOW(); render(); };
+  if(it.show==="look"){ setTimeout(fin,it.ms||3000); }
+  else { const names=it.speak?[it.speak]:it.seq.map(i=>speakName(it.options[i])); PR.cancelSpeak=false; setTimeout(()=>speakSeq(names,600).then(fin),350); }
+}
+vPractice.after=()=>{
+  if(!PR) return; const b=curBlock();
+  $("#pvEnd").onclick=()=>{ if(!confirm2("end","もう一度押すと訓練を終わります（ここまでの記録は残ります）")) return; finishSession(); };
+  if(PR.ii<0){ $("#bGo").onclick=()=>{ PR.ii=0; showItem(); }; return; }
+  const it=curItem(), S=PR.st;
+  layout();
+  const ag=$("#again"); if(ag) ag.onclick=()=>{ if(it.type==="span"){ if(S.phase==="answer"&&it.speak) speak(it.speak); } else speak(it.speak); };
+  $$("[data-o]").forEach(el=>el.onclick=()=>onOpt(+el.dataset.o));
+  $$("[data-yn]").forEach(el=>el.onclick=()=>onYN(el.dataset.yn==="1"));
+  $$("[data-pc]").forEach(el=>el.onclick=()=>{ if(S.answered) return; const k=+el.dataset.pc; if(S.sel.includes(k)) return; S.sel.push(k); if(S.sel.length===S.pieces.length) checkOrder(); else render(); });
+  $$("[data-tr]").forEach(el=>el.onclick=()=>{ if(S.answered) return; S.sel.splice(+el.dataset.tr,1); render(); });
+  const rd=$("#redo"); if(rd) rd.onclick=()=>{ S.sel=[]; S.mark={}; render(); };
+  $$("[data-k]").forEach(el=>el.onclick=()=>{ if(S.answered&&S.firstOk) return; const k=el.dataset.k; if(k==="del") S.input=S.input.slice(0,-1); else if(k==="ok"){ if(S.input) checkInput(); return; } else if(S.input.length<8) S.input+=k; $("#inbox").textContent=S.input; });
+  if(it.type==="write") setupCanvas();
+  const wc=$("#wClr"); if(wc) wc.onclick=()=>{ S.strokes=[]; setupCanvas(); };
+  const wm=$("#wMod"); if(wm) wm.onclick=()=>{ S.model=!S.model; render(); };
+  // 指導者の帯
+  const bt=$("#bTog"); if(bt) bt.onclick=()=>{ DB.settings.band=!(DB.settings.band!==false); save(); render(); };
+  const hb=$("#hint"); if(hb) hb.onclick=()=>useHint();
+  $$("[data-g]").forEach(el=>el.onclick=()=>{ S.grade=+el.dataset.g; S.manual=true; if(S.rt==null) S.rt=NOW()-S.t0; if(!AUTO.has(it.type)) S.answered=true; render(); });
+  const mm=$("#memo"); if(mm) mm.oninput=()=>{ S.memo=mm.value; };
+  const nx=$("#next"); if(nx) nx.onclick=()=>nextItem(false);
+  const sk=$("#skip"); if(sk) sk.onclick=()=>nextItem(true);
+};
+function layout(){
+  const main=$("#pvmain"); if(!main) return;
+  const portrait=window.innerHeight>window.innerWidth*1.05; const bar=!!main.querySelector(".stim.bar")||!!main.dataset.col; main.classList.toggle("col",portrait||bar);
+  const g=$("#opts"); if(g){ fitGrid(g); }
+  const st=$("#stim"); if(st){ const sp=st.querySelector(".spic"); if(sp){ let other=0; Array.from(st.children).forEach(c=>{ if(c!==sp) other+=c.offsetHeight+10; });
+      const s=Math.max(120,Math.min(st.clientWidth-4,st.clientHeight-other-4,st.classList.contains("big")?720:460)); sp.style.width=s+"px"; sp.style.height=s+"px"; }
+    const sps=st.querySelector(".spics"); if(sps){ let other=0; Array.from(st.children).forEach(c=>{ if(c!==sps) other+=c.offsetHeight+10; }); const k=sps.children.length;
+      const s=Math.max(90,Math.min((st.clientWidth-12*(k-1))/k-4,st.clientHeight-other-4,360)); Array.from(sps.children).forEach(c=>{ c.style.width=s+"px"; c.style.height=s+"px"; }); } }
+}
+function fitGrid(g){
+  const n=g.children.length; if(!n) return; const txt=g.classList.contains("txt"); const W0=g.clientWidth, H0=g.clientHeight, gap=14;
+  const maxLen=txt?Math.max(1,...Array.from(g.children).map(c=>(c.textContent||"").trim().length)):1;
+  let best=null; for(let c=g.dataset.row?n:1;c<=n;c++){ const r=Math.ceil(n/c); const cw=(W0-gap*(c-1))/c, ch=(H0-gap*(r-1))/r;
+    const sc=txt?Math.min((cw-28)/(maxLen*1.05),(Math.min(ch,170)-16)/1.5):Math.min(cw,ch); if(!best||sc>best.sc) best={sc,c,cw,ch}; }
+  let w,h; if(txt){ const fs=clamp(Math.floor(best.sc),20,60); w=Math.min(best.cw,Math.max(fs*maxLen*1.05+40,140)); h=Math.min(best.ch,Math.max(fs*1.6+24,80));
+    Array.from(g.children).forEach(c=>{ const o=c.querySelector(".ot"); if(o) o.style.fontSize=fs+"px"; }); }
+  else { w=h=Math.max(80,Math.min(best.cw,best.ch,320)); }
+  g.style.gridTemplateColumns=`repeat(${best.c},${Math.floor(w)}px)`; g.style.gridAutoRows=Math.floor(h)+"px";
+}
+window.addEventListener("resize",()=>{ if(SCREEN==="practice"&&PR&&PR.ii>=0){ layout(); if(curItem()&&curItem().type==="write") setupCanvas(); } });
+function setupCanvas(){
+  const cv=$("#cv"); if(!cv) return; const S=PR.st; S.strokes=S.strokes||[];
+  const r=cv.getBoundingClientRect(), d=window.devicePixelRatio||1; cv.width=Math.max(1,r.width*d); cv.height=Math.max(1,r.height*d);
+  const g=cv.getContext("2d"); g.setTransform(d,0,0,d,0,0); g.lineCap="round"; g.lineJoin="round"; g.strokeStyle="#111"; g.fillStyle="#111";
+  const lw=Math.max(5,Math.min(r.width,r.height)/60);
+  const drawSt=st=>{ if(!st.length) return; g.lineWidth=lw; g.beginPath(); g.moveTo(st[0][0]*r.width,st[0][1]*r.height); if(st.length===1){ g.arc(st[0][0]*r.width,st[0][1]*r.height,lw/2,0,7); g.fill(); return; } st.forEach(p=>g.lineTo(p[0]*r.width,p[1]*r.height)); g.stroke(); };
+  S.strokes.forEach(drawSt);
+  const wg=$("#wg"); if(wg){ const n=wg.children.length; const s=Math.min(r.height*0.8,(r.width*0.9-(n-1)*10)/n); Array.from(wg.children).forEach(x=>{ x.style.width=s+"px"; x.style.height=s+"px"; }); }
+  let cur=null; const pt=e=>{ const b=cv.getBoundingClientRect(); return [(e.clientX-b.left)/b.width,(e.clientY-b.top)/b.height]; };
+  cv.onpointerdown=e=>{ e.preventDefault(); try{ cv.setPointerCapture(e.pointerId); }catch(_){} cur=[pt(e)]; S.strokes.push(cur); if(S.rt==null) S.rt=NOW()-S.t0; drawSt(cur); };
+  cv.onpointermove=e=>{ if(!cur) return; e.preventDefault(); const p=pt(e), q=cur[cur.length-1]; cur.push(p); g.lineWidth=lw; g.beginPath(); g.moveTo(q[0]*r.width,q[1]*r.height); g.lineTo(p[0]*r.width,p[1]*r.height); g.stroke(); };
+  cv.onpointerup=cv.onpointercancel=()=>{ cur=null; };
+}
+function feedback(ok,final){ const S=PR.st; if(ok){ S.fb="正解です"; S.fbc="ok"; } else if(final){ S.fb="正解は、印の付いたものです"; S.fbc="ng"; } else { S.fb="もう一度考えてください"; S.fbc="ng"; } }
+function autoResult(ok){ const S=PR.st; S.tries++; if(S.firstOk===null){ S.firstOk=ok; S.rt=NOW()-S.t0; S.auto=true; if(!S.manual) S.grade=ok?(S.hintShown.length?3:6):1; } }
+function onOpt(i){
+  const it=curItem(), S=PR.st; if(S.answered) return; if(it.type==="span"&&S.phase!=="answer") return;
+  if(it.type==="choice"){ if(S.off.includes(i)) return; const ok=i===it.answer; autoResult(ok);
+    if(ok){ S.mark[i]="right"; S.answered=true; feedback(true); }
+    else { S.mark[i]="wrong"; S.off.push(i); if(S.tries>=2){ S.mark[it.answer]="right"; S.answered=true; feedback(false,true); } else feedback(false); }
+    render(); return; }
+  // tapseq / span：順に触る
+  if(S.sel.includes(i)) return; S.sel.push(i);
+  const want=it.type==="span"?it.seq:it.answer;
+  if(S.sel.length>=want.length){ const ok=want.every((v,k)=>S.sel[k]===v); autoResult(ok);
+    if(ok){ S.answered=true; feedback(true); }
+    else if(S.tries>=2){ S.answered=true; feedback(false,true); S.mark={}; want.forEach(v=>S.mark[v]="right"); S.sel=want.slice(); }
+    else { feedback(false); S.sel=[]; } }
+  render();
+}
+function onYN(v){ const it=curItem(), S=PR.st; if(S.answered) return; S.ynSel=v; const ok=v===!!it.answer; autoResult(ok);
+  if(ok||S.tries>=2){ S.answered=true; feedback(ok,!ok); if(!ok) S.fb="正解は「"+(it.answer?"はい":"いいえ")+"」です"; } else { feedback(false); S.ynSel=null; } render(); }
+function checkOrder(){ const S=PR.st; const ok=S.sel.every((k,j)=>S.perm[k]===j); autoResult(ok);
+  if(ok){ S.answered=true; feedback(true); } else if(S.tries>=2){ S.answered=true; S.fb="正しい順："+answerText(curItem()); S.fbc="ng"; } else { feedback(false); S.sel=[]; } render(); }
+function checkInput(){ const it=curItem(), S=PR.st; const norm=s=>z2h(String(s)).replace(/[,，円\s]/g,""); const ok=norm(S.input)===norm(it.answer)||(it.accept||[]).some(a=>norm(a)===norm(S.input)); autoResult(ok);
+  if(ok){ S.answered=true; feedback(true); } else if(S.tries>=2){ S.answered=true; S.fb="答えは "+it.answer+" です"; S.fbc="ng"; } else { feedback(false); S.input=""; } render(); }
+function useHint(){
+  const it=curItem(), S=PR.st; const h=(it.hints||[])[S.hintShown.length]; if(!h) return; S.hintShown.push(h);
+  if(h.act==="slow"&&it.speak) speak(it.speak,0.65);
+  if(h.act==="split"){ const t=h.say||it.speak||""; const parts=/[、。\s]/.test(t)?t.split(/[、。\s]+/).filter(Boolean):moras(t); speakSeq(parts,450); }
+  if(h.act==="speak") speak(h.say||it.speak||it.target);
+  if(h.act==="replay"&&it.type==="span"){ S.sel=[]; S.phase="present"; render(); presentSpan(it); return; }
+  if(h.act==="reduce"&&it.options){ const want=new Set(it.type==="choice"?[it.answer]:(it.answer||it.seq||[])); const wr=it.options.map((_,i)=>i).filter(i=>!want.has(i)&&!S.off.includes(i)); shuffle(wr).slice(0,Math.ceil(wr.length/2)).forEach(i=>S.off.push(i)); }
+  if(h.act==="boxes") S.boxes=true; if(h.act==="model") S.model=true;
+  render();
+}
+function nextItem(skipped){
+  const it=curItem(), S=PR.st, b=curBlock(); stopSpeak(); PR.cancelSpeak=true;
+  b.res[PR.ii]={id:it.id,words:it.words||[],type:it.type,ok:S.grade!=null?S.grade>=5:(S.firstOk===null?null:S.firstOk),grade:skipped&&S.grade==null?null:S.grade,auto:S.auto?S.firstOk:null,hints:S.hintShown.length,rt:S.rt,memo:S.memo||"",skipped:!!skipped&&!S.answered&&S.grade==null};
+  save();
+  if(PR.ii+1<b.items.length){ PR.ii++; showItem(); return; }
+  if(PR.bi+1<PR.sess.blocks.length){ PR.bi++; PR.ii=-1; render(); return; }
+  finishSession();
+}
+function finishSession(){ stopSpeak(); if(!PR) return; PR.sess.done=true; PR.sess.end=new Date(NOW()).toISOString();
+  PR.sess.blocks=PR.sess.blocks.filter(b=>b.res.some(r=>r)); const p=PR.p; if(!PR.sess.blocks.length) p.sessions=p.sessions.filter(s=>s!==PR.sess);
+  save(); RESULT=PR.sess; PR=null; go("result"); }
+
+/* ---------- 結果 ---------- */
+let RESULT=null;
+function blockStats(b){ const rs=(b.res||[]).filter(Boolean); const graded=rs.filter(r=>r.grade!=null||r.ok!=null);
+  const okN=graded.filter(r=>r.grade!=null?r.grade>=5:r.ok).length; const rts=rs.filter(r=>r.rt!=null).map(r=>r.rt);
+  return {n:rs.length,graded:graded.length,ok:okN,rate:graded.length?Math.round(okN/graded.length*100):null,hintItems:rs.filter(r=>r.hints>0).length,hints:rs.reduce((a,r)=>a+(r.hints||0),0),rt:rts.length?rts.reduce((a,x)=>a+x,0)/rts.length/1000:null,skip:rs.filter(r=>r.skipped).length}; }
+function statTable(sess){ return `<table><tr><th>課題</th><th>level</th><th>問題数</th><th>正答率</th><th>ヒント</th><th>平均反応時間</th></tr>${sess.blocks.map(b=>{ const s=blockStats(b); return `<tr><td>${esc(b.skill)}<div class="muted small">${TYPE_JP[b.type]||""}</div></td><td>${b.level}</td><td>${s.n}${s.skip?`（スキップ${s.skip}）`:""}</td><td><b>${s.rate==null?"未判定":s.rate+"%"}</b>（${s.ok}／${s.graded}）</td><td>${s.hintItems}問で${s.hints}回</td><td>${s.rt==null?"－":s.rt.toFixed(1)+"秒"}</td></tr>`; }).join("")}</table>`; }
+function vResult(){
+  const p=P(); const s=RESULT||(p&&lastSession(p)); if(!s) return topBar("結果")+`<div class="wrap"><p>結果がありません。</p></div>`;
+  return topBar("今日の結果")+`<div class="wrap"><div class="card"><h2>${fmtD(s.date)} の結果（${s.mode==="solo"?"ひとりで練習":"指導者と練習"}）</h2>${statTable(s)}
+   <p class="muted small">正答率は段階6・5を正答として数えています。自動判定の課題は、最初の答えで判定しています（指導者が段階を直した場合はそれを使います）。</p></div>
+   ${suggestHTML(p)}<div class="row"><button class="p" data-go="records">記録と推移を見る</button><button data-go="home">ホームへ</button></div></div>`+foot();
+}
+vResult.after=()=>bindSuggest();
+function suggestions(p){
+  const by={}; p.sessions.forEach(s=>(s.blocks||[]).forEach(b=>{ const st=blockStats(b); if(st.graded<3) return; (by[b.skill]=by[b.skill]||[]).push({date:s.date,level:b.level,rate:st.rate}); }));
+  const out=[]; for(const [k,a] of Object.entries(by)){ if(a.length<2) continue; const x=a[a.length-2], y=a[a.length-1]; if(x.level!==y.level) continue;
+    if(x.rate>=80&&y.rate>=80&&y.level<5) out.push({skill:k,from:y.level,to:y.level+1,why:`2回続けて正答率80%以上（${x.rate}%、${y.rate}%）`,up:true});
+    if(x.rate<40&&y.rate<40&&y.level>1) out.push({skill:k,from:y.level,to:y.level-1,why:`2回続けて正答率40%未満（${x.rate}%、${y.rate}%）`,up:false}); }
+  return out.filter(s=>effLevelNow(p,s.skill)===s.from);
+}
+function effLevelNow(p,skill){ if(p.lv[skill]!=null) return p.lv[skill]; const r=(recommend(p)||[]).find(r=>r.skills&&r.skills.some(x=>x.skill===skill)); return r?r.level:null; }
+function suggestHTML(p){ if(!p) return ""; const sg=suggestions(p); if(!sg.length) return "";
+  return `<div class="card"><h2>level の提案（決めるのは指導者です）</h2>${sg.map((s,i)=>`<div class="row"><span>${esc(s.skill)}：${s.why} → <b>level${s.from} を level${s.to} に${s.up?"上げる":"下げる"}</b>提案</span><button class="s" data-sg="${i}">${s.up?"上げる":"下げる"}</button></div>`).join("")}</div>`; }
+function bindSuggest(){ const p=P(); if(!p) return; const sg=suggestions(p); $$("[data-sg]").forEach(b=>b.onclick=()=>{ const s=sg[+b.dataset.sg]; p.lv[s.skill]=s.to; save(); toast(`${s.skill} を level${s.to} にしました`); render(); }); }
+
+/* ---------- 記録と推移 ---------- */
+let REC_SKILL="";
+function vRecords(){
+  const p=P(); if(!p) return topBar("記録")+`<div class="wrap"><p>先にホームで対象者を選んでください。</p></div>`;
+  const rows=[]; p.sessions.forEach(s=>(s.blocks||[]).forEach(b=>rows.push({s,b,st:blockStats(b)})));
+  const skills=Array.from(new Set(rows.map(r=>r.b.skill))); if(!skills.includes(REC_SKILL)) REC_SKILL=skills[0]||"";
+  let h=topBar("記録と推移")+`<div class="wrap">${suggestHTML(p)}<div class="card"><h2>課題ごとの正答率の推移</h2>`;
+  if(!skills.length) h+=`<p class="muted">まだ記録がありません。</p>`;
+  else { h+=`<div class="row"><select id="rsk">${skills.map(k=>`<option ${k===REC_SKILL?"selected":""}>${esc(k)}</option>`).join("")}</select></div><div class="chart">${chartSVG(rows.filter(r=>r.b.skill===REC_SKILL&&r.st.rate!=null))}</div>`; }
+  h+=`</div><div class="card"><h2>記録の一覧</h2><table><tr><th>日付</th><th>課題</th><th>level</th><th>正答率</th><th>ヒント</th><th>練習の形</th></tr>${rows.slice().reverse().map(r=>`<tr><td>${fmtD(r.s.date)}</td><td>${esc(r.b.skill)}</td><td>${r.b.level}</td><td>${r.st.rate==null?"未判定":r.st.rate+"%"}（${r.st.ok}／${r.st.graded}）</td><td>${r.st.hints}回</td><td class="small">${r.s.mode==="solo"?"ひとりで":"指導者と"}</td></tr>`).join("")||`<tr><td colspan="6" class="muted">まだありません</td></tr>`}</table></div></div>`+foot();
+  return h;
+}
+vRecords.after=()=>{ const s=$("#rsk"); if(s) s.onchange=()=>{ REC_SKILL=s.value; render(); }; bindSuggest(); };
+function chartSVG(rows){
+  const Wd=760,Ht=280,L=56,R=20,T=20,B=56; const n=rows.length; if(!n) return `<p class="muted small">判定済みの記録がありません。</p>`;
+  const x=i=>n===1?L+(Wd-L-R)/2:L+i*(Wd-L-R)/(n-1), y=v=>T+(100-v)/100*(Ht-T-B);
+  let s=`<svg viewBox="0 0 ${Wd} ${Ht}" role="img" aria-label="正答率の推移">`;
+  [0,20,40,60,80,100].forEach(v=>{ s+=`<line x1="${L}" x2="${Wd-R}" y1="${y(v)}" y2="${y(v)}" stroke="${v===80||v===40?"#9aa":"#e3e1da"}" ${v===80||v===40?'stroke-dasharray="6 4"':""}/><text x="${L-8}" y="${y(v)+5}" font-size="14" text-anchor="end" fill="#555">${v}%</text>`; });
+  s+=`<polyline fill="none" stroke="#1f4e79" stroke-width="3" points="${rows.map((r,i)=>x(i)+","+y(r.st.rate)).join(" ")}"/>`;
+  rows.forEach((r,i)=>{ s+=`<circle cx="${x(i)}" cy="${y(r.st.rate)}" r="6" fill="#fff" stroke="#1f4e79" stroke-width="3"><title>${fmtD(r.s.date)} level${r.b.level} ${r.st.rate}%</title></circle>`;
+    if(n<=8||i===0||i===n-1||i%Math.ceil(n/6)===0) s+=`<text x="${x(i)}" y="${Ht-B+22}" font-size="13" text-anchor="middle" fill="#555">${r.s.date.slice(5).replace("-","/")}</text><text x="${x(i)}" y="${Ht-B+40}" font-size="12" text-anchor="middle" fill="#888">Lv${r.b.level}</text>`; });
+  return s+`</svg>`;
+}
+
+/* ---------- データの点検 ---------- */
+function vCheck(){
+  const cnt=(arr,f)=>{ const m={}; arr.forEach(x=>{ const k=f(x); m[k]=(m[k]||0)+1; }); return m; };
+  const tbl=(m,title)=>`<div><b class="small">${title}</b><table>${Object.entries(m).sort().map(([k,v])=>`<tr><td>${esc(k)}</td><td>${v}</td></tr>`).join("")||`<tr><td class="muted">なし</td></tr>`}</table></div>`;
+  const miss=[]; const ids={}; const dup=[]; const bad=[]; const conf=[];
+  BANK.forEach(it=>{ if(!it) return; if(ids[it.id]) dup.push(it.id); ids[it.id]=1;
+    const refs=[]; if(it.stim&&it.stim.pic) refs.push(["stim",it.stim.pic]); (it.options||[]).forEach((o,i)=>o&&o.pic&&refs.push([`options[${i}]`,o.pic])); (it.pieces||[]).forEach((o,i)=>o&&o.pic&&refs.push([`pieces[${i}]`,o.pic]));
+    refs.forEach(([f,id])=>{ if(!PICS[id]) miss.push({id:it.id,f,pic:id}); });
+    if(!TYPE_JP[it.type]) bad.push({id:it.id,msg:"type が不明："+it.type});
+    if(it.type==="choice"&&!(it.options&&it.answer>=0&&it.answer<it.options.length)) bad.push({id:it.id,msg:"answer が選択肢の範囲外"});
+    if((it.type==="say"||it.type==="write")&&!it.target) bad.push({id:it.id,msg:"target がありません"});
+    if(it.type==="tapseq"&&!(Array.isArray(it.answer)&&it.answer.every(i=>i>=0&&i<(it.options||[]).length))) bad.push({id:it.id,msg:"answer（順番）が範囲外"});
+    if(it.type==="span"&&!(Array.isArray(it.seq)&&it.seq.every(i=>i>=0&&i<(it.options||[]).length))) bad.push({id:it.id,msg:"seq が範囲外"});
+    if(it.type==="order"&&!(Array.isArray(it.pieces)&&it.pieces.length>=2)) bad.push({id:it.id,msg:"pieces が2つ未満"});
+    if(!(it.level>=1&&it.level<=5)) bad.push({id:it.id,msg:"level が1〜5でない"});
+    if(it.options){ const ps=it.options.map(o=>o&&o.pic).filter(Boolean); for(let i=0;i<ps.length;i++) for(let j=i+1;j<ps.length;j++) if(conflict(ps[i],ps[j])) conf.push(`${it.id}（${ps[i]}・${ps[j]}）`); } });
+  const wNoPic=Object.keys(WORDS).filter(id=>!PICS[id]); const wRef=[]; Object.entries(WORDS).forEach(([id,w])=>{ (w.near||[]).concat(w.sound||[]).forEach(x=>{ if(!WORDS[x]) wRef.push(id+"→"+x); }); });
+  return topBar("データの点検")+`<div class="wrap"><div class="card"><h2>読み込んだデータ</h2>
+   <p>絵：<b>${Object.keys(PICS).length}</b>枚　語：<b>${Object.keys(WORDS).length}</b>語　問題：<b>${BANK.length}</b>問　課題（アプリが作るもの含む）：<b>${Object.keys(SKILLS).length}</b>種類</p>
+   <p class="small">読み込めたファイル：${LOADED.map(f=>`<span class="tag">${esc(f)}</span>`).join("")||"なし"}</p>
+   <p class="small">見つからなかったファイル（飛ばしました）：${MISSING.map(f=>`<span class="tag">${esc(f)}</span>`).join("")||"なし"}</p></div>
+   <div class="card"><h2>問題の件数</h2><div class="slta-grid">${tbl(cnt(BANK,x=>TYPE_JP[x.type]?x.type+"（"+TYPE_JP[x.type]+"）":String(x.type)),"type 別")}${tbl(cnt(BANK,x=>x.domain),"domain 別")}${tbl(cnt(BANK,x=>"level"+x.level),"level 別")}</div></div>
+   <div class="card"><h2>存在しない絵IDを使っている問題（${miss.length}件）</h2>${miss.length?`<table><tr><th>問題ID</th><th>場所</th><th>絵ID</th></tr>${miss.map(m=>`<tr><td>${esc(m.id)}</td><td>${m.f}</td><td class="err">${esc(m.pic)}</td></tr>`).join("")}</table>`:`<p class="muted">ありません</p>`}</div>
+   <div class="card"><h2>そのほかの不備</h2>
+   ${bad.length?`<table>${bad.map(b=>`<tr><td>${esc(b.id)}</td><td class="err">${esc(b.msg)}</td></tr>`).join("")}</table>`:`<p class="muted small">問題の形の不備：ありません</p>`}
+   <p class="small">選択肢に「一緒に出さない組」（同じ読み・正解が2つになり得る・似た絵）が入っている問題：${conf.length}件。単語の課題なら直す必要があります。文の課題で区別させるのがねらいなら問題ありません。${conf.length?`<br><span class="muted">${conf.slice(0,60).map(esc).join("、")}${conf.length>60?" ほか":""}</span>`:""}</p>
+   <p class="small">重複した問題ID：${dup.length?`<span class="err">${dup.map(esc).join("、")}</span>`:"ありません"}</p>
+   <p class="small">絵のない語（呼称など絵を使う課題には出ません）：${wNoPic.length?wNoPic.map(esc).join("、"):"ありません"}</p>
+   <p class="small">near / sound が存在しない語を指している：${wRef.length?`<span class="err">${wRef.map(esc).join("、")}</span>`:"ありません"}</p></div>
+   <div class="card"><h2>課題の一覧</h2><table><tr><th>課題</th><th>領域</th><th>形</th><th>SLTA</th><th>問題データ</th><th>アプリが作る</th></tr>${Object.values(SKILLS).map(s=>`<tr><td>${esc(s.name)}</td><td>${esc(s.dom)}</td><td>${TYPE_JP[s.type]||s.type}</td><td class="small">${s.slta.join("・")}</td><td>${s.bank.length}</td><td>${s.gen?"〇":""}</td></tr>`).join("")}</table></div></div>`+foot();
+}
+
+/* ---------- 設定 ---------- */
+function vSettings(){ const s=DB.settings;
+  return topBar("設定")+`<div class="wrap"><div class="card"><h2>文字</h2>
+   <div class="row">文字の大きさ ${[[20,"標準"],[24,"大"],[28,"特大"]].map(([v,l])=>`<button class="s ${s.fs===v?"on":""}" data-fs="${v}">${l}</button>`).join("")}</div>
+   <div class="row" style="margin-top:8px">書体 <button class="s ${s.font!=="mincho"?"on":""}" data-ft="gothic">ゴシック体</button><button class="s ${s.font==="mincho"?"on":""}" data-ft="mincho">明朝体</button></div></div>
+   <div class="card"><h2>読み上げ</h2><div class="row">速さ ${[[0.6,"とてもゆっくり"],[0.75,"ゆっくり"],[0.9,"ふつう"],[1.05,"やや速い"]].map(([v,l])=>`<button class="s ${Math.abs(s.rate-v)<.01?"on":""}" data-rt="${v}">${l}</button>`).join("")}</div>
+   <div class="row" style="margin-top:8px">問題が出たら自動で読み上げる <button class="s ${s.auto!==false?"on":""}" data-au="1">する</button><button class="s ${s.auto===false?"on":""}" data-au="0">しない</button></div>
+   <div class="row" style="margin-top:8px"><button id="tts">読み上げを試す</button><span class="muted small">${"speechSynthesis" in window?"":"この端末では読み上げが使えません"}</span></div></div>
+   <div class="card"><h2>メニュー</h2><div class="row">1回のブロック数 ${[3,4,5].map(v=>`<button class="s ${s.blocks===v?"on":""}" data-bk="${v}">${v}</button>`).join("")}</div></div></div>`+foot(); }
+vSettings.after=()=>{ const s=DB.settings; const up=()=>{ save(); applySettings(); render(); };
+  $$("[data-fs]").forEach(b=>b.onclick=()=>{ s.fs=+b.dataset.fs; up(); }); $$("[data-ft]").forEach(b=>b.onclick=()=>{ s.font=b.dataset.ft; up(); });
+  $$("[data-rt]").forEach(b=>b.onclick=()=>{ s.rate=+b.dataset.rt; up(); }); $$("[data-au]").forEach(b=>b.onclick=()=>{ s.auto=b.dataset.au==="1"; up(); });
+  $$("[data-bk]").forEach(b=>b.onclick=()=>{ s.blocks=+b.dataset.bk; up(); }); $("#tts").onclick=()=>speak("今日は良い天気です。りんごを一つ買いました。"); };
+
+/* ---------- データの移し替え ---------- */
+function vTransfer(){ return topBar("データの移し替え")+`<div class="wrap"><div class="card"><h2>この端末の記録をコピーする</h2>
+  <p class="muted small">すべての対象者の記録を文字にします。「コピー」を押して、別の端末の同じ画面に貼り付けてください。外部には送りません。</p>
+  <textarea id="exTxt" readonly>${esc(JSON.stringify(DB))}</textarea><div class="row"><button id="exCopy">コピー</button></div></div>
+  <div class="card"><h2>貼り付けて読み込む</h2><textarea id="inTxt" placeholder="コピーした文字を貼り付けてください"></textarea>
+  <div class="row"><button id="inAdd">対象者を追加する形で読み込む</button><button class="s" id="inRep">今の記録と置き換える</button></div>
+  <p class="muted small">「追加する形」は、同じIDの対象者だけ上書きします。「置き換える」は、この端末の記録をすべて入れ替えます（2回押しで実行）。</p></div></div>`+foot(); }
+vTransfer.after=()=>{
+  $("#exCopy").onclick=()=>{ const t=$("#exTxt"); t.select(); t.setSelectionRange(0,t.value.length); let ok=false; try{ ok=document.execCommand("copy"); }catch(e){}
+    if(navigator.clipboard&&navigator.clipboard.writeText) navigator.clipboard.writeText(t.value).then(()=>toast("コピーしました"),()=>toast(ok?"コピーしました":"選択しました。長押ししてコピーしてください")); else toast(ok?"コピーしました":"選択しました。長押ししてコピーしてください"); };
+  const read=()=>{ try{ const o=JSON.parse($("#inTxt").value); if(!o||!o.patients) throw 0; return fixDB(o); }catch(e){ toast("読み込めませんでした"); return null; } };
+  $("#inAdd").onclick=()=>{ const o=read(); if(!o) return; Object.assign(DB.patients,o.patients); if(!DB.current) DB.current=Object.keys(DB.patients)[0]||""; save(); toast(`${Object.keys(o.patients).length}人分を読み込みました`); render(); };
+  $("#inRep").onclick=()=>{ const o=read(); if(!o) return; if(!confirm2("rep","もう一度押すと、この端末の記録をすべて置き換えます")) return; DB=o; save(); applySettings(); toast("置き換えました"); render(); };
+};
+
+/* ============================================================
+   確認用の入り口（?demo=画面名 / ?selftest=1 / ?check=save|load）
+   ============================================================ */
+const DEMO_PCT=[70,50,40,30,35,60,30,20,20,13,40,50,40,20,80,60,40,10,20,0,0,30,0,0,0,45];
+function demoPatient(){
+  const p=newPatient("D-001","見本の方"); p.evals.push({date:"2026-05-10",pct:DEMO_PCT.map(v=>Math.max(0,v-10)),src:"見本"}); p.evals.push({date:"2026-10-01",pct:DEMO_PCT.slice(),src:"見本"});
+  const mkB=(skill,level,rate,n,days)=>{ const res=[]; for(let i=0;i<n;i++){ const ok=i<Math.round(n*rate/100); res.push({id:"demo-"+skill+"-"+i,words:[],type:(SKILLS[skill]||{}).type,ok,grade:ok?6:(i%2?3:1),hints:ok?0:1,rt:2500+i*300,memo:"",skipped:false}); } return {skill,level,type:(SKILLS[skill]||{}).type,reason:"",items:[],res}; };
+  const d=k=>{ const t=new Date(NOW()-k*7*86400000); return t.toISOString().slice(0,10); };
+  [[4,[["呼称",2,70,8],["単語の聴理解",4,30,8],["計算",3,60,6]]],[3,[["呼称",2,85,8],["単語の聴理解",4,35,8],["仮名の並べ替え",2,50,6]]],[2,[["呼称",2,90,8],["単語の聴理解",4,30,8],["計算",3,80,6]]],[1,[["呼称",2,95,8],["仮名単語の書字",1,40,5],["計算",3,85,6]]]]
+    .forEach(([k,bl])=>p.sessions.push({id:"demo"+k,date:d(k),mode:"teacher",done:true,blocks:bl.filter(b=>SKILLS[b[0]]).map(b=>mkB(...b))}));
+  return p;
+}
+const DEMO_PROFILE=JSON.stringify({version:2,current:"p1",patients:{p1:{fmt:5,name:"例：ブローカ失語",dates:["2026-04-01","2026-07-01","","",""],
+  scores:[["6655432xxx","6654321xxx","5432xxxxxx","4321xxxxxx","65432211xxxxxxxxxxxx","6655432xxx","5432xxxxxx","3","543xx","4","654xx","6543211xxx","543xx","43xxx","6666554321","6655432xxx","5543xxxxxx","4321xxxxxx","543xx","43xxx","2","5432xxxxxx","43xxx","4xxxx","3xxxx","9"],
+   ["6666554xxx","6655432xxx","6543xxxxxx","5432xxxxxx","6655432211xxxxxxxxxx","6665543xxx","6543xxxxxx","4","654xx","6","665xx","6654321xxx","654xx","54xxx","6666665432","6665543xxx","6654xxxxxx","5432xxxxxx","654xx","54xxx","3","6543xxxxxx","54xxx","54xxx","4xxxx","12"],[],[],[]]}}});
+function runDemo(name){
+  KEY="slta-train-demo"; DB=blankDB(); const p=demoPatient(); DB.patients[p.id]=p; DB.current=p.id; applySettings();
+  const typeSkill={choice:"単語の聴理解",yesno:"仲間の判断（はい・いいえ）",say:"呼称",write:"漢字単語の書字",tapseq:"口頭命令",order:"仮名の並べ替え",input:"計算",span:"語の系列の記憶",choicetext:"語頭音",shiritori:"しりとり",odd:"仲間はずれ",near:"意味の近い語の選択",kanjiread:"漢字単語の音読",orderbank:"文の組み立て",yesnobank:"短文の聴理解",spanlook:"絵の系列の記憶",wc:"書字命令",pics:"情景・手順の説明",prac:"実用文の読解",pos:"左右の位置の理解",numspan:"数字の系列の記憶",money:"お金を数える",clock:"時計を読む",hold:"指示の保持（買い物）",ordbank4:"並べかえ"};
+  const qs=new URLSearchParams(location.search);
+  if(typeSkill[name]){ const sk=typeSkill[name]; if(!SKILLS[sk]){ document.body.innerHTML="<p>この課題のデータがありません："+esc(sk)+"</p>"; return; }
+    const lv=+(qs.get("level")||(name==="span"?3:3));
+    let menu=[{skill:sk,level:lv,n:3,reason:"確認用"}]; startSession(p,menu,qs.get("solo")?"solo":"teacher"); PR.ii=0;
+    if(name==="spanlook"){ const b=curBlock(); const it=SKILLS[sk].bank.find(x=>x.show==="look"); if(it) b.items[0]=bankItem(it); }
+    if(name==="orderbank"||name==="yesnobank"){ const b=curBlock(); b.items[0]=bankItem(SKILLS[sk].bank[0]); }
+    SCREEN="practice"; showItem(); const S=PR.st, it=curItem();
+    const step=qs.get("step")||"";
+    if(step.includes("hint")) { useHint(); if(step.includes("hint2")) useHint(); }
+    if(step.includes("ans")){ if(it.type==="choice") onOpt(it.answer); if(it.type==="yesno") onYN(!it.answer);
+      if(it.type==="tapseq") it.answer.forEach(i=>onOpt(i)); if(it.type==="order"){ S.sel=[S.perm.indexOf(0)]; render(); }
+      if(it.type==="input"){ S.input=it.answer; checkInput(); } if(it.type==="say"){ S.grade=5; S.answered=true; render(); } }
+    if(name==="span"||name==="spanlook"){ if(step.includes("answer")){ S.phase="answer"; S.sel=[it.seq[0]]; render(); } }
+    if(it.type==="write"&&step.includes("draw")){ S.strokes=[[[.3,.3],[.5,.35],[.7,.3]],[[.5,.2],[.5,.8]],[[.5,.5],[.3,.8]],[[.5,.5],[.75,.8]]]; setupCanvas(); }
+    return; }
+  if(name==="result"){ startSession(p,buildMenu(p,false,4),"teacher"); PR.sess.blocks.forEach(b=>{ b.items.forEach((it,i)=>{ const ok=Math.random()<.7; b.res[i]={id:it.id,words:it.words,type:it.type,ok,grade:ok?6:(Math.random()<.5?3:1),hints:ok?0:1,rt:1500+rnd(5000),memo:"",skipped:false}; markUsed(p,it); }); }); finishSession(); return; }
+  if(name==="import"){ SCREEN="slta"; IMPORT={text:DEMO_PROFILE,list:parseProfile(DEMO_PROFILE)}; render(); return; }
+  if(name==="sltaedit"){ EDIT_EVAL=1; SCREEN="slta"; render(); return; }
+  if(name==="menusolo"){ MENU_SOLO=true; SCREEN="menu"; render(); return; }
+  if(name==="blockstart"){ startSession(p,buildMenu(p,false,4),"teacher"); return; }
+  if(name==="bandclosed"){ runDemo("say"); DB.settings.band=false; render(); return; }
+  SCREEN=name; if(name==="slta") EDIT_EVAL=-1; render();
+}
+
+/* セルフテスト：保存と読み込み、最近出した語の回避、メニュー、問題の生成、取り込み */
+function selftest(){
+  const R=[]; const ok=(name,cond,info)=>R.push({name,pass:!!cond,info:info||""});
+  // 1. 保存と読み込み（本来のキーを使い、終わったら元に戻す）
+  const realKey="slta-train-v1"; let backup=null; try{ backup=localStorage.getItem(realKey); }catch(e){}
+  KEY=realKey; DB=blankDB(); const tp=newPatient("T-001","テスト"); tp.evals.push({date:"2026-11-01",pct:DEMO_PCT.slice(),src:"テスト"}); DB.patients[tp.id]=tp; DB.current=tp.id;
+  tp.lv["呼称"]=3; tp.sessions.push({id:"x",date:"2026-11-02",mode:"teacher",done:true,blocks:[{skill:"呼称",level:3,type:"say",items:[],res:[{id:"gen-name-f01",grade:6,ok:true,hints:1,rt:2000}]}]});
+  const before=JSON.stringify(DB); save(); DB=null; load(); const after=JSON.stringify(DB);
+  ok("保存してから読み直すと同じ内容になる（キー slta-train-v1）",before===after,`${before.length}文字`);
+  ok("読み直した対象者の記録（評価・level・訓練記録）",DB.patients["T-001"]&&DB.patients["T-001"].evals.length===1&&DB.patients["T-001"].lv["呼称"]===3&&DB.patients["T-001"].sessions.length===1);
+  try{ if(backup===null) localStorage.removeItem(realKey); else localStorage.setItem(realKey,backup); }catch(e){}
+  // 2. 最近出した語を避ける
+  KEY="slta-train-selftest"; DB=blankDB(); const p=newPatient("T-002"); DB.patients[p.id]=p; DB.current=p.id;
+  let t=Date.parse("2026-11-01T10:00:00"); NOW=()=>t;
+  const pool=poolAt(GEN.name.pool(),3,4); const half=Math.floor(pool.length/2);
+  const A=makeItems(p,{skill:"呼称",level:3,n:half}); A.forEach(it=>markUsed(p,it)); t+=7*86400000;
+  const B=makeItems(p,{skill:"呼称",level:3,n:half}); B.forEach(it=>markUsed(p,it)); t+=7*86400000;
+  const tg=x=>x.stim.pic; const sA=new Set(A.map(tg)), sB=B.map(tg);
+  ok(`呼称：1週目と2週目で同じ語が出ない（語${pool.length}個から${half}問ずつ）`,sB.every(x=>!sA.has(x)),`1週目 ${[...sA].join(",")} ／ 2週目 ${sB.join(",")}`);
+  const C=makeItems(p,{skill:"呼称",level:3,n:half}); const sC=C.map(tg); const setB=new Set(sB);
+  ok("使い切ったら古い順に再利用（3週目は2週目の語を出さず、1週目の語か未使用の問題から）",sC.every(x=>!setB.has(x))&&new Set(sC).size===sC.length,`3週目 ${sC.join(",")}`);
+  t+=29*86400000; const ctxT={p,sess:new Set()}; const D=nounsPic().slice(0,8).map(t0=>GEN.listen.make(ctxT,t0,2)); ok("聴理解（アプリが作る問題）：選択肢の数が level2 で3つ",D.length&&D.every(it=>it.options.length===Math.min(3,nounsPic().length)),D.map(it=>it.id+":"+it.options.map(o=>o.pic).join("/")).join(" "));
+  // 問題データの問題ID
+  const bs=Object.values(SKILLS).find(s=>!s.gen&&s.bank.filter(x=>x.level===s.bank[0].level).length>=2);
+  if(bs){ const L=bs.bank[0].level; const n=bs.bank.filter(x=>x.level===L).length; const X=makeItems(p,{skill:bs.name,level:L,n:1}); X.forEach(it=>markUsed(p,it)); t+=86400000; const Y=makeItems(p,{skill:bs.name,level:L,n:1});
+    ok(`問題データ（${bs.name}）：前回出した問題IDを後回しにする`,X[0]&&Y[0]&&X[0].id!==Y[0].id,`${X[0]&&X[0].id} → ${Y[0]&&Y[0].id}`); }
+  // 3. メニュー
+  p.evals.push({date:"2026-11-01",pct:DEMO_PCT.slice(),src:"テスト"});
+  let menuOk=true, menuInfo=""; for(let k=0;k<20;k++){ const m=buildMenu(p,false,4); const ty=m.map(b=>SKILLS[b.skill].type);
+    if(m.length<3||m.length>5) menuOk=false; for(let i=1;i<ty.length;i++) if(ty[i]===ty[i-1]&&new Set(Object.values(SKILLS).map(s=>s.type)).size>2) menuOk=false; if(!m.some(b=>b.strong)) menuOk=false; if(k===0) menuInfo=m.map(b=>`${b.skill}(${SKILLS[b.skill].type})L${b.level}×${b.n}`).join(" / "); }
+  ok("メニュー：3〜5ブロック、同じ形が続かない、得意な課題が1つ入る（20回試行）",menuOk,menuInfo);
+  const ms=buildMenu(p,true,4); ok("ひとりで練習：自動で正誤が分かる課題だけ",ms.length&&ms.every(b=>AUTO.has(SKILLS[b.skill].type)),ms.map(b=>b.skill).join(" / "));
+  // 4. 生成した問題の形
+  const errs=[]; let made=0; for(const g of Object.values(GEN)){ if(!SKILLS[g.name]) continue; for(let L=1;L<=5;L++){ const its=makeItems(p,{skill:g.name,level:L,n:3}); its.filter(it=>it.gen).forEach(it=>{ made++;
+    if(!it.id||!it.prompt) errs.push(it.id+" id/prompt"); if(it.type==="choice"&&!(it.answer>=0&&it.answer<it.options.length)) errs.push(it.id+" answer");
+    if(it.options&&new Set(it.options.map(o=>o.pic||o.text)).size!==it.options.length) errs.push(it.id+" 選択肢が重複");
+    if(it.options&&it.options.some(o=>o.pic&&!PICS[o.pic])) errs.push(it.id+" 絵なし");
+    if(it.options){ const ps=it.options.map(o=>o.pic).filter(Boolean); for(let i=0;i<ps.length;i++) for(let j=i+1;j<ps.length;j++) if(conflict(ps[i],ps[j])) errs.push(it.id+` 一緒に出さない組 ${ps[i]}・${ps[j]}`); }
+    if((it.type==="say"||it.type==="write")&&!it.target) errs.push(it.id+" target");
+    if(/[0-9]/.test(it.speak||"")&&it.type!=="input") errs.push(it.id+" 読み上げに数字"); }); } }
+  ok(`アプリが作る問題の形（${made}問）`,!errs.length,errs.slice(0,8).join(" ／ "));
+  // 4b. 一緒に出さない組（同じ読み・正解が2つ・似た絵）が選択肢に並ばない：全部の語×全 level で直接作って調べる
+  { const bad=[]; let cnt=0; const cx={p:newPatient("T-003"),sess:new Set()};
+    for(const g of Object.values(GEN)){ if(!SKILLS[g.name]||g.kana||g.calc) continue; for(const t0 of g.pool()) for(let L=1;L<=5;L++){ let it=null; try{ it=g.make(cx,t0,L); }catch(e){ bad.push(g.k+" "+t0+" エラー "+e.message); }
+      if(!it) continue; cnt++; const ps=(it.options||[]).map(o=>o.pic).filter(Boolean); const tx=(it.options||[]).map(o=>o.text).filter(Boolean);
+      for(let i=0;i<ps.length;i++) for(let j=i+1;j<ps.length;j++) if(conflict(ps[i],ps[j])) bad.push(`${it.id} ${ps[i]}・${ps[j]}`);
+      if(new Set(tx).size!==tx.length) bad.push(it.id+" 文字の選択肢が重複");
+      if(it.type==="choice"&&!(it.answer>=0&&it.answer<it.options.length)) bad.push(it.id+" answer"); } }
+    ok(`一緒に出さない組が選択肢に並ばない（${cnt}問を作って確認）`,!bad.length,bad.slice(0,10).join(" ／ ")); }
+  // 5. プロフィールツールの取り込み
+  const pr=parseProfile(DEMO_PROFILE); const it0=pr.items[0];
+  ok("取り込み：段階の列「6655432xxx」→40%、まんが段階3→40%、計算9→45%",pr.items.length===2&&it0.pct[0]===40&&it0.pct[7]===40&&it0.pct[25]===45,JSON.stringify(it0&&it0.pct));
+  const pr2=parseProfile(JSON.stringify({version:2,patients:{a:{fmt:5,name:"数値",dates:["2026-01-01"],scores:[[35,null,80].concat(Array(23).fill(null))]}}}));
+  ok("取り込み：正答率（数値）・未入力 null",pr2.items.length===1&&pr2.items[0].pct[0]===35&&pr2.items[0].pct[1]===null&&pr2.items[0].pct[2]===80);
+  ok("SLTA入力：「6655432166」→60%、「#8」→80%、「35」→35%",Math.round(parseScore("6655432166",0).v)===60&&Math.round(parseScore("#8",0).v)===80&&parseScore("35",0).v===35);
+  ok("JavaScript のエラーがない",!ERRS.length,ERRS.join(" / "));
+  NOW=()=>Date.now();
+  const pass=R.every(r=>r.pass);
+  console.log("SELFTEST "+(pass?"PASS":"FAIL")+" "+JSON.stringify(R));
+  document.getElementById("app").innerHTML=`<div class="top"><h1>言語訓練</h1><span class="who">セルフテスト</span></div><div class="wrap"><div class="card"><h2 id="stRes">${pass?"すべて合格":"不合格があります"}</h2><table>${R.map(r=>`<tr><td>${r.pass?"合格":"<b class='err'>不合格</b>"}</td><td>${esc(r.name)}<div class="muted small">${esc(r.info)}</div></td></tr>`).join("")}</table></div></div>`+foot();
+}
+function checkPersist(mode){ // 2回に分けて開き、保存→再読み込みを確かめる
+  KEY="slta-train-v1"; load(); let msg;
+  if(mode==="save"){ const p=DB.patients["CHK-1"]||newPatient("CHK-1","保存確認"); DB.patients[p.id]=p; DB.current=p.id; p.evals=[{date:"2026-11-20",pct:DEMO_PCT.slice(),src:"確認"}];
+    const menu=buildMenu(p,true,3); startSession(p,menu,"solo"); PR.ii=0; showItem(); const it=curItem(); if(it.type==="choice") onOpt(it.answer); nextItem(false); finishSession();
+    msg=`保存しました：対象者 CHK-1、訓練記録 ${p.sessions.length}回、出した問題ID ${Object.keys(p.usedQ).length}件、語 ${Object.keys(p.usedW).length}件`; }
+  else { const p=DB.patients["CHK-1"]; msg=p?`読み込めました：対象者 CHK-1、評価 ${p.evals.length}回、訓練記録 ${p.sessions.length}回、出した問題ID ${Object.keys(p.usedQ).join(",")}`:"見つかりません（保存されていません）"; }
+  console.log("PERSIST "+mode+" "+msg);
+  document.getElementById("app").innerHTML=`<div class="wrap"><div class="card"><h2 id="pmsg">${esc(msg)}</h2></div></div>`;
+}
+
+/* ---------- はじまり ---------- */
+function boot(){
+  PICS=window.PICS||{}; WORDS=window.WORDS||{}; BANK=Array.isArray(window.BANK)?window.BANK.filter(x=>x&&typeof x==="object"):[];
+  for(const id of Object.keys(WORDS)) if(!WORDS[id]||typeof WORDS[id]!=="object") delete WORDS[id];
+  buildSkills(); pickVoice(); try{ speechSynthesis.onvoiceschanged=pickVoice; }catch(e){}
+  const qs=new URLSearchParams(location.search);
+  if(qs.get("selftest")){ DB=blankDB(); selftest(); return; }
+  if(qs.get("check")){ checkPersist(qs.get("check")); return; }
+  if(qs.get("demo")){ runDemo(qs.get("demo")); return; }
+  load(); applySettings();
+  const h=(location.hash||"").slice(1); SCREEN=h&&h!=="practice"&&h!=="result"?h:"home"; history.replaceState(null,"","#"+SCREEN); render();
+}
+loadData(0);
+</script>
+</body>
+</html>
