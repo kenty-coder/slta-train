@@ -236,6 +236,14 @@ function speakName(o){ if(o.text) return o.text; const w=W(o.pic); return w?yomi
 let KEY="slta-train-v1";
 let DB=null;
 function blankDB(){ return {ver:1,app:"言語訓練",author:"KENTA SHINKAWA",current:"",settings:{fs:22,font:"gothic",rate:0.9,auto:true,blocks:4,band:true},patients:{}}; }
+/* 対象者IDを自動で作る：P＋年月日6桁＋「-」＋読み間違えにくい英数字3文字（端末をまたいでも重なりにくい） */
+function genPatientId(){
+  const C="ABCDEFGHJKMNPQRSTUVWXYZ23456789", d=new Date(), p2=n=>String(n).padStart(2,"0");
+  const head="P"+p2(d.getFullYear()%100)+p2(d.getMonth()+1)+p2(d.getDate())+"-";
+  for(let k=0;k<200;k++){ let s=""; const r=new Uint32Array(3); (window.crypto&&crypto.getRandomValues)?crypto.getRandomValues(r):r.forEach((_,i)=>r[i]=Math.floor(Math.random()*1e9));
+    for(let i=0;i<3;i++) s+=C[r[i]%C.length]; const id=head+s; if(!DB.patients[id]) return id; }
+  return head+Date.now().toString(36).toUpperCase();
+}
 function newPatient(id,nick){ return {id:String(id),nick:nick||"",created:today(),evals:[],lv:{},sessions:[],usedQ:{},usedW:{}}; }
 function fixDB(o){
   const b=blankDB(); if(!o||typeof o!=="object") return b;
@@ -544,8 +552,8 @@ function vHome(){
   <div class="card"><h2>対象者</h2>
    ${ps.length?`<div class="row"><select id="pSel">${ps.map(x=>`<option value="${esc(x.id)}" ${x.id===DB.current?"selected":""}>${esc(pLabel(x))}</option>`).join("")}</select>
    <button class="s" id="pDel">この対象者を削除</button></div>`:`<p class="muted">まだ対象者がいません。下で追加してください。</p>`}
-   <div class="row" style="margin-top:10px"><input type="text" id="pId" placeholder="ID（例 A-001）" style="width:12em"><input type="text" id="pNick" placeholder="呼び名（任意）" style="width:12em"><button id="pAdd">追加</button></div>
-   <p class="muted small">実名を入れなくても使えます。IDだけで区別できます。</p></div>
+   <div class="row" style="margin-top:10px"><input type="text" id="pNick" placeholder="呼び名（任意。例 O.T）" style="width:14em"><button id="pAdd">対象者を追加</button></div>
+   <p class="muted small">IDは追加したときに自動で付きます（例 P261122-K7M）。実名は入れなくても使えます。</p></div>
   ${p?`<div class="card"><h2>${esc(pLabel(p))}</h2>
    <p class="small">SLTAの成績：${ev?`${fmtD(ev.date)}（${p.evals.length}回分）`:"まだ入っていません"}　／　前回の訓練：${ls?fmtD(ls.date):"まだありません"}</p>
    <div class="grid-btn">
@@ -564,7 +572,7 @@ function vHome(){
 }
 vHome.after=()=>{
   const s=$("#pSel"); if(s) s.onchange=()=>{ DB.current=s.value; save(); render(); };
-  $("#pAdd").onclick=()=>{ const id=$("#pId").value.trim(); if(!id){ toast("IDを入れてください"); return; } if(DB.patients[id]){ toast("同じIDがすでにあります"); return; } DB.patients[id]=newPatient(id,$("#pNick").value.trim()); DB.current=id; save(); render(); toast("追加しました"); };
+  $("#pAdd").onclick=()=>{ const id=genPatientId(); DB.patients[id]=newPatient(id,$("#pNick").value.trim()); DB.current=id; save(); render(); toast("追加しました（ID："+id+"）"); };
   const d=$("#pDel"); if(d) d.onclick=()=>{ if(!confirm2("pdel","もう一度押すと、この対象者の記録をすべて削除します")) return; delete DB.patients[DB.current]; DB.current=Object.keys(DB.patients)[0]||""; save(); render(); };
   const m=$("#goMenu"); if(m) m.onclick=()=>{ MENU=null; MENU_SOLO=false; go("menu"); };
   const so=$("#goSolo"); if(so) so.onclick=()=>{ MENU=null; MENU_SOLO=true; go("menu"); };
