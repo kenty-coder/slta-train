@@ -635,7 +635,7 @@ function vHome(){
   <div class="card"><h2>対象者</h2>
    ${ps.length?`<div class="row"><select id="pSel">${ps.map(x=>`<option value="${esc(x.id)}" ${x.id===DB.current?"selected":""}>${esc(pLabel(x))}</option>`).join("")}</select>
    <button class="s" id="pDel">この対象者を削除</button></div>`:`<p class="muted">まだ対象者がいません。下で追加してください。</p>`}
-   <div class="row" style="margin-top:10px"><input type="text" id="pNick" placeholder="呼び名（任意。例 O.T）" style="width:14em"><button id="pAdd">対象者を追加</button></div>
+   <div class="row" style="margin-top:10px"><input type="text" id="pNick" placeholder="呼び名（任意。例 A.B）" style="width:14em"><button id="pAdd">対象者を追加</button></div>
    <p class="muted small">IDは追加したときに自動で付きます（例 P261122-K7M）。実名は入れなくても使えます。</p></div>
   ${p?`<div class="card"><h2>${esc(pLabel(p))}</h2>
    <p class="small">SLTAの成績：${ev?`${fmtD(ev.date)}（${p.evals.length}回分）`:"まだ入っていません"}　／　前回の訓練：${ls?fmtD(ls.date):"まだありません"}</p>
