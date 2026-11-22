@@ -336,7 +336,7 @@ function fixDB(o){
     q.evals=Array.isArray(p.evals)?p.evals.filter(e=>e&&Array.isArray(e.pct)).map(e=>({date:e.date||"",pct:SLTA.map((_,i)=>numOrNull(e.pct[i])),src:e.src||""})):[];
     q.lv=(p.lv&&typeof p.lv==="object")?p.lv:{};
     q.sessions=Array.isArray(p.sessions)?p.sessions:[];
-    q.usedQ=p.usedQ||{}; q.usedW=p.usedW||{};
+    q.usedQ=p.usedQ||{}; q.usedW=p.usedW||{}; if(typeof p.prof==="string"&&p.prof) q.prof=p.prof;
     q.kyozai=(p.kyozai&&typeof p.kyozai==="object"&&!Array.isArray(p.kyozai))?p.kyozai:{}; q.prints=Array.isArray(p.prints)?p.prints:[];
     b.patients[q.id]=q;
   }
@@ -656,6 +656,7 @@ function vHome(){
     <button data-go="records">記録と推移<small>正答率の一覧・グラフ・level の提案</small></button>
     <button data-go="kyozai">印刷用の教材<small>以前の教材のおすすめ・新しいプリントを作る</small></button>
    </div></div>`:`<div class="card"><div class="grid-btn"><button data-go="kyozai">印刷用の教材<small>以前に作った教材の一覧</small></button></div></div>`}
+  ${profCardHTML()}
   <div class="card"><h2>そのほか</h2><div class="grid-btn">
     <button data-go="settings">設定<small>文字の大きさ・書体・読み上げの速さ</small></button>
     <button data-go="transfer">データの移し替え<small>コピーと貼り付けで別の端末へ</small></button>
@@ -664,6 +665,7 @@ function vHome(){
   </div>`+foot();
 }
 vHome.after=()=>{
+  profCardAfter();
   const s=$("#pSel"); if(s) s.onchange=()=>{ DB.current=s.value; save(); render(); };
   $("#pAdd").onclick=()=>{ const id=genPatientId(); DB.patients[id]=newPatient(id,$("#pNick").value.trim()); DB.current=id; save(); render(); toast("追加しました（ID："+id+"）"); };
   const d=$("#pDel"); if(d) d.onclick=()=>{ if(!confirm2("pdel","もう一度押すと、この対象者の記録をすべて削除します")) return; delete DB.patients[DB.current]; DB.current=Object.keys(DB.patients)[0]||""; save(); render(); };
@@ -728,7 +730,7 @@ function profPct(o,e){ // プロフィールツール（fmt 3〜5）の1回分 �
     if(i===25&&Array.isArray(o.calc)&&Array.isArray(o.calc[e])&&o.calc[e].some(x=>x!==""&&x!=null)){ const sum=o.calc[e].reduce((a,x)=>a+(Number(z2h(x))||0),0); return Math.round(Math.min(100,sum/20*100)*10)/10; }
     if(v===null||v===undefined||v==="") return null;
     if(typeof v==="number") return Math.round(clamp(v,0,100)*10)/10; // すでに正答率
-    v=z2h(String(v)).trim();
+    v=z2h(String(v)).replace(/\s+/g,"");
     if(s[4]==="stage"){ if(/^x$/i.test(v)) return 0; const g=Number(v); return g>=1&&g<=6?Math.round((g-1)/5*1000)/10:null; }
     if(s[4]==="count"){ const c=Number(v); if(!isFinite(c)) return null; const mx=i===9?15:n; return Math.round(Math.min(100,c/mx*100)*10)/10; }
     if(v[0]==="#"){ const c=Number(v.slice(1)); return isFinite(c)?Math.round(Math.min(100,c/n*100)*10)/10:null; }
@@ -742,6 +744,43 @@ function parseProfile(text){
   const items=[]; for(const [name,v] of pats){ if(!v||!Array.isArray(v.scores)) continue; v.scores.forEach((row,e)=>{ const pct=profPct(v,e); const filled=pct.filter(x=>x!=null).length; if(filled) items.push({name:String(name),e,date:(v.dates||[])[e]||"",pct,filled}); }); }
   return {items};
 }
+
+/* ---------- SLTAプロフィールツールとの自動のつながり ----------
+   2つのアプリは同じ場所（kenty-coder.github.io）で公開しているので、同じ端末のブラウザの中の保存場所を共有できる。
+   プロフィールツールの保存データ（キー slta-profile-v2）を読むだけで、書き換えない。外部には何も送らない。 */
+const PROF_KEY="slta-profile-v2", HANDOFF_KEY="slta-handoff-v1";
+const normDate=d=>{ const m=String(d||"").match(/(\d{4})\D+(\d{1,2})\D+(\d{1,2})/); return m?`${m[1]}-${m[2].padStart(2,"0")}-${m[3].padStart(2,"0")}`:String(d||""); };
+function readProfileDB(){ // {プロフィールの対象者ID: {name, evals:[{date,pct}]}}
+  let o=null; try{ const s=localStorage.getItem(PROF_KEY); o=s?JSON.parse(s):null; }catch(e){ o=null; }
+  const out={}; if(!o||!o.patients||typeof o.patients!=="object") return out;
+  for(const [k,v] of Object.entries(o.patients)){ if(!v||!Array.isArray(v.scores)) continue; const evals=[];
+    v.scores.forEach((row,e)=>{ const pct=profPct(v,e); if(pct.some(x=>x!=null)) evals.push({date:normDate((v.dates||[])[e])||today(),pct}); });
+    out[k]={name:String(v.name||"").trim(),evals}; }
+  return out; }
+/* つながっている対象者に、プロフィールツールの新しい評価・直した評価を取り込む。戻り値＝変わった回数 */
+function syncProfile(){ const prof=readProfileDB(); let n=0;
+  for(const p of Object.values(DB.patients)){ if(!p.prof||!prof[p.prof]) continue; const src="プロフィールツール";
+    for(const e of prof[p.prof].evals){ const same=p.evals.find(x=>x.date===e.date&&String(x.src||"").startsWith(src));
+      if(same){ if(JSON.stringify(same.pct)!==JSON.stringify(e.pct)){ same.pct=e.pct; n++; } }
+      else if(!p.evals.some(x=>x.date===e.date&&JSON.stringify(x.pct)===JSON.stringify(e.pct))){ p.evals.push({date:e.date,pct:e.pct,src:src}); n++; } } }
+  if(n) save(); return n; }
+function linkProfile(profId,toId){ const prof=readProfileDB()[profId]; if(!prof) return null;
+  let p=toId?DB.patients[toId]:Object.values(DB.patients).find(x=>x.prof===profId);
+  if(!p){ const id=genPatientId(); p=DB.patients[id]=newPatient(id,prof.name); }
+  p.prof=profId; if(!p.nick&&prof.name) p.nick=prof.name; DB.current=p.id; save(); syncProfile(); return p; }
+/* プロフィールツールの「この人の訓練へ」から来たとき */
+function takeHandoff(){ let h=null; try{ h=JSON.parse(localStorage.getItem(HANDOFF_KEY)||"null"); localStorage.removeItem(HANDOFF_KEY); }catch(e){ h=null; }
+  if(!h||!h.prof||!(Date.now()-(+h.t||0)<10*60*1000)) return false;
+  const p=linkProfile(h.prof); if(!p) return false; SCREEN="rec"; history.replaceState(null,"","#rec"); setTimeout(()=>toast("SLTAプロフィールの成績を読み込みました"),300); return true; }
+function profCardHTML(){ const prof=readProfileDB(); const ids=Object.keys(prof).filter(k=>prof[k].evals.length); if(!ids.length) return "";
+  const linked=new Set(Object.values(DB.patients).map(p=>p.prof).filter(Boolean)); const un=ids.filter(k=>!linked.has(k)); const p=P();
+  return `<div class="card"><h2>SLTAプロフィールとのつながり</h2>
+   <p class="muted small">この端末のSLTAプロフィール（グラフ作成ツール）に入れた成績は、つながっている対象者へ自動で読み込まれます（端末の中だけで行い、外部には送りません）。</p>
+   ${p&&p.prof?`<p class="small">${esc(pLabel(p))}：SLTAプロフィールの「${esc((prof[p.prof]||{}).name||"（名前未入力）")}」とつながっています。</p>`:""}
+   ${un.length?`<table><tr><th>SLTAプロフィールの対象者</th><th>評価</th><th></th></tr>${un.map(k=>`<tr><td>${esc(prof[k].name||"（名前未入力）")}</td><td>${prof[k].evals.length}回（最新 ${fmtD(prof[k].evals.map(e=>e.date).sort().pop())}）</td>
+     <td><button class="s" data-plink="${esc(k)}">訓練アプリに追加</button>${p&&!p.prof?` <button class="s" data-plinkto="${esc(k)}">今の対象者とつなぐ</button>`:""}</td></tr>`).join("")}</table>`:`<p class="muted small">SLTAプロフィールの対象者は、すべてつながっています。</p>`}</div>`; }
+function profCardAfter(){ $$("[data-plink]").forEach(b=>b.onclick=()=>{ const p=linkProfile(b.dataset.plink); if(p){ toast("追加して成績を読み込みました（ID："+p.id+"）"); render(); } });
+  $$("[data-plinkto]").forEach(b=>b.onclick=()=>{ const p=linkProfile(b.dataset.plinkto,DB.current); if(p){ toast("つなぎました。成績を読み込みました"); render(); } }); }
 
 /* ---------- おすすめ ---------- */
 function vRec(){
@@ -1535,7 +1574,9 @@ function boot(){
   if(qs.get("check")){ checkPersist(qs.get("check")); return; }
   if(qs.get("demo")){ runDemo(qs.get("demo")); return; }
   load(); applySettings();
-  const h=(location.hash||"").slice(1); SCREEN=h&&h!=="practice"&&h!=="result"?h:"home"; history.replaceState(null,"","#"+SCREEN); render();
+  const h=(location.hash||"").slice(1); SCREEN=h&&h!=="practice"&&h!=="result"?h:"home"; history.replaceState(null,"","#"+SCREEN);
+  const handed=takeHandoff(); const nSync=syncProfile(); render();
+  if(!handed&&nSync) setTimeout(()=>toast("SLTAプロフィールの新しい成績を読み込みました"),300);
 }
 loadData(0);
 </script>
