@@ -139,6 +139,64 @@ th{font-size:.8em;color:var(--sub);font-weight:normal}
 .solo-bar{display:flex;gap:12px;justify-content:flex-end;padding:8px 14px}
 .bstart{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;text-align:center}
 .bstart .big{font-size:1.5em;font-weight:bold}
+.stlab{font-size:.8em;font-weight:bold;color:var(--main)}
+/* 注意の訓練  作成：KENTA SHINKAWA */
+.at-host{flex:1;min-height:0;display:flex;padding:4px 14px 8px}
+.at-wrap{flex:1;min-height:0;min-width:0;display:flex;gap:12px}
+.at-wrap.port{flex-direction:column}
+.at-wrap.col{flex-direction:column;align-items:center;justify-content:center;gap:12px;text-align:center}
+.at-panel{flex:0 0 220px;display:flex;flex-direction:column;gap:10px;align-items:stretch;min-height:0;overflow:auto}
+.at-wrap.port .at-panel{flex:0 0 auto;flex-direction:row;flex-wrap:wrap;align-items:center;justify-content:center;overflow:visible}
+.at-samp{display:flex;align-items:center;justify-content:center;gap:10px;background:#fff;border:3px solid var(--main);border-radius:14px;padding:4px 12px}
+.at-samp b{font-size:.85em;color:var(--main)}
+.at-samp.col{flex-direction:column;gap:4px;padding:8px 18px}
+.at-wrap.land .at-samp.cue{flex-direction:column;gap:2px}
+.at-sw{width:84px;height:84px;display:flex;align-items:center;justify-content:center}
+.at-sw .tx{font-size:58px;line-height:1}
+.at-wd{font-size:1.1em;font-weight:bold}
+.at-pic{display:block;width:90%;height:90%}
+.at-sw .at-pic{width:100%;height:100%}
+.at-pic svg{width:100%;height:100%;display:block}
+.at-info{font-size:.85em;color:var(--sub);text-align:center;min-height:1.2em}
+.at-msg{font-size:.95em;text-align:center}
+.at-msg.ok{color:var(--ok)} .at-msg.ng{color:var(--ng)}
+.at-wrap.port .at-msg{flex-basis:100%}
+.at-field{position:relative;flex:1;min-height:0;min-width:0;background:#fff;border:2px solid var(--line);border-radius:16px;overflow:hidden}
+.at-it{position:absolute;display:flex;align-items:center;justify-content:center;padding:0;min-height:0;min-width:0;border:3px solid transparent;border-radius:14px;background:transparent;color:var(--ink)}
+.at-it .tx{line-height:1}
+.at-it.tap{border-color:var(--main);background:var(--main2)}
+.at-it.hit{border-color:var(--ok);background:#dcefe2}
+.at-it.miss{border-color:#c25a00;background:#ffd8a6;box-shadow:0 0 0 5px #ffb562}
+.at-it.fa{border-color:var(--ng);background:#f8dcd7}
+.at-it.nm{border:3px solid #6f6b61;border-radius:50%;background:#fff;font-weight:bold}
+.at-it.nm.dn{background:var(--main);border-color:var(--main);color:#fff}
+.at-it.bad{background:#f4c7bf;border-color:var(--ng)}
+.at-it.glow{box-shadow:0 0 0 8px #ffd34d}
+.at-lines{position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none}
+.at-mid{position:absolute;top:0;bottom:0;left:50%;border-left:2px dashed #b9b4a6;pointer-events:none}
+.at-side{position:absolute;bottom:6px;font-size:.8em;background:rgba(255,255,255,.92);border:2px solid var(--line);border-radius:8px;padding:0 10px;pointer-events:none}
+.at-side.l{left:8px} .at-side.r{right:8px} .at-side.many{border-color:#c25a00;color:#8a3d00;font-weight:bold}
+.at-glowside{position:absolute;top:0;bottom:0;width:50%;background:rgba(255,211,77,.38);pointer-events:none}
+.at-big{min-width:min(80vw,520px);min-height:160px;font-size:1.7em;border-width:4px;border-color:var(--main);border-radius:24px;background:#fff}
+.at-panel .at-big{min-width:0;min-height:130px;font-size:1.3em}
+.at-wrap.port .at-panel .at-big{min-width:220px;min-height:100px}
+.at-big.hit{background:#cfe9d8;border-color:var(--ok)} .at-big.fa{background:#f6d4ce;border-color:var(--ng)} .at-big.pr{background:var(--main2)}
+.at-start{min-width:240px}
+.at-pics{display:flex;gap:12px;justify-content:center}
+.at-pics .spic{width:140px;height:140px}
+.at-samp.sm .at-pics .spic{width:96px;height:96px}
+.at-word{font-size:1.8em;font-weight:bold;line-height:1.3}
+.at-samp.sm .at-word{font-size:1.3em}
+.at-rules{display:flex;flex-direction:column;gap:10px}
+.at-rule{font-size:1.2em;font-weight:bold;border:4px solid;border-radius:14px;padding:6px 18px;background:#fff}
+.at-stim{width:min(32vh,260px);height:min(32vh,260px);display:flex;align-items:center;justify-content:center;background:#fff;border:4px solid var(--line);border-radius:18px}
+.at-stim .tx{font-size:min(20vh,150px);line-height:1;font-weight:bold}
+.at-stim .at-pic{width:88%;height:88%}
+.at-stim .chg{font-size:1.3em;font-weight:bold;padding:10px}
+.at-stim.okf{box-shadow:0 0 0 8px #bfe0ca} .at-stim.ngf{box-shadow:0 0 0 8px #f3c6be}
+.at-lr{display:flex;gap:18px;width:100%;max-width:900px}
+.at-lr button{flex:1;min-height:120px;font-size:1.3em;border-width:4px;line-height:1.3;background:#fff}
+.at-lr button small{display:block;font-size:.7em;color:var(--sub)}
 /* グラフ */
 .chart svg{width:100%;height:auto;background:#fff;border:1px solid var(--line);border-radius:10px}
 /* 印刷用の教材・プリント  作成：KENTA SHINKAWA */
@@ -200,6 +258,7 @@ details.kzg>summary{min-height:60px;display:flex;align-items:center;font-weight:
 .pp-g{font-size:10.5pt;line-height:1.5}
 .pp-g h2{font-size:12.5pt;margin:3mm 0 1mm;border-bottom:1px solid #999;padding-bottom:.5mm}
 .pp-g p{margin:0 0 1.5mm}
+.pp-g.at{font-size:9.8pt;line-height:1.36} .pp-g.at h2{margin:2mm 0 .8mm} .pp-g.at p{margin:0 0 1.2mm} .pp-sheet .pp-g.at td,.pp-sheet .pp-g.at th{font-size:9.3pt;line-height:1.32;padding:.4mm 1.6mm}
 .pp-sheet table{border-collapse:collapse;width:100%;margin:0 0 2mm}
 .pp-sheet th,.pp-sheet td{border:1px solid #bbb;padding:.8mm 2mm;text-align:left;vertical-align:top;color:#1a1a1a;font-size:10pt;line-height:1.4}
 .pp-sheet th{background:#f2f2f2;font-weight:700}
@@ -209,6 +268,15 @@ details.kzg>summary{min-height:60px;display:flex;align-items:center;font-weight:
 .pa-n{flex:0 0 7mm;font-weight:700}
 .pa-read{font-weight:700}
 .pa-note{color:#555;font-size:9.5pt}
+/* 注意の用紙 */
+.pp-body.pa-at{display:block}
+.pa-samp{display:flex;align-items:center;gap:4mm;font-size:13pt;font-weight:700;margin:0 0 3mm}
+.pa-sbox{display:inline-flex;align-items:center;justify-content:center;min-width:15mm;height:15mm;border:2px solid #333;border-radius:2mm;padding:0 2mm;font-weight:700;line-height:1}
+.pa-grid{display:grid;justify-content:center;line-height:1}
+.pa-grid span{display:flex;align-items:center;justify-content:center}
+.pa-trail{position:relative;margin:0 auto}
+.pa-nd{position:absolute;transform:translate(-50%,-50%);border:1.5px solid #333;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;background:#fff;line-height:1}
+.pa-nd em{position:absolute;top:100%;left:50%;transform:translateX(-50%);font-style:normal;font-size:9pt;font-weight:700;white-space:nowrap;margin-top:.5mm}
 body.pp-only .top,body.pp-only .noprint,body.pp-only .foot{display:none}
 body.pp-only .wrap{padding:0;max-width:none}
 body.pp-only .pp-wrap{padding:0;background:#fff;border-radius:0}
@@ -258,9 +326,9 @@ const SLTA=[[1,"聴く","単語の理解",10,"items"],[2,"聴く","短文の理�
 [19,"書く","漢字・単語の書字",5,"items"],[20,"書く","仮名・単語の書字",5,"items"],[21,"書く","まんがの説明",6,"stage"],[22,"書く","仮名1文字の書取",10,"items"],
 [23,"書く","漢字・単語の書取",5,"items"],[24,"書く","仮名・単語の書取",5,"items"],[25,"書く","短文の書取",5,"items"],[26,"計算","計算",20,"count"]];
 const DOMS=["聴く","話す","読む","書く","計算"];
-const TYPE_JP={choice:"選ぶ",yesno:"はい・いいえ",say:"口で答える",write:"書く",tapseq:"順に触る",order:"並べる",input:"数を入れる",span:"覚えて触る"};
-const AUTO=new Set(["choice","yesno","tapseq","order","input","span"]);
-const MIN_PER={choice:.5,yesno:.4,tapseq:.8,span:1,order:1,input:.6,say:.8,write:1.5};
+const TYPE_JP={choice:"選ぶ",yesno:"はい・いいえ",say:"口で答える",write:"書く",tapseq:"順に触る",order:"並べる",input:"数を入れる",span:"覚えて触る",attn:"注意"};
+const AUTO=new Set(["choice","yesno","tapseq","order","input","span","attn"]);
+const MIN_PER={choice:.5,yesno:.4,tapseq:.8,span:1,order:1,input:.6,say:.8,write:1.5,attn:1.2};
 const RECENT_MS=28*24*3600*1000; // 直近4週間
 const STAGE_NAMES={6:"完全正答",5:"遅延完全正答",4:"不完全正答",3:"ヒント後正答",2:"関連反応",1:"誤答"};
 
@@ -325,7 +393,7 @@ function genPatientId(){
     for(let i=0;i<3;i++) s+=C[r[i]%C.length]; const id=head+s; if(!DB.patients[id]) return id; }
   return head+Date.now().toString(36).toUpperCase();
 }
-function newPatient(id,nick){ return {id:String(id),nick:nick||"",created:today(),evals:[],lv:{},sessions:[],usedQ:{},usedW:{},kyozai:{},prints:[]}; }
+function newPatient(id,nick){ return {id:String(id),nick:nick||"",created:today(),evals:[],lv:{},sessions:[],usedQ:{},usedW:{},kyozai:{},prints:[],attn:{on:false,level:2}}; }
 function fixDB(o){
   const b=blankDB(); if(!o||typeof o!=="object") return b;
   Object.assign(b.settings,o.settings||{});
@@ -338,6 +406,7 @@ function fixDB(o){
     q.sessions=Array.isArray(p.sessions)?p.sessions:[];
     q.usedQ=p.usedQ||{}; q.usedW=p.usedW||{}; if(typeof p.prof==="string"&&p.prof) q.prof=p.prof;
     q.kyozai=(p.kyozai&&typeof p.kyozai==="object"&&!Array.isArray(p.kyozai))?p.kyozai:{}; q.prints=Array.isArray(p.prints)?p.prints:[];
+    q.attn={on:!!(p.attn&&p.attn.on),level:clamp(Math.round(+(p.attn&&p.attn.level)||2),1,5)}; // 注意の訓練（STが入れるかを決める）
     b.patients[q.id]=q;
   }
   if(!b.patients[b.current]) b.current=Object.keys(b.patients)[0]||"";
@@ -508,12 +577,144 @@ defGen("calc",{name:"計算",dom:"計算",slta:[26],type:"input",calc:true,
   make(ctx,q,L){ const sym={"+":"＋","-":"－","×":"×","÷":"÷"}[q.op]; const hint=q.op==="+"||q.op==="-"?[{t:"一の位から計算してください"},{t:"指や紙を使ってもかまいません"}]:[{t:"九九を思い出してください"},{t:"紙に書いて計算してもかまいません"}];
     return mk(this.k,L,{id:`gen-calc-${q.a}${q.op}${q.b}`,prompt:"計算して、答えを入れてください",stim:{text:`${q.a} ${sym} ${q.b} ＝`},answer:String(q.ans),target:String(q.ans),hints:hint,words:[]}); }});
 
+/* ============================================================
+   注意の訓練（SLTA には注意の項目がないので、STが対象者ごとに「入れる」にしたときだけメニューに入る）
+   - すべて毎回ランダムに作る（配置・刺激とも）。既存の検査の刺激・配置は使わない。
+   - 自動で正誤・時間を記録する。ひとりで練習でも使える。
+   作成：KENTA SHINKAWA
+   ============================================================ */
+const ATTN_SK={cancel:"探して触る（抹消）",trail:"数字を順に触る",listen:"合図の言葉で触る",switch:"ルールの切り替え",same:"同じものを選ぶ",dual:"二つのことを同時に"};
+const ATTN_NAMES=Object.values(ATTN_SK); const isAttnSkill=n=>ATTN_NAMES.includes(n);
+const ATT_N={[ATTN_SK.cancel]:3,[ATTN_SK.trail]:3,[ATTN_SK.listen]:2,[ATTN_SK.switch]:2,[ATTN_SK.same]:8,[ATTN_SK.dual]:1}; // 1ブロックの回数（数分）
+const atId=k=>`gen-${k}-${NOW().toString(36)}${Math.floor(Math.random()*1e9).toString(36)}`;
+/* 形の似ている文字・数字・記号（自作の組） */
+const AT_HIRA_G=[["ぬ","め","あ","の"],["ね","れ","わ"],["は","ほ","け"],["る","ろ","ら"],["さ","ち","き"],["い","こ","り"],["く","へ","し"],["ま","よ","も"],["た","な","に"],["そ","て","ろ"],["う","つ","ら"],["お","あ","む"],["か","や","わ"]];
+const AT_KATA_G=[["シ","ツ","ミ"],["ソ","ン","リ","ノ"],["ク","ワ","ウ","フ","タ"],["コ","ユ","ロ","ヨ","エ"],["ア","マ","ヤ","ム"],["チ","テ","ナ"],["ハ","ル","ト"],["ヌ","ス","メ","ネ"],["キ","モ","サ"],["カ","ケ","ヤ"],["レ","ル"]];
+const AT_KATA_ALL=h2k(KANA46.join("")).split("");
+const AT_DIG_SIM={"0":["8","6","9"],"1":["7","4"],"2":["5","3","7"],"3":["8","5","2"],"4":["1","7","9"],"5":["2","6","3"],"6":["9","8","0","5"],"7":["1","4","2"],"8":["3","6","9","0"],"9":["6","8","0","4"]};
+const AT_SYM_G=[["○","◎","●"],["△","▲","▽"],["□","■","◇"],["◇","◆","□"],["☆","★"],["＋","×"]];
+const AT_SYM_ALL=Array.from(new Set([].concat(...AT_SYM_G)));
+const AT_DAKU=(()=>{ const m={}; const s="カガキギクグケゲコゴサザシジスズセゼソゾタダチヂツヅテデトドハバヒビフブヘベホボ"; for(let i=0;i<s.length;i+=2){ m[s[i]]=s[i+1]; m[s[i+1]]=s[i]; } "パピプペポ".split("").forEach((c,i)=>{ m[c]="バビブベボ"[i]; }); return m; })();
+function atGroupSim(groups,s){ const out=new Set(); groups.forEach(g=>{ if(g.includes(s)) g.forEach(x=>{ if(x!==s) out.add(x); }); }); return Array.from(out); }
+/* 見本・形の似たもの・似ていないもの */
+function atSymbols(mode){
+  if(mode==="digit"){ const all="0123456789".split(""); const s=all[rnd(10)]; const sim=AT_DIG_SIM[s].slice(); return {mode,s,sim,dif:all.filter(x=>x!==s&&!sim.includes(x))}; }
+  if(mode==="symbol"){ const s=AT_SYM_ALL[rnd(AT_SYM_ALL.length)]; const sim=atGroupSim(AT_SYM_G,s); return {mode,s,sim,dif:AT_SYM_ALL.filter(x=>x!==s&&!sim.includes(x))}; }
+  if(mode==="kana"){ const kata=Math.random()<.5; const G=kata?AT_KATA_G:AT_HIRA_G, all=kata?AT_KATA_ALL:KANA46; const g=G[rnd(G.length)]; const s=g[rnd(g.length)]; const sim=atGroupSim(G,s); return {mode,s,sim,dif:all.filter(x=>x!==s&&!sim.includes(x))}; }
+  const ps=nounsPic(); const s=ps[rnd(ps.length)]; const w=W(s); // 絵：似たもの＝同じ仲間
+  let sim=ps.filter(x=>x!==s&&!conflict(x,s)&&W(x).cat===w.cat&&W(x).sub===w.sub); if(sim.length<2) sim=ps.filter(x=>x!==s&&!conflict(x,s)&&W(x).cat===w.cat);
+  return {mode:"pic",s,sim:shuffle(sim).slice(0,5),dif:shuffle(ps.filter(x=>W(x).cat!==w.cat&&!conflict(x,s))).slice(0,10)};
+}
+/* 探して触る：level が上がるほど数が多く、似たものが多い。level4・5 は制限時間あり */
+const AT_C={N:[10,16,24,32,40],T:[3,4,5,6,7],sim:[0,0,.35,.6,.8],dif:[3,4,6,8,10],lim:[0,0,0,120,90],modes:[["pic","digit","symbol"],["pic","digit","symbol","kana"],["pic","digit","symbol","kana"],["pic","digit","symbol","kana"],["pic","digit","symbol","kana"]]};
+function atCancelData(L,N,T,ctx){ let ms=AT_C.modes[L-1]; if(ctx&&ctx.atLast) ms=ms.filter(m=>m!==ctx.atLast); const mode=ms[rnd(ms.length)]; if(ctx) ctx.atLast=mode;
+  const S=atSymbols(mode); const dif=shuffle(S.dif).slice(0,AT_C.dif[L-1]); const cells=[];
+  for(let i=0;i<T;i++) cells.push({s:S.s,t:true});
+  for(let i=T;i<N;i++){ const pool=S.sim.length&&Math.random()<AT_C.sim[L-1]?S.sim:dif; cells.push({s:pool[rnd(pool.length)],t:false}); }
+  return {mode,sample:S.s,cells:shuffle(cells)}; }
+/* 合図の言葉：level1・2 は決めた1語、level3 以上は仲間（level5 は近い仲間も混ぜる）。間隔は level が上がるほど短い */
+const AT_LS={n:[10,14,18,22,26],T:[3,4,5,6,7],gap:[3200,2800,2500,2200,1900]};
+const AT_CATS=[["果物",w=>w.sub==="果物","野菜"],["野菜",w=>w.sub==="野菜","果物"],["乗り物",w=>w.sub==="乗り物",null],["動物",w=>w.cat==="動物",null],["服や履物",w=>w.cat==="衣類"&&w.sub!=="服の部品",null],["体の部分",w=>w.cat==="体",null]];
+function atListenData(L,n,T,gap,wordOnly){
+  const ps=nounsPic(); const mode=L<=2||wordOnly?"word":"cat"; let tg, label, examples, near=[];
+  if(mode==="word"){ const cand=ps.filter(id=>{ const m=moras(yomiOf(W(id))).length; return m>=2&&m<=4; }); const t=cand[rnd(cand.length)]; tg=[t]; label=W(t).hyoki; examples=[t]; }
+  else { const c=AT_CATS[rnd(AT_CATS.length)]; label=c[0]; tg=ps.filter(id=>c[1](W(id))); examples=shuffle(tg).slice(0,3); if(c[2]&&L>=5) near=ps.filter(id=>W(id).sub===c[2]); }
+  const tgSet=new Set(tg); const clash=id=>tg.some(x=>conflict(x,id)||yomiOf(W(x))===yomiOf(W(id)));
+  let others=ps.filter(id=>!tgSet.has(id)&&!clash(id));
+  if(mode==="word"&&L===1){ const w=W(tg[0]); others=others.filter(id=>W(id).cat!==w.cat&&firstMora(id)!==firstMora(tg[0])); }
+  if(mode==="cat"&&L===3){ const cs=new Set(tg.map(x=>W(x).cat)); others=others.filter(id=>!cs.has(W(id).cat)); }
+  near=near.filter(id=>!clash(id)&&!tgSet.has(id));
+  let pos=null; for(let k=0;k<300&&!pos;k++){ const c=shuffle(Array.from({length:n-1},(_,i)=>i+1)).slice(0,T).sort((a,b)=>a-b); if(c.every((v,i)=>i===0||v-c[i-1]>=2)) pos=c; }
+  if(!pos) pos=Array.from({length:T},(_,i)=>1+Math.floor(i*(n-1)/T));
+  const ps2=new Set(pos); const oth=shuffle(others); let oi=0, lastT=null; const seq=[];
+  for(let i=0;i<n;i++){ if(ps2.has(i)){ let id, g=0; do{ id=tg[rnd(tg.length)]; }while(id===lastT&&tg.length>1&&g++<10); lastT=id; seq.push({id,t:true}); }
+    else { const id=near.length&&Math.random()<.4?near[rnd(near.length)]:oth[oi++%oth.length]; seq.push({id,t:false}); } }
+  return {mode,label,examples,tg,seq,gap}; }
+/* ルールの切り替え：level が上がるほど切り替えが頻繁。level5 は左右が逆になるルールも混ぜる */
+const AT_RULES={A:{t:"食べ物 → 左　／　それ以外 → 右",L:"食べ物",R:"それ以外",c:"#2e6b45"},B:{t:"5より大きい数 → 左　／　5より小さい数 → 右",L:"5より大きい",Ls:"6・7・8・9",R:"5より小さい",Rs:"1・2・3・4",c:"#1f4e79"},C:{t:"5より小さい数 → 左　／　5より大きい数 → 右",L:"5より小さい",Ls:"1・2・3・4",R:"5より大きい",Rs:"6・7・8・9",c:"#a34a00"}};
+const AT_SW={n:[10,12,14,16,18],lim:[0,0,0,4000,3000]};
+const AT_NONFOOD=["日用品","衣類","家具・家","文房具","乗り物・街","道具","趣味・季節"];
+function atSwitchData(L){ const n=AT_SW.n[L-1]; const rules=L>=5?["A","B","C"]:["A","B"]; const runs=[]; let left=n, last=null;
+  const runLen=()=>L===1?n:L===2?Math.ceil(n/2):L===3?4+rnd(2):L===4?2+rnd(3):1+rnd(3);
+  while(left>0){ const c=last==null?(L===1?["A","B"]:rules):rules.filter(x=>x!==last); const r=c[rnd(c.length)]; const k=Math.min(left,runLen()); runs.push([r,k]); left-=k; last=r; }
+  const foods=nounsPic().filter(id=>W(id).cat==="食べ物"), nonf=nounsPic().filter(id=>AT_NONFOOD.includes(W(id).cat));
+  const trials=[]; let pn=0, pp=null;
+  runs.forEach(([r,k])=>{ for(let i=0;i<k;i++){
+    if(r==="A"){ const f=Math.random()<.5; const pool=f?foods:nonf; let id, g=0; do{ id=pool[rnd(pool.length)]; }while(id===pp&&g++<10); pp=id; trials.push({r,pic:id,ans:f?"L":"R"}); }
+    else { let x, g=0; do{ x=[1,2,3,4,6,7,8,9][rnd(8)]; }while(x===pn&&g++<10); pn=x; trials.push({r,num:x,ans:(r==="B"?x>5:x<5)?"L":"R"}); } } });
+  return {kind:"switch",trials,lim:AT_SW.lim[L-1]}; }
+/* 同じものを選ぶ：見本と1か所だけ違うもの（似た形の文字・濁点・入れ替え）を並べる */
+function atVar(chars,L,sim,dif,daku){ const a=chars.slice(), n=a.length, pos=shuffle(a.map((_,i)=>i));
+  const rep=(i,f)=>{ const c=f(a[i]).filter(x=>x!==a[i]); if(!c.length) return false; a[i]=c[rnd(c.length)]; return true; };
+  if(L<=1){ let k=0; for(const i of pos){ if(k>=Math.max(2,Math.ceil(n/2))) break; if(rep(i,dif)) k++; } return a.join(""); }
+  if(L===2){ for(const i of pos) if(rep(i,dif)) break; return a.join(""); }
+  const ops=["sim","sim"]; if(daku) ops.push("daku"); if(L>=4&&n>=2) ops.push("swap","swap");
+  for(let t=0;t<10;t++){ const op=ops[rnd(ops.length)];
+    if(op==="swap"){ const i=rnd(n-1); if(a[i]!==a[i+1]){ const x=a[i]; a[i]=a[i+1]; a[i+1]=x; return a.join(""); } continue; }
+    if(op==="daku"){ const i=pos.find(j=>daku(a[j])); if(i!=null){ a[i]=daku(a[i]); return a.join(""); } continue; }
+    for(const i of pos) if(rep(i,sim)) return a.join(""); }
+  for(const i of pos) if(rep(i,dif)) break; return a.join(""); }
+
+defGen("attncancel",{name:ATTN_SK.cancel,dom:"注意",slta:[],type:"attn",attn:true,nopool:true,
+  make(ctx,q,L){ const d=atCancelData(L,AT_C.N[L-1],AT_C.T[L-1],ctx); return mk(this.k,L,{id:atId(this.k),prompt:"見本と同じものを、全部触ってください",attn:Object.assign({kind:"cancel",lim:AT_C.lim[L-1]},d),target:`見本と同じもの ${AT_C.T[L-1]}個`,hints:[{t:"まだ残っている側を光らせます",act:"attn"},{t:"まだ残っている側を光らせます",act:"attn"}],words:[]}); }});
+defGen("attntrail",{name:ATTN_SK.trail,dom:"注意",slta:[],type:"attn",attn:true,nopool:true,
+  make(ctx,q,L){ const n=[5,8,12,16,16][L-1], alt=L>=5; const labels=alt?[].concat(...Array.from({length:n/2},(_,i)=>[String(i+1),"あいうえおかきくけこ"[i]])):Array.from({length:n},(_,i)=>String(i+1));
+    return mk(this.k,L,{id:atId(this.k),prompt:alt?"数字と文字を交互に、1→あ→2→い…の順に触ってください":"1から順に触ってください",attn:{kind:"trail",labels,alt},target:labels.join("→"),hints:[1,2,3].map(()=>({t:"次に触るものを光らせます",act:"attn"})),words:[]}); }});
+defGen("attnlisten",{name:ATTN_SK.listen,dom:"注意",slta:[],type:"attn",attn:true,nopool:true,
+  make(ctx,q,L){ const d=atListenData(L,AT_LS.n[L-1],AT_LS.T[L-1],AT_LS.gap[L-1],false);
+    return mk(this.k,L,{id:atId(this.k),prompt:d.mode==="word"?`「${d.label}」が聞こえたら、ボタンを触ってください`:`「${d.label}」の仲間が聞こえたら、ボタンを触ってください`,attn:Object.assign({kind:"listen"},d),target:d.label,hints:[],words:[]}); }});
+defGen("attnswitch",{name:ATTN_SK.switch,dom:"注意",slta:[],type:"attn",attn:true,nopool:true,
+  make(ctx,q,L){ return mk(this.k,L,{id:atId(this.k),prompt:"画面のルールに合うほうのボタンを触ってください",attn:atSwitchData(L),target:"",hints:[],words:[]}); }});
+defGen("attnsame",{name:ATTN_SK.same,dom:"注意",slta:[],type:"choice",attn:true,pool:()=>nounsPic(),
+  make(ctx,t,L){ const n=[2,3,4,5,6][L-1]; let ms=L<=2?["pic","kata","digit","symbol"]:["kata","digit","symbol","pic"]; if(ctx.atSame) ms=ms.filter(m=>m!==ctx.atSame); const mode=ms[rnd(ms.length)]; ctx.atSame=mode;
+    const hints=[{t:mode==="pic"?"細かいところまで見比べてください":"1文字ずつ見比べてください"},{t:"選択肢を減らします",act:"reduce"}];
+    if(mode==="pic"){ const w=W(t); const all=nounsPic().filter(x=>x!==t&&!conflict(x,t));
+      const tier=x=>{ const y=W(x); if(L<=2) return y.cat!==w.cat?0:1; if(L===3) return y.cat===w.cat?0:1; return y.cat===w.cat&&y.sub===w.sub?0:y.cat===w.cat?1:2; };
+      const grp={}; all.forEach(x=>{ const k=tier(x); (grp[k]=grp[k]||[]).push(x); }); let ord=[]; Object.keys(grp).sort().forEach(k=>{ ord=ord.concat(shuffle(grp[k])); });
+      const ds=pickCompat([t],ord,n-1); if(ds.length<n-1) return null; const o=shuffle([t].concat(ds));
+      return mk(this.k,L,{id:`gen-attnsame-pic-${t}-${ds.join("_")}`,prompt:"見本と同じ絵を選んでください",stim:{pic:t,label:"見本"},options:o.map(p=>({pic:p})),answer:o.indexOf(t),target:W(t).hyoki,hints,words:[]}); }
+    let base, sim, dif, daku=null;
+    if(mode==="kata"){ base=Array.from(h2k(yomiOf(W(t)))); if(L>=5&&base.length<5){ const ps=nounsPic(), o=ps[rnd(ps.length)]; base=base.concat(Array.from(h2k(yomiOf(W(o))))).slice(0,6); }
+      sim=c=>atGroupSim(AT_KATA_G,c); dif=c=>AT_KATA_ALL.filter(x=>x!==c&&!sim(c).includes(x)); daku=c=>AT_DAKU[c]||null; }
+    else if(mode==="digit"){ base=Array.from({length:[3,3,4,5,6][L-1]},()=>String(rnd(10))); sim=c=>AT_DIG_SIM[c]||[]; dif=c=>"0123456789".split("").filter(x=>x!==c&&!sim(c).includes(x)); }
+    else { base=Array.from({length:[2,3,3,4,5][L-1]},()=>AT_SYM_ALL[rnd(AT_SYM_ALL.length)]); sim=c=>atGroupSim(AT_SYM_G,c); dif=c=>AT_SYM_ALL.filter(x=>x!==c&&!sim(c).includes(x)); }
+    const b=base.join(""); const vs=new Set([b]);
+    for(let k=0;k<80&&vs.size<n;k++) vs.add(atVar(base,L,sim,dif,daku));
+    for(let k=0;k<80&&vs.size<n;k++) vs.add(atVar(base,Math.max(1,L-1),sim,dif,daku)); if(vs.size<n) return null;
+    const o=shuffle(Array.from(vs));
+    return mk(this.k,L,{id:`gen-attnsame-${mode}-${b}`,prompt:"見本と同じものを選んでください",stim:{text:b,label:"見本"},options:o.map(x=>({text:x})),answer:o.indexOf(b),target:b,hints,words:[]}); }});
+defGen("attndual",{name:ATTN_SK.dual,dom:"注意",slta:[],type:"attn",attn:true,nopool:true,minLv:4,
+  make(ctx,q,L){ const i=L-1; const c=atCancelData(L,[12,16,20,28,34][i],[3,3,4,5,6][i],ctx); const l=atListenData(1,[10,12,14,18,22][i],[2,3,3,4,5][i],[3600,3400,3200,3000,2700][i],true);
+    return mk(this.k,L,{id:atId(this.k),prompt:`見本と同じものを触ってください。「${l.label}」が聞こえたら、「聞こえた」も触ってください`,attn:{kind:"dual",cancel:c,listen:l},target:"",hints:[],words:[]}); }});
+/* 配置：格子をもとに、ずらしながらばらばらに置く（毎回ちがう・重ならない）。asp＝横÷縦、座標は縦を1とした値 */
+function attnLayout(n,asp){ const spare=n<=16?1.5:n<=24?1.3:1.15;
+  let cols=Math.max(1,Math.round(Math.sqrt(n*spare*asp))), rows=Math.max(1,Math.ceil(n*spare/cols)); while(cols*rows<n) rows++;
+  const cw=asp/cols, ch=1/rows, j=0.12; const cells=shuffle(Array.from({length:cols*rows},(_,i)=>i)).slice(0,n);
+  const pos=cells.map(c=>{ const r=Math.floor(c/cols), q=c%cols; return [(q+.5+(Math.random()*2-1)*j)*cw,(r+.5+(Math.random()*2-1)*j)*ch]; });
+  return {asp,pos,k:Math.min(cw,ch)*0.72,path:false}; }
+/* 順につなぐ配置：前の点から少し離れた所に次を置き、線どうしが交わらず、ほかの点の近くを通らないようにする */
+function pathLayout(n,asp,tries,far){
+  const minD=Math.min(Math.sqrt(asp/n)*0.62,0.3), k=minD*0.7, m=k/2+0.02, dMax=minD*(far?4.5:2.6);
+  const dist=(a,b)=>Math.hypot(a[0]-b[0],a[1]-b[1]), cr=(o,a,b)=>(a[0]-o[0])*(b[1]-o[1])-(a[1]-o[1])*(b[0]-o[0]);
+  const cross=(p1,p2,p3,p4)=>{ const d1=cr(p3,p4,p1),d2=cr(p3,p4,p2),d3=cr(p1,p2,p3),d4=cr(p1,p2,p4); return d1*d2<0&&d3*d4<0; };
+  const sd=(p,a,b)=>{ const vx=b[0]-a[0],vy=b[1]-a[1],L2=vx*vx+vy*vy||1e-9; const t=clamp(((p[0]-a[0])*vx+(p[1]-a[1])*vy)/L2,0,1); return Math.hypot(p[0]-a[0]-t*vx,p[1]-a[1]-t*vy); };
+  for(let tr=0;tr<(tries||300);tr++){ const P=[[m+Math.random()*(asp-2*m),m+Math.random()*(1-2*m)]]; let fail=false;
+    for(let i=1;i<n&&!fail;i++){ const last=P[i-1]; let got=null;
+      for(let c=0;c<80&&!got;c++){ const an=Math.random()*Math.PI*2, dd=minD*1.05+Math.random()*(dMax-minD*1.05); const q=[last[0]+Math.cos(an)*dd,last[1]+Math.sin(an)*dd];
+        if(q[0]<m||q[0]>asp-m||q[1]<m||q[1]>1-m||P.some(p=>dist(p,q)<minD)) continue;
+        let bad=false; for(let s=0;s<i-1&&!bad;s++){ if(cross(P[s],P[s+1],last,q)||sd(q,P[s],P[s+1])<minD*0.55||sd(P[s],last,q)<minD*0.55) bad=true; }
+        if(!bad) got=q; }
+      if(got) P.push(got); else fail=true; }
+    if(!fail) return {asp,pos:P,k,path:true}; }
+  if(far) return pathLayout(n,asp,tries,false); // 遠くへ飛ぶ置き方で置けないときは、近くへ置く方法でやり直す
+  return attnLayout(n,asp); }
+
 /* 課題の一覧を作る（アプリが作る課題＋問題データの課題） */
 let SKILLS={};
 function buildSkills(){
   SKILLS={};
   for(const g of Object.values(GEN)){
-    const pool=g.kana||g.calc?null:g.pool(); const ok=g.kana||g.calc||pool.length>=(g.min||2);
+    const pool=g.kana||g.calc||g.nopool?null:g.pool(); const ok=g.kana||g.calc||g.nopool||pool.length>=(g.min||2);
     if(!ok) continue;
     SKILLS[g.name]={name:g.name,dom:g.dom,slta:g.slta.slice(),type:g.type,gen:g.k,bank:[]};
   }
@@ -549,9 +750,18 @@ function effLevel(p,skill,base){ const v=p&&p.lv?p.lv[skill]:null; return v!=nul
 const pctTxt=v=>v==null?"－":(Math.round(v*10)/10)+"%";
 
 /* ---------- 今日の訓練メニュー ---------- */
-function blockSize(type){ return clamp(Math.round(6/(MIN_PER[type]||.8)),5,10); }
+function blockSize(type,skill){ if(skill&&ATT_N[skill]) return ATT_N[skill]; return clamp(Math.round(6/(MIN_PER[type]||.8)),5,10); }
 function lastSession(p){ const s=p.sessions.filter(x=>x.blocks&&x.blocks.length); return s.length?s[s.length-1]:null; }
-function buildMenu(p,solo,nBlocks){
+/* 注意の訓練の level：STが選んだ level（課題ごとに変えたときはそちら） */
+function attnLv(p,name){ const v=p&&p.lv?p.lv[name]:null; return v!=null?v:clamp((p&&p.attn&&p.attn.level)||2,1,5); }
+/* 注意のブロック（STが「入れる」にしたときだけ）。しばらく出していない課題から選ぶので、毎週ちがう課題になる */
+function attnBlock(p){ if(!p||!p.attn||!p.attn.on) return null;
+  const last={}; p.sessions.forEach((s,i)=>(s.blocks||[]).forEach(b=>{ if(isAttnSkill(b.skill)) last[b.skill]=i+1; }));
+  const c=ATTN_NAMES.filter(n=>SKILLS[n]&&(n!==ATTN_SK.dual||attnLv(p,n)>=4)).map(n=>({n,r:(last[n]||0)+Math.random()*.5})).sort((a,b)=>a.r-b.r);
+  if(!c.length) return null; const name=c[0].n, L=attnLv(p,name);
+  return {skill:name,level:L,n:ATT_N[name],reason:`注意の訓練（STが入れる設定）：はじめのウォーミングアップ → ${name}・level${L}`,attn:true}; }
+function buildMenu(p,solo,nBlocks){ const m=buildMenuLang(p,solo,nBlocks); const a=attnBlock(p); if(a&&!m.some(b=>b.skill===a.skill)) m.unshift(a); return m; }
+function buildMenuLang(p,solo,nBlocks){
   nBlocks=clamp(nBlocks||DB.settings.blocks||4,3,5);
   const rec=recommend(p); const cands=[];
   if(rec){ for(const r of rec){ if(r.none) continue; for(const s of r.skills){ if(solo&&!AUTO.has(s.type)) continue;
@@ -595,6 +805,7 @@ function makeItems(p,block,sessUsed){
   if(sk.gen){ const g=GEN[sk.gen];
     if(g.calc){ for(let i=0;i<40;i++){ const q=calcProblem(L); const id=`gen-calc-${q.a}${q.op}${q.b}`; if(cands.some(c=>c.id===id)) continue; cands.push({kind:"g",q,id,r:qRec(ctx,id)}); } }
     else if(g.kana){ KANA46.forEach(k=>cands.push({kind:"g",q:k,r:qRec(ctx,`gen-${g.k}-${k}`)})); }
+    else if(g.nopool){ for(let i=0;i<n+2;i++) cands.push({kind:"g",q:i,r:0}); } // 注意の課題：毎回その場で作る
     else { poolAt(g.pool(),L,Math.min(n,4)).forEach(t=>cands.push({kind:"g",q:t,r:Math.max(qRec(ctx,`gen-${g.k}-${t}`),wRec(ctx,t))})); }
   }
   if(cands.length<n) bk2.forEach(it=>cands.push({kind:"b",it,r:bRec(it),d:Math.abs((it.level||3)-L)}));
@@ -624,7 +835,7 @@ function markUsed(p,it){ const t=NOW(); p.usedQ[it.id]=t; (it.words||[]).forEach
    ============================================================ */
 let SCREEN="home", PR=null, MENU=null, MENU_SOLO=false, IMPORT=null, EDIT_EVAL=-1, CONF={};
 function go(s){ SCREEN=s; if(location.hash!=="#"+s) history.pushState(null,"","#"+s); render(); }
-window.addEventListener("popstate",()=>{ const h=(location.hash||"#home").slice(1); if(h==="practice"&&!PR) SCREEN="home"; else SCREEN=h||"home"; if(SCREEN!=="practice"&&PR){ stopSpeak(); } render(); });
+window.addEventListener("popstate",()=>{ const h=(location.hash||"#home").slice(1); if(h==="practice"&&!PR) SCREEN="home"; else SCREEN=h||"home"; if(SCREEN!=="practice"&&PR){ stopSpeak(); atClear(); } render(); });
 function confirm2(key,msg){ if(CONF[key]&&Date.now()-CONF[key]<4000){ delete CONF[key]; return true; } CONF[key]=Date.now(); toast(msg||"もう一度押すと実行します"); return false; }
 function topBar(title){ const p=P(); return `<div class="top"><h1>言語訓練</h1><span class="who">${esc(title||"")}　対象者：${esc(pLabel(p))}</span>${SCREEN!=="home"?`<button class="s" data-go="home">ホームへ</button>`:""}</div>`; }
 const foot=()=>`<div class="foot">作成：KENTA SHINKAWA　｜　記録はこの端末の中だけに保存されます（外部には送りません）</div>`;
@@ -656,6 +867,7 @@ function vHome(){
     <button data-go="records">記録と推移<small>正答率の一覧・グラフ・level の提案</small></button>
     <button data-go="kyozai">印刷用の教材<small>以前の教材のおすすめ・新しいプリントを作る</small></button>
    </div></div>`:`<div class="card"><div class="grid-btn"><button data-go="kyozai">印刷用の教材<small>以前に作った教材の一覧</small></button></div></div>`}
+  ${p?attnCardHTML(p):""}
   ${profCardHTML()}
   <div class="card"><h2>そのほか</h2><div class="grid-btn">
     <button data-go="settings">設定<small>文字の大きさ・書体・読み上げの速さ</small></button>
@@ -664,8 +876,19 @@ function vHome(){
   </div></div>
   </div>`+foot();
 }
+/* 注意の訓練を入れるか（STが対象者ごとに決める。初めは入れない・level2） */
+function attnCardHTML(p){ const a=p.attn||{on:false,level:2}; const ov=ATTN_NAMES.filter(n=>p.lv&&p.lv[n]!=null);
+  return `<div class="card" id="attnCard"><h2>注意の訓練（入れるかはSTが決めます）</h2>
+   <p class="muted small">SLTAには注意の項目がないため、初めは入れていません。「入れる」にすると、今日の訓練メニューの最初に注意の課題を1ブロック（数分のウォーミングアップ）入れ、印刷用プリントにも注意の用紙を1〜2枚加えます。</p>
+   <div class="row">注意の訓練 <button class="s ${a.on?"on":""}" data-atton="1">入れる</button><button class="s ${!a.on?"on":""}" data-atton="0">入れない</button></div>
+   <div class="row" style="margin-top:8px">level ${[1,2,3,4,5].map(l=>`<button class="s ${a.level===l?"on":""}" data-attlv="${l}">${l}</button>`).join("")}<span class="muted small">数・似ている度合い・制限時間・速さが変わります。</span></div>
+   ${ov.length?`<p class="small">課題ごとに変えた level：${ov.map(n=>`${esc(n)} level${p.lv[n]}`).join("、")}（上の level を押すと、そろえ直します）</p>`:""}
+   <p class="muted small">課題：探して触る（抹消）・数字を順に触る・合図の言葉で触る・ルールの切り替え・同じものを選ぶ・二つのことを同時に（level4・5のときだけ）。しばらく出していない課題から選び、配置も毎回作り直します。</p></div>`; }
+function attnCardAfter(){ const p=P(); if(!p) return;
+  $$("[data-atton]").forEach(b=>b.onclick=()=>{ p.attn.on=b.dataset.atton==="1"; save(); MENU=null; PRINT.set=null; rerenderKeep(); toast(p.attn.on?"注意の訓練を入れます":"注意の訓練を入れません"); });
+  $$("[data-attlv]").forEach(b=>b.onclick=()=>{ p.attn.level=+b.dataset.attlv; ATTN_NAMES.forEach(n=>{ if(p.lv) delete p.lv[n]; }); save(); MENU=null; PRINT.set=null; rerenderKeep(); toast("注意の訓練を level"+p.attn.level+" にしました"); }); }
 vHome.after=()=>{
-  profCardAfter();
+  profCardAfter(); attnCardAfter();
   const s=$("#pSel"); if(s) s.onchange=()=>{ DB.current=s.value; save(); render(); };
   $("#pAdd").onclick=()=>{ const id=genPatientId(); DB.patients[id]=newPatient(id,$("#pNick").value.trim()); DB.current=id; save(); render(); toast("追加しました（ID："+id+"）"); };
   const d=$("#pDel"); if(d) d.onclick=()=>{ if(!confirm2("pdel","もう一度押すと、この対象者の記録をすべて削除します")) return; delete DB.patients[DB.current]; DB.current=Object.keys(DB.patients)[0]||""; save(); render(); };
@@ -809,16 +1032,17 @@ vRec.after=()=>{ const b=$("#goMenu2"); if(b) b.onclick=()=>{ MENU=null; MENU_SO
 function vMenu(){
   const p=P(); if(!p) return topBar("今日の訓練メニュー")+`<div class="wrap"><p>先にホームで対象者を選んでください。</p></div>`;
   if(!MENU) MENU=buildMenu(p,MENU_SOLO);
-  const all=Object.values(SKILLS).filter(s=>!MENU_SOLO||AUTO.has(s.type)).sort((a,b)=>DOMS.concat(["記憶"]).indexOf(a.dom)-DOMS.concat(["記憶"]).indexOf(b.dom));
+  const DO=DOMS.concat(["記憶","注意"]); const all=Object.values(SKILLS).filter(s=>!MENU_SOLO||AUTO.has(s.type)).sort((a,b)=>DO.indexOf(a.dom)-DO.indexOf(b.dom));
   let h=topBar("今日の訓練メニュー")+`<div class="wrap"><div class="card"><h2>今日の訓練メニュー（${MENU.length}ブロック・目安 約${menuMinutes(MENU)}分）</h2>
    <div class="row"><button class="s ${!MENU_SOLO?"on":""}" id="mT">STと練習</button><button class="s ${MENU_SOLO?"on":""}" id="mS">ひとりで練習</button>
-   <span class="muted small">${MENU_SOLO?"自動で正誤が分かる課題だけにしています。":"苦手な課題を厚めに、得意な課題も1つ入れています。"}</span></div>`;
+   <span class="muted small">${MENU_SOLO?"自動で正誤が分かる課題だけにしています。":"苦手な課題を厚めに、得意な課題も1つ入れています。"}</span></div>
+   <p class="muted small">注意の訓練：${p.attn&&p.attn.on?`入れる（level${p.attn.level}）。最初のブロックに入れています。`:"入れない。"}ホームの「注意の訓練」で変えられます。</p>`;
   if(!latestEval(p)) h+=`<p class="err small">SLTAの成績がないため、自動では組めません。下の「ブロックを追加」で課題を選ぶか、先に成績を入れてください。</p>`;
   MENU.forEach((b,i)=>{ const sk=SKILLS[b.skill];
     h+=`<div class="blk"><span class="no">${i+1}</span>
      <select data-bs="${i}">${all.map(s=>`<option value="${esc(s.name)}" ${s.name===b.skill?"selected":""}>${esc(s.dom)}：${esc(s.name)}（${TYPE_JP[s.type]||s.type}）</option>`).join("")}${sk?"":`<option selected>${esc(b.skill)}（データなし）</option>`}</select>
      <select data-bl="${i}">${[1,2,3,4,5].map(l=>`<option value="${l}" ${l===b.level?"selected":""}>level${l}</option>`).join("")}</select>
-     <button class="s" data-bm="${i}">－</button><span class="cnt">${b.n}問</span><button class="s" data-bp="${i}">＋</button>
+     <button class="s" data-bm="${i}">－</button><span class="cnt">${b.n}${sk&&sk.type==="attn"?"回":"問"}</span><button class="s" data-bp="${i}">＋</button>
      <button class="s" data-bu="${i}" ${i?"":"disabled"}>上へ</button><button class="s" data-bd="${i}">削除</button>
      <span class="rs">${esc(b.reason||"STが選んだ課題")}</span></div>`; });
   h+=`<div class="row"><button class="s" id="mAdd" ${MENU.length>=6?"disabled":""}>ブロックを追加</button><button class="s" id="mRe">組み直す</button></div>
@@ -828,14 +1052,14 @@ function vMenu(){
 vMenu.after=()=>{
   const p=P(); if(!p) return;
   $("#mT").onclick=()=>{ MENU_SOLO=false; MENU=null; render(); }; $("#mS").onclick=()=>{ MENU_SOLO=true; MENU=null; render(); };
-  $$("[data-bs]").forEach(s=>s.onchange=()=>{ const b=MENU[+s.dataset.bs]; b.skill=s.value; b.n=blockSize(SKILLS[b.skill].type); const r=(recommend(p)||[]).find(r=>r.skills&&r.skills.some(x=>x.skill===b.skill)); if(r){ b.level=r.skills.find(x=>x.skill===b.skill).level; } b.reason="STが差し替えた課題"+(r?`（${r.name} ${pctTxt(r.pct)}）`:""); render(); });
+  $$("[data-bs]").forEach(s=>s.onchange=()=>{ const b=MENU[+s.dataset.bs]; b.skill=s.value; b.n=blockSize(SKILLS[b.skill].type,b.skill); const r=(recommend(p)||[]).find(r=>r.skills&&r.skills.some(x=>x.skill===b.skill)); if(r){ b.level=r.skills.find(x=>x.skill===b.skill).level; } if(isAttnSkill(b.skill)) b.level=attnLv(p,b.skill); b.reason="STが差し替えた課題"+(r?`（${r.name} ${pctTxt(r.pct)}）`:isAttnSkill(b.skill)?"（注意の訓練）":""); render(); });
   $$("[data-bl]").forEach(s=>s.onchange=()=>{ MENU[+s.dataset.bl].level=+s.value; render(); });
   $$("[data-bm]").forEach(b=>b.onclick=()=>{ const x=MENU[+b.dataset.bm]; x.n=Math.max(1,x.n-1); render(); });
   $$("[data-bp]").forEach(b=>b.onclick=()=>{ const x=MENU[+b.dataset.bp]; x.n=Math.min(20,x.n+1); render(); });
   $$("[data-bu]").forEach(b=>b.onclick=()=>{ const i=+b.dataset.bu; if(i>0){ [MENU[i-1],MENU[i]]=[MENU[i],MENU[i-1]]; render(); } });
   $$("[data-bd]").forEach(b=>b.onclick=()=>{ MENU.splice(+b.dataset.bd,1); render(); });
   $("#mAdd").onclick=()=>{ const used=new Set(MENU.map(b=>b.skill)); const extra=buildMenu(p,MENU_SOLO,5).find(b=>!used.has(b.skill));
-    if(extra) MENU.push(extra); else { const s=Object.values(SKILLS).find(s=>!used.has(s.name)&&(!MENU_SOLO||AUTO.has(s.type))); if(s) MENU.push({skill:s.name,level:3,n:blockSize(s.type),reason:"STが選んだ課題"}); }
+    if(extra) MENU.push(extra); else { const s=Object.values(SKILLS).find(s=>!used.has(s.name)&&(!MENU_SOLO||AUTO.has(s.type))); if(s) MENU.push({skill:s.name,level:isAttnSkill(s.name)?attnLv(p,s.name):3,n:blockSize(s.type,s.name),reason:"STが選んだ課題"}); }
     render(); };
   $("#mRe").onclick=()=>{ MENU=null; render(); };
   $("#mGo").onclick=()=>startSession(p,MENU,MENU_SOLO?"solo":"teacher");
@@ -860,13 +1084,14 @@ function vPractice(){
   const tot=PR.sess.blocks.length;
   const head=`<div class="pvh"><span class="t">第${PR.bi+1}ブロック／全${tot}　${esc(b.skill)}・level${b.level}</span><span class="pg">${PR.ii>=0?`${PR.ii+1} ／ ${b.items.length}`:""}</span><button class="s" id="pvEnd">終了</button></div>`;
   if(PR.ii<0){ // ブロックのはじめ
-    return `<div id="pv">${head}<div class="bstart"><div class="big">${esc(b.items[0].prompt||b.skill)}</div><div class="muted">${b.items.length}問あります</div><button class="p" id="bGo" style="min-width:260px">はじめる</button></div></div>`;
+    return `<div id="pv">${head}<div class="bstart"><div class="big">${esc(b.items[0].prompt||b.skill)}</div><div class="muted">${b.items.length}${b.type==="attn"?"回":"問"}あります</div><button class="p" id="bGo" style="min-width:260px">はじめる</button></div></div>`;
   }
   const it=curItem(); const S=PR.st;
+  if(it.type==="attn") return `<div id="pv">${head}<div class="prompt">${esc(it.prompt||"")}</div><div class="at-host" id="attnWrap"></div>${PR.solo?soloBar():band(it)}</div>`;
   const hintTxt=S.hintShown.filter(h=>!h.teacher&&h.t&&h.act!=="slow"&&h.act!=="split"&&h.act!=="reduce"&&h.act!=="boxes"&&h.act!=="model"&&h.act!=="replay"&&h.act!=="speak").map(h=>h.act==="text"?h.text:h.t);
   const hasSpeak=!!(it.speak||(it.type==="span"&&it.show==="speak"));
   const pics=it.stim&&Array.isArray(it.stim.pics)&&it.stim.pics.length>1?it.stim.pics:null;
-  const stimInner=(pics?`<div class="spics">${pics.map(x=>`<div class="spic">${picHTML(x)}</div>`).join("")}</div>`:it.stim&&it.stim.pic?`<div class="spic">${picHTML(it.stim.pic)}</div>`:"")+(it.stim&&it.stim.text?`<div class="stext ${String(it.stim.text).length>12||String(it.stim.text).indexOf(String.fromCharCode(10))>=0?"long":""}">${esc(it.stim.text)}</div>`:"")
+  const stimInner=(it.stim&&it.stim.label?`<div class="stlab">${esc(it.stim.label)}</div>`:"")+(pics?`<div class="spics">${pics.map(x=>`<div class="spic">${picHTML(x)}</div>`).join("")}</div>`:it.stim&&it.stim.pic?`<div class="spic">${picHTML(it.stim.pic)}</div>`:"")+(it.stim&&it.stim.text?`<div class="stext ${String(it.stim.text).length>12||String(it.stim.text).indexOf(String.fromCharCode(10))>=0?"long":""}">${esc(it.stim.text)}</div>`:"")
     +(hintTxt.length?`<div class="hintbox">${esc(hintTxt[hintTxt.length-1])}</div>`:"")+(hasSpeak&&!(it.type==="span"&&S.phase==="answer"&&!it.speak)?`<button class="again" id="again">もう一度聞く</button>`:"");
   const hasStim=!!(it.stim&&(it.stim.pic||it.stim.text))||hasSpeak||hintTxt.length;
   let ans="", side=true;
@@ -898,10 +1123,14 @@ function vPractice(){
   const fb=`<div class="fb ${S.fbc||""}" id="fb">${esc(S.fb||"")}</div>`;
   return `<div id="pv">${head}<div class="prompt ${isWrittenCmd(it)?"wcmd":""}">${esc(it.prompt||"")}</div>${main}${fb}${PR.solo?soloBar():band(it)}</div>`;
 }
-function soloBar(){ const S=PR.st; return `<div class="solo-bar">${S.answered?`<button class="p" id="next" style="min-width:220px">次へ</button>`:`<button class="s" id="skip">わからないので次へ</button>`}</div>`; }
+function soloBar(){ const S=PR.st, it=curItem(); return `<div class="solo-bar">${S.answered?`<button class="p" id="next" style="min-width:220px">次へ</button>`:`<button class="s" id="skip">${it&&it.type==="attn"?"この回は飛ばす":"わからないので次へ"}</button>`}</div>`; }
 function band(it){
   const S=PR.st, open=DB.settings.band!==false; const nh=(it.hints||[]).length;
   const lastH=S.hintShown.length?S.hintShown[S.hintShown.length-1]:null;
+  if(it.type==="attn") return `<div class="band ${open?"":"closed"}" id="band"><div class="r1"><button class="s" id="bTog">${open?"たたむ":"ST用"}</button>
+   <span class="hide-c">${nh?`<button class="s" id="hint" ${S.hintShown.length>=nh?"disabled":""}>ヒント ${S.hintShown.length}／${nh}</button>`:""}</span>
+   <span class="sp"></span><button class="s" id="skip">スキップ</button><button class="p s" id="next">次へ</button></div>
+   <div class="r2"><b id="atBand">${esc(attnBandText(it,S))}</b><span class="gl">注意の課題は自動で記録します。</span>${lastH?`<span class="hl">ヒント${S.hintShown.length}：${esc(lastH.t)}</span>`:""}<input type="text" id="memo" placeholder="メモ（様子など）" value="${esc(S.memo||"")}"></div></div>`;
   return `<div class="band ${open?"":"closed"}" id="band"><div class="r1">
    <button class="s" id="bTog">${open?"たたむ":"ST用"}</button>
    <span class="hide-c"><button class="s" id="hint" ${S.hintShown.length>=nh?"disabled":""}>ヒント ${S.hintShown.length}／${nh}</button></span>
@@ -928,10 +1157,11 @@ function newItemState(it){
   const S={hintShown:[],off:[],sel:[],mark:{},grade:null,auto:false,firstOk:null,tries:0,answered:false,memo:"",fb:"",fbc:"",t0:NOW(),rt:null,phase:"answer",boxes:!!(it.boxes&&!it.gen),model:false,input:""};
   if(it.type==="order"){ let idx=it.pieces.map((_,i)=>i); if(idx.length>1){ for(let k=0;k<10;k++){ idx=shuffle(idx); if(idx.some((v,i)=>v!==i)) break; } } S.pieces=idx.map(i=>it.pieces[i]); S.perm=idx; }
   if(it.type==="span") S.phase="present";
+  if(it.type==="attn") S.at=attnInit(it);
   return S;
 }
 function showItem(){
-  const it=curItem(); PR.st=newItemState(it); markUsed(PR.p,it); save();
+  const it=curItem(); PR.st=newItemState(it); if(it.type!=="attn") markUsed(PR.p,it); save(); // 注意の課題は毎回作り直すので記録しない
   render();
   if(it.type==="span") presentSpan(it); else if(it.speak&&DB.settings.auto!==false) setTimeout(()=>{ if(curItem()===it) speak(it.speak); },350);
 }
@@ -945,6 +1175,7 @@ vPractice.after=()=>{
   $("#pvEnd").onclick=()=>{ if(!confirm2("end","もう一度押すと訓練を終わります（ここまでの記録は残ります）")) return; finishSession(); };
   if(PR.ii<0){ $("#bGo").onclick=()=>{ PR.ii=0; showItem(); }; return; }
   const it=curItem(), S=PR.st;
+  if(it.type==="attn") attnMount(it,S);
   layout();
   const ag=$("#again"); if(ag) ag.onclick=()=>{ if(it.type==="span"){ if(S.phase==="answer"&&it.speak) speak(it.speak); } else speak(it.speak); };
   $$("[data-o]").forEach(el=>el.onclick=()=>onOpt(+el.dataset.o));
@@ -983,7 +1214,7 @@ function fitGrid(g){
   else { w=h=Math.max(80,Math.min(best.cw,best.ch,320)); }
   g.style.gridTemplateColumns=`repeat(${best.c},${Math.floor(w)}px)`; g.style.gridAutoRows=Math.floor(h)+"px";
 }
-window.addEventListener("resize",()=>{ if(SCREEN==="practice"&&PR&&PR.ii>=0){ layout(); if(curItem()&&curItem().type==="write") setupCanvas(); } });
+window.addEventListener("resize",()=>{ if(SCREEN==="practice"&&PR&&PR.ii>=0){ layout(); if(curItem()&&curItem().type==="write") setupCanvas(); if(curItem()&&curItem().type==="attn") attnMount(curItem(),PR.st); } });
 function setupCanvas(){
   const cv=$("#cv"); if(!cv) return; const S=PR.st; S.strokes=S.strokes||[];
   const r=cv.getBoundingClientRect(), d=window.devicePixelRatio||1; cv.width=Math.max(1,r.width*d); cv.height=Math.max(1,r.height*d);
@@ -1028,41 +1259,180 @@ function useHint(){
   if(h.act==="replay"&&it.type==="span"){ S.sel=[]; S.phase="present"; render(); presentSpan(it); return; }
   if(h.act==="reduce"&&it.options){ const want=new Set(it.type==="choice"?[it.answer]:(it.answer||it.seq||[])); const wr=it.options.map((_,i)=>i).filter(i=>!want.has(i)&&!S.off.includes(i)); shuffle(wr).slice(0,Math.ceil(wr.length/2)).forEach(i=>S.off.push(i)); }
   if(h.act==="boxes") S.boxes=true; if(h.act==="model") S.model=true;
-  render();
+  render(); if(h.act==="attn") attnHint(it,S);
 }
 function nextItem(skipped){
   const it=curItem(), S=PR.st, b=curBlock(); stopSpeak(); PR.cancelSpeak=true;
-  b.res[PR.ii]={id:it.id,words:it.words||[],type:it.type,ok:S.grade!=null?S.grade>=5:(S.firstOk===null?null:S.firstOk),grade:skipped&&S.grade==null?null:S.grade,auto:S.auto?S.firstOk:null,hints:S.hintShown.length,rt:S.rt,memo:S.memo||"",skipped:!!skipped&&!S.answered&&S.grade==null};
+  if(it.type==="attn"){ if(S.at&&S.at.phase==="run") attnFinish(it,S); atClear(); }
+  b.res[PR.ii]=it.type==="attn"?attnRes(it,S):{id:it.id,words:it.words||[],type:it.type,ok:S.grade!=null?S.grade>=5:(S.firstOk===null?null:S.firstOk),grade:skipped&&S.grade==null?null:S.grade,auto:S.auto?S.firstOk:null,hints:S.hintShown.length,rt:S.rt,memo:S.memo||"",skipped:!!skipped&&!S.answered&&S.grade==null};
   save();
   if(PR.ii+1<b.items.length){ PR.ii++; showItem(); return; }
   if(PR.bi+1<PR.sess.blocks.length){ PR.bi++; PR.ii=-1; render(); return; }
   finishSession();
 }
-function finishSession(){ stopSpeak(); if(!PR) return; PR.sess.done=true; PR.sess.end=new Date(NOW()).toISOString();
+function finishSession(){ stopSpeak(); atClear(); if(!PR) return; PR.sess.done=true; PR.sess.end=new Date(NOW()).toISOString();
   PR.sess.blocks=PR.sess.blocks.filter(b=>b.res.some(r=>r)); const p=PR.p; if(!PR.sess.blocks.length) p.sessions=p.sessions.filter(s=>s!==PR.sess);
   save(); RESULT=PR.sess; PR=null; go("result"); }
 
+/* ---------- 注意の訓練：練習画面  作成：KENTA SHINKAWA ---------- */
+let AT_T=[]; // 注意の課題のタイマー（次へ・終了で必ず止める）
+function atLater(fn,ms){ const id=setTimeout(fn,ms); AT_T.push(id); return id; }
+function atEvery(fn,ms){ const id=setInterval(fn,ms); AT_T.push(id); return id; }
+function atClear(){ AT_T.forEach(id=>{ clearTimeout(id); clearInterval(id); }); AT_T=[]; }
+const atLive=S=>!!(PR&&PR.st===S&&SCREEN==="practice");
+const atSec=ms=>(Math.round((ms||0)/100)/10).toFixed(1);
+function attnInit(it){ const k=it.attn.kind; return {phase:k==="cancel"||k==="trail"?"run":"ready",tStart:k==="cancel"||k==="trail"?NOW():null,tap:[],k:0,err:0,resp:{},rtw:{},cur:-1,j:0,rs:[],lay:null,res:null}; }
+const atListenQ=it=>it.attn.kind==="dual"?it.attn.listen:it.attn;
+const atCancelQ=it=>it.attn.kind==="dual"?it.attn.cancel:it.attn;
+/* 画面を作る（状態は S.at に残るので、作り直しても続きから） */
+function attnMount(it,S){ const host=$("#attnWrap"); if(!host||!S.at) return; const A=it.attn, a=S.at, k=A.kind;
+  const port=window.innerHeight>window.innerWidth*1.05; host.innerHTML=attnHTML(it,S,port);
+  if(k==="cancel"||k==="trail"||k==="dual") attnField(it,S);
+  $$("#atField [data-ai]").forEach(el=>el.onclick=()=>{ const i=+el.dataset.ai; if(k==="trail") atTrailTap(it,S,i,el); else atCancelTap(it,S,i,el); });
+  const st=$("#atStart"); if(st) st.onclick=()=>attnStart(it,S);
+  const pl=$("#atPlay"); if(pl) pl.onclick=()=>speak(A.mode==="word"?yomiOf(W(A.examples[0])):A.label);
+  const dn=$("#atDone"); if(dn) dn.onclick=()=>{ attnFinish(it,S); render(); };
+  const hr=$("#atHear"); if(hr) hr.onpointerdown=e=>{ e.preventDefault(); atHear(it,S); };
+  const bl=$("#atL"), br=$("#atR"); if(bl) bl.onpointerdown=e=>{ e.preventDefault(); atSwResp(it,S,"L"); }; if(br) br.onpointerdown=e=>{ e.preventDefault(); atSwResp(it,S,"R"); };
+  if(k==="switch"&&a.phase==="run") attnSwDraw(it,S);
+  if(k==="cancel"&&a.phase==="run"&&A.lim&&!a.timerOn){ a.timerOn=true; atEvery(()=>{ if(!atLive(S)||a.phase!=="run") return; atInfo(it,S); if(NOW()-a.tStart>=A.lim*1000){ attnFinish(it,S); render(); } },500); }
+  atInfo(it,S); }
+const atSymHTML=(mode,s,fz)=>mode==="pic"?`<span class="at-pic">${picHTML(s)}</span>`:`<span class="tx" ${fz?`style="font-size:${fz}px"`:""}>${esc(s)}</span>`;
+function attnHTML(it,S,port){ const A=it.attn, a=S.at, k=A.kind, run=a.phase==="run", done=a.phase==="done";
+  const msg=`<div class="at-msg ${S.fbc||""}" id="atMsg">${esc(S.fb||"")}</div>`;
+  if(k==="cancel"||k==="trail"||k==="dual"){ const C=atCancelQ(it); let pan="";
+    if(k!=="trail") pan+=`<div class="at-samp"><b>見本</b><span class="at-sw">${atSymHTML(C.mode,C.sample)}</span></div>`;
+    if(k==="dual") pan+=`<div class="at-samp cue"><b>合図</b><span class="at-sw"><span class="at-pic">${picHTML(A.listen.examples[0])}</span></span><span class="at-wd">${esc(A.listen.label)}</span></div>`;
+    if(k==="trail"&&it.level<=2&&!done) pan+=`<div class="at-samp"><b>次は</b><span class="at-sw"><span class="tx" id="atNext">${esc(A.labels[a.k]||"")}</span></span></div>`;
+    if(k==="trail"&&A.alt) pan+=`<div class="at-info">1→あ→2→い→3→う…</div>`;
+    pan+=`<div class="at-info" id="atInfo"></div>`;
+    if(k==="dual"&&!done) pan+=`<button class="at-big" id="atHear" ${run?"":"disabled"}>聞こえた</button>`;
+    if(a.phase==="ready") pan+=`<button class="p at-start" id="atStart">はじめる</button>`;
+    if(run) pan+=`<button class="p" id="atDone">終わりました</button>`;
+    return `<div class="at-wrap ${port?"port":"land"}"><div class="at-panel">${pan}${msg}</div><div class="at-field" id="atField"></div></div>`; }
+  if(k==="listen"){ const samp=A.mode==="word"?`<div class="at-pics"><div class="spic">${picHTML(A.examples[0])}</div></div><div class="at-word">${esc(A.label)}</div>`:`<div class="at-word">「${esc(A.label)}」の仲間</div><div class="at-pics">${A.examples.map(x=>`<div class="spic">${picHTML(x)}</div>`).join("")}</div>`;
+    let h=`<div class="at-wrap col"><div class="at-samp col ${run||done?"sm":""}"><b>合図の言葉（見本）</b>${samp}</div>`;
+    if(a.phase==="ready") h+=`<div class="row" style="justify-content:center"><button id="atPlay">見本を聞く</button><button class="p at-start" id="atStart">はじめる</button></div>`;
+    if(run) h+=`<button class="at-big" id="atHear">聞こえた</button><div class="at-info" id="atInfo"></div>`;
+    return h+msg+`</div>`; }
+  // ルールの切り替え
+  const used=Array.from(new Set(A.trials.map(x=>x.r)));
+  if(a.phase==="ready") return `<div class="at-wrap col"><div class="at-rules">${used.map(r=>`<div class="at-rule" style="border-color:${AT_RULES[r].c};color:${AT_RULES[r].c}">${esc(AT_RULES[r].t)}</div>`).join("")}</div>${used.length>1?`<div class="at-info">途中でルールが変わります。変わるときは画面に大きく出ます。</div>`:""}<button class="p at-start" id="atStart">はじめる</button>${msg}</div>`;
+  if(done) return `<div class="at-wrap col">${msg}</div>`;
+  return `<div class="at-wrap col"><div class="at-rule" id="atRule"></div><div class="at-stim" id="atStim"></div><div class="at-lr"><button id="atL"></button><button id="atR"></button></div><div class="at-info" id="atInfo"></div></div>`; }
+/* 探す・順に触る：広さに合わせて配置を作り、絵・文字を置く */
+function attnField(it,S){ const f=$("#atField"); if(!f) return; const A=it.attn, a=S.at, k=A.kind, C=atCancelQ(it);
+  const Wd=f.clientWidth, Hd=f.clientHeight; if(Wd<40||Hd<40) return; const asp=Wd/Hd;
+  const n=k==="trail"?A.labels.length:C.cells.length;
+  if(!a.lay||Math.abs(a.lay.asp-asp)/asp>0.12) a.lay=k==="trail"?pathLayout(n,asp,300,it.level>=3):attnLayout(n,asp);
+  const lay=a.lay, sz=Math.min(150,Math.floor(lay.k*Hd)), px=p=>[p[0]/lay.asp*Wd,p[1]*Hd]; let h="";
+  if(k==="trail"){ let ln=""; for(let i=1;i<a.k;i++){ const [x1,y1]=px(lay.pos[i-1]), [x2,y2]=px(lay.pos[i]); ln+=`<line x1="${x1.toFixed(1)}" y1="${y1.toFixed(1)}" x2="${x2.toFixed(1)}" y2="${y2.toFixed(1)}" stroke="#1f4e79" stroke-width="5" stroke-linecap="round"/>`; }
+    h+=`<svg class="at-lines" id="atLines" viewBox="0 0 ${Wd} ${Hd}">${ln}</svg>`; }
+  lay.pos.forEach((p,i)=>{ const [x,y]=px(p); let cls="", inner;
+    if(k==="trail"){ cls="nm"+(i<a.k?" dn":""); inner=`<span class="tx" style="font-size:${Math.round(sz*.46)}px">${esc(A.labels[i])}</span>`; }
+    else { const c=C.cells[i], tp=a.tap.includes(i); cls=a.phase==="done"?(c.t?(tp?"hit":"miss"):(tp?"fa":"")):(tp?"tap":""); inner=atSymHTML(C.mode,c.s,Math.round(sz*.62)); }
+    h+=`<button class="at-it ${cls}" data-ai="${i}" style="left:${(x-sz/2).toFixed(1)}px;top:${(y-sz/2).toFixed(1)}px;width:${sz}px;height:${sz}px">${inner}</button>`; });
+  if(k!=="trail"&&a.phase==="done"&&a.res){ const d=a.res.d; h+=`<div class="at-mid"></div>`; } // 真ん中の点線で左右を分ける（数は左の欄とST用の帯に出す）
+  f.innerHTML=h; }
+function atInfo(it,S){ const e=$("#atInfo"), a=S.at, A=it.attn; if(e){ let s="";
+    if(A.kind==="cancel"&&A.lim&&a.phase==="run") s=`残り ${Math.max(0,Math.ceil((A.lim*1000-(NOW()-a.tStart))/1000))}秒`;
+    if((A.kind==="listen"||A.kind==="dual")&&a.phase==="run"){ const Q=atListenQ(it); s=a.cur<0?"まもなく始まります":`${a.cur+1}／${Q.seq.length}`; }
+    if(A.kind==="switch"&&a.phase==="run") s=`${Math.min(a.j+1,A.trials.length)}／${A.trials.length}`;
+    e.textContent=s; }
+  const nx=$("#atNext"); if(nx) nx.textContent=A.labels?(A.labels[a.k]||""):"";
+  const bd=$("#atBand"); if(bd) bd.textContent=attnBandText(it,S); }
+function attnBandText(it,S){ const a=S.at, A=it.attn; if(!a) return "";
+  if(a.phase==="done"&&a.res) return attnDetailText(a.res.d,1);
+  if(a.phase==="ready") return "「はじめる」を押すと始まります";
+  if(A.kind==="cancel") return `触った数 ${a.tap.length}`;
+  if(A.kind==="trail") return `${a.k}／${A.labels.length}　まちがい ${a.err}`;
+  if(A.kind==="switch") return `${Math.min(a.j+1,A.trials.length)}／${A.trials.length}　正答 ${a.rs.filter(r=>r.ok).length}`;
+  const Q=atListenQ(it); const w=a.cur>=0?Q.seq[a.cur]:null; return `読み上げ ${a.cur+1}／${Q.seq.length}${w?`　いま「${W(w.id).hyoki}」${w.t?"（合図）":""}`:""}${A.kind==="dual"?`　触った数 ${a.tap.length}`:""}`; }
+function attnStart(it,S){ const a=S.at; if(a.phase!=="ready") return; a.phase="run"; a.tStart=NOW(); S.t0=a.tStart; attnMount(it,S); const k=it.attn.kind;
+  if(k==="listen"||k==="dual") atLater(()=>atListenTick(it,S),900);
+  if(k==="switch") atLater(()=>{ if(atLive(S)) atSwShow(it,S); },300); }
+function atCancelTap(it,S,i,el){ const a=S.at; if(a.phase!=="run") return; const C=atCancelQ(it); const at=a.tap.indexOf(i);
+  if(at>=0){ a.tap.splice(at,1); el.classList.remove("tap"); } else { a.tap.push(i); el.classList.add("tap"); }
+  atInfo(it,S); const T=C.cells.filter(c=>c.t).length; if(it.attn.kind==="cancel"&&a.tap.filter(j=>C.cells[j].t).length>=T){ attnFinish(it,S); render(); } }
+function atTrailTap(it,S,i,el){ const a=S.at, A=it.attn; if(a.phase!=="run"||i<a.k) return;
+  if(i===a.k){ a.k++; el.classList.add("dn"); const sv=$("#atLines"), f=$("#atField");
+    if(sv&&f&&a.k>=2){ const Wd=f.clientWidth, Hd=f.clientHeight, P=a.lay.pos, q=x=>[x[0]/a.lay.asp*Wd,x[1]*Hd]; const [x1,y1]=q(P[a.k-2]), [x2,y2]=q(P[a.k-1]);
+      sv.insertAdjacentHTML("beforeend",`<line x1="${x1.toFixed(1)}" y1="${y1.toFixed(1)}" x2="${x2.toFixed(1)}" y2="${y2.toFixed(1)}" stroke="#1f4e79" stroke-width="5" stroke-linecap="round"/>`); }
+    atInfo(it,S); if(a.k>=A.labels.length){ attnFinish(it,S); render(); } }
+  else { a.err++; el.classList.add("bad"); setTimeout(()=>el.classList.remove("bad"),450); atInfo(it,S); } }
+function atListenTick(it,S){ if(!atLive(S)||S.at.phase!=="run") return; const a=S.at, Q=atListenQ(it); const i=a.cur+1;
+  if(i>=Q.seq.length){ attnFinish(it,S); render(); return; }
+  a.cur=i; a.on=NOW(); speak(yomiOf(W(Q.seq[i].id))); atInfo(it,S); atLater(()=>atListenTick(it,S),Q.gap); }
+function atHear(it,S){ const a=S.at; if(a.phase!=="run") return; const b=$("#atHear"); const fl=c=>{ if(!b) return; b.classList.remove("hit","fa","pr"); b.classList.add(c); setTimeout(()=>b&&b.classList.remove(c),350); };
+  if(a.cur<0||a.resp[a.cur]){ fl("pr"); return; } const Q=atListenQ(it); a.resp[a.cur]=true; a.rtw[a.cur]=NOW()-a.on; fl(Q.seq[a.cur].t?"hit":"fa"); atInfo(it,S); }
+function atSwShow(it,S){ const a=S.at, A=it.attn; if(a.phase!=="run"||!A.trials[a.j]) return; a.wait=false; a.on=NOW(); a.seqNo=(a.seqNo||0)+1; const my=a.seqNo; attnSwDraw(it,S);
+  if(A.lim) atLater(()=>{ if(atLive(S)&&a.seqNo===my&&!a.lock&&!a.wait&&a.phase==="run") atSwResp(it,S,null); },A.lim); }
+function attnSwDraw(it,S){ const a=S.at, A=it.attn; const tr=A.trials[Math.min(a.j,A.trials.length-1)]; const r=AT_RULES[tr.r];
+  const ru=$("#atRule"); if(ru){ ru.textContent=r.t; ru.style.borderColor=r.c; ru.style.color=r.c; }
+  const st=$("#atStim"); if(st){ st.className="at-stim"; st.style.borderColor=r.c; st.innerHTML=a.wait||a.on==null?`<div class="chg" style="color:${r.c}">${a.wait?"ルールが変わります":"まもなく始まります"}</div>`:tr.pic?`<span class="at-pic">${picHTML(tr.pic)}</span>`:`<span class="tx">${tr.num}</span>`; }
+  [["atL","L","Ls"],["atR","R","Rs"]].forEach(([id,k,ks])=>{ const b=$("#"+id); if(!b) return; b.innerHTML=`${esc(r[k])}${r[ks]?`<small>${r[ks]}</small>`:""}`; b.disabled=!!a.wait||a.on==null; b.style.borderColor=r.c; });
+  atInfo(it,S); }
+function atSwResp(it,S,side){ const a=S.at, A=it.attn, tr=A.trials[a.j]; if(a.phase!=="run"||a.wait||a.lock||!tr||a.on==null) return; a.lock=true;
+  const to=side==null, ok=!to&&side===tr.ans, sw=a.j>0&&A.trials[a.j-1].r!==tr.r; a.rs.push({ok,to,sw,rt:to?null:NOW()-a.on});
+  const st=$("#atStim"); if(st){ st.classList.add(ok?"okf":"ngf"); if(to) st.insertAdjacentHTML("beforeend",`<div class="chg" style="position:absolute;bottom:4px">時間切れ</div>`); }
+  atInfo(it,S);
+  atLater(()=>{ if(!atLive(S)) return; a.lock=false; a.j++; if(a.j>=A.trials.length){ attnFinish(it,S); render(); return; }
+    if(A.trials[a.j].r!==tr.r){ a.wait=true; attnSwDraw(it,S); atLater(()=>{ if(atLive(S)) atSwShow(it,S); },1800); } else atSwShow(it,S); },to?900:550); }
+/* ヒント：残っている側を光らせる（探す）・次に触るものを光らせる（順に触る） */
+function attnHint(it,S){ const a=S.at, A=it.attn; if(!a||a.phase!=="run") return; const f=$("#atField"); if(!f) return;
+  if(A.kind==="trail"){ const el=f.querySelector(`[data-ai="${a.k}"]`); if(el){ el.classList.add("glow"); setTimeout(()=>el.classList.remove("glow"),1600); } return; }
+  const C=atCancelQ(it); let l=0,r=0; C.cells.forEach((c,i)=>{ if(c.t&&!a.tap.includes(i)&&a.lay) (a.lay.pos[i][0]<a.lay.asp/2?l++:r++); }); if(!l&&!r) return;
+  f.insertAdjacentHTML("beforeend",`<div class="at-glowside" id="atGlow" style="left:${l>=r?0:50}%"></div>`); setTimeout(()=>{ const g=$("#atGlow"); if(g) g.remove(); },1800); }
+/* 採点 */
+function atCancelScore(C,a){ const tap=new Set(a.tap), side=i=>a.lay&&a.lay.pos[i]?(a.lay.pos[i][0]<a.lay.asp/2?"L":"R"):"L"; let T=0,hit=0,miss=0,missL=0,missR=0,hitL=0,hitR=0,fa=0;
+  C.cells.forEach((c,i)=>{ if(c.t){ T++; if(tap.has(i)){ hit++; side(i)==="L"?hitL++:hitR++; } else { miss++; side(i)==="L"?missL++:missR++; } } else if(tap.has(i)) fa++; });
+  return {T,hit,miss,missL,missR,hitL,hitR,fa,acc:T+fa?Math.round(hit/(T+fa)*100):0}; }
+function atListenScore(Q,a){ let T=0,hit=0,fa=0; const rts=[]; for(let i=0;i<=a.cur&&i<Q.seq.length;i++){ if(Q.seq[i].t){ T++; if(a.resp[i]){ hit++; rts.push(a.rtw[i]); } } else if(a.resp[i]) fa++; }
+  return {T,hit,miss:T-hit,fa,n:Math.min(a.cur+1,Q.seq.length),acc:T+fa?Math.round(hit/(T+fa)*100):0,rt:rts.length?Math.round(rts.reduce((x,y)=>x+y,0)/rts.length):null}; }
+function attnFinish(it,S){ const a=S.at; if(!a||a.phase==="done") return; atClear(); stopSpeak(); const A=it.attn, k=A.kind; const d={kind:k,time:a.tStart?NOW()-a.tStart:0}; let acc=0, rt=null, fb="", good;
+  if(k==="cancel"||k==="dual"){ const c=atCancelScore(atCancelQ(it),a); Object.assign(d,c); acc=c.acc;
+    fb=c.miss?`見落としが ${c.miss}個あります（左側 ${c.missL}・右側 ${c.missR}）。オレンジ色の所です。`:"全部見つけました。"; if(c.fa) fb+=`赤い枠は見本と違うものです（${c.fa}個）。`; }
+  if(k==="trail"){ const n=A.labels.length; Object.assign(d,{n,done:a.k,err:a.err}); acc=Math.round(a.k/(n+a.err)*100); fb=a.k>=n?`最後まで触りました（まちがい ${a.err}回、${atSec(d.time)}秒）。`:`${n}個のうち ${a.k}個まで触りました。`; }
+  if(k==="listen"||k==="dual"){ const l=atListenScore(atListenQ(it),a); if(k==="dual"){ d.l=l; acc=Math.round((acc+l.acc)/2); fb+=`合図 ${l.T}回のうち ${l.hit}回触りました。`; } else { Object.assign(d,l); acc=l.acc; rt=l.rt; fb=`合図 ${l.T}回のうち ${l.hit}回触りました（見逃し ${l.miss}・余計に触った ${l.fa}）。`; } }
+  if(k==="switch"){ const rs=a.rs; const ok=rs.filter(r=>r.ok).length, to=rs.filter(r=>r.to).length; const rts=rs.filter(r=>r.ok&&r.rt!=null).map(r=>r.rt);
+    Object.assign(d,{n:rs.length,ok,err:rs.length-ok-to,to,sw:rs.filter(r=>r.sw).length,swErr:rs.filter(r=>r.sw&&!r.ok).length}); acc=rs.length?Math.round(ok/rs.length*100):0; rt=rts.length?Math.round(rts.reduce((x,y)=>x+y,0)/rts.length):null;
+    fb=`${rs.length}問のうち ${ok}問正解でした。`; }
+  good=acc>=100; a.phase="done"; a.res={acc,perfect:good,rt,d}; S.answered=true; S.auto=true; S.firstOk=good; S.rt=rt; S.fb=fb; S.fbc=good?"ok":"ng"; save(); }
+function attnRes(it,S){ const r=S.at&&S.at.res; return {id:it.id,words:[],type:"attn",kind:it.attn.kind,ok:r?r.perfect:null,grade:null,auto:r?r.perfect:null,hints:S.hintShown.length,rt:r?r.rt:null,memo:S.memo||"",skipped:!r,acc:r?r.acc:null,at:r?r.d:null}; }
+function atAdd(sum,d){ for(const [k,v] of Object.entries(d||{})){ if(typeof v==="number") sum[k]=(sum[k]||0)+v; else if(v&&typeof v==="object") atAdd(sum[k]=sum[k]||{},v); else if(k==="kind") sum.kind=v; } return sum; }
+function attnStats(b){ const rs=(b.res||[]).filter(Boolean), g=rs.filter(r=>r.acc!=null); const rts=rs.filter(r=>r.rt!=null).map(r=>r.rt); const sum={}; g.forEach(r=>atAdd(sum,r.at));
+  return {n:rs.length,graded:g.length,ok:g.filter(r=>r.acc>=100).length,rate:g.length?Math.round(g.reduce((x,r)=>x+r.acc,0)/g.length):null,hintItems:rs.filter(r=>r.hints>0).length,hints:rs.reduce((x,r)=>x+(r.hints||0),0),rt:rts.length?rts.reduce((x,y)=>x+y,0)/rts.length/1000:null,skip:rs.filter(r=>r.skipped).length,at:g.length?sum:null}; }
+/* 記録の文（1回分、または何回分かの合計） */
+function attnDetailText(d,n){ if(!d) return ""; n=Math.max(1,n||1); const tm=n>1?`1回平均 ${atSec(d.time/n)}秒`:`時間 ${atSec(d.time)}秒`;
+  const cz=x=>`見つけた ${x.hit}／${x.T}　見落とし ${x.miss}（左側 ${x.missL}・右側 ${x.missR}${x.missL>x.missR+1?"　左側が多め":x.missR>x.missL+1?"　右側が多め":""}）　まちがい触り ${x.fa}`;
+  if(d.kind==="cancel") return `${cz(d)}　${tm}`;
+  if(d.kind==="dual") return `${cz(d)}　合図 ${d.l?d.l.hit:0}／${d.l?d.l.T:0}（見逃し ${d.l?d.l.miss:0}・余計に触った ${d.l?d.l.fa:0}）　${tm}`;
+  if(d.kind==="trail") return `${d.done}／${d.n}個　まちがい ${d.err}　${tm}`;
+  if(d.kind==="listen") return `合図 ${d.T}回のうち正しく触れた ${d.hit}　見逃し ${d.miss}　余計に触った ${d.fa}`;
+  if(d.kind==="switch") return `${d.n}問のうち正答 ${d.ok}　まちがい ${d.err}　時間切れ ${d.to}　ルールが変わった直後のまちがい ${d.swErr}／${d.sw}`;
+  return ""; }
+
 /* ---------- 結果 ---------- */
 let RESULT=null;
-function blockStats(b){ const rs=(b.res||[]).filter(Boolean); const graded=rs.filter(r=>r.grade!=null||r.ok!=null);
+function blockStats(b){ if(b.type==="attn") return attnStats(b); const rs=(b.res||[]).filter(Boolean); const graded=rs.filter(r=>r.grade!=null||r.ok!=null);
   const okN=graded.filter(r=>r.grade!=null?r.grade>=5:r.ok).length; const rts=rs.filter(r=>r.rt!=null).map(r=>r.rt);
   return {n:rs.length,graded:graded.length,ok:okN,rate:graded.length?Math.round(okN/graded.length*100):null,hintItems:rs.filter(r=>r.hints>0).length,hints:rs.reduce((a,r)=>a+(r.hints||0),0),rt:rts.length?rts.reduce((a,x)=>a+x,0)/rts.length/1000:null,skip:rs.filter(r=>r.skipped).length}; }
-function statTable(sess){ return `<table><tr><th>課題</th><th>level</th><th>問題数</th><th>正答率</th><th>ヒント</th><th>平均反応時間</th></tr>${sess.blocks.map(b=>{ const s=blockStats(b); return `<tr><td>${esc(b.skill)}<div class="muted small">${TYPE_JP[b.type]||""}</div></td><td>${b.level}</td><td>${s.n}${s.skip?`（スキップ${s.skip}）`:""}</td><td><b>${s.rate==null?"未判定":s.rate+"%"}</b>（${s.ok}／${s.graded}）</td><td>${s.hintItems}問で${s.hints}回</td><td>${s.rt==null?"－":s.rt.toFixed(1)+"秒"}</td></tr>`; }).join("")}</table>`; }
+function statTable(sess){ return `<table><tr><th>課題</th><th>level</th><th>問題数</th><th>正答率</th><th>ヒント</th><th>平均反応時間</th></tr>${sess.blocks.map(b=>{ const s=blockStats(b); return `<tr><td>${esc(b.skill)}<div class="muted small">${TYPE_JP[b.type]||""}</div></td><td>${b.level}</td><td>${s.n}${s.skip?`（スキップ${s.skip}）`:""}</td><td><b>${s.rate==null?"未判定":s.rate+"%"}</b>（${s.ok}／${s.graded}）</td><td>${s.hintItems}問で${s.hints}回</td><td>${s.rt==null?"－":s.rt.toFixed(1)+"秒"}</td></tr>${s.at?`<tr><td colspan="6" class="small">注意の記録：${esc(attnDetailText(s.at,s.graded))}</td></tr>`:""}`; }).join("")}</table>`; }
 function vResult(){
   const p=P(); const s=RESULT||(p&&lastSession(p)); if(!s) return topBar("結果")+`<div class="wrap"><p>結果がありません。</p></div>`;
   return topBar("今日の結果")+`<div class="wrap"><div class="card"><h2>${fmtD(s.date)} の結果（${s.mode==="solo"?"ひとりで練習":"STと練習"}）</h2>${statTable(s)}
-   <p class="muted small">正答率は段階6・5を正答として数えています。自動判定の課題は、最初の答えで判定しています（STが段階を直した場合はそれを使います）。</p></div>
+   <p class="muted small">正答率は段階6・5を正答として数えています。自動判定の課題は、最初の答えで判定しています（STが段階を直した場合はそれを使います）。${s.blocks.some(b=>b.type==="attn")?"注意の課題の正答率は、見つけた数 ÷（目標の数＋まちがい）などで出した正確さの平均です。":""}</p></div>
    ${suggestHTML(p)}<div class="row"><button class="p" data-go="records">記録と推移を見る</button><button data-go="home">ホームへ</button></div></div>`+foot();
 }
 vResult.after=()=>bindSuggest();
 function suggestions(p){
-  const by={}; p.sessions.forEach(s=>(s.blocks||[]).forEach(b=>{ const st=blockStats(b); if(st.graded<3) return; (by[b.skill]=by[b.skill]||[]).push({date:s.date,level:b.level,rate:st.rate}); }));
+  const by={}; p.sessions.forEach(s=>(s.blocks||[]).forEach(b=>{ const st=blockStats(b); if(st.graded<(b.type==="attn"?1:3)) return; (by[b.skill]=by[b.skill]||[]).push({date:s.date,level:b.level,rate:st.rate}); }));
   const out=[]; for(const [k,a] of Object.entries(by)){ if(a.length<2) continue; const x=a[a.length-2], y=a[a.length-1]; if(x.level!==y.level) continue;
     if(x.rate>=80&&y.rate>=80&&y.level<5) out.push({skill:k,from:y.level,to:y.level+1,why:`2回続けて正答率80%以上（${x.rate}%、${y.rate}%）`,up:true});
     if(x.rate<40&&y.rate<40&&y.level>1) out.push({skill:k,from:y.level,to:y.level-1,why:`2回続けて正答率40%未満（${x.rate}%、${y.rate}%）`,up:false}); }
   return out.filter(s=>effLevelNow(p,s.skill)===s.from);
 }
-function effLevelNow(p,skill){ if(p.lv[skill]!=null) return p.lv[skill]; const r=(recommend(p)||[]).find(r=>r.skills&&r.skills.some(x=>x.skill===skill)); return r?r.level:null; }
+function effLevelNow(p,skill){ if(p.lv[skill]!=null) return p.lv[skill]; if(isAttnSkill(skill)) return attnLv(p,skill); const r=(recommend(p)||[]).find(r=>r.skills&&r.skills.some(x=>x.skill===skill)); return r?r.level:null; }
 function suggestHTML(p){ if(!p) return ""; const sg=suggestions(p); if(!sg.length) return "";
   return `<div class="card"><h2>level の提案（決めるのはSTです）</h2>${sg.map((s,i)=>`<div class="row"><span>${esc(s.skill)}：${s.why} → <b>level${s.from} を level${s.to} に${s.up?"上げる":"下げる"}</b>提案</span><button class="s" data-sg="${i}">${s.up?"上げる":"下げる"}</button></div>`).join("")}</div>`; }
 function bindSuggest(){ const p=P(); if(!p) return; const sg=suggestions(p); $$("[data-sg]").forEach(b=>b.onclick=()=>{ const s=sg[+b.dataset.sg]; p.lv[s.skill]=s.to; save(); toast(`${s.skill} を level${s.to} にしました`); render(); }); }
@@ -1076,7 +1446,7 @@ function vRecords(){
   let h=topBar("記録と推移")+`<div class="wrap">${suggestHTML(p)}${(p.prints||[]).length?`<div class="card"><h2>印刷した記録</h2>${printHistory(p)}</div>`:""}<div class="card"><h2>課題ごとの正答率の推移</h2>`;
   if(!skills.length) h+=`<p class="muted">まだ記録がありません。</p>`;
   else { h+=`<div class="row"><select id="rsk">${skills.map(k=>`<option ${k===REC_SKILL?"selected":""}>${esc(k)}</option>`).join("")}</select></div><div class="chart">${chartSVG(rows.filter(r=>r.b.skill===REC_SKILL&&r.st.rate!=null))}</div>`; }
-  h+=`</div><div class="card"><h2>記録の一覧</h2><table><tr><th>日付</th><th>課題</th><th>level</th><th>正答率</th><th>ヒント</th><th>練習の形</th></tr>${rows.slice().reverse().map(r=>`<tr><td>${fmtD(r.s.date)}</td><td>${esc(r.b.skill)}</td><td>${r.b.level}</td><td>${r.st.rate==null?"未判定":r.st.rate+"%"}（${r.st.ok}／${r.st.graded}）</td><td>${r.st.hints}回</td><td class="small">${r.s.mode==="solo"?"ひとりで":"STと"}</td></tr>`).join("")||`<tr><td colspan="6" class="muted">まだありません</td></tr>`}</table></div></div>`+foot();
+  h+=`</div><div class="card"><h2>記録の一覧</h2><table><tr><th>日付</th><th>課題</th><th>level</th><th>正答率</th><th>ヒント</th><th>練習の形</th></tr>${rows.slice().reverse().map(r=>`<tr><td>${fmtD(r.s.date)}</td><td>${esc(r.b.skill)}</td><td>${r.b.level}</td><td>${r.st.rate==null?"未判定":r.st.rate+"%"}（${r.st.ok}／${r.st.graded}）${r.st.at?`<div class="small">${esc(attnDetailText(r.st.at,r.st.graded))}</div>`:""}</td><td>${r.st.hints}回</td><td class="small">${r.s.mode==="solo"?"ひとりで":"STと"}</td></tr>`).join("")||`<tr><td colspan="6" class="muted">まだありません</td></tr>`}</table></div></div>`+foot();
   return h;
 }
 vRecords.after=()=>{ const s=$("#rsk"); if(s) s.onchange=()=>{ REC_SKILL=s.value; render(); }; bindSuggest(); };
@@ -1240,6 +1610,7 @@ function skShape(sk,L){
 function perSheet(sk,L){ const i=clamp(L||3,1,5)-1, t=sk.type, sh=skShape(sk,L);
   // 軽度（level4・5）は1枚に多めに入れる。A4に収まらない分は印刷前に自動で減らす（fitPrint）
   if(sk.name==="語の列挙") return [1,2,2,4,5][i];
+  if(sk.name===ATTN_SK.same) return [4,5,6,8,9][i]; // 注意：同じものを選ぶ
   if(t==="choice") return sh==="long"?[1,2,2,3,4][i]:[2,3,3,5,6][i];
   if(t==="yesno") return sh==="long"?[2,2,3,5,6][i]:[3,4,5,8,10][i];
   if(t==="say") return sh==="pics"?[1,1,1,3,3][i]:sh==="long"?[2,2,3,5,6][i]:sh==="text"?[4,5,6,10,12][i]:sh==="pic"?[3,4,5,6,8][i]:[5,6,8,12,14][i];
@@ -1248,6 +1619,33 @@ function perSheet(sk,L){ const i=clamp(L||3,1,5)-1, t=sk.type, sh=skShape(sk,L);
   if(t==="input") return sh==="pic"||sh==="pics"?[1,2,2,4,4][i]:sh==="long"?[2,3,3,5,6][i]:[4,6,8,12,14][i];
   return [1,2,2,4,5][i]; // tapseq・span
 }
+/* ---------- 注意の用紙（STが注意の訓練を「入れる」にしたとき、1〜2枚加える）  作成：KENTA SHINKAWA ---------- */
+const AT_PAPER={cancel:"見本と同じものに丸を付ける",trail:"数字を順に線でつなぐ",same:ATTN_SK.same};
+function atPaperCancel(L){ const rows=[5,7,9,11,13][L-1], cols=[8,10,12,14,16][L-1]; const modes=["kana","digit","symbol"]; const S=atSymbols(modes[rnd(3)]);
+  const N=rows*cols, T=Math.max(3,Math.round(N*[.16,.14,.12,.11,.1][L-1])), simP=[0,.15,.35,.55,.7][L-1]; const dif=shuffle(S.dif).slice(0,[4,5,6,8,10][L-1]);
+  const cells=[]; for(let i=0;i<T;i++) cells.push({s:S.s,t:true}); for(let i=T;i<N;i++){ const pool=S.sim.length&&Math.random()<simP?S.sim:dif; cells.push({s:pool[rnd(pool.length)],t:false}); }
+  return {kind:"cancel",mode:S.mode,sample:S.s,rows,cols,cells:shuffle(cells)}; }
+function atPaperTrail(L){ const n=[8,12,16,20,20][L-1], alt=L>=5; const labels=alt?[].concat(...Array.from({length:n/2},(_,i)=>[String(i+1),"あいうえおかきくけこ"[i]])):Array.from({length:n},(_,i)=>String(i+1));
+  const Wm=176, Hm=222, lay=pathLayout(n,Wm/Hm,500,L>=3); const dia=Math.min(lay.k*Hm,[15,14,13,12,12][L-1]);
+  return {kind:"trail",labels,alt,W:Wm,H:Hm,dia,pos:lay.pos.map(p=>[p[0]*Hm,p[1]*Hm]),path:lay.path}; }
+function attnPaperSheets(p,count,sess,sh){ const L=clamp((p.attn&&p.attn.level)||2,1,5); const last={};
+  (p.prints||[]).forEach((r,i)=>(r.sheets||[]).forEach(s=>{ for(const [k,v] of Object.entries(AT_PAPER)) if(s.skill===v) last[k]=i+1; }));
+  const kinds=Object.keys(AT_PAPER).map(k=>({k,r:(last[k]||0)+Math.random()*.5})).sort((a,b)=>a.r-b.r).map(x=>x.k); const out=[];
+  for(const k of kinds){ if(out.length>=count) break; const base={skill:AT_PAPER[k],level:L,pct:null,no:null,name:"注意の訓練",over:false,hint:false,attn:k};
+    if(k==="same"){ const sk=SKILLS[ATTN_SK.same]; if(!sk) continue; const want=perSheet(sk,L); let items=[]; try{ items=makeItems(sh,{skill:ATTN_SK.same,level:L,n:want+3,paper:true},sess).filter(paperOK).slice(0,want); }catch(e){ console.error(e); }
+      if(!items.length) continue; items.forEach(it=>markUsed(sh,it)); out.push(Object.assign(base,{type:"choice",items})); }
+    else out.push(Object.assign(base,{type:"attnpaper",items:[],ap:k==="cancel"?atPaperCancel(L):atPaperTrail(L)})); }
+  return out; }
+function ppAttnSheet(s,idx,total){ const a=s.ap; let ask, body;
+  if(a.kind==="cancel"){ ask="見本と同じものを全部探して、丸を付けてください。"; const cw=178/a.cols, rh=Math.min(212/a.rows,cw*1.6), cs=Math.min(cw,rh), pt=(cs*0.5*2.835).toFixed(1);
+    body=`<div class="pa-samp">見本<span class="pa-sbox" style="font-size:${Math.max(20,+pt+4)}pt">${esc(a.sample)}</span></div><div class="pa-grid" style="grid-template-columns:repeat(${a.cols},${cw.toFixed(2)}mm);grid-auto-rows:${rh.toFixed(2)}mm;font-size:${pt}pt">${a.cells.map(c=>`<span>${esc(c.s)}</span>`).join("")}</div>`; }
+  else { ask=a.alt?"数字と文字を交互に、1→あ→2→い→3→う…の順に、線でつないでください。":"1から順に、数字を線でつないでください。"; const fz=(a.dia*0.45*2.835).toFixed(1);
+    body=`<div class="pa-trail" style="width:${a.W}mm;height:${a.H}mm">${a.pos.map((q,i)=>`<span class="pa-nd" style="left:${q[0].toFixed(1)}mm;top:${q[1].toFixed(1)}mm;width:${a.dia.toFixed(1)}mm;height:${a.dia.toFixed(1)}mm;font-size:${fz}pt">${esc(a.labels[i])}${i===0?"<em>はじめ</em>":i===a.labels.length-1?"<em>おわり</em>":""}</span>`).join("")}</div>`; }
+  return `<div class="pp-sheet pp-task" data-si="${idx}">${ppHead(s.skill,`課題用紙 ${idx+1}／${total}　level${s.level}　（注意の訓練）`)}<div class="pp-ask">${esc(ask)}</div><div class="pp-body pa-at">${body}</div>${ppFoot()}</div>`; }
+function atPaperAnswer(s){ const a=s.ap;
+  if(a.kind==="cancel"){ const rows=[]; let L=0,R=0; for(let r=0;r<a.rows;r++){ const cs=[]; for(let c=0;c<a.cols;c++){ const x=a.cells[r*a.cols+c]; if(x.t){ cs.push(c+1); c<a.cols/2?L++:R++; } } if(cs.length) rows.push(`${r+1}行目：${cs.join("・")}番目`); }
+    return `見本「${a.sample}」は全部で ${L+R}個（左半分 ${L}個・右半分 ${R}個）。${rows.join("　")}`; }
+  return `${a.labels.join("→")} の順に、線でつながっていれば正解です（全${a.labels.length}個）。`; }
 function orderPerm(n){ let idx=Array.from({length:n},(_,i)=>i); for(let k=0;k<20;k++){ idx=shuffle(idx); if(idx.some((v,i)=>v!==i)) break; } return idx; }
 function buildPrint(p,n){
   const rec=recommend(p); if(!rec) return null;
@@ -1267,6 +1665,7 @@ function buildPrint(p,n){
     if(!items.length){ chosen.splice(ci,1); if(spare.length) chosen.push(spare.shift()); continue; }
     items.forEach(it=>{ markUsed(sh,it); if(it.type==="order") it._perm=orderPerm(it.pieces.length); });
     sheets.push({skill:c.skill,type:sk.type,level:c.level,pct:c.pct,no:c.no,name:c.name,over:c.over,items,hint:isHintSheet(sk)}); i++; }
+  if(p.attn&&p.attn.on){ const at=attnPaperSheets(p,n<=5?1:2,sess,sh); sheets.unshift(...at); } // 注意の用紙は最初に（ウォーミングアップ）
   return {date:today(),ev:latestEval(p).date,sheets,n,fitted:false,recorded:false};
 }
 /* 紙に合わせた指示（「触る」「入れる」を「丸を付ける」「書く」に） */
@@ -1298,8 +1697,8 @@ function ppContent(it,s,h,cw){
   const L=clamp(s.level||3,1,5), st=it.stim||{}, T=it.type;
   let txt=st.text!=null&&st.text!==""?String(st.text):""; if(isWrittenCmd(it)) txt=String(it.prompt||"");
   const longT=txt.length>14||txt.indexOf("\n")>=0; const fz=[26,24,21,19,18][L-1];
-  const tH=!txt?0:longT?(Math.ceil(txt.length/32)+(txt.match(/\n/g)||[]).length)*6.5+5:fz*0.5+3;
-  const txtHTML=txt?`<div class="pp-st ${longT?"long":""}" ${longT?"":`style="font-size:${fz}pt"`}>${esc(txt)}</div>`:"";
+  const tH=(st.label?5:0)+(!txt?0:longT?(Math.ceil(txt.length/32)+(txt.match(/\n/g)||[]).length)*6.5+5:fz*0.5+3);
+  const txtHTML=(st.label?`<div class="pp-cap"><b>${esc(st.label)}</b></div>`:"")+(txt?`<div class="pp-st ${longT?"long":""}" ${longT?"":`style="font-size:${fz}pt"`}>${esc(txt)}</div>`:"");
   // 読み上げる言葉は用紙右端の「ST用」欄に載せるので、問題の中には何も出さない
   const spk=s.side?"":((it.speak||T==="span")&&T!=="say"||(T==="say"&&it.speak)?`<div class="pp-spk">（STが読み上げます）</div>`:"");
   const spkH=spk?6:0;
@@ -1338,6 +1737,7 @@ function ppContent(it,s,h,cw){
 }
 const SH_H=226; // 課題用紙の本文に使える高さ（mm）のめやす
 function ppSheet(s,idx,total){
+  if(s.ap) return ppAttnSheet(s,idx,total);
   const items=s.items, q=items.length; const asks=items.map(paperPrompt); const nk=a=>a.replace(/、/g,""); const same=asks.every(a=>nk(a)===nk(asks[0]));
   const T=s.type; const short=it=>{ const t=String((it.stim||{}).text||""); return t.length<=14&&!(it.stim||{}).pic; };
   // 右端のST用の欄：読み上げる言葉（あれば）と、ご家族用ヒント（呼称など）
@@ -1354,15 +1754,20 @@ function ppSheet(s,idx,total){
    <div class="pp-body ${cols===2?"c2":""} ${s.side?"hint":""}">
    ${items.map((it,j)=>`<div class="pp-q"><div class="pp-n">${j+1}</div><div class="pp-c">${same?"":`<div class="pp-qa">${esc(asks[j])}</div>`}${ppContent(it,s,h,cw/cols-(cols===2?3:0))}</div>${s.side?sideCell(it):""}</div>`).join("")}</div>${ppFoot()}</div>`;
 }
+/* ST用ガイドの「注意の用紙の記録」欄（時間・見落とし数を書く）：課題の表の行に書く欄を入れ、説明を1段落 */
+const atGuideCell=s=>`注意の訓練（STが追加）<br>かかった時間（　 分　 秒）${s.attn==="cancel"?"　見落とし数 左（　 ）右（　 ）":""}　まちがい（　 ）`;
+function atGuideHTML(set){ if(!set.sheets.some(s=>s.attn)) return "";
+  return `<p>注意の用紙は時計で時間を測り、表の「かかった時間」「見落とし数」の欄に書いてください。抹消の用紙は、解答を見て見落とした所に別の色で印を付けると、見落としやすい側（左右）が分かります。</p>`; }
 function ppGuide(p,set){
   const groups={}; set.sheets.forEach((s,i)=>{ const g=groups[s.skill]=groups[s.skill]||{s,no:[],q:0}; g.no.push(i+1); g.q+=s.items.length; });
   const who=PRINT.nick&&p?(p.nick?`${p.nick}（${p.id}）`:p.id):"";
   return `<div class="pp-sheet pp-guide">${ppHead("訓練プリント　ST用ガイド",`作成日 ${fmtD(set.date)}　／　元にしたSLTA ${fmtD(set.ev)}　／　課題用紙 ${set.sheets.length}枚`,true)}
-  <div class="pp-body pp-g">
+  <div class="pp-body pp-g ${set.sheets.some(s=>s.attn)?"at":""}">
    <p>対象者（呼び名）：${who?esc(who):"＿＿＿＿＿＿＿＿＿＿"}　　実施日：　　　年　　月　　日〜　　月　　日</p>
    <h2>今回の課題</h2>
    <table><tr><th>課題</th><th>元にした下位検査（正答率）</th><th>level</th><th>課題用紙の番号</th><th>問題数</th></tr>
-   ${Object.values(groups).map(g=>`<tr><td>${esc(g.s.skill)}</td><td>${g.s.no}. ${esc(g.s.name)}（${pctTxt(g.s.pct)}）</td><td>level${g.s.level}${g.s.over?"（STが変更）":""}</td><td>${g.no.join("・")}</td><td>${g.q}問</td></tr>`).join("")}</table>
+   ${Object.values(groups).map(g=>`<tr><td>${esc(g.s.skill)}</td><td>${g.s.attn?atGuideCell(g.s):`${g.s.no}. ${esc(g.s.name)}（${pctTxt(g.s.pct)}）`}</td><td>level${g.s.level}${g.s.over?"（STが変更）":""}</td><td>${g.no.join("・")}</td><td>${g.s.ap?g.no.length+"枚":g.q+"問"}</td></tr>`).join("")}</table>
+   ${atGuideHTML(set)}
    <h2>ヒントの順番（答えが出ないときは、5秒ほど待ってから①から順に）</h2>
    <table><tr><th style="width:30mm">課題</th><th>ヒントの順番</th></tr>
     <tr><td>呼称（名前を言う）</td><td>①意味・仲間 → ②使い道・場面 → ③最初の音 → ④文字を見せる → ⑤一緒に言う</td></tr>
@@ -1380,7 +1785,8 @@ function ppGuide(p,set){
   </div>${ppFoot()}</div>`;
 }
 function answerUnits(set){ const u=[];
-  set.sheets.forEach((s,i)=>{ u.push(`<div class="pa-h">課題用紙 ${i+1}　${esc(s.skill)}・level${s.level}（${s.items.length}問）</div>`);
+  set.sheets.forEach((s,i)=>{ if(s.ap){ u.push(`<div class="pa-h">課題用紙 ${i+1}　${esc(s.skill)}・level${s.level}（注意の訓練）</div>`); u.push(`<div class="pa-r"><span class="pa-n"></span><div>${esc(atPaperAnswer(s))}</div></div>`); return; }
+    u.push(`<div class="pa-h">課題用紙 ${i+1}　${esc(s.skill)}・level${s.level}（${s.items.length}問）</div>`);
     s.items.forEach((it,j)=>{ const rd=paperRead(it); const nt=it.note?`<div class="pa-note">メモ：${esc(String(it.note).replace(/stim\.pics\s*の順/g,"絵の順"))}</div>`:"";
       u.push(`<div class="pa-r"><span class="pa-n">${j+1}</span><div>${rd?`<div class="pa-read">読み上げ：「${esc(rd)}」</div>`:""}<div>正答：${esc(paperAnswer(it))}</div>${nt}</div></div>`); }); });
   return u; }
@@ -1454,7 +1860,8 @@ const DEMO_PROFILE=JSON.stringify({version:2,current:"p1",patients:{p1:{fmt:5,na
    ["6666554xxx","6655432xxx","6543xxxxxx","5432xxxxxx","6655432211xxxxxxxxxx","6665543xxx","6543xxxxxx","4","654xx","6","665xx","6654321xxx","654xx","54xxx","6666665432","6665543xxx","6654xxxxxx","5432xxxxxx","654xx","54xxx","3","6543xxxxxx","54xxx","54xxx","4xxxx","12"],[],[],[]]}}});
 function runDemo(name){
   KEY="slta-train-demo"; DB=blankDB(); const p=demoPatient(); DB.patients[p.id]=p; DB.current=p.id; applySettings();
-  const typeSkill={choice:"単語の聴理解",yesno:"仲間の判断（はい・いいえ）",say:"呼称",write:"漢字単語の書字",tapseq:"口頭命令",order:"仮名の並べ替え",input:"計算",span:"語の系列の記憶",choicetext:"語頭音",shiritori:"しりとり",odd:"仲間はずれ",near:"意味の近い語の選択",kanjiread:"漢字単語の音読",orderbank:"文の組み立て",yesnobank:"短文の聴理解",spanlook:"絵の系列の記憶",wc:"書字命令",pics:"情景・手順の説明",prac:"実用文の読解",pos:"左右の位置の理解",numspan:"数字の系列の記憶",money:"お金を数える",clock:"時計を読む",hold:"指示の保持（買い物）",ordbank4:"並べかえ"};
+  const qa=new URLSearchParams(location.search).get("attn"); if(qa) p.attn={on:true,level:clamp(+qa||2,1,5)}; // 確認用：注意の訓練を入れる
+  const typeSkill={choice:"単語の聴理解",yesno:"仲間の判断（はい・いいえ）",say:"呼称",write:"漢字単語の書字",tapseq:"口頭命令",order:"仮名の並べ替え",input:"計算",span:"語の系列の記憶",choicetext:"語頭音",shiritori:"しりとり",odd:"仲間はずれ",near:"意味の近い語の選択",kanjiread:"漢字単語の音読",orderbank:"文の組み立て",yesnobank:"短文の聴理解",spanlook:"絵の系列の記憶",wc:"書字命令",pics:"情景・手順の説明",prac:"実用文の読解",pos:"左右の位置の理解",numspan:"数字の系列の記憶",money:"お金を数える",clock:"時計を読む",hold:"指示の保持（買い物）",ordbank4:"並べかえ",attncancel:ATTN_SK.cancel,attntrail:ATTN_SK.trail,attnlisten:ATTN_SK.listen,attnswitch:ATTN_SK.switch,attnsame:ATTN_SK.same,attndual:ATTN_SK.dual};
   const qs=new URLSearchParams(location.search);
   if(typeSkill[name]){ const sk=typeSkill[name]; if(!SKILLS[sk]){ document.body.innerHTML="<p>この課題のデータがありません："+esc(sk)+"</p>"; return; }
     const lv=+(qs.get("level")||(name==="span"?3:3));
@@ -1463,6 +1870,7 @@ function runDemo(name){
     if(name==="orderbank"||name==="yesnobank"){ const b=curBlock(); b.items[0]=bankItem(SKILLS[sk].bank[0]); }
     SCREEN="practice"; showItem(); const S=PR.st, it=curItem();
     const step=qs.get("step")||"";
+    if(it.type==="attn"){ attnDemo(it,S,step); return; }
     if(step.includes("hint")) { useHint(); if(step.includes("hint2")) useHint(); }
     if(step.includes("ans")){ if(it.type==="choice") onOpt(it.answer); if(it.type==="yesno") onYN(!it.answer);
       if(it.type==="tapseq") it.answer.forEach(i=>onOpt(i)); if(it.type==="order"){ S.sel=[S.perm.indexOf(0)]; render(); }
@@ -1485,6 +1893,37 @@ function runDemo(name){
   if(name==="bandclosed"){ runDemo("say"); DB.settings.band=false; render(); return; }
   SCREEN=name; if(name==="slta") EDIT_EVAL=-1; render();
 }
+
+/* 注意の課題の確認（セルフテスト用） */
+function attnCheck(it){
+  if(it.type==="choice"){ const tx=it.options.map(o=>o.pic||o.text); if(new Set(tx).size!==tx.length) return "選択肢が重複"; if(!(it.answer>=0&&it.answer<it.options.length)) return "answer";
+    const ref=it.stim.text||it.stim.pic; return tx.filter(x=>x===ref).length===1&&tx[it.answer]===ref?"":"見本と同じものが1つでない"; }
+  const A=it.attn; if(!A) return "attn がない";
+  const ck=C=>!C.cells||!C.cells.length?"cells":!C.cells.some(c=>c.t)?"目標なし":C.cells.some(c=>!c.t&&c.s===C.sample)?"見本と同じ妨害がある":C.cells.some(c=>c.t&&c.s!==C.sample)?"目標が見本と違う":C.mode==="pic"&&C.cells.some(c=>!PICS[c.s])?"絵なし":"";
+  const cl=Q=>{ if(!Q.seq||!Q.seq.some(x=>x.t)) return "合図なし"; if(Q.seq[0].t) return "最初が合図"; if(Q.seq.some(x=>!W(x.id)||!yomiOf(W(x.id)))) return "読みなし";
+    for(let i=1;i<Q.seq.length;i++) if(Q.seq[i].t&&Q.seq[i-1].t) return "合図が続く";
+    if(Q.seq.some(x=>!x.t&&Q.tg.some(y=>y===x.id||yomiOf(W(y))===yomiOf(W(x.id))))) return "合図と同じ読みの語"; return ""; };
+  if(A.kind==="cancel") return ck(A);
+  if(A.kind==="trail") return A.labels.length>=2&&new Set(A.labels).size===A.labels.length?"":"labels";
+  if(A.kind==="listen") return cl(A);
+  if(A.kind==="switch") return A.trials.length&&A.trials.every(x=>AT_RULES[x.r]&&(x.r==="A"?!!PICS[x.pic]&&((W(x.pic).cat==="食べ物")===(x.ans==="L")):(x.r==="B"?x.num>5:x.num<5)===(x.ans==="L")))?"":"trials";
+  if(A.kind==="dual") return ck(A.cancel)||cl(A.listen);
+  return "kind"; }
+function layBad(l,n,path){ if(!l||l.pos.length!==n) return "数"; const k=l.k, P=l.pos;
+  for(const q of P) if(q[0]-k/2<-1e-9||q[0]+k/2>l.asp+1e-9||q[1]-k/2<-1e-9||q[1]+k/2>1+1e-9) return "はみ出し";
+  for(let i=0;i<n;i++) for(let j=i+1;j<n;j++) if(Math.abs(P[i][0]-P[j][0])<k&&Math.abs(P[i][1]-P[j][1])<k) return "重なり";
+  if(path&&l.path){ const cr=(o,a,b)=>(a[0]-o[0])*(b[1]-o[1])-(a[1]-o[1])*(b[0]-o[0]); for(let i=0;i+1<n;i++) for(let j=i+2;j+1<n;j++){ const d1=cr(P[j],P[j+1],P[i]),d2=cr(P[j],P[j+1],P[i+1]),d3=cr(P[i],P[i+1],P[j]),d4=cr(P[i],P[i+1],P[j+1]); if(d1*d2<0&&d3*d4<0) return "線が交わる"; } }
+  return ""; }
+/* 確認用：注意の課題をその場で終わった形にする（?demo=attn…&step=ans）。step=run は始めたところ */
+function attnDemo(it,S,step){ const A=it.attn, a=S.at;
+  if(step.includes("run")&&a.phase==="ready") attnStart(it,S);
+  if(!step.includes("ans")) return;
+  if(a.phase==="ready"){ a.phase="run"; } a.tStart=NOW()-38000;
+  if(A.kind==="cancel"||A.kind==="dual"){ const C=atCancelQ(it); const tg=C.cells.map((c,i)=>c.t?i:-1).filter(i=>i>=0); const lt=tg.filter(i=>a.lay&&a.lay.pos[i][0]<a.lay.asp/2); const sk=new Set(lt.slice(0,2)); a.tap=tg.filter(i=>!sk.has(i)); const nt=C.cells.findIndex(c=>!c.t); if(nt>=0) a.tap.push(nt); }
+  if(A.kind==="trail"){ a.k=A.labels.length; a.err=1; }
+  if(A.kind==="listen"||A.kind==="dual"){ const Q=atListenQ(it); a.cur=Q.seq.length-1; let first=true; Q.seq.forEach((x,i)=>{ if(x.t){ if(first){ first=false; return; } a.resp[i]=true; a.rtw[i]=600+rnd(500); } }); a.resp[Q.seq.findIndex(x=>!x.t)]=true; }
+  if(A.kind==="switch"){ A.trials.forEach((x,i)=>{ const to=i%7===6; a.rs.push({ok:!to&&i%5!==3,to,sw:i>0&&A.trials[i-1].r!==x.r,rt:to?null:700+rnd(600)}); }); a.j=A.trials.length; }
+  attnFinish(it,S); render(); }
 
 /* セルフテスト：保存と読み込み、最近出した語の回避、メニュー、問題の生成、取り込み */
 function selftest(){
@@ -1529,7 +1968,7 @@ function selftest(){
   ok(`アプリが作る問題の形（${made}問）`,!errs.length,errs.slice(0,8).join(" ／ "));
   // 4b. 一緒に出さない組（同じ読み・正解が2つ・似た絵）が選択肢に並ばない：全部の語×全 level で直接作って調べる
   { const bad=[]; let cnt=0; const cx={p:newPatient("T-003"),sess:new Set()};
-    for(const g of Object.values(GEN)){ if(!SKILLS[g.name]||g.kana||g.calc) continue; for(const t0 of g.pool()) for(let L=1;L<=5;L++){ let it=null; try{ it=g.make(cx,t0,L); }catch(e){ bad.push(g.k+" "+t0+" エラー "+e.message); }
+    for(const g of Object.values(GEN)){ if(!SKILLS[g.name]||g.kana||g.calc||g.nopool) continue; for(const t0 of g.pool()) for(let L=1;L<=5;L++){ let it=null; try{ it=g.make(cx,t0,L); }catch(e){ bad.push(g.k+" "+t0+" エラー "+e.message); }
       if(!it) continue; cnt++; const ps=(it.options||[]).map(o=>o.pic).filter(Boolean); const tx=(it.options||[]).map(o=>o.text).filter(Boolean);
       for(let i=0;i<ps.length;i++) for(let j=i+1;j<ps.length;j++) if(conflict(ps[i],ps[j])) bad.push(`${it.id} ${ps[i]}・${ps[j]}`);
       if(new Set(tx).size!==tx.length) bad.push(it.id+" 文字の選択肢が重複");
@@ -1549,9 +1988,58 @@ function selftest(){
     ok("おすすめの教材：重度の成績 → 上位3冊が重度・最重度の教材",R3&&R3.top.slice(0,3).every(x=>/重度|最重度|全失語/.test(x.k.title)&&!/軽度|中等度/.test(x.k.title)),R3&&R3.top.map(x=>x.k.id+":"+x.d.toFixed(1)).join(" / ")); }
   // 7. 印刷用プリント：枚数・紙で使える形・読み上げ文が課題用紙に出ない
   { const set=buildPrint(p,5); const sheets=set?set.sheets:[];
-    const leak=[]; sheets.forEach((s,i)=>{ const html=ppSheet(s,i,sheets.length); const optT=new Set([].concat(...s.items.map(it=>(it.options||[]).map(o=>o&&o.text).filter(Boolean))));
+    const leak=[]; sheets.forEach((s,i)=>{ const html=ppSheet(s,i,sheets.length).replace(/<div class="pp-hc">[\s\S]*?<\/div><\/div>/g,"")/* 右端のST用の欄（折って隠す）は除く */; const optT=new Set([].concat(...s.items.map(it=>(it.options||[]).map(o=>o&&o.text).filter(Boolean))));
       s.items.forEach(it=>{ const rd=paperRead(it); if(rd&&rd.length>=3&&!optT.has(rd)&&html.includes(esc(rd))) leak.push(it.id); }); }); // 選択肢の文字そのものは除く
     ok("印刷用プリント：課題用紙5枚、すべて紙で使える形、読み上げ文は課題用紙に出ない",sheets.length===5&&sheets.every(s=>s.items.length&&s.items.every(paperOK))&&!leak.length,sheets.map(s=>`${s.skill}L${s.level}×${s.items.length}`).join(" / ")+(leak.length?" 漏れ："+leak.join(","):"")); }
+  // 8. 注意の訓練
+  { const ap=newPatient("T-006"); ap.evals.push({date:"2026-11-01",pct:DEMO_PCT.slice(),src:"テスト"});
+    ok("注意の訓練：初めは「入れない」・level2",ap.attn&&ap.attn.on===false&&ap.attn.level===2);
+    const fx=fixDB({patients:{x:Object.assign({},ap,{attn:{on:true,level:4}})}}).patients["T-006"]; const fx2=fixDB({patients:{y:{id:"T-0X",evals:[]}}}).patients["T-0X"];
+    ok("注意の設定は保存して読み直しても残る（古い記録は「入れない」・level2になる）",fx&&fx.attn.on===true&&fx.attn.level===4&&fx2.attn.on===false&&fx2.attn.level===2);
+    const keys=Object.values(GEN).filter(g=>g.attn).map(g=>g.k); const errs=[]; let made=0; const kinds={};
+    for(const k of keys) for(let L=1;L<=5;L++){ for(let r=0;r<4;r++){ const its=makeItems(ap,{skill:GEN[k].name,level:L,n:2}); if(!its.length){ errs.push(`${k} L${L} 作れない`); continue; }
+      its.forEach(it=>{ made++; const e=attnCheck(it); if(e) errs.push(`${k} L${L} ${e}`); kinds[k]=(kinds[k]||0)+1; }); } }
+    ok(`注意の課題：${keys.length}種類すべて level1〜5 で作れて、目標（見本・合図）が必ず1つ以上ある（${made}問）`,keys.length===6&&!errs.length,errs.slice(0,8).join(" ／ "));
+    // 配置が重ならない（格子をずらす配置・順につなぐ配置。iPad の横・縦の広さ）
+    const lerr=[]; let nl=0, np=0, npOk=0;
+    for(const asp of [1.79,0.98,2.2,0.9]) for(const n of [10,16,24,32,40]) for(let r=0;r<5;r++){ const l=attnLayout(n,asp); nl++; const e=layBad(l,n); if(e) lerr.push(`格子 n${n} ${asp} ${e}`); }
+    for(const asp of [1.79,0.98,176/196]) for(const n of [5,8,12,16,20]) for(const far of [false,true]) for(let r=0;r<4;r++){ const l=pathLayout(n,asp,300,far); np++; if(l.path) npOk++; const e=layBad(l,n,true); if(e) lerr.push(`順 n${n} ${asp} ${e}`); }
+    ok(`注意：配置が重ならず、画面からはみ出さない（格子${nl}回・順につなぐ${np}回、うち線が交わらない配置 ${npOk}回）`,!lerr.length&&npOk>=np*0.9,lerr.slice(0,6).join(" ／ "));
+    const pxMin=[[930,520],[784,640]].map(([w,h])=>Math.floor(attnLayout(40,w/h).k*h)); ok(`注意：いちばん数の多い level5（40個）でも、iPad の横・縦で1つ ${pxMin.join("px・")}px（60px以上）`,pxMin.every(x=>x>=60));
+    // 2回作ると違う
+    const diff=keys.filter(k=>k!=="attntrail").every(k=>{ const a=makeItems(ap,{skill:GEN[k].name,level:3,n:1})[0], b=makeItems(ap,{skill:GEN[k].name,level:3,n:1})[0]; return a&&b&&JSON.stringify(a.attn||a.options)!==JSON.stringify(b.attn||b.options); });
+    const l1=attnLayout(24,1.8), l2=attnLayout(24,1.8), p1=pathLayout(12,1.8), p2=pathLayout(12,1.8);
+    ok("注意：2回作ると、中身も配置も毎回ちがう（数字を順に触るは、出すたびに配置を作り直す）",diff&&JSON.stringify(l1.pos)!==JSON.stringify(l2.pos)&&JSON.stringify(p1.pos)!==JSON.stringify(p2.pos));
+    // 採点（左右の見落とし）
+    { const it=makeItems(ap,{skill:ATTN_SK.cancel,level:3,n:1})[0], C=it.attn, lay=attnLayout(C.cells.length,1.8); const tg=C.cells.map((c,i)=>c.t?i:-1).filter(i=>i>=0); const lt=tg.filter(i=>lay.pos[i][0]<lay.asp/2), rt=tg.filter(i=>lay.pos[i][0]>=lay.asp/2);
+      const fa=C.cells.findIndex(c=>!c.t); const sc=atCancelScore(C,{tap:rt.concat([fa]),lay});
+      ok("注意：探して触るの採点（見落とし・左右・まちがい触り）",sc.T===tg.length&&sc.hit===rt.length&&sc.miss===lt.length&&sc.missL===lt.length&&sc.missR===0&&sc.fa===1,JSON.stringify(sc)); }
+    { const it=makeItems(ap,{skill:ATTN_SK.listen,level:2,n:1})[0], Q=it.attn; const a={cur:Q.seq.length-1,resp:{},rtw:{}}; let first=true, nT=0; Q.seq.forEach((x,i)=>{ if(x.t){ nT++; if(first){ first=false; return; } a.resp[i]=true; a.rtw[i]=500; } }); const f=Q.seq.findIndex(x=>!x.t); a.resp[f]=true;
+      const sc=atListenScore(Q,a); ok("注意：合図の言葉の採点（正しく触れた・見逃し・余計に触った）",sc.T===nT&&sc.hit===nT-1&&sc.miss===1&&sc.fa===1,JSON.stringify(sc)); }
+    // メニュー
+    let offOk=true; for(let k=0;k<15;k++){ if(buildMenu(ap,false,4).some(b=>isAttnSkill(b.skill))||buildMenu(ap,true,4).some(b=>isAttnSkill(b.skill))) offOk=false; }
+    ok("注意：「入れない」のときはメニューに入らない（STと・ひとりで、15回ずつ）",offOk);
+    ap.attn.on=true; let onOk=true, info=""; for(let k=0;k<15;k++){ const m=buildMenu(ap,false,4), ms=buildMenu(ap,true,4); if(!isAttnSkill(m[0].skill)||m.filter(b=>isAttnSkill(b.skill)).length!==1||m.length<4) onOk=false;
+      if(!isAttnSkill(ms[0].skill)||!ms.every(b=>AUTO.has(SKILLS[b.skill].type))) onOk=false; if(!k) info=m.map(b=>`${b.skill}L${b.level}`).join(" / "); }
+    ok("注意：「入れる」のときは最初のブロックに1つだけ入り、ひとりで練習にも出る",onOk,info);
+    // 毎週ちがう課題・level2 では二つ同時は出ない・level5 では出る
+    ap.attn.level=2; const seen=[]; for(let w=0;w<5;w++){ const b=attnBlock(ap); seen.push(b.skill); ap.sessions.push({id:"w"+w,date:"2026-11-0"+(w+1),mode:"teacher",done:true,blocks:[{skill:b.skill,level:b.level,type:"attn",items:[],res:[]}]}); }
+    ok("注意：毎回しばらく出していない課題を選ぶ（level2 の5週で5種類、二つ同時は出ない）",new Set(seen).size===5&&!seen.includes(ATTN_SK.dual),seen.join(" → "));
+    ap.attn.level=5; let du=false; for(let k=0;k<30&&!du;k++){ ap.sessions=[]; if(attnBlock(ap).skill===ATTN_SK.dual) du=true; } ok("注意：level5 では「二つのことを同時に」も選ばれる",du);
+    // 実際に1ブロックを動かして記録する（探して触る）
+    { ap.attn.level=2; const sess0=ap.sessions.length; startSession(ap,[{skill:ATTN_SK.cancel,level:2,n:1,reason:"確認"}],"solo"); PR.ii=0; showItem(); const it=curItem(), S=PR.st; const C=it.attn;
+      S.at.lay=S.at.lay||attnLayout(C.cells.length,1.8); S.at.tap=C.cells.map((c,i)=>c.t?i:-1).filter(i=>i>=0).slice(1); attnFinish(it,S); nextItem(false); const ss=ap.sessions[ap.sessions.length-1], st=blockStats(ss.blocks[0]);
+      ok("注意：練習すると記録が残る（正確さ・見落とし・時間）",ap.sessions.length===sess0+1&&st.graded===1&&st.at&&st.at.miss===1&&st.rate===Math.round((C.cells.filter(c=>c.t).length-1)/C.cells.filter(c=>c.t).length*100),attnDetailText(st.at,1));
+      SCREEN="home"; }
+    // 印刷用プリント
+    ap.attn.on=false; const s0=buildPrint(ap,5); ap.attn.on=true; ap.attn.level=3; const s1=buildPrint(ap,5), s2=buildPrint(ap,10);
+    const htmlOk=[s1,s2].every(st=>st.sheets.every((s,i)=>{ const h=ppSheet(s,i,st.sheets.length); return h.includes("pp-sheet")&&h.includes("KENTA SHINKAWA"); }));
+    const trail=atPaperTrail(5); let tOk=true; for(let i=0;i<trail.pos.length;i++) for(let j=i+1;j<trail.pos.length;j++) if(Math.hypot(trail.pos[i][0]-trail.pos[j][0],trail.pos[i][1]-trail.pos[j][1])<trail.dia+4) tOk=false;
+    if(trail.pos.some(q=>q[0]<trail.dia/2||q[1]<trail.dia/2||q[0]>trail.W-trail.dia/2||q[1]>trail.H-trail.dia/2)) tOk=false;
+    const cz=atPaperCancel(5); const ag=atGuideHTML(s2);
+    ok("注意：印刷用プリントは「入れる」のときだけ注意の用紙が最初に入る（5枚→1枚追加、10枚→2枚追加、種類はちがう）",!s0.sheets.some(s=>s.attn)&&s1.sheets.length===6&&!!s1.sheets[0].attn&&s2.sheets.length===12&&!!s2.sheets[0].attn&&!!s2.sheets[1].attn&&s2.sheets[0].attn!==s2.sheets[1].attn&&htmlOk,s2.sheets.slice(0,3).map(s=>s.skill).join(" / "));
+    ok("注意の用紙：数字をつなぐ用紙は数字どうしが離れて線が交わりにくい、抹消の用紙は目標がある、ガイドに時間と見落としの欄",tOk&&trail.path&&cz.cells.some(c=>c.t)&&ag.includes("かかった時間")&&ag.includes("見落とし数"),`数字の最小間隔 OK=${tOk} 線が交わらない配置=${trail.path}`); }
+  try{ localStorage.removeItem("slta-train-selftest"); }catch(e){} // 確認用に保存したものは消す
   ok("JavaScript のエラーがない",!ERRS.length,ERRS.join(" / "));
   NOW=()=>Date.now();
   const pass=R.every(r=>r.pass);
