@@ -40,7 +40,7 @@
   .key ol{margin:0;padding-left:7mm}
   .noprint{font-family:"Meiryo",sans-serif;font-size:12pt;background:#fff8dc;border:1px solid #e0c060;padding:3mm 5mm;margin:6mm auto;width:210mm}
   @media print{.noprint{display:none}}
-  /* ===== 指導者用ページ（パターンの説明）===== */
+  /* ===== ST用ページ（パターンの説明）===== */
   .guide{font-size:11.5pt;line-height:1.6}
   .guide h2{font-size:13.5pt;margin:4mm 0 1.5mm;border-bottom:1px solid #999;padding-bottom:1mm}
   .guide p{margin:0 0 2mm}

@@ -555,7 +555,7 @@ function buildMenu(p,solo,nBlocks){
   nBlocks=clamp(nBlocks||DB.settings.blocks||4,3,5);
   const rec=recommend(p); const cands=[];
   if(rec){ for(const r of rec){ if(r.none) continue; for(const s of r.skills){ if(solo&&!AUTO.has(s.type)) continue;
-      cands.push({skill:s.skill,type:s.type,level:s.level,pct:r.pct,no:r.no,dom:(SKILLS[s.skill]||{}).dom||r.dom,rank:s.rank,maint:r.maint,reason:`${r.name} ${pctTxt(r.pct)} → ${s.skill}・level${s.level}${s.over?"（指導者が変更）":""}`}); } } }
+      cands.push({skill:s.skill,type:s.type,level:s.level,pct:r.pct,no:r.no,dom:(SKILLS[s.skill]||{}).dom||r.dom,rank:s.rank,maint:r.maint,reason:`${r.name} ${pctTxt(r.pct)} → ${s.skill}・level${s.level}${s.over?"（STが変更）":""}`}); } } }
   const best={}; for(const c of cands){ if(!best[c.skill]||c.pct<best[c.skill].pct) best[c.skill]=c; }
   const pool=Object.values(best); if(!pool.length) return [];
   const ls=lastSession(p); const lastSk=new Set(ls?ls.blocks.map(b=>b.skill):[]);
@@ -651,7 +651,7 @@ function vHome(){
    <div class="grid-btn">
     <button data-go="slta">SLTAの成績<small>正答率を入れる・プロフィールツールから取り込む</small></button>
     <button data-go="rec">おすすめの課題<small>成績から課題と level を決める</small></button>
-    <button class="p" id="goMenu">今日の訓練メニュー<small>自動で組んで、指導者と練習する</small></button>
+    <button class="p" id="goMenu">今日の訓練メニュー<small>自動で組んで、STと練習する</small></button>
     <button id="goSolo">ひとりで練習<small>自動で正誤が分かる課題だけ</small></button>
     <button data-go="records">記録と推移<small>正答率の一覧・グラフ・level の提案</small></button>
     <button data-go="kyozai">印刷用の教材<small>以前の教材のおすすめ・新しいプリントを作る</small></button>
@@ -660,7 +660,7 @@ function vHome(){
   <div class="card"><h2>そのほか</h2><div class="grid-btn">
     <button data-go="settings">設定<small>文字の大きさ・書体・読み上げの速さ</small></button>
     <button data-go="transfer">データの移し替え<small>コピーと貼り付けで別の端末へ</small></button>
-    <button data-go="check">データの点検（指導者用）<small>絵・語・問題の数と不備</small></button>
+    <button data-go="check">データの点検（ST用）<small>絵・語・問題の数と不備</small></button>
   </div></div>
   </div>`+foot();
 }
@@ -788,7 +788,7 @@ function vRec(){
   const rec=recommend(p); const ev=latestEval(p);
   if(!rec) return topBar("おすすめの課題")+`<div class="wrap"><div class="card"><p>SLTAの成績がまだありません。</p><button class="p" data-go="slta">成績を入れる</button></div></div>`+foot();
   let h=topBar("おすすめの課題")+`<div class="wrap">${kzRecHTML(p,"rec")}<div class="card"><h2>${fmtD(ev.date)} の成績から（アプリの課題）</h2>
-  <p class="muted small">決まり：0〜20%→level1、20〜40%→2、40〜60%→3、60〜80%→4、80〜95%→5、95%以上→「維持」（少なめ）。指導者が level を変えた課題は（変更）と出ます。</p>
+  <p class="muted small">決まり：0〜20%→level1、20〜40%→2、40〜60%→3、60〜80%→4、80〜95%→5、95%以上→「維持」（少なめ）。STが level を変えた課題は（変更）と出ます。</p>
   <table><tr><th>No</th><th>下位検査</th><th>正答率</th><th>おすすめ</th></tr>`;
   for(const r of rec){ h+=`<tr><td>${r.no}</td><td>${esc(r.dom)}・${esc(r.name)}</td><td>${pctTxt(r.pct)}</td><td>`;
     if(r.none) h+=`<span class="muted small">未実施</span>`;
@@ -801,7 +801,7 @@ function vRec(){
   return h;
 }
 function levelEditor(p){ const ks=Object.keys(p.lv||{}); if(!ks.length) return "";
-  return `<div class="card"><h2>指導者が変えた level</h2>${ks.map(k=>`<div class="row"><span>${esc(k)}：level${p.lv[k]}</span><button class="s" data-lvclr="${esc(k)}">成績どおりに戻す</button></div>`).join("")}</div>`; }
+  return `<div class="card"><h2>STが変えた level</h2>${ks.map(k=>`<div class="row"><span>${esc(k)}：level${p.lv[k]}</span><button class="s" data-lvclr="${esc(k)}">成績どおりに戻す</button></div>`).join("")}</div>`; }
 vRec.after=()=>{ const b=$("#goMenu2"); if(b) b.onclick=()=>{ MENU=null; MENU_SOLO=false; go("menu"); };
   $$("[data-lvclr]").forEach(b=>b.onclick=()=>{ delete P().lv[b.dataset.lvclr]; save(); render(); }); bindKz(); };
 
@@ -811,7 +811,7 @@ function vMenu(){
   if(!MENU) MENU=buildMenu(p,MENU_SOLO);
   const all=Object.values(SKILLS).filter(s=>!MENU_SOLO||AUTO.has(s.type)).sort((a,b)=>DOMS.concat(["記憶"]).indexOf(a.dom)-DOMS.concat(["記憶"]).indexOf(b.dom));
   let h=topBar("今日の訓練メニュー")+`<div class="wrap"><div class="card"><h2>今日の訓練メニュー（${MENU.length}ブロック・目安 約${menuMinutes(MENU)}分）</h2>
-   <div class="row"><button class="s ${!MENU_SOLO?"on":""}" id="mT">指導者と練習</button><button class="s ${MENU_SOLO?"on":""}" id="mS">ひとりで練習</button>
+   <div class="row"><button class="s ${!MENU_SOLO?"on":""}" id="mT">STと練習</button><button class="s ${MENU_SOLO?"on":""}" id="mS">ひとりで練習</button>
    <span class="muted small">${MENU_SOLO?"自動で正誤が分かる課題だけにしています。":"苦手な課題を厚めに、得意な課題も1つ入れています。"}</span></div>`;
   if(!latestEval(p)) h+=`<p class="err small">SLTAの成績がないため、自動では組めません。下の「ブロックを追加」で課題を選ぶか、先に成績を入れてください。</p>`;
   MENU.forEach((b,i)=>{ const sk=SKILLS[b.skill];
@@ -820,7 +820,7 @@ function vMenu(){
      <select data-bl="${i}">${[1,2,3,4,5].map(l=>`<option value="${l}" ${l===b.level?"selected":""}>level${l}</option>`).join("")}</select>
      <button class="s" data-bm="${i}">－</button><span class="cnt">${b.n}問</span><button class="s" data-bp="${i}">＋</button>
      <button class="s" data-bu="${i}" ${i?"":"disabled"}>上へ</button><button class="s" data-bd="${i}">削除</button>
-     <span class="rs">${esc(b.reason||"指導者が選んだ課題")}</span></div>`; });
+     <span class="rs">${esc(b.reason||"STが選んだ課題")}</span></div>`; });
   h+=`<div class="row"><button class="s" id="mAdd" ${MENU.length>=6?"disabled":""}>ブロックを追加</button><button class="s" id="mRe">組み直す</button></div>
    <div class="row" style="margin-top:16px"><button class="p" id="mGo" ${MENU.length?"":"disabled"}>${MENU_SOLO?"ひとりで練習をはじめる":"はじめる"}</button></div></div></div>`+foot();
   return h;
@@ -828,14 +828,14 @@ function vMenu(){
 vMenu.after=()=>{
   const p=P(); if(!p) return;
   $("#mT").onclick=()=>{ MENU_SOLO=false; MENU=null; render(); }; $("#mS").onclick=()=>{ MENU_SOLO=true; MENU=null; render(); };
-  $$("[data-bs]").forEach(s=>s.onchange=()=>{ const b=MENU[+s.dataset.bs]; b.skill=s.value; b.n=blockSize(SKILLS[b.skill].type); const r=(recommend(p)||[]).find(r=>r.skills&&r.skills.some(x=>x.skill===b.skill)); if(r){ b.level=r.skills.find(x=>x.skill===b.skill).level; } b.reason="指導者が差し替えた課題"+(r?`（${r.name} ${pctTxt(r.pct)}）`:""); render(); });
+  $$("[data-bs]").forEach(s=>s.onchange=()=>{ const b=MENU[+s.dataset.bs]; b.skill=s.value; b.n=blockSize(SKILLS[b.skill].type); const r=(recommend(p)||[]).find(r=>r.skills&&r.skills.some(x=>x.skill===b.skill)); if(r){ b.level=r.skills.find(x=>x.skill===b.skill).level; } b.reason="STが差し替えた課題"+(r?`（${r.name} ${pctTxt(r.pct)}）`:""); render(); });
   $$("[data-bl]").forEach(s=>s.onchange=()=>{ MENU[+s.dataset.bl].level=+s.value; render(); });
   $$("[data-bm]").forEach(b=>b.onclick=()=>{ const x=MENU[+b.dataset.bm]; x.n=Math.max(1,x.n-1); render(); });
   $$("[data-bp]").forEach(b=>b.onclick=()=>{ const x=MENU[+b.dataset.bp]; x.n=Math.min(20,x.n+1); render(); });
   $$("[data-bu]").forEach(b=>b.onclick=()=>{ const i=+b.dataset.bu; if(i>0){ [MENU[i-1],MENU[i]]=[MENU[i],MENU[i-1]]; render(); } });
   $$("[data-bd]").forEach(b=>b.onclick=()=>{ MENU.splice(+b.dataset.bd,1); render(); });
   $("#mAdd").onclick=()=>{ const used=new Set(MENU.map(b=>b.skill)); const extra=buildMenu(p,MENU_SOLO,5).find(b=>!used.has(b.skill));
-    if(extra) MENU.push(extra); else { const s=Object.values(SKILLS).find(s=>!used.has(s.name)&&(!MENU_SOLO||AUTO.has(s.type))); if(s) MENU.push({skill:s.name,level:3,n:blockSize(s.type),reason:"指導者が選んだ課題"}); }
+    if(extra) MENU.push(extra); else { const s=Object.values(SKILLS).find(s=>!used.has(s.name)&&(!MENU_SOLO||AUTO.has(s.type))); if(s) MENU.push({skill:s.name,level:3,n:blockSize(s.type),reason:"STが選んだ課題"}); }
     render(); };
   $("#mRe").onclick=()=>{ MENU=null; render(); };
   $("#mGo").onclick=()=>startSession(p,MENU,MENU_SOLO?"solo":"teacher");
@@ -903,7 +903,7 @@ function band(it){
   const S=PR.st, open=DB.settings.band!==false; const nh=(it.hints||[]).length;
   const lastH=S.hintShown.length?S.hintShown[S.hintShown.length-1]:null;
   return `<div class="band ${open?"":"closed"}" id="band"><div class="r1">
-   <button class="s" id="bTog">${open?"たたむ":"指導者用"}</button>
+   <button class="s" id="bTog">${open?"たたむ":"ST用"}</button>
    <span class="hide-c"><button class="s" id="hint" ${S.hintShown.length>=nh?"disabled":""}>ヒント ${S.hintShown.length}／${nh}</button></span>
    <span class="hide-c">${[6,5,4,3,2,1].map(g=>`<button class="s ${S.grade===g?"on":""}" data-g="${g}" title="${STAGE_NAMES[g]}">${g}</button>`).join("")}</span>
    <span class="sp"></span><button class="s" id="skip">スキップ</button><button class="p s" id="next">次へ</button></div>
@@ -956,7 +956,7 @@ vPractice.after=()=>{
   if(it.type==="write") setupCanvas();
   const wc=$("#wClr"); if(wc) wc.onclick=()=>{ S.strokes=[]; setupCanvas(); };
   const wm=$("#wMod"); if(wm) wm.onclick=()=>{ S.model=!S.model; render(); };
-  // 指導者の帯
+  // STの帯
   const bt=$("#bTog"); if(bt) bt.onclick=()=>{ DB.settings.band=!(DB.settings.band!==false); save(); render(); };
   const hb=$("#hint"); if(hb) hb.onclick=()=>useHint();
   $$("[data-g]").forEach(el=>el.onclick=()=>{ S.grade=+el.dataset.g; S.manual=true; if(S.rt==null) S.rt=NOW()-S.t0; if(!AUTO.has(it.type)) S.answered=true; render(); });
@@ -1050,8 +1050,8 @@ function blockStats(b){ const rs=(b.res||[]).filter(Boolean); const graded=rs.fi
 function statTable(sess){ return `<table><tr><th>課題</th><th>level</th><th>問題数</th><th>正答率</th><th>ヒント</th><th>平均反応時間</th></tr>${sess.blocks.map(b=>{ const s=blockStats(b); return `<tr><td>${esc(b.skill)}<div class="muted small">${TYPE_JP[b.type]||""}</div></td><td>${b.level}</td><td>${s.n}${s.skip?`（スキップ${s.skip}）`:""}</td><td><b>${s.rate==null?"未判定":s.rate+"%"}</b>（${s.ok}／${s.graded}）</td><td>${s.hintItems}問で${s.hints}回</td><td>${s.rt==null?"－":s.rt.toFixed(1)+"秒"}</td></tr>`; }).join("")}</table>`; }
 function vResult(){
   const p=P(); const s=RESULT||(p&&lastSession(p)); if(!s) return topBar("結果")+`<div class="wrap"><p>結果がありません。</p></div>`;
-  return topBar("今日の結果")+`<div class="wrap"><div class="card"><h2>${fmtD(s.date)} の結果（${s.mode==="solo"?"ひとりで練習":"指導者と練習"}）</h2>${statTable(s)}
-   <p class="muted small">正答率は段階6・5を正答として数えています。自動判定の課題は、最初の答えで判定しています（指導者が段階を直した場合はそれを使います）。</p></div>
+  return topBar("今日の結果")+`<div class="wrap"><div class="card"><h2>${fmtD(s.date)} の結果（${s.mode==="solo"?"ひとりで練習":"STと練習"}）</h2>${statTable(s)}
+   <p class="muted small">正答率は段階6・5を正答として数えています。自動判定の課題は、最初の答えで判定しています（STが段階を直した場合はそれを使います）。</p></div>
    ${suggestHTML(p)}<div class="row"><button class="p" data-go="records">記録と推移を見る</button><button data-go="home">ホームへ</button></div></div>`+foot();
 }
 vResult.after=()=>bindSuggest();
@@ -1064,7 +1064,7 @@ function suggestions(p){
 }
 function effLevelNow(p,skill){ if(p.lv[skill]!=null) return p.lv[skill]; const r=(recommend(p)||[]).find(r=>r.skills&&r.skills.some(x=>x.skill===skill)); return r?r.level:null; }
 function suggestHTML(p){ if(!p) return ""; const sg=suggestions(p); if(!sg.length) return "";
-  return `<div class="card"><h2>level の提案（決めるのは指導者です）</h2>${sg.map((s,i)=>`<div class="row"><span>${esc(s.skill)}：${s.why} → <b>level${s.from} を level${s.to} に${s.up?"上げる":"下げる"}</b>提案</span><button class="s" data-sg="${i}">${s.up?"上げる":"下げる"}</button></div>`).join("")}</div>`; }
+  return `<div class="card"><h2>level の提案（決めるのはSTです）</h2>${sg.map((s,i)=>`<div class="row"><span>${esc(s.skill)}：${s.why} → <b>level${s.from} を level${s.to} に${s.up?"上げる":"下げる"}</b>提案</span><button class="s" data-sg="${i}">${s.up?"上げる":"下げる"}</button></div>`).join("")}</div>`; }
 function bindSuggest(){ const p=P(); if(!p) return; const sg=suggestions(p); $$("[data-sg]").forEach(b=>b.onclick=()=>{ const s=sg[+b.dataset.sg]; p.lv[s.skill]=s.to; save(); toast(`${s.skill} を level${s.to} にしました`); render(); }); }
 
 /* ---------- 記録と推移 ---------- */
@@ -1076,7 +1076,7 @@ function vRecords(){
   let h=topBar("記録と推移")+`<div class="wrap">${suggestHTML(p)}${(p.prints||[]).length?`<div class="card"><h2>印刷した記録</h2>${printHistory(p)}</div>`:""}<div class="card"><h2>課題ごとの正答率の推移</h2>`;
   if(!skills.length) h+=`<p class="muted">まだ記録がありません。</p>`;
   else { h+=`<div class="row"><select id="rsk">${skills.map(k=>`<option ${k===REC_SKILL?"selected":""}>${esc(k)}</option>`).join("")}</select></div><div class="chart">${chartSVG(rows.filter(r=>r.b.skill===REC_SKILL&&r.st.rate!=null))}</div>`; }
-  h+=`</div><div class="card"><h2>記録の一覧</h2><table><tr><th>日付</th><th>課題</th><th>level</th><th>正答率</th><th>ヒント</th><th>練習の形</th></tr>${rows.slice().reverse().map(r=>`<tr><td>${fmtD(r.s.date)}</td><td>${esc(r.b.skill)}</td><td>${r.b.level}</td><td>${r.st.rate==null?"未判定":r.st.rate+"%"}（${r.st.ok}／${r.st.graded}）</td><td>${r.st.hints}回</td><td class="small">${r.s.mode==="solo"?"ひとりで":"指導者と"}</td></tr>`).join("")||`<tr><td colspan="6" class="muted">まだありません</td></tr>`}</table></div></div>`+foot();
+  h+=`</div><div class="card"><h2>記録の一覧</h2><table><tr><th>日付</th><th>課題</th><th>level</th><th>正答率</th><th>ヒント</th><th>練習の形</th></tr>${rows.slice().reverse().map(r=>`<tr><td>${fmtD(r.s.date)}</td><td>${esc(r.b.skill)}</td><td>${r.b.level}</td><td>${r.st.rate==null?"未判定":r.st.rate+"%"}（${r.st.ok}／${r.st.graded}）</td><td>${r.st.hints}回</td><td class="small">${r.s.mode==="solo"?"ひとりで":"STと"}</td></tr>`).join("")||`<tr><td colspan="6" class="muted">まだありません</td></tr>`}</table></div></div>`+foot();
   return h;
 }
 vRecords.after=()=>{ const s=$("#rsk"); if(s) s.onchange=()=>{ REC_SKILL=s.value; render(); }; bindSuggest(); };
@@ -1273,10 +1273,10 @@ function buildPrint(p,n){
 function paperPrompt(it){
   const T=it.type; let s=String(it.prompt||"").trim().replace(/[。．]$/,"");
   if(isWrittenCmd(it)) return "上の文を読んで、そのとおりの順に、絵の下の（　）に1から番号を書いてください。";
-  const lead=(it.speak||T==="span")&&!/読み上げ|聞こえ|聞いて/.test(s)?"指導者が読み上げます。":"";
+  const lead=(it.speak||T==="span")&&!/読み上げ|聞こえ|聞いて/.test(s)?"STが読み上げます。":"";
   if(T==="choice"){ s=/選んでください$/.test(s)?s.replace(/選んでください$/,"選んで、記号に丸を付けてください"):s+"。記号に丸を付けてください"; }
   else if(T==="yesno"){ s=/で答えてください/.test(s)?s.replace(/で答えてください/,"に丸を付けてください"):s+"。「はい」か「いいえ」に丸を付けてください"; }
-  else if(T==="tapseq"||T==="span"){ s=(T==="span"?"聞こえた順に":"言われた順に")+"、絵の下の（　）に1から番号を書いてください"; return "指導者が読み上げます。"+s+"。"; }
+  else if(T==="tapseq"||T==="span"){ s=(T==="span"?"聞こえた順に":"言われた順に")+"、絵の下の（　）に1から番号を書いてください"; return "STが読み上げます。"+s+"。"; }
   else if(T==="order"){ return it.gen?"この絵の名前になるように、文字の下の（　）に、正しい順の番号を書いてください。":"正しい順になるように、下の（　）に1から番号を書いてください。"; }
   else if(T==="input"){ s=s.replace(/入れてください$/,"書いてください"); if(!/書いてください/.test(s)) s+="。答えを枠に書いてください"; }
   return lead+s+"。";
@@ -1300,7 +1300,8 @@ function ppContent(it,s,h,cw){
   const longT=txt.length>14||txt.indexOf("\n")>=0; const fz=[26,24,21,19,18][L-1];
   const tH=!txt?0:longT?(Math.ceil(txt.length/32)+(txt.match(/\n/g)||[]).length)*6.5+5:fz*0.5+3;
   const txtHTML=txt?`<div class="pp-st ${longT?"long":""}" ${longT?"":`style="font-size:${fz}pt"`}>${esc(txt)}</div>`:"";
-  const spk=(it.speak||T==="span")&&T!=="say"||(T==="say"&&it.speak)?`<div class="pp-spk">（指導者が読み上げます）</div>`:"";
+  // 読み上げる言葉は用紙右端の「ST用」欄に載せるので、問題の中には何も出さない
+  const spk=s.side?"":((it.speak||T==="span")&&T!=="say"||(T==="say"&&it.speak)?`<div class="pp-spk">（STが読み上げます）</div>`:"");
   const spkH=spk?6:0;
   const pics=Array.isArray(st.pics)&&st.pics.length>1?st.pics:null;
   const ofz=[22,20,18,16,15][L-1];
@@ -1339,25 +1340,29 @@ const SH_H=226; // 課題用紙の本文に使える高さ（mm）のめやす
 function ppSheet(s,idx,total){
   const items=s.items, q=items.length; const asks=items.map(paperPrompt); const nk=a=>a.replace(/、/g,""); const same=asks.every(a=>nk(a)===nk(asks[0]));
   const T=s.type; const short=it=>{ const t=String((it.stim||{}).text||""); return t.length<=14&&!(it.stim||{}).pic; };
-  const cols=!s.hint&&q>=6&&(T==="input"||T==="say"||T==="yesno")&&items.every(short)?2:1;
-  const rows=Math.ceil(q/cols); const cw=186-11-(s.hint?46:0); const h=(SH_H-(s.hint?9:0))/rows-(same?0:9)-4;
+  // 右端のST用の欄：読み上げる言葉（あれば）と、ご家族用ヒント（呼称など）
+  const rd=items.some(it=>paperRead(it)); s.side=rd||s.hint;
+  const sideTitle=rd&&s.hint?"ST用：読み上げる言葉とヒント（最初は折って隠してください）":rd?"ST用：読み上げる言葉（最初は折って隠してください）":"ご家族用ヒント欄（最初は折って隠してください）";
+  const cols=!s.side&&q>=6&&(T==="input"||T==="say"||T==="yesno")&&items.every(short)?2:1;
+  const rows=Math.ceil(q/cols); const cw=186-11-(s.side?46:0); const h=(SH_H-(s.side?9:0))/rows-(same?0:9)-4;
   const ask=same?asks[0]:({choice:"それぞれの問題を読んで、答えの記号に丸を付けてください。",yesno:"それぞれの問題を読んで、「はい」か「いいえ」に丸を付けてください。",say:"それぞれの問題に、声に出して答えてください。",write:"それぞれの問題の答えを、枠の中に書いてください。",input:"それぞれの問題の答えを、枠の中に書いてください。"}[T]||"それぞれの問題の指示にしたがって答えてください。");
   const hintCell=it=>{ const hs=(it.hints||[]).filter(x=>x&&x.t&&!x.teacher&&x.act!=="text"&&x.act!=="speak"&&x.act!=="model"&&x.act!=="boxes").slice(0,3);
-    return `<div class="pp-hc">${hs.map((x,k)=>`<div>${"①②③"[k]} ${esc(String(x.t).replace(/。$/,""))}</div>`).join("")}</div>`; };
+    return hs.map((x,k)=>`<div>${"①②③"[k]} ${esc(String(x.t).replace(/。$/,""))}</div>`).join(""); };
+  const sideCell=it=>{ const r=paperRead(it); return `<div class="pp-hc">${r?`<div class="pp-rd">「${esc(r)}」</div>`:""}${s.hint?hintCell(it):""}</div>`; };
   return `<div class="pp-sheet pp-task" data-si="${idx}">${ppHead(s.skill,`課題用紙 ${idx+1}／${total}　level${s.level}　（${s.name}）`)}
-   <div class="pp-ask">${esc(ask)}</div>${s.hint?`<div class="pp-hh"><span>ご家族用ヒント欄（最初は折って隠してください）</span></div>`:""}
-   <div class="pp-body ${cols===2?"c2":""} ${s.hint?"hint":""}">
-   ${items.map((it,j)=>`<div class="pp-q"><div class="pp-n">${j+1}</div><div class="pp-c">${same?"":`<div class="pp-qa">${esc(asks[j])}</div>`}${ppContent(it,s,h,cw/cols-(cols===2?3:0))}</div>${s.hint?hintCell(it):""}</div>`).join("")}</div>${ppFoot()}</div>`;
+   <div class="pp-ask">${esc(ask)}</div>${s.side?`<div class="pp-hh"><span>${sideTitle}</span></div>`:""}
+   <div class="pp-body ${cols===2?"c2":""} ${s.side?"hint":""}">
+   ${items.map((it,j)=>`<div class="pp-q"><div class="pp-n">${j+1}</div><div class="pp-c">${same?"":`<div class="pp-qa">${esc(asks[j])}</div>`}${ppContent(it,s,h,cw/cols-(cols===2?3:0))}</div>${s.side?sideCell(it):""}</div>`).join("")}</div>${ppFoot()}</div>`;
 }
 function ppGuide(p,set){
   const groups={}; set.sheets.forEach((s,i)=>{ const g=groups[s.skill]=groups[s.skill]||{s,no:[],q:0}; g.no.push(i+1); g.q+=s.items.length; });
   const who=PRINT.nick&&p?(p.nick?`${p.nick}（${p.id}）`:p.id):"";
-  return `<div class="pp-sheet pp-guide">${ppHead("訓練プリント　指導者用ガイド",`作成日 ${fmtD(set.date)}　／　元にしたSLTA ${fmtD(set.ev)}　／　課題用紙 ${set.sheets.length}枚`,true)}
+  return `<div class="pp-sheet pp-guide">${ppHead("訓練プリント　ST用ガイド",`作成日 ${fmtD(set.date)}　／　元にしたSLTA ${fmtD(set.ev)}　／　課題用紙 ${set.sheets.length}枚`,true)}
   <div class="pp-body pp-g">
    <p>対象者（呼び名）：${who?esc(who):"＿＿＿＿＿＿＿＿＿＿"}　　実施日：　　　年　　月　　日〜　　月　　日</p>
    <h2>今回の課題</h2>
    <table><tr><th>課題</th><th>元にした下位検査（正答率）</th><th>level</th><th>課題用紙の番号</th><th>問題数</th></tr>
-   ${Object.values(groups).map(g=>`<tr><td>${esc(g.s.skill)}</td><td>${g.s.no}. ${esc(g.s.name)}（${pctTxt(g.s.pct)}）</td><td>level${g.s.level}${g.s.over?"（指導者が変更）":""}</td><td>${g.no.join("・")}</td><td>${g.q}問</td></tr>`).join("")}</table>
+   ${Object.values(groups).map(g=>`<tr><td>${esc(g.s.skill)}</td><td>${g.s.no}. ${esc(g.s.name)}（${pctTxt(g.s.pct)}）</td><td>level${g.s.level}${g.s.over?"（STが変更）":""}</td><td>${g.no.join("・")}</td><td>${g.q}問</td></tr>`).join("")}</table>
    <h2>ヒントの順番（答えが出ないときは、5秒ほど待ってから①から順に）</h2>
    <table><tr><th style="width:30mm">課題</th><th>ヒントの順番</th></tr>
     <tr><td>呼称（名前を言う）</td><td>①意味・仲間 → ②使い道・場面 → ③最初の音 → ④文字を見せる → ⑤一緒に言う</td></tr>
@@ -1392,7 +1397,7 @@ function fitSheets(){ const set=PRINT.set; if(!set) return; const SLACK=12; // �
   const g=$("#ppw .pp-guide .pp-body"); if(g&&overBody(g)) console.warn("PRINT-OVERFLOW ガイド"); }
 function buildAnswers(){ const box=$("#ppAns"); if(!box) return; box.innerHTML=""; let body=null;
   const newPage=()=>{ const d=document.createElement("div"); d.className="pp-sheet pp-ansp";
-    d.innerHTML=ppHead("解答・読み上げリスト（指導者用）","この用紙はご本人に渡さないでください",true)+`<div class="pp-ask" style="font-size:11pt;font-weight:400">読み上げる文はここにだけ載せています。「読み上げ」の文を、ふつうの速さで1回読んでください。聞き返されたら、もう一度読んでかまいません。</div><div class="pp-body pa"></div>`+ppFoot();
+    d.innerHTML=ppHead("解答・読み上げリスト（ST用）","この用紙はご本人に渡さないでください",true)+`<div class="pp-ask" style="font-size:11pt;font-weight:400">読み上げる文はここにだけ載せています。「読み上げ」の文を、ふつうの速さで1回読んでください。聞き返されたら、もう一度読んでかまいません。</div><div class="pp-body pa"></div>`+ppFoot();
     box.appendChild(d); body=d.querySelector(".pp-body"); };
   newPage();
   for(const u of answerUnits(PRINT.set)){ const t=document.createElement("div"); t.innerHTML=u; const node=t.firstElementChild; body.appendChild(node);
